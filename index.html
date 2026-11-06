@@ -182,6 +182,7 @@ a.btnlink{display:inline-block;padding:10px 18px;border-radius:999px;border:1px 
 .report[open]{border:1px solid var(--rule);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:10px}
 .chip.rp-r{cursor:pointer;font-style:normal;font-family:var(--body);font-size:.85rem;color:var(--ink)}
 .chip.rp-r.on{background:var(--rouge);color:var(--bg);border-color:var(--rouge)}
+a.say{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--gilt);text-underline-offset:3px}
 .toast{font-size:.88rem;color:var(--good);min-height:1.2em}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-family:var(--display);font-style:italic;font-size:1rem;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--field)}
@@ -415,6 +416,7 @@ function gifLinks(e){
   const qs = e.gif || [e.lex.concepts.map(c => c.label.replace(/^the idea of “|”$/g,"")).slice(0,2).join(" ")];
   return `<p class="giflinks"><a href="${giphy(qs[0])}" target="_blank" rel="noopener">Find it on GIPHY ↗</a>${qs[1] ? ` <span class="muted">or</span> <a href="${giphy(qs[1])}" target="_blank" rel="noopener">a reaction ↗</a>` : ""}</p>`;
 }
+const pronLink = e => `<a class="say" href="https://www.google.com/search?q=${encodeURIComponent("how to pronounce " + e.w.replace(/\s*\(.*?\)\s*/g, " ").trim())}" target="_blank" rel="noopener">Hear it on Google ↗</a>`;
 const emblem = (k, size) => `<svg class="emb" width="${size}" height="${size}" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${EMBLEMS[k] || EMBLEMS.other}</svg>`;
 function originBlock(e){
   const chain = (e.origin && e.origin.length) ? e.origin : ["english"];
@@ -595,7 +597,7 @@ function render(){
     html += `<div class="banner">A friend scored <b>${friend.score}/200</b> on today's word. Your turn.</div>`;
   html += `<div class="eyebrow">${daily ? `${esc(DB.editions[ed].name)} · word of the day` : E.study ? `Study round · ${esc(e.src || "")}` : "Practice round · not scored"}${e.pos ? " · " + esc(e.pos) : ""}</div>`;
   html += card(e);
-  html += `<div><h1 class="word">${esc(e.w)}</h1>${e.pron ? `<div class="pron">${e.pron}</div>` : ""}</div>`;
+  html += `<div><h1 class="word">${esc(e.w)}</h1>${e.pron ? `<div class="pron">${e.pron}</div>` : ""}${pronLink(e)}</div>`;
 
   if (phase === "guess"){
     html += `<div class="eyebrow">${e.noEty ? "Meaning" : "Round 1 of 2 · meaning"}</div>
@@ -951,7 +953,7 @@ function renderHangman(st){
       ${showHint2 ? `<div class="hint-card"><div class="eyebrow">Hint 2 · the origin</div>${originBlock(e)}<p class="muted">${esc(maskWord(e.ety, e))}</p></div>` : ""}
       ${!h.done && h.hints < (e.noEty ? 1 : 2) ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: the definition" : "Hint 2: the origin"}</button></div>` : ""}
     </div>
-    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`}</div>
+    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`} ${pronLink(e)}</div>
       <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p></div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}
       ${e.noEty ? "" : `<div><h3>Etymology</h3><p>${e.ety}</p></div>${originBlock(e)}`}${gifLinks(e)}</section>
       ${reportBox()}<div class="row"><button class="primary" id="hm-next">Next word</button></div>`
