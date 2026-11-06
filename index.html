@@ -177,6 +177,11 @@ a.brand{text-decoration:none;color:inherit}
 .ways li b{font-family:var(--display);font-size:1.15rem;color:var(--ink)}
 .you{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.95rem;color:var(--muted)}
 .you b{color:var(--ink);font-variant-numeric:tabular-nums}
+a.btnlink{display:inline-block;padding:10px 18px;border-radius:999px;border:1px solid var(--gilt);background:var(--gilt);color:var(--gilt-ink);text-decoration:none;font-weight:600}
+.report summary{cursor:pointer;color:var(--muted);font-size:.9rem;text-decoration:underline;text-underline-offset:3px;width:max-content;max-width:100%}
+.report[open]{border:1px solid var(--rule);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.chip.rp-r{cursor:pointer;font-style:normal;font-family:var(--body);font-size:.85rem;color:var(--ink)}
+.chip.rp-r.on{background:var(--rouge);color:var(--bg);border-color:var(--rouge)}
 .toast{font-size:.88rem;color:var(--good);min-height:1.2em}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-family:var(--display);font-style:italic;font-size:1rem;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--field)}
@@ -577,7 +582,7 @@ function render(){
     return;
   }
   if (E.study){
-    const o = edOrder(ed);
+    const o = edOrder(ed).filter(k => !isHidden(k));
     if (!o.length){ $("#stage").innerHTML = studyEmptyMessage(); return; }
     if (gameMode === "daily"){ mode = "practice"; if (!practiceKey || !o.includes(practiceKey)){ practiceKey = o[Math.floor(Math.random()*o.length)]; practiceRes = null; } }
   }
@@ -652,8 +657,10 @@ function render(){
           : `<button class="primary" id="practice">Another practice word</button><button id="back">Back to today's word</button>`}</div>`;
     }
   }
+  if (phase !== "guess") html += reportBox();
   st.innerHTML = html;
   wire(e);
+  if (phase !== "guess") wireReport(e, key);
 }
 
 function draftBox(id, suffix){
@@ -693,7 +700,7 @@ function wire(e){
       : `<p class="muted">No grander synonym on file for that one. Try a simpler everyday word.</p>`;
   };
   $("#practice").onclick = () => {
-    const E2 = DB.editions[ed], pool = edOrder(ed).filter(k => k !== practiceKey && (E2.study || k !== dailyKey(ed)));
+    const E2 = DB.editions[ed], pool = edOrder(ed).filter(k => k !== practiceKey && !isHidden(k) && (E2.study || k !== dailyKey(ed)));
     practiceKey = pool[Math.floor(Math.random()*pool.length)]; practiceRes = null;
     mode = "practice"; hintShown = false; render(); window.scrollTo({top:0});
   };
@@ -825,6 +832,48 @@ function studyEmptyMessage(){
     : bookById(SEL.book) ? `<p class="loading">Add some words to your list above to start studying this text.</p>` : `<p class="loading">Pick a text from the list above to start.</p>`;
 }
 
+/* ===== Reporting a problem with a word (opens a pre-filled GitHub issue) ===== */
+const ISSUES_URL = "https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new";
+const REPORT_REASONS = ["It isn't actually rare", "The definition is wrong", "The origin is wrong", "The quote or source is wrong", "It's offensive or unsuitable", "Something else"];
+let HIDDEN = new Set(store.get("ml-hidden", []));
+const isHidden = k => HIDDEN.has(k);
+function keyOf(e){ return Object.keys(DB.words).find(k => DB.words[k] === e) || e.w; }
+function plain(s){ return String(s || "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">"); }
+function reportText(e, key, reason, note){
+  return `**Word:** ${e.w}\n**Problem:** ${reason}\n**Edition:** ${DB.editions[ed].name}\n**Definition shown:** ${plain(e.def)}\n` +
+    (e.line ? `**Line:** ${plain(e.line)}\n` : "") + (e.to ? `**Source:** ${plain(e.to)}\n` : "") + `**Entry key:** ${key}\n` + (note ? `\n${note}\n` : "");
+}
+function reportBox(){
+  return `<details class="report" id="report"><summary>Report a problem with this word</summary>
+    <div class="chips" role="radiogroup" aria-label="What's wrong?">${REPORT_REASONS.map((r, i) =>
+      `<button class="chip rp-r${i === 0 ? " on" : ""}" role="radio" aria-checked="${i === 0}" data-r="${esc(r)}">${esc(r)}</button>`).join("")}</div>
+    <label for="rp-note">Anything else? (optional)</label>
+    <textarea id="rp-note" rows="2" placeholder="e.g. the right meaning, or a better source"></textarea>
+    <div class="row"><a class="btnlink" id="rp-send" target="_blank" rel="noopener" href="${ISSUES_URL}">Send report</a><button id="rp-copy">Copy report</button><button id="rp-hide">Don't show me this word again</button></div>
+    <p class="muted">Reports open as an issue on the game's GitHub page, which needs a free GitHub account. No account? Copy the report and pass it on.</p>
+    <div class="toast" id="rp-msg" role="status"></div></details>`;
+}
+function wireReport(e, key){
+  const box = $("#report"); if (!box) return;
+  let reason = REPORT_REASONS[0];
+  const update = () => {
+    $("#rp-send").href = ISSUES_URL + "?title=" + encodeURIComponent(`Word report: ${e.w} (${reason})`) + "&body=" + encodeURIComponent(reportText(e, key, reason, $("#rp-note").value.trim()));
+  };
+  box.querySelectorAll(".rp-r").forEach(b => b.onclick = () => {
+    reason = b.dataset.r;
+    box.querySelectorAll(".rp-r").forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", x === b); });
+    update();
+  });
+  $("#rp-note").oninput = update; update();
+  $("#rp-copy").onclick = () => {
+    const txt = `Word report: ${e.w} (${reason})\n` + reportText(e, key, reason, $("#rp-note").value.trim()).replace(/\*\*/g, "");
+    const msg = $("#rp-msg");
+    try { navigator.clipboard.writeText(txt).then(() => msg.textContent = "Copied. Paste it wherever you're sending it.", () => { $("#rp-note").value = txt; $("#rp-note").select(); msg.textContent = "Copy didn't work here, so the report is in the box above: select it and copy."; }); }
+    catch(err){ $("#rp-note").value = txt; msg.textContent = "The report is in the box above: select it and copy."; }
+  };
+  $("#rp-hide").onclick = () => { HIDDEN.add(key); store.set("ml-hidden", [...HIDDEN]); $("#rp-msg").textContent = "Hidden. You won't get this word again in practice, study rounds or puzzles."; };
+}
+
 /* ===== Game modes: Hangman, Word search, Crossword ===== */
 const MODES = {daily:"Word of the day", hangman:"Hangman", search:"Word search", cross:"Crossword"};
 let gameMode = "daily";
@@ -847,7 +896,7 @@ function clueLine(e){
 }
 function source(e){ const s = DB.shows[e.show]; return e.show === "gl" ? "The Grand Lexicon" : `${e.who} · ${s.name}`; }
 function pool(minLen, maxLen){
-  return edOrder(ed).map(k => DB.words[k]).filter(e => e && letters(e).length >= minLen && letters(e).length <= maxLen).map(prep);
+  return edOrder(ed).filter(k => !isHidden(k)).map(k => DB.words[k]).filter(e => e && letters(e).length >= minLen && letters(e).length <= maxLen).map(prep);
 }
 function gameStats(mode){ return store.get("ml-games", {})[mode] || {played:0, won:0}; }
 function recordGame(mode, won){ const all = store.get("ml-games", {}); const s = all[mode] || {played:0, won:0}; s.played++; if (won) s.won++; all[mode] = s; store.set("ml-games", all); }
@@ -905,12 +954,13 @@ function renderHangman(st){
     ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`}</div>
       <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p></div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}
       ${e.noEty ? "" : `<div><h3>Etymology</h3><p>${e.ety}</p></div>${originBlock(e)}`}${gifLinks(e)}</section>
-      <div class="row"><button class="primary" id="hm-next">Next word</button></div>`
+      ${reportBox()}<div class="row"><button class="primary" id="hm-next">Next word</button></div>`
     : `<div class="keys" role="group" aria-label="Letters">${keys}</div>`}`;
   h.fresh = -1;
   st.querySelectorAll(".key").forEach(b => b.onclick = () => hmGuess(b.dataset.k));
   if ($("#hm-hint")) $("#hm-hint").onclick = () => { h.hints++; renderHangman(st); };
   if ($("#hm-next")) $("#hm-next").onclick = () => { newHangman(); renderHangman(st); window.scrollTo({top:0}); };
+  if (h.done) wireReport(e, keyOf(e));
 }
 function hmGuess(k){
   const h = G.hm; if (!h || h.done || h.guessed.has(k)) return;
