@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       source:
-        description: "Where to look"
+        description: "Where to look (overnight = run tonight's queued batch now)"
         type: choice
-        options: [wikiquote, gutenberg]
+        options: [wikiquote, gutenberg, overnight]
         default: wikiquote
       pages:
         description: "Wikiquote pages separated by semicolons (e.g. Frasier; Yes Minister). Leave empty to harvest the whole queue in tools/shows.txt"
@@ -52,7 +52,7 @@ jobs:
         run: pip install -r tools/requirements.txt
       - name: Harvest
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$SOURCE" = "overnight" ]; then
             python tools/harvest.py nightly --shows 10 --books 1
           elif [ "$SOURCE" = "wikiquote" ]; then
             args=()
@@ -79,6 +79,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add harvest
-          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then msg="Harvest: overnight run"; else msg="Harvest: $SOURCE $PAGES$TITLE"; fi
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$SOURCE" = "overnight" ]; then msg="Harvest: overnight run"; else msg="Harvest: $SOURCE $PAGES$TITLE"; fi
           git diff --cached --quiet || git commit -m "$msg"
           git push
