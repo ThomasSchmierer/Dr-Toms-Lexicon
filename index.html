@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Moira's Lexicon</title>
+<meta name="description" content="A word-of-the-day game: guess the meanings and origins of the strangest words from TV.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one theatrical card per day. Edition tabs on top, a character card sets the scene,
+   the word is the marquee, the reveal unfolds as a dictionary entry. Dark-first. */
+:root{
+  --bg:#1a1218; --stage:#241821; --ink:#f3e9ee; --muted:#b8a2ae; --rule:#43303c;
+  --gilt:#d9b46a; --gilt-ink:#1a1218; --rouge:#e0607e; --field:#2d1f29;
+  --good:#7fcf9a; --mid:#e6c065; --low:#e57a7a;
+  --sc:#c9a9d6; --da:#8fc6a0; --bk:#e08a6f; --kk:#f28cc0; --gl:#d9b46a;
+  --l-latin:#e0a36b; --l-greek:#8fb6e8; --l-french:#a8a2f0; --l-oldenglish:#b9c47a; --l-english:#d9b46a; --l-norse:#7fc9d1; --l-german:#9ccf8a; --l-dutch:#f0a35e; --l-italian:#e88f8f; --l-spanish:#f2c46b; --l-arabic:#6fd1b4; --l-persian:#d38fd1; --l-indic:#f29bb5; --l-celtic:#86d49a; --l-hebrew:#9fb4f0; --l-other:#c0b4ba;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f7eef1; --stage:#fffafb; --ink:#2a1622; --muted:#7a5d6c; --rule:#e6d3db;
+  --gilt:#9a6f1f; --gilt-ink:#fffafb; --rouge:#b8335a; --field:#f4e7ec;
+  --good:#2f8a52; --mid:#8a6810; --low:#b84242;
+  --sc:#6e3f86; --da:#2f6b45; --bk:#9c3a22; --kk:#b8306f; --gl:#9a6f1f;
+  --l-latin:#a85a1c; --l-greek:#2c5d9e; --l-french:#5a4fc0; --l-oldenglish:#5f6b1f; --l-english:#8a6410; --l-norse:#1f7480; --l-german:#3b7a2a; --l-dutch:#b0581a; --l-italian:#a83a3a; --l-spanish:#93680f; --l-arabic:#1d7a62; --l-persian:#8a3a88; --l-indic:#b03a62; --l-celtic:#2a7a40; --l-hebrew:#3a52a8; --l-other:#6e5f66; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f7eef1; --stage:#fffafb; --ink:#2a1622; --muted:#7a5d6c; --rule:#e6d3db;
+  --gilt:#9a6f1f; --gilt-ink:#fffafb; --rouge:#b8335a; --field:#f4e7ec;
+  --good:#2f8a52; --mid:#8a6810; --low:#b84242;
+  --sc:#6e3f86; --da:#2f6b45; --bk:#9c3a22; --kk:#b8306f; --gl:#9a6f1f;
+  --l-latin:#a85a1c; --l-greek:#2c5d9e; --l-french:#5a4fc0; --l-oldenglish:#5f6b1f; --l-english:#8a6410; --l-norse:#1f7480; --l-german:#3b7a2a; --l-dutch:#b0581a; --l-italian:#a83a3a; --l-spanish:#93680f; --l-arabic:#1d7a62; --l-persian:#8a3a88; --l-indic:#b03a62; --l-celtic:#2a7a40; --l-hebrew:#3a52a8; --l-other:#6e5f66; color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 48px}
+[hidden]{display:none!important}
+.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-style:italic;font-size:1.6rem;font-weight:500;letter-spacing:-.01em}
+.brand b{color:var(--gilt);font-weight:700;font-style:normal}
+.stats{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats strong{color:var(--gilt)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stage{background:var(--stage);border:1px solid var(--rule);border-radius:4px;padding:24px 22px;display:flex;flex-direction:column;gap:20px}
+.banner{font-size:.92rem;border:1px dashed var(--gilt);border-radius:4px;padding:10px 12px;color:var(--ink)}
+.banner b{color:var(--gilt)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card{display:flex;align-items:center;gap:14px;border-left:3px solid var(--show);padding-left:12px}
+.mono{width:46px;height:46px;flex:none;border-radius:50%;border:1.5px solid var(--show);color:var(--show);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:700;font-size:1.05rem}
+.card .who{font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.2}
+.card .show{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.word{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,9vw,4rem);line-height:1;letter-spacing:-.02em;overflow-wrap:anywhere;text-wrap:balance;margin:6px 0 8px}
+.pron{font-family:var(--mono);font-size:.9rem;color:var(--muted)}
+.pron i{color:var(--rouge);font-style:normal}
+label{font-weight:600;font-size:.95rem}
+textarea,input[type=text]{width:100%;background:var(--field);color:var(--ink);border:1px solid var(--rule);border-radius:3px;padding:12px;font:inherit}
+textarea{min-height:88px;resize:vertical}
+textarea:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font:inherit;cursor:pointer;border-radius:999px;padding:10px 18px;border:1px solid var(--rule);background:transparent;color:var(--ink)}
+button.primary{background:var(--gilt);color:var(--gilt-ink);border-color:var(--gilt);font-weight:600}
+button.link{border:0;padding:6px 2px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.quote{border-left:2px solid var(--rouge);padding:4px 0 4px 14px;font-family:var(--display);font-style:italic;font-size:1.15rem;line-height:1.4;margin:0}
+.quote.ctx{font-style:normal;font-family:var(--body);font-size:1rem}
+.quote .src{display:block;font-family:var(--mono);font-style:normal;font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+mark{background:none;color:var(--rouge);font-weight:700}
+.result{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.dial{width:92px;height:92px;position:relative}
+.dial svg{display:block}
+.dial .n{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.7rem;font-variant-numeric:tabular-nums}
+.verdict{font-family:var(--display);font-style:italic;font-size:1.25rem;line-height:1.3}
+.feedback{color:var(--muted);font-size:.95rem;margin-top:4px}
+.yours{font-size:.9rem;color:var(--muted);margin:0} .yours em{color:var(--ink)}
+.section{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--rule);padding-top:18px}
+.section h3{margin:0 0 4px;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gilt);font-weight:500}
+.section p{margin:0;max-width:62ch}
+.def{font-family:var(--display);font-size:1.3rem;line-height:1.35}
+.def b{color:var(--rouge)}
+pre.share{margin:0;white-space:pre-wrap;font-family:var(--mono);font-size:.85rem;background:var(--field);border:1px solid var(--rule);border-radius:3px;padding:12px;overflow-x:auto}
+.badge{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--gilt);border-radius:999px;color:var(--gilt);letter-spacing:.06em}
+.origin{display:flex;flex-direction:column;gap:14px}
+.origin-main{display:flex;align-items:center;gap:16px;color:var(--lang)}
+.origin-main > div{color:var(--ink)}
+.origin-name{font-family:var(--display);font-size:1.5rem;font-weight:700;line-height:1.1}
+.journey{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.journey li{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--lang);font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
+.journey li span{color:var(--muted)}
+.journey li.arrow{color:var(--muted);font-size:1rem;padding-bottom:14px}
+.rar{letter-spacing:.12em;color:var(--gilt)}
+.loading{padding:28px 0;text-align:center;color:var(--muted)}
+.toast{font-size:.88rem;color:var(--good);min-height:1.2em}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--display);font-style:italic;font-size:1rem;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--field)}
+.syn{display:flex;flex-direction:column;gap:6px}
+.syn .head{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.syn .head b{color:var(--ink);font-weight:500}
+.muted{color:var(--muted);font-size:.9rem}
+footer{font-size:.78rem;color:var(--muted);text-align:center;max-width:62ch;margin:0 auto}
+@media (max-width:460px){.result{grid-template-columns:1fr;justify-items:start}}
+@media (prefers-reduced-motion: no-preference){.dial circle.arc{transition:stroke-dasharray .8s ease-out}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="top">
+      <div class="brand">Moira's <b>Lexicon</b></div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <nav class="tabs" role="tablist" id="tabs" aria-label="Editions"></nav>
+  </header>
+  <main class="stage" id="stage"></main>
+  <footer>A new word every day in each edition. Lines are short quotations from the shows for commentary; all rights remain with their owners. Fan-made, not affiliated with any show.</footer>
+</div>
+
+<script id="db" type="application/json">{"shows":{"sc":{"name":"Schitt's Creek","years":"2015–2020"},"da":{"name":"Downton Abbey","years":"2010–2015"},"bk":{"name":"Blackadder the Third","years":"1987"},"kk":{"name":"Kath & Kim","years":"2002–2007"},"gl":{"name":"The Grand Lexicon","years":""}},"words":{"pettifogging":{"w":"pettifogging","pos":"adjective / noun","pron":"PET-ee-<i>fog<\/i>-ing","line":"Now is not the time for <mark>pettifogging<\/mark>!","to":"Moira, to Alexis","def":"Fussing and quibbling over trivial details.","explain":"A pettifogger argues about the small print while the house burns down. Moira uses it to shut down an argument she considers beneath the moment.","ety":"From pettifogger, late 1500s: petty plus 'fogger', which may come from the Fuggers, a rich German banking family whose name became slang for a grasping dealer. It first meant a shabby small-time lawyer.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the triviality","w":0.55,"s":"petty, trivial, triviality, small, minor, unimportant, insignificant, detail, technicality, nitpick, nitpicking, minutiae, fine print, small print, trifle, trifling, pedantic, pedant, little things, nothing","p":"picky, fussy, unnecessary, irrelevant, little, silly"},{"label":"the arguing","w":0.45,"s":"quibble, argue, argument, bicker, squabble, haggle, fuss, carp, nag, complain, dispute, debate, wrangle, fight, cavil, split hairs, hairsplitting, nitpick, nitpicking, bickering","p":"annoy, obsess, focus, dwell, worry, delay, stall, procrastinate"}],"decoys":{"terms":"fog, foggy, mist, cloud, weather, pet, dog, dogs, animal","msg":"There's fog in it, but no weather. It's about quibbling."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"english, german, dutch, germanic","p":"old english"},{"label":"the root idea","w":0.7,"s":"petty, small, fugger, fuggers, merchant, merchants, banker, bankers, lawyer, lawyers, dealer, family name","p":"fog, cheat"}]},"origin":["german","english"]},"bombilating":{"w":"bombilating","pos":"verb","pron":"BOM-bih-<i>lay<\/i>-ting","line":"The room is suddenly <mark>bombilating<\/mark> with anticipation.","to":"Moira","def":"Buzzing or humming; droning.","explain":"Think of a room full of bees. Moira wants a word grand enough for a crowd murmuring with excitement before she takes the stage.","ety":"From Latin bombilare, 'to buzz or hum', related to bombus, a booming or humming sound (which also gives us the bumblebee genus Bombus). Very rare in print outside the show.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the buzzing sound","w":0.65,"s":"buzz, buzzing, hum, drone, thrum, vibrate, vibration, murmur, whir, whirr, bee, bees, hive, rumble, resonate, reverberate, abuzz, hummed","p":"noise, noisy, sound, loud, chatter, chattering, ringing, ring"},{"label":"the excitement","w":0.35,"s":"excite, excitement, anticipation, energy, alive, lively, electric, thrill, eager, abuzz, bustle, bustling, teem, teeming, anticipate, expectant","p":"crowd, atmosphere, full, busy, tense"}],"decoys":{"terms":"bomb, bombing, explode, explosion, blow up, blast, attack, fail, flop, crash","msg":"Not bombing. It buzzes rather than explodes."}},"etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"latin, roman, rome, ancient rome, latin word","p":"greek, italian"},{"label":"the root idea","w":0.6,"s":"buzz, buzzing, hum, humming, bee, bees, bumblebee, bombus, drone, boom, booming","p":"bomb, noise, sound"}]},"origin":["latin","english"]},"prestidigitator":{"w":"prestidigitator","pos":"noun","pron":"PRES-tih-<i>DIJ<\/i>-ih-tay-ter","line":"…by someone like this prick of a <mark>prestidigitator<\/mark>?","to":"Moira","def":"A magician; someone skilled in sleight of hand.","explain":"A prestidigitator makes things vanish with quick fingers. Moira uses it as a lofty insult for a man she sees as a con artist and a cheap trickster.","ety":"19th-century French prestidigitateur: preste, 'quick, nimble' (from Italian presto) plus Latin digitus, 'finger'. Literally a 'quick-fingers'.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the magician","w":0.6,"s":"magician, magic, conjurer, conjuror, illusionist, trickster, wizard, sorcerer, juggler, card tricks, magic tricks","p":"trick, tricks, performer, entertainer, showman"},{"label":"the sleight of hand","w":0.4,"s":"sleight, sleight of hand, hand, hands, finger, fingers, quick, nimble, dexterous, deft, fast, dexterity, nimble fingers","p":"con, con man, conman, fraud, cheat, swindler, deceive, scam, scammer, fake, crook"}],"decoys":{"terms":"prestige, prestigious, digit, digits, number, numbers, digital, computer, accountant, maths, math, counting","msg":"The 'digit' is a finger, not a number."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"french, latin, roman, rome, ancient rome, italian","p":""},{"label":"the root idea","w":0.7,"s":"finger, fingers, digit, digits, quick, nimble, presto, fast, quick fingers, hand","p":"magic, number, numbers"}]},"origin":["latin","italian","french","english"]},"confabulate":{"w":"confabulate","pos":"verb","pron":"con-<i>FAB<\/i>-yuh-late","line":"Ronnie, might you and I <mark>confabulate<\/mark> for a moment in the back room?","to":"Moira, to Ronnie","def":"To talk things over; to confer privately.","explain":"A fancy way to say 'can we have a quiet word'. In psychology the same word means filling memory gaps with invented stories, which Moira would also be good at.","ety":"Latin confabulari, 'to talk together': con-, 'together', plus fabulari, 'to chat', from fabula, 'story' (the root of fable and fabulous).","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"talking it over","w":0.65,"s":"talk, chat, discuss, discussion, confer, conference, converse, conversation, speak, word, meet, meeting, consult, natter, gossip, parley, powwow, chinwag, chin wag, catch up, have a word","p":"negotiate, communicate, plan, plot, scheme, deal"},{"label":"doing it privately","w":0.35,"s":"together, private, privately, secret, secretly, quiet, quietly, alone, aside, one on one, huddle, behind closed doors, in private","p":"with, closely, personal"}],"alt":{"terms":"lie, lying, make up, made up, invent, fabricate, fabrication, false memory, false memories, story, stories, embellish, exaggerate","score":45,"msg":"That's the psychology meaning (inventing memories). Moira meant a private chat."},"decoys":{"terms":"fabulous, fab, confuse, confused, confusion, conflate","msg":"Sounds like fabulous or confuse, but it means a private chat."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":"greek"},{"label":"the root idea","w":0.7,"s":"talk together, together, chat, story, stories, fable, fabula, talk, conversation, con, tale","p":"fabulous"}]},"origin":["latin","english"]},"balatron":{"w":"balatron","pos":"noun","pron":"<i>BAL<\/i>-uh-tron","line":"…and here I get a <mark>balatron<\/mark> from Barnum and Bailey.","to":"Moira","def":"A buffoon or jester; a clownish, contemptible fellow.","explain":"Moira hoped for a heroic rescuer and got a circus clown instead. Barnum and Bailey was a famous American circus, so the insult lands twice.","ety":"From Latin balatro, 'jester, babbler, worthless fellow'. It appeared in English in the late 1600s and dropped out of most modern dictionaries.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the buffoon","w":1,"s":"clown, buffoon, fool, jester, idiot, joker, oaf, dope, goof, moron, twit, dolt, nitwit, imbecile, dunce, numpty, galah, drongo, dill, boofhead, clod, prat, git, jerk, halfwit, nincompoop, simpleton, harlequin, court jester","p":"silly, stupid, comic, comedian, entertainer, loser, useless, worthless, contemptible, ridiculous, show off"}],"decoys":{"terms":"balance, balloon, ballet, electron, robot, machine, tron, ball, battle, warrior, weapon","msg":"Not a gadget or a gladiator. It's a clown."}},"etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"latin, roman, rome, ancient rome","p":"greek"},{"label":"the root idea","w":0.6,"s":"jester, babbler, babble, buffoon, clown, worthless, fool","p":"joke, joker"}]},"origin":["latin","english"]},"dangersome":{"w":"dangersome","pos":"adjective","pron":"<i>DAYN<\/i>-jer-sum","line":"Jocelyn, that sounds <mark>dangersome<\/mark>.","to":"Moira, to Jocelyn","def":"Dangerous.","explain":"The joke is the plainness. Where anyone else would say 'dangerous', Moira reaches for the dusty old-fashioned form, which sounds both prim and faintly made-up.","ety":"Danger plus the Old English suffix -some, 'characterised by', as in troublesome and meddlesome. Mark Twain gives it to Huck Finn in 1884.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the danger","w":1,"s":"dangerous, danger, risky, risk, unsafe, perilous, peril, hazardous, hazard, threatening, treacherous, deadly, harmful, precarious, not safe, life threatening","p":"scary, frightening, bad, dodgy, sketchy, reckless, ominous, worrying, bad idea, troublesome"}]},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"english, old english, anglo saxon","p":""},{"label":"the root idea","w":0.7,"s":"danger, some, suffix, troublesome, awesome, characterised, characterized, full of","p":"dangerous"}]},"origin":["french","english"]},"callipygian":{"w":"callipygian","pos":"adjective","pron":"kal-ih-<i>PIJ<\/i>-ee-an","line":"…firm round mammae and <mark>callipygian<\/mark> ass while I had them.","to":"Moira","def":"Having shapely buttocks.","explain":"Moira lamenting her younger body in clinical and classical vocabulary is what makes the line funny. Earthy content, museum-label delivery.","ety":"Greek kallipygos: kallos, 'beauty', plus pyge, 'buttocks'. The Aphrodite Kallipygos is a famous ancient statue of the goddess glancing over her shoulder at her own behind.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the buttocks","w":0.6,"s":"butt, bottom, buttocks, behind, rear, bum, booty, ass, arse, backside, derriere, rump, glutes, glute, posterior, tush, rear end","p":"hips, curves, curvy, figure, body, legs"},{"label":"the shapeliness","w":0.4,"s":"shapely, beautiful, attractive, firm, nice, pretty, gorgeous, perky, round, toned, well shaped, good, great, lovely, sexy, hot, peachy, beauty, fine","p":"curvy, curves, big, fit, perfect"}],"decoys":{"terms":"calligraphy, handwriting, writing, pen, font, egypt, egyptian, pig, pygmy, call, phone","msg":"Calli- means beauty here, not handwriting."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"greek, greece, ancient greek","p":""},{"label":"the root idea","w":0.7,"s":"beauty, beautiful, buttocks, butt, bottom, aphrodite, kallos, statue, venus, pyge","p":"art, sculpture"}]},"origin":["greek","english"]},"frippet":{"w":"frippet","pos":"noun","pron":"<i>FRIP<\/i>-it","line":"Don't start without me, you little <mark>frippet<\/mark>!","to":"Moira","def":"A frivolous, showy young woman.","explain":"Half scold, half affection. Moira uses it the way someone might say 'you cheeky thing'.","ety":"Origin unknown. It looks related to frippery, 'showy finery', from Old French freperie, 'old clothes'. The OED lists it as slang from the mid-20th century.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the showiness","w":0.6,"s":"frivolous, flighty, silly, showy, flashy, flirt, flirty, ditz, ditzy, airhead, vain, shallow, flapper, cheeky, brat, minx, hussy, flamboyant, scatterbrain, scatterbrained, superficial, giddy, saucy, sassy, frippery, show off, attention seeker","p":"naughty, mischievous, cute, fun, wild, cheeky thing, rascal, scamp"},{"label":"a young woman","w":0.4,"s":"woman, girl, lady, young, lass, gal, miss, daughter, young woman, young lady","p":"person, someone, kid, child, she"}],"decoys":{"terms":"fish, fruit, trip, drip, drop, droplet, pet, puppet, ferret","msg":"Not a creature or a droplet. A showy young woman."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"french, old french, unknown, uncertain","p":"english"},{"label":"the root idea","w":0.7,"s":"frippery, finery, showy, old clothes, clothes, unknown, uncertain, flapper","p":"frilly, frills, fashion"}]},"origin":["french","english"]},"spanandry":{"w":"spanandry","pos":"noun","pron":"span-<i>AN<\/i>-dree","line":"…I realize the pickings are slim in this rural <mark>spanandry<\/mark>…","to":"Moira, at council","def":"A scarcity of males in a population.","explain":"A zoology term for species where males are rare. Moira applies it to the town's dating pool, which is both insulting and scientifically specific.","ety":"Borrowed in the early 1900s from French spanandrie, from Greek spanos, 'scarce', plus aner, andros, 'man' (as in android).","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the men","w":0.5,"s":"men, male, males, man, guy, guys, bachelor, bachelors, boy, boys, husband, husbands, fella, fellas, bloke, blokes, gentleman, gentlemen, suitor, suitors","p":"partner, partners, dating, date, single, singles"},{"label":"the shortage","w":0.5,"s":"shortage, scarce, scarcity, lack, few, rare, absence, drought, dearth, short, shortfall, deficit, slim pickings, empty, barren, not enough, not many, no men, no","p":"small, limited, desert, poor, sparse, only"}],"decoys":{"terms":"span, spaniel, bridge, pan, spam, candy, sandy, android, robot, time span","msg":"'Span-' is Greek for scarce, not a bridge span."}},"etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"greek, french, ancient greek","p":""},{"label":"the root idea","w":0.6,"s":"scarce, scarcity, rare, man, men, male, andro, android, spanos, aner","p":"biology, zoology, science"}]},"origin":["greek","french","english"]},"grinagog":{"w":"grinagog","pos":"noun","pron":"<i>GRIN<\/i>-uh-gog","line":"Grace! Our timorous <mark>grinagog<\/mark>.","to":"Moira","def":"A person who grins habitually, often foolishly.","explain":"Moira pairs it with 'timorous' (timid) to describe a shy person who smiles constantly instead of speaking up.","ety":"An English dialect and slang word: grin plus a mock-learned '-agog' ending, as in agog. A 1902 essay links it to the 'cat's uncle', a boy who grins instead of answering.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the grin","w":0.6,"s":"grin, grinner, grinning, smile, smiling, smiler, beam, beaming, smirk, smirking, grins, smiles","p":"happy, cheerful, laugh, laughing, giggle, giggly, chuckle"},{"label":"the constant, foolish part","w":0.4,"s":"always, constant, constantly, habitual, habitually, foolish, foolishly, silly, goofy, shy, nervous, lot, permanent, perpetual, nonstop, all the time, inane, vacant, idiot, idiotic, never stops","p":"often, too much, awkward, simple, dopey"}],"decoys":{"terms":"dog, demagogue, goggles, goggle, ogre, monster, troll, grinch, gargoyle","msg":"It sounds monstrous, but it's someone who grins a lot."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"english, dialect, slang, british","p":""},{"label":"the root idea","w":0.7,"s":"grin, agog, grinning, smile","p":"cat"}]},"origin":["english"]},"churlish":{"w":"churlish","pos":"adjective","pron":"<i>CHUR<\/i>-lish","line":"Well, how very <mark>churlish<\/mark> of them!","to":"Moira","def":"Rude and ungracious; lacking basic manners.","explain":"Moira's verdict on anyone who fails to treat her with appropriate deference, which covers most of the town.","ety":"Old English ceorl meant a free peasant. Over centuries churl slid from 'commoner' to 'boor', and churlish followed it down the social ladder.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the rudeness","w":1,"s":"rude, impolite, ungracious, uncivil, boorish, ill mannered, bad mannered, mean, surly, grumpy, sullen, unfriendly, discourteous, ungrateful, graceless, disrespectful, petulant","p":"nasty, unkind, grouchy, cranky, selfish, childish, cold, snobby"}],"decoys":{"terms":"church, holy, religious, pious, girlish, girly, chilly, cherry","msg":"Nothing to do with church. It means rude."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"old english, english, anglo saxon, germanic","p":""},{"label":"the root idea","w":0.7,"s":"churl, peasant, ceorl, commoner, serf, lowly, farmer, low class, peasants","p":"rude, villager, poor"}]},"origin":["oldenglish","english"]},"chin-wag":{"w":"chin-wag","pos":"noun","pron":"<i>CHIN<\/i>-wag","line":"…I corralled him into a little lunchtime <mark>chin-wag<\/mark>.","to":"Moira, about Patrick","def":"A friendly chat.","explain":"A cosy British word made funny by context: Moira has cornered Patrick into it rather than invited him.","ety":"Chin plus wag, the jaw going up and down. British slang from the late 1800s.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the chat","w":0.75,"s":"chat, talk, conversation, gossip, natter, catch up, yarn, discussion, banter, small talk, chinwag, chitchat, gab, rabbit on","p":"meeting, word, debrief"},{"label":"the friendly, casual feel","w":0.25,"s":"friendly, casual, informal, light, quick, little, relaxed, cosy, cozy, friendly chat, easy","p":"fun, pleasant, short, nice"}],"decoys":{"terms":"dog, wagging, tail, beard, nod, nodding, shave, chin up, jaw, double chin","msg":"Not a wagging tail. It's a friendly chat."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"british, english, slang","p":""},{"label":"the root idea","w":0.7,"s":"chin, jaw, wag, wagging, mouth, moving","p":"talk, face"}]},"origin":["english"]},"repast":{"w":"repast","pos":"noun","pron":"rih-<i>PAST<\/i>","line":"…for a modest <mark>repast<\/mark> across the avenue.","to":"Moira","def":"A meal.","explain":"Going across the road for a bite with Johnny becomes, in Moira's mouth, something close to a banquet.","ety":"Old French repaistre, 'to feed', from Latin re- plus pascere, 'to feed'. The same root gives pasture and pastor.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the meal","w":1,"s":"meal, food, dinner, lunch, supper, breakfast, feast, banquet, snack, bite, dine, dining, eat, eating, feed, brunch, tucker, luncheon","p":"restaurant, picnic, drink, course, menu"}],"decoys":{"terms":"past, history, previous, ago, recap, repeat, again, paste, pasta, revisit","msg":"Not about the past. It's a meal."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"french, old french, latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"feed, feeding, food, pasture, pastor, eat, nourish, graze","p":"meal, past"}]},"origin":["latin","french","english"]},"mercurial":{"w":"mercurial","pos":"adjective","pron":"mer-<i>KYOOR<\/i>-ee-ul","line":"How <mark>mercurial<\/mark> is life?","to":"Moira","def":"Changing mood or direction suddenly and unpredictably.","explain":"She sighs it as fate swings her from hope to humiliation within a single scene.","ety":"Latin mercurialis, 'of Mercury', the quick messenger god. Astrologers held that people born under the planet Mercury were changeable and quick-witted.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the unpredictability","w":0.7,"s":"unpredictable, changeable, fickle, volatile, erratic, capricious, moody, temperamental, inconsistent, unstable, flighty, changing, shifting, up and down, mood swings, ever changing, variable","p":"random, chaotic, wild, crazy, strange, weird, uncertain"},{"label":"the speed of the change","w":0.3,"s":"quick, sudden, suddenly, fast, rapid, lively, sprightly, animated, swift, in a flash","p":"often, always, constantly, frequent"}],"decoys":{"terms":"mercury, planet, metal, thermometer, poison, silver, liquid, toxic, hot, element, god","msg":"Named after Mercury, but it's about moods, not metal."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":"greek"},{"label":"the root idea","w":0.7,"s":"mercury, god, messenger, planet, hermes, astrology, born under","p":"metal, quicksilver, quick"}]},"origin":["latin","english"]},"timorous":{"w":"timorous","pos":"adjective","pron":"<i>TIM<\/i>-er-us","line":"Grace! Our <mark>timorous<\/mark> grinagog.","to":"Moira","def":"Shy, timid and easily frightened.","explain":"Paired with grinagog to describe someone who smiles nervously instead of speaking up.","ety":"Medieval Latin timorosus, from Latin timor, 'fear'. It reached English in the 1400s, a century before its cousin timid.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the fearfulness","w":1,"s":"timid, shy, fearful, scared, afraid, nervous, frightened, cowardly, meek, mousy, anxious, skittish, jumpy, bashful, reserved, apprehensive, tentative, hesitant, wimpy, chicken, scaredy cat, faint hearted","p":"quiet, introvert, introverted, soft, weak, worried, cautious, quiet type"}],"decoys":{"terms":"tumour, tumor, humorous, funny, time, timer, clock, timeless, numerous, glamorous","msg":"It isn't humorous or numerous. It means timid."}},"etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"fear, timor, timid, afraid, frightened, scared, to fear","p":""}]},"origin":["latin","english"]},"blouson":{"w":"blouson","pos":"noun","pron":"<i>BLOO<\/i>-zon","line":"Stevie, underneath the brambly tartan <mark>blouson<\/mark>, is a chrysalis…","to":"Moira, to Stevie","def":"A loose jacket or top gathered in at the waist so it puffs out above.","explain":"Moira critiques Stevie's wardrobe while insisting there's a butterfly waiting underneath it.","ety":"French, from blouse. It entered English fashion vocabulary in the early 1900s.","show":"sc","who":"Moira Rose","mono":"MR","mode":"means","lex":{"concepts":[{"label":"the garment","w":0.7,"s":"jacket, coat, top, shirt, blouse, jumper, sweater, cardigan, windbreaker, bomber, bomber jacket, garment, clothing, clothes, outfit, anorak, smock, tunic, pullover, hoodie, parka, vest, blazer, jerkin, spray jacket","p":"dress, fabric, wear, fashion, item"},{"label":"the loose, gathered shape","w":0.3,"s":"loose, baggy, puffy, puff, billowy, billowing, gathered, elastic, waist, roomy, oversized, blousy, flowing, cinched, ballooning","p":"big, wide, comfy, relaxed"}],"decoys":{"terms":"bloat, bloated, blow, blown, blues, bruise, bloke, blossom, flower, balloon, bison","msg":"Not a blossom or a bruise. It's a jacket."}},"etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"french, france","p":""},{"label":"the root idea","w":0.6,"s":"blouse, shirt, top","p":"jacket, clothing"}]},"origin":["french","english"]},"hobbledehoy":{"w":"hobbledehoy","pos":"noun","pron":"<i>HOB<\/i>-ul-dee-hoy","line":"I have no time for training young <mark>hobbledehoys<\/mark>.","to":"Mr Carson","who":"Mr Carson","mono":"CC","def":"A clumsy, awkward youth.","explain":"Carson's contempt for gangly new footmen who can't yet carry a tray without disaster.","ety":"Origin uncertain, 1500s. It may build on hob, a pet form of Robert used for a clownish fellow (as in hobgoblin), with a nonsense ending.","lex":{"concepts":[{"label":"the awkwardness","w":0.55,"s":"clumsy, awkward, gawky, gangly, ungainly, oaf, lout, bumbling, inexperienced, green, gauche, lanky, klutz, galoot, bumpkin","p":"rude, silly, untrained, useless, hopeless"},{"label":"the youth","w":0.45,"s":"youth, young, boy, lad, teenager, teen, adolescent, youngster, kid, stripling, young man","p":"man, apprentice, junior, beginner, trainee, novice"}],"decoys":{"terms":"hobby, hobbit, hobble, limp, horse, ghost, goblin","msg":"Not a hobbit. An awkward youth."}},"show":"da","mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"english, uncertain, unknown, dialect","p":""},{"label":"the root idea","w":0.7,"s":"hob, robert, hobgoblin, clown, goblin, unknown, uncertain, clownish","p":"hobble, hobbit"}]},"origin":["english"]},"squiffy":{"w":"squiffy","pos":"adjective","pron":"<i>SKWIF<\/i>-ee","line":"…he was a bit <mark>squiffy<\/mark>, weren't you, Alfred?","to":"Lord Grantham","who":"Robert Crawley","mono":"RC","def":"Slightly drunk; tipsy.","explain":"The aristocratic way to say a footman has had a few, with the edge taken off by a jolly word.","ety":"British slang from the mid-1800s, origin uncertain. It may be linked to skew, since squiffy can also mean askew.","lex":{"concepts":[{"label":"the drunkenness","w":1,"s":"drunk, tipsy, merry, tiddly, sloshed, intoxicated, inebriated, buzzed, pissed, tight, legless, wasted, smashed, plastered, hammered, under the influence, had a few, sozzled, tanked","p":"dizzy, wobbly, woozy, unsteady, giggly, drink"}],"alt":{"terms":"askew, crooked, wonky, skew, lopsided","score":50,"msg":"That's a real second meaning (askew), but Robert meant tipsy."},"decoys":{"terms":"squid, squeaky, squishy, squint, sniff, sniffy","msg":"Not squishy or sniffy. It means tipsy."}},"show":"da","mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"british, english, slang, uncertain, unknown","p":""},{"label":"the root idea","w":0.7,"s":"skew, askew, crooked, unknown, uncertain","p":"squint, drunk"}]},"origin":["english"]},"prolix":{"w":"prolix","pos":"adjective","pron":"<i>PROH<\/i>-liks","line":"I will not be <mark>prolix<\/mark>.","to":"Mr Carson","who":"Mr Carson","mono":"CC","def":"Using too many words; tediously long-winded.","explain":"Carson promises brevity in the grandest possible word, which rather undercuts the promise.","ety":"Latin prolixus, 'extended, poured out', from pro-, 'forth', plus liquere, 'to be fluid'. A prolix speech pours on and on.","lex":{"concepts":[{"label":"the wordiness","w":1,"s":"wordy, long winded, longwinded, verbose, rambling, ramble, lengthy, windbag, waffle, waffling, babble, drawn out, tedious, talk too much, go on, garrulous, loquacious, too many words","p":"boring, long, talkative, chatty, speech"}],"decoys":{"terms":"prolific, productive, professional, pro, lots of work","msg":"Close in sound to prolific, but it means long-winded."}},"show":"da","mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"poured out, pour, pouring, flow, flowing, fluid, liquid, extended, stretched, forth, liquere","p":"long"}]},"origin":["latin","english"]},"cock-a-hoop":{"w":"cock-a-hoop","pos":"adjective","pron":"kok-uh-<i>HOOP<\/i>","line":"Nield is <mark>cock-a-hoop<\/mark>.","to":"Downton Abbey, season 3","who":"Overheard upstairs","mono":"DA","def":"Extremely pleased; jubilant.","explain":"Said of someone who has just won the day and can't hide it.","ety":"From the 1500s. One theory: 'set the cock on the hoop' meant turning on the tap (cock) of a barrel and letting the drink flow freely for a celebration.","lex":{"concepts":[{"label":"the delight","w":1,"s":"delighted, thrilled, jubilant, ecstatic, elated, overjoyed, triumphant, happy, pleased, chuffed, over the moon, stoked, rapt, excited, gleeful, euphoric, joyful","p":"proud, smug, cocky, boastful, glad, celebrating"}],"decoys":{"terms":"rooster, chicken, hen, hoop, basketball, circus, ring","msg":"No poultry involved. It means overjoyed."}},"show":"da","mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.2,"s":"english, british, old english","p":""},{"label":"the root idea","w":0.8,"s":"tap, barrel, cask, drink, drinks, drinking, spigot, beer, ale, keg","p":"rooster, party, celebrate, celebration"}]},"origin":["english"]},"croesus":{"w":"Croesus","pos":"proper noun","pron":"<i>KREE<\/i>-sus","line":"He's as rich as <mark>Croesus<\/mark> as it is.","to":"Lady Mary","who":"Lady Mary","mono":"MC","def":"A fabulously rich person, from the phrase 'as rich as Croesus'.","explain":"Mary's shorthand for someone so wealthy that more money hardly matters.","ety":"Croesus was king of Lydia in the 500s BC, legendary for his gold. Lydia is often credited with minting some of the first coins.","lex":{"concepts":[{"label":"the riches","w":1,"s":"rich, wealthy, loaded, millionaire, billionaire, tycoon, fortune, money, affluent, plutocrat, moneybags, minted, rich man, rich king, gold","p":"king, ruler, greedy, powerful, emperor"}],"decoys":{"terms":"crease, cross, crow, cress, christmas","msg":"Not a crease or a cross. A byword for wealth."}},"show":"da","mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"greek, lydia, lydian, turkey, anatolia, ancient, persia","p":""},{"label":"the root idea","w":0.7,"s":"king, ruler, gold, coins, coin, money, wealth, wealthy king","p":"rich, midas"}]},"origin":["greek","latin","english"]},"compunctious":{"w":"compunctious","pos":"adjective","pron":"kum-<i>PUNK<\/i>-shus","line":"I'm anaspeptic, frasmotic, even <mark>compunctious<\/mark> to have caused you such pericombobulation.","to":"Blackadder, to Dr Johnson","def":"Feeling regret or remorse; sorry.","explain":"The one real word in Blackadder's fake apology, buried among invented ones to taunt Dr Johnson, who has just written the dictionary.","ety":"From compunction: Latin com- (intensifying) plus pungere, 'to prick'. Your conscience pricks you. The same root gives puncture and pungent.","lex":{"concepts":[{"label":"the remorse","w":1,"s":"sorry, regretful, remorseful, apologetic, guilty, contrite, repentant, ashamed, penitent, conscience stricken, regret, apology, apologise, apologize","p":"sheepish, embarrassed, uneasy, bad"}],"decoys":{"terms":"punctual, puncture, punctuation, on time, punch","msg":"Nothing to do with punctuation. It means sorry."}},"mode":"means","show":"bk","who":"Edmund Blackadder","mono":"EB","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"prick, pricking, puncture, point, sting, conscience, pungent, pierce","p":"regret, guilt, punctual"}]},"origin":["latin","french","english"]},"contrafibularities":{"w":"contrafibularities","pos":"invented noun","pron":"kon-truh-fib-yoo-<i>LA<\/i>-rih-teez","line":"…I also offer the Doctor my most enthusiastic <mark>contrafibularities<\/mark>.","to":"Blackadder","def":"An invented word that sounds like 'congratulations', used to mock Dr Johnson's dictionary.","explain":"Blackadder reels off words Johnson left out of his dictionary. They aren't real, which is the point: he's making Johnson's life's work look incomplete.","ety":"Coined by the writers for the episode 'Ink and Incapability'. It mixes contra-, 'against', with fibula, a leg bone, which is why some fans read it as leg-pulling.","lex":{"concepts":[{"label":"the congratulations","w":0.7,"s":"congratulations, congrats, compliments, felicitations, best wishes, praise, well done, regards, kudos","p":"thanks, greetings, admiration, good wishes"},{"label":"the mockery","w":0.3,"s":"made up, fake, invented, nonsense, sarcasm, sarcastic, mock, mocking, gibberish, joke, not a real word, fake word, gobbledygook, teasing, leg pulling","p":"insult, silly"}]},"mode":"invented","show":"bk","who":"Edmund Blackadder","mono":"EB","etyLex":{"concepts":[{"label":"who made it up","w":0.5,"s":"invented, made up, writers, blackadder, fake, nonsense, coined, not real","p":""},{"label":"the model behind it","w":0.5,"s":"congratulations, contra, against, fibula, leg, bone, leg pulling, pulling your leg","p":"joke"}]},"origin":["english"]},"pericombobulation":{"w":"pericombobulation","pos":"invented noun","pron":"peh-ree-kom-bob-yoo-<i>LAY<\/i>-shun","line":"…to have caused you such <mark>pericombobulation<\/mark>.","to":"Blackadder, to Dr Johnson","def":"An invented word implying confusion and upset, modelled on 'discombobulation'.","explain":"The punchline of Blackadder's mock apology. Johnson has no entry for it, and that's exactly the insult.","ety":"Made up for the episode. It swaps the dis- of discombobulate (itself a jokey 1830s Americanism) for peri-, Greek for 'around'.","lex":{"concepts":[{"label":"the confusion","w":0.8,"s":"confusion, confused, bewildered, bewilderment, perplexed, flustered, muddled, discombobulated, discombobulation, baffled, upset, distress, bother, trouble, disarray, chaos, consternation","p":"annoyance, worry, inconvenience, stress, mess"},{"label":"knowing it's made up","w":0.2,"s":"made up, invented, nonsense, fake, joke, not a real word, fake word","p":"silly"}]},"mode":"invented","show":"bk","who":"Edmund Blackadder","mono":"EB","etyLex":{"concepts":[{"label":"who made it up","w":0.5,"s":"invented, made up, writers, blackadder, fake, nonsense, coined, not real","p":""},{"label":"the model behind it","w":0.5,"s":"discombobulate, discombobulation, discombobulated, peri, around, combobulate","p":"confusion"}]},"origin":["english"]},"effluent":{"w":"effluent","target":"affluent","pos":"malapropism","pron":"<i>EF<\/i>-loo-ent","line":"I want to be <mark>effluent<\/mark>, Mum. <mark>Effluent<\/mark>!","to":"Kim, to Kath","show":"kk","who":"Kim Craig","mono":"KC","def":"Kim meant <b>affluent<\/b>: wealthy and comfortable.","explain":"Effluent is liquid waste, the stuff that comes out of a sewage pipe. Kath agrees anyway: 'You are effluent, Kim!'","ety":"Both come from Latin fluere, 'to flow'. Affluent (ad-, 'towards') is wealth flowing in; effluent (ex-, 'out') is what flows away. Kim got the direction wrong.","lex":{"concepts":[{"label":"the word she meant","w":1,"s":"affluent, rich, wealthy","p":"well off, loaded, prosperous, posh, cashed up, minted, money, moneyed, comfortable"}],"alt":{"terms":"sewage, waste, poo, sewerage, drain, pollution, runoff, liquid waste","score":30,"msg":"That's what effluent really means. Kim was aiming for something posher."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"flow, flowing, fluid, fluere, towards, outward, flow out, flow in, stream","p":"water, liquid, river"}]},"origin":["latin","english"]},"monogamy":{"w":"monogamy","target":"mahogany","pos":"malapropism","pron":"muh-<i>NOG<\/i>-uh-mee","line":"Brett and me have decided. We want solid <mark>monogamy<\/mark>.","to":"Kim, planning the kitchen","show":"kk","who":"Kim Craig","mono":"KC","def":"Kim meant <b>mahogany<\/b>, the reddish-brown hardwood.","explain":"She's talking about the kitchen renovation. Kath's advice makes it better: 'all you need is a veneer of monogomy'.","ety":"Monogamy is Greek monos, 'one', plus gamos, 'marriage'. Mahogany appeared in the 1600s from an uncertain source, possibly a West African or Caribbean word.","lex":{"concepts":[{"label":"the word she meant","w":1,"s":"mahogany","p":"wood, timber, hardwood, cabinet, cabinets, benchtop, kitchen, cupboards, furniture, veneer, redwood"}],"alt":{"terms":"faithful, one partner, marriage, fidelity, married, loyal","score":20,"msg":"That's what monogamy means. Kim was talking about her kitchen."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"greek, west african, caribbean, african","p":""},{"label":"the root idea","w":0.7,"s":"one, single, marriage, married, mono, gamos, monos, wife, spouse","p":"wood, tree"}]},"origin":["greek","english"]},"pacifically":{"w":"pacifically","target":"specifically","pos":"malapropism","pron":"puh-<i>SIF<\/i>-ik-lee","line":"Where <mark>pacifically<\/mark> in the specific were you gonna go, Mrs D.?","to":"Sharon, to Kath","show":"kk","who":"Sharon Strzelecki","mono":"SS","def":"Sharon meant <b>specifically<\/b>.","explain":"She's swapped the pair entirely: pacifically where specifically should be, and 'the specific' for the Pacific.","ety":"Specific comes from Latin species, 'kind'. Pacific is Latin pacificus, 'peace-making', the name Magellan gave the ocean for its calm waters.","lex":{"concepts":[{"label":"the word she meant","w":1,"s":"specifically, specific, precisely, exactly, particularly, in particular","p":"exact, precise, which part"}],"alt":{"terms":"peacefully, calm, calmly, pacific ocean, ocean, peace","score":20,"msg":"It sounds peaceful, but Sharon meant 'specifically'."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":"spanish, portuguese"},{"label":"the root idea","w":0.7,"s":"peace, peaceful, kind, species, type, magellan, calm, peace making","p":"ocean, sea"}]},"origin":["latin","english"]},"nasturtiums":{"w":"nasturtiums","target":"aspersions","pos":"malapropism","pron":"nuh-<i>STUR<\/i>-shumz","line":"…casting <mark>nasturtiums<\/mark>…","to":"Kath & Kim","show":"kk","who":"Kath & Kim","mono":"K&K","def":"They meant <b>aspersions<\/b>: damaging remarks or insinuations, as in 'casting aspersions'.","explain":"Nasturtiums are bright orange garden flowers, so the insult becomes a gentle shower of petals.","ety":"Aspersion is Latin aspergere, 'to sprinkle', first for holy water and later for sprinkled slurs. Nasturtium is Latin nasus, 'nose', plus torquere, 'to twist': a nose-twister, for its peppery smell.","lex":{"concepts":[{"label":"the word they meant","w":1,"s":"aspersions, aspersion, insults, slander, slurs, smear, accusations, criticism, insinuations","p":"bad things, digs, nasty comments, gossip, rumours, blame, judging"}],"alt":{"terms":"flowers, flower, plant, plants, garden, petals","score":15,"msg":"Nasturtiums are flowers. The phrase is 'casting aspersions'."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.7,"s":"sprinkle, sprinkling, holy water, nose, twist, twister, peppery, nasus, aspergere","p":"flower, smell"}]},"origin":["latin","english"]},"gropeable":{"w":"gropeable","target":"ropeable","pos":"malapropism","pron":"<i>GROHP<\/i>-uh-bul","line":"I'm <mark>gropeable<\/mark>!","to":"Kath & Kim","show":"kk","who":"Kath & Kim","mono":"K&K","def":"They meant <b>ropeable<\/b>: Australian slang for furious.","explain":"One stray G turns 'too angry to handle' into something very different, which is the joke.","ety":"Ropeable is Australian and New Zealand slang from the 1870s: so wild you'd need to be roped like an untamed bullock.","lex":{"concepts":[{"label":"the word they meant","w":1,"s":"ropeable, angry, furious, livid, mad, cranky, fuming, filthy, enraged, seething, irate, spewing, wild","p":"annoyed, upset, cross, grumpy, stressed"}],"alt":{"terms":"grope, groped, touch, touchy, feel, handsy","score":10,"msg":"Ha. The word they wanted was 'ropeable', meaning furious."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"australian, australia, new zealand, aussie, slang","p":""},{"label":"the root idea","w":0.7,"s":"rope, roped, bullock, bullocks, cattle, tied, tie up, untamed, wild animal, livestock","p":"horse, cowboy"}]},"origin":["english"]},"noice":{"w":"noice","target":"nice","pos":"mispronunciation","pron":"<i>NOYS<\/i>","line":"It's <mark>noice<\/mark>, it's different, it's unusual.","to":"Kath & Kim","show":"kk","who":"Kath & Kim","mono":"K&K","def":"<b>Nice<\/b>, in a broad suburban Melbourne accent.","explain":"The show's most quoted running gag. The vowel does all the work, turning approval into aspiration.","ety":"Nice comes from Latin nescius, 'ignorant'. In the 1300s it meant foolish; it took centuries to soften into 'pleasant'.","lex":{"concepts":[{"label":"the word they meant","w":1,"s":"nice","p":"lovely, good, great, pleasant, beautiful, fancy, classy"}],"decoys":{"terms":"noise, loud, voice, sound","msg":"Not noise. Say it out loud with a Fountain Lakes accent."}},"mode":"meant","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"latin, roman, rome, ancient rome","p":"french, old french"},{"label":"the root idea","w":0.7,"s":"ignorant, foolish, nescius, stupid, silly, not knowing, fool","p":"accent"}]},"origin":["latin","french","english"]},"incommunicado":{"w":"incommunicado","pos":"adjective","pron":"in-kuh-myoo-nih-<i>KAH<\/i>-doh","line":"If Brett calls, I'm <mark>incommunicado<\/mark>.","to":"Kim. Kath replies, \"Where?\"","show":"kk","who":"Kim Craig","mono":"KC","def":"Not able or willing to be contacted.","explain":"Kim uses it correctly for once. Kath assumes it's a holiday destination.","ety":"Spanish incomunicado, 'cut off from communication', from Latin communicare, 'to share'.","lex":{"concepts":[{"label":"being unreachable","w":1,"s":"unreachable, uncontactable, not available, unavailable, out of contact, out of touch, not taking calls, off the grid, no contact, cant be contacted, offline, do not disturb, hiding, not answering, incommunicado","p":"busy, away, absent, ignoring, isolated, alone, silent"}],"decoys":{"terms":"place, town, mexico, spain, holiday, country, city, island, resort","msg":"Kath thought it was a place too. It means you can't be reached."}},"mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"spanish, spain, latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.6,"s":"communicate, communication, cut off, share, common, communicare, isolated","p":"phone, contact"}]},"origin":["latin","spanish","english"]},"hornbag":{"w":"hornbag","pos":"Australian slang","pron":"<i>HORN<\/i>-bag","line":"Kim's favourite word for herself, which Kath happily borrows.","quoted":false,"to":"Kim, often","show":"kk","who":"Kim Craig","mono":"KC","def":"An attractive, sexy person, usually a woman.","explain":"Kim says it with total sincerity, and Kath happily uses it too.","ety":"Late-20th-century Australian slang: horny plus bag, as in old bag. Crude and affectionate at once.","lex":{"concepts":[{"label":"the attractiveness","w":1,"s":"attractive, sexy, hot, hottie, babe, gorgeous, stunner, spunk, good looking, beautiful, sex appeal, sex symbol, desirable, bombshell","p":"pretty, flirt, cute, glamorous, vain"}],"decoys":{"terms":"horn, car horn, bag, handbag, annoying, loud, trumpet","msg":"No car horns involved. It's a cheeky compliment."}},"mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"australian, aussie, slang, australia","p":""},{"label":"the root idea","w":0.7,"s":"horny, horn, bag, old bag","p":"sexy"}]},"origin":["english"]},"de-facto":{"w":"de facto","pos":"Australian usage","pron":"dee <i>FAK<\/i>-toh","line":"Or are they <mark>de factos<\/mark>?","to":"Sharon, about Kath and Kel","show":"kk","who":"Sharon Strzelecki","mono":"SS","def":"In Australia, an unmarried partner you live with.","explain":"Kath and Kel aren't married yet, which raises the question. Kim's reply: 'De facto, night facto…'","ety":"Latin de facto, 'from the fact': true in practice rather than by law. Australians shortened 'de facto relationship' to plain de facto.","lex":{"concepts":[{"label":"the live-in partner","w":1,"s":"partner, live in, living together, unmarried, cohabit, cohabiting, common law, boyfriend, girlfriend, shack up, shacking up, couple, defacto","p":"relationship, together, lover, spouse, dating"}],"alt":{"terms":"in fact, fact, actually, really, in practice, true","score":40,"msg":"That's the Latin sense. In Australia it means a live-in partner."}},"mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.4,"s":"latin, roman, rome, ancient rome","p":""},{"label":"the root idea","w":0.6,"s":"fact, in fact, in practice, from the fact, reality, real","p":"law, legal"}]},"origin":["latin","english"]},"yummy-mummy":{"w":"yummy mummy","pos":"slang","pron":"<i>YUM<\/i>-ee <i>MUM<\/i>-ee","line":"How Kim describes herself after the baby arrives.","quoted":false,"to":"Kim","show":"kk","who":"Kim Craig","mono":"KC","def":"An attractive, stylish young mother.","explain":"Kim claims the title with a new baby and a strong belief in her own glamour.","ety":"British and Australian slang popular in the 2000s, rhyming yummy (delicious, attractive) with mummy.","lex":{"concepts":[{"label":"the glamour","w":0.6,"s":"attractive, hot, sexy, glamorous, gorgeous, stylish, good looking, fit, fashionable, beautiful, pretty, glam","p":"young, cool, trendy"},{"label":"the motherhood","w":0.4,"s":"mother, mum, mom, mummy, parent, mama, new mum","p":"woman, lady, wife"}],"decoys":{"terms":"food, tasty, delicious, egypt, tomb, mummies, pyramid","msg":"No sarcophagus. It's a glamorous mum."}},"mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.3,"s":"british, australian, english, slang","p":""},{"label":"the root idea","w":0.7,"s":"yummy, delicious, rhyme, rhyming, mummy, mum","p":"food"}]},"origin":["english"]},"moi":{"w":"moi","pos":"borrowed word","pron":"<i>MWAH<\/i> (or <i>MOY<\/i>)","line":"Look at <mark>moi<\/mark>.","to":"Kath's catchphrase","show":"kk","who":"Kath Day-Knight","mono":"KD","def":"Me. French, used to sound sophisticated.","explain":"Kath's showcase line, usually delivered while modelling an outfit.","ety":"French moi, 'me', from Latin me. English speakers adopted it for mock-sophistication in the 20th century.","lex":{"concepts":[{"label":"the meaning","w":1,"s":"me, myself, i","p":"you, her, look, self"}],"decoys":{"terms":"cat, cow, moo, moist","msg":"It's just French for 'me'."}},"mode":"means","etyLex":{"concepts":[{"label":"the language","w":0.8,"s":"french, france","p":""},{"label":"the root idea","w":0.2,"s":"me, latin, roman, rome, ancient rome, posh, sophisticated","p":"fancy"}]},"origin":["latin","french","english"]}},"editions":{"moira":{"name":"Moira","full":"Moira's Lexicon","order":["callipygian","spanandry","dangersome","grinagog","repast","pettifogging","chin-wag","churlish","prestidigitator","frippet","blouson","balatron","timorous","confabulate","bombilating","mercurial"]},"all":{"name":"All Shows","full":"Moira's Lexicon: All Shows","order":["grinagog","prolix","repast","callipygian","squiffy","confabulate","balatron","dangersome","chin-wag","compunctious","blouson","bombilating","frippet","contrafibularities","croesus","mercurial","churlish","cock-a-hoop","prestidigitator","pericombobulation","spanandry","timorous","pettifogging","hobbledehoy"]},"kathkim":{"name":"Kath & Kim","full":"Moira's Lexicon: Kath & Kim","order":["effluent","moi","monogamy","de-facto","yummy-mummy","incommunicado","nasturtiums","gropeable","noice","pacifically","hornbag"]},"grand":{"name":"Grand Lexicon","full":"Moira's Lexicon: Grand Lexicon","src":"grand.json","order":[]}}}</script>
+<script>
+/* ===== Settings ===== */
+const SITE_URL = "https://thomasschmierer.github.io/moira-lexicon/";            // e.g. "https://yourname.github.io/moira-lexicon/" so shared links point to your site
+const LAUNCH = Date.UTC(2026, 10, 6);   // day No. 1 for every edition
+
+const DB = JSON.parse(document.getElementById("db").textContent);
+let THES = null, thesLoading = null;
+function loadThes(){
+  if (THES || thesLoading) return thesLoading;
+  thesLoading = fetch("thesaurus.json").then(r => r.json()).then(d => { THES = d; }).catch(() => { THES = {syn:{}, forms:{}, failed:true}; });
+  return thesLoading;
+}
+const edLoads = {};
+function loadEdition(k){
+  const E = DB.editions[k];
+  if (!E.src || E.order.length) return Promise.resolve();
+  if (!edLoads[k]) edLoads[k] = fetch(E.src).then(r => r.json()).then(d => {
+    for (const [key, e] of Object.entries(d.words)){ compileEntry(e); DB.words[key] = e; }
+    E.order = d.order;
+  }).catch(() => { E.failed = true; });
+  return edLoads[k];
+}
+
+const VERDICTS = [
+ [90,"Transcendent, bébé. You were born for the marquee."],
+ [70,"A most commendable performance."],
+ [45,"In the vicinity. You can see the theatre from here."],
+ [20,"A valiant attempt, darling, from a considerable distance."],
+ [0,"No. But we shan't speak of it again."]];
+const verdictFor = s => VERDICTS.find(v => s >= v[0])[1];
+
+/* ===== Storage (best effort) ===== */
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+
+/* ===== Days ===== */
+const pad = n => String(n).padStart(2,"0");
+function today(){
+  const d = new Date();
+  const n = Math.round((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - LAUNCH) / 864e5);
+  return {n, no:n+1, key:`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`,
+          label:d.toLocaleDateString(undefined,{weekday:"short", day:"numeric", month:"short"})};
+}
+const mod = (a,b) => ((a % b) + b) % b;
+function dailyKey(ed){ const o = DB.editions[ed].order; return o[mod(today().n, o.length)]; }
+function results(ed){ return store.get("ml-"+ed, {}); }
+function saveResult(ed, r){ const all = results(ed); all[today().key] = r; store.set("ml-"+ed, all); }
+function streak(ed){
+  const all = results(ed); let s = 0; const d = new Date();
+  if (!all[today().key]) d.setDate(d.getDate()-1);
+  for (;;){ const k = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; if (!all[k]) break; s++; d.setDate(d.getDate()-1); }
+  return s;
+}
+
+/* ===== Scoring: prebuilt lexicon ===== */
+const STOP = new Set("a an the of to and or is it its be being been that this someone something who which person thing things when you your like kind sort type really very bit somewhat she he they them her his was were meant mean means trying say saying word".split(" "));
+function stem(w){
+  w = w.toLowerCase(); if (w.length <= 3) return w;
+  const rules = [["iness","y"],["ness",""],["ingly",""],["edly",""],["ings",""],["ing",""],["ies","y"],["ied","y"],["ers",""],["er",""],["ed",""],["ly",""],["es",""],["s",""]];
+  for (const [suf,rep] of rules){ if (w.endsWith(suf) && w.length - suf.length >= 3){ w = w.slice(0,-suf.length) + rep; break; } }
+  if (w.length >= 5 && w.endsWith("e")) w = w.slice(0,-1);
+  return w.length >= 5 ? w.replace(/(.)\1$/, "$1") : w;
+}
+const norm = t => " " + t.toLowerCase().replace(/[’']/g,"").replace(/[^a-z\s-]/g," ").replace(/-/g," ").replace(/\s+/g," ").trim() + " ";
+const toks = t => norm(t).trim().split(" ").filter(x => x && !STOP.has(x)).map(stem);
+function lev(a,b){
+  if (Math.abs(a.length-b.length) > 2) return 9;
+  let prev = Array.from({length:b.length+1},(_,i)=>i);
+  for (let i=1;i<=a.length;i++){ const cur=[i];
+    for (let j=1;j<=b.length;j++) cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+    prev=cur; }
+  return prev[b.length];
+}
+const compile = str => (str||"").split(",").map(s=>s.trim()).filter(Boolean).map(t => t.includes(" ") ? {phrase:norm(t)} : {stem:stem(t)});
+function compileEntry(e){ for (const L of [e.lex, e.etyLex]){
+  L.concepts.forEach(c => { c.S = compile(c.s); c.P = compile(c.p); });
+  if (L.decoys) L.decoys.T = compile(L.decoys.terms);
+  if (L.alt) L.alt.T = compile(L.alt.terms);
+  if (L.syn) L.SYN = compile(L.syn);
+  if (L.hyper) L.HYPER = compile(L.hyper);
+  if (L.alt2) L.alt2.concepts.forEach(c => { c.S = compile(c.s); c.P = compile(c.p); }); } }
+for (const k in DB.words) compileEntry(DB.words[k]);
+function hits(terms, gN, gS){
+  return terms.some(t => t.phrase ? gN.includes(t.phrase)
+    : gS.some(g => g === t.stem || (t.stem.length >= 5 && g.length >= 5 && lev(g, t.stem) <= (t.stem.length >= 8 ? 2 : 1))));
+}
+const listJoin = a => a.length < 2 ? a[0] : a.slice(0,-1).join(", ") + " and " + a[a.length-1];
+function scoreGuess(entry, guess){
+  const L = entry.lex, gN = norm(guess), gS = toks(guess);
+  if (!gS.length) return {score:0, feedback:"Nothing to judge, darling."};
+  if (entry.mode === "meant"){
+    const c = L.concepts[0];
+    if (hits(compile(entry.target), gN, gS)) return {score:100, feedback:`Spot on: the word was ${entry.target}.`};
+    if (L.alt && hits(L.alt.T, gN, gS)) return {score:L.alt.score, feedback:L.alt.msg};
+    if (hits(c.S, gN, gS)) return {score:85, feedback:`Right idea. The exact word was ${entry.target}.`};
+    if (hits(c.P, gN, gS)) return {score:55, feedback:`You're in the neighbourhood. The word was ${entry.target}.`};
+    if (L.decoys && hits(L.decoys.T, gN, gS)) return {score:5, feedback:L.decoys.msg};
+    return {score:3, feedback:`Not this time. The word was ${entry.target}.`};
+  }
+  if (L.SYN && hits(L.SYN, gN, gS)) return {score:100, feedback:"Spot on: that's a true synonym."};
+  let best = scoreConcepts(L, gN, gS);
+  if (L.alt2){ const r2 = scoreConcepts(L.alt2, gN, gS); if (r2.score > best.score) best = {...r2, feedback: r2.feedback + " (That's its other meaning.)"}; }
+  if (L.HYPER && best.score < 70 && hits(L.HYPER, gN, gS)) best = {score:70, feedback:`Close: it's a kind of ${L.hyperLabel}.`};
+  if (L.syn && best.score < 70 && gS.some(g => g.length >= 6 && L.syn.includes(g))) best = {score:70, feedback:`Very close. Its synonyms include ${L.syn.split(", ").slice(0,3).join(", ")}.`};
+  return best;
+}
+function scoreEty(entry, guess){
+  const gN = norm(guess), gS = toks(guess);
+  if (!gS.length) return {score:0, feedback:"Nothing to judge, darling."};
+  return scoreConcepts(entry.etyLex, gN, gS);
+}
+function expandGuess(gS, gN){
+  if (!THES || THES.failed) return [];
+  const out = [];
+  for (const raw of gN.trim().split(" ")){
+    if (!raw || STOP.has(raw)) continue;
+    const k = THES.syn[raw] ? raw : THES.forms[raw];
+    if (k) THES.syn[k].split("|").forEach(x => { if (!x.includes(" ")) out.push(stem(x)); });
+  }
+  return out;
+}
+function scoreConcepts(L, gN, gS){
+  const got = [], missed = []; let raw = 0;
+  const gX = expandGuess(gS, gN);
+  L.concepts.forEach(c => {
+    const m = hits(c.S, gN, gS) ? 1 : (hits(c.P, gN, gS) || (gX.length && hits(c.S, gN, gX))) ? .6 : 0;
+    raw += c.w * m;
+    if (m) got.push(m === 1 ? c.label : c.label + " (roughly)"); else missed.push(c.label);
+  });
+  raw = Math.min(1, raw / (L.cap || 1));
+  const score = Math.round(raw * 100);
+  if (L.alt && hits(L.alt.T, gN, gS) && score < L.alt.score) return {score:L.alt.score, feedback:L.alt.msg};
+  if (L.decoys && raw < .5 && hits(L.decoys.T, gN, gS)) return {score:Math.min(score,10), feedback:L.decoys.msg};
+  const feedback = !got.length ? `Nothing here pointed to ${L.concepts[0].label}.`
+    : (!missed.length || score >= 100) ? `You got ${listJoin(got)}.` : `You got ${listJoin(got)}, but missed ${listJoin(missed)}.`;
+  return {score: got.length ? score : 2, feedback};
+}
+
+/* ===== Thesaurus: unusual synonyms ===== */
+function fancy(word){
+  if (!THES) return null;
+  const w = word.toLowerCase().replace(/[^a-z-]/g,""); if (w.length < 3) return null;
+  let k = THES.syn[w] ? w : THES.forms[w];
+  if (!k) for (const [suf,rep] of [["ies","y"],["es",""],["s",""],["ied","y"],["ed",""],["ed","e"],["ing",""],["ing","e"],["ly",""],["er",""]]){
+    if (w.endsWith(suf)){ const b = w.slice(0,-suf.length)+rep; if (THES.syn[b]){ k = b; break; } } }
+  return k ? {head:k, list:THES.syn[k].split("|")} : null;
+}
+function synonymsFor(text){
+  const seen = new Set(), out = [];
+  for (const raw of norm(text).trim().split(" ")){
+    if (!raw || STOP.has(raw) || seen.has(raw)) continue; seen.add(raw);
+    const f = fancy(raw); if (f && !out.some(o => o.head === f.head)) out.push(f);
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
+/* ===== Origin emblems: original line drawings, one per source language ===== */
+const EMBLEMS = {
+ latin:'<path d="M24 42C12 38 8 26 12 12"/><path d="M24 42C36 38 40 26 36 12"/><ellipse cx="10" cy="22" rx="2.4" ry="5" transform="rotate(-20 10 22)"/><ellipse cx="13" cy="31" rx="2.4" ry="5" transform="rotate(-45 13 31)"/><ellipse cx="11" cy="14" rx="2.2" ry="4.4" transform="rotate(-5 11 14)"/><ellipse cx="38" cy="22" rx="2.4" ry="5" transform="rotate(20 38 22)"/><ellipse cx="35" cy="31" rx="2.4" ry="5" transform="rotate(45 35 31)"/><ellipse cx="37" cy="14" rx="2.2" ry="4.4" transform="rotate(5 37 14)"/>',
+ greek:'<path d="M11 10h26M13 14h22M16 14v22M21 14v22M27 14v22M32 14v22M13 36h22M10 40h28"/><path d="M11 10c-2 0-3-2-1-3M37 10c2 0 3-2 1-3"/>',
+ french:'<path d="M24 8c-5 6-5 14 0 20c5-6 5-14 0-20z"/><path d="M22 28c-6 2-12-2-12-8c4 0 8 2 10 6"/><path d="M26 28c6 2 12-2 12-8c-4 0-8 2-10 6"/><path d="M16 30h16M24 30v10M20 40h8"/>',
+ oldenglish:'<path d="M16 42V14c0-5 4-8 8-8s8 3 8 8v28z"/><path d="M8 42h32"/><path d="M21 14v20M21 18l6-3M21 24l6-3"/>',
+ english:'<path d="M38 8C24 10 14 22 12 38"/><path d="M38 8c-4 10-12 18-22 22"/><path d="M12 38l-3 4"/><path d="M8 42h14"/>',
+ norse:'<path d="M6 30h36l-5 7H11z"/><path d="M6 30c-2-4 0-8 3-9M42 30c2-4 0-8-3-9"/><path d="M24 30V8"/><path d="M16 12h16v14H16z"/>',
+ german:'<path d="M24 42V8"/><path d="M24 8c-6 3-4 7-8 8c3 2 1 5-4 7c4 2 4 5 0 8c5 0 8 2 12 7c4-5 7-7 12-7c-4-3-4-6 0-8c-5-2-7-5-4-7c-4-1-2-5-8-8z"/>',
+ dutch:'<path d="M20 42l2-18h4l2 18z"/><path d="M24 22L12 10M24 22l12-12M24 22L12 34M24 22l12 12"/><circle cx="24" cy="22" r="2"/>',
+ italian:'<g transform="rotate(6 24 40)"><path d="M18 40V10h12v30zM18 16h12M18 22h12M18 28h12M18 34h12"/></g><path d="M10 42h28"/>',
+ spanish:'<path d="M24 38L8 22a22 22 0 0 1 32 0z"/><path d="M24 38L14 15M24 38V12M24 38l10-23"/>',
+ arabic:'<circle cx="24" cy="27" r="13"/><circle cx="24" cy="27" r="7"/><path d="M11 27h26M24 14v-4"/><circle cx="24" cy="8" r="2"/>',
+ persian:'<rect x="10" y="10" width="28" height="26" rx="1"/><rect x="14" y="14" width="20" height="18"/><path d="M24 16l7 7-7 7-7-7z"/><path d="M12 38v4M18 38v4M24 38v4M30 38v4M36 38v4"/>',
+ indic:'<path d="M24 36c-4-6-4-14 0-22c4 8 4 16 0 22z"/><path d="M22 36c-6-2-10-8-10-15c6 2 9 7 10 15M26 36c6-2 10-8 10-15c-6 2-9 7-10 15"/><path d="M10 38h28"/>',
+ celtic:'<circle cx="24" cy="18" r="8"/><circle cx="18" cy="28" r="8"/><circle cx="30" cy="28" r="8"/>',
+ hebrew:'<path d="M14 10v28M34 10v28"/><path d="M14 14h20v20H14"/><path d="M18 19h12M18 24h12M18 29h8"/><circle cx="14" cy="8" r="2"/><circle cx="34" cy="8" r="2"/><circle cx="14" cy="40" r="2"/><circle cx="34" cy="40" r="2"/>',
+ other:'<circle cx="24" cy="24" r="16"/><ellipse cx="24" cy="24" rx="7" ry="16"/><path d="M8 24h32M11 16h26M11 32h26"/>'
+};
+const LANGINFO = {
+ latin:["Latin","Ancient Rome"], greek:["Greek","Ancient Greece"], french:["French","France"],
+ oldenglish:["Old English","Anglo-Saxon England"], english:["English","The English-speaking world"],
+ norse:["Old Norse","Viking Scandinavia"], german:["German","The German lands"], dutch:["Dutch","The Low Countries"],
+ italian:["Italian","Italy"], spanish:["Spanish & Portuguese","Iberia"], arabic:["Arabic","The Arab world"],
+ persian:["Persian & Turkish","Persia and Anatolia"], indic:["Sanskrit & Hindi","South Asia"], celtic:["Celtic","Ireland, Scotland & Wales"],
+ hebrew:["Hebrew & Yiddish","The Hebrew tradition"], other:["Further afield","Beyond Europe"]
+};
+const emblem = (k, size) => `<svg class="emb" width="${size}" height="${size}" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${EMBLEMS[k] || EMBLEMS.other}</svg>`;
+function originBlock(e){
+  const chain = (e.origin && e.origin.length) ? e.origin : ["english"];
+  const first = chain[0], info = LANGINFO[first] || LANGINFO.other;
+  return `<div class="origin"><div class="origin-main" style="--lang:var(--l-${first in EMBLEMS ? first : "other"})">${emblem(first, 72)}
+      <div><div class="eyebrow">Where it comes from</div><div class="origin-name">${esc(info[0])}</div><div class="muted">${esc(info[1])}</div></div></div>
+    ${chain.length > 1 ? `<ol class="journey" aria-label="The word's journey">${chain.map((k,i) => `<li style="--lang:var(--l-${k in EMBLEMS ? k : "other"})">${emblem(k, 30)}<span>${esc((LANGINFO[k]||LANGINFO.other)[0])}</span></li>`).join('<li class="arrow" aria-hidden="true">→</li>')}</ol>` : ""}
+  </div>`;
+}
+
+/* ===== App state ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let ed = "moira", mode = "daily", practiceKey = null, practiceRes = null, phase = "guess", hintShown = false, friend = null;
+
+function parseHash(){
+  const m = /^#(moira|all|kathkim|grand)(?:-beat-(\d{1,3}))?$/.exec(location.hash);
+  if (m){ ed = m[1]; if (m[2]) friend = {ed:m[1], score:Math.min(200, +m[2])}; }
+  else { const saved = store.get("ml-edition", null); if (saved && DB.editions[saved]) ed = saved; }
+}
+function curKey(){ return mode === "daily" ? dailyKey(ed) : practiceKey; }
+function curRes(){ return mode === "daily" ? results(ed)[today().key] : practiceRes; }
+
+function siteUrl(){
+  if (SITE_URL) return SITE_URL.replace(/#.*$/,"");
+  if (/^https?:$/.test(location.protocol) && !/claude|anthropic|localhost/.test(location.hostname)) return location.origin + location.pathname;
+  return "";
+}
+const total = r => r.score + (r.escore || 0);
+const bar = n => { n = Math.round(n/10); return "🟪".repeat(n) + "⬜".repeat(10-n); };
+function shareText(r){
+  const e = DB.words[dailyKey(ed)], t = today(), url = siteUrl(), tot = total(r);
+  return `${DB.editions[ed].full} No. ${t.no}\n${e.w}: ${tot}/200${r.hint ? " (with a hint)" : ""}\nMeaning ${bar(r.score)} ${r.score}\nOrigin  ${bar(r.escore)} ${r.escore}\n“${verdictFor(tot/2)}”` + (url ? `\nBeat me: ${url}#${ed}-beat-${tot}` : "");
+}
+
+function renderHeader(){
+  const t = today(), played = Object.keys(results(ed)).length;
+  $("#stats").innerHTML = `No. <strong>${t.no}</strong> · ${t.label} · Streak <strong>${streak(ed)}</strong> · Played ${played}`;
+  $("#tabs").innerHTML = Object.entries(DB.editions).map(([k,v]) =>
+    `<button class="tab" role="tab" aria-selected="${k===ed}" data-ed="${k}">${esc(v.name)}</button>`).join("");
+  $("#tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => {
+    ed = b.dataset.ed; store.set("ml-edition", ed); mode = "daily"; hintShown = false;
+    phase = results(ed)[today().key] ? "reveal" : "guess";
+    try { history.replaceState(null, "", "#" + ed); } catch(e){}
+    render();
+  });
+}
+
+function dial(score){
+  const r = 40, c = 2*Math.PI*r, col = score>=70?"var(--good)":score>=35?"var(--mid)":"var(--low)";
+  return `<div class="dial" role="img" aria-label="Score ${score} out of 100"><svg width="92" height="92" viewBox="0 0 92 92">
+   <circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--rule)" stroke-width="6"/>
+   <circle class="arc" cx="46" cy="46" r="${r}" fill="none" stroke="${col}" stroke-width="6" stroke-linecap="round"
+     stroke-dasharray="${c*score/100} ${c}" transform="rotate(-90 46 46)"/></svg><div class="n">${score}</div></div>`;
+}
+function card(e){
+  const s = DB.shows[e.show];
+  return `<div class="card" style="--show:var(--${e.show})"><div class="mono" aria-hidden="true">${esc(e.mono)}</div>
+    <div><div class="who">${esc(e.who)}</div><div class="show">${esc(s.name)}${e.rarity ? ` · rarity <span class="rar">${e.rarity}/10</span>` : s.years ? " · " + esc(s.years) : ""}</div></div></div>`;
+}
+function quote(e){
+  return e.quoted === false
+    ? `<p class="quote ctx">${e.line}<span class="src">${esc(e.to)}</span></p>`
+    : `<blockquote class="quote">“${e.line}”<span class="src">${esc(e.to)}</span></blockquote>`;
+}
+const prompts = {means:"What do you think it means?", meant:"What word were they trying to say?", invented:"It's made up. What is it pretending to mean?"};
+
+function countdown(){
+  const d = new Date(), next = new Date(d.getFullYear(), d.getMonth(), d.getDate()+1);
+  const ms = next - d, h = Math.floor(ms/36e5), m = Math.floor(ms%36e5/6e4);
+  return `${h}h ${pad(m)}m`;
+}
+
+function phaseFor(res){ return !res ? "guess" : res.stage === "ety" ? "ety" : "done"; }
+
+function scoreRow(label, score, verdict, feedback, guess, hint){
+  return `<div class="result">${dial(score)}<div><div class="eyebrow">${label}${hint ? ` <span class="badge">Hint used</span>` : ""}</div>
+    <div class="verdict">${esc(verdict)}</div><div class="feedback">${esc(feedback)}</div></div></div>
+    ${guess ? `<p class="yours">You said: <em>${esc(guess)}</em></p>` : ""}`;
+}
+
+function render(){
+  renderHeader();
+  const E = DB.editions[ed];
+  if (E.src && !E.order.length){
+    $("#stage").innerHTML = E.failed
+      ? `<p class="loading">Couldn't load the ${esc(E.name)}. Check your connection and reload the page.</p>`
+      : `<p class="loading">Opening the ${esc(E.name)}…</p>`;
+    if (!E.failed) loadEdition(ed).then(render);
+    return;
+  }
+  const key = curKey(), e = DB.words[key], res = curRes(), st = $("#stage");
+  phase = phaseFor(res);
+  const isMeant = e.mode === "meant", daily = mode === "daily";
+  let html = "";
+  if (friend && friend.ed === ed && daily && phase !== "done")
+    html += `<div class="banner">A friend scored <b>${friend.score}/200</b> on today's word. Your turn.</div>`;
+  html += `<div class="eyebrow">${daily ? `${esc(DB.editions[ed].name)} · word of the day` : "Practice round · not scored"} · ${esc(e.pos)}</div>`;
+  html += card(e);
+  html += `<div><h1 class="word">${esc(e.w)}</h1>${e.pron ? `<div class="pron">${e.pron}</div>` : ""}</div>`;
+
+  if (phase === "guess"){
+    html += `<div class="eyebrow">Round 1 of 2 · meaning</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+      <label for="guess">${prompts[e.mode]}</label>
+      <textarea id="guess" placeholder="${isMeant ? "The word they meant" : "Your best guess, in your own words"}"></textarea></div>
+      ${hintShown ? quote(e) : ""}
+      <div class="row"><button class="primary" id="go">Reveal the meaning</button>
+        ${hintShown || !e.line ? "" : `<button id="hint">Hint</button>`}
+        <button class="link" id="skip">No idea, just tell me</button></div>`;
+  } else {
+    const r = res;
+    html += scoreRow("Round 1 · meaning", r.score, verdictFor(r.score), r.feedback, r.guess, r.hint);
+    html += `<section class="section">
+      <div><h3>${isMeant ? "What they meant" : "Definition"}</h3><p class="def">${e.def}</p></div>
+      ${e.line ? `<div><h3>${e.show === "gl" ? "In use" : "The line"}</h3>${quote(e)}</div>` : ""}
+      <div><h3>What's going on</h3><p>${e.explain}</p></div></section>`;
+
+    if (phase === "ety"){
+      const subject = isMeant ? `the word they meant, <b>${esc(e.target)}</b>` : `<b>${esc(e.w)}</b>`;
+      html += `<section class="section"><div class="eyebrow">Round 2 of 2 · origin</div>
+        <label for="eguess">Where do you think ${subject} comes from?</label>
+        <p class="muted">In your own words: the language it came from, and what its parts originally meant.</p>
+        <textarea id="eguess" placeholder="e.g. from Latin, something to do with…"></textarea>
+        <div class="row"><button class="primary" id="ego">Reveal the origin</button>
+          <button class="link" id="eskip">No idea, just tell me</button></div></section>`;
+    } else {
+      const tot = total(r);
+      html += `<section class="section">` + scoreRow("Round 2 · origin", r.escore, verdictFor(r.escore), r.efeedback, r.eguess) +
+        originBlock(e) + `<div><h3>Etymology</h3><p>${e.ety}</p></div></section>`;
+      html += `<section class="section"><div class="result"><div class="dial"><div class="n" style="position:static;height:92px">${tot}</div></div>
+        <div><div class="eyebrow">Today's total · out of 200</div><div class="verdict">${esc(verdictFor(tot/2))}</div></div></div>`;
+      if (friend && friend.ed === ed && daily){
+        const d = tot - friend.score;
+        html += `<div class="banner">${d > 0 ? `You beat your friend by <b>${d}</b>.` : d < 0 ? `Your friend wins by <b>${-d}</b>. Tomorrow, perhaps.` : "A dead heat. How theatrical."}</div>`;
+      }
+      if (daily){
+        html += `<h3 id="sh">Send it to a friend</h3>
+          <pre class="share" id="sharetext">${esc(shareText(r))}</pre>
+          <div class="row"><button class="primary" id="share">Share</button><button id="copy">Copy</button></div>
+          <div class="toast" id="toast" role="status"></div>`;
+      }
+      html += `</section>`;
+      if (!THES) loadThes().then(() => { if (phase === "done") render(); });
+      const syn = r.guess ? synonymsFor(r.guess + " " + (r.eguess || "")) : [];
+      html += `<section class="section"><h3>Say it like Moira</h3>
+        ${!THES ? `<p class="muted">Opening the dictionary…</p>` : THES.failed ? `<p class="muted">The dictionary couldn't load. Reload to try again.</p>` : syn.length ? `<p class="muted">Your guesses, upgraded with rarer synonyms:</p>` + syn.map(s =>
+          `<div class="syn"><div class="head">for <b>${esc(s.head)}</b></div><div class="chips">${s.list.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`).join("")
+          : `<p class="muted">${r.guess ? "No rarer synonyms for your words this time." : "Type any everyday word to find its grander alternatives."}</p>`}
+        <label for="lookup">Find a grander word for…</label>
+        <input type="text" id="lookup" placeholder="e.g. silly, rich, angry, chat" autocomplete="off">
+        <div id="lookupOut" class="syn"></div></section>`;
+      html += `<div class="row">${daily
+          ? `<span class="muted">Next word in <b id="cd">${countdown()}</b></span><button id="practice">Practise another word</button>`
+          : `<button class="primary" id="practice">Another practice word</button><button id="back">Back to today's word</button>`}</div>`;
+    }
+  }
+  st.innerHTML = html;
+  wire(e);
+}
+
+function draftBox(id, suffix){
+  const ta = $(id); if (!ta) return;
+  const dk = "draft-" + ed + "-" + curKey() + suffix;
+  try { ta.value = sessionStorage.getItem(dk) || ""; } catch(err){}
+  ta.oninput = () => { try { sessionStorage.setItem(dk, ta.value); } catch(err){} };
+}
+
+function wire(e){
+  if (phase === "guess"){
+    draftBox("#guess", "");
+    $("#guess").onkeydown = ev => { if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)) submit(); };
+    $("#go").onclick = submit;
+    if ($("#hint")) $("#hint").onclick = () => { const v = $("#guess").value; hintShown = true; render(); $("#guess").value = v; };
+    $("#skip").onclick = () => save({guess:"", score:0, feedback:"Skipped. Now you'll never forget it.", hint:false, stage:"ety"});
+    return;
+  }
+  if (phase === "ety"){
+    draftBox("#eguess", "-ety");
+    $("#eguess").onkeydown = ev => { if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)) submitEty(); };
+    $("#ego").onclick = submitEty;
+    $("#eskip").onclick = () => save({...curRes(), eguess:"", escore:0, efeedback:"Skipped. The story's below.", stage:"done"});
+    return;
+  }
+  if ($("#share")) $("#share").onclick = async () => {
+    const text = $("#sharetext").textContent;
+    if (navigator.share){ try { await navigator.share({text}); return; } catch(err){ if (err && err.name === "AbortError") return; } }
+    copy(text);
+  };
+  if ($("#copy")) $("#copy").onclick = () => copy($("#sharetext").textContent);
+  const lk = $("#lookup");
+  lk.oninput = () => {
+    const f = fancy(lk.value.trim());
+    $("#lookupOut").innerHTML = !lk.value.trim() ? "" : f
+      ? `<div class="head">for <b>${esc(f.head)}</b></div><div class="chips">${f.list.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>`
+      : `<p class="muted">No grander synonym on file for that one. Try a simpler everyday word.</p>`;
+  };
+  $("#practice").onclick = () => {
+    const pool = DB.editions[ed].order.filter(k => k !== dailyKey(ed) && k !== practiceKey);
+    practiceKey = pool[Math.floor(Math.random()*pool.length)]; practiceRes = null;
+    mode = "practice"; hintShown = false; render(); window.scrollTo({top:0});
+  };
+  if ($("#back")) $("#back").onclick = () => { mode = "daily"; hintShown = false; render(); window.scrollTo({top:0}); };
+}
+
+function copy(text){
+  const t = $("#toast");
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#sharetext"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r); t.textContent = "Selected. Copy it and send it to a friend."; };
+  try { navigator.clipboard.writeText(text).then(() => t.textContent = "Copied. Paste it to a friend.", fallback); }
+  catch(err){ fallback(); }
+}
+
+function submit(){
+  const guess = $("#guess").value.trim();
+  if (!guess){ $("#guess").focus(); $("#guess").placeholder = "Give it a go first, or tap 'No idea'"; return; }
+  const r = scoreGuess(DB.words[curKey()], guess);
+  save({guess, ...r, hint:hintShown, stage:"ety"});
+}
+function submitEty(){
+  const eguess = $("#eguess").value.trim();
+  if (!eguess){ $("#eguess").focus(); $("#eguess").placeholder = "Have a go, or tap 'No idea'"; return; }
+  const r = scoreEty(DB.words[curKey()], eguess);
+  save({...curRes(), eguess, escore:r.score, efeedback:r.feedback, stage:"done"});
+}
+function save(r){
+  if (mode === "daily") saveResult(ed, r); else practiceRes = r;
+  render();
+}
+
+setInterval(() => { const c = $("#cd"); if (c) c.textContent = countdown(); }, 30000);
+window.addEventListener("hashchange", () => { friend = null; parseHash(); mode = "daily"; hintShown = false; render(); });
+parseHash();
+phase = "guess";
+render();
+loadThes();
+</script>
+
+</body>
+</html>
