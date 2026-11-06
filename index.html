@@ -8,7 +8,7 @@
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,0..100;1,9..144,400..700,0..100&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one theatrical card per day. Edition tabs on top, a character card sets the scene,
    the word is the marquee, the reveal unfolds as a dictionary entry. Dark-first. */
@@ -18,7 +18,7 @@
   --good:#7fcf9a; --mid:#e6c065; --low:#e57a7a;
   --sc:#c9a9d6; --da:#8fc6a0; --bk:#e08a6f; --kk:#f28cc0; --gl:#d9b46a; --fr:#e6b989; --bk1:#e08a6f; --bk2:#e08a6f; --bk4:#e08a6f; --toi:#8fb6e8; --ft:#a8d18f;
   --l-latin:#e0a36b; --l-greek:#8fb6e8; --l-french:#a8a2f0; --l-oldenglish:#b9c47a; --l-english:#d9b46a; --l-norse:#7fc9d1; --l-german:#9ccf8a; --l-dutch:#f0a35e; --l-italian:#e88f8f; --l-spanish:#f2c46b; --l-arabic:#6fd1b4; --l-persian:#d38fd1; --l-indic:#f29bb5; --l-celtic:#86d49a; --l-hebrew:#9fb4f0; --l-other:#c0b4ba;
-  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:dark;
@@ -36,6 +36,7 @@
   --sc:#6e3f86; --da:#2f6b45; --bk:#9c3a22; --kk:#b8306f; --gl:#9a6f1f; --fr:#8a5a1c; --bk1:#9c3a22; --bk2:#9c3a22; --bk4:#9c3a22; --toi:#2c5d9e; --ft:#3b7a2a;
   --l-latin:#a85a1c; --l-greek:#2c5d9e; --l-french:#5a4fc0; --l-oldenglish:#5f6b1f; --l-english:#8a6410; --l-norse:#1f7480; --l-german:#3b7a2a; --l-dutch:#b0581a; --l-italian:#a83a3a; --l-spanish:#93680f; --l-arabic:#1d7a62; --l-persian:#8a3a88; --l-indic:#b03a62; --l-celtic:#2a7a40; --l-hebrew:#3a52a8; --l-other:#6e5f66; color-scheme:light}
 *{box-sizing:border-box}
+html{font-variation-settings:"opsz" 24,"SOFT" 50}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 48px}
 [hidden]{display:none!important}
@@ -100,7 +101,22 @@ pre.share{margin:0;white-space:pre-wrap;font-family:var(--mono);font-size:.85rem
 .giflinks a{color:var(--gilt);text-underline-offset:3px}
 .modes .tab{border-style:dashed}
 .modes .tab[aria-pressed="true"]{background:var(--gilt);color:var(--gilt-ink);border:1px solid var(--gilt)}
-.curtain{width:100%;max-width:360px;height:auto;display:block;margin:0 auto}
+.hm-top{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:16px;align-items:center}
+@media (max-width:460px){.hm-top{grid-template-columns:1fr}}
+.gallows{width:100%;max-width:190px;height:auto;display:block;margin:0 auto;color:var(--ink)}
+.gallows.lost{color:var(--low)}
+.gallows .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:hmdraw .45s ease-out forwards}
+@keyframes hmdraw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.gallows .draw{animation:none;stroke-dashoffset:0}}
+.hm-side{display:flex;flex-direction:column;gap:12px;align-items:center}
+.hm-count{font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.06em}
+.hm-count b{color:var(--ink);font-size:1rem}
+.hint-card{border:1px solid var(--rule);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.ws-h{margin:0 0 8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gilt);font-weight:500}
+.ws-w{font-family:var(--mono);font-style:normal;text-transform:uppercase;font-size:.85rem}
+.ws-w.done{text-decoration:line-through;opacity:.5}
+.ws-c.bonus{background:var(--rouge);color:var(--bg);border-color:var(--rouge)}
+.ws-c.extra{border-color:var(--good)}
 .hm-word{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .hm-l{width:1.5em;min-height:1.5em;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--display);font-size:1.6rem;font-weight:700}
 .hm-l.miss{color:var(--low)} .hm-gap{width:.8em;font-size:1.6rem;text-align:center}
@@ -627,53 +643,57 @@ function renderGame(){
   if (gameMode === "cross") return renderCross(st);
 }
 
-/* ---------- Hangman: the curtain comes down one panel per miss ---------- */
-const HM_MAX = 7;
+/* ---------- Hangman: the scaffold goes up, then the stick figure, one stroke per miss ---------- */
+const HM_PARTS = [
+  '<path d="M20 205H125"/>', '<path d="M48 205V20"/>', '<path d="M48 20H142M48 52L80 20"/>', '<path d="M142 20V44"/>',
+  '<circle cx="142" cy="61" r="17"/>', '<path d="M142 78V135"/>', '<path d="M142 96L118 118"/>', '<path d="M142 96L166 118"/>',
+  '<path d="M142 135L121 172"/>', '<path d="M142 135L163 172"/>'];
+const HM_MAX = HM_PARTS.length;
 function newHangman(){
   const p = pool(3, 30); const e = p[Math.floor(Math.random()*p.length)];
-  G.hm = {key: DB.editions[ed].order.find(k => DB.words[k] === e), e, guessed:new Set(), wrong:0, hints:0, done:false, won:false, ed};
+  G.hm = {e, guessed:new Set(), wrong:0, hints:0, done:false, won:false, ed, fresh:-1};
 }
-function curtain(wrong){
-  const f = wrong / HM_MAX, w = 6 + f * 94;   // each panel's width in a 200-wide stage
-  return `<svg viewBox="0 0 200 110" class="curtain" role="img" aria-label="${HM_MAX - wrong} misses left">
-    <rect x="1" y="8" width="198" height="94" fill="var(--field)" stroke="var(--rule)"/>
-    <rect x="0" y="0" width="200" height="10" fill="var(--rouge)"/>
-    <path d="M0 10 h${w} v92 h-${w}z" fill="var(--rouge)" opacity=".85"/>
-    <path d="M200 10 h-${w} v92 h${w}z" fill="var(--rouge)" opacity=".85"/>
-    ${[0.25,0.5,0.75].map(t => `<path d="M${w*t} 10 v92 M${200-w*t} 10 v92" stroke="var(--bg)" stroke-opacity=".25"/>`).join("")}
-    <rect x="0" y="102" width="200" height="8" fill="var(--gilt)"/></svg>`;
+function gallows(h){
+  const shown = h.done && !h.won ? HM_MAX : h.wrong;
+  const parts = HM_PARTS.slice(0, shown).map((p, i) => p.replace(/^<(\w+)/, `<$1 pathLength="1"${i === h.fresh ? ' class="draw"' : ""}`)).join("");
+  return `<svg viewBox="0 0 190 215" class="gallows${h.done && !h.won ? " lost" : ""}" role="img" aria-label="${HM_MAX - h.wrong} misses left">
+    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">${parts}</g></svg>`;
 }
 function renderHangman(st){
   if (!G.hm || G.hm.ed !== ed) newHangman();
   const h = G.hm, e = h.e, stats = gameStats("hangman");
   const shown = e.w.toUpperCase().split("").map(ch => /[A-Z]/.test(ch)
-      ? `<span class="hm-l${h.guessed.has(ch) || h.done ? " on" : ""}${h.done && !h.guessed.has(ch) ? " miss" : ""}">${h.guessed.has(ch) || h.done ? ch : ""}</span>`
+      ? `<span class="hm-l${h.done && !h.guessed.has(ch) ? " miss" : ""}">${h.guessed.has(ch) || h.done ? ch : ""}</span>`
       : `<span class="hm-gap">${ch === " " ? "" : esc(ch)}</span>`).join("");
   const keys = "QWERTYUIOPASDFGHJKLZXCVBNM".split("").map(k => {
     const used = h.guessed.has(k), good = used && letters(e).includes(k);
     return `<button class="key${used ? (good ? " good" : " bad") : ""}" data-k="${k}" ${used || h.done ? "disabled" : ""} aria-label="${k}">${k}</button>`;
   }).join("");
-  const line = clueLine(e);
+  const showHint1 = h.hints >= 1 || h.done, showHint2 = h.hints >= 2 && !h.done;
   st.innerHTML = `<div class="eyebrow">Hangman · ${esc(DB.editions[ed].name)} · won ${stats.won} of ${stats.played}</div>
-    ${curtain(h.done && !h.won ? HM_MAX : h.wrong)}
-    <div class="muted">${HM_MAX - h.wrong} misses before the curtain falls</div>
-    <div class="hm-word" aria-label="The word">${shown}</div>
+    <div class="hm-top">${gallows(h)}<div class="hm-side">
+      <div class="hm-count"><b>${HM_MAX - h.wrong}</b> misses left</div>
+      <div class="hm-word" aria-label="The word">${shown}</div></div></div>
     <div class="hints">
-      ${h.hints >= 1 || h.done ? clueBlock(e) : `<button id="hm-hint">Hint: the definition${line ? " and the line" : ""}</button>`}
+      ${showHint1 ? `<div class="hint-card"><div class="eyebrow">Hint 1 · the definition</div>${clueBlock(e)}</div>` : ""}
+      ${showHint2 ? `<div class="hint-card"><div class="eyebrow">Hint 2 · the origin</div>${originBlock(e)}<p class="muted">${esc(maskWord(e.ety, e))}</p></div>` : ""}
+      ${!h.done && h.hints < 2 ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: the definition" : "Hint 2: the origin"}</button></div>` : ""}
     </div>
-    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, in ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? " with a hint" : ""}.` : `The curtain falls. The word was <b>${esc(e.w)}</b>.`}</div>
-      <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p></div><div><h3>Etymology</h3><p>${e.ety}</p></div>${gifLinks(e)}</section>
+    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`}</div>
+      <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p></div>${e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}
+      <div><h3>Etymology</h3><p>${e.ety}</p></div>${originBlock(e)}${gifLinks(e)}</section>
       <div class="row"><button class="primary" id="hm-next">Next word</button></div>`
     : `<div class="keys" role="group" aria-label="Letters">${keys}</div>`}`;
+  h.fresh = -1;
   st.querySelectorAll(".key").forEach(b => b.onclick = () => hmGuess(b.dataset.k));
-  if ($("#hm-hint")) $("#hm-hint").onclick = () => { h.hints = 1; renderHangman(st); };
-  if ($("#hm-next")) $("#hm-next").onclick = () => { newHangman(); renderHangman(st); };
+  if ($("#hm-hint")) $("#hm-hint").onclick = () => { h.hints++; renderHangman(st); };
+  if ($("#hm-next")) $("#hm-next").onclick = () => { newHangman(); renderHangman(st); window.scrollTo({top:0}); };
 }
 function hmGuess(k){
   const h = G.hm; if (!h || h.done || h.guessed.has(k)) return;
   h.guessed.add(k);
   const need = new Set(letters(h.e).split(""));
-  if (!need.has(k)) h.wrong++;
+  if (!need.has(k)){ h.wrong++; h.fresh = h.wrong - 1; }
   if ([...need].every(c => h.guessed.has(c))){ h.done = true; h.won = true; recordGame("hangman", true); }
   else if (h.wrong >= HM_MAX){ h.done = true; recordGame("hangman", false); }
   renderHangman($("#stage"));
@@ -684,74 +704,100 @@ document.addEventListener("keydown", ev => {
   if (/^[a-z]$/i.test(ev.key)) hmGuess(ev.key.toUpperCase());
 });
 
-/* ---------- Word search: find the words from their clues ---------- */
-const WS_SIZE = 10, WS_DIRS = [[0,1],[1,0],[1,1],[-1,1]];
-function buildSearch(words){
-  for (let attempt = 0; attempt < 40; attempt++){
-    const grid = Array.from({length:WS_SIZE}, () => Array(WS_SIZE).fill(""));
+/* ---------- Word search: everyday words to find, the lexicon's big words hidden as bonuses ---------- */
+const WS_DIRS = [[0,1],[1,0],[1,1],[-1,1]];
+const WS_COMMON = "BOOK DRAMA STAGE CURTAIN WIG GOWN PEARL ROSE WINE TEA CAKE CHAIR DOOR LAMP HAT COAT SHOE SCARF RING CROWN QUEEN KING STAR MOON SONG DANCE CLOWN JOKE LAUGH SMILE FRIEND HOUSE MOTEL TOWN ROAD RIVER STORM CLOUD RAIN SNOW TREE LEAF APPLE BREAD HONEY SUGAR SALT PEPPER PIANO DRUM BELL CANDLE MIRROR PARTY DINNER LUNCH TOAST DIARY LETTER STAMP".split(" ");
+function wsSize(){ return Math.max(9, Math.min(12, Math.floor(((window.innerWidth || 400) - 40) / 29))); }
+function buildSearch(items, size){
+  for (let attempt = 0; attempt < 60; attempt++){
+    const grid = Array.from({length:size}, () => Array(size).fill(""));
     const placed = [];
-    for (const e of words){
-      const L = letters(e); let ok = false;
-      for (let t = 0; t < 200 && !ok; t++){
+    for (const it of items){
+      const L = it.L; let ok = false;
+      for (let t = 0; t < 300 && !ok; t++){
         const [dr, dc] = WS_DIRS[Math.floor(Math.random()*WS_DIRS.length)];
-        const r0 = Math.floor(Math.random()*WS_SIZE), c0 = Math.floor(Math.random()*WS_SIZE);
+        const r0 = Math.floor(Math.random()*size), c0 = Math.floor(Math.random()*size);
         const rEnd = r0 + dr*(L.length-1), cEnd = c0 + dc*(L.length-1);
-        if (rEnd < 0 || rEnd >= WS_SIZE || cEnd >= WS_SIZE) continue;
+        if (rEnd < 0 || rEnd >= size || cEnd >= size) continue;
         let fits = true;
         for (let i = 0; i < L.length; i++){ const g = grid[r0+dr*i][c0+dc*i]; if (g && g !== L[i]) { fits = false; break; } }
         if (!fits) continue;
         const cells = [];
         for (let i = 0; i < L.length; i++){ grid[r0+dr*i][c0+dc*i] = L[i]; cells.push([r0+dr*i, c0+dc*i]); }
-        placed.push({e, L, cells, found:false}); ok = true;
+        placed.push({...it, cells, found:false}); ok = true;
       }
     }
-    if (placed.length >= Math.min(words.length, 5)){
+    const bonusOk = placed.filter(p => p.kind === "bonus").length >= Math.min(2, items.filter(i => i.kind === "bonus").length);
+    if (bonusOk && placed.length >= Math.min(items.length, 8)){
       const fill = "EEEEAAAIIOOUTTNNSSRRLLDDHCMPGBFYWKV";
-      for (const row of grid) for (let c = 0; c < WS_SIZE; c++) if (!row[c]) row[c] = fill[Math.floor(Math.random()*fill.length)];
-      return {grid, placed};
+      for (const row of grid) for (let c = 0; c < size; c++) if (!row[c]) row[c] = fill[Math.floor(Math.random()*fill.length)];
+      return {grid, placed, size};
     }
   }
   return null;
 }
 function newSearch(){
-  const p = shuffle(pool(4, WS_SIZE)), picks = [], seen = new Set();
-  for (const e of p){ const L = letters(e); if (!seen.has(L)) { picks.push(e); seen.add(L); } if (picks.length === 6) break; }
-  const built = buildSearch(picks.sort((a,b) => letters(b).length - letters(a).length));
-  G.ws = built ? {...built, sel:null, showWords:false, ed, done:false} : null;
+  const size = wsSize();
+  const bonus = [], seen = new Set();
+  for (const e of shuffle(pool(5, size))){ const L = letters(e); if (!seen.has(L)){ bonus.push({L, e, kind:"bonus"}); seen.add(L); } if (bonus.length === 3) break; }
+  // everyday words: plain synonyms from the bonus words' own meanings first, then a stock list
+  const everyday = [];
+  const add = w => { w = w.toUpperCase(); if (/^[A-Z]{3,7}$/.test(w) && !seen.has(w) && !bonus.some(b => b.L.includes(w))){ everyday.push({L:w, kind:"word"}); seen.add(w); } };
+  bonus.forEach(b => shuffle(b.e.lex.concepts.flatMap(c => c.s.split(",").map(x => x.trim()))).slice(0, 6).forEach(add));
+  shuffle(WS_COMMON).forEach(w => { if (everyday.length < 9) add(w); });
+  const items = [...bonus.sort((a,b) => b.L.length - a.L.length), ...everyday.slice(0, 9)];
+  const built = buildSearch(items, size);
+  G.ws = built ? {...built, sel:null, ed, done:false, extras:[], extraCells:new Set()} : null;
 }
 function renderSearch(st){
   if (!G.ws || G.ws.ed !== ed) newSearch();
   const w = G.ws; if (!w){ st.innerHTML = `<p class="loading">Not enough words in this edition for a word search.</p>`; return; }
-  const foundCells = new Set(w.placed.filter(p => p.found).flatMap(p => p.cells.map(c => c.join(","))));
-  const stats = gameStats("search");
+  const cellsOf = kind => new Set(w.placed.filter(p => p.found && p.kind === kind).flatMap(p => p.cells.map(c => c.join(","))));
+  const fw = cellsOf("word"), fb = cellsOf("bonus"), stats = gameStats("search");
+  const words = w.placed.filter(p => p.kind === "word"), bonus = w.placed.filter(p => p.kind === "bonus");
   st.innerHTML = `<div class="eyebrow">Word search · ${esc(DB.editions[ed].name)} · solved ${stats.won}</div>
-    <p class="muted">Find each word from its clue. Tap the first letter, then the last. Words run across, down, or diagonally.</p>
-    <div class="ws" role="grid" aria-label="Letter grid" style="--n:${WS_SIZE}">${w.grid.map((row, r) => row.map((ch, c) =>
-      `<button class="ws-c${foundCells.has(r+","+c) ? " found" : ""}${w.sel && w.sel[0] === r && w.sel[1] === c ? " sel" : ""}" data-r="${r}" data-c="${c}" aria-label="${ch}">${ch}</button>`).join("")).join("")}</div>
+    <p class="muted">Tap the first letter of a word, then the last. Words run across, down or diagonally. Find the everyday words, then hunt for the bonus words from their clues.</p>
+    <div class="ws" role="grid" aria-label="Letter grid" style="--n:${w.size}">${w.grid.map((row, r) => row.map((ch, c) => {
+      const k = r+","+c, cls = fb.has(k) ? " bonus" : fw.has(k) ? " found" : w.extraCells.has(k) ? " extra" : "";
+      return `<button class="ws-c${cls}${w.sel && w.sel[0] === r && w.sel[1] === c ? " sel" : ""}" data-r="${r}" data-c="${c}" aria-label="${ch}">${ch}</button>`; }).join("")).join("")}</div>
     <div class="toast" id="wsmsg" role="status"></div>
-    <ol class="clues">${w.placed.map(p => `<li class="${p.found ? "done" : ""}">${p.found || w.showWords ? `<b class="ans">${esc(p.e.w)}</b> ` : ""}${clueBlock(p.e)}</li>`).join("")}</ol>
-    <div class="row">${w.done ? `<span class="banner"><b>All found.</b> Splendid.</span>` : `<button id="ws-show">${w.showWords ? "Hide" : "Show"} the words</button>`}
+    <div><h3 class="ws-h">Find these ${words.filter(p => p.found).length}/${words.length}</h3>
+      <div class="chips">${words.map(p => `<span class="chip ws-w${p.found ? " done" : ""}">${p.L.toLowerCase()}</span>`).join("")}</div></div>
+    <div><h3 class="ws-h">Bonus words ${bonus.filter(p => p.found).length}/${bonus.length}</h3>
+      <ol class="clues">${bonus.map(p => `<li class="${p.found ? "done" : ""}">${p.found ? `<b class="ans">${esc(p.e.w)}</b> ` : `<span class="muted">(${p.L.length} letters)</span> `}${clueBlock(p.e)}</li>`).join("")}</ol></div>
+    ${w.extras.length ? `<div><h3 class="ws-h">Extra words you spotted</h3><div class="chips">${w.extras.map(x => `<span class="chip">${x}</span>`).join("")}</div></div>` : ""}
+    <div class="row">${w.done ? `<span class="banner"><b>${bonus.every(p => p.found) ? "Every word, bonuses included." : "All the everyday words found."}</b> ${bonus.every(p => p.found) ? "Splendid." : "Can you find the bonus words too?"}</span>` : ""}
       <button class="primary" id="ws-new">New puzzle</button></div>`;
   st.querySelectorAll(".ws-c").forEach(b => b.onclick = () => wsTap(+b.dataset.r, +b.dataset.c));
-  if ($("#ws-show")) $("#ws-show").onclick = () => { w.showWords = !w.showWords; renderSearch(st); };
-  $("#ws-new").onclick = () => { newSearch(); renderSearch(st); };
+  $("#ws-new").onclick = () => { newSearch(); renderSearch(st); window.scrollTo({top:0}); };
+}
+function wsIsWord(s){
+  if (!THES || THES.failed || s.length < 4) return false;
+  const l = s.toLowerCase(); return !!(THES.syn[l] || THES.forms[l]);
 }
 function wsTap(r, c){
-  const w = G.ws, msg = () => $("#wsmsg");
+  const w = G.ws;
   if (!w.sel){ w.sel = [r, c]; renderSearch($("#stage")); return; }
   const [r0, c0] = w.sel; w.sel = null;
   const dr = Math.sign(r - r0), dc = Math.sign(c - c0), len = Math.max(Math.abs(r - r0), Math.abs(c - c0)) + 1;
   const straight = (r0 === r || c0 === c || Math.abs(r - r0) === Math.abs(c - c0)) && len > 1;
-  let hit = null;
+  let msg = "Pick the first and last letters in a straight line.";
   if (straight){
     const cells = Array.from({length:len}, (_, i) => [r0 + dr*i, c0 + dc*i]);
-    const s = cells.map(([a,b]) => w.grid[a][b]).join("");
-    hit = w.placed.find(p => !p.found && (p.L === s || p.L === [...s].reverse().join("")) && p.L.length === len);
-    if (hit){ hit.found = true; hit.cells = cells; }
+    const s = cells.map(([a,b]) => w.grid[a][b]).join(""), rev = [...s].reverse().join("");
+    const hit = w.placed.find(p => !p.found && (p.L === s || p.L === rev));
+    if (hit){ hit.found = true; hit.cells = cells; msg = hit.kind === "bonus" ? `Bonus word: ${hit.e.w}!` : `Found: ${hit.L.toLowerCase()}`; }
+    else {
+      const word = wsIsWord(s) ? s : wsIsWord(rev) ? rev : null;
+      if (word && !w.extras.includes(word.toLowerCase()) && !w.placed.some(p => p.L === word)){
+        w.extras.push(word.toLowerCase()); cells.forEach(x => w.extraCells.add(x.join(",")));
+        msg = `An extra word: ${word.toLowerCase()}. Not on the list, but well spotted.`;
+      } else msg = "Not one of the words. Try again.";
+    }
   }
-  if (w.placed.every(p => p.found) && !w.done){ w.done = true; recordGame("search", true); }
+  if (!w.done && w.placed.filter(p => p.kind === "word").every(p => p.found)){ w.done = true; recordGame("search", true); }
   renderSearch($("#stage"));
-  const m = msg(); if (m) m.textContent = hit ? `Found: ${hit.e.w}` : straight ? "Not one of the words. Try again." : "Pick the first and last letters in a straight line.";
+  const m = $("#wsmsg"); if (m) m.textContent = msg;
 }
 
 /* ---------- Crossword: generated fresh from the edition's words ---------- */
@@ -815,8 +861,7 @@ function genCrossword(words, maxWords = 10, maxDim = 13){
   return best;
 }
 function newCross(){
-  const fitDim = Math.max(9, Math.min(13, Math.floor(((window.innerWidth || 400) - 70) / 27)));
-  const cw = genCrossword(pool(3, fitDim - 1), 10, fitDim);
+  const cw = genCrossword(pool(3, 11));
   G.cw = {...cw, fill:new Map(), cur:null, dir:"a", wrong:new Set(), done:false, ed};
 }
 function cwWordAt(r, c, dir){
