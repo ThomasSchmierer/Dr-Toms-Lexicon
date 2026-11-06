@@ -1,0 +1,66 @@
+name: 1. Harvest words
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Where to look"
+        type: choice
+        options: [wikiquote, gutenberg]
+        default: wikiquote
+      pages:
+        description: "Wikiquote pages, separated by semicolons (e.g. Frasier; Yes Minister; Downton Abbey)"
+        required: false
+      book_number:
+        description: "Gutenberg only: book number (e.g. 1342 for Pride and Prejudice)"
+        required: false
+      title:
+        description: "Gutenberg only: book title"
+        required: false
+      author:
+        description: "Gutenberg only: author"
+        required: false
+      max_rarity:
+        description: "How rare (lower = rarer words; 3.0 is a good start)"
+        default: "3.0"
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE: ${{ inputs.source }}
+      PAGES: ${{ inputs.pages }}
+      BOOK: ${{ inputs.book_number }}
+      TITLE: ${{ inputs.title }}
+      AUTHOR: ${{ inputs.author }}
+      RARITY: ${{ inputs.max_rarity }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r tools/requirements.txt
+      - name: Harvest
+        run: |
+          if [ "$SOURCE" = "wikiquote" ]; then
+            args=()
+            IFS=';' read -ra parts <<< "$PAGES"
+            for p in "${parts[@]}"; do
+              t="${p#"${p%%[![:space:]]*}"}"; t="${t%"${t##*[![:space:]]}"}"
+              [ -n "$t" ] && args+=("$t")
+            done
+            python tools/harvest.py wikiquote "${args[@]}" --max-rarity "$RARITY"
+          else
+            python tools/harvest.py gutenberg "$BOOK" --title "$TITLE" --author "$AUTHOR" --max-rarity "$RARITY"
+          fi
+      - name: Save the review spreadsheets to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add harvest
+          git diff --cached --quiet || git commit -m "Harvest: ${SOURCE} ${PAGES}${TITLE}"
+          git push

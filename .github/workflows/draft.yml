@@ -1,0 +1,53 @@
+name: 2. Add kept words to the game
+
+on:
+  workflow_dispatch:
+    inputs:
+      csv:
+        description: "Reviewed spreadsheet (e.g. harvest/frasier.csv)"
+        required: true
+      edition:
+        description: "Which edition gets these words"
+        type: choice
+        options: [all, moira, kathkim]
+        default: all
+      show_key:
+        description: "Short code for the show (e.g. fr for Frasier)"
+        required: true
+      show_name:
+        description: "Show name as players should see it (e.g. Frasier)"
+        required: true
+      years:
+        description: "Years it aired (e.g. 1993–2004)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    env:
+      CSV: ${{ inputs.csv }}
+      EDITION: ${{ inputs.edition }}
+      KEY: ${{ inputs.show_key }}
+      NAME: ${{ inputs.show_name }}
+      YEARS: ${{ inputs.years }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          pip install -r tools/requirements.txt
+          python -m nltk.downloader -q wordnet
+      - name: Draft entries
+        run: python tools/harvest.py draft "$CSV" --edition "$EDITION" --show-key "$KEY" --show-name "$NAME" --years "$YEARS"
+      - name: Publish to the game
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add extra-words.json
+          git diff --cached --quiet || git commit -m "Add words from $CSV to $EDITION"
+          git push
