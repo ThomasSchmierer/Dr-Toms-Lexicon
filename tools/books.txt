@@ -1,0 +1,12 @@
+# Overnight book queue: Project Gutenberg number | title | author. One book a night.
+# Each download is checked against the title, so a wrong number is skipped, never harvested.
+# Public-domain texts from the QCAA 2026–29 English and Literature lists not yet in Study Books:
+844 | The Importance of Being Earnest | Oscar Wilde
+2542 | A Doll's House | Henrik Ibsen
+12242 | Poems by Emily Dickinson | Emily Dickinson
+22403 | Poems of Gerard Manley Hopkins | Gerard Manley Hopkins
+64317 | The Great Gatsby | F Scott Fitzgerald
+63107 | Mrs Dalloway | Virginia Woolf
+57127 | Poems | Wilfred Owen
+13415 | The Lady with the Dog and Other Stories | Anton Chekhov
+2148 | The Works of Edgar Allan Poe | Edgar Allan Poe

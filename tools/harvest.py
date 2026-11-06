@@ -111,18 +111,18 @@ def wq_quotes(wikitext):
     return out
 
 def harvest_wikiquote(titles, max_zipf, min_len, outdir):
-    done = 0
+    results = []
     for t in titles:
         try:
-            done += harvest_one(t, max_zipf, min_len, outdir)
+            results.append((t, harvest_one(t, max_zipf, min_len, outdir)))
         except Exception as e:
-            print(f"  ✗ {t}: {e} (skipped; the rest carry on)")
-    if not done: sys.exit("No pages could be harvested. Check the page names on en.wikiquote.org.")
+            print(f"  ✗ {t}: {e} (skipped; will retry next time)"); results.append((t, False))
+    return results
 
 def harvest_one(t, max_zipf, min_len, outdir):
     if True:
         page = wq_page(t)
-        if not page: print(f"  ✗ no Wikiquote page called “{t}”"); return 0
+        if not page: print(f"  ✗ no Wikiquote page called “{t}”"); return None
         title, text, links = page
         pages = [(title, text)]
         for sub in wq_subpages(title, links):
@@ -140,13 +140,19 @@ def harvest_one(t, max_zipf, min_len, outdir):
         rows.sort(key=lambda r: r["rarity"])
         write_csv(rows, os.path.join(outdir, slug(title) + ".csv"))
         print(f"  ✓ {title}: {len(pages)} page(s), {len(rows)} candidate words")
-        return 1
+        return {"title": title, "pages": len(pages), "words": len(rows), "file": os.path.join("harvest", slug(title) + ".csv")}
 
 # ---------- Project Gutenberg ----------
 def harvest_gutenberg(book_id, title, author, max_zipf, min_len, outdir, path=None):
     if path: raw = open(path, encoding="utf-8", errors="ignore").read()
     else: raw = fetch(f"https://www.gutenberg.org/cache/epub/{book_id}/pg{book_id}.txt").decode("utf-8", "ignore")
     raw = raw.replace("\r\n", "\n")
+    if not path:   # make sure the book number really is the book we expect
+        found = re.search(r"^Title:\s*(.+)$", raw[:6000], re.M)
+        found = found.group(1).strip() if found else ""
+        want = [w for w in re.findall(r"[a-z]{4,}", title.lower()) if w not in ("with", "from", "other", "poems", "stories")]
+        if want and not any(w in found.lower() for w in want):
+            raise ValueError(f"book {book_id} is “{found or 'unknown'}”, not “{title}”")
     m1 = re.search(r"\*\*\* ?START OF[^\n]*\n", raw); m2 = re.search(r"\*\*\* ?END OF", raw)
     body = raw[m1.end() if m1 else 0: m2.start() if m2 else len(raw)]
     loc, rows, seen = "Opening", [], set()
@@ -164,6 +170,43 @@ def harvest_gutenberg(book_id, title, author, max_zipf, min_len, outdir, path=No
     rows.sort(key=lambda r: r["rarity"])
     write_csv(rows, os.path.join(outdir, slug(title) + ".csv"))
     print(f"  ✓ {title}: {len(rows)} candidate words")
+    return {"title": title, "pages": 1, "words": len(rows), "file": os.path.join("harvest", slug(title) + ".csv")}
+
+# ---------- overnight runs: work through the queues a little each night ----------
+def read_list(path):
+    return [l.strip() for l in open(path, encoding="utf-8") if l.strip() and not l.strip().startswith("#")] if os.path.exists(path) else []
+
+def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir):
+    from datetime import date
+    state_path = os.path.join(outdir, "state.json")
+    state = json.load(open(state_path)) if os.path.exists(state_path) else {"shows": {}, "books": {}}
+    today = date.today()
+    def due(kind, name):
+        last = state[kind].get(name)
+        return not last or (today - date.fromisoformat(last[:10])).days >= refresh_days
+    shows = [t for t in read_list(os.path.join(HERE, "shows.txt")) + read_list(os.path.join(HERE, "queue.txt")) if due("shows", t)]
+    shows = list(dict.fromkeys(shows))[:shows_n]
+    books = [b for b in read_list(os.path.join(HERE, "books.txt")) if due("books", b.split("|")[0].strip())][:books_n]
+    print(f"Tonight: {len(shows)} show(s), {len(books)} book(s)")
+    done = []
+    for t, res in harvest_wikiquote(shows, max_zipf, min_len, outdir):
+        if res is not False: state["shows"][t] = today.isoformat()   # network errors are retried next night
+        done.append((t, res))
+    for b in books:
+        num, title, author = [x.strip() for x in b.split("|")]
+        try:
+            res = harvest_gutenberg(num, title, author, max_zipf, min_len, outdir); state["books"][num] = today.isoformat()
+        except ValueError as e: print(f"  ✗ {title}: {e}"); res = None; state["books"][num] = today.isoformat()
+        except Exception as e: print(f"  ✗ {title}: {e} (will retry next time)"); res = False
+        done.append((title, res))
+    json.dump(state, open(state_path, "w"), indent=1, ensure_ascii=False)
+    left = len([t for t in dict.fromkeys(read_list(os.path.join(HERE, "shows.txt")) + read_list(os.path.join(HERE, "queue.txt"))) if due("shows", t)])
+    lines = [f"# Last night's harvest ({today.isoformat()})", "",
+             "| Source | Pages | Candidate words | Spreadsheet |", "|---|---|---|---|"]
+    for name, r in done:
+        lines.append(f"| {name} | {r['pages']} | {r['words']} | [{os.path.basename(r['file'])}]({os.path.basename(r['file'])}) |" if r else f"| {name} | – | {'connection problem, retrying tomorrow' if r is False else 'not found'} | – |")
+    lines += ["", f"Still queued: {left} show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**."]
+    open(os.path.join(outdir, "LATEST.md"), "w").write("\n".join(lines) + "\n")
 
 # ---------- drafting game entries ----------
 def initials(s): return "".join(w[0] for w in re.findall(r"[A-Za-z][\w'-]*", s)[:2]).upper() or "?"
@@ -227,6 +270,11 @@ def main():
         p.add_argument("--max-rarity", type=float, default=3.0, help="keep words at or below this frequency (Zipf scale; lower = rarer)")
         p.add_argument("--min-length", type=int, default=5)
         p.add_argument("--out", default=os.path.join(ROOT, "harvest"))
+    n = sub.add_parser("nightly", help="harvest the next few shows and books from the queues (used by the overnight run)")
+    n.add_argument("--shows", type=int, default=10); n.add_argument("--books", type=int, default=1)
+    n.add_argument("--refresh-days", type=int, default=60, help="re-harvest a show after this many days")
+    n.add_argument("--max-rarity", type=float, default=3.0); n.add_argument("--min-length", type=int, default=5)
+    n.add_argument("--out", default=os.path.join(ROOT, "harvest"))
     c = sub.add_parser("draft", help="turn the words you kept into game entries")
     c.add_argument("csv"); c.add_argument("--edition", default="all", choices=["all", "moira", "kathkim"])
     c.add_argument("--show-key", required=True, help="short code for the show, e.g. fr")
@@ -238,8 +286,10 @@ def main():
         if args.from_file:
             titles += [l.strip() for l in open(args.from_file, encoding="utf-8") if l.strip() and not l.strip().startswith("#")]
         if not titles: ap.error("give at least one Wikiquote page title, or --from-file tools/shows.txt")
-        harvest_wikiquote(titles, args.max_rarity, args.min_length, args.out)
+        res = harvest_wikiquote(titles, args.max_rarity, args.min_length, args.out)
+        if not any(r for _, r in res): sys.exit("No pages could be harvested. Check the page names on en.wikiquote.org.")
     elif args.cmd == "gutenberg": harvest_gutenberg(args.book_id, args.title, args.author, args.max_rarity, args.min_length, args.out, args.file)
+    elif args.cmd == "nightly": nightly(args.shows, args.books, args.refresh_days, args.max_rarity, args.min_length, args.out)
     else: draft(args.csv, args.edition, args.show_key, args.show_name, args.years, args.out)
 
 if __name__ == "__main__":

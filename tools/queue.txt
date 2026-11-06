@@ -1,0 +1,110 @@
+# Overnight queue: Wikiquote page names, worked through 10 a night after tools/shows.txt.
+# Add or reorder freely. Names that don't exist on Wikiquote are simply skipped.
+# Christopher Guest & co (Levy/O'Hara network)
+This Is Spinal Tap
+A Mighty Wind
+For Your Consideration (film)
+# Richard Curtis & Ben Elton
+Upstart Crow
+The Thin Blue Line
+Four Weddings and a Funeral
+Notting Hill (film)
+Love Actually
+Mr. Bean
+# Armando Iannucci
+In the Loop
+The Death of Stalin
+Avenue 5
+I'm Alan Partridge
+Knowing Me, Knowing You... with Alan Partridge
+# Aaron Sorkin
+Studio 60 on the Sunset Strip
+The Social Network
+A Few Good Men
+# Julian Fellowes
+The Gilded Age (TV series)
+Belgravia (TV series)
+# Steven Moffat & Mark Gatiss
+Sherlock (TV series)
+Coupling (British TV series)
+Doctor Who
+The League of Gentlemen
+# Simon Pegg & Edgar Wright
+Spaced
+Shaun of the Dead
+Hot Fuzz
+# More British comedy
+Red Dwarf
+Absolutely Fabulous
+Keeping Up Appearances
+The Office (UK TV series)
+Peep Show
+Porridge (1974 TV series)
+Only Fools and Horses
+Dad's Army
+Monty Python's Flying Circus
+Green Wing
+Toast of London
+Detectorists
+Ghosts (2019 TV series)
+The New Statesman
+Drop the Dead Donkey
+Rumpole of the Bailey
+Inspector Morse
+QI
+Brass Eye
+The Day Today
+# American comedy & drama
+Arrested Development
+30 Rock
+Community (TV series)
+Parks and Recreation
+The Big Bang Theory
+Seinfeld
+The Simpsons
+Futurama
+Star Trek: The Next Generation
+Buffy the Vampire Slayer
+Firefly (TV series)
+House (TV series)
+Boston Legal
+The Good Place
+Succession (TV series)
+The Crown (TV series)
+Mad Men
+Columbo
+Pushing Daisies
+Northern Exposure
+Twin Peaks
+Wednesday (TV series)
+M*A*S*H (TV series)
+The Golden Girls
+Will & Grace
+Bunheads
+# Australian
+Utopia (Australian TV series)
+Frontline (Australian TV series)
+The Games (Australian TV series)
+Rake (Australian TV series)
+Summer Heights High
+Shaun Micallef's Mad as Hell
+The Castle (1997 film)
+Muriel's Wedding
+The Dish
+Bluey (TV series)
+# Films with gloriously verbose characters
+The Princess Bride (film)
+Withnail and I
+Amadeus (film)
+The Grand Budapest Hotel
+Fantastic Mr. Fox (film)
+Dead Poets Society
+The Importance of Being Earnest (2002 film)
+Clueless (film)
+Heathers
+Mean Girls
+Love & Friendship
+The Favourite
+Knives Out
+Glass Onion: A Knives Out Mystery
+Arsenic and Old Lace (film)
