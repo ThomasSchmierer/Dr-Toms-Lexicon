@@ -26,7 +26,7 @@ permissions:
 
 jobs:
   draft:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       CSV: ${{ inputs.csv }}
       EDITION: ${{ inputs.edition }}
@@ -34,8 +34,8 @@ jobs:
       NAME: ${{ inputs.show_name }}
       YEARS: ${{ inputs.years }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install
@@ -43,7 +43,9 @@ jobs:
           pip install -r tools/requirements.txt
           python -m nltk.downloader -q wordnet
       - name: Draft entries
-        run: python tools/harvest.py draft "$CSV" --edition "$EDITION" --show-key "$KEY" --show-name "$NAME" --years "$YEARS"
+        run: |
+          if [ ! -f "$CSV" ]; then echo "::error::Couldn't find $CSV. Use the path shown in the harvest folder, e.g. harvest/frasier.csv"; exit 1; fi
+          python tools/harvest.py draft "$CSV" --edition "$EDITION" --show-key "$KEY" --show-name "$NAME" --years "$YEARS"
       - name: Publish to the game
         run: |
           git config user.name "github-actions[bot]"

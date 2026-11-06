@@ -111,9 +111,18 @@ def wq_quotes(wikitext):
     return out
 
 def harvest_wikiquote(titles, max_zipf, min_len, outdir):
+    done = 0
     for t in titles:
+        try:
+            done += harvest_one(t, max_zipf, min_len, outdir)
+        except Exception as e:
+            print(f"  ✗ {t}: {e} (skipped; the rest carry on)")
+    if not done: sys.exit("No pages could be harvested. Check the page names on en.wikiquote.org.")
+
+def harvest_one(t, max_zipf, min_len, outdir):
+    if True:
         page = wq_page(t)
-        if not page: print(f"  ✗ no Wikiquote page called “{t}”"); continue
+        if not page: print(f"  ✗ no Wikiquote page called “{t}”"); return 0
         title, text, links = page
         pages = [(title, text)]
         for sub in wq_subpages(title, links):
@@ -131,6 +140,7 @@ def harvest_wikiquote(titles, max_zipf, min_len, outdir):
         rows.sort(key=lambda r: r["rarity"])
         write_csv(rows, os.path.join(outdir, slug(title) + ".csv"))
         print(f"  ✓ {title}: {len(pages)} page(s), {len(rows)} candidate words")
+        return 1
 
 # ---------- Project Gutenberg ----------
 def harvest_gutenberg(book_id, title, author, max_zipf, min_len, outdir, path=None):
@@ -207,7 +217,8 @@ def main():
     ap = argparse.ArgumentParser(description="Harvest rare words for Moira's Lexicon.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("wikiquote", help="harvest quote pages (and their season pages) from Wikiquote")
-    a.add_argument("titles", nargs="+", help="Wikiquote page titles, e.g. \"Frasier\" \"Yes Minister\"")
+    a.add_argument("titles", nargs="*", help="Wikiquote page titles, e.g. \"Frasier\" \"Yes Minister\"")
+    a.add_argument("--from-file", help="read page titles from a text file, one per line")
     b = sub.add_parser("gutenberg", help="harvest a public-domain book from Project Gutenberg")
     b.add_argument("book_id", nargs="?", default="", help="Gutenberg book number, e.g. 1342")
     b.add_argument("--title", required=True); b.add_argument("--author", required=True)
@@ -222,7 +233,12 @@ def main():
     c.add_argument("--show-name", required=True); c.add_argument("--years", default="")
     c.add_argument("--out", default=os.path.join(ROOT, "extra-words.json"))
     args = ap.parse_args()
-    if args.cmd == "wikiquote": harvest_wikiquote(args.titles, args.max_rarity, args.min_length, args.out)
+    if args.cmd == "wikiquote":
+        titles = list(args.titles)
+        if args.from_file:
+            titles += [l.strip() for l in open(args.from_file, encoding="utf-8") if l.strip() and not l.strip().startswith("#")]
+        if not titles: ap.error("give at least one Wikiquote page title, or --from-file tools/shows.txt")
+        harvest_wikiquote(titles, args.max_rarity, args.min_length, args.out)
     elif args.cmd == "gutenberg": harvest_gutenberg(args.book_id, args.title, args.author, args.max_rarity, args.min_length, args.out, args.file)
     else: draft(args.csv, args.edition, args.show_key, args.show_name, args.years, args.out)
 

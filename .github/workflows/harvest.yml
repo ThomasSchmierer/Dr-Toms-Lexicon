@@ -9,7 +9,7 @@ on:
         options: [wikiquote, gutenberg]
         default: wikiquote
       pages:
-        description: "Wikiquote pages, separated by semicolons (e.g. Frasier; Yes Minister; Downton Abbey)"
+        description: "Wikiquote pages separated by semicolons (e.g. Frasier; Yes Minister). Leave empty to harvest the whole queue in tools/shows.txt"
         required: false
       book_number:
         description: "Gutenberg only: book number (e.g. 1342 for Pride and Prejudice)"
@@ -29,7 +29,7 @@ permissions:
 
 jobs:
   harvest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       SOURCE: ${{ inputs.source }}
       PAGES: ${{ inputs.pages }}
@@ -38,8 +38,8 @@ jobs:
       AUTHOR: ${{ inputs.author }}
       RARITY: ${{ inputs.max_rarity }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install
@@ -53,8 +53,17 @@ jobs:
               t="${p#"${p%%[![:space:]]*}"}"; t="${t%"${t##*[![:space:]]}"}"
               [ -n "$t" ] && args+=("$t")
             done
-            python tools/harvest.py wikiquote "${args[@]}" --max-rarity "$RARITY"
+            if [ ${#args[@]} -eq 0 ]; then
+              echo "No pages typed, so harvesting the queue in tools/shows.txt"
+              python tools/harvest.py wikiquote --from-file tools/shows.txt --max-rarity "$RARITY"
+            else
+              python tools/harvest.py wikiquote "${args[@]}" --max-rarity "$RARITY"
+            fi
           else
+            if [ -z "$BOOK" ] || [ -z "$TITLE" ] || [ -z "$AUTHOR" ]; then
+              echo "::error::For a Gutenberg book, fill in the book number, title and author."
+              exit 1
+            fi
             python tools/harvest.py gutenberg "$BOOK" --title "$TITLE" --author "$AUTHOR" --max-rarity "$RARITY"
           fi
       - name: Save the review spreadsheets to the repo

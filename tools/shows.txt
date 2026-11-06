@@ -1,0 +1,41 @@
+# Wikiquote pages harvested when the "pages" box is left empty. One per line; lines starting with # are skipped.
+# Grouped by writer, since writers carry their verbal style from show to show.
+# Dan & Eugene Levy, Catherine O'Hara
+Schitt's Creek
+SCTV
+Best in Show
+Waiting for Guffman
+# Frasier's writers
+Frasier
+Cheers
+Wings (TV series)
+Modern Family
+# Richard Curtis & Ben Elton
+Blackadder
+The Young Ones
+The Vicar of Dibley
+# Julian Fellowes
+Downton Abbey
+Gosford Park
+# Aaron Sorkin
+The West Wing
+Sports Night
+The Newsroom (American TV series)
+# Armando Iannucci
+The Thick of It
+Veep
+# Amy Sherman-Palladino
+Gilmore Girls
+The Marvelous Mrs. Maisel
+# Graham Linehan
+Father Ted
+Black Books
+The IT Crowd
+# Fry & Laurie, Jay & Lynn, Cleese
+Jeeves and Wooster
+A Bit of Fry & Laurie
+Yes Minister
+Yes, Prime Minister
+Fawlty Towers
+# Jane Turner & Gina Riley
+Kath & Kim
