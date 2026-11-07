@@ -1,0 +1,532 @@
+keep,word,definition,rarity,show,episode,speaker,line,source
+,smeghead,,0.0,Red Dwarf,The End,Lister,"…try and respect Rimmer and everything, but it's not easy, 'cos he's such a smeghead!",https://en.wikiquote.org/wiki/Red_Dwarf
+,gimboid,,0.0,Red Dwarf,Future Echoes,Rimmer,"Lister, don't be a gimboid!",https://en.wikiquote.org/wiki/Red_Dwarf
+,driveling,,0.0,Red Dwarf,Waiting For God,Rimmer,"…it would be a rare, nay, freak occurrence! ""Possibly mad""?! What is he driveling about?!",https://en.wikiquote.org/wiki/Red_Dwarf
+,quagars,,0.0,Red Dwarf,Waiting For God,Lister,"""Quagars""?",https://en.wikiquote.org/wiki/Red_Dwarf
+,quagaars,,0.0,Red Dwarf,Waiting For God,Rimmer,"Quagaars, it's a name I made up! Double-A, actually! I believe the Quagaars'll have the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,eating's,,0.0,Red Dwarf,Me²,Cat,"No, eating's when food goes in your mouth!",https://en.wikiquote.org/wiki/Red_Dwarf
+,smeggin,,0.0,Red Dwarf,Me²,Lister,"Ecstasy! We're talking mega ecstasy bliss! I can hum as loud as I like, as…",https://en.wikiquote.org/wiki/Red_Dwarf
+,bugger'll,,0.0,Red Dwarf,Kryten,Holly,"No bugger'll drink it. Plus, of course, the advantage of dog's milk is that when…",https://en.wikiquote.org/wiki/Red_Dwarf
+,skutters,,0.0,Red Dwarf,Better Than Life,Lister,You've got the skutters to help you.,https://en.wikiquote.org/wiki/Red_Dwarf
+,smeggy,,0.0,Red Dwarf,Better Than Life,Rimmer,What? Pinky and smeggy Perky? What use are they? It's like giving Blind Pew contact…,https://en.wikiquote.org/wiki/Red_Dwarf
+,smegging,,0.0,Red Dwarf,Stasis Leak,Rimmer,Two smegging weeks?,https://en.wikiquote.org/wiki/Red_Dwarf
+,smegheads,,0.0,Red Dwarf,Stasis Leak,Lister,…do women always leave me for total smegheads? Why do they dump me for men…,https://en.wikiquote.org/wiki/Red_Dwarf
+,flamingoed,,0.0,Red Dwarf,Parallel Universe,Holly,…just don't know where we are. There's no two ways about it: I flamingoed up!,https://en.wikiquote.org/wiki/Red_Dwarf
+,calendar'd,,0.0,Red Dwarf,Backwards,Holly,"Well, this year's calendar'd be 'andy!",https://en.wikiquote.org/wiki/Red_Dwarf
+,flob-a-dob,,0.0,Red Dwarf,Backwards,Rimmer,Flob-a-dob blib blob bleeb!,https://en.wikiquote.org/wiki/Red_Dwarf
+,bleeb,,0.0,Red Dwarf,Backwards,Rimmer,Flob-a-dob blib blob bleeb!,https://en.wikiquote.org/wiki/Red_Dwarf
+,appens,,0.0,Red Dwarf,Marooned,Holly,"As it 'appens, there weren't any black 'oles.",https://en.wikiquote.org/wiki/Red_Dwarf
+,alphabetti,,0.0,Red Dwarf,Polymorph,Rimmer,ALPHABETTI SPAGHETTI?!?!,https://en.wikiquote.org/wiki/Red_Dwarf
+,jozxyqk,,0.0,Red Dwarf,Bodyswap,Lister,Jozxyqk?,https://en.wikiquote.org/wiki/Red_Dwarf
+,policewoman's,,0.0,Red Dwarf,The Last Day,Cat,…you get a traffic cone! It's the policewoman's helmet and the suspenders I don't understand!,https://en.wikiquote.org/wiki/Red_Dwarf
+,miladdo,,0.0,Red Dwarf,The Last Day,Rimmer,"Ah, 'scuse me. Alright miladdo the party's over. I had about as much of this…",https://en.wikiquote.org/wiki/Red_Dwarf
+,bazookoid,,0.0,Red Dwarf,The Last Day,Kryten,"…do you take the safety catch off on this thing, Mr David? (Holding up bazookoid)",https://en.wikiquote.org/wiki/Red_Dwarf
+,dismantler,,0.0,Red Dwarf,The Last Day,Lister,"No, don't touch the red switch! That's the dismantler!",https://en.wikiquote.org/wiki/Red_Dwarf
+,divadroid,,0.0,Red Dwarf,The Last Day,Reaper,…this unit to overload and shut down. Divadroid International would like to apologise for any…,https://en.wikiquote.org/wiki/Red_Dwarf
+,imtimacy,,0.0,Red Dwarf,Justice,Kryten,Hmm. And are there no others who shared moments of imtimacy with him?,https://en.wikiquote.org/wiki/Red_Dwarf
+,toastercide,,0.0,Red Dwarf,White Hole,Toaster,But that was no accident! That was first-degree toastercide!,https://en.wikiquote.org/wiki/Red_Dwarf
+,dollarpound,,0.0,Red Dwarf,White Hole,Lister,"…pool arm is as sound as a dollarpound, and I promise you that shot will…",https://en.wikiquote.org/wiki/Red_Dwarf
+,noosey,,0.0,Red Dwarf,Meltdown,Lister,"There is a kind of noosey theme to it, yeah!",https://en.wikiquote.org/wiki/Red_Dwarf
+,expunges,,0.0,Red Dwarf,The Inquisitor,Kryten,"…is the Inquisitor; he prunes away the wastrels, expunges the wretched and deletes the worthless!",https://en.wikiquote.org/wiki/Red_Dwarf
+,imself,,0.0,Red Dwarf,The Inquisitor,Lister,"'ang on a minute, why should we take any notice of some crazed rogue robot…",https://en.wikiquote.org/wiki/Red_Dwarf
+,thirstings,,0.0,Red Dwarf,Terrorform,Druid,"…Legions, proffer up this sacrifice to slake the vile depraved thirstings of the Unspeakable One.",https://en.wikiquote.org/wiki/Red_Dwarf
+,vouldn't,,0.0,Red Dwarf,Quarantine,Dr. Hildegarde Lanstrom,"Schopenhauer was right, vouldn't you say? Life vithout pain has no meaning. Gentlemen, I vish…",https://en.wikiquote.org/wiki/Red_Dwarf
+,vithout,,0.0,Red Dwarf,Quarantine,Dr. Hildegarde Lanstrom,"Schopenhauer was right, vouldn't you say? Life vithout pain has no meaning. Gentlemen, I vish…",https://en.wikiquote.org/wiki/Red_Dwarf
+,breadbaskets,,0.0,Red Dwarf,Quarantine,Rimmer,With... Out.. Oxygen! Two hours without oxygen. That'll teach you to be breadbaskets! (fades),https://en.wikiquote.org/wiki/Red_Dwarf
+,gimbo,,0.0,Red Dwarf,Back to Reality,Duane Dibbley,So this is really me? A no-style gimbo with teeth the Druids could use as…,https://en.wikiquote.org/wiki/Red_Dwarf
+,cybernautics,,0.0,Red Dwarf,Back to Reality,Jake Bullet,Bullet. Cybernautics.,https://en.wikiquote.org/wiki/Red_Dwarf
+,psirens,,0.0,Red Dwarf,Psirens,Rimmer,"There, on the floor... P-S-I-R-E-N-S... ""Psirens?""",https://en.wikiquote.org/wiki/Red_Dwarf
+,veruccas,,0.0,Red Dwarf,Legion,Lister,"No, I've been trimming my veruccas.",https://en.wikiquote.org/wiki/Red_Dwarf
+,navicom's,,0.0,Red Dwarf,Emohawk: Polymorph II,Cat,"…the damage report machine, there's several small fires, lots of smoke and the navicom's fizzing.",https://en.wikiquote.org/wiki/Red_Dwarf
+,recyc,,0.0,Red Dwarf,Out of Time,Lister,"They aren't margaritas, that's urine recyc!",https://en.wikiquote.org/wiki/Red_Dwarf
+,groinal,,0.0,Red Dwarf,Stoke Me a Clipper,Kryten,"…was loosening my adjustment screws, and my entire groinal box dropped into Mr Rimmer's soup.",https://en.wikiquote.org/wiki/Red_Dwarf
+,knave's,,0.0,Red Dwarf,Stoke Me a Clipper,AR medieval King,"Good Knight, bring me this knave's head on a silver platter.",https://en.wikiquote.org/wiki/Red_Dwarf
+,nureek,,0.0,Red Dwarf,Duct Soup,Kochanski,"…you? Right... What was the last one? Nureek, so the next one will be a…",https://en.wikiquote.org/wiki/Red_Dwarf
+,squeelookle,,0.0,Red Dwarf,Duct Soup,Kochanski,Squeelookle? Where did squeelookle come from? He's New!,https://en.wikiquote.org/wiki/Red_Dwarf
+,nureeking,,0.0,Red Dwarf,Duct Soup,Kochanski,"…listened to those clapped out old pipes? Nureeking, then Rututting and just when you're expecting…",https://en.wikiquote.org/wiki/Red_Dwarf
+,epideme,,0.0,Red Dwarf,Epideme,Kryten,"…to inject antivirals in a precise pattern through your body, forcing epideme into your arm.",https://en.wikiquote.org/wiki/Red_Dwarf
+,chromosone,,0.0,Red Dwarf,Cassandra,Rimmer,…All Retarded Inbred Evil Sheepshaggers! They haven't got an X chromosone to share between them!,https://en.wikiquote.org/wiki/Red_Dwarf
+,inconcievable,,0.0,Red Dwarf,Cassandra,Captain Hollster,…on board and find out why. It's inconcievable a ship like this could be sent…,https://en.wikiquote.org/wiki/Red_Dwarf
+,dweebo,,0.0,Red Dwarf,Krytie TV,Kryten,"Then there's this: ""Morris Dancer Monthly."" What a total dweebo nerdmeister he'll look with those!",https://en.wikiquote.org/wiki/Red_Dwarf
+,nerdmeister,,0.0,Red Dwarf,Krytie TV,Kryten,"Then there's this: ""Morris Dancer Monthly."" What a total dweebo nerdmeister he'll look with those!",https://en.wikiquote.org/wiki/Red_Dwarf
+,smegger,,0.0,Red Dwarf,Only the Good...,Rimmer,"Why don't you smegging well smeg off, you annoying little smeggy smegging smegger?",https://en.wikiquote.org/wiki/Red_Dwarf
+,cesiumfrancolithicmyxialobidiumrixidixidoxidexidroxhide,,0.0,Red Dwarf,Only the Good...,Mirror Cat,Cesiumfrancolithicmyxialobidiumrixidixidoxidexidroxhide. You look surprised?,https://en.wikiquote.org/wiki/Red_Dwarf
+,mooseing,,0.0,Red Dwarf,Trojan,Lister,"…the sun roof! They're in the roads, mooseing about, crossing roads, causing accidents!Cat: You mean…",https://en.wikiquote.org/wiki/Red_Dwarf
+,skullet,,0.0,Red Dwarf,Lemons,Rimmer,He’s got a skullet.,https://en.wikiquote.org/wiki/Red_Dwarf
+,thingth,,0.0,Red Dwarf,Lemons,Kryten,"…to 23AD so he can ""trash his reputation so this Christianity thingth never taketh off-ffff-ffff-ffff-ffffth""",https://en.wikiquote.org/wiki/Red_Dwarf
+,off-ffff-ffff-ffff-ffffth,,0.0,Red Dwarf,Lemons,Kryten,"…to 23AD so he can ""trash his reputation so this Christianity thingth never taketh off-ffff-ffff-ffff-ffffth""",https://en.wikiquote.org/wiki/Red_Dwarf
+,bazookoids,,0.0,Red Dwarf,Cured,Rimmer,"I want all the bazookoids, safetys off, ready to fire.",https://en.wikiquote.org/wiki/Red_Dwarf
+,safetys,,0.0,Red Dwarf,Cured,Rimmer,"I want all the bazookoids, safetys off, ready to fire.",https://en.wikiquote.org/wiki/Red_Dwarf
+,criticising's,,0.0,Red Dwarf,Timewave,Crit Cop,"…that for ages, that felt good! Oh! Criticising's great, isn't it?! Gives ya a real…",https://en.wikiquote.org/wiki/Red_Dwarf
+,unquarantined,,0.0,Red Dwarf,Mechocracy,Cat,…a jail term in stasis for smuggling unquarantined animals aboard a JMC mining ship? Major…,https://en.wikiquote.org/wiki/Red_Dwarf
+,aniter,,0.0,Red Dwarf,M-Corp,,Aniter appears on the screen.,https://en.wikiquote.org/wiki/Red_Dwarf
+,anomalling,,0.0,Red Dwarf,Skipper,Rimmer,"…so cool. ""Oh look, here's an anomaly anomalling away. I'm really cosmologically on-trend because I…",https://en.wikiquote.org/wiki/Red_Dwarf
+,teriffic,,0.0,Red Dwarf,Infinity Welcomes Careful Drivers (1989),,Kryten was teriffic. A real godsend. Provided all you needed was a plateful of triangular-shaped…,https://en.wikiquote.org/wiki/Red_Dwarf
+,spaghettification,,0.0,Red Dwarf,Better Than Life (1990),Rimmer,Spaghettification. Let me guess. I can see only two options: one -- due to the…,https://en.wikiquote.org/wiki/Red_Dwarf
+,clothesbrush,,0.0,Red Dwarf,Last Human (1995),,…to remember the beatings with the brown clothesbrush. Now he could see Old Prune Face's…,https://en.wikiquote.org/wiki/Red_Dwarf
+,geo-mapper's,,0.0,Red Dwarf,Last Human (1995),Rimmer,"…been easy bringing up a boy on geo-mapper's wages, getting you through college and into…",https://en.wikiquote.org/wiki/Red_Dwarf
+,agonoids,,0.0,Red Dwarf,Backwards (1996),Kryten,"Begging your pardon, sir, they are not mechanoids, they are agonoids.",https://en.wikiquote.org/wiki/Red_Dwarf
+,pizzak'rapp,,0.0,Red Dwarf,Backwards (1996),,"Pizzak'Rapp: I am Piece of Crap, welcome to... hell.",https://en.wikiquote.org/wiki/Red_Dwarf
+,awooga,,1.03,Red Dwarf,Marooned,Holly,"…is a drill! Abandon shi- Oh God, now the siren's bust.... Awooga! Awooga! Abandon ship!",https://en.wikiquote.org/wiki/Red_Dwarf
+,cosmologically,,1.06,Red Dwarf,Skipper,Rimmer,"…here's an anomaly anomalling away. I'm really cosmologically on-trend because I know what anomaly means.""…",https://en.wikiquote.org/wiki/Red_Dwarf
+,dooh-dooh,,1.09,Red Dwarf,Backwards (1996),Cat,…We're supposed to be afraid of a bunch of dooh-dooh brains like eraser-tipped pencil-head here?,https://en.wikiquote.org/wiki/Red_Dwarf
+,running's,,1.12,Red Dwarf,Lemons,Rimmer,Or run. Running's good too!,https://en.wikiquote.org/wiki/Red_Dwarf
+,mechanoids,,1.13,Red Dwarf,Siliconia,,"The black-clad mechanoids take Lister, Rimmer, and Cat away.",https://en.wikiquote.org/wiki/Red_Dwarf
+,garrotted,,1.14,Red Dwarf,Lemons,Erin,"…Toutatis, Esus and Taranis. First they were garrotted to death, then they were burnt to…",https://en.wikiquote.org/wiki/Red_Dwarf
+,niblick,,1.17,Red Dwarf,Marooned,Rimmer,…stuck in Lister's buttock crevice. You'd need more than a niblick to get that out.,https://en.wikiquote.org/wiki/Red_Dwarf
+,polygraphic,,1.19,Red Dwarf,Justice,Kryten,…answer the question. Remember you are under polygraphic surveillance: Would you describe the accused as…,https://en.wikiquote.org/wiki/Red_Dwarf
+,capisce,,1.19,Red Dwarf,Timewave,Cat,"…don't move your dumb-ass spaceship, we're gonna be flatter than your wife's droopy-ass titties, capisce?",https://en.wikiquote.org/wiki/Red_Dwarf
+,maniac's,,1.19,Red Dwarf,Mechocracy,Political Ad Narrator,"…killed himself, twice! Are you really going to put your life in this maniac's hands?",https://en.wikiquote.org/wiki/Red_Dwarf
+,people'll,,1.2,Red Dwarf,Marooned,Lister,"It'll make him look more realistic, people'll think he's got dysentery.",https://en.wikiquote.org/wiki/Red_Dwarf
+,slobbing,,1.21,Red Dwarf,Future Echoes,Rimmer,"…What's the plan for the day, then? Slobbing in the morning, followed by slobbing in…",https://en.wikiquote.org/wiki/Red_Dwarf
+,nothin's,,1.21,Red Dwarf,Demons & Angels,Lister,Nothin's gonna happen. We're just here as a precaution. The whole ship's full of fail-safes…,https://en.wikiquote.org/wiki/Red_Dwarf
+,aigburth,,1.22,Red Dwarf,White Hole,Lister,"…Trust me. I know whereof I speak. Aigburth Arms on a Friday night, they used…",https://en.wikiquote.org/wiki/Red_Dwarf
+,pished,,1.23,Red Dwarf,White Hole,Lister,"Rimmer, will you relax? I know what I'm doing, I am not pished!",https://en.wikiquote.org/wiki/Red_Dwarf
+,drivelling,,1.24,Red Dwarf,White Hole,Rimmer,"What are you drivelling about, Lister? We're talking about a computer with an IQ in…",https://en.wikiquote.org/wiki/Red_Dwarf
+,toutatis,,1.24,Red Dwarf,Lemons,Erin,"…they were sacrificed to the three gods: Toutatis, Esus and Taranis. First they were garrotted…",https://en.wikiquote.org/wiki/Red_Dwarf
+,nettled,,1.24,Red Dwarf,Last Human (1995),,"Tom with his round, sad spaniel face and terrible posture, and Beth with her ugly…",https://en.wikiquote.org/wiki/Red_Dwarf
+,porked,,1.27,Red Dwarf,Back to Reality,Lister,…yer? Some kinda gigantic weird pre-historic leviathan who's porked his way through this entire ocean.,https://en.wikiquote.org/wiki/Red_Dwarf
+,blearily,,1.28,Red Dwarf,Thanks for the Memory,Rimmer,(blearily crawls over to the clock on the bedside table) Saturday.,https://en.wikiquote.org/wiki/Red_Dwarf
+,chameleonic,,1.33,Red Dwarf,Polymorph,Rimmer,"…time for the T-shirts: ""Mutants Out"" ... ""Chameleonic Life Forms, No Thanks"" ... and if…",https://en.wikiquote.org/wiki/Red_Dwarf
+,marrowbone,,1.34,Red Dwarf,Kryten,Holly,"…of goodness, full of vitamins, full of marrowbone jelly. Lasts longer than any other type…",https://en.wikiquote.org/wiki/Red_Dwarf
+,fraternise,,1.34,Red Dwarf,Dimension Jump,Ace,"I'm sorry, Mellie, I don't fraternise with the staff.",https://en.wikiquote.org/wiki/Red_Dwarf
+,wastrels,,1.36,Red Dwarf,The Inquisitor,Kryten,"…is the Inquisitor; he prunes away the wastrels, expunges the wretched and deletes the worthless!",https://en.wikiquote.org/wiki/Red_Dwarf
+,rimmer's,,1.38,Red Dwarf,Better Than Life,Lister,Rimmer's dad's died.,https://en.wikiquote.org/wiki/Red_Dwarf
+,clonk,,1.38,Red Dwarf,Dimension Jump,Rimmer,"…the air, the jingle of bells, the clonk of wood on wood? Every time I…",https://en.wikiquote.org/wiki/Red_Dwarf
+,noones,,1.38,Red Dwarf,Cured,Lister,Noones changing sides here!,https://en.wikiquote.org/wiki/Red_Dwarf
+,klicks,,1.39,Red Dwarf,Demons & Angels,Kryten,That's eighty klicks. We should be clear of any possible blast zone.,https://en.wikiquote.org/wiki/Red_Dwarf
+,mooses,,1.39,Red Dwarf,Trojan,Lister,"…little red man? Of course they're not, they're mooses!! Jeez... Swedes: they expect too much!",https://en.wikiquote.org/wiki/Red_Dwarf
+,weasely,,1.4,Red Dwarf,Dimension Jump,Ace,"…the man. To see myself so warped, so bitter, so weasely. The man's a maggot.",https://en.wikiquote.org/wiki/Red_Dwarf
+,ambulate,,1.4,Red Dwarf,Meltdown,Kryten,"…start to run, sir. I suggest we ambulate as fast as the local gravity will…",https://en.wikiquote.org/wiki/Red_Dwarf
+,cinzano,,1.41,Red Dwarf,White Hole,Lister,"…night, they used to call me Dave ""Cinzano Bianco"" Lister, 'cause once I was on…",https://en.wikiquote.org/wiki/Red_Dwarf
+,funking,,1.42,Red Dwarf,Dimension Jump,Rimmer,"You don't like Reggie Wilson? What? Not even ""Pop Goes Delius"" or ""Funking Up Wagner""?",https://en.wikiquote.org/wiki/Red_Dwarf
+,strimmer,,1.43,Red Dwarf,Blue,,"More reliable than a garden strimmer,",https://en.wikiquote.org/wiki/Red_Dwarf
+,mechanoid,,1.44,Red Dwarf,,,"Kryten, a mechanoid originally from the Nova 5 whom Lister rebuilt; played by David Ross…",https://en.wikiquote.org/wiki/Red_Dwarf
+,queeg,,1.45,Red Dwarf,Queeg,Holly,"Queeg never existed, it was me all along.",https://en.wikiquote.org/wiki/Red_Dwarf
+,denti-bot,,1.46,Red Dwarf,Fathers & Suns,Lister,"Who needs a denti-bot anyway, man? Half a bottle of GELF hooch, can't feel a…",https://en.wikiquote.org/wiki/Red_Dwarf
+,centrefold,,1.47,Red Dwarf,Dimension Jump,Rimmer,"…two. Weren't you two the double action centrefold in July's edition of ""Big Boys in…",https://en.wikiquote.org/wiki/Red_Dwarf
+,teacake,,1.49,Red Dwarf,White Hole,Talkie Toaster,"…God is infinite, and that the Universe is also infinite...would you like a toasted teacake?",https://en.wikiquote.org/wiki/Red_Dwarf
+,a-thumpin,,1.5,Red Dwarf,Parallel Universe,,"My heart began a-thumpin' (boom, boom, boom)",https://en.wikiquote.org/wiki/Red_Dwarf
+,canary's,,1.52,Red Dwarf,Cassandra,Rimmer,"It died, Listy! The canary's job was to go into the most dangerous, unpleasant and…",https://en.wikiquote.org/wiki/Red_Dwarf
+,simulants,,1.53,Red Dwarf,Justice,Kryten,"With respect, sir, they're not androids. They're simulants.",https://en.wikiquote.org/wiki/Red_Dwarf
+,megalomaniacs,,1.53,Red Dwarf,Holoship,Lister,"…bunch of arrogant, pompous, emotionally weird, stuck-up megalomaniacs. Do you really think you're going to…",https://en.wikiquote.org/wiki/Red_Dwarf
+,complainin,,1.54,Red Dwarf,Samsara,Lister,Ah ah ah (ice cream plops on the floor) No complainin'. And no complainin' about…,https://en.wikiquote.org/wiki/Red_Dwarf
+,scarper,,1.55,Red Dwarf,Back to Reality,Lister,"…Either we persuade him we're not that kinda oceanic salvage vessel, or we scarper pronto.",https://en.wikiquote.org/wiki/Red_Dwarf
+,psychotically,,1.56,Red Dwarf,Legion,Lister,"You really think I'm that psychotically disgusting, don't you? They're peanuts, OK?",https://en.wikiquote.org/wiki/Red_Dwarf
+,fistbump,,1.57,Red Dwarf,The Last Day,Kryten,…lying. No Silicon Heaven? Preposterous! Where would all the calculators go? (he and Lister fistbump),https://en.wikiquote.org/wiki/Red_Dwarf
+,sarnie,,1.62,Red Dwarf,Thanks for the Memory,Lister,It's a state-of-the-art sarnie!,https://en.wikiquote.org/wiki/Red_Dwarf
+,listy,,1.62,Red Dwarf,Can of Worms,Rimmer,"Listy, if you have a personality tuck to remove all your emotions, we'll sorted!",https://en.wikiquote.org/wiki/Red_Dwarf
+,y'see,,1.63,Red Dwarf,Marooned,Holly,"…specs of grit on the scanner scope. Y'see the thing about grit, is it's black.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,orrrr,,1.63,Red Dwarf,Camille,Kryten,It's an orrrr....It's an orrrr....,https://en.wikiquote.org/wiki/Red_Dwarf
+,diddled,,1.65,Red Dwarf,Back to Reality,Cat,To get diddled by a giant squid on a first date? Think how I'd feel…,https://en.wikiquote.org/wiki/Red_Dwarf
+,yonks,,1.67,Red Dwarf,Kryten,Holly,Cow's milk. Ran out of that yonks ago. Fresh and dehydrated.,https://en.wikiquote.org/wiki/Red_Dwarf
+,where're,,1.69,Red Dwarf,Dimension Jump,Lister,So where're you going to go?,https://en.wikiquote.org/wiki/Red_Dwarf
+,nerdiest,,1.7,Red Dwarf,Krytie TV,Kryten,…Then you make him look like the nerdiest slob in the entire universe. This is…,https://en.wikiquote.org/wiki/Red_Dwarf
+,diacritic,,1.71,Red Dwarf,Legion,Lister,"Rimmer, you got a longer yellow streak than a stampede of diacritic camels.",https://en.wikiquote.org/wiki/Red_Dwarf
+,riiiight,,1.71,Red Dwarf,Trojan,Lister,"Riiiight, so, um, this Swedish guy drives into a tree, what caused the accident.... Answer's…",https://en.wikiquote.org/wiki/Red_Dwarf
+,dingleberry-breath,,1.73,Red Dwarf,Backwards,Rimmer,"What period in history, dingleberry-breath? I mean can we expect to see Ghengis Khan and…",https://en.wikiquote.org/wiki/Red_Dwarf
+,skedaddle,,1.73,Red Dwarf,The Last Day,Rimmer,"…don't much care, but if you don't skedaddle pronto, you're going to see a side…",https://en.wikiquote.org/wiki/Red_Dwarf
+,trollop,,1.73,Red Dwarf,Ouroboros,Kryten,…sir. It's hardly my place to point out what a bossy old trollop she is.,https://en.wikiquote.org/wiki/Red_Dwarf
+,lister's,,1.73,Red Dwarf,Nanarchy,Kryten,"(narrating) Last week, on Red Dwarf... something terrible happened to Mr. Lister's arm!",https://en.wikiquote.org/wiki/Red_Dwarf
+,rashers,,1.74,Red Dwarf,Stasis Leak,Rimmer,"Breakfast comprised of two eggs, three rashers of bacon, a grilled tomato, two sausages, a…",https://en.wikiquote.org/wiki/Red_Dwarf
+,whirly,,1.74,Red Dwarf,Backwards,Cat,An orange whirly thing in space!,https://en.wikiquote.org/wiki/Red_Dwarf
+,wobbler,,1.75,Red Dwarf,White Hole,Lister,"…toast every hour, he throws a major wobbler. That's what caused the accident in the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,burbling,,1.76,Red Dwarf,Quarantine,Kryten,…let's forget the noise and the revolting burbling sound and get straight to the really…,https://en.wikiquote.org/wiki/Red_Dwarf
+,fancy-schmancy,,1.76,Red Dwarf,Skipper,Rimmer,"…cosmologically on-trend because I know what anomaly means."" It's just a fancy-schmancy word for Weird.",https://en.wikiquote.org/wiki/Red_Dwarf
+,plateful,,1.77,Red Dwarf,Infinity Welcomes Careful Drivers (1989),,…godsend. Provided all you needed was a plateful of triangular-shaped cucumber sandwiches with the crust…,https://en.wikiquote.org/wiki/Red_Dwarf
+,spangles,,1.78,Red Dwarf,Rimmerworld,Cat,"…black number with peach trim and gold spangles, and although it looks like I'm wearing…",https://en.wikiquote.org/wiki/Red_Dwarf
+,snivelling,,1.78,Red Dwarf,Stoke Me a Clipper,Lister,"…a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly pile of smeg. No offence. But,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,disembowel,,1.79,Red Dwarf,Stoke Me a Clipper,AR medieval King,Then disembowel him and feed his innards to the crows.,https://en.wikiquote.org/wiki/Red_Dwarf
+,dogleg,,1.81,Red Dwarf,Marooned,Lister,"…of Bootle Municipal Golf Course. Par 4, dogleg to the right, in the bunker behind…",https://en.wikiquote.org/wiki/Red_Dwarf
+,whacko,,1.82,Red Dwarf,White Hole,Lister,"Well, it's not going to work. It's completely insane. It's whacko. It's noodle-doodle.",https://en.wikiquote.org/wiki/Red_Dwarf
+,sancerre,,1.82,Red Dwarf,Rimmerworld,Rimmer,…bring me the cold ashes on a silver plate with a glass of chilled sancerre.,https://en.wikiquote.org/wiki/Red_Dwarf
+,bedpan,,1.82,Red Dwarf,Backwards (1996),Kryten,…would never crack open a human's ribcage and use his right lung as a bedpan.,https://en.wikiquote.org/wiki/Red_Dwarf
+,farty,,1.83,Red Dwarf,White Hole,Kryten,"…that you are the most obnoxious, trumped-up, farty little smeghead it has ever been my…",https://en.wikiquote.org/wiki/Red_Dwarf
+,idolise,,1.83,Red Dwarf,Lemons,Jesus,…might make a small statue out of wood and- and- and idolise it a bit!,https://en.wikiquote.org/wiki/Red_Dwarf
+,pummelled,,1.84,Red Dwarf,Back in the Red III,Rimmer,"…whining nancy-boy with girlie white legs, then pummelled me repeatedly with his book, Showing Compassion…",https://en.wikiquote.org/wiki/Red_Dwarf
+,kryten,,1.85,Red Dwarf,,,"Kryten, a mechanoid originally from the Nova 5 whom Lister rebuilt; played by David Ross…",https://en.wikiquote.org/wiki/Red_Dwarf
+,seest,,1.85,Red Dwarf,Lemons,Jesus,"If thou seest him, tell him that I will be in the tavern, drinking wine…",https://en.wikiquote.org/wiki/Red_Dwarf
+,foulness,,1.86,Red Dwarf,Rimmerworld,Rimmer,"Dear lord, what has created such foulness? Is it the product of a marriage twixt…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gormless,,1.87,Red Dwarf,Stoke Me a Clipper,Lister,"…Ace? I mean, you're a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly pile of…",https://en.wikiquote.org/wiki/Red_Dwarf
+,roughage,,1.91,Red Dwarf,Stasis Leak,Past Rimmer,"Oh, and what do you suggest I do, then? Eat less white bread? More roughage?",https://en.wikiquote.org/wiki/Red_Dwarf
+,pukka,,1.91,Red Dwarf,Last Human (1995),Rimmer,…you - who doesn't have a completely pukka background - would never be admitted into…,https://en.wikiquote.org/wiki/Red_Dwarf
+,siren's,,1.92,Red Dwarf,Marooned,Holly,"…is a drill! Abandon shi- Oh God, now the siren's bust.... Awooga! Awooga! Abandon ship!",https://en.wikiquote.org/wiki/Red_Dwarf
+,weathermen,,1.94,Red Dwarf,Entangled,Kryten,"…were a lot of referees, TV critics, weathermen, who were then re-educated in the sciences,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,outsmarting,,1.95,Red Dwarf,Entangled,Cat,Been hunting. Trying to swat this damned space weevil. Little sucker keeps outsmarting me.,https://en.wikiquote.org/wiki/Red_Dwarf
+,wriggles,,1.97,Red Dwarf,Parallel Universe,Lister,"'Oh, it wriggles along the ground like that.'",https://en.wikiquote.org/wiki/Red_Dwarf
+,repast,,1.99,Red Dwarf,Stasis Leak,Rimmer,"…large quantity of mushrooms. Having consumed this repast, second technician Rimmer, Arnold J. experienced what…",https://en.wikiquote.org/wiki/Red_Dwarf
+,flapjacks,,1.99,Red Dwarf,White Hole,Lister,"…no pancakes, no potato cakes and no hot cross buns! And definitely no smegging flapjacks!",https://en.wikiquote.org/wiki/Red_Dwarf
+,unselfishly,,1.99,Red Dwarf,The Inquisitor,Kryten,"But I am programmed to live unselfishly. And therefore, any good works I do come…",https://en.wikiquote.org/wiki/Red_Dwarf
+,deader,,1.99,Red Dwarf,Twentica,Harmony,"…capacitor. The cops get their hands on this, we're deader than Galileo's theory of tides.",https://en.wikiquote.org/wiki/Red_Dwarf
+,vindaloo,,2.0,Red Dwarf,Marooned,Rimmer,…they're antiques! How's General Dumuoriez going to look with goat vindaloo all over his tunic?,https://en.wikiquote.org/wiki/Red_Dwarf
+,guffaw,,2.01,Red Dwarf,Balance of Power,Rimmer,"Oh, come on, Lister! Laugh, laugh, laugh. Chuckle, guffaw, giggle. That's Rimsy and Listy!",https://en.wikiquote.org/wiki/Red_Dwarf
+,giblets,,2.01,Red Dwarf,Stasis Leak,Rimmer,…kindly cluck off before I extract your giblets and shove a large seasoned onion between…,https://en.wikiquote.org/wiki/Red_Dwarf
+,mousy,,2.01,Red Dwarf,Stasis Leak,Suitcase,"…Have you seen a man who's lost his luggage, about 5 foot 10, mousy hair?",https://en.wikiquote.org/wiki/Red_Dwarf
+,slake,,2.01,Red Dwarf,Terrorform,Druid,"…Hooded Legions, proffer up this sacrifice to slake the vile depraved thirstings of the Unspeakable…",https://en.wikiquote.org/wiki/Red_Dwarf
+,bacteriological,,2.02,Red Dwarf,Thanks for the Memory,Lister,I can't remember...I think it was a book on bacteriological warfare.,https://en.wikiquote.org/wiki/Red_Dwarf
+,plops,,2.02,Red Dwarf,Samsara,Lister,Ah ah ah (ice cream plops on the floor) No complainin'. And no complainin' about…,https://en.wikiquote.org/wiki/Red_Dwarf
+,moonbase,,2.02,Red Dwarf,Cured,Lister,"Moonbase coming up on our starboard side, what is this place Krytes?",https://en.wikiquote.org/wiki/Red_Dwarf
+,programed,,2.03,Red Dwarf,The Last Day,Kryten,"It's alright sir, he's bluffing he's programed not to harm humans.",https://en.wikiquote.org/wiki/Red_Dwarf
+,gibbering,,2.03,Red Dwarf,Holoship,Kryten,…dangerous. The side effects can be devastating. You could be reduced to a gibbering simpleton.,https://en.wikiquote.org/wiki/Red_Dwarf
+,crewmates,,2.03,Red Dwarf,Siliconia,Kryten,"My crewmates, where are you taking them?",https://en.wikiquote.org/wiki/Red_Dwarf
+,limpid,,2.04,Red Dwarf,Stasis Leak,Lister,"""Carol McCauley, your eyes are like two limpid pools in the mornings"".",https://en.wikiquote.org/wiki/Red_Dwarf
+,antivirals,,2.04,Red Dwarf,Epideme,Kryten,"The plan is to inject antivirals in a precise pattern through your body, forcing epideme…",https://en.wikiquote.org/wiki/Red_Dwarf
+,answer's,,2.04,Red Dwarf,Trojan,Lister,"…Swedish guy drives into a tree, what caused the accident.... Answer's in the back, right?",https://en.wikiquote.org/wiki/Red_Dwarf
+,apposite,,2.05,Red Dwarf,Camille,Kryten,…anyone ever told you that the configuration and juxtaposition of your features is extraordinarily apposite?,https://en.wikiquote.org/wiki/Red_Dwarf
+,mooching,,2.08,Red Dwarf,Parallel Universe,Debs,"Oh, right. Mooching around on the Cargo Decks, I think.",https://en.wikiquote.org/wiki/Red_Dwarf
+,scuse,,2.08,Red Dwarf,The Last Day,Rimmer,"Ah, 'scuse me. Alright miladdo the party's over. I had about as much of this…",https://en.wikiquote.org/wiki/Red_Dwarf
+,twixt,,2.08,Red Dwarf,Rimmerworld,Rimmer,…has created such foulness? Is it the product of a marriage twixt woman and gerbil?,https://en.wikiquote.org/wiki/Red_Dwarf
+,overbite,,2.11,Red Dwarf,Back to Reality,Cat,What the hell happened to my teeth? I could open beer bottles with my overbite!,https://en.wikiquote.org/wiki/Red_Dwarf
+,scuffling,,2.12,Red Dwarf,Timeslides,Rimmer,What is he doing? He's scuffling with Adolf Hitler. You can't just stick one on…,https://en.wikiquote.org/wiki/Red_Dwarf
+,blathering,,2.13,Red Dwarf,Legion,Rimmer,"Kryten, stop your blathering and get in the damn tube.",https://en.wikiquote.org/wiki/Red_Dwarf
+,intellects,,2.13,Red Dwarf,Legion,Legion,"…not only do I possess your combined intellects and memories, I also share the sum…",https://en.wikiquote.org/wiki/Red_Dwarf
+,clucking,,2.14,Red Dwarf,D.N.A.,Lister,…a chicken's bum? That's what all the clucking was about. I was trying to say…,https://en.wikiquote.org/wiki/Red_Dwarf
+,ohhhhhh,,2.14,Red Dwarf,Out of Time,Rimmer,Ohhhhhh dear!,https://en.wikiquote.org/wiki/Red_Dwarf
+,directionless,,2.14,Red Dwarf,Stoke Me a Clipper,Lister,"…I mean, you're a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly pile of smeg.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,shrove,,2.15,Red Dwarf,Marooned,Rimmer,"…It's only a bank holiday. Why not ""Shrove Tuesday"", or ""Ascension Sunday"" ? Ascension Sunday,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sinews,,2.15,Red Dwarf,White Hole,Talkie Toaster,…IQ to its very limits and stretch the sinews of your knowledge to bursting point!,https://en.wikiquote.org/wiki/Red_Dwarf
+,fizzing,,2.15,Red Dwarf,Emohawk: Polymorph II,Cat,"…the damage report machine, there's several small fires, lots of smoke and the navicom's fizzing.",https://en.wikiquote.org/wiki/Red_Dwarf
+,rameses,,2.16,Red Dwarf,White Hole,Kryten,"…he preferred it if people called him ""Rameses Niblick III, Kerplunk-Kerplunk, Whoops, Where's My Thribble?"".…",https://en.wikiquote.org/wiki/Red_Dwarf
+,kowtow,,2.16,Red Dwarf,The Inquisitor,Lister,…judge and jury to the whole of humanity? Why should we kowtow to his judgement?,https://en.wikiquote.org/wiki/Red_Dwarf
+,anythin,,2.17,Red Dwarf,Marooned,Lister,It wasn't in the middle of the Ryder Cup or anythin'! It was midnight.,https://en.wikiquote.org/wiki/Red_Dwarf
+,pliant,,2.17,Red Dwarf,Terrorform,Rimmer,"…Obviously, whatever he has in mind is facilitated by my being slippery and pliant, yes?",https://en.wikiquote.org/wiki/Red_Dwarf
+,swerves,,2.17,Red Dwarf,Trojan,Kryten,"Well, it's a moose, sir, he swerves and hits a tree.",https://en.wikiquote.org/wiki/Red_Dwarf
+,whaddya,,2.18,Red Dwarf,Terrorform,Lister,"Whaddya mean, you don't wanna spread panic and alarm?",https://en.wikiquote.org/wiki/Red_Dwarf
+,braying,,2.18,Red Dwarf,Last Human (1995),,"…Old Prune Face's laugh; the terrible, terrible braying laugh that could have sawn down Canadian…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gazpacho,,2.19,Red Dwarf,Me²,Rimmer,"…me... they called me ""Arnold!"" We had gazpacho soup for starters... I didn't know that…",https://en.wikiquote.org/wiki/Red_Dwarf
+,chicken's,,2.19,Red Dwarf,D.N.A.,Lister,…an egg? Seen the size of a chicken's bum? That's what all the clucking was…,https://en.wikiquote.org/wiki/Red_Dwarf
+,underachieving,,2.19,Red Dwarf,Stoke Me a Clipper,Lister,"…you're a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly pile of smeg. No offence.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,chip's,,2.19,Red Dwarf,Krysis,Kryten,"Oh, my jealousy chip's overloading, sir! Return to sane mode! Of course we should land!",https://en.wikiquote.org/wiki/Red_Dwarf
+,insubordinate,,2.2,Red Dwarf,The End,Lister,"…see, I try, sir. I'm not an insubordinate man by nature. I try and respect…",https://en.wikiquote.org/wiki/Red_Dwarf
+,beatnik,,2.2,Red Dwarf,Future Echoes,Rimmer,"…in hippie heaven, you pregnant, baboon-bellied, space beatnik? What's the plan for the day, then?…",https://en.wikiquote.org/wiki/Red_Dwarf
+,trickiest,,2.2,Red Dwarf,Better Than Life,Rimmer,"…Four super brushes for cleaning even the trickiest of sea-bound mammals! Yes, I am over…",https://en.wikiquote.org/wiki/Red_Dwarf
+,teleporter,,2.2,Red Dwarf,Rimmerworld,Kryten,Or we could use the teleporter.,https://en.wikiquote.org/wiki/Red_Dwarf
+,coveting,,2.2,Red Dwarf,Lemons,Jesus,"…my mind will turn to dark, vile thoughts and I'll start coveting my neighbour's oxen!!",https://en.wikiquote.org/wiki/Red_Dwarf
+,calibrations,,2.21,Red Dwarf,Tikka To Ride,Rimmer,…subspace conduits have locked with the transponder calibrations and caused a major tachyon surge that…,https://en.wikiquote.org/wiki/Red_Dwarf
+,tachyon,,2.21,Red Dwarf,Tikka To Ride,Rimmer,…the transponder calibrations and caused a major tachyon surge that has overloaded the time matrix?,https://en.wikiquote.org/wiki/Red_Dwarf
+,toupee,,2.22,Red Dwarf,Out of Time,Kryten,Better anything than that toupee!,https://en.wikiquote.org/wiki/Red_Dwarf
+,reassembling,,2.22,Red Dwarf,Siliconia,,"…Cat, after dismantling each other to get through the locked gate, finish reassembling and head-off.",https://en.wikiquote.org/wiki/Red_Dwarf
+,nobby,,2.23,Red Dwarf,Me²,Rimmer,…It's because I didn't have the right nobby parents! I'll bet Todhunter was fed gazpacho…,https://en.wikiquote.org/wiki/Red_Dwarf
+,chirpy,,2.23,Red Dwarf,Out of Time,Rimmer,"…pick? Everything, that's what. Especially his god-awful, chirpy, gerbil-faced optimism. And, as for the Cat…",https://en.wikiquote.org/wiki/Red_Dwarf
+,bio-printer's,,2.23,Red Dwarf,Officer Rimmer,Captain Herring,I've just told you my bio-printer's faulty you cretin. My visuals are down... what's your…,https://en.wikiquote.org/wiki/Red_Dwarf
+,balms,,2.24,Red Dwarf,Demons & Angels,High Kryten,"Welcome, my children, we bring you balms and tinctures.",https://en.wikiquote.org/wiki/Red_Dwarf
+,repartee,,2.25,Red Dwarf,Blue,,"Master of the wit and the repartee,",https://en.wikiquote.org/wiki/Red_Dwarf
+,tinctures,,2.26,Red Dwarf,Demons & Angels,High Kryten,"Welcome, my children, we bring you balms and tinctures.",https://en.wikiquote.org/wiki/Red_Dwarf
+,fritter,,2.26,Red Dwarf,Mechocracy,Rimmer,"…frustrates me no end to see you fritter it all away. And, here's another thing.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,outland,,2.27,Red Dwarf,Better Than Life,Lister,Smeg! Outland Revenue!,https://en.wikiquote.org/wiki/Red_Dwarf
+,marigolds,,2.27,Red Dwarf,Queeg,Cat,Marigolds with blue? Are you crazy!?,https://en.wikiquote.org/wiki/Red_Dwarf
+,crumpets,,2.27,Red Dwarf,White Hole,Lister,"…baps, baguettes or bagels, no croissants, no crumpets, no pancakes, no potato cakes and no…",https://en.wikiquote.org/wiki/Red_Dwarf
+,regale,,2.27,Red Dwarf,Dimension Jump,Rimmer,"…be liked, God knows I try. I regale you with amusing stories of my time…",https://en.wikiquote.org/wiki/Red_Dwarf
+,lifeforms,,2.27,Red Dwarf,Back to Reality,Kryten,"…if this ocean is supposed to be teeming with new lifeforms, where are they all?",https://en.wikiquote.org/wiki/Red_Dwarf
+,why're,,2.27,Red Dwarf,Gunmen of the Apocalypse,Lister,"OK, who are you and why're you here?",https://en.wikiquote.org/wiki/Red_Dwarf
+,whinging,,2.29,Red Dwarf,Cassandra,Rimmer,…beck and call day and night! Give me that now and I wouldn't be whinging.,https://en.wikiquote.org/wiki/Red_Dwarf
+,demote,,2.29,Red Dwarf,Mechocracy,Lister,"…equal with you so now, you can't demote me! You totally screwed that one up,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,proffer,,2.3,Red Dwarf,Terrorform,Druid,"…of this domain, we, the Hooded Legions, proffer up this sacrifice to slake the vile…",https://en.wikiquote.org/wiki/Red_Dwarf
+,spindly,,2.31,Red Dwarf,Bodyswap,Rimmer,"…belly sort of sticks out above its spindly little legs? Well, that's the picture I…",https://en.wikiquote.org/wiki/Red_Dwarf
+,cluck,,2.32,Red Dwarf,Stasis Leak,Rimmer,Now kindly cluck off before I extract your giblets and shove a large seasoned onion…,https://en.wikiquote.org/wiki/Red_Dwarf
+,d'etre,,2.32,Red Dwarf,White Hole,Toaster,"…am a toaster. It is my raison d'etre. I toast, therefore I am. If you…",https://en.wikiquote.org/wiki/Red_Dwarf
+,kipper,,2.32,Red Dwarf,Dimension Jump,Ace,"Smoke me a kipper, I'll be back for breakfast.",https://en.wikiquote.org/wiki/Red_Dwarf
+,astoundingly,,2.33,Red Dwarf,Waiting For God,Holly,"…responsibility, yet constantly fails the astro-navigation exam. Astoundingly zealous, possibly mad; probably has more teeth…",https://en.wikiquote.org/wiki/Red_Dwarf
+,lemming,,2.33,Red Dwarf,Stasis Leak,Rimmer,I loved that little lemming. I built him a little wall he could hurl himself…,https://en.wikiquote.org/wiki/Red_Dwarf
+,spattered,,2.33,Red Dwarf,Justice,Cat,"(spattered with vile yellow gunk): I don't wanna live! Someone, please...shoot me in the head!",https://en.wikiquote.org/wiki/Red_Dwarf
+,dryly,,2.33,Red Dwarf,Terrorform,The Unspeakable One,"(dryly, after our heroes have discharged multiple bazookoid blasts, causing their surroundings to collapse): Is…",https://en.wikiquote.org/wiki/Red_Dwarf
+,outstandingly,,2.33,Red Dwarf,Entangled,Kryten,"They were all outstandingly good at being consistently incorrect. There were a lot of referees,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,tarantulas,,2.34,Red Dwarf,Terrorform,Holly,"Well, you've always had this thing against tarantulas, haven't you?",https://en.wikiquote.org/wiki/Red_Dwarf
+,neuroses,,2.34,Red Dwarf,Siliconia,Kryten Lister,You need to get your neuroses back!,https://en.wikiquote.org/wiki/Red_Dwarf
+,baguettes,,2.35,Red Dwarf,White Hole,Lister,"…toast, no tea cakes, no buns, baps, baguettes or bagels, no croissants, no crumpets, no…",https://en.wikiquote.org/wiki/Red_Dwarf
+,seascape,,2.35,Red Dwarf,Quarantine,Kryten,…expect to see in there? A Turner seascape perhaps? The face of the Madonna? An…,https://en.wikiquote.org/wiki/Red_Dwarf
+,listenin,,2.35,Red Dwarf,Quarantine,Lister,How long have you been listenin'?,https://en.wikiquote.org/wiki/Red_Dwarf
+,ribcage,,2.35,Red Dwarf,Backwards (1996),Kryten,…mechanoid would never crack open a human's ribcage and use his right lung as a…,https://en.wikiquote.org/wiki/Red_Dwarf
+,hummed,,2.37,Red Dwarf,Me²,Lister,…saying you never became an officer because you shared your quarters with someone who hummed?,https://en.wikiquote.org/wiki/Red_Dwarf
+,maiming,,2.37,Red Dwarf,Backwards,Lister,…the petty-minded little sadist who goes around maiming small animals! Or Santa Claus? What a…,https://en.wikiquote.org/wiki/Red_Dwarf
+,gingham,,2.37,Red Dwarf,Quarantine,Rimmer,…I'm wearing a red and white checked gingham dress... and army boots... and you think…,https://en.wikiquote.org/wiki/Red_Dwarf
+,unicycle,,2.37,Red Dwarf,Demons & Angels,Holly,…fire has knocked out my voice recognition unicycle! Many Wurlitzers are missing from my database.…,https://en.wikiquote.org/wiki/Red_Dwarf
+,plopped,,2.37,Red Dwarf,Psirens,Rimmer,I don't think he meant to do that. I think it just...plopped out.,https://en.wikiquote.org/wiki/Red_Dwarf
+,xylophone,,2.37,Red Dwarf,Rimmerworld,Kryten,…and play your frontal lobes like a xylophone than have another bowl of my nourishing…,https://en.wikiquote.org/wiki/Red_Dwarf
+,d'yknow,,2.38,Red Dwarf,Cassandra,Lister,"…Rimmer, I tend not to look around; d'yknow what I'm saying? It's like playing golf;…",https://en.wikiquote.org/wiki/Red_Dwarf
+,furrows,,2.38,Red Dwarf,Last Human (1995),,"…pain that gouged through his body, ploughing furrows through his flesh. He could hear his…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gynaecologist,,2.4,Red Dwarf,Thanks for the Memory,Holly,"Gordon Bennett, it's lucky he's not a gynaecologist.",https://en.wikiquote.org/wiki/Red_Dwarf
+,wheeze,,2.4,Red Dwarf,Queeg,Holly,"Wheeze of the week, mate!",https://en.wikiquote.org/wiki/Red_Dwarf
+,whist,,2.4,Red Dwarf,Polymorph,Rimmer,"…from that, we'd follow up with a {whist} drive, a car boot sale, some street…",https://en.wikiquote.org/wiki/Red_Dwarf
+,jeopardise,,2.41,Red Dwarf,The End,Captain Hollister,"…not only are you so stupid you jeopardise every man and woman on this ship,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,disintegrates,,2.41,Red Dwarf,Rimmerworld,Rimmer,"…ship, don't get captured, but the superstructure disintegrates around us, we're finished. On the other…",https://en.wikiquote.org/wiki/Red_Dwarf
+,baboon-bellied,,2.42,Red Dwarf,Future Echoes,Rimmer,"…How's life in hippie heaven, you pregnant, baboon-bellied, space beatnik? What's the plan for the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sufficed,,2.42,Red Dwarf,The Inquisitor,Rimmer,"A simple ""yes"" would have sufficed.",https://en.wikiquote.org/wiki/Red_Dwarf
+,thumped,,2.42,Red Dwarf,Better Than Life (1990),,"…Lister's favourite dance track, ""Born to Brutalize,"" thumped out of his old wax-blaster with such…",https://en.wikiquote.org/wiki/Red_Dwarf
+,nauseated,,2.42,Red Dwarf,Last Human (1995),,…perfume. He could smell it now. It nauseated him. He could hear Old Prune Face's…,https://en.wikiquote.org/wiki/Red_Dwarf
+,jabbing,,2.43,Red Dwarf,Tikka To Ride,Kryten,"Ah, no, sir. I've just been jabbing it too hard.",https://en.wikiquote.org/wiki/Red_Dwarf
+,smithereens,,2.44,Red Dwarf,Parallel Universe,Holly,"…billion calculations and we'll be blasted to smithereens. Here we go, then: 10, 9, 8,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,remotest,,2.44,Red Dwarf,Terrorform,Rimmer,…British Embassy? Does it even look the remotest bit like the British Embassy? I want…,https://en.wikiquote.org/wiki/Red_Dwarf
+,gerbil,,2.44,Red Dwarf,Rimmerworld,Rimmer,…has created such foulness? Is it the product of a marriage twixt woman and gerbil?,https://en.wikiquote.org/wiki/Red_Dwarf
+,gerbil-faced,,2.44,Red Dwarf,Out of Time,Rimmer,"…Everything, that's what. Especially his god-awful, chirpy, gerbil-faced optimism. And, as for the Cat —…",https://en.wikiquote.org/wiki/Red_Dwarf
+,tweety-pie,,2.44,Red Dwarf,Cassandra,Lister,"(part from a deleted scene) Too late, tweety-pie, there's your I.D badge and uniform!",https://en.wikiquote.org/wiki/Red_Dwarf
+,unfashionable,,2.44,Red Dwarf,Krytie TV,Kryten,And then there's these: tragically unfashionable underpants.,https://en.wikiquote.org/wiki/Red_Dwarf
+,ident,,2.44,Red Dwarf,Cured,Kryten,"Mmh, according to the ident, it's a United America scientific research station.",https://en.wikiquote.org/wiki/Red_Dwarf
+,whereof,,2.45,Red Dwarf,White Hole,Lister,…pool. I can. Trust me. I know whereof I speak. Aigburth Arms on a Friday…,https://en.wikiquote.org/wiki/Red_Dwarf
+,prise,,2.45,Red Dwarf,Legion,Lister,…when he got shot! I had to prise his jaws open with a car jack.,https://en.wikiquote.org/wiki/Red_Dwarf
+,somthing,,2.45,Red Dwarf,Krytie TV,Rimmer,Somthing catastrophic. Hideous. He's found your guitar in Starbug's wreckage and is sending it here.,https://en.wikiquote.org/wiki/Red_Dwarf
+,cretin,,2.45,Red Dwarf,Officer Rimmer,Captain Herring,…just told you my bio-printer's faulty you cretin. My visuals are down... what's your name…,https://en.wikiquote.org/wiki/Red_Dwarf
+,waders,,2.45,Red Dwarf,Better Than Life (1990),,"…Deely-boppers, battery-propelled revolving bow-ties and yellow fishing waders, precisely as Lister had requested in his…",https://en.wikiquote.org/wiki/Red_Dwarf
+,lobotomy,,2.46,Red Dwarf,Quarantine,Rimmer,…what to get you for Christmas: a double lobotomy and ten rolls of rubber wallpaper.,https://en.wikiquote.org/wiki/Red_Dwarf
+,mopped,,2.46,Red Dwarf,Siliconia,Rimmer,…and it doesn't appear to have been mopped in at least two days. I can…,https://en.wikiquote.org/wiki/Red_Dwarf
+,cornflakes,,2.47,Red Dwarf,Stasis Leak,Lister,"…wine. 'What do you want on your cornflakes darling', 'oh I'll 'ave some wine please'.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,clammy,,2.47,Red Dwarf,Terrorform,Holly,"…up and finding one crawling over your clammy, naked, helpless body has always filled you…",https://en.wikiquote.org/wiki/Red_Dwarf
+,taketh,,2.47,Red Dwarf,Lemons,Kryten,"…to 23AD so he can ""trash his reputation so this Christianity thingth never taketh off-ffff-ffff-ffff-ffffth""",https://en.wikiquote.org/wiki/Red_Dwarf
+,buttock,,2.48,Red Dwarf,Marooned,Rimmer,…Imagine getting your ball stuck in Lister's buttock crevice. You'd need more than a niblick…,https://en.wikiquote.org/wiki/Red_Dwarf
+,egocentric,,2.48,Red Dwarf,The Inquisitor,Kryten,"You simply have to have led a life that wasn't totally egocentric, vain and self-serving.",https://en.wikiquote.org/wiki/Red_Dwarf
+,fathoms,,2.49,Red Dwarf,Back to Reality,Rimmer,Directly above you. Two thousand fathoms and diving.,https://en.wikiquote.org/wiki/Red_Dwarf
+,handstand,,2.49,Red Dwarf,Pete I,Hollister,…a leak I had to do a handstand on the toilet seat. I stopped the…,https://en.wikiquote.org/wiki/Red_Dwarf
+,humanoids,,2.5,Red Dwarf,,,…last known member of a race of humanoids evolved from Lister's cat; played by Danny…,https://en.wikiquote.org/wiki/Red_Dwarf
+,matey,,2.5,Red Dwarf,Balance of Power,Rimmer,"What's this? Learning drugs? They're illegal, matey! I'm afraid you're in very serious, grave, deep…",https://en.wikiquote.org/wiki/Red_Dwarf
+,simpleton,,2.5,Red Dwarf,Holoship,Kryten,…dangerous. The side effects can be devastating. You could be reduced to a gibbering simpleton.,https://en.wikiquote.org/wiki/Red_Dwarf
+,molluscs,,2.5,Red Dwarf,Gunmen of the Apocalypse,Kryten,"…program. So, if you'll forgive the confrontational imperative, go for your guns you scum-sucking molluscs!",https://en.wikiquote.org/wiki/Red_Dwarf
+,droopy-ass,,2.5,Red Dwarf,Timewave,Cat,"…don't move your dumb-ass spaceship, we're gonna be flatter than your wife's droopy-ass titties, capisce?",https://en.wikiquote.org/wiki/Red_Dwarf
+,anything's,,2.51,Red Dwarf,Stasis Leak,Holly,Anything's better than to listen to an album by Olivia Newton-John.,https://en.wikiquote.org/wiki/Red_Dwarf
+,weaved,,2.51,Red Dwarf,Rimmerworld,Lister,"…these bricks out, then using a rope weaved from strands of this hessian, rig up…",https://en.wikiquote.org/wiki/Red_Dwarf
+,fondle,,2.52,Red Dwarf,Timeslides,Rimmer,"…can touch, I can feel, I can fondle - I'm alive! Don't you think it's…",https://en.wikiquote.org/wiki/Red_Dwarf
+,escapade,,2.52,Red Dwarf,Psirens,Kryten,"No, but I'm hoping to acquire one from this escapade.",https://en.wikiquote.org/wiki/Red_Dwarf
+,gouged,,2.52,Red Dwarf,Last Human (1995),,"…could feel the rips of pain that gouged through his body, ploughing furrows through his…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gurgling,,2.52,Red Dwarf,Last Human (1995),,"…his flesh. He could hear his own screams soaked in saliva, gurgling in his throat.",https://en.wikiquote.org/wiki/Red_Dwarf
+,rimmer,,2.53,Red Dwarf,The End,Lister,Rimmer?,https://en.wikiquote.org/wiki/Red_Dwarf
+,hosed,,2.53,Red Dwarf,Trojan,Howard,"…something to live for.Rimmer: No, we just hosed him down and gave him a hat.",https://en.wikiquote.org/wiki/Red_Dwarf
+,infomercial,,2.53,Red Dwarf,Mechocracy,Lister,This infomercial comes to you on behalf of the Independent Future Party.,https://en.wikiquote.org/wiki/Red_Dwarf
+,d'artagnan,,2.53,Red Dwarf,Red Dwarf: The Promised Land (2020),Lister,"…the Dwarf. We're like the Four Musketeers. D'Artagnan, Porthos, Athos... and the other one. Rimmer,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,hacksaw,,2.54,Red Dwarf,Marooned,Rimmer,"Kryten, get the hacksaw and follow me.",https://en.wikiquote.org/wiki/Red_Dwarf
+,schopenhauer,,2.54,Red Dwarf,Quarantine,Dr. Hildegarde Lanstrom,"Schopenhauer was right, vouldn't you say? Life vithout pain has no meaning. Gentlemen, I vish…",https://en.wikiquote.org/wiki/Red_Dwarf
+,innards,,2.54,Red Dwarf,Stoke Me a Clipper,AR medieval King,Then disembowel him and feed his innards to the crows.,https://en.wikiquote.org/wiki/Red_Dwarf
+,bewitching,,2.54,Red Dwarf,Ouroboros,Kryten,…swapping dimensions like there's no tomorrow and bewitching him with your... in and out bits.…,https://en.wikiquote.org/wiki/Red_Dwarf
+,blowin,,2.55,Red Dwarf,Demons & Angels,Lister,Nothin's gonna happen. We're just here as a precaution. The whole ship's full of fail-safes…,https://en.wikiquote.org/wiki/Red_Dwarf
+,bunched,,2.55,Red Dwarf,Backwards (1996),,…as he can. His little face is bunched up like a constipated pig at a…,https://en.wikiquote.org/wiki/Red_Dwarf
+,inoffensive,,2.56,Red Dwarf,Holoship,Lister,"…anal region. Chin absent, presumed missing. Genitalia small and inoffensive. Of no value or interest.",https://en.wikiquote.org/wiki/Red_Dwarf
+,daffodil,,2.56,Red Dwarf,Demons & Angels,Holly,…my database. Abandon shop! This is not a daffodil. Repeat: This is not a daffodil.,https://en.wikiquote.org/wiki/Red_Dwarf
+,hessian,,2.56,Red Dwarf,Rimmerworld,Lister,"…a rope weaved from strands of this hessian, rig up a kind of a pulley…",https://en.wikiquote.org/wiki/Red_Dwarf
+,credibly,,2.57,Red Dwarf,Kryten,Lister,"Listen, girls. I don't know whether this is the time or place to say this…",https://en.wikiquote.org/wiki/Red_Dwarf
+,snuffed,,2.57,Red Dwarf,Meltdown,Lister,"…there, safe under the knowledge that they snuffed it under a flag of peace, and…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gutless,,2.57,Red Dwarf,Stoke Me a Clipper,Lister,"…the next Ace? I mean, you're a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly…",https://en.wikiquote.org/wiki/Red_Dwarf
+,inaugurate,,2.57,Red Dwarf,Siliconia,,The MILFs are preparing to inaugurate Kryten as an official member of their alliance.,https://en.wikiquote.org/wiki/Red_Dwarf
+,redwoods,,2.57,Red Dwarf,Last Human (1995),,…laugh that could have sawn down Canadian redwoods. And then he started to remember the…,https://en.wikiquote.org/wiki/Red_Dwarf
+,spanner,,2.58,Red Dwarf,Thanks for the Memory,Lister,"It's in the shape of a spanner, Holly, cos he was a technician.",https://en.wikiquote.org/wiki/Red_Dwarf
+,melodious,,2.58,Red Dwarf,Dimension Jump,Lister,"I prefer something slightly more melodious, like the long, drawn-out death rattle of a man…",https://en.wikiquote.org/wiki/Red_Dwarf
+,flatulence,,2.58,Red Dwarf,Dimension Jump,Lister,"…more melodious, like the long, drawn-out death rattle of a man suffering from terminal flatulence.",https://en.wikiquote.org/wiki/Red_Dwarf
+,hooch,,2.58,Red Dwarf,Fathers & Suns,Lister,"…anyway, man? Half a bottle of GELF hooch, can't feel a thing now...anywhere. Starting to…",https://en.wikiquote.org/wiki/Red_Dwarf
+,shakin,,2.59,Red Dwarf,Parallel Universe,,My hands they started shakin' (shakin'),https://en.wikiquote.org/wiki/Red_Dwarf
+,horoscopes,,2.59,Red Dwarf,Cassandra,Lister,"If the future is all worked out, horoscopes all that stuff . . . It…",https://en.wikiquote.org/wiki/Red_Dwarf
+,job's,,2.6,Red Dwarf,Waiting For God,Holly,"…a saying amongst the officers: 'If a job's worth doing, it's worth doing well. If…",https://en.wikiquote.org/wiki/Red_Dwarf
+,hallucinogenic,,2.6,Red Dwarf,Stasis Leak,Rimmer,"…vessel Red Dwarf a consignment of a hallucinogenic fungi Titan Mushrooms, more popularly known to…",https://en.wikiquote.org/wiki/Red_Dwarf
+,eunuchs,,2.6,Red Dwarf,Stoke Me a Clipper,Lister,"…smeg. No offence. But, get real, man. Most eunuchs have got more balls than you.",https://en.wikiquote.org/wiki/Red_Dwarf
+,staves,,2.6,Red Dwarf,Backwards (1996),,"…names of the notes on the musical staves, E, G, B, D, F, using the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,act's,,2.61,Red Dwarf,Backwards,Club owner,"…poor, sad life he's got! Frankly, your act's crap anyway, anybody could have done it!…",https://en.wikiquote.org/wiki/Red_Dwarf
+,crimp,,2.61,Red Dwarf,Terrorform,Cat,"Well, that's put a crimp on an otherwise damn fine plan.",https://en.wikiquote.org/wiki/Red_Dwarf
+,crevice,,2.62,Red Dwarf,Marooned,Rimmer,…getting your ball stuck in Lister's buttock crevice. You'd need more than a niblick to…,https://en.wikiquote.org/wiki/Red_Dwarf
+,dreadlocks,,2.62,Red Dwarf,Out of Time,,(After discovering Lister is now just a brain in a jar with fake dreadlocks),https://en.wikiquote.org/wiki/Red_Dwarf
+,dollop,,2.62,Red Dwarf,Beyond A Joke,Lister,"Ketchup, I thought it could do with a bit of ketchup, just a dollop...",https://en.wikiquote.org/wiki/Red_Dwarf
+,crewman,,2.62,Red Dwarf,Officer Rimmer,Captain Herring,…told you my bio-printer's faulty you cretin. My visuals are down... what's your name crewman?,https://en.wikiquote.org/wiki/Red_Dwarf
+,mnemonic,,2.62,Red Dwarf,Backwards (1996),,"…the notes on the musical staves, E, G, B, D, F, using the time-honoured mnemonic:",https://en.wikiquote.org/wiki/Red_Dwarf
+,transvestite,,2.63,Red Dwarf,Balance of Power,Lister,"…mean, OK, he was a drug-crazed, Nazi transvestite, but at least we could've gone dancing!",https://en.wikiquote.org/wiki/Red_Dwarf
+,zillion,,2.63,Red Dwarf,Better Than Life (1990),Talkie Toaster,…a huge mainframe computer with a fifteen zillion gigabyte capacity and a projected IQ in…,https://en.wikiquote.org/wiki/Red_Dwarf
+,prunes,,2.64,Red Dwarf,The Inquisitor,Kryten,"That is the Inquisitor; he prunes away the wastrels, expunges the wretched and deletes the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sorbet,,2.64,Red Dwarf,Rimmerworld,Kryten,"Tonight, sir, asteroid lichen stew followed by dandelion sorbet.",https://en.wikiquote.org/wiki/Red_Dwarf
+,exoskeleton,,2.64,Red Dwarf,Beyond A Joke,Kryten,…hours I put into food prep. My fingers are practically worn down to the exoskeleton!,https://en.wikiquote.org/wiki/Red_Dwarf
+,choc-ice,,2.64,Red Dwarf,Krytie TV,Rimmer,Fancy a choc-ice?,https://en.wikiquote.org/wiki/Red_Dwarf
+,fallacious,,2.64,Red Dwarf,Entangled,Kryten,…for their ability to be mistaken; for their gifts in fallacious analysis and defective reasoning.,https://en.wikiquote.org/wiki/Red_Dwarf
+,agape,,2.65,Red Dwarf,Kryten,Rimmer,"(Enters and bows) Carmita...(Sees the skeletons and stays in his bow, jaw agape)",https://en.wikiquote.org/wiki/Red_Dwarf
+,sadist,,2.65,Red Dwarf,Backwards,Lister,"…In this universe, he's the petty-minded little sadist who goes around maiming small animals! Or…",https://en.wikiquote.org/wiki/Red_Dwarf
+,gigabyte,,2.65,Red Dwarf,Better Than Life (1990),Talkie Toaster,…huge mainframe computer with a fifteen zillion gigabyte capacity and a projected IQ in excess…,https://en.wikiquote.org/wiki/Red_Dwarf
+,pastimes,,2.66,Red Dwarf,Quarantine,Kryten,"Hm, the most popular pastimes have always been ones that males can enjoy alone. Angling,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sardine,,2.66,Red Dwarf,Back to Reality,Lister,"…hull of a class D space corps seeding ship. In comparison, we're a sardine tin.",https://en.wikiquote.org/wiki/Red_Dwarf
+,human's,,2.67,Red Dwarf,Justice,Kryten,…that an android would never rip off a human's head and spit down his neck.,https://en.wikiquote.org/wiki/Red_Dwarf
+,tentacle,,2.67,Red Dwarf,Part One,Lister,He means tentacle.,https://en.wikiquote.org/wiki/Red_Dwarf
+,outsmart,,2.67,Red Dwarf,Part Two,Katerina,"You think you outsmart me, yes? But you don't, I here. Cut a second hole.",https://en.wikiquote.org/wiki/Red_Dwarf
+,kristine,,2.68,Red Dwarf,,,"Kristine Kochanski, a version of Lister's former girlfriend from a parallel universe; played by Chloë…",https://en.wikiquote.org/wiki/Red_Dwarf
+,rasputin,,2.68,Red Dwarf,Meltdown,Caligula,"Very well. Rasputin, bring in the bucket of soapy frogs and remove his trousers.",https://en.wikiquote.org/wiki/Red_Dwarf
+,neighbour's,,2.68,Red Dwarf,Lemons,Jesus,"…my mind will turn to dark, vile thoughts and I'll start coveting my neighbour's oxen!!",https://en.wikiquote.org/wiki/Red_Dwarf
+,quicksand,,2.68,Red Dwarf,M-Corp,Kryten,"…it. They even bought all the stuff nobody likes. Maggots, quicksand, even the American chocolate.",https://en.wikiquote.org/wiki/Red_Dwarf
+,milkshakes,,2.69,Red Dwarf,Confidence and Paranoia,Confidence,Ding-dong! Another great idea from the people who brought you beer milkshakes!,https://en.wikiquote.org/wiki/Red_Dwarf
+,tidying,,2.69,Red Dwarf,Kryten,Kryten,I've done a spot of tidying up.,https://en.wikiquote.org/wiki/Red_Dwarf
+,raison,,2.69,Red Dwarf,White Hole,Toaster,"…I am a toaster. It is my raison d'etre. I toast, therefore I am. If…",https://en.wikiquote.org/wiki/Red_Dwarf
+,archimedes,,2.69,Red Dwarf,Samsara,Cat,Archimedes!,https://en.wikiquote.org/wiki/Red_Dwarf
+,frustrates,,2.69,Red Dwarf,Mechocracy,Rimmer,"And it frustrates me no end to see you fritter it all away. And, here's…",https://en.wikiquote.org/wiki/Red_Dwarf
+,narrowest,,2.7,Red Dwarf,The End,Rimmer,Last time I only failed by the narrowest of narrow margins.,https://en.wikiquote.org/wiki/Red_Dwarf
+,croquet,,2.7,Red Dwarf,Balance of Power,Rimmer,…of the summer walking around like a croquet hoop! I laughed so hard I nearly…,https://en.wikiquote.org/wiki/Red_Dwarf
+,splat,,2.7,Red Dwarf,The Last Day,Rimmer,"…than most of us get. Most of us get ""Mind that bus!"" ""What bus?"" Splat!",https://en.wikiquote.org/wiki/Red_Dwarf
+,croissants,,2.71,Red Dwarf,White Hole,Lister,"…no buns, baps, baguettes or bagels, no croissants, no crumpets, no pancakes, no potato cakes…",https://en.wikiquote.org/wiki/Red_Dwarf
+,halibut,,2.71,Red Dwarf,Emohawk: Polymorph II,Rimmer,"Details, halibut breath!",https://en.wikiquote.org/wiki/Red_Dwarf
+,nettle,,2.71,Red Dwarf,Rimmerworld,Kryten,…frontal lobes like a xylophone than have another bowl of my nourishing space nettle soup?,https://en.wikiquote.org/wiki/Red_Dwarf
+,gazebo,,2.71,Red Dwarf,Beyond A Joke,Kryten,"…is ready! (He fires, completely destroying the gazebo) Is anyone still unclear as to the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,ashtray,,2.72,Red Dwarf,Me²,Rimmer,Like using my mother's photograph as an ashtray.,https://en.wikiquote.org/wiki/Red_Dwarf
+,conduits,,2.72,Red Dwarf,Tikka To Ride,Rimmer,Do you think it's because the subspace conduits have locked with the transponder calibrations and…,https://en.wikiquote.org/wiki/Red_Dwarf
+,nicked,,2.73,Red Dwarf,Stasis Leak,Lister,I nicked them. They were in a locker. They must have belonged to Headbanger Harris.,https://en.wikiquote.org/wiki/Red_Dwarf
+,inwardly,,2.73,Red Dwarf,Queeg,,(Rimmer groans inwardly),https://en.wikiquote.org/wiki/Red_Dwarf
+,nostril-hairs,,2.73,Red Dwarf,Legion,Cat,"Listen, butter-pat head! My nostril-hairs are vibrating faster than the springs on a Spaniard's honeymoon…",https://en.wikiquote.org/wiki/Red_Dwarf
+,whatever's,,2.73,Red Dwarf,Out of Time,Rimmer,…had a coffee or a beer — whatever's your poison — and get any troubles…,https://en.wikiquote.org/wiki/Red_Dwarf
+,weevil,,2.73,Red Dwarf,Entangled,Cat,Been hunting. Trying to swat this damned space weevil. Little sucker keeps outsmarting me.,https://en.wikiquote.org/wiki/Red_Dwarf
+,innit,,2.74,Red Dwarf,Waiting For God,Holly,"Well, it's a laugh, innit?",https://en.wikiquote.org/wiki/Red_Dwarf
+,chutney,,2.74,Red Dwarf,Thanks for the Memory,Lister,With chili sauce and chutney!,https://en.wikiquote.org/wiki/Red_Dwarf
+,suspenders,,2.74,Red Dwarf,The Last Day,Cat,…you get a traffic cone! It's the policewoman's helmet and the suspenders I don't understand!,https://en.wikiquote.org/wiki/Red_Dwarf
+,splattered,,2.74,Red Dwarf,Legion,Kryten,…fodder? This will of course leave me splattered across deep space and unable to complete…,https://en.wikiquote.org/wiki/Red_Dwarf
+,swerved,,2.74,Red Dwarf,Trojan,Lister,"Yeah, it was in the road, he swerved to avoid the moose.",https://en.wikiquote.org/wiki/Red_Dwarf
+,handpicked,,2.74,Red Dwarf,Entangled,Kryten,…Erroneous Reasoning Research Academy) The staff were handpicked for their ability to be mistaken; for…,https://en.wikiquote.org/wiki/Red_Dwarf
+,athlete's,,2.75,Red Dwarf,Better Than Life,Lister,"Yeah, I wanted to try some out on my athlete's foot!",https://en.wikiquote.org/wiki/Red_Dwarf
+,soapy,,2.75,Red Dwarf,Meltdown,Caligula,"Very well. Rasputin, bring in the bucket of soapy frogs and remove his trousers.",https://en.wikiquote.org/wiki/Red_Dwarf
+,decompose,,2.75,Red Dwarf,Meltdown,Lister,"…flag of peace, and can now happily decompose in a land of freedom. Ya smeghead.",https://en.wikiquote.org/wiki/Red_Dwarf
+,ascribe,,2.75,Red Dwarf,Terrorform,Kryten,…memory appears to have been erased.This I ascribe to the proximity of the magnetic coils…,https://en.wikiquote.org/wiki/Red_Dwarf
+,machine's,,2.75,Red Dwarf,Emohawk: Polymorph II,Cat,"Oh, damn! Now the damage report machine's exploded!",https://en.wikiquote.org/wiki/Red_Dwarf
+,constipated,,2.75,Red Dwarf,Backwards (1996),,…little face is bunched up like a constipated pig at a truffle festival. But he's…,https://en.wikiquote.org/wiki/Red_Dwarf
+,supercomputer,,2.76,Red Dwarf,,,"Holly, the supercomputer onboard Red Dwarf; played by Norman Lovett from Series I-II and VII…",https://en.wikiquote.org/wiki/Red_Dwarf
+,puked,,2.76,Red Dwarf,Balance of Power,Rimmer,…the summer walking around like a croquet hoop! I laughed so hard I nearly puked...,https://en.wikiquote.org/wiki/Red_Dwarf
+,eatin,,2.76,Red Dwarf,Me²,Lister,I'm only eatin'!,https://en.wikiquote.org/wiki/Red_Dwarf
+,bluffing,,2.76,Red Dwarf,The Last Day,Kryten,"It's alright sir, he's bluffing he's programed not to harm humans.",https://en.wikiquote.org/wiki/Red_Dwarf
+,fail-safes,,2.76,Red Dwarf,Demons & Angels,Lister,"…a precaution. The whole ship's full of fail-safes anyway. Cooling systems, containment panels, vacuum shields.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,scalpel,,2.76,Red Dwarf,Legion,Legion,"The next hint of insurrection, and the scalpel ends up...here (holding the scalpel to his…",https://en.wikiquote.org/wiki/Red_Dwarf
+,overloading,,2.76,Red Dwarf,Krysis,Kryten,"Oh, my jealousy chip's overloading, sir! Return to sane mode! Of course we should land!",https://en.wikiquote.org/wiki/Red_Dwarf
+,ploughing,,2.76,Red Dwarf,Last Human (1995),,"…of pain that gouged through his body, ploughing furrows through his flesh. He could hear…",https://en.wikiquote.org/wiki/Red_Dwarf
+,lichen,,2.77,Red Dwarf,Rimmerworld,Kryten,"Tonight, sir, asteroid lichen stew followed by dandelion sorbet.",https://en.wikiquote.org/wiki/Red_Dwarf
+,eskimos,,2.78,Red Dwarf,White Hole,Rimmer,"Well, if you ask me the eskimos had the right idea. They knew how to…",https://en.wikiquote.org/wiki/Red_Dwarf
+,maggot,,2.78,Red Dwarf,Dimension Jump,Ace,"…the man. To see myself so warped, so bitter, so weasely. The man's a maggot.",https://en.wikiquote.org/wiki/Red_Dwarf
+,sawing,,2.78,Red Dwarf,Terrorform,Kryten,"…not a qualified service engineer, and consequently, sawing me in two will invalidate my guarantee;…",https://en.wikiquote.org/wiki/Red_Dwarf
+,milfs,,2.78,Red Dwarf,Siliconia,Kryten,MILFs?,https://en.wikiquote.org/wiki/Red_Dwarf
+,millimetres,,2.78,Red Dwarf,Siliconia,Wind,We're 7.6 millimetres thinner. 10 grams lighter. Plus we come in this really cool matte…,https://en.wikiquote.org/wiki/Red_Dwarf
+,godsend,,2.78,Red Dwarf,Infinity Welcomes Careful Drivers (1989),,Kryten was teriffic. A real godsend. Provided all you needed was a plateful of triangular-shaped…,https://en.wikiquote.org/wiki/Red_Dwarf
+,elude,,2.78,Red Dwarf,Backwards (1996),,"…his music notation lesson. For reasons that elude his young mind, it is vitally, vitally…",https://en.wikiquote.org/wiki/Red_Dwarf
+,meringue,,2.79,Red Dwarf,Better Than Life,Lister,"…the lamb was the cheese! And that lemon meringue pie, man, what was in that?",https://en.wikiquote.org/wiki/Red_Dwarf
+,superlative,,2.79,Red Dwarf,Holoship,Kryten,"A superlative suggestion, sir, with just two minor flaws. One: we don't have any defensive…",https://en.wikiquote.org/wiki/Red_Dwarf
+,magnificence,,2.79,Red Dwarf,The Inquisitor,Rimmer,…- that answer of me - your magnificence? (this last is delivered hurriedly with a…,https://en.wikiquote.org/wiki/Red_Dwarf
+,hurriedly,,2.79,Red Dwarf,The Inquisitor,Rimmer,…that answer of me - your magnificence? (this last is delivered hurriedly with a bow),https://en.wikiquote.org/wiki/Red_Dwarf
+,guard's,,2.79,Red Dwarf,Rimmerworld,Lister,"…out, and we put Rimmer in the guard's uniform, he leads us out, we steal…",https://en.wikiquote.org/wiki/Red_Dwarf
+,margaritas,,2.79,Red Dwarf,Out of Time,Lister,"They aren't margaritas, that's urine recyc!",https://en.wikiquote.org/wiki/Red_Dwarf
+,crew's,,2.79,Red Dwarf,Back in the Red III,Captain Hollister,"…Lister, has given Rimmer access to the crew's confidential files, and he's using this information…",https://en.wikiquote.org/wiki/Red_Dwarf
+,dysentery,,2.8,Red Dwarf,Marooned,Lister,"It'll make him look more realistic, people'll think he's got dysentery.",https://en.wikiquote.org/wiki/Red_Dwarf
+,nutter,,2.8,Red Dwarf,Timeslides,Lister,"Ignore him, he's a complete and total nutter, and he's only got one testicle!",https://en.wikiquote.org/wiki/Red_Dwarf
+,blindfold,,2.8,Red Dwarf,Meltdown,Lister,"Winnie the Pooh, I swear! He's refusing the blindfold.",https://en.wikiquote.org/wiki/Red_Dwarf
+,ramming,,2.8,Red Dwarf,Quarantine,Kryten,"(after ramming his head on a metal column) Aah, that's better. Maybe now I can…",https://en.wikiquote.org/wiki/Red_Dwarf
+,crazies,,2.8,Red Dwarf,Cured,Rimmer,"You think there might be wall-to-wall crazies in here? Running around rioting, screaming, and stabbing…",https://en.wikiquote.org/wiki/Red_Dwarf
+,trumped-up,,2.81,Red Dwarf,White Hole,Kryten,"…say that you are the most obnoxious, trumped-up, farty little smeghead it has ever been…",https://en.wikiquote.org/wiki/Red_Dwarf
+,toothpick,,2.81,Red Dwarf,Quarantine,Cat,…male tigers are locked up together. One of them winds up on the others toothpick.,https://en.wikiquote.org/wiki/Red_Dwarf
+,eunuch,,2.82,Red Dwarf,Marooned,Rimmer,He told me that in a previous incarnation I was Alexander the Great's chief eunuch.,https://en.wikiquote.org/wiki/Red_Dwarf
+,aimlessly,,2.82,Red Dwarf,White Hole,Kryten,It leaves us floating aimlessly in space with no navigation and a rapidly diminishing emergency…,https://en.wikiquote.org/wiki/Red_Dwarf
+,covet,,2.82,Red Dwarf,Lemons,Jesus,"And if there's time, I might even covet his donkey! And when I've finished coveting…",https://en.wikiquote.org/wiki/Red_Dwarf
+,spaniel,,2.82,Red Dwarf,Last Human (1995),,"Tom with his round, sad spaniel face and terrible posture, and Beth with her ugly…",https://en.wikiquote.org/wiki/Red_Dwarf
+,testicle,,2.83,Red Dwarf,Timeslides,Lister,"Ignore him, he's a complete and total nutter, and he's only got one testicle!",https://en.wikiquote.org/wiki/Red_Dwarf
+,haddock,,2.83,Red Dwarf,Back to Reality,Lister,Why would a haddock kill itself? ...Why am I even asking that question?,https://en.wikiquote.org/wiki/Red_Dwarf
+,nourishing,,2.83,Red Dwarf,Rimmerworld,Kryten,…frontal lobes like a xylophone than have another bowl of my nourishing space nettle soup?,https://en.wikiquote.org/wiki/Red_Dwarf
+,girlie,,2.83,Red Dwarf,Back in the Red III,Rimmer,"…said I was a whining nancy-boy with girlie white legs, then pummelled me repeatedly with…",https://en.wikiquote.org/wiki/Red_Dwarf
+,cow's,,2.84,Red Dwarf,Kryten,Holly,Cow's milk. Ran out of that yonks ago. Fresh and dehydrated.,https://en.wikiquote.org/wiki/Red_Dwarf
+,yoghurt-eaters,,2.84,Red Dwarf,Stasis Leak,Lister,"…and smoke a pipe? I mean natural yoghurt-eaters. ""Reliable"", ""sensible"", ""dependable"", and lots of others…",https://en.wikiquote.org/wiki/Red_Dwarf
+,quiver,,2.84,Red Dwarf,Parallel Universe,,My knees began to quiver (quiver),https://en.wikiquote.org/wiki/Red_Dwarf
+,druids,,2.84,Red Dwarf,Lemons,Erin,…to appease the three gods. Then the druids drank their blood and ate their meat…,https://en.wikiquote.org/wiki/Red_Dwarf
+,merrily,,2.84,Red Dwarf,Give & Take,Asclepius,"…slow your blood, gently as you breath. Merrily, merrily, merrily, merrily, life is such a…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sombre,,2.84,Red Dwarf,Better Than Life (1990),,…race was neither a solemn nor a sombre affair. Quite the opposite. Lister's favourite dance…,https://en.wikiquote.org/wiki/Red_Dwarf
+,maliciously,,2.85,Red Dwarf,The End,Rimmer,"Maliciously, and with intent to wound.",https://en.wikiquote.org/wiki/Red_Dwarf
+,evening's,,2.85,Red Dwarf,Future Echoes,Rimmer,"…bit of a snooze before the main evening's slob? God, you're a disgrace to the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,wilma,,2.85,Red Dwarf,Backwards,Cat,Wilma Flintstone?,https://en.wikiquote.org/wiki/Red_Dwarf
+,inquisitor,,2.85,Red Dwarf,The Inquisitor,Rimmer,"So, Kryten, you've heard of this ""Inquisitor""?",https://en.wikiquote.org/wiki/Red_Dwarf
+,scrotum,,2.85,Red Dwarf,Legion,Legion,"…next hint of insurrection, and the scalpel ends up...here (holding the scalpel to his scrotum).",https://en.wikiquote.org/wiki/Red_Dwarf
+,bobbing,,2.85,Red Dwarf,Blue,Lister,…stuff like that. Kissing Rimmer? I'd rather be bobbing for apples at the Reading festival!,https://en.wikiquote.org/wiki/Red_Dwarf
+,babbling,,2.85,Red Dwarf,The Beginning,Rimmer,But he's a babbling imbecile!,https://en.wikiquote.org/wiki/Red_Dwarf
+,maggots,,2.85,Red Dwarf,M-Corp,Kryten,"…it. They even bought all the stuff nobody likes. Maggots, quicksand, even the American chocolate.",https://en.wikiquote.org/wiki/Red_Dwarf
+,geezer,,2.86,Red Dwarf,Stasis Leak,Lister,"…I mean, when it comes down to it, I'm a pretty straight and honest geezer.",https://en.wikiquote.org/wiki/Red_Dwarf
+,raked,,2.86,Red Dwarf,Marooned,Rimmer,…who abuse the facilities! I hope you raked the sand back nicely after you'd finished.…,https://en.wikiquote.org/wiki/Red_Dwarf
+,pronto,,2.86,Red Dwarf,The Last Day,Rimmer,"…much care, but if you don't skedaddle pronto, you're going to see a side of…",https://en.wikiquote.org/wiki/Red_Dwarf
+,battering,,2.87,Red Dwarf,White Hole,Lister,…get through 'em if we had a battering ram. Something... I dunno... about six foot…,https://en.wikiquote.org/wiki/Red_Dwarf
+,geronimo,,2.87,Red Dwarf,Holoship,Rimmer,"I'm sorry, I must have seemed very ignorant. I hardly said anything apart from 'Geronimo!'",https://en.wikiquote.org/wiki/Red_Dwarf
+,appetites,,2.87,Red Dwarf,Terrorform,Druid,"In accordance with the appetites of the Dark One, malicious ruler of this domain, we,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,mock-gasps,,2.87,Red Dwarf,Quarantine,Rimmer,"(pretending to be shocked, mock-gasps) We can't possibly do that! Who'd clear up the mess?",https://en.wikiquote.org/wiki/Red_Dwarf
+,imbecile,,2.87,Red Dwarf,The Beginning,Rimmer,But he's a babbling imbecile!,https://en.wikiquote.org/wiki/Red_Dwarf
+,nautilus,,2.87,Red Dwarf,Officer Rimmer,Captain Herring,"This is Captain Edwin Herring of the S.S. Nautilus, can you read me? Over.",https://en.wikiquote.org/wiki/Red_Dwarf
+,eraser-tipped,,2.87,Red Dwarf,Backwards (1996),Cat,…We're supposed to be afraid of a bunch of dooh-dooh brains like eraser-tipped pencil-head here?,https://en.wikiquote.org/wiki/Red_Dwarf
+,hattie,,2.87,Red Dwarf,Cast,,Hattie Hayridge - Holly (Series III - V),https://en.wikiquote.org/wiki/Red_Dwarf
+,embers,,2.88,Red Dwarf,The Inquisitor,Kryten,"…a horror tale, told across the flickering embers of a midnight fire, wherever hardened space…",https://en.wikiquote.org/wiki/Red_Dwarf
+,innocently,,2.88,Red Dwarf,The Inquisitor,Lister,(innocently): Where's what?,https://en.wikiquote.org/wiki/Red_Dwarf
+,uptight,,2.88,Red Dwarf,Back to Reality,Kryten,…the kind of guy who gets all uptight about being ordered around by whatever the…,https://en.wikiquote.org/wiki/Red_Dwarf
+,disintegrate,,2.88,Red Dwarf,Rimmerworld,Rimmer,"…don't get captured and the superstructure doesn't disintegrate around us, but we can't find any…",https://en.wikiquote.org/wiki/Red_Dwarf
+,thrusters,,2.88,Red Dwarf,Blue,Kochanski,…like living in this big skip with thrusters? Do you think I even enjoy breathing…,https://en.wikiquote.org/wiki/Red_Dwarf
+,bountiful,,2.88,Red Dwarf,Lemons,Erin,…druids drank their blood and ate their meat and said the harvest would be bountiful.,https://en.wikiquote.org/wiki/Red_Dwarf
+,rudely,,2.89,Red Dwarf,Future Echoes,Rimmer,"…I was saying before I was so rudely interrupted, I've decided that, when you go…",https://en.wikiquote.org/wiki/Red_Dwarf
+,military's,,2.89,Red Dwarf,Marooned,Rimmer,…one of the greatest commanders of all time! No wonder the military's in my blood!,https://en.wikiquote.org/wiki/Red_Dwarf
+,slacks,,2.89,Red Dwarf,D.N.A.,Kryten,…Como sang 'Memories Are Made of This' with one of those stashed in his slacks?!,https://en.wikiquote.org/wiki/Red_Dwarf
+,eastbourne,,2.89,Red Dwarf,White Hole,Rimmer,Absolutely. That's why there's no eskimo word for 'Eastbourne'.,https://en.wikiquote.org/wiki/Red_Dwarf
+,superstructure,,2.89,Red Dwarf,Rimmerworld,Rimmer,"…that ship, don't get captured, but the superstructure disintegrates around us, we're finished. On the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,keyed,,2.89,Red Dwarf,Out of Time,Kryten,Keyed in. Engage.,https://en.wikiquote.org/wiki/Red_Dwarf
+,subspace,,2.89,Red Dwarf,Tikka To Ride,Rimmer,Do you think it's because the subspace conduits have locked with the transponder calibrations and…,https://en.wikiquote.org/wiki/Red_Dwarf
+,hallucination,,2.89,Red Dwarf,Part Three,Kryten,"…consequence of us creating them in our hallucination, sir. Its quantum mechanics, every decision that…",https://en.wikiquote.org/wiki/Red_Dwarf
+,telford,,2.89,Red Dwarf,Cured,,Telford takes out a laser pistol from his back-pocket and hands it to Cat.,https://en.wikiquote.org/wiki/Red_Dwarf
+,ohhhh,,2.9,Red Dwarf,Marooned,Rimmer,Ohhhh!,https://en.wikiquote.org/wiki/Red_Dwarf
+,epidural,,2.9,Red Dwarf,D.N.A.,Lister,"…about. I was trying to say in chicken-talk ""for God's sake, give me an epidural!""",https://en.wikiquote.org/wiki/Red_Dwarf
+,androids,,2.9,Red Dwarf,Justice,Rimmer,"…was transporting forty psychotic, half-crazed, mass-murdering, super-strong androids, we thought it prudent to find out…",https://en.wikiquote.org/wiki/Red_Dwarf
+,rectal,,2.9,Red Dwarf,Terrorform,The Unspeakable One,"Silence, you dank tuft of rectal pubic hair!",https://en.wikiquote.org/wiki/Red_Dwarf
+,dandelion,,2.9,Red Dwarf,Rimmerworld,Kryten,"Tonight, sir, asteroid lichen stew followed by dandelion sorbet.",https://en.wikiquote.org/wiki/Red_Dwarf
+,psychopathic,,2.9,Red Dwarf,Rimmerworld,Kryten,…really saying you would rather have a psychopathic mechanical killer rip off your skull and…,https://en.wikiquote.org/wiki/Red_Dwarf
+,crawls,,2.91,Red Dwarf,Thanks for the Memory,Rimmer,(blearily crawls over to the clock on the bedside table) Saturday.,https://en.wikiquote.org/wiki/Red_Dwarf
+,giraffes,,2.91,Red Dwarf,Stasis Leak,Rimmer,"…to attack two senior officers, believing them to be giraffes who were armed and dangerous.",https://en.wikiquote.org/wiki/Red_Dwarf
+,mayday,,2.91,Red Dwarf,Marooned,Rimmer,"Mayday, Mayday! I wonder why they call it ""Mayday"" ? It's only a bank holiday.…",https://en.wikiquote.org/wiki/Red_Dwarf
+,flatly,,2.91,Red Dwarf,Timeslides,Holly,"(flatly, yeah-right mode): Rescue him.",https://en.wikiquote.org/wiki/Red_Dwarf
+,polaroid,,2.91,Red Dwarf,D.N.A.,Lister,No vacuum cleaner should give a human being a double polaroid!,https://en.wikiquote.org/wiki/Red_Dwarf
+,polaroid-head,,2.91,Red Dwarf,D.N.A.,Kryten,I've been a complete and total polaroid-head.,https://en.wikiquote.org/wiki/Red_Dwarf
+,vanquished,,2.91,Red Dwarf,Meltdown,Rimmer,"…negative, Lister. Don't you see? The deranged menace that once threatened this world is vanquished!",https://en.wikiquote.org/wiki/Red_Dwarf
+,replete,,2.91,Red Dwarf,The Inquisitor,Inquisitor Kryten,But surely your life is replete with good works? There can be few individuals who…,https://en.wikiquote.org/wiki/Red_Dwarf
+,spineless,,2.91,Red Dwarf,Stoke Me a Clipper,Lister,"…next Ace? I mean, you're a gutless, spineless, gormless, directionless, neurotic, underachieving, snivelling, cowardly pile…",https://en.wikiquote.org/wiki/Red_Dwarf
+,noxious,,2.91,Red Dwarf,Cassandra,Rimmer,"…little cage. And if the atmosphere was noxious, as it frequently was, guess what the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,hel-lo,,2.92,Red Dwarf,Thanks for the Memory,Rimmer,"Right, breaking your leg 'hurts like hell'. HELL, okay? They do it beLOw the knee,…",https://en.wikiquote.org/wiki/Red_Dwarf
+,patching,,2.92,Red Dwarf,Holoship,Kryten,What you're suggesting is immoral and illegal. Mind patching is outlawed.,https://en.wikiquote.org/wiki/Red_Dwarf
+,pulley,,2.92,Red Dwarf,Rimmerworld,Lister,"…hessian, rig up a kind of a pulley system so that when a guard comes…",https://en.wikiquote.org/wiki/Red_Dwarf
+,narrating,,2.92,Red Dwarf,Nanarchy,Kryten,"(narrating) Last week, on Red Dwarf... something terrible happened to Mr. Lister's arm!",https://en.wikiquote.org/wiki/Red_Dwarf
+,underpants,,2.92,Red Dwarf,Krytie TV,Kryten,And then there's these: tragically unfashionable underpants.,https://en.wikiquote.org/wiki/Red_Dwarf
+,beret,,2.92,Red Dwarf,Siliconia,,Kryten is given a black beret by Wind.,https://en.wikiquote.org/wiki/Red_Dwarf
+,groans,,2.93,Red Dwarf,Queeg,,(Rimmer groans inwardly),https://en.wikiquote.org/wiki/Red_Dwarf
+,galloping,,2.93,Red Dwarf,White Hole,Kryten,…rapidly diminishing emergency power supply. It leaves us galloping up diarrhea drive without a saddle.,https://en.wikiquote.org/wiki/Red_Dwarf
+,sardines,,2.93,Red Dwarf,Terrorform,Kryten,"…secondly, I wouldn't trust you to open a can of sardines that was already open.",https://en.wikiquote.org/wiki/Red_Dwarf
+,amiss,,2.93,Red Dwarf,Quarantine,Rimmer,Is something amiss?,https://en.wikiquote.org/wiki/Red_Dwarf
+,heady,,2.93,Red Dwarf,Out of Time,Rimmer,"…Fun though it was, drinking in the heady medieval atmosphere of pre-Renaissance deep space, the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,sigmund,,2.93,Red Dwarf,Blue,Kryten,"Sigmund Freud, eat your heart out.",https://en.wikiquote.org/wiki/Red_Dwarf
+,trifle,,2.93,Red Dwarf,Only the Good...,Lister,…us. (Rimmer collapses) Must've been the cherry trifle we had for lunch sir. Told him…,https://en.wikiquote.org/wiki/Red_Dwarf
+,cocked,,2.93,Red Dwarf,Fathers & Suns,Rimmer,"…that I was going to cock this up, so you cocked it up for me?",https://en.wikiquote.org/wiki/Red_Dwarf
+,birdman,,2.94,Red Dwarf,Terrorform,Cat,…let's get into the jet-powered rocket pants and junior birdman the hell out of here!,https://en.wikiquote.org/wiki/Red_Dwarf
+,teeming,,2.94,Red Dwarf,Back to Reality,Kryten,"…if this ocean is supposed to be teeming with new lifeforms, where are they all?",https://en.wikiquote.org/wiki/Red_Dwarf
+,astounded,,2.94,Red Dwarf,Out of Time,Kryten,(astounded): Mr. Rimmer?,https://en.wikiquote.org/wiki/Red_Dwarf
+,alkali,,2.94,Red Dwarf,Only the Good...,Mirror Cat,(smells it) It's an alkali.,https://en.wikiquote.org/wiki/Red_Dwarf
+,vitally,,2.94,Red Dwarf,Backwards (1996),,"…that elude his young mind, it is vitally, vitally important for him to master the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,clitoris,,2.95,Red Dwarf,Polymorph,Rimmer,"…Organisms and their Rehabilitation Into Society."" Erm, one drawback with that: the abbreviation is ""CLITORIS.""",https://en.wikiquote.org/wiki/Red_Dwarf
+,stashed,,2.95,Red Dwarf,D.N.A.,Kryten,…Como sang 'Memories Are Made of This' with one of those stashed in his slacks?!,https://en.wikiquote.org/wiki/Red_Dwarf
+,turban,,2.95,Red Dwarf,Justice,Lister,…this happen to me? Maybe I can wear a turban and pretend I'm from India.,https://en.wikiquote.org/wiki/Red_Dwarf
+,deletes,,2.95,Red Dwarf,The Inquisitor,Kryten,"…is the Inquisitor; he prunes away the wastrels, expunges the wretched and deletes the worthless!",https://en.wikiquote.org/wiki/Red_Dwarf
+,loosening,,2.95,Red Dwarf,Stoke Me a Clipper,Kryten,"…haven't been this embarrassed since I was loosening my adjustment screws, and my entire groinal…",https://en.wikiquote.org/wiki/Red_Dwarf
+,knickers,,2.95,Red Dwarf,Duct Soup,Kochanski,…popular pastime is going down to the laundry room and watching my knickers spin dry?,https://en.wikiquote.org/wiki/Red_Dwarf
+,antlers,,2.95,Red Dwarf,Trojan,Lister,"No the moose aren't in the cars, antlers out the sun roof! They're in the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,plundered,,2.95,Red Dwarf,Last Human (1995),GELF Regulator,…asteroid of Cyrius 3 and looted and plundered his way across the entire belt. He…,https://en.wikiquote.org/wiki/Red_Dwarf
+,freely-dispensed,,2.96,Red Dwarf,Me²,Rimmer,"…he was breast-fed on it! One side gazpacho soup, the other side freely-dispensed chilled champagne!",https://en.wikiquote.org/wiki/Red_Dwarf
+,juxtaposition,,2.96,Red Dwarf,Camille,Kryten,…anyone ever told you that the configuration and juxtaposition of your features is extraordinarily apposite?,https://en.wikiquote.org/wiki/Red_Dwarf
+,pyjamas,,2.96,Red Dwarf,White Hole,Rimmer,"…take them out into the blizzard, remove their pyjamas, and just leave them to it.",https://en.wikiquote.org/wiki/Red_Dwarf
+,sonnet,,2.96,Red Dwarf,Quarantine,Kryten,…in there? A Turner seascape perhaps? The face of the Madonna? An undiscovered Shakespearean sonnet?,https://en.wikiquote.org/wiki/Red_Dwarf
+,bossy,,2.97,Red Dwarf,Ouroboros,Kryten,…sir. It's hardly my place to point out what a bossy old trollop she is.,https://en.wikiquote.org/wiki/Red_Dwarf
+,resentful,,2.97,Red Dwarf,Trojan,Rimmer,Are you saying I am a resentful person? I really resent that!,https://en.wikiquote.org/wiki/Red_Dwarf
+,mullet,,2.97,Red Dwarf,Lemons,Rimmer,"A bald mullet. A skullet. Bald at the front, mullet at the back. You wouldn't…",https://en.wikiquote.org/wiki/Red_Dwarf
+,vindictive,,2.98,Red Dwarf,The End,Rimmer,"However, I am not a vindictive man, so I don't intend to apply for the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,snooze,,2.98,Red Dwarf,Future Echoes,Rimmer,"…the afternoon, then a bit of a snooze before the main evening's slob? God, you're…",https://en.wikiquote.org/wiki/Red_Dwarf
+,name's,,2.98,Red Dwarf,Kryten,Lister,"'Mr Arnold' isn't his name. His name's 'Rimmer', or 'smeghead', or 'dinosaur-breath', or 'molecule-mind', or…",https://en.wikiquote.org/wiki/Red_Dwarf
+,walrus,,2.98,Red Dwarf,Better Than Life,Rimmer,"""Please rush me my portable walrus polishing kit! Four super brushes for cleaning even the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,checkmate,,2.98,Red Dwarf,Queeg,Holly,"Queen to rook eight, checkmate.",https://en.wikiquote.org/wiki/Red_Dwarf
+,constellations,,2.98,Red Dwarf,Backwards,Holly,"Certainly seems that way. Constellations match, gravity exactly one-G.",https://en.wikiquote.org/wiki/Red_Dwarf
+,calculators,,2.98,Red Dwarf,The Last Day,Hudzen,Then where do all the calculators go?,https://en.wikiquote.org/wiki/Red_Dwarf
+,visor,,2.98,Red Dwarf,The Inquisitor,Inquisitor,Because...like all who stand before the Inquisitor...your judge shall be...(he flips up his visor revealing...Rimmer!)...yourself!,https://en.wikiquote.org/wiki/Red_Dwarf
+,alerting,,2.98,Red Dwarf,Siliconia,,Kryten Rimmer pushes the nearby alarm button alerting their escape.,https://en.wikiquote.org/wiki/Red_Dwarf
+,stasis,,2.99,Red Dwarf,,,"…only human survivor, who was suspended in stasis for 3 million years; played by Craig…",https://en.wikiquote.org/wiki/Red_Dwarf
+,examiners,,2.99,Red Dwarf,The End,Rimmer,"…porous circuitry that was too... radical, too unconventional, too mould-breaking for the examiners to accept.",https://en.wikiquote.org/wiki/Red_Dwarf
+,zealous,,2.99,Red Dwarf,Waiting For God,Holly,"…yet constantly fails the astro-navigation exam. Astoundingly zealous, possibly mad; probably has more teeth than…",https://en.wikiquote.org/wiki/Red_Dwarf
+,flickering,,2.99,Red Dwarf,The Inquisitor,Kryten,"…fable; a horror tale, told across the flickering embers of a midnight fire, wherever hardened…",https://en.wikiquote.org/wiki/Red_Dwarf
+,magnified,,2.99,Red Dwarf,Legion,Legion,"…of your malice and rage and anger, magnified many times. I'm capable of quite insanely…",https://en.wikiquote.org/wiki/Red_Dwarf
+,barbershop,,2.99,Red Dwarf,Officer Rimmer,Clone Rimmer in a barbershop quartet,We're the barbershop quartet!,https://en.wikiquote.org/wiki/Red_Dwarf
+,materialize,,2.99,Red Dwarf,M-Corp,,Several white crates marked with the M-Corp logo materialize onboard the ship.,https://en.wikiquote.org/wiki/Red_Dwarf
+,senile,,2.99,Red Dwarf,Better Than Life (1990),Talkie Toaster,You're senile.,https://en.wikiquote.org/wiki/Red_Dwarf
+,mainframe,,2.99,Red Dwarf,Better Than Life (1990),Talkie Toaster,…got to be. Why would a huge mainframe computer with a fifteen zillion gigabyte capacity…,https://en.wikiquote.org/wiki/Red_Dwarf
+,mallet,,3.0,Red Dwarf,The End,Rimmer,…you ever been hit over the head with a welding mallet? No? Push the trolley.,https://en.wikiquote.org/wiki/Red_Dwarf
+,dumplings,,3.0,Red Dwarf,Better Than Life,Lister,"Rimmer, real dumplings, proper dumplings when they are properly cooked to perfection, proper dumplings should…",https://en.wikiquote.org/wiki/Red_Dwarf
+,rehabilitate,,3.0,Red Dwarf,Better Than Life,Rimmer,"I'm just trying to rehabilitate myself, trying to do the everyday, normal things that most…",https://en.wikiquote.org/wiki/Red_Dwarf
+,dissolves,,3.0,Red Dwarf,Thanks for the Memory,Lister,"It's well naughty. The trouble is, you've gotta eat it before the bread dissolves.",https://en.wikiquote.org/wiki/Red_Dwarf
+,consignment,,3.0,Red Dwarf,Stasis Leak,Rimmer,"…aboard the mining vessel Red Dwarf a consignment of a hallucinogenic fungi Titan Mushrooms, more…",https://en.wikiquote.org/wiki/Red_Dwarf
+,eskimo,,3.0,Red Dwarf,White Hole,Rimmer,Absolutely. That's why there's no eskimo word for 'Eastbourne'.,https://en.wikiquote.org/wiki/Red_Dwarf
+,invalidate,,3.0,Red Dwarf,Terrorform,Kryten,"…and consequently, sawing me in two will invalidate my guarantee; secondly, I wouldn't trust you…",https://en.wikiquote.org/wiki/Red_Dwarf
+,scorpions,,3.0,Red Dwarf,Quarantine,Kryten,"Lions, tigers, scorpions, rats. Even vultures when they're in captivity.",https://en.wikiquote.org/wiki/Red_Dwarf
+,undiscovered,,3.0,Red Dwarf,Quarantine,Kryten,…in there? A Turner seascape perhaps? The face of the Madonna? An undiscovered Shakespearean sonnet?,https://en.wikiquote.org/wiki/Red_Dwarf
+,wicker,,3.0,Red Dwarf,Lemons,Erin,"…screaming from my home to a mighty wicker tower, where they were sacrificed to the…",https://en.wikiquote.org/wiki/Red_Dwarf
+,bugger,,3.0,Red Dwarf,Lemons,Jesus,"Oh, bugger.",https://en.wikiquote.org/wiki/Red_Dwarf
+,hippy,,3.0,Red Dwarf,M-Corp,Rimmer,"…to Earth. To everyone and everything on it. My God, I've turned into a hippy.",https://en.wikiquote.org/wiki/Red_Dwarf

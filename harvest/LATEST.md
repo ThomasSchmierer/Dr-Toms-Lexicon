@@ -1,17 +1,17 @@
-# Last night's harvest (2026-11-06)
+# Last night's harvest (2026-11-07)
 
 | Source | Pages | Candidate words | Spreadsheet |
 |---|---|---|---|
-| Love Actually | 1 | 22 | [love-actually.csv](love-actually.csv) |
-| Mr. Bean | 1 | 24 | [mr-bean.csv](mr-bean.csv) |
-| In the Loop | – | not found | – |
-| The Death of Stalin | 1 | 55 | [the-death-of-stalin.csv](the-death-of-stalin.csv) |
-| Avenue 5 | – | not found | – |
-| I'm Alan Partridge | – | not found | – |
-| Knowing Me, Knowing You... with Alan Partridge | – | not found | – |
-| Studio 60 on the Sunset Strip | 1 | 42 | [studio-60-on-the-sunset-strip.csv](studio-60-on-the-sunset-strip.csv) |
-| The Social Network | 1 | 20 | [the-social-network.csv](the-social-network.csv) |
-| A Few Good Men | 1 | 36 | [a-few-good-men.csv](a-few-good-men.csv) |
-| A Doll's House | 1 | 215 | [a-doll-s-house.csv](a-doll-s-house.csv) |
+| The Gilded Age (TV series) | 1 | 24 | [the-gilded-age-tv-series.csv](the-gilded-age-tv-series.csv) |
+| Belgravia (TV series) | – | not found | – |
+| Sherlock (TV series) | 1 | 155 | [sherlock-tv-series.csv](sherlock-tv-series.csv) |
+| Coupling (British TV series) | – | not found | – |
+| Doctor Who | 1 | 39 | [doctor-who.csv](doctor-who.csv) |
+| The League of Gentlemen | 1 | 35 | [the-league-of-gentlemen.csv](the-league-of-gentlemen.csv) |
+| Spaced | 1 | 81 | [spaced.csv](spaced.csv) |
+| Shaun of the Dead | 1 | 34 | [shaun-of-the-dead.csv](shaun-of-the-dead.csv) |
+| Hot Fuzz | 1 | 72 | [hot-fuzz.csv](hot-fuzz.csv) |
+| Red Dwarf | 1 | 531 | [red-dwarf.csv](red-dwarf.csv) |
+| Poems by Emily Dickinson | 1 | 1209 | [poems-by-emily-dickinson.csv](poems-by-emily-dickinson.csv) |
 
-Still queued: 80 show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**.
+Still queued: 70 show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**.
