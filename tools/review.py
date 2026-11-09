@@ -346,12 +346,14 @@ LINK = re.compile(r"\[\[([^\[\]|]*)(?:\|([^\[\]]*))?\]\]")
 def clean(text, info=None):
     info = info if info is not None else {"labels": [], "form": [], "origins": []}
     s = re.sub(r"<ref[^>]*?/>|<ref[^>]*>.*?</ref>|<!--.*?-->", "", text, flags=re.S)
+    for _ in range(3): s = re.sub(r"\[\[(?:File|Image):(?:[^\[\]]|\[\[[^\[\]]*\]\])*\]\]", "", s)
     s = LINK.sub(lambda m: "" if re.match(r"(?i)(category|file|image|w|wikipedia|s|wikisource|thesaurus):", m.group(1)) and not m.group(2)
                  else (m.group(2) if m.group(2) is not None else re.sub(r"#.*$", "", m.group(1))), s)
     for _ in range(8):
         s2 = re.sub(r"\{\{([^{}]*)\}\}", lambda m: render_template(m.group(1), info), s)
         if s2 == s: break
         s = s2
+    s = re.sub(r"\{\{.*$", "", s, flags=re.S).replace("}}", "")       # a template cut off at the end of a line
     s = re.sub(r"'{2,}", "", s)
     s = re.sub(r"<(?!/?i>)[^>]+>", "", s)
     s = html.unescape(s)
@@ -411,6 +413,30 @@ def parse_page(wikitext):
     return {"s": senses, "e": etys, "o": origins, "v": PARSER_VERSION}
 
 # ---------------------------------------------------------------- deciding
+def tidy_ety(t):
+    """Last clean-up of a Wiktionary etymology for display."""
+    t = re.sub(r"^.*?(?:File|Image):[^\]]*\]\]\s*", "", t or "")                     # leftover picture captions
+    t = re.sub(r"\[https?://[^\]\s]+(?:\s+([^\]]+))?\]", lambda m: m.group(1) or "", t)
+    def code(m):
+        c, w = m.group(1), m.group(2)
+        return f"{LANGS[c]} <i>{w}</i>" if c in LANGS else f"<i>{w}</i>"
+    t = re.sub(r"<i>([a-z]{2,3}(?:-[a-z]{2,5})*):([^<]+)</i>", code, t)
+    t = re.sub(r"(?<![\w/])([a-z]{2,3}(?:-[a-z]{2,5})*):([^\s,.;()<]+)", code, t)
+    t = re.sub(r"\s+([,.;:])", r"\1", t)
+    t = re.sub(r"\s{2,}", " ", t).strip(" .,;:")
+    if re.match(r"^(Such|This|These|It|The latter|See|Compare)\b", t): return ""
+    t = re.sub(r"^\W+", "", t)
+    if not t or len(t) < 6: return ""
+    t = t[0].upper() + t[1:]
+    return t + ("" if t.endswith((".", "!", "?", ")")) else ".")
+
+def tidy_def(d):
+    """WordNet glosses sometimes trail their quotations' leftovers: "...accusation; ; ; - O.Henry"."""
+    d = re.sub(r"\{\{.*$", "", d or "", flags=re.S).replace("}}", "")
+    d = re.sub(r"(\s*;\s*)+(?:-\s*[A-Z][^;]*)?\s*$", "", d)
+    d = re.sub(r"(;\s*){2,}", "; ", d)
+    return re.sub(r"\s+", " ", d).strip(" ;:,")
+
 def eligible_day():
     """First day a newly approved word may be a word of the day: tomorrow everywhere on Earth."""
     return (datetime.now(timezone(timedelta(hours=14))) + timedelta(days=1)).strftime("%Y-%m-%d")
@@ -475,6 +501,8 @@ def approve(today_only=False):
         base = infl[0] if infl else wn_lemma(tok) or tok
         if base != tok and not (base in LEM or eng_senses(base)): base = tok
         head = tok if (own_senses(tok) or (tok in LEM and not infl)) else base
+        if infl and base != tok and tok not in LEM and (base in LEM or own_senses(base)):
+            head = base                       # "cherubs" is the plural of cherub, whatever else Wiktionary lists
         if var and head not in LEM and not [s for s in own_senses(head) if not s[3]]:
             head = var[0] if (var[0] in LEM or own_senses(var[0])) else head
             base = head
@@ -547,6 +575,38 @@ def approve(today_only=False):
             else: sc -= 0.5
             if sc > best: best, best_s = sc, ws
         return best, best_s
+
+    NEAR = {}
+    def near(k):
+        """Everyday words close to k: its synonyms and related forms (strong), and their neighbours (partial)."""
+        if k in NEAR: return NEAR[k]
+        ok = lambda w: re.fullmatch(r"[a-z]+", w) and Z(w) >= 3.2 and not BLOCK.search(w) and not PROFANE.search(w)
+        strong, part = {k}, set()
+        for x in wn.synsets(k)[:2]:
+            for l in x.lemmas():
+                n = l.name().lower()
+                if ok(n): strong.add(n)
+                for d in l.derivationally_related_forms() + l.pertainyms():
+                    if ok(d.name().lower()): strong.add(d.name().lower())
+                    for y in d.synset().similar_tos()[:6]:
+                        part |= {m.name().lower() for m in y.lemmas() if ok(m.name().lower())}
+            for y in x.similar_tos()[:6] + x.hypernyms()[:1]:
+                part |= {m.name().lower() for m in y.lemmas() if ok(m.name().lower())}
+        NEAR[k] = (sorted(strong), sorted(part - strong))
+        return NEAR[k]
+    def ideas(head, *defs):
+        """Scoring ideas from both dictionaries' wording: one idea scores about 67, two score 100."""
+        kws = []
+        for d in defs:
+            for k in lexgen.kw_list(re.sub(r"<[^>]+>", "", d or ""))[:3]:
+                if k != head and k not in kws and not BLOCK.search(k): kws.append(k)
+        kws = kws[:4]
+        if not kws: return None
+        cs = []
+        for k in kws:
+            st, pa = near(k)
+            cs.append({"label": f"the idea of “{k}”", "w": round(1 / len(kws), 3), "s": ", ".join(st), "p": ", ".join(pa[:25])})
+        return {"concepts": cs, "cap": round(min(1, 1.5 / len(kws)), 3)}
 
     approved, review, rejected, exists = {}, {}, {}, {}
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -676,8 +736,7 @@ def approve(today_only=False):
                                       for i, k in enumerate(kws)], "cap": .7 if len(kws) > 1 else 1}}
             e["def"] = text
         if own_def: e["def"] = own_def
-        e["def"] = re.sub(r"\s+", " ", e["def"]).strip()
-        e["def"] = e["def"].rstrip(" ;:,")
+        e["def"] = tidy_def(e["def"])
         e["def"] = e["def"][0].upper() + e["def"][1:] + ("" if e["def"].endswith((".", "!", "?")) else ".")
         if ws and best is not None and conf == 2:
             alt = ws[2].strip()
@@ -691,8 +750,8 @@ def approve(today_only=False):
         etys = (cache.get(head) or {}).get("e") or (cache.get(base) or {}).get("e") or []
         origs = (cache.get(head) or {}).get("o") or (cache.get(base) or {}).get("o") or []
         if not etys and wsrc: etys, origs = (cache.get(wsrc) or {}).get("e") or [], (cache.get(wsrc) or {}).get("o") or []
-        if etys and ei < len(etys) and etys[ei]:
-            e["ety"] = etys[ei]
+        if etys and ei < len(etys) and tidy_ety(etys[ei]):
+            e["ety"] = tidy_ety(etys[ei])
             ol = [o for o in (origs[ei] if ei < len(origs) else []) if o[0] not in ("English", "Proto-Indo-European")]
             if ol: set_origin(e, ol, head, lexgen)
             else: e["origin"] = ["english"]; e.pop("etyLex", None)
@@ -701,6 +760,24 @@ def approve(today_only=False):
         if not e.get("ety"): e["ety"] = "Origin not recorded in our dictionaries."; e["origin"] = ["english"]; e.pop("etyLex", None)
         if not e.get("etyLex"): e["etyLex"] = {"concepts": [{"label": "the language", "w": 1, "s": "english", "p": ""}], "cap": .75}
         e.setdefault("origin", ["english"])
+        wk_def = ws[2] if ws else ""
+        lx = ideas(head, e["def"], wk_def if wk_def and bag(wk_def) != bag(e["def"]) else "")
+        if lx:
+            keep = {k: v for k, v in e.get("lex", {}).items() if k in ("alt2",)}
+            syn = [x for x in (e.get("lex", {}).get("syn", "") or "").split(", ") if x and not BLOCK.search(x) and not PROFANE.search(x)]
+            hyper, hlabel = e.get("lex", {}).get("hyper", ""), e.get("lex", {}).get("hyperLabel", "")
+            hy = best.hypernyms()[:1] if best is not None else []
+            if hy and not {l.lower() for l in hy[0].lemma_names()} & {"person", "individual", "act", "thing", "object", "entity", "abstraction",
+                                                                      "attribute", "state", "event", "activity", "group", "quality", "communication", "change", "move", "make"}:
+                kin = [hy[0]] + [x for x in hy[0].hyponyms() if x != best][:30]
+                kin += [g for x in kin[1:12] for g in x.hyponyms()[:4]]          # near relatives: "fraud" is close to "charlatan"
+                names = [l.replace("_", " ").lower() for x in kin for l in x.lemma_names()]
+                names = [n for n in dict.fromkeys(names) if n != head and Z(n) >= 2.8 and not BLOCK.search(n) and not PROFANE.search(n)]
+                if names: hyper, hlabel = ", ".join(names[:60]), hy[0].lemma_names()[0].replace("_", " ")
+            e["lex"] = {**lx, **keep, "syn": ", ".join(syn), "hyper": hyper, "hyperLabel": hlabel}
+        if "Close cousins:" in e.get("explain", ""):          # no rude "cousins" (WordNet lists some slurs as synonyms)
+            e["explain"] = re.sub(r"Close cousins: ([^.]*)\.", lambda m: ("Close cousins: " + ", ".join(x for x in m.group(1).split(", ") if not BLOCK.search(x) and not PROFANE.search(x)) + ".")
+                                  if [x for x in m.group(1).split(", ") if not BLOCK.search(x) and not PROFANE.search(x)] else "", e["explain"]).strip()
         e["rarity"] = max(1, min(10, round(10 - Z(head) * 2.6)))     # shown on the card; rarer words join the word of the day
         e["chk"] = conf
         approved[fam] = (e, list(clean_rows or show_rows or frs), forms, list(all_frs))
@@ -856,7 +933,8 @@ def set_origin(e, ol, head, lexgen):
     chain = []
     for name, _ in reversed(ol[:4]):
         k = key(name)
-        if k != "other" and (not chain or chain[-1] != k): chain.append(k)
+        if k == "other" and name.startswith("Proto-"): continue
+        if not chain or chain[-1] != k: chain.append(k)
     if not chain or chain[-1] != "english": chain.append("english")
     e["origin"] = chain
     langs = [k for k in chain if k != "english"] or ["english"]

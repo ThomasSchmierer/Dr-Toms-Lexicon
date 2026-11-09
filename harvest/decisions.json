@@ -100,7 +100,7 @@
 },
 "abandon":{
 "d":"rejected",
-"w":"abandons",
+"w":"abandon",
 "r":"everyday word",
 "n":1
 },
@@ -144,7 +144,7 @@
 },
 "abhor":{
 "d":"exists",
-"w":"abhorred",
+"w":"abhor",
 "r":"only in books (used for cross-references)"
 },
 "abhorrent":{
@@ -181,7 +181,7 @@
 },
 "abjure":{
 "d":"exists",
-"w":"abjured",
+"w":"abjure",
 "r":"only in books (used for cross-references)"
 },
 "abnegate":{
@@ -770,7 +770,7 @@
 },
 "airbrush":{
 "d":"rejected",
-"w":"airbrushed",
+"w":"airbrush",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -1587,6 +1587,12 @@
 "first":"2026-11-09",
 "r":"two dictionaries agree",
 "n":1
+},
+"apologise":{
+"d":"rejected",
+"w":"apologise",
+"r":"everyday word",
+"n":3
 },
 "apologizing":{
 "d":"rejected",
@@ -2512,8 +2518,8 @@
 },
 "backfire":{
 "d":"rejected",
-"w":"backfiring",
-"r":"an everyday word with a prefix or suffix",
+"w":"backfire",
+"r":"everyday word",
 "n":1
 },
 "backflip":{
@@ -2533,7 +2539,7 @@
 },
 "backpacker":{
 "d":"rejected",
-"w":"backpackers",
+"w":"backpacker",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -2554,7 +2560,7 @@
 },
 "backslap":{
 "d":"rejected",
-"w":"backslapping",
+"w":"backslap",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -3145,7 +3151,7 @@
 },
 "beam":{
 "d":"rejected",
-"w":"beamed",
+"w":"beam",
 "r":"everyday word",
 "n":1
 },
@@ -3545,7 +3551,7 @@
 },
 "bell":{
 "d":"exists",
-"w":"belled",
+"w":"bell",
 "r":"only in books (used for cross-references)"
 },
 "bellbright":{
@@ -3684,7 +3690,7 @@
 },
 "betide":{
 "d":"exists",
-"w":"betides",
+"w":"betide",
 "r":"only in books (used for cross-references)"
 },
 "betimes":{
@@ -3751,7 +3757,7 @@
 },
 "bewilder":{
 "d":"exists",
-"w":"bewildering",
+"w":"bewilder",
 "r":"only in books (used for cross-references)"
 },
 "bewitching":{
@@ -3950,7 +3956,7 @@
 },
 "biscotto":{
 "d":"approved",
-"w":"biscotti",
+"w":"biscotto",
 "seq":1174,
 "day":"2026-11-10",
 "first":"2026-11-09",
@@ -3959,7 +3965,7 @@
 },
 "bisect":{
 "d":"exists",
-"w":"bisected",
+"w":"bisect",
 "r":"only in books (used for cross-references)"
 },
 "bishopric":{
@@ -4038,7 +4044,7 @@
 },
 "blackball":{
 "d":"rejected",
-"w":"blackballing",
+"w":"blackball",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -4084,7 +4090,7 @@
 },
 "blackout":{
 "d":"rejected",
-"w":"blackouts",
+"w":"blackout",
 "r":"everyday word",
 "n":1
 },
@@ -4133,11 +4139,11 @@
 },
 "blather":{
 "d":"approved",
-"w":"blathering",
+"w":"blather",
 "seq":1823,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":2
 },
 "blazon":{
@@ -4310,11 +4316,11 @@
 },
 "blither":{
 "d":"approved",
-"w":"blithering",
+"w":"blither",
 "seq":1933,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "bloater":{
@@ -4899,7 +4905,7 @@
 },
 "bound":{
 "d":"rejected",
-"w":"bounding",
+"w":"bound",
 "r":"everyday word",
 "n":1
 },
@@ -4961,7 +4967,7 @@
 },
 "bracket":{
 "d":"exists",
-"w":"bracketed",
+"w":"bracket",
 "r":"only in books (used for cross-references)"
 },
 "brae":{
@@ -5060,7 +5066,7 @@
 },
 "brawl":{
 "d":"exists",
-"w":"brawling",
+"w":"brawl",
 "r":"only in books (used for cross-references)"
 },
 "brawn":{
@@ -5465,7 +5471,7 @@
 },
 "buffer":{
 "d":"rejected",
-"w":"buffering",
+"w":"buffer",
 "r":"everyday word",
 "n":1
 },
@@ -6385,9 +6391,12 @@
 "n":1
 },
 "castellum":{
-"d":"rejected",
-"w":"castella",
-"r":"an everyday word with a prefix or suffix",
+"d":"approved",
+"w":"castellum",
+"seq":1977,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"Wiktionary only",
 "n":1
 },
 "castigate":{
@@ -6502,7 +6511,7 @@
 },
 "cavort":{
 "d":"exists",
-"w":"cavorting",
+"w":"cavort",
 "r":"already in the game (built-in)"
 },
 "ceaseless":{
@@ -6688,7 +6697,7 @@
 },
 "champion":{
 "d":"rejected",
-"w":"championing",
+"w":"champion",
 "r":"everyday word",
 "n":1
 },
@@ -6940,11 +6949,11 @@
 },
 "cherub":{
 "d":"approved",
-"w":"cherubs",
+"w":"cherub",
 "seq":1809,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "cherubic":{
@@ -7352,8 +7361,8 @@
 },
 "cinder":{
 "d":"rejected",
-"w":"cinders",
-"r":"an everyday word with a prefix or suffix",
+"w":"cinder",
+"r":"an everyday object, animal or food",
 "n":4
 },
 "cinquefoil":{
@@ -7717,11 +7726,11 @@
 },
 "clomp":{
 "d":"approved",
-"w":"clomping",
+"w":"clomp",
 "seq":1892,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "clomper":{
@@ -7815,7 +7824,7 @@
 },
 "clover":{
 "d":"exists",
-"w":"clovers",
+"w":"clover",
 "r":"only in books (used for cross-references)"
 },
 "club":{
@@ -7996,7 +8005,7 @@
 },
 "coke":{
 "d":"rejected",
-"w":"cokes",
+"w":"coke",
 "r":"everyday word",
 "n":1
 },
@@ -8739,7 +8748,7 @@
 },
 "contradict":{
 "d":"rejected",
-"w":"contradicting",
+"w":"contradict",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -9171,7 +9180,7 @@
 },
 "court-martial":{
 "d":"rejected",
-"w":"court-martialed",
+"w":"court-martial",
 "r":"everyday word",
 "n":1
 },
@@ -9308,14 +9317,14 @@
 },
 "cram":{
 "d":"rejected",
-"w":"cramming",
-"r":"an everyday word with a prefix or suffix",
+"w":"cram",
+"r":"everyday word",
 "n":1
 },
 "cramp":{
 "d":"rejected",
-"w":"cramping",
-"r":"an everyday word with a prefix or suffix",
+"w":"cramp",
+"r":"everyday word",
 "n":2
 },
 "cranberry":{
@@ -9845,7 +9854,7 @@
 },
 "cuff":{
 "d":"rejected",
-"w":"cuffing",
+"w":"cuff",
 "r":"everyday word",
 "n":1
 },
@@ -9887,7 +9896,7 @@
 },
 "cumber":{
 "d":"exists",
-"w":"cumbered",
+"w":"cumber",
 "r":"only in books (used for cross-references)"
 },
 "cumshedders":{
@@ -9910,7 +9919,7 @@
 },
 "curd":{
 "d":"exists",
-"w":"curded",
+"w":"curd",
 "r":"only in books (used for cross-references)"
 },
 "cureless":{
@@ -10092,7 +10101,7 @@
 },
 "daily":{
 "d":"rejected",
-"w":"dailies",
+"w":"daily",
 "r":"everyday word",
 "n":1
 },
@@ -10357,7 +10366,7 @@
 },
 "daylight":{
 "d":"rejected",
-"w":"daylights",
+"w":"daylight",
 "r":"everyday word",
 "n":1
 },
@@ -10544,7 +10553,7 @@
 },
 "decency":{
 "d":"exists",
-"w":"decencies",
+"w":"decency",
 "r":"only in books (used for cross-references)"
 },
 "decently":{
@@ -11192,6 +11201,12 @@
 "r":"everyday word",
 "n":1
 },
+"devil":{
+"d":"rejected",
+"w":"devil",
+"r":"everyday word",
+"n":1
+},
 "devilled":{
 "d":"rejected",
 "w":"devilled",
@@ -11405,7 +11420,7 @@
 "d":"rejected",
 "w":"ding",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "dinger":{
 "d":"exists",
@@ -11736,6 +11751,15 @@
 "w":"disordered",
 "r":"only in books (used for cross-references)"
 },
+"disorientate":{
+"d":"approved",
+"w":"disorientate",
+"seq":1981,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
+"n":1
+},
 "disoriented":{
 "d":"rejected",
 "w":"disoriented",
@@ -11882,7 +11906,7 @@
 },
 "distrust":{
 "d":"exists",
-"w":"distrusted",
+"w":"distrust",
 "r":"only in books (used for cross-references)"
 },
 "disunite":{
@@ -12451,7 +12475,7 @@
 },
 "dreadlock":{
 "d":"rejected",
-"w":"dreadlocks",
+"w":"dreadlock",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -13430,17 +13454,17 @@
 },
 "ember":{
 "d":"rejected",
-"w":"embers",
-"r":"an everyday word with a prefix or suffix",
+"w":"ember",
+"r":"an everyday object, animal or food",
 "n":2
 },
 "embitter":{
 "d":"approved",
-"w":"embittered",
+"w":"embitter",
 "seq":1856,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "emblem":{
@@ -13450,7 +13474,7 @@
 },
 "embody":{
 "d":"exists",
-"w":"embodying",
+"w":"embody",
 "r":"only in books (used for cross-references)"
 },
 "embroider":{
@@ -13575,6 +13599,11 @@
 "w":"enamored",
 "r":"only in books (used for cross-references)"
 },
+"enamour":{
+"d":"exists",
+"w":"enamour",
+"r":"only in books (used for cross-references)"
+},
 "encapsulate":{
 "d":"approved",
 "w":"encapsulate",
@@ -13670,7 +13699,7 @@
 },
 "endeavor":{
 "d":"exists",
-"w":"endeavoring",
+"w":"endeavor",
 "r":"only in books (used for cross-references)"
 },
 "endeavoured":{
@@ -13708,6 +13737,15 @@
 "d":"rejected",
 "w":"energetically",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"energise":{
+"d":"approved",
+"w":"energise",
+"seq":1975,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
 "n":1
 },
 "energize":{
@@ -14434,7 +14472,7 @@
 },
 "exorcise":{
 "d":"exists",
-"w":"exorcised",
+"w":"exorcise",
 "r":"only in books (used for cross-references)"
 },
 "exoskeleton":{
@@ -14770,7 +14808,7 @@
 "d":"rejected",
 "w":"faint",
 "r":"everyday word",
-"n":3
+"n":5
 },
 "faithless":{
 "d":"exists",
@@ -15509,7 +15547,7 @@
 },
 "fingerpaint":{
 "d":"rejected",
-"w":"fingerpainting",
+"w":"fingerpaint",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -15890,7 +15928,7 @@
 },
 "flesh":{
 "d":"exists",
-"w":"fleshed",
+"w":"flesh",
 "r":"only in books (used for cross-references)"
 },
 "fleshless":{
@@ -15944,7 +15982,7 @@
 },
 "flinch":{
 "d":"exists",
-"w":"flinching",
+"w":"flinch",
 "r":"only in books (used for cross-references)"
 },
 "fling":{
@@ -16057,8 +16095,8 @@
 },
 "floss":{
 "d":"rejected",
-"w":"flossing",
-"r":"an everyday word with a prefix or suffix",
+"w":"floss",
+"r":"everyday word",
 "n":1
 },
 "flossy":{
@@ -16072,7 +16110,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "d":"rejected",
-"w":"floundering",
+"w":"flounder",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -16170,7 +16208,7 @@
 },
 "flutter":{
 "d":"exists",
-"w":"fluttered",
+"w":"flutter",
 "r":"only in books (used for cross-references)"
 },
 "fly":{
@@ -16399,7 +16437,7 @@
 },
 "foresee":{
 "d":"exists",
-"w":"foreseen",
+"w":"foresee",
 "r":"only in books (used for cross-references)"
 },
 "foreshadow":{
@@ -16518,7 +16556,7 @@
 },
 "founder":{
 "d":"exists",
-"w":"foundering",
+"w":"founder",
 "r":"only in books (used for cross-references)"
 },
 "foundered":{
@@ -16609,8 +16647,8 @@
 },
 "fray":{
 "d":"rejected",
-"w":"fraying",
-"r":"an everyday word with a prefix or suffix",
+"w":"fray",
+"r":"everyday word",
 "n":1
 },
 "fraze":{
@@ -16683,7 +16721,7 @@
 },
 "freight":{
 "d":"exists",
-"w":"freighted",
+"w":"freight",
 "r":"only in books (used for cross-references)"
 },
 "frenzied":{
@@ -16776,7 +16814,7 @@
 },
 "frig":{
 "d":"rejected",
-"w":"frigging",
+"w":"frig",
 "r":"rude or upsetting meaning",
 "n":1
 },
@@ -16998,7 +17036,7 @@
 },
 "fume":{
 "d":"exists",
-"w":"fuming",
+"w":"fume",
 "r":"only in books (used for cross-references)"
 },
 "fumigate":{
@@ -17034,6 +17072,12 @@
 "d":"rejected",
 "w":"funhouse",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"funk":{
+"d":"rejected",
+"w":"funk",
+"r":"everyday word",
 "n":1
 },
 "funking":{
@@ -17394,7 +17438,7 @@
 },
 "gash":{
 "d":"exists",
-"w":"gashed",
+"w":"gash",
 "r":"only in books (used for cross-references)"
 },
 "gaslight":{
@@ -17446,7 +17490,7 @@
 },
 "gauge":{
 "d":"exists",
-"w":"gauging",
+"w":"gauge",
 "r":"only in books (used for cross-references)"
 },
 "gaunt":{
@@ -18024,7 +18068,7 @@
 },
 "gloss":{
 "d":"exists",
-"w":"glossed",
+"w":"gloss",
 "r":"only in books (used for cross-references)"
 },
 "glossless":{
@@ -18346,7 +18390,7 @@
 },
 "gooly":{
 "d":"rejected",
-"w":"goolies",
+"w":"gooly",
 "r":"marked vulgar or offensive in Wiktionary",
 "n":3
 },
@@ -18642,7 +18686,7 @@
 },
 "grieve":{
 "d":"exists",
-"w":"grieved",
+"w":"grieve",
 "r":"only in books (used for cross-references)"
 },
 "grimace":{
@@ -19014,8 +19058,8 @@
 },
 "gutter":{
 "d":"rejected",
-"w":"gutters",
-"r":"an everyday word with a prefix or suffix",
+"w":"gutter",
+"r":"everyday word",
 "n":3
 },
 "guttersnipe":{
@@ -19162,12 +19206,12 @@
 "n":1
 },
 "hafta":{
-"d":"approved",
-"w":"hasta",
 "seq":1126,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"d":"rejected",
+"w":"hafta",
+"r":"a misspelling, abbreviation or contraction",
 "n":1
 },
 "haggadah":{
@@ -19259,7 +19303,7 @@
 },
 "half-ass":{
 "d":"rejected",
-"w":"half-assed",
+"w":"half-ass",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -19540,7 +19584,7 @@
 },
 "hard":{
 "d":"rejected",
-"w":"hards",
+"w":"hard",
 "r":"everyday word",
 "n":1
 },
@@ -19751,7 +19795,7 @@
 },
 "heap":{
 "d":"exists",
-"w":"heaped",
+"w":"heap",
 "r":"only in books (used for cross-references)"
 },
 "hear":{
@@ -20070,7 +20114,7 @@
 },
 "herd":{
 "d":"rejected",
-"w":"herding",
+"w":"herd",
 "r":"everyday word",
 "n":1
 },
@@ -20824,8 +20868,8 @@
 },
 "huff":{
 "d":"rejected",
-"w":"huffing",
-"r":"an everyday word with a prefix or suffix",
+"w":"huff",
+"r":"everyday word",
 "n":2
 },
 "huffy":{
@@ -22611,7 +22655,7 @@
 },
 "intercede":{
 "d":"exists",
-"w":"interceding",
+"w":"intercede",
 "r":"only in books (used for cross-references)"
 },
 "intercom":{
@@ -23094,7 +23138,7 @@
 },
 "jack":{
 "d":"rejected",
-"w":"jacking",
+"w":"jack",
 "r":"everyday word",
 "n":1
 },
@@ -23163,7 +23207,7 @@
 },
 "jargon":{
 "d":"exists",
-"w":"jargoning",
+"w":"jargon",
 "r":"only in books (used for cross-references)"
 },
 "jasmine":{
@@ -23426,7 +23470,7 @@
 },
 "josh":{
 "d":"rejected",
-"w":"joshing",
+"w":"josh",
 "r":"everyday word",
 "n":2
 },
@@ -23502,8 +23546,8 @@
 },
 "jug":{
 "d":"rejected",
-"w":"jugged",
-"r":"marked vulgar or offensive in Wiktionary",
+"w":"jug",
+"r":"everyday word",
 "n":1
 },
 "juggler":{
@@ -24033,7 +24077,7 @@
 },
 "knit":{
 "d":"exists",
-"w":"knits",
+"w":"knit",
 "r":"only in books (used for cross-references)"
 },
 "knitathon":{
@@ -24053,7 +24097,7 @@
 },
 "knocker":{
 "d":"rejected",
-"w":"knockers",
+"w":"knocker",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -24444,7 +24488,7 @@
 },
 "lap":{
 "d":"exists",
-"w":"lapped",
+"w":"lap",
 "r":"only in books (used for cross-references)"
 },
 "lapdog":{
@@ -25208,8 +25252,8 @@
 },
 "limp-wrist":{
 "d":"rejected",
-"w":"limp-wristed",
-"r":"an everyday word with a prefix or suffix",
+"w":"limp-wrist",
+"r":"everyday word",
 "n":1
 },
 "limpet":{
@@ -25643,12 +25687,12 @@
 },
 "loop":{
 "d":"exists",
-"w":"looped",
+"w":"loop",
 "r":"only in books (used for cross-references)"
 },
 "loose":{
 "d":"rejected",
-"w":"looser",
+"w":"loose",
 "r":"everyday word",
 "n":1
 },
@@ -25671,7 +25715,7 @@
 },
 "lord":{
 "d":"rejected",
-"w":"lording",
+"w":"lord",
 "r":"everyday word",
 "n":1
 },
@@ -26200,7 +26244,7 @@
 },
 "maim":{
 "d":"approved",
-"w":"maimed",
+"w":"maim",
 "seq":1595,
 "day":"2026-11-10",
 "first":"2026-11-09",
@@ -26270,7 +26314,7 @@
 },
 "making":{
 "d":"rejected",
-"w":"makings",
+"w":"making",
 "r":"everyday word",
 "n":1
 },
@@ -26677,9 +26721,10 @@
 "r":"only in books (used for cross-references)"
 },
 "marshal":{
-"d":"exists",
+"d":"rejected",
 "w":"marshal",
-"r":"only in books (used for cross-references)"
+"r":"everyday word",
+"n":2
 },
 "marshalling":{
 "d":"rejected",
@@ -26716,7 +26761,7 @@
 },
 "mash":{
 "d":"rejected",
-"w":"mashing",
+"w":"mash",
 "r":"everyday word",
 "n":1
 },
@@ -27014,7 +27059,7 @@
 },
 "meek":{
 "d":"exists",
-"w":"meeker",
+"w":"meek",
 "r":"only in books (used for cross-references)"
 },
 "meester":{
@@ -27082,8 +27127,8 @@
 },
 "melon":{
 "d":"rejected",
-"w":"melons",
-"r":"an everyday word with a prefix or suffix",
+"w":"melon",
+"r":"everyday word",
 "n":2
 },
 "melora":{
@@ -27819,7 +27864,7 @@
 },
 "mitre":{
 "d":"exists",
-"w":"mitred",
+"w":"mitre",
 "r":"only in books (used for cross-references)"
 },
 "mitzvah":{
@@ -28080,12 +28125,12 @@
 "n":2
 },
 "moo":{
-"d":"approved",
-"w":"mooing",
 "seq":1284,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"d":"rejected",
+"w":"moo",
+"r":"everyday word",
 "n":1
 },
 "mooch":{
@@ -28304,7 +28349,7 @@
 },
 "mother":{
 "d":"exists",
-"w":"mothering",
+"w":"mother",
 "r":"only in books (used for cross-references)"
 },
 "mother lode":{
@@ -28584,7 +28629,7 @@
 },
 "multitude":{
 "d":"exists",
-"w":"multitudes",
+"w":"multitude",
 "r":"only in books (used for cross-references)"
 },
 "mumble":{
@@ -28808,8 +28853,8 @@
 },
 "nacho":{
 "d":"rejected",
-"w":"nachos",
-"r":"an everyday word with a prefix or suffix",
+"w":"nacho",
+"r":"everyday word",
 "n":2
 },
 "nadando":{
@@ -29619,7 +29664,7 @@
 },
 "noon":{
 "d":"exists",
-"w":"noons",
+"w":"noon",
 "r":"only in books (used for cross-references)"
 },
 "noone":{
@@ -30814,7 +30859,7 @@
 },
 "overall":{
 "d":"rejected",
-"w":"overalls",
+"w":"overall",
 "r":"everyday word",
 "n":2
 },
@@ -30855,7 +30900,7 @@
 },
 "overdevelop":{
 "d":"rejected",
-"w":"overdeveloped",
+"w":"overdevelop",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -30905,7 +30950,7 @@
 },
 "overload":{
 "d":"rejected",
-"w":"overloading",
+"w":"overload",
 "r":"everyday word",
 "n":1
 },
@@ -30960,7 +31005,7 @@
 },
 "overrule":{
 "d":"exists",
-"w":"overruling",
+"w":"overrule",
 "r":"only in books (used for cross-references)"
 },
 "oversexed":{
@@ -31255,6 +31300,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"pamper":{
+"d":"rejected",
+"w":"pamper",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "pampers":{
 "d":"review",
 "w":"pampers",
@@ -31335,9 +31386,13 @@
 "n":4
 },
 "pantaloon":{
-"d":"exists",
-"w":"pantaloons",
-"r":"already in the game (built-in)"
+"d":"approved",
+"w":"pantaloon",
+"seq":1978,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
+"n":1
 },
 "pantless":{
 "d":"approved",
@@ -31468,6 +31523,15 @@
 "d":"rejected",
 "w":"paraffin",
 "r":"an everyday object, animal or food",
+"n":1
+},
+"paralyse":{
+"d":"approved",
+"w":"paralyse",
+"seq":1980,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
 "n":1
 },
 "paralytic":{
@@ -32006,7 +32070,7 @@
 },
 "pencil":{
 "d":"exists",
-"w":"pencilled",
+"w":"pencil",
 "r":"only in books (used for cross-references)"
 },
 "peninsula":{
@@ -32498,7 +32562,7 @@
 },
 "pickpocket":{
 "d":"rejected",
-"w":"pickpocketing",
+"w":"pickpocket",
 "r":"an everyday word with a prefix or suffix",
 "n":3
 },
@@ -32640,7 +32704,7 @@
 },
 "pink":{
 "d":"rejected",
-"w":"pinks",
+"w":"pink",
 "r":"everyday word",
 "n":1
 },
@@ -32769,7 +32833,7 @@
 },
 "plain":{
 "d":"rejected",
-"w":"plainer",
+"w":"plain",
 "r":"everyday word",
 "n":1
 },
@@ -32873,20 +32937,20 @@
 },
 "pleasantry":{
 "d":"approved",
-"w":"pleasantries",
+"w":"pleasantry",
 "seq":1785,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "pleb":{
 "d":"approved",
-"w":"plebs",
+"w":"pleb",
 "seq":1274,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "pledge":{
@@ -32981,7 +33045,7 @@
 },
 "pluck":{
 "d":"exists",
-"w":"plucking",
+"w":"pluck",
 "r":"only in books (used for cross-references)"
 },
 "plucky":{
@@ -33033,7 +33097,7 @@
 },
 "plump":{
 "d":"exists",
-"w":"plumper",
+"w":"plump",
 "r":"only in books (used for cross-references)"
 },
 "plunder":{
@@ -33129,7 +33193,7 @@
 },
 "poise":{
 "d":"exists",
-"w":"poising",
+"w":"poise",
 "r":"only in books (used for cross-references)"
 },
 "poker":{
@@ -33808,14 +33872,17 @@
 "n":1
 },
 "preordain":{
-"d":"rejected",
-"w":"preordained",
-"r":"an everyday word with a prefix or suffix",
+"d":"approved",
+"w":"preordain",
+"seq":1979,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
 "n":1
 },
 "prep":{
 "d":"rejected",
-"w":"prepped",
+"w":"prep",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -34024,7 +34091,7 @@
 },
 "procure":{
 "d":"exists",
-"w":"procuring",
+"w":"procure",
 "r":"only in books (used for cross-references)"
 },
 "prodigal":{
@@ -34543,8 +34610,8 @@
 },
 "punter":{
 "d":"rejected",
-"w":"punters",
-"r":"an everyday word with a prefix or suffix",
+"w":"punter",
+"r":"everyday word",
 "n":1
 },
 "puppeteer":{
@@ -34830,6 +34897,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"queue":{
+"d":"rejected",
+"w":"queue",
+"r":"everyday word",
+"n":1
+},
 "queuing":{
 "d":"rejected",
 "w":"queuing",
@@ -34975,7 +35048,7 @@
 },
 "rabbit":{
 "d":"rejected",
-"w":"rabbiting",
+"w":"rabbit",
 "r":"everyday word",
 "n":1
 },
@@ -35055,8 +35128,8 @@
 },
 "railing":{
 "d":"rejected",
-"w":"railings",
-"r":"an everyday word with a prefix or suffix",
+"w":"railing",
+"r":"everyday word",
 "n":1
 },
 "raiment":{
@@ -35287,7 +35360,7 @@
 },
 "ravel":{
 "d":"exists",
-"w":"ravelling",
+"w":"ravel",
 "r":"only in books (used for cross-references)"
 },
 "raver":{
@@ -35384,7 +35457,7 @@
 },
 "real":{
 "d":"exists",
-"w":"realer",
+"w":"real",
 "r":"only in books (used for cross-references)"
 },
 "realist":{
@@ -35790,7 +35863,7 @@
 },
 "refinance":{
 "d":"rejected",
-"w":"refinancing",
+"w":"refinance",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -36367,7 +36440,7 @@
 },
 "retch":{
 "d":"rejected",
-"w":"retching",
+"w":"retch",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -36460,7 +36533,7 @@
 },
 "rev":{
 "d":"rejected",
-"w":"revving",
+"w":"rev",
 "r":"everyday word",
 "n":1
 },
@@ -36773,7 +36846,7 @@
 },
 "rive":{
 "d":"exists",
-"w":"riving",
+"w":"rive",
 "r":"only in books (used for cross-references)"
 },
 "rivel":{
@@ -37015,7 +37088,7 @@
 },
 "rough":{
 "d":"rejected",
-"w":"rougher",
+"w":"rough",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -37078,7 +37151,7 @@
 },
 "row":{
 "d":"exists",
-"w":"rowed",
+"w":"row",
 "r":"only in books (used for cross-references)"
 },
 "rowboat":{
@@ -37244,7 +37317,7 @@
 },
 "rut":{
 "d":"rejected",
-"w":"rutting",
+"w":"rut",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -37520,12 +37593,12 @@
 "n":5
 },
 "sardine":{
-"d":"approved",
-"w":"sardines",
 "seq":1913,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"d":"rejected",
+"w":"sardine",
+"r":"an everyday object, animal or food",
 "n":3
 },
 "sardonically":{
@@ -37562,7 +37635,7 @@
 },
 "sate":{
 "d":"exists",
-"w":"sated",
+"w":"sate",
 "r":"only in books (used for cross-references)"
 },
 "satin":{
@@ -37745,7 +37818,7 @@
 },
 "scandalize":{
 "d":"rejected",
-"w":"scandalized",
+"w":"scandalize",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -37757,7 +37830,7 @@
 },
 "scant":{
 "d":"exists",
-"w":"scanted",
+"w":"scant",
 "r":"only in books (used for cross-references)"
 },
 "scantily":{
@@ -38015,7 +38088,7 @@
 },
 "scorn":{
 "d":"exists",
-"w":"scorning",
+"w":"scorn",
 "r":"only in books (used for cross-references)"
 },
 "scornful":{
@@ -38106,7 +38179,7 @@
 },
 "scroll":{
 "d":"exists",
-"w":"scrolled",
+"w":"scroll",
 "r":"only in books (used for cross-references)"
 },
 "scroll-leaved":{
@@ -38733,7 +38806,7 @@
 },
 "severe":{
 "d":"exists",
-"w":"severer",
+"w":"severe",
 "r":"only in books (used for cross-references)"
 },
 "sew":{
@@ -38806,7 +38879,7 @@
 },
 "shaft":{
 "d":"rejected",
-"w":"shafted",
+"w":"shaft",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -38824,7 +38897,7 @@
 },
 "shallow":{
 "d":"exists",
-"w":"shallows",
+"w":"shallow",
 "r":"only in books (used for cross-references)"
 },
 "shamble":{
@@ -38845,6 +38918,11 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"shame":{
+"d":"exists",
+"w":"shame",
+"r":"only in books (used for cross-references)"
+},
 "shamefully":{
 "d":"rejected",
 "w":"shamefully",
@@ -38858,7 +38936,7 @@
 },
 "shampoo":{
 "d":"rejected",
-"w":"shampooing",
+"w":"shampoo",
 "r":"everyday word",
 "n":1
 },
@@ -39064,12 +39142,12 @@
 },
 "shilly-shally":{
 "d":"exists",
-"w":"shilly-shallying",
+"w":"shilly-shally",
 "r":"only in books (used for cross-references)"
 },
 "shimmer":{
 "d":"exists",
-"w":"shimmering",
+"w":"shimmer",
 "r":"only in books (used for cross-references)"
 },
 "shindig":{
@@ -39103,8 +39181,8 @@
 },
 "shipwreck":{
 "d":"rejected",
-"w":"shipwrecked",
-"r":"an everyday word with a prefix or suffix",
+"w":"shipwreck",
+"r":"everyday word",
 "n":2
 },
 "shish-kebabbed":{
@@ -39338,7 +39416,7 @@
 },
 "sicken":{
 "d":"exists",
-"w":"sickened",
+"w":"sicken",
 "r":"only in books (used for cross-references)"
 },
 "sicko":{
@@ -39685,12 +39763,12 @@
 "n":1
 },
 "skelp":{
-"d":"approved",
-"w":"skelping",
 "seq":281,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"r":"Wiktionary only",
+"d":"review",
+"w":"skelp",
+"r":"several meanings and the quote doesn't show which",
 "n":1
 },
 "sketch":{
@@ -40135,7 +40213,7 @@
 },
 "small":{
 "d":"rejected",
-"w":"smalls",
+"w":"small",
 "r":"everyday word",
 "n":1
 },
@@ -40249,8 +40327,8 @@
 },
 "smirk":{
 "d":"rejected",
-"w":"smirking",
-"r":"an everyday word with a prefix or suffix",
+"w":"smirk",
+"r":"everyday word",
 "n":3
 },
 "smithereens":{
@@ -40538,7 +40616,7 @@
 },
 "snow":{
 "d":"rejected",
-"w":"snows",
+"w":"snow",
 "r":"everyday word",
 "n":3
 },
@@ -40549,7 +40627,7 @@
 },
 "snowball":{
 "d":"exists",
-"w":"snowballing",
+"w":"snowball",
 "r":"only in books (used for cross-references)"
 },
 "snowcone":{
@@ -41407,7 +41485,7 @@
 },
 "spread-eagle":{
 "d":"rejected",
-"w":"spread-eagled",
+"w":"spread-eagle",
 "r":"everyday word",
 "n":1
 },
@@ -42388,7 +42466,7 @@
 },
 "stride":{
 "d":"exists",
-"w":"striding",
+"w":"stride",
 "r":"only in books (used for cross-references)"
 },
 "strimmer":{
@@ -42399,6 +42477,11 @@
 "w":"strimmer",
 "r":"an everyday word with a prefix or suffix",
 "n":2
+},
+"string":{
+"d":"exists",
+"w":"string",
+"r":"only in books (used for cross-references)"
 },
 "stripey":{
 "d":"rejected",
@@ -42796,7 +42879,7 @@
 },
 "sully":{
 "d":"exists",
-"w":"sullied",
+"w":"sully",
 "r":"only in books (used for cross-references)"
 },
 "sulphite":{
@@ -43404,8 +43487,8 @@
 },
 "swoop":{
 "d":"rejected",
-"w":"swooping",
-"r":"an everyday word with a prefix or suffix",
+"w":"swoop",
+"r":"everyday word",
 "n":2
 },
 "swordfish":{
@@ -43803,7 +43886,7 @@
 },
 "tarnish":{
 "d":"exists",
-"w":"tarnished",
+"w":"tarnish",
 "r":"only in books (used for cross-references)"
 },
 "tarpaulin":{
@@ -43849,7 +43932,7 @@
 },
 "task":{
 "d":"exists",
-"w":"tasking",
+"w":"task",
 "r":"only in books (used for cross-references)"
 },
 "tassel":{
@@ -44123,7 +44206,7 @@
 },
 "tender":{
 "d":"exists",
-"w":"tenderer",
+"w":"tender",
 "r":"only in books (used for cross-references)"
 },
 "tenderly":{
@@ -44242,7 +44325,7 @@
 },
 "theatrical":{
 "d":"exists",
-"w":"theatricals",
+"w":"theatrical",
 "r":"only in books (used for cross-references)"
 },
 "theatrics":{
@@ -44279,7 +44362,7 @@
 },
 "thermal":{
 "d":"rejected",
-"w":"thermals",
+"w":"thermal",
 "r":"everyday word",
 "n":1
 },
@@ -44467,7 +44550,7 @@
 },
 "thread":{
 "d":"exists",
-"w":"threading",
+"w":"thread",
 "r":"only in books (used for cross-references)"
 },
 "threateningly":{
@@ -44550,7 +44633,7 @@
 },
 "thruster":{
 "d":"rejected",
-"w":"thrusters",
+"w":"thruster",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -44712,6 +44795,12 @@
 "tightrope walking":{
 "d":"rejected",
 "w":"tightrope walking",
+"r":"only heard in lines with swearing",
+"n":1
+},
+"tightrope-walk":{
+"d":"rejected",
+"w":"tightrope-walk",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -45044,7 +45133,7 @@
 },
 "toll":{
 "d":"exists",
-"w":"tolling",
+"w":"toll",
 "r":"only in books (used for cross-references)"
 },
 "tolstoy":{
@@ -45174,7 +45263,7 @@
 },
 "torment":{
 "d":"exists",
-"w":"tormenting",
+"w":"torment",
 "r":"only in books (used for cross-references)"
 },
 "torpedo":{
@@ -45269,7 +45358,7 @@
 },
 "tower":{
 "d":"exists",
-"w":"towered",
+"w":"tower",
 "r":"only in books (used for cross-references)"
 },
 "towery":{
@@ -45777,7 +45866,7 @@
 },
 "truant":{
 "d":"rejected",
-"w":"truanting",
+"w":"truant",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -45883,7 +45972,7 @@
 },
 "tuck":{
 "d":"exists",
-"w":"tucking",
+"w":"tuck",
 "r":"only in books (used for cross-references)"
 },
 "tucker":{
@@ -45916,7 +46005,7 @@
 "d":"rejected",
 "w":"tunnel",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "tunneling":{
 "d":"rejected",
@@ -46022,8 +46111,8 @@
 },
 "tweed":{
 "d":"rejected",
-"w":"tweeds",
-"r":"an everyday word with a prefix or suffix",
+"w":"tweed",
+"r":"everyday word",
 "n":1
 },
 "tweety-pie":{
@@ -46115,7 +46204,7 @@
 },
 "twitter":{
 "d":"exists",
-"w":"twittering",
+"w":"twitter",
 "r":"only in books (used for cross-references)"
 },
 "twixt":{
@@ -46335,7 +46424,7 @@
 },
 "unarrest":{
 "d":"rejected",
-"w":"unarrested",
+"w":"unarrest",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -46456,7 +46545,7 @@
 },
 "unchild":{
 "d":"exists",
-"w":"unchilding",
+"w":"unchild",
 "r":"only in books (used for cross-references)"
 },
 "uncivilize":{
@@ -46571,7 +46660,7 @@
 },
 "uncreate":{
 "d":"exists",
-"w":"uncreated",
+"w":"uncreate",
 "r":"only in books (used for cross-references)"
 },
 "uncross":{
@@ -46582,7 +46671,7 @@
 },
 "uncumber":{
 "d":"exists",
-"w":"uncumbered",
+"w":"uncumber",
 "r":"only in books (used for cross-references)"
 },
 "undamaged":{
@@ -46812,7 +46901,7 @@
 },
 "undress":{
 "d":"rejected",
-"w":"undressed",
+"w":"undress",
 "r":"an everyday word with a prefix or suffix",
 "n":5
 },
@@ -46824,7 +46913,7 @@
 },
 "unelect":{
 "d":"rejected",
-"w":"unelected",
+"w":"unelect",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -47228,13 +47317,16 @@
 },
 "unmention":{
 "d":"exists",
-"w":"unmentioned",
+"w":"unmention",
 "r":"only in books (used for cross-references)"
 },
 "unmentionable":{
-"d":"rejected",
-"w":"unmentionables",
-"r":"rude or upsetting meaning",
+"d":"approved",
+"w":"unmentionable",
+"seq":1976,
+"day":"2026-11-10",
+"first":"2026-11-09",
+"r":"two dictionaries agree",
 "n":1
 },
 "unmitigated":{
@@ -47541,7 +47633,7 @@
 },
 "unsew":{
 "d":"exists",
-"w":"unsewn",
+"w":"unsew",
 "r":"only in books (used for cross-references)"
 },
 "unshakable":{
@@ -47767,7 +47859,7 @@
 },
 "unwind":{
 "d":"exists",
-"w":"unwinding",
+"w":"unwind",
 "r":"only in books (used for cross-references)"
 },
 "unwrap":{
@@ -47901,7 +47993,7 @@
 },
 "utter":{
 "d":"exists",
-"w":"uttermost",
+"w":"utter",
 "r":"only in books (used for cross-references)"
 },
 "utterance":{
@@ -48004,7 +48096,7 @@
 },
 "vandalise":{
 "d":"rejected",
-"w":"vandalised",
+"w":"vandalise",
 "r":"only heard in lines with swearing",
 "n":1
 },
@@ -48015,6 +48107,12 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
+"n":1
+},
+"vaporise":{
+"d":"rejected",
+"w":"vaporise",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "vaporize":{
@@ -48188,7 +48286,7 @@
 },
 "venture":{
 "d":"exists",
-"w":"venturing",
+"w":"venture",
 "r":"only in books (used for cross-references)"
 },
 "veracity":{
@@ -48684,7 +48782,7 @@
 },
 "wag":{
 "d":"exists",
-"w":"wagging",
+"w":"wag",
 "r":"only in books (used for cross-references)"
 },
 "waggle":{
@@ -49044,7 +49142,7 @@
 },
 "waylay":{
 "d":"exists",
-"w":"waylaying",
+"w":"waylay",
 "r":"only in books (used for cross-references)"
 },
 "wayside":{
@@ -49851,7 +49949,7 @@
 },
 "winter":{
 "d":"exists",
-"w":"wintering",
+"w":"winter",
 "r":"only in books (used for cross-references)"
 },
 "wintry":{
@@ -49932,7 +50030,7 @@
 },
 "witter":{
 "d":"rejected",
-"w":"wittering",
+"w":"witter",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -50155,7 +50253,7 @@
 },
 "worst":{
 "d":"rejected",
-"w":"worsted",
+"w":"worst",
 "r":"everyday word",
 "n":2
 },
@@ -50258,7 +50356,7 @@
 },
 "wrong":{
 "d":"rejected",
-"w":"wronger",
+"w":"wrong",
 "r":"only heard in lines with swearing",
 "n":2
 },
@@ -50682,7 +50780,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "d":"rejected",
-"w":"zombified",
+"w":"zombify",
 "r":"only heard in lines with swearing",
 "n":1
 },

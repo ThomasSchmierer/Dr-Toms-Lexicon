@@ -4,11 +4,11 @@ Every harvested word is checked automatically against WordNet and Wiktionary. A 
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it).
 
-- **Approved:** 1610 words (1331 confirmed by both dictionaries)
+- **Approved:** 1612 words (1344 confirmed by both dictionaries)
 - **Need a human:** 58
-- **Rejected:** 5025
-- **Already in the game, or only in books:** 1994 (these still get cross-references)
-- **Words used in more than one show:** 446
+- **Rejected:** 5022
+- **Already in the game, or only in books:** 1991 (these still get cross-references)
+- **Words used in more than one show:** 444
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -42,7 +42,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **whirl**: Downton Abbey, Gilmore Girls, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins
 - **scruffy**: Four Weddings and a Funeral, Sherlock, The Thick of It, The Young Ones
 - **scoff**: Frasier, Gilmore Girls, Spaced, The Thick of It
-- **maimed**: Blackadder, Poems by Emily Dickinson, Red Dwarf, The Thick of It
+- **maim**: Blackadder, Poems by Emily Dickinson, Red Dwarf, The Thick of It
 - **bonjour**: Blackadder, Gilmore Girls, Mr. Bean, Only Fools and Horses
 - **bereave**: Monty Python's Flying Circus, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Veep
 - **vindictive**: Peep Show, Red Dwarf, The West Wing, Veep
@@ -74,6 +74,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | psst | several meanings and the quote doesn't show which | 1 |
 | hocus | several meanings and the quote doesn't show which | 1 |
 | nipping | WordNet and Wiktionary don't agree on a meaning | 1 |
+| skelp | several meanings and the quote doesn't show which | 1 |
 | ween | several meanings and the quote doesn't show which | 1 |
 | brahms | only in WordNet (Wiktionary has no English meaning for it) | 1 |
 | negligee | only in WordNet (Wiktionary has no English meaning for it) | 1 |
@@ -98,7 +99,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | dobby | several meanings and the quote doesn't show which | 1 |
 | burbling | WordNet and Wiktionary don't agree on a meaning | 1 |
 | ident | several meanings and the quote doesn't show which | 1 |
-| pampers | only in WordNet (Wiktionary has no English meaning for it) | 1 |
 | haggadah | only in WordNet (Wiktionary has no English meaning for it) | 1 |
 | porcine | WordNet and Wiktionary don't agree on a meaning | 1 |
 | acadian | only in WordNet (Wiktionary has no English meaning for it) | 1 |
@@ -122,19 +122,19 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 1644 |
-| everyday word | 946 |
+| an everyday word with a prefix or suffix | 1621 |
+| everyday word | 965 |
 | fragment of a longer word or a contraction | 806 |
 | not in either dictionary (made up, a name or a typo) | 591 |
-| only heard in lines with swearing | 257 |
-| an everyday object, animal or food | 212 |
-| rude or upsetting meaning | 159 |
+| only heard in lines with swearing | 256 |
+| an everyday object, animal or food | 215 |
+| rude or upsetting meaning | 158 |
 | not an English word (foreign or a name) | 115 |
 | not a whole word in the quote | 93 |
 | rude or upsetting | 85 |
 | a name, not a word | 36 |
-| a misspelling, abbreviation or contraction | 31 |
-| marked vulgar or offensive in Wiktionary | 28 |
+| a misspelling, abbreviation or contraction | 32 |
+| marked vulgar or offensive in Wiktionary | 27 |
 | body part | 17 |
 | only a spelling variant or form of another word | 3 |
 | everyday word with many meanings | 1 |
@@ -144,6 +144,13 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| disorientate | Cause to be lost or disoriented. | The Thick of It |
+| paralyse | Make powerless and unable to function. | The Thick of It |
+| preordain | Foreordain or determine beforehand. | Spaced |
+| pantaloon | A buffoon in modern pantomimes; the butt of jokes. | Blackadder |
+| castellum | A small Roman detached fort or fortlet used as a watch tower or signal station. | Only Fools and Horses |
+| unmentionable | A garment worn under other garments. | Absolutely Fabulous |
+| energise | Raise to a higher energy level. | Kath & Kim |
 | anaesthetist | A specialist who administers an anesthetic to a patient before he is treated. | Green Wing |
 | liberator | Someone who releases people from captivity or bondage. | Blackadder |
 | concuss | Shake violently. | The IT Crowd |
@@ -167,7 +174,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | infallibility | The quality of never making an error. | Father Ted |
 | sonogram | An image of a structure that is produced by ultrasonography (reflections of high-frequency sound waves); used  | The West Wing |
 | unsightly | Unpleasant to look at. | Gilmore Girls, Kath & Kim |
-| unexpurgated | Not having material deleted; - Havelock Ellis. | Monty Python's Flying Circus |
+| unexpurgated | Not having material deleted. | Monty Python's Flying Circus |
 | rabble-rousing | Arousing to action or rebellion. | The West Wing |
 | zinger | A striking or amusing or caustic remark. | The Thick of It |
 | shush | Silence (someone) by uttering `shush!'. | The Thick of It |
@@ -185,7 +192,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | disincline | Make unwilling. | Jeeves and Wooster |
 | flay | Strip the skin off. | Blackadder, The Thick of It |
 | yarmulka | A skullcap worn by religious Jews (especially at prayer). | Studio 60 on the Sunset Strip |
-| blithering | Talking incoherently; jabbering. | Monty Python's Flying Circus |
+| blither | To talk foolishly. | Monty Python's Flying Circus |
 | empathize | Be understanding of. | Frasier |
 | souse | Cover with liquid; pour liquid onto. | Fawlty Towers |
 | dote | Be foolish or senile due to old age. | Downton Abbey, Frasier, Spaced, The Importance of Being Earnest |
@@ -204,8 +211,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | sext | The fourth of the seven canonical hours; about noon. | The Newsroom |
 | grownup | A fully developed person from maturity onward. | Sherlock |
 | servility | Abject or cringing submissiveness. | The Young Ones |
-| feints | The strong spirit produced at the beginning of distillation (strong feints, also foreshot), and the weak spiri | Father Ted, Poems by Emily Dickinson |
-| sardines | A children's game in which the players hide together, lying side by side. | Red Dwarf, The West Wing |
 | britches | Informal term for breeches. | Blackadder |
 | intertwine | Spin,wind, or twist together. | This Is Spinal Tap |
 | brainiac | Someone who has exceptional intellectual ability and originality. | Frasier, The IT Crowd |
@@ -226,7 +231,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | bellow | Shout loudly and without restraint. | Frasier, Jeeves and Wooster, The West Wing |
 | heckler | Someone who tries to embarrass you with gibes and questions and objections. | Studio 60 on the Sunset Strip |
 | jemmy | A short crowbar. | Only Fools and Horses |
-| clomping | The sound of walking with heavy footfalls. | Gilmore Girls |
+| clomp | Walk clumsily. | Gilmore Girls |
 | geld | Cut off the testicles (of male animals such as horses). | Cheers |
 | fraternise | Be on friendly terms with someone, as if with a brother, especially with an enemy. | Red Dwarf |
 | unflinching | Not shrinking from danger. | The Thick of It |
@@ -262,7 +267,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | olden | Long past. | Waiting for Guffman |
 | laissez-faire | With minimally restricted freedom in commerce. | The West Wing |
 | hooligan | A cruel and brutal fellow. | Frasier |
-| embittered | Deeply hostile, resentful. | Veep |
+| embitter | Cause to be bitter or resentful. | Veep |
 | sympathise | Share the feelings of; understand the sentiments of. | Only Fools and Horses, Poems of Gerard Manley Hopkins |
 | narrate | Narrate or give a detailed account of. | Red Dwarf |
 | obstructive | Preventing movement. | The Thick of It |
@@ -289,8 +294,3 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | plagiarize | Take without referencing from someone else's writing or speech; of intellectual property. | Veep |
 | co-ordinate | A number that identifies a position relative to an axis. | Yes, Minister |
 | misogynistic | Hating women in particular. | Gilmore Girls |
-| flog | Beat severely with a whip or rod. | Blackadder |
-| gaoler | Someone who guards prisoners. | Blackadder |
-| snob | A person regarded as arrogant and annoying. | Fawlty Towers, Gosford Park |
-| jingo | An extreme bellicose nationalist. | Jeeves and Wooster |
-| turnup | The lap consisting of a turned-back hem encircling the end of the sleeve or leg. | Blackadder |

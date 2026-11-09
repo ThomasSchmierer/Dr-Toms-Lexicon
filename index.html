@@ -71,6 +71,12 @@ button.primary{background:var(--gilt);color:var(--gilt-ink);border-color:var(--g
 button.link{border:0;padding:6px 2px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .quote{border-left:2px solid var(--rouge);padding:4px 0 4px 14px;font-family:var(--display);font-style:italic;font-size:1.15rem;line-height:1.4;margin:0}
 .quote.ctx{font-style:normal;font-family:var(--body);font-size:1rem}
+.checked{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);margin:6px 0 0}
+.also{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:12px}
+.also li{border-left:2px solid var(--rule);padding:2px 0 2px 12px}
+.also-src{font-size:.88rem;line-height:1.35}
+.also-line{font-family:var(--display);font-style:italic;font-size:1rem;line-height:1.4;margin-top:3px}
+.also-n{margin:8px 0 0;font-size:.88rem}
 .quote .src{display:block;font-family:var(--mono);font-style:normal;font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
 mark{background:none;color:var(--rouge);font-weight:700}
 .result{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
@@ -239,6 +245,75 @@ function loadFile(f){
   });
   return FILES[f];
 }
+const MORE = {all:"approved-all.json", moira:"approved-moira.json", kathkim:"approved-kathkim.json"}, moreLoads = {}, moreDone = {};
+function loadMore(k){
+  if (!MORE[k]) return Promise.resolve();
+  if (!moreLoads[k]) moreLoads[k] = fetch(MORE[k]).then(r => r.ok ? r.json() : null).then(d => {
+    if (!d) return;
+    Object.assign(DB.shows, d.shows || {});
+    const E = DB.editions[k], have = new Set(E.order);
+    for (const w of d.order || []){
+      const e = d.words[w], key = "a:" + w; if (!e) continue;
+      if (!DB.words[key]){ compileEntry(e); DB.words[key] = e; }
+      if (!have.has(key)){ E.order.push(key); have.add(key); }
+    }
+  }).catch(() => {}).finally(() => { moreDone[k] = true; });
+  return moreLoads[k];
+}
+let COUNTS = null;
+fetch("counts.json").then(r => r.ok ? r.json() : null).then(d => { COUNTS = d; if (d && view === "home") renderHome(); }).catch(() => {});
+
+/* Every place a word turns up: other shows, plays and books (xref.json, built by tools/review.py) */
+let XREF = null, xrefLoading = null;
+function loadXref(){
+  if (XREF || xrefLoading) return xrefLoading || Promise.resolve();
+  xrefLoading = fetch("xref.json").then(r => r.ok ? r.json() : null).then(d => { XREF = d && d.fam ? d : {idx:{}, fam:{}}; })
+    .catch(() => { XREF = {idx:{}, fam:{}}; }).then(() => {
+      if (view !== "game") return;
+      if (gameMode === "hangman" && G.hm && G.hm.done) renderHangman($("#stage"));
+      else if (gameMode === "daily" && phase !== "guess" && !(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName))) render();
+    });
+  return xrefLoading;
+}
+function alsoList(e){
+  if (!XREF) return null;
+  const w = String(e.w).toLowerCase().replace(/\s*\(.*?\)\s*/g, " ").trim();
+  const fam = XREF.fam[XREF.idx[w] || w] || [];
+  const cur = stripTags(e.line || "").replace(/[…“”"\s]+/g, " ").trim();
+  const here = e.corpus ? (e.src || "") : (DB.shows[e.show] || {}).name || "";
+  const out = [], seen = new Set();
+  for (const s of fam){
+    const line = stripTags(s[3]).replace(/[…“”"\s]+/g, " ").trim();
+    if (line === cur || (cur && line && (cur.includes(line) || line.includes(cur)))) continue;
+    if (e.corpus && s[0] === here) continue;
+    const k = s[0] + "|" + line; if (seen.has(k)) continue; seen.add(k); out.push(s);
+  }
+  if (e.corpus && e.occ){        // other plays and books from the word's own concordance
+    const done = new Set([e.ctx ? e.ctx[0] : ""]);
+    for (const o of e.occ){
+      if (done.has(o[0]) || done.size > 6) continue; done.add(o[0]);
+      const T = TEXTS[o[0]] || {name:o[0], kind:""}, play = T.kind === "play";
+      if (out.some(s => s[0] === T.name)) continue;
+      out.push([T.name, play ? (o[4] || "") : (T.author || ""), play ? `Act ${o[1]}, Scene ${o[2]}` : String(o[1] || ""), o[6], "", 2]);
+    }
+  }
+  return out;
+}
+function alsoBlock(e, compact){
+  const L = alsoList(e);
+  if (L === null){ loadXref(); return ""; }
+  if (!L.length) return "";
+  const names = [...new Set(L.map(s => s[0]))];
+  const item = s => `<li><div class="also-src"><b>${esc(s[0])}</b>${s[1] && s[1] !== s[0] ? ` · ${esc(s[1])}` : ""}${s[2] && s[2] !== s[0] ? ` <span class="muted">· ${esc(s[2])}</span>` : ""}</div>
+    ${s[3] ? `<div class="also-line">“${s[3]}”</div>` : ""}</li>`;
+  const picks = [];
+  for (const s of L) if (picks.length < 2 && !picks.some(p => p[0] === s[0])) picks.push(s);   // two different shows or books
+  if (picks.length < 2 && L.length > 1 && !compact) picks.push(L.find(s => !picks.includes(s)));
+  const others = names.length - new Set(picks.map(p => p[0])).size;
+  return `<div class="also-wrap"><h3>Also heard in</h3><ul class="also">${picks.slice(0, compact ? 1 : 2).map(item).join("")}</ul>
+    ${others > 0 ? `<p class="muted also-n">…and in ${others} other ${others === 1 ? "place" : "places"}.</p>` : ""}</div>`;
+}
+const checkedNote = e => e.chk ? `<p class="checked">✓ Checked against ${e.chk === 2 ? "two dictionaries (WordNet and Wiktionary)" : "Wiktionary"}</p>` : "";
 function loadEdition(k){
   const E = DB.editions[k];
   if (!E.src || E.order.length) return Promise.resolve();
@@ -269,9 +344,33 @@ function today(){
           label:d.toLocaleDateString(undefined,{weekday:"short", day:"numeric", month:"short"})};
 }
 const mod = (a,b) => ((a % b) + b) % b;
-function dailyKey(ed){ const o = DB.editions[ed].order; return o[mod(today().n, o.length)]; }
+function hashKey(s){ let h = 2166136261; for (let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+const SHUFFLED = new Set(["all"]);      // editions that mix many shows: shuffle so no show dominates
+function dailyPool(ed){
+  const t = today().key;
+  // checked words join the daily rotation the day after they're added, and only the rarer or longer ones
+  let o = DB.editions[ed].order.filter(k => { const e = DB.words[k]; return e && (!e.day || (e.day <= t && ((e.rarity || 0) >= 4 || e.w.length >= 9))); });
+  if (!SHUFFLED.has(ed)) return o;
+  o = o.slice().sort((a, b) => hashKey(a + "|mix") - hashKey(b + "|mix") || (a < b ? -1 : 1));
+  for (let i = 1; i < o.length; i++){        // keep the same show off consecutive days
+    const sh = k => DB.words[k].show;
+    if (sh(o[i]) !== sh(o[i-1])) continue;
+    const j = o.findIndex((k, x) => x > i && sh(k) !== sh(o[i-1]));
+    if (j > 0) [o[i], o[j]] = [o[j], o[i]];
+  }
+  return o;
+}
+function dailyKey(ed){
+  const r = results(ed)[today().key];
+  if (r && r.key && DB.words[r.key]) return r.key;   // keep the word you already played today
+  if (r && !r.key){                                   // played before words were shuffled: same word as then
+    const legacy = DB.editions[ed].order.filter(k => !/^[ax]:/.test(k));
+    if (legacy.length) return legacy[mod(today().n, legacy.length)];
+  }
+  const o = dailyPool(ed); return o[mod(today().n, o.length)];
+}
 function results(ed){ return store.get("ml-"+ed, {}); }
-function saveResult(ed, r){ const all = results(ed); all[today().key] = r; store.set("ml-"+ed, all); }
+function saveResult(ed, r){ const all = results(ed); r.key = r.key || dailyKey(ed); all[today().key] = r; store.set("ml-"+ed, all); }
 function streak(ed){
   const all = results(ed); let s = 0; const d = new Date();
   if (!all[today().key]) d.setDate(d.getDate()-1);
@@ -459,8 +558,8 @@ const ED_BLURB = {
 const fmt = n => Number(n).toLocaleString("en-AU");
 function renderHome(){
   const S = DB.stats, el = $("#home");
-  const count = k => DB.editions[k].src ? S[k] : DB.editions[k].order.length;
-  const extra = ["kathkim","all"].reduce((a, k) => a + DB.editions[k].order.length - S[k], 0);
+  const count = k => DB.editions[k].src ? S[k] : Math.max(DB.editions[k].order.length, S[k] + (COUNTS && COUNTS[k] || 0));
+  const extra = ["kathkim","all"].reduce((a, k) => a + count(k) - S[k], 0);
   const played = ["moira","kathkim","all","grand"].reduce((a, k) => a + Object.keys(results(k)).length, 0);
   const best = Math.max(0, ...["moira","kathkim","all","grand"].map(streak));
   const gs = store.get("ml-games", {});
@@ -576,6 +675,12 @@ function render(){
   if (view === "home"){ renderHome(); window.scrollTo && window.scrollTo({top:0}); return; }
   renderHeader();
   const E = DB.editions[ed];
+  if (MORE[ed] && !moreDone[ed]){
+    $("#stage").innerHTML = `<p class="loading">Opening the ${esc(E.name)}…</p>`;
+    loadMore(ed).then(render);
+    return;
+  }
+  loadXref();
   if (E.src && !E.order.length){
     $("#stage").innerHTML = E.failed
       ? `<p class="loading">Couldn't load the ${esc(E.name)}. Check your connection and reload the page.</p>`
@@ -612,8 +717,9 @@ function render(){
     const r = res;
     html += scoreRow("Round 1 · meaning", r.score, verdictFor(r.score), r.feedback, r.guess, r.hint);
     html += `<section class="section">
-      <div><h3>${isMeant ? "What they meant" : e.corpus && !e.curated && !e.custom ? "Definition · modern dictionary sense" : e.curated ? "Definition · Shakespeare's sense" : "Definition"}</h3><p class="def">${e.def}</p></div>
+      <div><h3>${isMeant ? "What they meant" : e.corpus && !e.curated && !e.custom ? "Definition · modern dictionary sense" : e.curated ? "Definition · Shakespeare's sense" : "Definition"}</h3><p class="def">${e.def}</p>${checkedNote(e)}</div>
       ${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>${e.show === "gl" ? "In use" : "The line"}</h3>${quote(e)}</div>` : ""}
+      ${alsoBlock(e)}
       ${gifLinks(e)}
       <div><h3>What's going on</h3><p>${e.explain}</p></div></section>`;
 
@@ -954,7 +1060,7 @@ function renderHangman(st){
       ${!h.done && h.hints < (e.noEty ? 1 : 2) ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: the definition" : "Hint 2: the origin"}</button></div>` : ""}
     </div>
     ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`} ${pronLink(e)}</div>
-      <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p></div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}
+      <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p>${checkedNote(e)}</div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}${alsoBlock(e, true)}
       ${e.noEty ? "" : `<div><h3>Etymology</h3><p>${e.ety}</p></div>${originBlock(e)}`}${gifLinks(e)}</section>
       ${reportBox()}<div class="row"><button class="primary" id="hm-next">Next word</button></div>`
     : `<div class="keys" role="group" aria-label="Letters">${keys}</div>`}`;
@@ -1230,6 +1336,7 @@ function loadExtras(){
 }
 parseHash();
 phase = "guess";
+loadMore(ed);
 loadExtras().finally(() => { render(); loadThes(); });
 </script>
 
