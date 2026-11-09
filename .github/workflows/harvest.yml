@@ -76,14 +76,16 @@ jobs:
             python tools/harvest.py gutenberg "$BOOK" --title "$TITLE" --author "$AUTHOR" --max-rarity "$RARITY"
           fi
       - name: Check new words in two dictionaries and approve the good ones
+        continue-on-error: true
         run: |
           python -m nltk.downloader -q wordnet averaged_perceptron_tagger_eng
           python tools/review.py all
       - name: Save the spreadsheets and approved words to the repo
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add harvest approved-*.json xref.json counts.json
+          git add harvest; git add approved-*.json xref.json counts.json 2>/dev/null || true
           if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$SOURCE" = "overnight" ]; then msg="Harvest: overnight run"; else msg="Harvest: $SOURCE $PAGES$TITLE"; fi
           git diff --cached --quiet || git commit -m "$msg"
           git push

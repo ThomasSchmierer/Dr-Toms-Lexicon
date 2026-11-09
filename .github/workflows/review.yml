@@ -35,10 +35,11 @@ jobs:
       - name: Check every word in two dictionaries and approve the good ones
         run: python tools/review.py "$STEP"
       - name: Publish approved words to the game
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add harvest approved-*.json xref.json counts.json
+          git add harvest; git add approved-*.json xref.json counts.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Review: check and approve harvested words"
           git pull --rebase -q origin main
           git push
