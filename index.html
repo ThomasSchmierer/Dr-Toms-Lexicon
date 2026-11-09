@@ -989,11 +989,18 @@ try { const m = localStorage.getItem("ml-mode"); if (m && MODES[m]) gameMode = m
 const G = {};   // per-mode state
 
 const shuffle = a => { a = a.slice(); for (let i = a.length-1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
-const letters = e => e.w.toUpperCase().replace(/[^A-Z]/g, "");
 const stripTags = s => String(s || "").replace(/<[^>]+>/g, "");
+function quoteWord(e){
+  const m = /<mark>([\s\S]*?)<\/mark>/i.exec(e.line || "");
+  const t = m ? stripTags(m[1]).replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, "") : "";
+  if (!t || t.length > 30 || !/^[A-Za-z][A-Za-z'’ -]*$/.test(t) || t.toLowerCase() === e.w.toLowerCase()) return e.w;
+  return /^[a-z]/.test(e.w) ? t.toLowerCase() : t;
+}
+const letters = e => quoteWord(e).toUpperCase().replace(/[^A-Z]/g, "");
 function maskWord(text, e){
   let t = stripTags(text);
-  const forms = [e.w, ...(e.w.split(/[\s(]/)[0] ? [e.w.split(/[\s(]/)[0]] : [])];
+  const q = quoteWord(e), qb = q.replace(/(?:ing|ed|es|s|ly|er|d)$/i, "");
+  const forms = [e.w, ...(e.w.split(/[\s(]/)[0] ? [e.w.split(/[\s(]/)[0]] : []), q, ...(qb.length > 3 ? [qb] : [])];
   forms.forEach(f => { if (f.length > 2) t = t.replace(new RegExp(f.replace(/[.*+?^${}()|[\]\\]/g,"\\$&") + "\\w*", "gi"), "_____"); });
   return t;
 }
@@ -1042,25 +1049,26 @@ function gallows(h){
 function renderHangman(st){
   if (!G.hm || G.hm.ed !== ed) newHangman();
   const h = G.hm, e = h.e, stats = gameStats("hangman");
-  const shown = e.w.toUpperCase().split("").map(ch => /[A-Z]/.test(ch)
+  const word = quoteWord(e), diff = word.toLowerCase() !== e.w.toLowerCase();
+  const shown = word.toUpperCase().split("").map(ch => /[A-Z]/.test(ch)
       ? `<span class="hm-l${h.done && !h.guessed.has(ch) ? " miss" : ""}">${h.guessed.has(ch) || h.done ? ch : ""}</span>`
       : `<span class="hm-gap">${ch === " " ? "" : esc(ch)}</span>`).join("");
   const keys = "QWERTYUIOPASDFGHJKLZXCVBNM".split("").map(k => {
     const used = h.guessed.has(k), good = used && letters(e).includes(k);
     return `<button class="key${used ? (good ? " good" : " bad") : ""}" data-k="${k}" ${used || h.done ? "disabled" : ""} aria-label="${k}">${k}</button>`;
   }).join("");
-  const showHint1 = h.hints >= 1 || h.done, showHint2 = h.hints >= 2 && !h.done;
+  const showHint1 = h.hints >= 1 && !h.done, showHint2 = h.hints >= 2 && !h.done;
   st.innerHTML = `<div class="eyebrow">Hangman · ${esc(DB.editions[ed].name)} · won ${stats.won} of ${stats.played}</div>
     <div class="hm-top">${gallows(h)}<div class="hm-side">
       <div class="hm-count"><b>${HM_MAX - h.wrong}</b> misses left</div>
       <div class="hm-word" aria-label="The word">${shown}</div></div></div>
     <div class="hints">
-      ${showHint1 ? `<div class="hint-card"><div class="eyebrow">Hint 1 · the definition</div>${clueBlock(e)}</div>` : ""}
-      ${showHint2 ? `<div class="hint-card"><div class="eyebrow">Hint 2 · the origin</div>${originBlock(e)}<p class="muted">${esc(maskWord(e.ety, e))}</p></div>` : ""}
-      ${!h.done && h.hints < (e.noEty ? 1 : 2) ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: the definition" : "Hint 2: the origin"}</button></div>` : ""}
+      ${showHint1 ? `<div class="hint-card"><div class="eyebrow">Hint 1 · what kind of word</div>${hmKind(e)}</div>` : ""}
+      ${showHint2 ? `<div class="hint-card"><div class="eyebrow">Hint 2 · what it means</div><p class="def">${esc(clueDef(e))}</p></div>` : ""}
+      ${!h.done && h.hints < 2 ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: type of word and origin" : "Hint 2: the definition"}</button></div>` : ""}
     </div>
-    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(e.w)}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(e.w)}</b>.`} ${pronLink(e)}</div>
-      <section class="section"><div><h3>Definition</h3><p class="def">${e.def}</p>${checkedNote(e)}</div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}${alsoBlock(e, true)}
+    ${h.done ? `<div class="banner">${h.won ? `<b>Bravo.</b> ${esc(word)}${diff ? ` (from <i>${esc(e.w)}</i>)` : ""}, with ${h.wrong} miss${h.wrong === 1 ? "" : "es"}${h.hints ? ` and ${h.hints} hint${h.hints > 1 ? "s" : ""}` : ""}.` : `Too late. The word was <b>${esc(word)}</b>${diff ? ` (from <i>${esc(e.w)}</i>)` : ""}.`} ${pronLink(e)}</div>
+      <section class="section"><div><h3>Definition${diff ? ` · ${esc(e.w)}` : ""}</h3><p class="def">${e.def}</p>${checkedNote(e)}</div>${e.ctx ? `<div><h3>In context</h3>${ctxBlock(e)}</div>` : e.line ? `<div><h3>The line</h3>${quote(e)}</div>` : ""}${alsoBlock(e, true)}
       ${e.noEty ? "" : `<div><h3>Etymology</h3><p>${e.ety}</p></div>${originBlock(e)}`}${gifLinks(e)}</section>
       ${reportBox()}<div class="row"><button class="primary" id="hm-next">Next word</button></div>`
     : `<div class="keys" role="group" aria-label="Letters">${keys}</div>`}`;
@@ -1069,6 +1077,12 @@ function renderHangman(st){
   if ($("#hm-hint")) $("#hm-hint").onclick = () => { h.hints++; renderHangman(st); };
   if ($("#hm-next")) $("#hm-next").onclick = () => { newHangman(); renderHangman(st); window.scrollTo({top:0}); };
   if (h.done) wireReport(e, keyOf(e));
+}
+function hmKind(e){
+  const pos = String(e.pos || "").trim();
+  const kind = pos ? `It's ${/^[aeiou]/i.test(pos) ? "an" : "a"} <b>${esc(pos)}</b>.` : "";
+  if (e.noEty) return `<p>${kind || "No clues recorded for this one."}${kind ? " Its origin isn't recorded." : ""}</p>`;
+  return `${kind ? `<p>${kind}</p>` : ""}${originBlock(e)}`;
 }
 function hmGuess(k){
   const h = G.hm; if (!h || h.done || h.guessed.has(k)) return;
@@ -1145,7 +1159,7 @@ function renderSearch(st){
     <div><h3 class="ws-h">Find these ${words.filter(p => p.found).length}/${words.length}</h3>
       <div class="chips">${words.map(p => `<span class="chip ws-w${p.found ? " done" : ""}">${p.L.toLowerCase()}</span>`).join("")}</div></div>
     <div><h3 class="ws-h">Bonus words ${bonus.filter(p => p.found).length}/${bonus.length}</h3>
-      <ol class="clues">${bonus.map(p => `<li class="${p.found ? "done" : ""}">${p.found ? `<b class="ans">${esc(p.e.w)}</b> ` : `<span class="muted">(${p.L.length} letters)</span> `}${clueBlock(p.e)}</li>`).join("")}</ol></div>
+      <ol class="clues">${bonus.map(p => `<li class="${p.found ? "done" : ""}">${p.found ? `<b class="ans">${esc(quoteWord(p.e))}</b> ` : `<span class="muted">(${p.L.length} letters)</span> `}${clueBlock(p.e)}</li>`).join("")}</ol></div>
     ${w.extras.length ? `<div><h3 class="ws-h">Extra words you spotted</h3><div class="chips">${w.extras.map(x => `<span class="chip">${x}</span>`).join("")}</div></div>` : ""}
     <div class="row">${w.done ? `<span class="banner"><b>${bonus.every(p => p.found) ? "Every word, bonuses included." : "All the everyday words found."}</b> ${bonus.every(p => p.found) ? "Splendid." : "Can you find the bonus words too?"}</span>` : ""}
       <button class="primary" id="ws-new">New puzzle</button></div>`;
@@ -1167,7 +1181,7 @@ function wsTap(r, c){
     const cells = Array.from({length:len}, (_, i) => [r0 + dr*i, c0 + dc*i]);
     const s = cells.map(([a,b]) => w.grid[a][b]).join(""), rev = [...s].reverse().join("");
     const hit = w.placed.find(p => !p.found && (p.L === s || p.L === rev));
-    if (hit){ hit.found = true; hit.cells = cells; msg = hit.kind === "bonus" ? `Bonus word: ${hit.e.w}!` : `Found: ${hit.L.toLowerCase()}`; }
+    if (hit){ hit.found = true; hit.cells = cells; msg = hit.kind === "bonus" ? `Bonus word: ${quoteWord(hit.e)}!` : `Found: ${hit.L.toLowerCase()}`; }
     else {
       const word = wsIsWord(s) ? s : wsIsWord(rev) ? rev : null;
       if (word && !w.extras.includes(word.toLowerCase()) && !w.placed.some(p => p.L === word)){
