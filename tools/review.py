@@ -33,6 +33,12 @@ BLOCK = re.compile(r"(rape|whore|bawd|cuckold|strumpet|harlot|slut|cunt|fuck|shi
                    r"penis|vagin|genital|semen|sperm|nipple|orgas|masturb|erotic|sexual|porn|incest|suicide|bitch|bastard|wank|bollock|arse|twat|"
                    r"nazi|anus|anal|faec|fece|bowel|vomit|bestial|pederast|nympho|fellat|cunnil|sodom|copulat|coitus|coital|pubic|pubes|"
                    r"breast|buttock|prostitut|testic|bugger|sodding|spunk|knob|dick|cock|tits|boob|shag|bonk|tosser|wazz|crap)")
+PROFANE = re.compile(r"(?i)\b(fuck\w*|motherf\w*|shit\w*|bullshit\w*|horseshit|cunt\w*|piss\w*|bitch\w*|bastard\w*|wank\w*|arse|arses|arsehole\w*|"
+                     r"asshole\w*|dumbass|twat\w*|bollock\w*|cocks?|cocksucker\w*|dicks?|dickhead\w*|pricks?|tosser\w*|"
+                     r"bugger\w*|sodding|slut\w*|whore\w*|fag|fags|faggot\w*|nigg\w*|retard\w*|spunk\w*|tits|titties|boobs?|shag\w*|horny|porn\w*|"
+                     r"penis\w*|vagina\w*|masturbat\w*|orgasm\w*|erection\w*|dildo\w*|blowjob\w*|handjob\w*|wanker\w*|knob\w*|bellend\w*|"
+                     r"clit\w*|anal|anus|rape\w*|rapist\w*|incest\w*|paedo\w*|pedo\w*|nazi\w*|kike\w*|spic|spics|wog|wogs|coon|coons|tranny\w*|"
+                     r"poof\w*|goddamn\w*|goddam)\b")
 BAD_LABELS = {"vulgar", "offensive", "ethnic slur", "slur", "racial slur", "obscene", "sexual", "sexuality", "sex", "sexual slang",
               "bdsm", "pornography", "homophobic", "misogynistic", "ableist", "very rare vulgar", "sexually"}
 BAD_DOMAINS = {"disparagement", "obscenity", "vulgarism", "ethnic_slur", "profanity"}
@@ -153,7 +159,7 @@ def wikt_batch(titles):
 
 def fetch(words, limit=None):
     cache = load_json(CACHE, {})
-    todo = [w for w in dict.fromkeys(words) if w not in cache]
+    todo = [w for w in dict.fromkeys(words) if w not in cache or (cache[w].get("s") and cache[w].get("v", 1) < PARSER_VERSION)]
     if limit: todo = todo[:limit]
     print(f"Wiktionary: {len(cache)} words cached, {len(todo)} to look up")
     rounds = 0
@@ -177,7 +183,7 @@ def fetch(words, limit=None):
             time.sleep(1.0)                                       # one request a second
             if (i // 50) % 20 == 19:
                 save_json(CACHE, cache); print(f"    {i + 50} looked up…")
-        todo = [w for w in dict.fromkeys(follow) if w not in cache]
+        todo = [w for w in dict.fromkeys(follow) if w not in cache or (cache[w].get("s") and cache[w].get("v", 1) < PARSER_VERSION)]
     save_json(CACHE, cache)
     print(f"Wiktionary: {len(cache)} words cached")
     return cache
@@ -200,9 +206,78 @@ def gloss(named, pos, idx):
     g = named.get("t") or named.get("gloss") or (pos[idx] if len(pos) > idx else "")
     return f" (“{g}”)" if g else ""
 
+PARSER_VERSION = 2
+AFFIX_RELS = {"af", "affix", "com", "compound", "suf", "suffix", "pre", "prefix", "conf", "confix", "surf", "univ"}
+REL_WORDS = {"inh": "from", "der": "from", "bor": "borrowed from", "lbor": "learned borrowing from", "slbor": "semi-learned borrowing from",
+             "ubor": "unadapted borrowing from", "obor": "orthographic borrowing from", "cal": "calque of", "pcal": "partial calque of",
+             "sl": "semantic loan from", "bf": "back-formation from", "clip": "clipping of", "abbr": "abbreviation of", "blend": "blend of",
+             "dbt": "doublet of", "psm": "phono-semantic matching of", "translit": "transliteration of", "influence": "influenced by",
+             "cog": "", "ncog": "", "noncog": ""}
+
+def mods_split(t):
+    """'la:word<t:gloss><ety:bor<grc:x>>' -> ('la', 'word', {'t': 'gloss', 'ety': 'bor<grc:x>'})"""
+    i = t.find("<")
+    core, rest = (t, "") if i < 0 else (t[:i], t[i:])
+    m = re.match(r"^([a-z]{2,3}(?:-[a-z]{2,5})*):(.+)$", core.strip())
+    code, word = (m.group(1), m.group(2)) if m else ("", core.strip())
+    mods, depth, buf = {}, 0, ""
+    for ch in rest:
+        if ch == "<":
+            if depth: buf += ch
+            depth += 1
+        elif ch == ">":
+            depth -= 1
+            if depth: buf += ch
+            else:
+                k, _, v = buf.partition(":"); mods.setdefault(k.strip(), v); buf = ""
+        elif depth: buf += ch
+    return code, word.strip(), mods
+
+def strip_mods(t): return mods_split(t)[1] if "<" in t else t
+
+def render_ety(pos, named, info):
+    """Wiktionary's newer {{ety|en|:bor|fr:word|:der|la:word|text=+}} template."""
+    want_text = named.get("text", "").strip() not in ("", "0", "no", "-")
+    groups, cur = [], None
+    for a in pos[1:]:
+        if a.startswith(":"): cur = [a[1:].strip(), []]; groups.append(cur)
+        elif cur is not None and a: cur[1].append(a)
+    pieces = []
+    def nested(mods, depth=0):
+        out = ""
+        e = mods.get("ety")
+        if e and depth < 4:
+            j = e.find("<")
+            rel, inner = (e[:j], e[j + 1:-1]) if j > 0 and e.endswith(">") else (e, "")
+            if inner:
+                c, w, m2 = mods_split(inner)
+                if lang(c): info["origins"].append((lang(c), w))
+                out = f", {REL_WORDS.get(rel, 'from') or 'from'} {lang(c)} {ital(w)}".rstrip() + nested(m2, depth + 1)
+        return out
+    for rel, terms in groups:
+        parsed = [mods_split(t) for t in terms]
+        for c, w, m in parsed:
+            if lang(c) and rel not in ("cog", "ncog", "noncog"): info["origins"].append((lang(c), w))
+        if not want_text or rel in ("cog", "ncog", "noncog"): 
+            for c, w, m in parsed: nested(m)
+            continue
+        gl = lambda m: f" (“{m['t']}”)" if m.get("t") else ""
+        if rel in AFFIX_RELS:
+            txt = " + ".join(ital(w) + gl(m) for c, w, m in parsed if w)
+            pieces.append(("from", txt))
+        else:
+            txt = ", ".join((f"{lang(c)} " if lang(c) else "") + ital(w) + gl(m) + nested(m) for c, w, m in parsed if w)
+            pieces.append((REL_WORDS.get(rel, "from") or "from", txt))
+    if not want_text or not pieces: return ""
+    out = ", ".join(f"{rw} {t}".strip() for rw, t in pieces)
+    return out[0].upper() + out[1:]
+
 def render_template(inner, info):
     name, pos, named = split_params(inner)
     n = name.lower()
+    if n in ("ety", "etymology", "etym"): return render_ety(pos, named, info)
+    if n in ("etymon", "senseid", "sid", "tlb", "anchor", "rfdate", "rfquote", "rfex", "attention", "cln", "c", "top", "C"): return ""
+    nocap = named.get("nocap", "") not in ("", "0")
     if n in ("lb", "lbl", "label", "tlb", "term-label", "lb-lite"):
         info["labels"] += [x.lower() for x in pos[1:] if x and x not in ("_", "or", "and", "&")]
         return ""
@@ -219,7 +294,7 @@ def render_template(inner, info):
     if n in ("en-plural noun",): return ""
     if n.endswith(" of") or INFLECTION.match(n):
         target = (pos[0] if n.startswith("en-") else pos[1] if len(pos) > 1 else "") if pos else ""
-        target = re.sub(r"#.*$", "", target).strip()
+        target = strip_mods(re.sub(r"#.*$", "", target)).strip()
         info["form"].append((n, target))
         word = target if target else ""
         nice = n.replace("en-", "").replace("alt form", "alternative form of").replace("alt sp", "alternative spelling of")
@@ -231,7 +306,7 @@ def render_template(inner, info):
     # etymology templates
     if n in ETY_LINK:
         src = pos[1] if len(pos) > 1 else ""
-        word = pos[2] if len(pos) > 2 else ""
+        word = strip_mods(pos[2]) if len(pos) > 2 else ""
         alt = pos[3] if len(pos) > 3 else ""
         if lang(src): info["origins"].append((lang(src), word))
         return (ETY_LINK[n] + f"{lang(src)} {ital(alt or word)}".strip() + gloss(named, pos, 4)).strip()
@@ -245,8 +320,12 @@ def render_template(inner, info):
         if n in ("suffix", "suf") and len(parts) > 1: parts[-1] = "-" + parts[-1].lstrip("-")
         glosses = [named.get(f"t{i + 1}") or named.get(f"gloss{i + 1}") for i in range(len(parts))]
         return " + ".join(ital(p) + (f" (“{g}”)" if g else "") for p, g in zip(parts, glosses))
-    if n in ("back-formation", "bf", "back-form"): return "Back-formation from " + ital(pos[1] if len(pos) > 1 else "")
-    if n in ("clipping", "clip", "clipping of"): return "Clipping of " + ital(pos[1] if len(pos) > 1 else "")
+    if n in ("back-formation", "bf", "back-form", "backformation"):
+        w = pos[1] if len(pos) > 1 and pos[1] != "-" else ""
+        return ("back-formation" if nocap else "Back-formation") + (" from " + ital(w) if w else "")
+    if n in ("clipping", "clip", "clipping of"):
+        w = pos[1] if len(pos) > 1 and pos[1] != "-" else ""
+        return ("clipping" if nocap else "Clipping") + (" of " + ital(w) if w else "")
     if n in ("short for", "abbreviation", "abbrev"): return "Short for " + ital(pos[1] if len(pos) > 1 else "")
     if n in ("doublet", "dbt"): return "Doublet of " + ", ".join(ital(x) for x in pos[1:] if x)
     if n in ("onomatopoeic", "onom"): return "Onomatopoeic"
@@ -255,6 +334,10 @@ def render_template(inner, info):
     if n in ("unk", "unknown"): return "Unknown"
     if n in ("unc", "uncertain"): return "Uncertain"
     if n in ("rfe", "rfv-etym", "etystub", "rfelite"): info["noety"] = True; return ""
+    # an unfamiliar etymology template shaped like {{xyz|en|la|word}}: show it as "Latin word"
+    if len(pos) >= 3 and pos[0] == "en" and lang(pos[1]) and pos[2] and pos[2] != "-":
+        info["origins"].append((lang(pos[1]), strip_mods(pos[2])))
+        return f"{lang(pos[1])} {ital(strip_mods(pos[2]))}"
     return ""
 
 LINK = re.compile(r"\[\[([^\[\]|]*)(?:\|([^\[\]]*))?\]\]")
@@ -294,8 +377,15 @@ def parse_page(wikitext):
             for sent in txt:
                 if len(out) + len(sent) > 420: break
                 out = (out + " " + sent).strip()
+            out = out.strip(" ,;")
+            if out and out[0].islower(): out = out[0].upper() + out[1:]
+            if out and not out.endswith((".", "!", "?", ")")): out += "."
+            out = " ".join(x for x in re.split(r"(?<=[.])\s+", out) if not PROFANE.search(x))   # drop any rude sentence
             etys[-1] = "" if info.get("noety") else out
-            origins[-1] = info["origins"][:5]
+            seen_l, ol = set(), []
+            for o in info["origins"]:
+                if o[0] not in seen_l: seen_l.add(o[0]); ol.append(o)
+            origins[-1] = ol[:5]
     for line in sec.split("\n"):
         h = re.match(r"^(={3,6})\s*(.*?)\s*\1\s*$", line)
         if h:
@@ -316,7 +406,7 @@ def parse_page(wikitext):
             ftype, target = (info["form"][0] if info["form"] else ("", ""))
             senses.append([pos, sorted(set(info["labels"])), txt[:300], ftype, target, max(ety_idx, 0)])
     flush_ety()
-    return {"s": senses, "e": etys, "o": origins}
+    return {"s": senses, "e": etys, "o": origins, "v": PARSER_VERSION}
 
 # ---------------------------------------------------------------- deciding
 def eligible_day():
@@ -421,6 +511,21 @@ def approve(today_only=False):
         for h in s.hypernyms()[:2] + s.similar_tos()[:3]: words += " " + " ".join(l.replace("_", " ") for l in h.lemma_names())
         return words
 
+    SYNCACHE = {}
+    def widen(text, skip):
+        out = set()
+        for w in re.findall(r"[a-z]+", text.lower()):
+            if len(w) < 3 or w in STOPS or w in skip: continue
+            out.add(stem(w))
+            if w not in SYNCACHE:
+                SYNCACHE[w] = {stem(l.name().lower()) for x in wn.synsets(w)[:2] for l in x.lemmas() if "_" not in l.name()}
+            out |= SYNCACHE[w]
+        return out
+    def related(s):
+        out = set()
+        for l in s.lemmas():
+            for x in l.pertainyms() + l.derivationally_related_forms(): out.add(x.name().lower())
+        return out
     def agreement(s, head, wsenses):
         """How well a WordNet sense matches each Wiktionary sense: returns (best score, best sense)."""
         sig = bag(signature(s), skip={head})
@@ -432,6 +537,9 @@ def approve(today_only=False):
             if ws[3] or not ws[2]: continue
             d = ws[2].lower()
             sc = len(sig & bag(d, skip={head}))
+            if not sc and sig & widen(d, {head}): sc = 1                     # same idea in different words
+            m = re.match(r"^(?:in|with) an? ([a-z-]+) (?:manner|way|fashion)|^(?:the )?(?:quality|state|condition|act) of being ([a-z-]+)", d)
+            if m and (m.group(1) or m.group(2)) in related(s): sc += 2      # "in a nonchalant manner" ~ the adverb of nonchalant
             if any(re.search(r"\b" + re.escape(x) + r"\b", d) for x in syns): sc += 2
             if wikt_pos_ok(ws[0], spos): sc += 0.5
             else: sc -= 0.5
@@ -441,27 +549,50 @@ def approve(today_only=False):
     approved, review, rejected, exists = {}, {}, {}, {}
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    for base, frs in fam_rows.items():
-        heads = fam_heads[base]
+    def whole(tok, line):   # the word stands on its own in the quote (not "-ocres" from "mediocre")
+        return re.search(r"(?i)(?<![A-Za-z])(?<!(?<!-)-)" + re.escape(tok) + r"(?![A-Za-z])(?!-[A-Za-z])", line or "") is not None
+    def syn_for(w):         # WordNet senses for exactly this form (wn.synsets("vexed") would also return "vex")
+        return [x for x in wn.synsets(w) if w in {l.name().lower() for l in x.lemmas()}] if w in LEM else []
+    CONCRETE = {"noun.animal", "noun.plant", "noun.food", "noun.substance", "noun.object", "noun.body", "noun.location", "noun.artifact"}
+    head_owner = {}
+    for fam, all_frs in fam_rows.items():
+        base = fam
+        heads = fam_heads[fam]
         head = max(heads, key=lambda h: (heads[h], h in LEM, -len(h)))
+        frs = [r for r in all_frs if whole(r["word"], r["line"])]
         forms = sorted({r["word"] for r in frs})
         show_rows = [r for r in frs if not r["book"]]
-        ov = overrides.get(base)
-        def reject(reason): rejected[base] = {"w": head, "r": reason, "n": len(frs)}
+        clean_rows = [r for r in show_rows if not PROFANE.search(r["line"])]
+        ov = overrides.get(fam)
+        def reject(reason): rejected[fam] = {"w": head, "r": reason, "n": len(all_frs)}
         if ov and ov[0] == "n": reject("rejected by hand in a spreadsheet"); continue
-        if not show_rows and not (ov and ov[0] == "y"): exists[base] = {"w": head, "r": "only in books (used for cross-references)"}; continue
-        if head in existing or base in existing: exists[base] = {"w": head, "r": f"already in the game ({existing_where.get(head) or existing_where.get(base)})"}; continue
+        if not frs: reject("not a whole word in the quote"); continue
+        if not show_rows and not (ov and ov[0] == "y"): exists[fam] = {"w": head, "r": "only in books (used for cross-references)"}; continue
+        if not clean_rows and not (ov and ov[0] == "y"): reject("only heard in lines with swearing"); continue
+        if head in existing or base in existing: exists[fam] = {"w": head, "r": f"already in the game ({existing_where.get(head) or existing_where.get(base)})"}; continue
+        tags = Counter(t for r in frs for t in [tag_for(r["word"], r["line"])] if t)
+        want = {p for p, _ in tags.most_common(1)}
+        tagp = next(iter(want), "")
+        if base != head and tagp and not any(x[0] == tagp and not x[3] for x in own_senses(head)) \
+                and not any(x.pos() == tagp or (tagp == "a" and x.pos() == "s") for x in syn_for(head)) and (syn_for(base) or own_senses(base)):
+            head = base                                          # the quote uses an inflected form of the base word
+        variants = [x for x in eng_senses(head) if x[3] and not INFLECTION.match(x[3]) and x[3] not in SPELLING and x[4]
+                    and (own_senses(x[4]) or syn_for(x[4]))]
+        variant = next((x[4] for x in variants if not tagp or x[0] == tagp), variants[0][4] if variants else "")
+        wsrc = ""
+        if variant and not [x for x in own_senses(head) if not x[3]]:
+            wsrc = variant                                       # an alternative spelling: take the meaning from the main spelling
+            if not syn_for(head): base = variant
         in_cache = head in cache or base in cache
         wd = cache.get(head) or cache.get(base) or {}
-        wsenses = own_senses(head) or own_senses(base)
-        all_senses = eng_senses(head) + ([] if base == head else eng_senses(base))
-        ss = wn.synsets(head) or (wn.synsets(base) if base != head else [])
+        wsenses = [x for x in own_senses(head) if not x[3]] or [x for x in own_senses(wsrc or base) if not x[3]]
+        all_senses = eng_senses(head) + ([] if base == head else eng_senses(base)) + (eng_senses(wsrc) if wsrc and wsrc != base else [])
+        ss = syn_for(head) or ([] if ([x for x in own_senses(head) if not x[3]] and base != head) else syn_for(base))
         forced = ov and ov[0] == "y"
         # ---- hard filters
         if not forced:
             if BLOCK.search(head) or BLOCK.search(base): reject("rude or upsetting"); continue
-            if Z(base) > 3.4: reject(f"everyday word ({base})"); continue
-            if Z(head) > 3.1: reject("everyday word"); continue
+            if Z(base) > 3.4 or Z(head) > 3.0: reject("everyday word"); continue
             if lexgen_transparent(head, Z, wn) or (base != head and lexgen_transparent(base, Z, wn)): reject("an everyday word with a prefix or suffix"); continue
             if len(ss) > 12: reject("everyday word with many meanings"); continue
             labels = {l for s in all_senses for l in s[1]}
@@ -472,7 +603,7 @@ def approve(today_only=False):
             if in_cache and not all_senses and not ss and not wd.get("ne"):
                 d = cache.get(head) or cache.get(base)
                 reject("a name, not a word" if d and d.get("s") else "not in either dictionary (made up, a name or a typo)"); continue
-            if not in_cache: review[base] = {"w": head, "r": "waiting for the Wiktionary lookup", "n": len(frs)}; continue
+            if not in_cache: review[fam] = {"w": head, "r": "waiting for the Wiktionary lookup", "n": len(frs)}; continue
             spell = [s for s in eng_senses(head) if s[3] in SPELLING or "misspelling" in s[3] or "pronunciation spelling" in s[3]]
             if spell and len(spell) >= max(1, len(eng_senses(head)) - 1): reject("a misspelling, abbreviation or contraction"); continue
             if any(s[0] == "contr" for s in eng_senses(head)): reject("a contraction"); continue
@@ -480,8 +611,6 @@ def approve(today_only=False):
             if ss and all(s.instance_hypernyms() for s in ss): reject("a name, not a word"); continue
         # ---- choose the meaning that fits the quotes
         ctx = bag(" ".join(r["line"] for r in frs), skip=set(forms) | {head, base})
-        tags = Counter(t for r in frs for t in [tag_for(r["word"], r["line"])] if t)
-        want = {p for p, _ in tags.most_common(1)}
         cands = [s for s in ss if s.pos() in want or (s.pos() == "s" and "a" in want)] or list(ss)
         best, best_score, best_ws, best_agree = None, -9, None, 0
         for rank, s in enumerate(cands[:10]):
@@ -499,23 +628,43 @@ def approve(today_only=False):
             if agreeing:
                 (ag, ws), s = max(agreeing, key=lambda x: x[0][0])
                 best, best_ws, best_agree, conf = s, ws, ag, 2
-        if best is None and wsenses: conf = 1
+        if conf == 0 and best is not None and wsenses:
+            same = [x for x in ss if x.pos() == best.pos() or {x.pos(), best.pos()} <= {"a", "s"}]
+            wsame = [x for x in wsenses if not x[3] and wikt_pos_ok(x[0], best.pos())]
+            if len(same) == 1 and wsame:
+                best_ws, best_agree, conf = wsame[0], 1, 2
+        ws_only = None
+        if best is None and wsenses:
+            pool = [x for x in (wsenses or eng_senses(head) or eng_senses(base)) if x[0] in ("n", "v", "a", "r", "i")]
+            match = [x for x in pool if tagp and x[0] == tagp]
+            if match and all(x[3] for x in match) and not forced: reject("a spelling variant of another word"); continue
+            cw = [x for x in (match or pool) if not x[3] and x[2]]
+            if not cw and not forced: reject("only a spelling variant or form of another word"); continue
+            if cw:
+                ranked = sorted(cw, key=lambda x: -(len(ctx & bag(x[2], skip={head})) * 0.5 - cw.index(x) * 0.15))
+                ws_only = ranked[0]
+                if len(cw) >= 4 and not (ctx & bag(ws_only[2], skip={head})) and not forced:
+                    review[fam] = {"w": head, "r": "several meanings and the quote doesn't show which", "n": len(all_frs)}; continue
+                conf = 1
         if not forced and conf == 0:
-            review[base] = {"w": head, "r": "WordNet and Wiktionary don't agree on a meaning" if wsenses else
-                            "only in WordNet; Wiktionary has no English entry", "n": len(frs)}
+            review[fam] = {"w": head, "r": "WordNet and Wiktionary don't agree on a meaning" if wsenses else
+                            "only in WordNet (Wiktionary has no English meaning for it)", "n": len(frs)}
             continue
+        if head in head_owner:                                   # another form of a word we already have: merge the sightings
+            owner = head_owner[head]
+            if owner in approved: approved[owner][1].extend(clean_rows); approved[owner][3].extend(all_frs)
+            exists[fam] = {"w": head, "r": f"merged with {head}"}; continue
+        if not forced and best is not None and best.lexname() in CONCRETE and Z(head) > 2.5:
+            reject("an everyday object, animal or food"); continue
         # ---- build the entry
         e = None
         if best is not None:
             try: e = lexgen.build_entry(head, best)
             except Exception: e = None
-        ws = best_ws
-        if ws is None and wsenses:
-            # Wiktionary only: the sense whose words best match the quotes
-            ws = max(wsenses, key=lambda s: (len(ctx & bag(s[2], skip={head})) * 0.4 - wsenses.index(s) * 0.15) if s[2] and not s[3] else -9)
+        ws = best_ws or ws_only
         if e is None:
             text = own_def or (ws[2] if ws else "")
-            if not text or ws is None and not own_def: review[base] = {"w": head, "r": "no usable definition", "n": len(frs)}; continue
+            if not text or ws is None and not own_def: review[fam] = {"w": head, "r": "no usable definition", "n": len(frs)}; continue
             kws = lexgen.kw_list(text)[:3] or [head]
             weights = [.5, .3, .2][:len(kws)] if len(kws) > 1 else [1]
             others = [s[2] for s in wsenses if s is not ws and s[2] and not s[3]][:1]
@@ -526,6 +675,7 @@ def approve(today_only=False):
             e["def"] = text
         if own_def: e["def"] = own_def
         e["def"] = re.sub(r"\s+", " ", e["def"]).strip()
+        e["def"] = e["def"].rstrip(" ;:,")
         e["def"] = e["def"][0].upper() + e["def"][1:] + ("" if e["def"].endswith((".", "!", "?")) else ".")
         if ws and best is not None and conf == 2:
             alt = ws[2].strip()
@@ -538,14 +688,20 @@ def approve(today_only=False):
         ei = ws[5] if ws else 0
         etys = (cache.get(head) or {}).get("e") or (cache.get(base) or {}).get("e") or []
         origs = (cache.get(head) or {}).get("o") or (cache.get(base) or {}).get("o") or []
+        if not etys and wsrc: etys, origs = (cache.get(wsrc) or {}).get("e") or [], (cache.get(wsrc) or {}).get("o") or []
         if etys and ei < len(etys) and etys[ei]:
             e["ety"] = etys[ei]
             ol = [o for o in (origs[ei] if ei < len(origs) else []) if o[0] not in ("English", "Proto-Indo-European")]
             if ol: set_origin(e, ol, head, lexgen)
-        if not e.get("ety"): e["ety"] = "Origin not recorded in our dictionaries."; e["origin"] = e.get("origin") or ["english"]
+            else: e["origin"] = ["english"]; e.pop("etyLex", None)
+        elif e.get("ety") and (re.search(r"<i>-|-</i>|\s-\w|\w-\s", e["ety"]) or "not recorded" in e["ety"]):
+            e["ety"] = ""
+        if not e.get("ety"): e["ety"] = "Origin not recorded in our dictionaries."; e["origin"] = ["english"]; e.pop("etyLex", None)
         if not e.get("etyLex"): e["etyLex"] = {"concepts": [{"label": "the language", "w": 1, "s": "english", "p": ""}], "cap": .75}
+        e.setdefault("origin", ["english"])
         e["chk"] = conf
-        approved[base] = (e, frs, forms)
+        approved[fam] = (e, list(clean_rows or show_rows or frs), forms, list(all_frs))
+        head_owner[head] = fam
 
     # ---- sightings for cross-references
     def sighting(r):
@@ -570,6 +726,7 @@ def approve(today_only=False):
                 nm = names.get(o[0], [o[0]])[0]
                 where = f"Act {o[1]}, Scene {o[2]}" if fname == "shakes.json" else str(o[1])
                 who = o[4] if fname == "shakes.json" else (names.get(o[0], ["", ""])[1] if len(names.get(o[0], [])) > 1 else "")
+                if PROFANE.search(re.sub(r"<[^>]+>", "", o[6] or "")): continue
                 out.append([nm, who or "", where, o[6], "", 2])
                 if len(out) >= limit: return out
         return out
@@ -587,7 +744,7 @@ def approve(today_only=False):
     for b in new_bases:
         seq += 1
         decisions[b] = {"d": "approved", "w": approved[b][0]["w"], "seq": seq, "day": eligible_day(), "first": today}
-    for base, (e, frs, forms) in approved.items():
+    for base, (e, frs, forms, _all) in approved.items():
         d = decisions[base]
         d.update({"d": "approved", "w": e["w"], "r": "two dictionaries agree" if e["chk"] == 2 else "Wiktionary only", "n": len(frs)})
         show_rows = [r for r in frs if not r["book"]]
@@ -628,6 +785,7 @@ def approve(today_only=False):
         if not heads & want: continue
         seen, sights, extra = set(), [], []
         for r in sorted(frs, key=lambda r: (r["book"], not r.get("speaker"), r["file"])):
+            if PROFANE.search(r["line"]) or not whole(r["word"], r["line"]): continue
             src = show_name(r["show"])
             (extra if src in seen else sights).append(sighting(r)); seen.add(src)
         sights += extra                                      # one per show or book first, then repeats
@@ -742,8 +900,8 @@ def write_report(approved, review, rejected, exists, pre_rejects, words, order, 
     open(os.path.join(HARVEST, "REVIEW.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 def fam_rows_for(w, approved, fam_rows):
-    for b, (e, frs, forms) in approved.items():
-        if e["w"] == w: return frs
+    for b, (e, frs, forms, all_frs) in approved.items():
+        if e["w"] == w: return all_frs
     return []
 
 def main():
