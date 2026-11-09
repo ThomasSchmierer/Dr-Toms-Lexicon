@@ -1063,6 +1063,7 @@ function renderHangman(st){
       <div class="hm-count"><b>${HM_MAX - h.wrong}</b> misses left</div>
       <div class="hm-word" aria-label="The word">${shown}</div></div></div>
     <div class="hints">
+      ${!h.done && clueLine(e) ? `<div class="hint-card"><div class="eyebrow">The line</div><span class="cline">“${esc(clueLine(e))}” <span class="csrc">${esc(source(e))}</span></span></div>` : ""}
       ${showHint1 ? `<div class="hint-card"><div class="eyebrow">Hint 1 · what kind of word</div>${hmKind(e)}</div>` : ""}
       ${showHint2 ? `<div class="hint-card"><div class="eyebrow">Hint 2 · what it means</div><p class="def">${esc(clueDef(e))}</p></div>` : ""}
       ${!h.done && h.hints < 2 ? `<div class="row"><button id="hm-hint">${h.hints === 0 ? "Hint 1: type of word and origin" : "Hint 2: the definition"}</button></div>` : ""}
