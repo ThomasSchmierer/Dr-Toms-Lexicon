@@ -252,6 +252,11 @@ def draft(csv_path, edition, show_key, show_name, years, out_path):
 def slug(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 def write_csv(rows, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    if os.path.exists(path):   # re-harvesting: keep any decisions and meanings typed into the old sheet
+        with open(path, newline="", encoding="utf-8") as f:
+            old = {r["word"]: r for r in csv.DictReader(f) if r.get("keep", "").strip() or r.get("definition", "").strip()}
+        for r in rows:
+            if r["word"] in old: r["keep"], r["definition"] = old[r["word"]].get("keep", ""), old[r["word"]].get("definition", "")
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["keep", "word", "definition", "rarity", "show", "episode", "speaker", "line", "source"])
         w.writeheader(); w.writerows(rows)

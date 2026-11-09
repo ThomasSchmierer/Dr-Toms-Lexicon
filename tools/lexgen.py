@@ -83,7 +83,8 @@ def build_entry(w, sense=0):
     entries = {}
     ss = wn.synsets(w)
     if not ss: return None
-    s = ss[0]
+    s = sense if hasattr(sense, "definition") else ss[min(sense, len(ss) - 1)]   # a synset or a sense number
+    ss = [s] + [t for t in ss if t != s]                                        # chosen meaning first
     z = Z(w,'en')
     try: origins = ety.origins(w, recursive=True)
     except Exception: origins = []
