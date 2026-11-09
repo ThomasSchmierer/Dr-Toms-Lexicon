@@ -556,7 +556,7 @@ def approve(today_only=False):
         who = r.get("speaker", "").strip()
         return [src, who, r.get("episode", "").strip(), line, r.get("source", ""), 1 if r["book"] else 0]
 
-    def corpus_sightings(word, limit=4):
+    def corpus_sightings(word, limit=3):
         out = []
         for fname, prefix in (("shakes.json", "Shakespeare"), ("study.json", "Study")):
             d = corpora[fname]
@@ -626,21 +626,21 @@ def approve(today_only=False):
     for base, frs in fam_rows.items():
         heads = set(fam_heads[base]) | {base} | {r["word"] for r in frs}
         if not heads & want: continue
-        seen, sights = set(), []
-        for r in sorted(frs, key=lambda r: (r["book"], r["file"])):
-            key = (show_name(r["show"]), r["word"])
-            if key in seen: continue
-            seen.add(key); sights.append(sighting(r))
+        seen, sights, extra = set(), [], []
+        for r in sorted(frs, key=lambda r: (r["book"], not r.get("speaker"), r["file"])):
+            src = show_name(r["show"])
+            (extra if src in seen else sights).append(sighting(r)); seen.add(src)
+        sights += extra                                      # one per show or book first, then repeats
         for h in heads:
             if h in want and h not in xidx: xidx[h] = base
-        xfam[base] = sights[:12]
+        xfam[base] = sights[:5]
     for w in set(existing) | {e["w"] for e in words.values()} | set(corpora["grand.json"]["words"]):
         cs = corpus_sightings(w)
         if not cs: continue
         base = xidx.get(w, w)
         xidx.setdefault(w, base)
         xfam.setdefault(base, [])
-        xfam[base] = (xfam[base] + cs)[:14]
+        xfam[base] = (xfam[base] + cs)[:6]
     xidx = {k: v for k, v in xidx.items() if v in xfam and (len(xfam[v]) > 1 or k in existing or k in words or k in corpora["grand.json"]["words"])}
     xidx = {k: v for k, v in xidx.items() if k != v}
     used = set(xidx.values()) | {k for k in xfam if k in want}
@@ -748,9 +748,18 @@ def fam_rows_for(w, approved, fam_rows):
 
 def main():
     ap = argparse.ArgumentParser(description="Approve harvested words for Moira's Lexicon automatically.")
-    ap.add_argument("step", choices=["fetch", "approve", "all"])
+    ap.add_argument("step", choices=["fetch", "approve", "all", "raw"])
+    ap.add_argument("words", nargs="*", help="raw: print the English Wiktionary text of these words (for checking the parser)")
     ap.add_argument("--limit", type=int, default=None, help="look up at most this many new words (for testing)")
     a = ap.parse_args()
+    if a.step == "raw":
+        q = wikt_batch(a.words[:50])
+        for p in q.get("pages", []):
+            t = p.get("revisions", [{}])[0].get("slots", {}).get("main", {}).get("content", "") if p.get("revisions") else ""
+            m = re.search(r"^==\s*English\s*==\s*$", t, re.M)
+            print("=" * 30, p["title"]); print(t[m.start():m.start() + 2500] if m else "(no English section)")
+            print("PARSED:", json.dumps(parse_page(t), ensure_ascii=False)[:600])
+        return
     if a.step in ("fetch", "all"):
         rows = read_rows()
         toks = [r["word"] for r in rows if not prefilter(r["word"])]

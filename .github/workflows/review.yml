@@ -7,8 +7,11 @@ on:
       step:
         description: "all = look up new words on Wiktionary, then decide (approve = decide only, using the saved lookups)"
         type: choice
-        options: [all, approve, fetch]
+        options: [all, approve, fetch, raw]
         default: all
+      words:
+        description: "raw only: words to print from Wiktionary (for checking)"
+        required: false
 
 permissions:
   contents: write
@@ -23,6 +26,7 @@ jobs:
     timeout-minutes: 120
     env:
       STEP: ${{ inputs.step || 'all' }}
+      WORDS: ${{ inputs.words }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -33,7 +37,7 @@ jobs:
           pip install -r tools/requirements.txt
           python -m nltk.downloader -q wordnet averaged_perceptron_tagger_eng
       - name: Check every word in two dictionaries and approve the good ones
-        run: python tools/review.py "$STEP"
+        run: python tools/review.py "$STEP" $WORDS
       - name: Publish approved words to the game
         if: always()
         run: |
