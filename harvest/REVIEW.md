@@ -5,8 +5,8 @@ uncommon English word, it isn't rude, a name or a fragment, and the two dictiona
 (or Wiktionary alone defines it, when WordNet doesn't have it).
 
 - **Approved:** 1610 words (1331 confirmed by both dictionaries)
-- **Need a human:** 59
-- **Rejected:** 5024
+- **Need a human:** 58
+- **Rejected:** 5025
 - **Already in the game, or only in books:** 1994 (these still get cross-references)
 - **Words used in more than one show:** 446
 
@@ -67,7 +67,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | entree | only in WordNet (Wiktionary has no English meaning for it) | 2 |
 | eskimo | only in WordNet (Wiktionary has no English meaning for it) | 2 |
 | jangling | WordNet and Wiktionary don't agree on a meaning | 1 |
-| femidom | only in WordNet (Wiktionary has no English meaning for it) | 1 |
 | merlot | WordNet and Wiktionary don't agree on a meaning | 1 |
 | chilblains | WordNet and Wiktionary don't agree on a meaning | 1 |
 | frisbee | only in WordNet (Wiktionary has no English meaning for it) | 1 |
@@ -124,7 +123,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | Reason | Words |
 |---|---|
 | an everyday word with a prefix or suffix | 1644 |
-| everyday word | 945 |
+| everyday word | 946 |
 | fragment of a longer word or a contraction | 806 |
 | not in either dictionary (made up, a name or a typo) | 591 |
 | only heard in lines with swearing | 257 |
