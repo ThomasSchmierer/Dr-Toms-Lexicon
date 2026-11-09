@@ -159,7 +159,8 @@ def wikt_batch(titles):
 
 def fetch(words, limit=None):
     cache = load_json(CACHE, {})
-    todo = [w for w in dict.fromkeys(words) if w not in cache or (cache[w].get("s") and cache[w].get("v", 1) < PARSER_VERSION)]
+    todo = [w for w in dict.fromkeys(list(words) + [k for k, v in cache.items() if v.get("s") and v.get("v", 1) < PARSER_VERSION])
+            if w not in cache or (cache[w].get("s") and cache[w].get("v", 1) < PARSER_VERSION)]
     if limit: todo = todo[:limit]
     print(f"Wiktionary: {len(cache)} words cached, {len(todo)} to look up")
     rounds = 0
@@ -179,7 +180,8 @@ def fetch(words, limit=None):
                 if t in got:
                     cache[w] = got[t]
                     for s in cache[w].get("s", []):              # also look up the word it's a form of
-                        if s[3] and s[4] and s[4] not in cache and re.fullmatch(r"[a-z][a-z -]*", s[4]): follow.append(s[4])
+                        if s[3] and s[4] and re.fullmatch(r"[a-z][a-z -]*", s[4]) and (s[4] not in cache or cache[s[4]].get("v", 1) < PARSER_VERSION):
+                            follow.append(s[4])
             time.sleep(1.0)                                       # one request a second
             if (i // 50) % 20 == 19:
                 save_json(CACHE, cache); print(f"    {i + 50} looked up…")
