@@ -699,6 +699,7 @@ def approve(today_only=False):
         if not e.get("ety"): e["ety"] = "Origin not recorded in our dictionaries."; e["origin"] = ["english"]; e.pop("etyLex", None)
         if not e.get("etyLex"): e["etyLex"] = {"concepts": [{"label": "the language", "w": 1, "s": "english", "p": ""}], "cap": .75}
         e.setdefault("origin", ["english"])
+        e["rarity"] = max(1, min(10, round(10 - Z(head) * 2.6)))     # shown on the card; rarer words join the word of the day
         e["chk"] = conf
         approved[fam] = (e, list(clean_rows or show_rows or frs), forms, list(all_frs))
         head_owner[head] = fam
@@ -764,7 +765,7 @@ def approve(today_only=False):
         e.update({"show": show_key(prim["show"]), "who": sp, "mono": initials(sp), "mode": "means", "line": s[3],
                   "to": f"{sp}, “{ep}”" if ep and ep != nm else sp, "editions": eds, "source": prim.get("source", ""),
                   "gif": [f"{sp} {nm} {e['w']}", f"{sp} {nm} reaction"], "day": d["day"]})
-        for f_ in ("rarity", "quoted", "draft"): e.pop(f_, None)
+        for f_ in ("quoted", "draft"): e.pop(f_, None)
         if e.get("explain", "").startswith("A ") and "from the far shelves" in e["explain"]: e["explain"] = ""
         if not e.get("explain"): e["explain"] = f"Heard in {nm}."
         words[e["w"]] = e
