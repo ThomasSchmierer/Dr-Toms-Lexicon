@@ -2,16 +2,16 @@
 
 | Source | Pages | Candidate words | Spreadsheet |
 |---|---|---|---|
-| Detectorists | – | not found | – |
-| Ghosts (2019 TV series) | – | not found | – |
-| The New Statesman | – | not found | – |
-| Drop the Dead Donkey | 1 | 34 | [drop-the-dead-donkey.csv](drop-the-dead-donkey.csv) |
-| Rumpole of the Bailey | 1 | 9 | [rumpole-of-the-bailey.csv](rumpole-of-the-bailey.csv) |
-| Inspector Morse | 1 | 71 | [inspector-morse-tv-series.csv](inspector-morse-tv-series.csv) |
-| QI | 1 | 541 | [qi.csv](qi.csv) |
-| Brass Eye | 1 | 65 | [brass-eye.csv](brass-eye.csv) |
-| The Day Today | 1 | 143 | [the-day-today.csv](the-day-today.csv) |
-| Arrested Development | 1 | 70 | [arrested-development.csv](arrested-development.csv) |
-| The Great Gatsby | 1 | 968 | [the-great-gatsby.csv](the-great-gatsby.csv) |
+| 30 Rock | 7 | 138 | [30-rock.csv](30-rock.csv) |
+| Community (TV series) | 8 | 275 | [community-tv-series.csv](community-tv-series.csv) |
+| Parks and Recreation | 8 | 457 | [parks-and-recreation.csv](parks-and-recreation.csv) |
+| The Big Bang Theory | 13 | 531 | [the-big-bang-theory.csv](the-big-bang-theory.csv) |
+| Seinfeld | 10 | 302 | [seinfeld.csv](seinfeld.csv) |
+| The Simpsons | 42 | 2246 | [the-simpsons.csv](the-simpsons.csv) |
+| Futurama | 9 | 820 | [futurama.csv](futurama.csv) |
+| Star Trek: The Next Generation | 1 | 403 | [star-trek-the-next-generation.csv](star-trek-the-next-generation.csv) |
+| Buffy the Vampire Slayer | 10 | 764 | [buffy-the-vampire-slayer.csv](buffy-the-vampire-slayer.csv) |
+| Firefly (TV series) | 2 | 323 | [firefly-tv-series.csv](firefly-tv-series.csv) |
+| Mrs Dalloway | 1 | 65 | [mrs-dalloway.csv](mrs-dalloway.csv) |
 
-Still queued: 50 show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**.
+Still queued: 40 show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**.
