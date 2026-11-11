@@ -5,10 +5,10 @@ uncommon English word, it isn't rude, a name or a fragment, and the two dictiona
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 2774 words (2160 confirmed by both dictionaries)
-- **Settled by a tie-break:** 60 (listed below if you want to spot-check them)
-- **Waiting for their dictionary lookup:** 3 (checked on the next run)
-- **Rejected:** 8738
+- **Approved:** 2775 words (2160 confirmed by both dictionaries)
+- **Settled by a tie-break:** 61 (listed below if you want to spot-check them)
+- **Waiting for their dictionary lookup:** 0 (checked on the next run)
+- **Rejected:** 8740
 - **Already in the game, or only in books:** 2302 (these still get cross-references)
 - **Words used in more than one show:** 912
 
@@ -71,6 +71,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | certifiably | With the potential for certification. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | chilblains | Inflammation of the hands and feet caused by exposure to cold and moisture. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | cul-de-sac | A blind alley or dead end street. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| culotte | A divided skirt. | only WordNet has it, so it uses WordNet's meaning |
 | dippy | Lacking common sense. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | disobedient | Not obedient. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | dobby | A device in some looms that allows the weaving of small geometric patterns. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -134,7 +135,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | fragment of a longer word or a contraction | 1340 |
 | an everyday object, animal or food | 346 |
 | not an English word (foreign or a name) | 263 |
-| rude or upsetting meaning | 245 |
+| rude or upsetting meaning | 246 |
 | only heard in lines with swearing | 242 |
 | rude or upsetting | 146 |
 | not a whole word in the quote | 128 |
@@ -142,7 +143,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | a misspelling, abbreviation or contraction | 52 |
 | marked vulgar or offensive in Wiktionary | 42 |
 | body part | 33 |
-| a name (only capitalised in the dictionary) | 13 |
+| a name (only capitalised in the dictionary) | 14 |
 | too obscure to check in either dictionary | 11 |
 | only a spelling variant or form of another word | 3 |
 | everyday word with many meanings | 1 |
@@ -152,6 +153,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| culotte | A divided skirt. | The Simpsons |
 | touché | An acknowledgement of a hit. | The Simpsons |
 | voilà | Lo, there it is; ta-da; presto; behold! | Gilmore Girls |
 | senora | A Spanish title or form of address for a married woman; similar to the English `Mrs' or `madam'. | The Simpsons |
@@ -301,4 +303,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | aficionado | A fan of bull fighting. | The Simpsons |
 | sayonara | A farewell remark. | The Simpsons |
 | sammie | A sandwich. | Parks and Recreation |
-| cryptex | A puzzle box solved with a passcode. | Parks and Recreation |

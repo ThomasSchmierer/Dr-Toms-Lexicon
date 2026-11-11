@@ -15815,9 +15815,12 @@
 "n":1
 },
 "culotte":{
-"d":"waiting",
+"d":"approved",
 "w":"culotte",
-"r":"waiting for the Wiktionary lookup",
+"seq":3146,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "culpa":{
@@ -30083,9 +30086,9 @@
 "n":1
 },
 "grus":{
-"d":"waiting",
+"d":"rejected",
 "w":"grus",
-"r":"waiting for the Wiktionary lookup",
+"r":"rude or upsetting meaning",
 "n":1
 },
 "guacamole":{
@@ -55955,9 +55958,9 @@
 "r":"only in books (used for cross-references)"
 },
 "qatari":{
-"d":"waiting",
+"d":"rejected",
 "w":"qatari",
-"r":"waiting for the Wiktionary lookup",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "qillow":{
