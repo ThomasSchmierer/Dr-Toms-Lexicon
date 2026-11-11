@@ -37,13 +37,15 @@ jobs:
           pip install -r tools/requirements.txt
           python -m nltk.downloader -q wordnet averaged_perceptron_tagger_eng
       - name: Check every word in two dictionaries and approve the good ones
-        run: python tools/review.py "$STEP" $WORDS
+        run: |
+          python tools/review.py "$STEP" $WORDS
+          if [ "$STEP" != "raw" ]; then python tools/build_hangman.py; fi
       - name: Publish approved words to the game
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add harvest; git add approved-*.json xref.json counts.json 2>/dev/null || true
+          git add harvest; git add approved-*.json xref.json counts.json hangman/words.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Review: check and approve harvested words"
           git pull --rebase -q origin main
           git push

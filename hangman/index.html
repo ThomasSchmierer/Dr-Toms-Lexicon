@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f7f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d2722" media="(prefers-color-scheme: dark)">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Lexicon Hangman</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hangman with rare words from TV, film, Shakespeare and classic books. A word of the day, a streak, and as many extra rounds as you like.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: one narrow column like a page of an exercise book (light) or a slate (dark): board, word, keys. */
+:root{
+  --paper:#f6f7f2; --ink:#1c2836; --soft:#5b6774; --rule:#cfdae6; --line:#dfe6ee; --margin:#d4544a; --biro:#2350b8; --good:#23784a; --card:#ffffff;
+  --display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --ruled:repeating-linear-gradient(to bottom, transparent 0 31px, var(--line) 31px 32px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#1d2722; --ink:#eef0e6; --soft:#a3b2a9; --rule:#3a4a42; --line:#24302a; --margin:#ff8f80; --biro:#f3d46c; --good:#8fd8a6; --card:#222e28; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#1d2722; --ink:#eef0e6; --soft:#a3b2a9; --rule:#3a4a42; --line:#24302a; --margin:#ff8f80; --biro:#f3d46c; --good:#8fd8a6; --card:#222e28; color-scheme:dark }
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);background-image:var(--ruled);color:var(--ink);font:400 16px/1.5 var(--ui);-webkit-text-size-adjust:100%}
+.app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 24px}
+a{color:var(--biro)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--biro);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;display:flex;align-items:center;gap:12px;min-height:56px;background:var(--paper);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--paper)}
+.brand{font:400 1.45rem/1 var(--display);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand i{color:var(--margin)}
+.top .grow{flex:1;min-width:0}
+.top .title{font:600 .8rem/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.back{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 4px;background:none;border:0;color:var(--biro);text-decoration:none;font-weight:600;cursor:pointer}
+.pill{font:600 .8rem/1 var(--ui);display:inline-flex;gap:6px;align-items:center;padding:7px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--card);white-space:nowrap}
+.pill b{font:600 .95rem/1 var(--mono);color:var(--margin)}
+
+/* shared bits */
+.eyebrow{font:600 .72rem/1.3 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:10px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-weight:600;text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.row .btn{flex:1 1 190px}
+.muted{color:var(--soft)}
+.section{padding-block:22px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:12px}
+.section:last-of-type{border-bottom:0}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:2.3rem;line-height:1.05}
+h2{font-size:1.6rem;line-height:1.1}
+p{margin:0}
+
+/* home */
+.hero{padding-block:26px 22px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--rule)}
+.hero h1 em{color:var(--margin)}
+.teaser{display:flex;gap:5px}
+.teaser span{flex:1 1 0;max-width:30px;height:4px;border-radius:2px;background:var(--ink);opacity:.85}
+.teaser span.gap{background:transparent}
+.status{font-weight:500}
+.status.won{color:var(--good)} .status.lost{color:var(--margin)}
+.sel-sum{font-weight:600}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.big{font:600 2rem/1 var(--mono);font-variant-numeric:tabular-nums}
+.big small{font:500 .8rem var(--ui);color:var(--soft);margin-left:4px}
+.week{display:flex;gap:5px}
+.week i{flex:1;height:22px;border-radius:5px;border:1px solid var(--rule);display:grid;place-items:center;font:600 .62rem var(--mono);font-style:normal;color:var(--soft)}
+.week i.won{background:var(--good);border-color:var(--good);color:var(--paper)}
+.week i.lost{background:transparent;border-color:var(--margin);color:var(--margin)}
+.foot{font-size:.8rem;color:var(--soft);padding-top:18px;line-height:1.5}
+
+/* game */
+.board{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:center;padding-block:14px 6px}
+.gallows{width:118px;height:auto;color:var(--ink)}
+.gallows .ghost{opacity:.13}
+.gallows .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .45s ease-out forwards}
+.gallows.lost{color:var(--margin)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.quote{margin:0;min-width:0;display:flex;flex-direction:column;gap:6px}
+.quote blockquote{margin:0;font:italic 400 1.22rem/1.3 var(--display);text-wrap:pretty}
+.quote .blank{display:inline-block;width:3.2em;border-bottom:2px solid var(--margin);transform:translateY(-.25em)}
+.quote figcaption{font-size:.82rem;color:var(--soft);line-height:1.35}
+.quote figcaption b{color:var(--ink);font-weight:600}
+.misses{font:600 .8rem/1 var(--ui);color:var(--soft);display:flex;justify-content:space-between;gap:8px;padding-block:6px 0}
+.misses b{font-family:var(--mono);color:var(--ink)}
+.misses .wrong{font-family:var(--mono);letter-spacing:.12em;color:var(--margin);text-decoration:line-through}
+
+/* the word: always one line, tiles shrink to fit */
+.word{--cell:40px;display:flex;justify-content:center;gap:max(2px, calc(var(--cell) * .14));padding-block:18px 14px;white-space:nowrap}
+.tile{width:var(--cell);height:calc(var(--cell) * 1.25);flex:0 0 auto;display:flex;align-items:flex-end;justify-content:center;border-bottom:2.5px solid var(--ink);
+  font:600 min(30px, calc(var(--cell) * 1.02))/1 var(--mono);text-transform:uppercase;padding-bottom:3px}
+.tile.sp{border-bottom-color:transparent;width:calc(var(--cell) * .55)}
+.tile.mark{border-bottom-color:transparent}
+.tile.miss{color:var(--margin)}
+.tile.pop{animation:pop .25s ease-out}
+@keyframes pop{from{transform:translateY(-4px);opacity:.3}}
+
+.hints{display:flex;flex-direction:column;gap:10px;padding-block:4px 12px}
+.hint-btns{display:flex;gap:8px}
+.hint-btns .btn{flex:1;min-height:42px;font-size:.88rem;padding:0 10px;border-width:1px;border-style:dashed}
+.hint{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--biro);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.hint p{font-size:.98rem}
+
+.kbd{display:flex;flex-direction:column;gap:7px;padding-block:6px 4px}
+.kbd .krow{display:flex;justify-content:center;gap:5px}
+.key{flex:1 1 0;max-width:46px;min-width:0;height:50px;border-radius:8px;border:1px solid var(--rule);background:var(--card);font:600 1.05rem/1 var(--mono);cursor:pointer;touch-action:manipulation}
+.key:active{transform:translateY(1px)}
+.key.hit{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.key.no{background:transparent;color:var(--margin);border-color:transparent;text-decoration:line-through;opacity:.7}
+.key[disabled]{cursor:default}
+
+.result{display:flex;flex-direction:column;gap:14px;padding-block:8px 6px}
+.verdict{font-weight:600}
+.verdict.won{color:var(--good)} .verdict.lost{color:var(--margin)}
+.answer{font:400 2.4rem/1 var(--display);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;overflow-wrap:anywhere;min-width:0}
+.answer small{font:500 .95rem var(--ui);color:var(--soft)}
+.defn{font-size:1.08rem}
+.defn .tag{font:600 .7rem var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:2px}
+.full{margin:0;padding-left:12px;border-left:3px solid var(--margin);font:italic 400 1.15rem/1.35 var(--display)}
+.full mark{background:none;color:var(--margin);font-style:normal;font-family:var(--ui);font-weight:600;font-size:.9em}
+.cite{font-size:.82rem;color:var(--soft)}
+.also{display:flex;flex-direction:column;gap:8px}
+.also li{list-style:none;font-size:.92rem}
+.also ul{margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.also .q{font-family:var(--display);font-style:italic;font-size:1.02rem}
+.also mark{background:none;color:inherit;font-weight:700}
+details summary{cursor:pointer;font-weight:600;color:var(--biro)}
+details p{margin-top:6px}
+.links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.88rem}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;font-size:.9rem;z-index:20}
+
+/* source picker */
+.search{position:relative;padding-block:14px 8px}
+.search input{width:100%;min-height:50px;padding:0 14px 0 42px;border-radius:12px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);font:500 1rem var(--ui)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-35%);color:var(--soft)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-block:4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--rule);background:var(--card);font-weight:600;font-size:.9rem;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab span{font:500 .78rem var(--mono);opacity:.7;margin-left:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px dashed var(--soft);background:transparent;font-size:.86rem;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{border-style:solid;border-color:var(--biro);color:var(--biro)}
+.picked{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-block:8px}
+.picked .tag{display:inline-flex;align-items:center;gap:4px;min-height:34px;padding:0 4px 0 12px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.85rem;font-weight:600}
+.picked .tag button{width:30px;height:30px;border:0;background:none;color:inherit;cursor:pointer;font-size:1.1rem;line-height:1}
+.linkbtn{border:0;background:none;color:var(--biro);font-weight:600;cursor:pointer;min-height:34px;padding:0 6px}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.list h3{font:600 .72rem/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:16px 0 6px}
+.src{width:100%;display:grid;grid-template-columns:1fr auto 28px;gap:10px;align-items:center;text-align:left;min-height:56px;padding:8px 2px;border:0;border-bottom:1px solid var(--rule);background:transparent;cursor:pointer}
+.src .nm{font-weight:600;min-width:0}
+.src .mt{display:block;font-size:.8rem;color:var(--soft);font-weight:400}
+.src .ct{font:500 .8rem var(--mono);color:var(--soft);font-variant-numeric:tabular-nums}
+.src .ck{width:24px;height:24px;border-radius:6px;border:1.5px solid var(--soft);display:grid;place-items:center}
+.src[aria-pressed="true"] .ck{background:var(--biro);border-color:var(--biro);color:var(--paper)}
+.src[aria-pressed="true"] .nm{color:var(--biro)}
+.dock{position:sticky;bottom:0;margin-top:auto;padding-block:12px calc(12px + env(safe-area-inset-bottom, 0px));background:var(--paper);border-top:1px solid var(--rule);display:flex;gap:12px;align-items:center}
+.dock .sum{flex:1;min-width:0;font-size:.88rem;line-height:1.3}
+.dock .sum b{display:block;font-size:1rem}
+.empty{padding:18px 0;color:var(--soft)}
+.loading{padding:40px 0;font:italic 1.3rem var(--display);color:var(--soft)}
+@media (max-width:380px){ .board{grid-template-columns:92px 1fr} .gallows{width:92px} h1{font-size:2rem} .quote blockquote{font-size:1.1rem} }
+@media (prefers-reduced-motion: reduce){ .gallows .draw{animation:none;stroke-dashoffset:0} .tile.pop{animation:none} }
+</style>
+</head>
+<body>
+<div class="app" id="app"><p class="loading">Opening the lexicon…</p></div>
+<script>
+(() => {
+"use strict";
+/* ---------- settings ---------- */
+const DATA_URL = "words.json";
+const SITE = "https://thomasschmierer.github.io/Moira-Lexicon/hangman/";
+const MAIN = "https://thomasschmierer.github.io/Moira-Lexicon/";
+const ISSUES = "https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new";
+const MAX_MISS = 8, MAX_LEN = 18, MIN_LETTERS = 4;
+const EPOCH = Date.UTC(2026, 10, 11);            // No. 1 is 11 November 2026
+const CAT = {tv:"TV", film:"Film", shakes:"Shakespeare", books:"Books"};
+const LANG = {latin:"Latin", greek:"Greek", french:"French", oldenglish:"Old English", english:"English", norse:"Old Norse", german:"German",
+  dutch:"Dutch", italian:"Italian", spanish:"Spanish or Portuguese", arabic:"Arabic", persian:"Persian or Turkish", indic:"Sanskrit or Hindi",
+  celtic:"a Celtic language", hebrew:"Hebrew or Yiddish", other:"a language from further afield"};
+const GENRE = {shakes:[["Comedy","Comedies"],["History","Histories"],["Tragedy","Tragedies"],["Romance","Romances"]],
+  books:[["novel","Novels"],["poetry","Poetry"],["play","Plays"],["stories","Stories"],["novella","Novellas"]]};
+
+/* ---------- small helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const plain = s => String(s ?? "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+const safe = s => String(s ?? "").replace(/<(?!\/?(?:i|b|em|mark)>)[^>]*>/g, "");
+const fold = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "");
+const fnv = s => { let h = 2166136261; for (let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+const store = {
+  get(k, d){ try { const v = localStorage.getItem("lh-" + k); return v == null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem("lh-" + k, JSON.stringify(v)); } catch(e){} }
+};
+function dayKey(d){ return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
+function today(){ const d = new Date(); return {key: dayKey(d), no: Math.floor((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - EPOCH) / 864e5) + 1, date: d}; }
+function shiftDay(key, n){ const [y, m, d] = key.split("-").map(Number); return dayKey(new Date(y, m - 1, d + n)); }
+let toastTimer;
+function toast(msg){ let t = $(".toast"); if (!t){ t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => t.hidden = true, 2200); }
+
+/* ---------- data ---------- */
+let SRC = [], WORDS = [], BYW = new Map();
+function answerOf(line){
+  const m = /<mark>([\s\S]*?)<\/mark>/i.exec(line || ""); if (!m) return null;
+  const shown = plain(m[1]).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
+  const key = fold(shown).toUpperCase();
+  const letters = key.replace(/[^A-Z]/g, "");
+  if (!shown || shown.length > MAX_LEN || letters.length < MIN_LETTERS || /[^A-Z '’-]/.test(key)) return null;
+  return {shown, key};
+}
+function init(d){
+  SRC = d.src.map(([id, name, cat, sub, by], i) => ({i, id, name, cat, sub, by, words: 0, sort: fold(name).toLowerCase().replace(/^(the|a|an) /, "")}));
+  WORDS = [];
+  for (const [w, pos, def, sdef, ety, origin, dd, occ] of d.w){
+    const os = occ.map(([s, line, who, where]) => ({s, line, who, where, ans: answerOf(line)})).filter(o => o.ans && SRC[o.s]);
+    if (!os.length) continue;
+    const e = {i: WORDS.length, w, pos, def, sdef, ety, origin: (origin || "english").split(">"), dd, occ: os};
+    WORDS.push(e); BYW.set(w, e);
+    for (const s of new Set(os.map(o => o.s))) SRC[s].words++;
+  }
+  SRC.forEach(s => s.on = s.words > 0);
+}
+
+/* ---------- streaks and history ---------- */
+function days(){ return store.get("days", {}); }
+function dailyStreak(){
+  const H = days(), t = today().key;
+  let k = H[t] && H[t].done ? t : shiftDay(t, -1), n = 0;
+  while (H[k] && H[k].won){ n++; k = shiftDay(k, -1); }
+  return n;
+}
+function bestDaily(){
+  const H = days(); let best = 0, run = 0, prev = null;
+  for (const k of Object.keys(H).sort()){
+    if (!H[k].done) continue;
+    run = H[k].won ? (prev && shiftDay(prev, 1) === k ? run + 1 : 1) : 0;
+    if (!H[k].won) { prev = null; continue; }
+    prev = k; best = Math.max(best, run);
+  }
+  return best;
+}
+function runStats(){ return store.get("run", {cur: 0, best: 0, played: 0, won: 0}); }
+
+/* ---------- picking words ---------- */
+function dailyPick(t){
+  const cats = [["tv", "film"], ["shakes"], ["tv", "film"], ["books"]][((t.no - 1) % 4 + 4) % 4];
+  const pick = ok => {
+    let best = null, bh = Infinity;
+    for (const e of WORDS){
+      if (e.dd === 0 || (e.dd && e.dd > t.key)) continue;
+      if (!e.occ.some(o => ok(o))) continue;
+      const h = fnv(t.key + "|" + e.w); if (h < bh){ bh = h; best = e; }
+    }
+    if (!best) return null;
+    const os = best.occ.filter(ok);
+    const o = os.reduce((a, b) => fnv(t.key + a.line) <= fnv(t.key + b.line) ? a : b);
+    return {w: best.w, line: o.line};
+  };
+  return pick(o => cats.includes(SRC[o.s].cat)) || pick(() => true);
+}
+function selection(){ return new Set(store.get("sel", []).filter(id => SRC.some(s => s.id === id))); }
+function inSel(sel){ const ids = new Set([...sel].map(id => SRC.findIndex(s => s.id === id))); return o => !sel.size || ids.has(o.s); }
+function poolFor(sel){ const ok = inSel(sel); return WORDS.filter(e => e.occ.some(ok)); }
+function morePick(){
+  const sel = selection(), ok = inSel(sel), pool = poolFor(sel);
+  if (!pool.length) return null;
+  let recent = store.get("recent", []);
+  let cands = pool.filter(e => !recent.includes(e.w));
+  if (!cands.length){ recent = []; cands = pool; }
+  const e = cands[Math.floor(Math.random() * cands.length)];
+  const os = e.occ.filter(ok), o = os[Math.floor(Math.random() * os.length)];
+  recent.push(e.w); store.set("recent", recent.slice(-400));
+  return {w: e.w, line: o.line};
+}
+
+/* ---------- a round of hangman ---------- */
+function newGame(mode, p, extra){ return {mode, w: p.w, line: p.line, guessed: [], hints: 0, done: false, won: false, ...extra}; }
+function resolve(g){
+  const e = BYW.get(g.w); if (!e) return null;
+  const o = e.occ.find(x => x.line === g.line) || e.occ[0];
+  return {e, o, ans: o.ans, src: SRC[o.s]};
+}
+function lettersOf(ans){ return new Set(ans.key.replace(/[^A-Z]/g, "")); }
+function wrongOf(g, ans){ const need = lettersOf(ans); return g.guessed.filter(k => !need.has(k)); }
+function saveGame(g){ store.set(g.mode === "daily" ? "today" : "more", g); }
+function loadDaily(){
+  const t = today(), saved = store.get("today", null);
+  if (saved && saved.day === t.key && BYW.has(saved.w)) return saved;
+  const H = days()[t.key];
+  const p = H && H.w && BYW.has(H.w) ? {w: H.w, line: H.line} : dailyPick(t);
+  const g = newGame("daily", p, {day: t.key, no: t.no});
+  if (H && H.done){ Object.assign(g, {done: true, won: H.won, guessed: H.guessed || [], hints: H.h || 0}); }
+  return g;
+}
+function finish(g, R){
+  g.done = true;
+  const wrong = wrongOf(g, R.ans).length;
+  if (g.mode === "daily"){
+    const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed}; store.set("days", H);
+  } else {
+    const s = runStats(); s.played++; if (g.won){ s.won++; s.cur++; s.best = Math.max(s.best, s.cur); } else s.cur = 0; store.set("run", s);
+  }
+}
+
+/* ---------- drawing ---------- */
+const PARTS = [
+  '<path d="M8 134H78M28 134V10"/>', '<path d="M28 10H86M28 34L52 10"/>', '<path d="M86 10V25"/>', '<circle cx="86" cy="36" r="11"/>',
+  '<path d="M86 47V86"/>', '<path d="M86 57L71 73M86 57L101 73"/>', '<path d="M86 86L74 111"/>', '<path d="M86 86L98 111"/>'];
+function gallows(wrong, fresh, lost){
+  const shown = lost ? MAX_MISS : wrong;
+  const part = (p, i, cls) => p.replace(/^<(\w+)/, `<$1 pathLength="1"${cls ? ` class="${cls}"` : ""}`);
+  return `<svg class="gallows${lost ? " lost" : ""}" viewBox="0 0 110 142" role="img" aria-label="${MAX_MISS - wrong} of ${MAX_MISS} misses left">
+    <g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      ${PARTS.map((p, i) => i < shown ? part(p, i, i === fresh ? "draw" : "") : part(p, i, "ghost")).join("")}</g></svg>`;
+}
+function wordRow(g, ans, fresh){
+  const guessed = new Set(g.guessed);
+  return [...ans.key].map((ch, i) => {
+    if (ch === " ") return `<span class="tile sp"></span>`;
+    if (!/[A-Z]/.test(ch)) return `<span class="tile mark">${esc(ans.shown[i] || ch)}</span>`;
+    const show = guessed.has(ch) || g.done;
+    return `<span class="tile${g.done && !guessed.has(ch) ? " miss" : ""}${fresh === ch ? " pop" : ""}">${show ? ch : ""}</span>`;
+  }).join("");
+}
+function fitWord(){
+  const row = $(".word"); if (!row) return;
+  const n = row.children.length, w = row.clientWidth;
+  const units = [...row.children].reduce((a, c) => a + (c.classList.contains("sp") ? .55 : 1), 0);
+  let cell = Math.min(44, Math.floor((w - (n - 1) * Math.max(2, 44 * .14)) / units));
+  for (let k = 0; k < 6; k++){ const gap = Math.max(2, cell * .14); const c2 = Math.min(44, Math.floor((w - (n - 1) * gap) / units)); if (c2 === cell) break; cell = c2; }
+  row.style.setProperty("--cell", Math.max(10, cell) + "px");
+}
+addEventListener("resize", fitWord);
+const sizeWatch = typeof ResizeObserver === "function" ? new ResizeObserver(() => fitWord()) : null;
+function blankLine(line){ return safe(line).replace(/<mark>[\s\S]*?<\/mark>/i, '<span class="blank" aria-label="missing word"></span>').replace(/<\/?(?:i|b|em|mark)>/g, ""); }
+function credit(o, src){
+  const bits = [];
+  if (o.who && o.who !== src.name) bits.push(`<b>${esc(o.who)}</b>`);
+  bits.push(src.cat === "books" && src.by ? `${esc(src.name)}, ${esc(src.by)}` : esc(src.name));
+  if (o.where && o.where !== src.name) bits.push(src.cat === "tv" ? `“${esc(o.where)}”` : esc(o.where));
+  return bits.join(" · ");
+}
+function maskText(text, e, ans){
+  let t = plain(text);
+  const forms = new Set([e.w, ans.shown, fold(ans.shown)]);
+  for (const f of [...forms]){ const b = f.replace(/(?:ing|ed|es|s|ly|er|d)$/i, ""); if (b.length >= 4) forms.add(b); }
+  for (const f of [...forms].sort((a, b) => b.length - a.length)){
+    if (f.length < 3) continue;
+    t = t.replace(new RegExp("\\b" + f.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "[\\w'-]*", "gi"), "_____");
+  }
+  return t;
+}
+function origins(e){
+  const chain = e.origin.filter(k => k !== "english");
+  if (!chain.length) return "It was made in English.";
+  const names = chain.map(k => LANG[k] || LANG.other);
+  return names.length === 1 ? `It comes from ${names[0]}.` : `It comes from ${names[0]}, by way of ${names.slice(1).join(" and ")}.`;
+}
+function kindHint(e){
+  const pos = String(e.pos || "").trim();
+  return `${pos ? `It's ${/^[aeiou]/i.test(pos) ? "an" : "a"} <b>${esc(pos)}</b>. ` : ""}${origins(e)}`;
+}
+function defFor(e, o){ return SRC[o.s].cat === "shakes" && e.sdef ? e.sdef : e.def; }
+
+/* ---------- views ---------- */
+let view = "", game = null, fresh = {}, picker = {tab: "all", q: "", genre: ""};
+function route(){
+  const h = location.hash.replace("#", "");
+  view = ["today", "play", "sources"].includes(h) ? h : "home";
+  if (view === "today") game = loadDaily();
+  if (view === "play"){
+    const g = store.get("more", null);
+    game = g && BYW.has(g.w) && !g.done ? g : null;
+    if (!game){ const p = morePick(); game = p ? newGame("more", p) : null; if (game) saveGame(game); }
+  }
+  render(); scrollTo(0, 0);
+}
+function go(h){ if (location.hash === "#" + h) route(); else location.hash = h; }
+function render(){
+  const app = $("#app");
+  if (view === "home") app.innerHTML = homeView();
+  else if (view === "sources"){ app.innerHTML = pickerView(); $("#q").oninput = ev => { picker.q = ev.target.value; refreshPicker(); }; }
+  else app.innerHTML = gameView();
+  wire();
+}
+function selSummary(sel){
+  if (!sel.size) return "everything: TV, film, Shakespeare and books";
+  const names = SRC.filter(s => sel.has(s.id)).map(s => s.name);
+  return names.length <= 3 ? names.join(", ") : `${names.slice(0, 2).join(", ")} and ${names.length - 2} more`;
+}
+function homeView(){
+  const t = today(), g = loadDaily(), R = resolve(g), H = days(), streak = dailyStreak(), best = bestDaily(), run = runStats();
+  const sel = selection(), pool = poolFor(sel).length;
+  const wrong = R ? wrongOf(g, R.ans).length : 0;
+  const status = g.done ? (g.won ? `<p class="status won">Solved with ${wrong} miss${wrong === 1 ? "" : "es"}${g.hints ? ` and ${g.hints} hint${g.hints > 1 ? "s" : ""}` : ""}.</p>` : `<p class="status lost">Hanged today. The word was <b>${esc(R.ans.shown)}</b>.</p>`)
+    : g.guessed.length ? `<p class="status">In progress: ${wrong} of ${MAX_MISS} misses used.</p>` : `<p class="status">${R.ans.key.replace(/[^A-Z]/g, "").length} letters, ${MAX_MISS} misses allowed.</p>`;
+  const week = [...Array(7)].map((_, i) => { const k = shiftDay(t.key, i - 6), r = H[k], dn = new Date(k + "T12:00").toLocaleDateString(undefined, {weekday: "narrow"});
+    return `<i class="${r && r.done ? (r.won ? "won" : "lost") : ""}" title="${k}${r && r.done ? (r.won ? ": solved" : ": hanged") : ": not played"}">${dn}</i>`; }).join("");
+  const dateLabel = t.date.toLocaleDateString(undefined, {weekday: "long", day: "numeric", month: "long"});
+  const total = WORDS.length.toLocaleString();
+  return `<header class="top"><a class="brand" href="#">Lexicon <i>Hangman</i></a><span class="grow"></span><span class="pill" title="Days in a row you've solved the word of the day">Streak <b>${streak}</b></span></header>
+  <section class="hero">
+    <div class="eyebrow">Word of the day · No. ${t.no} · ${esc(dateLabel)}</div>
+    <h1>One rare word. <em>Eight</em> wrong guesses and you hang.</h1>
+    <div class="teaser" aria-hidden="true">${[...R.ans.key].map(c => `<span class="${/[A-Z]/.test(c) ? "" : "gap"}"></span>`).join("")}</div>
+    ${status}
+    <div class="row"><a class="btn primary" href="#today">${g.done ? "See today's word" : g.guessed.length ? "Carry on" : "Play today's word"}</a></div>
+  </section>
+  <section class="section">
+    <h2>Keep playing</h2>
+    <p>As many rounds as you like, from <span class="sel-sum">${esc(selSummary(sel))}</span>. <span class="muted">${pool.toLocaleString()} words.</span></p>
+    <div class="row"><a class="btn primary" href="#play">Play a word</a><a class="btn" href="#sources">Choose shows, plays or books</a></div>
+  </section>
+  <section class="section">
+    <h2>Your record</h2>
+    <div class="stats">
+      <div class="stat"><div class="eyebrow">Daily streak</div><div class="big">${streak}<small>best ${best}</small></div><div class="week" aria-label="The last seven days">${week}</div></div>
+      <div class="stat"><div class="eyebrow">Keep playing</div><div class="big">${run.cur}<small>in a row · best ${run.best}</small></div>
+        <p class="muted">${run.won} of ${run.played} solved</p></div>
+    </div>
+    <p class="muted" style="font-size:.85rem">Your streaks are saved in this browser only.</p>
+  </section>
+  <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Quotes are short extracts for commentary; many come via Wikiquote (CC BY-SA). Definitions from WordNet and Wiktionary. Part of <a href="${MAIN}" target="_blank" rel="noopener">Moira's Lexicon</a>.</footer>`;
+}
+function gameView(){
+  if (!game) return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">No words match what you've chosen. <a href="#sources">Choose something else</a>.</p>`;
+  const R = resolve(game);
+  if (!R){ store.set(game.mode === "daily" ? "today" : "more", null); return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">That word has been retired. <a href="#${game.mode === "daily" ? "today" : "play"}">Play another</a>.</p>`; }
+  const {e, o, ans, src} = R, wrong = wrongOf(game, ans), left = MAX_MISS - wrong.length;
+  const label = game.mode === "daily" ? `Today · No. ${game.no}` : `Keep playing · ${esc(selection().size ? selSummary(selection()) : "everything")}`;
+  const head = `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">${label}</span>${game.mode === "daily" ? `<span class="pill">Streak <b>${dailyStreak()}</b></span>` : `<span class="pill">Run <b>${runStats().cur}</b></span>`}</header>`;
+  const board = `<div class="board">${gallows(wrong.length, fresh.part, game.done && !game.won)}
+    <figure class="quote"><blockquote>“${blankLine(o.line)}”</blockquote><figcaption>${credit(o, src)}</figcaption></figure></div>
+    <div class="misses"><span><b>${left}</b> of ${MAX_MISS} misses left</span>${wrong.length ? `<span class="wrong" aria-label="Wrong letters">${wrong.join("")}</span>` : ""}</div>
+    <div class="word" aria-label="The word, ${ans.key.replace(/[^A-Z]/g, "").length} letters">${wordRow(game, ans, fresh.letter)}</div>`;
+  if (game.done) return head + board + resultView(R);
+  const hints = `<div class="hints">
+    ${game.hints >= 1 ? `<div class="hint"><div class="eyebrow">Hint · type of word and origin</div><p>${kindHint(e)}</p></div>` : ""}
+    ${game.hints >= 2 ? `<div class="hint"><div class="eyebrow">Hint · what it means</div><p>${esc(maskText(defFor(e, o), e, ans))}</p></div>` : ""}
+    ${game.hints < 2 ? `<div class="hint-btns"><button class="btn" id="hint">${game.hints === 0 ? "Hint: type of word and origin" : "Hint: what it means"}</button></div>` : ""}
+  </div>`;
+  const used = new Set(game.guessed), need = lettersOf(ans);
+  const kbd = `<div class="kbd" role="group" aria-label="Letters">${["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"].map(r => `<div class="krow">${[...r].map(k =>
+    `<button class="key${used.has(k) ? (need.has(k) ? " hit" : " no") : ""}" data-k="${k}" ${used.has(k) ? "disabled" : ""} aria-label="${k}">${k}</button>`).join("")}</div>`).join("")}</div>`;
+  return head + board + hints + kbd;
+}
+function resultView(R){
+  const {e, o, ans, src} = R, g = game, wrong = wrongOf(g, ans).length;
+  const differs = fold(ans.shown).toLowerCase() !== fold(e.w).toLowerCase();
+  const verdict = g.won ? `<p class="verdict won">Solved with ${wrong} miss${wrong === 1 ? "" : "es"}${g.hints ? ` and ${g.hints} hint${g.hints > 1 ? "s" : ""}` : ""}.</p>`
+    : `<p class="verdict lost">Hanged. The word was:</p>`;
+  const others = [], seen = new Set([o.s]);
+  for (const x of e.occ){ if (!seen.has(x.s)){ seen.add(x.s); others.push(x); } if (others.length === 2) break; }
+  const moreSrc = new Set(e.occ.map(x => x.s)).size - 1 - others.length;
+  const shakesSense = src.cat === "shakes" && e.sdef;
+  const streakLine = g.mode === "daily" ? `Daily streak: <b>${dailyStreak()}</b> day${dailyStreak() === 1 ? "" : "s"}. Come back tomorrow for No. ${g.no + 1}.`
+    : (() => { const r = runStats(); return `Run: <b>${r.cur}</b> in a row (best ${r.best}).`; })();
+  const issue = `${ISSUES}?title=${encodeURIComponent(`Hangman: problem with "${e.w}"`)}&body=${encodeURIComponent(`Word: ${e.w}\nQuote: ${plain(o.line)}\nSource: ${src.name}\n\nWhat's wrong:\n`)}`;
+  return `<section class="result" aria-live="polite">
+    ${verdict}
+    <div class="answer">${esc(ans.shown)}${differs ? `<small>from ${esc(e.w)}</small>` : ""}${e.pos ? `<small>${esc(e.pos)}</small>` : ""}</div>
+    <p class="defn">${shakesSense ? `<span class="tag">In Shakespeare's sense</span>` : ""}${esc(plain(defFor(e, o)))}</p>
+    ${shakesSense && e.def && e.def !== e.sdef ? `<p class="muted">Today it usually means: ${esc(plain(e.def))}</p>` : ""}
+    <blockquote class="full">“${safe(o.line)}”</blockquote><p class="cite">${credit(o, src)}</p>
+    ${e.ety ? `<details><summary>Where the word comes from</summary><p>${safe(e.ety)}</p></details>` : ""}
+    ${others.length ? `<div class="also"><div class="eyebrow">Also turns up in</div><ul>${others.map(x => `<li><span class="q">“${safe(x.line)}”</span><br><span class="muted">${credit(x, SRC[x.s])}</span></li>`).join("")}</ul>
+      ${moreSrc > 0 ? `<p class="muted">…and ${moreSrc} other place${moreSrc === 1 ? "" : "s"}.</p>` : ""}</div>` : ""}
+    <p>${streakLine}</p>
+    <div class="row">${g.mode === "daily" ? `<button class="btn primary" id="share">Share result</button><a class="btn" href="#play">Keep playing</a>`
+      : `<button class="btn primary" id="next">Next word</button><a class="btn" href="#sources">Choose what to play</a>`}</div>
+    <div class="links"><a href="https://www.google.com/search?q=${encodeURIComponent("how to pronounce " + e.w)}" target="_blank" rel="noopener">Hear it said ↗</a>
+      <a href="${issue}" target="_blank" rel="noopener">Report a problem with this word ↗</a></div>
+  </section>`;
+}
+
+/* ---------- source picker: search, then narrow by kind, then tick ---------- */
+function pickerView(){
+  return `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">Choose what to play</span></header>
+  <div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <label class="sr" for="q">Search shows, films, plays, books and authors</label>
+    <input id="q" type="search" autocomplete="off" placeholder="Search: Hamlet, Frasier, Austen…" value="${esc(picker.q)}"></div>
+  <div id="pk">${pickerBody()}</div>`;
+}
+function pickerBody(){
+  const sel = selection(), q = fold(picker.q).toLowerCase().trim();
+  const counts = {all: 0}; SRC.forEach(s => { if (s.on){ counts[s.cat] = (counts[s.cat] || 0) + 1; counts.all++; } });
+  const tabs = [["all", "All"], ["tv", "TV"], ["film", "Film"], ["shakes", "Shakespeare"], ["books", "Books"]].filter(([k]) => counts[k]);
+  // a search looks everywhere; the tabs and genres narrow the list when you're browsing
+  let list = SRC.filter(s => s.on && (q || ((picker.tab === "all" || s.cat === picker.tab) && (!picker.genre || s.sub === picker.genre))));
+  let body = "";
+  const row = s => `<li><button class="src" data-id="${esc(s.id)}" aria-pressed="${sel.has(s.id)}">
+      <span class="nm">${esc(s.name)}<span class="mt">${esc(meta(s))}</span></span><span class="ct">${s.words.toLocaleString()} words</span><span class="ck" aria-hidden="true">${sel.has(s.id) ? "✓" : ""}</span></button></li>`;
+  if (q){
+    const score = s => { const n = s.sort, a = fold(s.by).toLowerCase(), g = fold(s.sub).toLowerCase(), cat = CAT[s.cat].toLowerCase();
+      return n.startsWith(q) ? 4 : new RegExp("\\b" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(n) ? 3 : n.includes(q) ? 2 : (a.includes(q) || g.startsWith(q) || cat.startsWith(q)) ? 1 : 0; };
+    list = list.map(s => [s, score(s)]).filter(x => x[1]).sort((a, b) => b[1] - a[1] || b[0].words - a[0].words).map(x => x[0]);
+    body = list.length ? `<ul class="list">${list.map(row).join("")}</ul>` : `<p class="empty">Nothing called “${esc(picker.q)}”. Try a show, film, play, book or author.</p>`;
+  } else if (picker.tab === "all"){
+    const top = list.slice().sort((a, b) => b.words - a.words).slice(0, 12);
+    body = `<ul class="list"><h3>Most words</h3>${top.map(row).join("")}</ul><p class="empty">Search above, or pick TV, Film, Shakespeare or Books to see everything.</p>`;
+  } else if (picker.tab === "shakes" && !picker.genre){
+    body = GENRE.shakes.map(([g, label]) => { const ls = list.filter(s => s.sub === g).sort((a, b) => a.sort.localeCompare(b.sort)); return ls.length ? `<ul class="list"><h3>${label}</h3>${ls.map(row).join("")}</ul>` : ""; }).join("");
+  } else {
+    list.sort((a, b) => b.words - a.words || a.sort.localeCompare(b.sort));
+    body = list.length ? `<ul class="list">${list.map(row).join("")}</ul>` : `<p class="empty">Nothing here yet.</p>`;
+  }
+  const genres = (GENRE[picker.tab] || []).filter(([g]) => SRC.some(s => s.on && s.cat === picker.tab && s.sub === g));
+  const inGenre = picker.genre ? SRC.filter(s => s.on && s.cat === picker.tab && s.sub === picker.genre) : [];
+  const allOn = inGenre.length && inGenre.every(s => sel.has(s.id));
+  const pool = poolFor(sel).length;
+  const picked = SRC.filter(s => sel.has(s.id));
+  return `${q ? `<p class="muted" style="padding-top:4px">Searching everything. Clear the search to browse by kind.</p>` : ""}
+  <div class="tabs" role="tablist"${q ? " hidden" : ""}>${tabs.map(([k, l]) => `<button class="tab" role="tab" data-tab="${k}" aria-selected="${picker.tab === k}">${l}<span>${counts[k]}</span></button>`).join("")}</div>
+  ${genres.length > 1 && !q ? `<div class="chips" style="padding-top:8px">${genres.map(([g, l]) => `<button class="chip" data-genre="${g}" aria-pressed="${picker.genre === g}">${l}</button>`).join("")}
+    ${picker.genre ? `<button class="linkbtn" id="all-genre">${allOn ? "Untick" : "Tick"} all ${inGenre.length}</button>` : ""}</div>` : ""}
+  ${picked.length ? `<div class="picked" aria-label="Chosen">${picked.map(s => `<span class="tag">${esc(s.name)}<button data-drop="${esc(s.id)}" aria-label="Remove ${esc(s.name)}">×</button></span>`).join("")}<button class="linkbtn" id="clear">Clear all</button></div>` : ""}
+  ${body}
+  <div class="dock"><div class="sum"><b>${picked.length ? `${picked.length} chosen` : "Everything"}</b>${pool.toLocaleString()} words</div><button class="btn primary" id="go" ${pool ? "" : "disabled"}>Play</button></div>`;
+}
+function meta(s){
+  if (s.cat === "shakes") return `${s.sub} · Shakespeare`;
+  if (s.cat === "books") return [s.sub ? s.sub[0].toUpperCase() + s.sub.slice(1) : "Book", s.by].filter(Boolean).join(" · ");
+  return [CAT[s.cat], s.sub].filter(Boolean).join(" · ");
+}
+
+/* ---------- events ---------- */
+function guess(k){
+  if (!game || game.done || game.guessed.includes(k)) return;
+  const R = resolve(game); if (!R) return;
+  game.guessed.push(k);
+  const need = lettersOf(R.ans), wrong = wrongOf(game, R.ans).length;
+  fresh = need.has(k) ? {letter: k} : {part: wrong - 1};
+  if ([...need].every(c => game.guessed.includes(c))){ game.won = true; finish(game, R); }
+  else if (wrong >= MAX_MISS){ game.won = false; finish(game, R); }
+  saveGame(game); render(); fresh = {};
+}
+function wire(){
+  fitWord();
+  const row = $(".word"); if (row && sizeWatch){ sizeWatch.disconnect(); sizeWatch.observe(row); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitWord);
+  document.querySelectorAll(".key").forEach(b => b.onclick = () => guess(b.dataset.k));
+  const hint = $("#hint"); if (hint) hint.onclick = () => { game.hints++; saveGame(game); render(); };
+  const next = $("#next"); if (next) next.onclick = () => { const p = morePick(); game = p ? newGame("more", p) : null; if (game) saveGame(game); render(); scrollTo(0, 0); };
+  const share = $("#share"); if (share) share.onclick = () => shareResult();
+  if ($("#pk")) wirePicker();
+}
+function refreshPicker(){ const pk = $("#pk"); if (!pk) return; pk.innerHTML = pickerBody(); wirePicker(); }
+function wirePicker(){
+  const pk = $("#pk");
+  pk.querySelectorAll(".tab").forEach(b => b.onclick = () => { picker.tab = b.dataset.tab; picker.genre = ""; refreshPicker(); });
+  pk.querySelectorAll(".chip[data-genre]").forEach(b => b.onclick = () => { picker.genre = picker.genre === b.dataset.genre ? "" : b.dataset.genre; refreshPicker(); });
+  const setSel = s => { store.set("sel", [...s]); store.set("more", null); };
+  pk.querySelectorAll(".src").forEach(b => b.onclick = () => { const s = selection(); s.has(b.dataset.id) ? s.delete(b.dataset.id) : s.add(b.dataset.id); setSel(s); refreshPicker(); });
+  pk.querySelectorAll("[data-drop]").forEach(b => b.onclick = () => { const s = selection(); s.delete(b.dataset.drop); setSel(s); refreshPicker(); });
+  const clear = $("#clear"); if (clear) clear.onclick = () => { setSel(new Set()); refreshPicker(); };
+  const ag = $("#all-genre"); if (ag) ag.onclick = () => {
+    const s = selection(), group = SRC.filter(x => x.on && x.cat === picker.tab && x.sub === picker.genre), all = group.every(x => s.has(x.id));
+    group.forEach(x => all ? s.delete(x.id) : s.add(x.id)); setSel(s); refreshPicker(); };
+  const goBtn = $("#go"); if (goBtn) goBtn.onclick = () => go("play");
+}
+function shareResult(){
+  const R = resolve(game), wrong = wrongOf(game, R.ans).length;
+  const text = `Lexicon Hangman No. ${game.no}\n${game.won ? `Solved with ${wrong} of ${MAX_MISS} misses${game.hints ? `, ${game.hints} hint${game.hints > 1 ? "s" : ""}` : ""}` : "Hanged"}\n${"■".repeat(wrong)}${"□".repeat(MAX_MISS - wrong)}\nStreak: ${dailyStreak()}\n${SITE}`;
+  const copy = () => navigator.clipboard ? navigator.clipboard.writeText(text).then(() => toast("Result copied"), () => toast("Couldn't copy here")) : toast("Couldn't copy here");
+  if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) navigator.share({text}).catch(copy); else copy();
+}
+document.addEventListener("keydown", ev => {
+  if (ev.metaKey || ev.ctrlKey || ev.altKey || /^(INPUT|TEXTAREA)$/.test(document.activeElement && document.activeElement.tagName)) return;
+  if ((view === "today" || view === "play") && game){
+    if (/^[a-z]$/i.test(ev.key) && !game.done){ guess(ev.key.toUpperCase()); ev.preventDefault(); }
+    else if (ev.key === "Enter" && game.done && $("#next")){ $("#next").click(); ev.preventDefault(); }
+  }
+});
+addEventListener("hashchange", route);
+document.addEventListener("visibilitychange", () => { if (!document.hidden && view === "home") render(); });
+
+fetch(DATA_URL).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => { init(d); route(); })
+  .catch(() => { $("#app").innerHTML = `<p class="loading">The word list didn't load. Check your connection and reload the page.</p>`; });
+})();
+</script>
+</body>
+</html>
