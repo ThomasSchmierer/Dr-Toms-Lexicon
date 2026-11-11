@@ -60,7 +60,7 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$SOURCE" = "overnight" ]; then
             python tools/harvest.py nightly --shows 10 --books 1
           elif [ "$SOURCE" = "trending" ]; then
-            python tools/harvest.py nightly --shows 0 --books 0
+            python tools/harvest.py nightly --shows 0 --books 0 --trending 80
           elif [ "$SOURCE" = "wikiquote" ]; then
             args=()
             IFS=';' read -ra parts <<< "$PAGES"

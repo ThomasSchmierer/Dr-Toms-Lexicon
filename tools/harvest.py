@@ -176,7 +176,7 @@ def harvest_gutenberg(book_id, title, author, max_zipf, min_len, outdir, path=No
 def read_list(path):
     return [l.strip() for l in open(path, encoding="utf-8") if l.strip() and not l.strip().startswith("#")] if os.path.exists(path) else []
 
-def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir):
+def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir, trending_n=20):
     from datetime import date
     state_path = os.path.join(outdir, "state.json")
     state = json.load(open(state_path)) if os.path.exists(state_path) else {"shows": {}, "books": {}}
@@ -185,11 +185,12 @@ def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir):
         last = state[kind].get(name)
         return not last or (today - date.fromisoformat(last[:10])).days >= refresh_days
     trending_path = os.path.join(outdir, "trending.json")
-    trending = [t["wikiquote"] for t in (json.load(open(trending_path, encoding="utf-8")).get("titles", []) if os.path.exists(trending_path) else [])][:12]
-    def due_trending(t):
+    tl = json.load(open(trending_path, encoding="utf-8")).get("titles", []) if os.path.exists(trending_path) else []
+    this_week = {t["wikiquote"] for t in tl if t.get("week_rank") and t["week_rank"] <= 15}
+    def due_trending(t):                    # this week's hits are refreshed weekly, the rest of the year's like any show
         last = state["shows"].get(t)
-        return not last or (today - date.fromisoformat(last[:10])).days >= 7
-    hot = [t for t in trending if due_trending(t)]
+        return not last or (today - date.fromisoformat(last[:10])).days >= (7 if t in this_week else refresh_days)
+    hot = [t["wikiquote"] for t in tl if due_trending(t["wikiquote"])][:trending_n]
     shows = [t for t in read_list(os.path.join(HERE, "shows.txt")) + read_list(os.path.join(HERE, "queue.txt")) if due("shows", t) and t not in hot]
     shows = hot + list(dict.fromkeys(shows))[:shows_n]
     books = [b for b in read_list(os.path.join(HERE, "books.txt")) if due("books", b.split("|")[0].strip())][:books_n]
@@ -283,6 +284,7 @@ def main():
         p.add_argument("--out", default=os.path.join(ROOT, "harvest"))
     n = sub.add_parser("nightly", help="harvest the next few shows and books from the queues (used by the overnight run)")
     n.add_argument("--shows", type=int, default=10); n.add_argument("--books", type=int, default=1)
+    n.add_argument("--trending", type=int, default=20, help="popular shows and films to collect first (from harvest/trending.json)")
     n.add_argument("--refresh-days", type=int, default=60, help="re-harvest a show after this many days")
     n.add_argument("--max-rarity", type=float, default=3.0); n.add_argument("--min-length", type=int, default=5)
     n.add_argument("--out", default=os.path.join(ROOT, "harvest"))
@@ -300,7 +302,7 @@ def main():
         res = harvest_wikiquote(titles, args.max_rarity, args.min_length, args.out)
         if not any(r for _, r in res): sys.exit("No pages could be harvested. Check the page names on en.wikiquote.org.")
     elif args.cmd == "gutenberg": harvest_gutenberg(args.book_id, args.title, args.author, args.max_rarity, args.min_length, args.out, args.file)
-    elif args.cmd == "nightly": nightly(args.shows, args.books, args.refresh_days, args.max_rarity, args.min_length, args.out)
+    elif args.cmd == "nightly": nightly(args.shows, args.books, args.refresh_days, args.max_rarity, args.min_length, args.out, args.trending)
     else: draft(args.csv, args.edition, args.show_key, args.show_name, args.years, args.out)
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "harvest", "trending.json")
 UA = "MoiraLexiconTrending/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
 TOP = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{:%Y/%m/%d}"
+TOP_MONTH = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{:%Y/%m}/all-days"
 WP = "https://en.wikipedia.org/w/api.php"
 WD = "https://www.wikidata.org/w/api.php"
 
@@ -56,6 +57,27 @@ def top_articles(days=7):
         time.sleep(0.3)
     return views
 
+def add_top(views, url, label):
+    try: items = get(url)["items"][0]["articles"]
+    except Exception as e:
+        print(f"  (no page-view list for {label}: {e})"); return
+    for a in items:
+        t = a["article"]
+        if ":" in t or t in ("Main_Page", "-") or t.startswith("Special"): continue
+        views[t.replace("_", " ")] += a["views"]
+    time.sleep(0.3)
+
+def year_articles():
+    """Views so far this year: each finished month's top 1,000, plus each day of this month's."""
+    views = Counter()
+    now = datetime.now(timezone.utc)
+    for m in range(1, now.month):
+        add_top(views, TOP_MONTH.format(datetime(now.year, m, 1)), f"{now.year}-{m:02d}")
+    day = datetime(now.year, now.month, 1, tzinfo=timezone.utc)
+    while day.date() < now.date():
+        add_top(views, TOP.format(day), f"{day:%Y-%m-%d}"); day += timedelta(days=1)
+    return views
+
 def describe(titles):
     """Short description and Wikidata id for each Wikipedia article."""
     out = {}
@@ -82,9 +104,11 @@ def quote_pages(qids):
     return out
 
 def main():
-    views = top_articles(7)
-    cands = [t for t, _ in views.most_common(2000)]
-    print(f"{len(views)} popular articles this week; checking the top {len(cands)} for TV shows and films")
+    week = top_articles(7)
+    year = year_articles()
+    cands = list(dict.fromkeys([t for t, _ in week.most_common(1500)] + [t for t, _ in year.most_common(4000)]))
+    views = year
+    print(f"{len(week)} popular articles this week and {len(year)} this year; checking {len(cands)} for TV shows and films")
     info = describe(cands)
     screen = []
     for t in cands:
@@ -97,15 +121,20 @@ def main():
         if qid not in wq or qid in seen: continue
         seen.add(qid)
         film = bool(re.search(r"\b(film|movie)\b", desc, re.I)) and not re.search(r"\b(series|television|tv|sitcom|show)\b", desc, re.I)
-        titles.append({"title": canon, "wikiquote": wq[qid], "kind": "film" if film else "tv", "description": desc, "views": views[t]})
-    titles.sort(key=lambda x: -x["views"])
-    for i, t in enumerate(titles, 1): t["rank"] = i
-    data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "measure": "English Wikipedia page views over the last 7 days",
-            "screen_titles_found": len(screen), "titles": titles[:40]}
+        titles.append({"title": canon, "wikiquote": wq[qid], "kind": "film" if film else "tv", "description": desc,
+                       "views_week": week[t], "views_year": max(year[t], week[t])})
+    # this week's hits first, then the rest of the year's most-viewed
+    for i, t in enumerate(sorted([t for t in titles if t["views_week"]], key=lambda x: -x["views_week"]), 1): t["week_rank"] = i
+    for i, t in enumerate(sorted(titles, key=lambda x: -x["views_year"]), 1): t["year_rank"] = i
+    titles.sort(key=lambda x: -(x["views_year"] + 4 * x["views_week"]))
+    for i, t in enumerate(titles, 1): t["rank"] = i; t["views"] = t["views_year"]
+    data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "measure": "English Wikipedia page views this year, with this week's views counted four times",
+            "screen_titles_found": len(screen), "titles": titles[:250]}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f: json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"{len(screen)} TV shows and films in this week's most-viewed; {len(titles)} have quote pages. Top ten:")
-    for t in titles[:10]: print(f"  {t['rank']:>2}. {t['title']} ({t['kind']}, {t['views']:,} views) → Wikiquote: {t['wikiquote']}")
+    print(f"{len(screen)} TV shows and films among this year's most-viewed; {len(titles)} have quote pages. Top twenty:")
+    for t in titles[:20]: print(f"  {t['rank']:>3}. {t['title']} ({t['kind']}, {t['views_year']:,} views this year, {t['views_week']:,} this week)")
 
 if __name__ == "__main__":
     main()

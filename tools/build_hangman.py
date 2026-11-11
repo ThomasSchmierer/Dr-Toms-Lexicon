@@ -66,7 +66,8 @@ def make_daily(out):
         if key in days and days[key].get("rank"): continue             # trending picks are fixed; fallbacks get another chance
         before = sorted(k for k in days if k < key)
         used_words = {days[k]["w"] for k in before[-90:]}
-        recent_src = {days[k].get("src") for k in before[-4:]}
+        month_ago = (date.fromisoformat(key) - timedelta(days=30)).isoformat()
+        recent_src = {days[k].get("src") for k in before if k > month_ago}          # a show or film at most once in 30 days
         pick = None
         for t in trend.get("titles", []):
             name = show_name(t["wikiquote"])
@@ -80,7 +81,9 @@ def make_daily(out):
             if cands:
                 _, w, occ = min(cands, key=lambda c: c[0])
                 year = re.search(r"\((\d{4})\b", t["wikiquote"]) or re.search(r"\b(\d{4})\b", t.get("description", ""))
-                pick = {"w": w[0], "line": occ[1], "src": name, "kind": t["kind"], "rank": t["rank"], "views": t["views"],
+                hot = t.get("week_rank") and t["week_rank"] <= 20
+                pick = {"w": w[0], "line": occ[1], "src": name, "kind": t["kind"], "rank": t["week_rank"] if hot else t.get("year_rank", t["rank"]),
+                        "scope": "week" if hot else "year", "views": t.get("views_week" if hot else "views_year", t.get("views", 0)),
                         "year": year.group(1) if year else ""}
                 break
         if not pick:                                                         # nothing trending fits: any TV or film word
