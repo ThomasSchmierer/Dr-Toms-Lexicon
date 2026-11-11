@@ -58,21 +58,25 @@ def top_articles(days=7):
     return views
 
 def add_top(views, url, label):
-    try: items = get(url)["items"][0]["articles"]
+    try: items = get(url, tries=2)["items"][0]["articles"]
     except Exception as e:
-        print(f"  (no page-view list for {label}: {e})"); return
+        print(f"  (no page-view list for {label}: {e})"); return False
     for a in items:
         t = a["article"]
         if ":" in t or t in ("Main_Page", "-") or t.startswith("Special"): continue
         views[t.replace("_", " ")] += a["views"]
     time.sleep(0.3)
+    return True
 
 def year_articles():
     """Views so far this year: each finished month's top 1,000, plus each day of this month's."""
     views = Counter()
     now = datetime.now(timezone.utc)
     for m in range(1, now.month):
-        add_top(views, TOP_MONTH.format(datetime(now.year, m, 1)), f"{now.year}-{m:02d}")
+        if add_top(views, TOP_MONTH.format(datetime(now.year, m, 1)), f"{now.year}-{m:02d}"): continue
+        day = datetime(now.year, m, 1, tzinfo=timezone.utc)          # that month's total isn't ready yet: add it up day by day
+        while day.month == m:
+            add_top(views, TOP.format(day), f"{day:%Y-%m-%d}"); day += timedelta(days=1)
     day = datetime(now.year, now.month, 1, tzinfo=timezone.utc)
     while day.date() < now.date():
         add_top(views, TOP.format(day), f"{day:%Y-%m-%d}"); day += timedelta(days=1)
