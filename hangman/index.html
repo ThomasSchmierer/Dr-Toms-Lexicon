@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f6f7f2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1d2722" media="(prefers-color-scheme: dark)">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
-<title>Lexicon Hangman</title>
+<title>Dr Tom's Lexicon Hangman</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Hangman with rare words from TV, film, Shakespeare and classic books. A word of the day, a streak, and as many extra rounds as you like.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +39,9 @@ button{font:inherit;color:inherit}
 /* top bar */
 .top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;display:flex;align-items:center;gap:12px;min-height:56px;background:var(--paper);border-bottom:1px solid var(--rule)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--paper)}
-.brand{font:400 1.45rem/1 var(--display);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-.brand i{color:var(--margin)}
+.brand{display:flex;flex-direction:column;gap:3px;color:var(--ink);text-decoration:none;padding-block:6px}
+.brand span{font:400 1.35rem/1 var(--display);letter-spacing:-.01em}
+.brand small{font:600 .66rem/1 var(--ui);letter-spacing:.28em;text-transform:uppercase;color:var(--margin)}
 .top .grow{flex:1;min-width:0}
 .top .title{font:600 .8rem/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .back{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 4px;background:none;border:0;color:var(--biro);text-decoration:none;font-weight:600;cursor:pointer}
@@ -65,9 +66,16 @@ p{margin:0}
 /* home */
 .hero{padding-block:26px 22px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--rule)}
 .hero h1 em{color:var(--margin)}
-.teaser{display:flex;gap:5px}
-.teaser span{flex:1 1 0;max-width:30px;height:4px;border-radius:2px;background:var(--ink);opacity:.85}
-.teaser span.gap{background:transparent}
+.from{display:flex;flex-direction:column;gap:6px;padding:16px 18px;background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--biro);border-radius:4px 12px 12px 4px}
+.from .src-name{font:400 1.75rem/1.1 var(--display);text-wrap:balance}
+.from .src-name i{font-style:normal;color:var(--soft);font-size:.62em;margin-left:6px;white-space:nowrap}
+.from .src-rank{font-size:.9rem;color:var(--soft);line-height:1.45}
+.from .src-rank b{font:600 1rem/1 var(--mono);color:var(--biro);white-space:nowrap;margin-right:6px}
+.pick{padding-block:18px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.pick p{flex:1 1 180px;min-width:0;font-size:.95rem}
+.pick p b{display:block;font:400 1.2rem/1.2 var(--display)}
+.pick .btns{display:flex;gap:8px;flex:1 1 220px}
+.pick .btn{flex:1;min-height:44px;font-size:.9rem;padding:0 12px}
 .status{font-weight:500}
 .trend{font-size:.95rem;padding:8px 12px;border-left:3px solid var(--biro);background:var(--card);border-radius:0 8px 8px 0}
 .status.won{color:var(--good)} .status.lost{color:var(--margin)}
@@ -124,6 +132,10 @@ p{margin:0}
 
 .result{display:flex;flex-direction:column;gap:14px;padding-block:8px 6px}
 .verdict{font-weight:600}
+.quip{margin:0;display:flex;flex-direction:column;gap:4px}
+.quip blockquote{margin:0;font:italic 400 1.7rem/1.15 var(--display);text-wrap:balance}
+.quip.won blockquote{color:var(--good)} .quip.lost blockquote{color:var(--margin)}
+.quip figcaption{font-size:.82rem;color:var(--soft)}
 .verdict.won{color:var(--good)} .verdict.lost{color:var(--margin)}
 .answer{font:400 2.4rem/1 var(--display);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;overflow-wrap:anywhere;min-width:0}
 .answer small{font:500 .95rem var(--ui);color:var(--soft)}
@@ -255,7 +267,11 @@ function bestDaily(){
   }
   return best;
 }
-function runStats(){ return store.get("run", {cur: 0, best: 0, played: 0, won: 0}); }
+function runStats(){
+  const r = store.get("run", {cur: 0, best: 0, played: 0, won: 0, day: ""});
+  if (r.day !== today().key) r.cur = 0;                      // the run is a daily score
+  return r;
+}
 
 /* ---------- picking words ---------- */
 function dailyPick(t){
@@ -316,7 +332,7 @@ function finish(g, R){
   if (g.mode === "daily"){
     const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed}; store.set("days", H);
   } else {
-    const s = runStats(); s.played++; if (g.won){ s.won++; s.cur++; s.best = Math.max(s.best, s.cur); } else s.cur = 0; store.set("run", s);
+    const s = runStats(); s.day = today().key; s.played++; if (g.won){ s.won++; s.cur++; s.best = Math.max(s.best, s.cur); } else s.cur = 0; store.set("run", s);
   }
 }
 
@@ -410,51 +426,51 @@ function homeView(){
   const t = today(), g = loadDaily(), R = resolve(g), H = days(), streak = dailyStreak(), best = bestDaily(), run = runStats();
   const sel = selection(), pool = poolFor(sel).length;
   const wrong = R ? wrongOf(g, R.ans).length : 0;
-  const status = g.done ? (g.won ? `<p class="status won">Solved with ${wrong} miss${wrong === 1 ? "" : "es"}${g.hints ? ` and ${g.hints} hint${g.hints > 1 ? "s" : ""}` : ""}.</p>` : `<p class="status lost">Hanged today. The word was <b>${esc(R.ans.shown)}</b>.</p>`)
-    : g.guessed.length ? `<p class="status">In progress: ${wrong} of ${MAX_MISS} misses used.</p>` : `<p class="status">${R.ans.key.replace(/[^A-Z]/g, "").length} letters, ${MAX_MISS} misses allowed.</p>`;
+  const status = g.done ? (g.won ? `<p class="status won">Solved today. See you tomorrow.</p>` : `<p class="status lost">Hanged today. Back tomorrow for revenge.</p>`)
+    : g.guessed.length ? `<p class="status">You're partway through. The rope is waiting.</p>` : "";
   const week = [...Array(7)].map((_, i) => { const k = shiftDay(t.key, i - 6), r = H[k], dn = new Date(k + "T12:00").toLocaleDateString(undefined, {weekday: "narrow"});
     return `<i class="${r && r.done ? (r.won ? "won" : "lost") : ""}" title="${k}${r && r.done ? (r.won ? ": solved" : ": hanged") : ": not played"}">${dn}</i>`; }).join("");
   const dateLabel = t.date.toLocaleDateString(undefined, {weekday: "long", day: "numeric", month: "long"});
   const total = WORDS.length.toLocaleString();
-  return `<header class="top"><a class="brand" href="#">Lexicon <i>Hangman</i></a><span class="grow"></span><span class="pill" title="Days in a row you've solved the word of the day">Streak <b>${streak}</b></span></header>
+  return `<header class="top"><a class="brand" href="#" aria-label="Dr Tom's Lexicon Hangman, home"><span>Dr Tom's Lexicon</span><small>Hangman</small></a><span class="grow"></span><span class="pill" title="Days in a row you've solved the word of the day">Streak <b>${streak}</b></span></header>
   <section class="hero">
     <div class="eyebrow">Word of the day · No. ${t.no} · ${esc(dateLabel)}</div>
-    <h1>One rare word. <em>Eight</em> wrong guesses and you hang.</h1>
+    <h1>You've watched every episode. <em>Were you listening?</em></h1>
     ${trendLine(t)}
-    <div class="teaser" aria-hidden="true">${[...R.ans.key].map(c => `<span class="${/[A-Z]/.test(c) ? "" : "gap"}"></span>`).join("")}</div>
     ${status}
     <div class="row"><a class="btn primary" href="#today">${g.done ? "See today's word" : g.guessed.length ? "Carry on" : "Play today's word"}</a></div>
   </section>
-  <section class="section">
-    <h2>Keep playing</h2>
-    <p>As many rounds as you like, from <span class="sel-sum">${esc(selSummary(sel))}</span>. <span class="muted">${pool.toLocaleString()} words.</span></p>
-    <div class="row"><a class="btn primary" href="#play">Play a word</a><a class="btn" href="#sources">Choose shows, plays or books</a></div>
+  <section class="pick">
+    <p><b>Pick your own</b>${sel.size ? `Rounds from ${esc(selSummary(sel))}.` : "Rounds from any show, film, play or book."}</p>
+    <div class="btns">${sel.size ? `<a class="btn primary" href="#play">Play</a><a class="btn" href="#sources">Change</a>`
+      : `<a class="btn primary" href="#sources">Choose one</a><a class="btn" href="#play">Surprise me</a>`}</div>
   </section>
   <section class="section">
     <h2>Your record</h2>
     <div class="stats">
       <div class="stat"><div class="eyebrow">Daily streak</div><div class="big">${streak}<small>best ${best}</small></div><div class="week" aria-label="The last seven days">${week}</div></div>
-      <div class="stat"><div class="eyebrow">Keep playing</div><div class="big">${run.cur}<small>in a row · best ${run.best}</small></div>
-        <p class="muted">${run.won} of ${run.played} solved</p></div>
+      <div class="stat"><div class="eyebrow">Daily run</div><div class="big">${run.cur}<small>best ${run.best}</small></div>
+        <p class="muted">Words in a row today from your own picks</p></div>
     </div>
     <p class="muted" style="font-size:.85rem">Your streaks are saved in this browser only.</p>
   </section>
-  <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Free, non-commercial and fan-made; not affiliated with any show, film or studio. Quotes are short lines for studying the words, and stay the property of their owners; many were found via Wikiquote. Definitions from WordNet and Wiktionary (CC BY-SA 4.0). Part of <a href="${MAIN}" target="_blank" rel="noopener">Dr Tom's Lexicon</a> · <a href="${CREDITS}" target="_blank" rel="noopener">Credits, licences and removal requests</a>.</footer>`;
+  <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Free, non-commercial and fan-made; not affiliated with any show, film or studio. Quotes are short lines for studying the words, and stay the property of their owners; many were found via Wikiquote. Definitions from WordNet and Wiktionary (CC BY-SA 4.0). <a href="${MAIN}" target="_blank" rel="noopener">Play the main Dr Tom's Lexicon game</a> · <a href="${CREDITS}" target="_blank" rel="noopener">Credits, licences and removal requests</a>.</footer>`;
 }
 function trendLine(t){
   const D = DAILY[t.key]; if (!D || !D.src) return "";
   const what = D.kind === "film" ? "films" : "TV shows";
-  const title = `<b>${esc(D.src)}</b>${D.kind === "film" && D.year ? ` (${esc(D.year)} film)` : ""}`;
-  if (D.rank && D.scope === "year") return `<p class="trend">Today's quote is from ${title}, one of the ${what} people looked up most on Wikipedia this year (number ${D.rank}).</p>`;
-  return D.rank ? `<p class="trend">Today's quote is from ${title}, number ${D.rank} among the ${what} people looked up most on Wikipedia this week.</p>`
-    : `<p class="trend">Today's quote is from <b>${esc(D.src)}</b>.</p>`;
+  const kind = D.kind === "film" ? (D.year ? `${esc(D.year)} film` : "film") : "TV";
+  const rank = !D.rank ? "" : D.scope === "year"
+    ? `<p class="src-rank"><b>No. ${D.rank}</b> among this year's most looked-up ${what} on Wikipedia</p>`
+    : `<p class="src-rank"><b>No. ${D.rank}</b> among the ${what} everyone's looking up this week</p>`;
+  return `<div class="from"><div class="eyebrow">Today's quote comes from</div><div class="src-name">${esc(D.src)}<i>${kind}</i></div>${rank}</div>`;
 }
 function gameView(){
   if (!game) return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">No words match what you've chosen. <a href="#sources">Choose something else</a>.</p>`;
   const R = resolve(game);
   if (!R){ store.set(game.mode === "daily" ? "today" : "more", null); return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">That word has been retired. <a href="#${game.mode === "daily" ? "today" : "play"}">Play another</a>.</p>`; }
   const {e, o, ans, src} = R, wrong = wrongOf(game, ans), left = MAX_MISS - wrong.length;
-  const label = game.mode === "daily" ? `Today · No. ${game.no}` : `Keep playing · ${esc(selection().size ? selSummary(selection()) : "everything")}`;
+  const label = game.mode === "daily" ? `Today · No. ${game.no}` : selection().size ? `Your pick · ${esc(selSummary(selection()))}` : "Surprise round";
   const head = `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">${label}</span>${game.mode === "daily" ? `<span class="pill">Streak <b>${dailyStreak()}</b></span>` : `<span class="pill">Run <b>${runStats().cur}</b></span>`}</header>`;
   const board = `<div class="board">${gallows(wrong.length, fresh.part, game.done && !game.won)}
     <figure class="quote"><blockquote>“${blankLine(o.line)}”</blockquote><figcaption>${credit(o, src)}</figcaption></figure></div>
@@ -471,17 +487,43 @@ function gameView(){
     `<button class="key${used.has(k) ? (need.has(k) ? " hit" : " no") : ""}" data-k="${k}" ${used.has(k) ? "disabled" : ""} aria-label="${k}">${k}</button>`).join("")}</div>`).join("")}</div>`;
   return head + board + hints + kbd;
 }
+const WIN_LINES = [
+  ["I love it when a plan comes together.", "Hannibal Smith, The A-Team"],
+  ["I'm kind of a big deal.", "Ron Burgundy, Anchorman"],
+  ["To infinity and beyond!", "Buzz Lightyear, Toy Story"],
+  ["Excellent.", "Mr. Burns, The Simpsons"],
+  ["Bazinga!", "Sheldon Cooper, The Big Bang Theory"],
+  ["Make it so.", "Captain Picard, Star Trek: The Next Generation"],
+  ["It's alive! It's alive!", "Henry Frankenstein, Frankenstein"],
+  ["You're a wizard, Harry.", "Hagrid, Harry Potter and the Philosopher's Stone"]];
+const FLAWLESS = [["I'm the king of the world!", "Jack Dawson, Titanic"], ["I feel the need... the need for speed!", "Maverick and Goose, Top Gun"]];
+const CLOSE_CALL = [["Inconceivable!", "Vizzini, The Princess Bride"]];
+const LOSE_LINES = [
+  ["D'oh!", "Homer Simpson, The Simpsons"],
+  ["I've made a huge mistake.", "Gob Bluth, Arrested Development"],
+  ["Houston, we have a problem.", "Jim Lovell, Apollo 13"],
+  ["You're gonna need a bigger boat.", "Chief Brody, Jaws"],
+  ["Game over, man! Game over!", "Hudson, Aliens"],
+  ["Boy, that escalated quickly.", "Ron Burgundy, Anchorman"],
+  ["Well, nobody's perfect.", "Osgood Fielding III, Some Like It Hot"],
+  ["I'm not even supposed to be here today!", "Dante Hicks, Clerks"]];
+const DAILY_LOSS = [["After all, tomorrow is another day!", "Scarlett O'Hara, Gone with the Wind"], ["I'll be back.", "The Terminator, The Terminator"]];
+function lineFor(g, wrong){
+  const pool = g.won ? (wrong === 0 ? FLAWLESS : wrong >= MAX_MISS - 1 ? CLOSE_CALL : WIN_LINES) : (g.mode === "daily" ? DAILY_LOSS.concat(LOSE_LINES) : LOSE_LINES);
+  return pool[fnv((g.day || "") + g.w + g.line) % pool.length];
+}
 function resultView(R){
   const {e, o, ans, src} = R, g = game, wrong = wrongOf(g, ans).length;
   const differs = fold(ans.shown).toLowerCase() !== fold(e.w).toLowerCase();
-  const verdict = g.won ? `<p class="verdict won">Solved with ${wrong} miss${wrong === 1 ? "" : "es"}${g.hints ? ` and ${g.hints} hint${g.hints > 1 ? "s" : ""}` : ""}.</p>`
-    : `<p class="verdict lost">Hanged. The word was:</p>`;
+  const [say, who] = lineFor(g, wrong);
+  const verdict = `<figure class="quip ${g.won ? "won" : "lost"}"><blockquote>“${esc(say)}”</blockquote><figcaption>${esc(who)}</figcaption></figure>
+    <p class="verdict ${g.won ? "won" : "lost"}">${g.won ? `Solved with ${wrong} miss${wrong === 1 ? "" : "es"}${g.hints ? ` and ${g.hints} hint${g.hints > 1 ? "s" : ""}` : ""}.` : "Hanged. The word was:"}</p>`;
   const others = [], seen = new Set([o.s]);
   for (const x of e.occ){ if (!seen.has(x.s)){ seen.add(x.s); others.push(x); } if (others.length === 2) break; }
   const moreSrc = new Set(e.occ.map(x => x.s)).size - 1 - others.length;
   const shakesSense = src.cat === "shakes" && e.sdef;
   const streakLine = g.mode === "daily" ? `Daily streak: <b>${dailyStreak()}</b> day${dailyStreak() === 1 ? "" : "s"}. Come back tomorrow for No. ${g.no + 1}.`
-    : (() => { const r = runStats(); return `Run: <b>${r.cur}</b> in a row (best ${r.best}).`; })();
+    : (() => { const r = runStats(); return `Daily run: <b>${r.cur}</b> in a row today (best ${r.best}).`; })();
   const issue = `${ISSUES}?title=${encodeURIComponent(`Hangman: problem with "${e.w}"`)}&body=${encodeURIComponent(`Word: ${e.w}\nQuote: ${plain(o.line)}\nSource: ${src.name}\n\nWhat's wrong:\n`)}`;
   return `<section class="result" aria-live="polite">
     ${verdict}
@@ -493,8 +535,8 @@ function resultView(R){
     ${others.length ? `<div class="also"><div class="eyebrow">Also turns up in</div><ul>${others.map(x => `<li><span class="q">“${safe(x.line)}”</span><br><span class="muted">${credit(x, SRC[x.s])}</span></li>`).join("")}</ul>
       ${moreSrc > 0 ? `<p class="muted">…and ${moreSrc} other place${moreSrc === 1 ? "" : "s"}.</p>` : ""}</div>` : ""}
     <p>${streakLine}</p>
-    <div class="row">${g.mode === "daily" ? `<button class="btn primary" id="share">Share result</button><a class="btn" href="#play">Keep playing</a>`
-      : `<button class="btn primary" id="next">Next word</button><a class="btn" href="#sources">Choose what to play</a>`}</div>
+    <div class="row">${g.mode === "daily" ? `<button class="btn primary" id="share">Share result</button><a class="btn" href="#sources">Pick your own</a>`
+      : `<button class="btn primary" id="next">Next word</button><a class="btn" href="#sources">Change pick</a>`}</div>
     <div class="links"><a href="https://www.google.com/search?q=${encodeURIComponent("how to pronounce " + e.w)}" target="_blank" rel="noopener">Hear it said ↗</a>
       <a href="${issue}" target="_blank" rel="noopener">Report a problem or ask for this quote to be removed ↗</a></div>
   </section>`;
@@ -587,7 +629,7 @@ function wirePicker(){
 }
 function shareResult(){
   const R = resolve(game), wrong = wrongOf(game, R.ans).length;
-  const text = `Lexicon Hangman No. ${game.no}\n${game.won ? `Solved with ${wrong} of ${MAX_MISS} misses${game.hints ? `, ${game.hints} hint${game.hints > 1 ? "s" : ""}` : ""}` : "Hanged"}\n${"■".repeat(wrong)}${"□".repeat(MAX_MISS - wrong)}\nStreak: ${dailyStreak()}\n${SITE}`;
+  const text = `Dr Tom's Lexicon · Hangman No. ${game.no}\n${game.won ? `Solved with ${wrong} of ${MAX_MISS} misses${game.hints ? `, ${game.hints} hint${game.hints > 1 ? "s" : ""}` : ""}` : "Hanged"}\n${"■".repeat(wrong)}${"□".repeat(MAX_MISS - wrong)}\nStreak: ${dailyStreak()}\n${SITE}`;
   const copy = () => navigator.clipboard ? navigator.clipboard.writeText(text).then(() => toast("Result copied"), () => toast("Couldn't copy here")) : toast("Couldn't copy here");
   if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) navigator.share({text}).catch(copy); else copy();
 }

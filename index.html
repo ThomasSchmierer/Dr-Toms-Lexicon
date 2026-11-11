@@ -322,11 +322,11 @@ function loadEdition(k){
 }
 
 const VERDICTS = [
- [90,"Transcendent, bébé. You were born for the marquee."],
- [70,"A most commendable performance."],
- [45,"In the vicinity. You can see the theatre from here."],
- [20,"A valiant attempt, darling, from a considerable distance."],
- [0,"No. But we shan't speak of it again."]];
+ [90,"“I'm the king of the world!” (Jack Dawson, Titanic)"],
+ [70,"“I love it when a plan comes together.” (Hannibal Smith, The A-Team)"],
+ [45,"“Well, nobody's perfect.” (Osgood Fielding III, Some Like It Hot)"],
+ [20,"“I've made a huge mistake.” (Gob Bluth, Arrested Development)"],
+ [0,"“D'oh!” (Homer Simpson, The Simpsons)"]];
 const verdictFor = s => VERDICTS.find(v => s >= v[0])[1];
 
 /* ===== Storage (best effort) ===== */
@@ -414,7 +414,7 @@ function hits(terms, gN, gS){
 const listJoin = a => a.length < 2 ? a[0] : a.slice(0,-1).join(", ") + " and " + a[a.length-1];
 function scoreGuess(entry, guess){
   const L = entry.lex, gN = norm(guess), gS = toks(guess);
-  if (!gS.length) return {score:0, feedback:"Nothing to judge, darling."};
+  if (!gS.length) return {score:0, feedback:"Nothing to judge yet: type a guess first."};
   if (entry.mode === "meant"){
     const c = L.concepts[0];
     if (hits(compile(entry.target), gN, gS)) return {score:100, feedback:`Spot on: the word was ${entry.target}.`};
@@ -433,7 +433,7 @@ function scoreGuess(entry, guess){
 }
 function scoreEty(entry, guess){
   const gN = norm(guess), gS = toks(guess);
-  if (!gS.length) return {score:0, feedback:"Nothing to judge, darling."};
+  if (!gS.length) return {score:0, feedback:"Nothing to judge yet: type a guess first."};
   return scoreConcepts(entry.etyLex, gN, gS);
 }
 function expandGuess(gS, gN){
@@ -611,7 +611,7 @@ const total = r => r.score + (r.escore || 0);
 const bar = n => { n = Math.round(n/10); return "🟪".repeat(n) + "⬜".repeat(10-n); };
 function shareText(r){
   const e = DB.words[dailyKey(ed)], t = today(), url = siteUrl(), tot = total(r);
-  return `${DB.editions[ed].full} No. ${t.no}\n${e.w}: ${tot}/200${r.hint ? " (with a hint)" : ""}\nMeaning ${bar(r.score)} ${r.score}\nOrigin  ${bar(r.escore)} ${r.escore}\n“${verdictFor(tot/2)}”` + (url ? `\nBeat me: ${url}#${ed}-beat-${tot}` : "");
+  return `${DB.editions[ed].full} No. ${t.no}\n${e.w}: ${tot}/200${r.hint ? " (with a hint)" : ""}\nMeaning ${bar(r.score)} ${r.score}\nOrigin  ${bar(r.escore)} ${r.escore}\n${verdictFor(tot/2)}` + (url ? `\nBeat me: ${url}#${ed}-beat-${tot}` : "");
 }
 
 function renderHeader(){
@@ -1283,7 +1283,7 @@ function renderCross(st){
     ${curWord ? `<div class="cw-bar"><b>${curWord.num} ${curWord.dir==="a" ? "across" : "down"}</b> ${clueBlock(curWord.e)}</div>` : `<p class="muted">Tap a square or a clue to start. Tap the same square again to switch between across and down.</p>`}
     <div class="cw-wrap"><div class="cw" style="--cols:${w.cols};--rows:${w.rows}">${cells}</div></div>
     <input id="cw-in" class="cw-in" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Type a letter">
-    ${w.done ? `<div class="banner"><b>Solved.</b> A triumph, darling.</div>` : ""}
+    ${w.done ? `<div class="banner"><b>Solved.</b> “Excellent.” (Mr. Burns, The Simpsons)</div>` : ""}
     <div class="row"><button id="cw-check">Check</button><button id="cw-reveal" ${curWord ? "" : "disabled"}>Reveal word</button><button class="primary" id="cw-new">New crossword</button></div>
     <div class="cw-lists"><div><h3>Across</h3><ol>${list("a")}</ol></div><div><h3>Down</h3><ol>${list("d")}</ol></div></div>`;
   st.querySelectorAll(".cw-c").forEach(b => b.onclick = () => {
