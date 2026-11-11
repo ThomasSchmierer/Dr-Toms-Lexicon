@@ -1,0 +1,30 @@
+{
+ "updated": "2026-11-11",
+ "measure": "English Wikipedia page views over the last 7 days",
+ "days": {
+  "2026-11-11": {
+   "w": "quintillion",
+   "line": "…when Tony died. I ran over a <mark>quintillion</mark> strategic calculations that day and I still…",
+   "src": "VisionQuest",
+   "kind": "tv",
+   "rank": 2,
+   "views": 343413
+  },
+  "2026-11-12": {
+   "w": "impassible",
+   "line": "But, th-th-that's the <mark>impassible</mark> wilderness. You can't pass through. That's...that's why they call it \"impassible\".",
+   "src": "Wildwood",
+   "kind": "film",
+   "rank": 4,
+   "views": 288009
+  },
+  "2026-11-13": {
+   "w": "endangerment",
+   "line": "…at three strikes. Grand theft auto, reckless <mark>endangerment</mark>, and that little bridge stunt of yours?…",
+   "src": "XXX",
+   "kind": "film",
+   "rank": 5,
+   "views": 283677
+  }
+ }
+}

@@ -1,6 +1,327 @@
 {
  "updated": "2026-11-11",
  "measure": "English Wikipedia page views over the last 7 days",
- "screen_titles_found": 151,
- "titles": []
+ "screen_titles_found": 175,
+ "titles": [
+  {
+   "title": "Godzilla Minus Zero",
+   "wikiquote": "Godzilla Minus Zero",
+   "kind": "film",
+   "description": "2026 Japanese film by Takashi Yamazaki",
+   "views": 738219,
+   "rank": 1
+  },
+  {
+   "title": "VisionQuest",
+   "wikiquote": "VisionQuest",
+   "kind": "tv",
+   "description": "Marvel Studios television miniseries",
+   "views": 343413,
+   "rank": 2
+  },
+  {
+   "title": "Clayface (film)",
+   "wikiquote": "Clayface (film)",
+   "kind": "film",
+   "description": "2026 DC Studios film",
+   "views": 307816,
+   "rank": 3
+  },
+  {
+   "title": "Wildwood (film)",
+   "wikiquote": "Wildwood (film)",
+   "kind": "film",
+   "description": "2026 film by Travis Knight",
+   "views": 288009,
+   "rank": 4
+  },
+  {
+   "title": "XXX (2002 film)",
+   "wikiquote": "XXX (2002 film)",
+   "kind": "film",
+   "description": "American action film directed by Rob Cohen",
+   "views": 283677,
+   "rank": 5
+  },
+  {
+   "title": "Godzilla Minus One",
+   "wikiquote": "Godzilla Minus One",
+   "kind": "film",
+   "description": "2023 film by Takashi Yamazaki",
+   "views": 264902,
+   "rank": 6
+  },
+  {
+   "title": "Resident Evil (2026 film)",
+   "wikiquote": "Resident Evil (2026 film)",
+   "kind": "film",
+   "description": "Film by Zach Cregger",
+   "views": 257761,
+   "rank": 7
+  },
+  {
+   "title": "I, Robot (film)",
+   "wikiquote": "I, Robot (film)",
+   "kind": "film",
+   "description": "2004 film by Alex Proyas",
+   "views": 247732,
+   "rank": 8
+  },
+  {
+   "title": "The Odyssey (2026 film)",
+   "wikiquote": "The Odyssey (2026 film)",
+   "kind": "film",
+   "description": "Film by Christopher Nolan",
+   "views": 244744,
+   "rank": 9
+  },
+  {
+   "title": "Primetime (film)",
+   "wikiquote": "Primetime (film)",
+   "kind": "film",
+   "description": "2026 film by Lance Oppenheim",
+   "views": 235458,
+   "rank": 10
+  },
+  {
+   "title": "MobLand",
+   "wikiquote": "MobLand",
+   "kind": "tv",
+   "description": "2025 British crime drama television series",
+   "views": 225543,
+   "rank": 11
+  },
+  {
+   "title": "Obsession (2025 film)",
+   "wikiquote": "Obsession (2025 film)",
+   "kind": "film",
+   "description": "Film by Curry Barker",
+   "views": 156882,
+   "rank": 12
+  },
+  {
+   "title": "The Cat in the Hat (2026 film)",
+   "wikiquote": "The Cat in the Hat (2026 film)",
+   "kind": "film",
+   "description": "2026 animated film",
+   "views": 152206,
+   "rank": 13
+  },
+  {
+   "title": "The Gilded Age (TV series)",
+   "wikiquote": "The Gilded Age (TV series)",
+   "kind": "tv",
+   "description": "American historical drama television series",
+   "views": 120324,
+   "rank": 14
+  },
+  {
+   "title": "Street Fighter (2026 film)",
+   "wikiquote": "Street Fighter (2026 film)",
+   "kind": "film",
+   "description": "2026 film by Kitao Sakurai",
+   "views": 112674,
+   "rank": 15
+  },
+  {
+   "title": "Backrooms (film)",
+   "wikiquote": "Backrooms",
+   "kind": "film",
+   "description": "2026 film by Kane Parsons",
+   "views": 107618,
+   "rank": 16
+  },
+  {
+   "title": "Get Him to the Greek",
+   "wikiquote": "Get Him to the Greek",
+   "kind": "film",
+   "description": "2010 American comedy film by Nicholas Stoller",
+   "views": 99096,
+   "rank": 17
+  },
+  {
+   "title": "To Catch a Predator",
+   "wikiquote": "To Catch a Predator",
+   "kind": "tv",
+   "description": "American reality television series",
+   "views": 91844,
+   "rank": 18
+  },
+  {
+   "title": "The Invite",
+   "wikiquote": "The Invite",
+   "kind": "film",
+   "description": "2026 film by Olivia Wilde",
+   "views": 81675,
+   "rank": 19
+  },
+  {
+   "title": "Interstellar (film)",
+   "wikiquote": "Interstellar (film)",
+   "kind": "film",
+   "description": "2014 film by Christopher Nolan",
+   "views": 69149,
+   "rank": 20
+  },
+  {
+   "title": "The Housemaid (2025 film)",
+   "wikiquote": "The Housemaid (2025 film)",
+   "kind": "film",
+   "description": "2025 film by Paul Feig",
+   "views": 68623,
+   "rank": 21
+  },
+  {
+   "title": "Disclosure Day",
+   "wikiquote": "Disclosure Day",
+   "kind": "film",
+   "description": "2026 film by Steven Spielberg",
+   "views": 67698,
+   "rank": 22
+  },
+  {
+   "title": "The Gentlemen (2024 TV series)",
+   "wikiquote": "The Gentlemen",
+   "kind": "tv",
+   "description": "TV series created by Guy Ritchie",
+   "views": 67427,
+   "rank": 23
+  },
+  {
+   "title": "Buddy (2026 film)",
+   "wikiquote": "Buddy (2026 film)",
+   "kind": "film",
+   "description": "2026 film by Casper Kelly",
+   "views": 66314,
+   "rank": 24
+  },
+  {
+   "title": "The Dropout",
+   "wikiquote": "The Dropout",
+   "kind": "tv",
+   "description": "2022 American drama television miniseries",
+   "views": 61562,
+   "rank": 25
+  },
+  {
+   "title": "Digger (2026 film)",
+   "wikiquote": "Digger (2026 film)",
+   "kind": "film",
+   "description": "Film by Alejandro G. Iñárritu",
+   "views": 61348,
+   "rank": 26
+  },
+  {
+   "title": "V for Vendetta (film)",
+   "wikiquote": "V for Vendetta (film)",
+   "kind": "film",
+   "description": "2005 film by James McTeigue",
+   "views": 58677,
+   "rank": 27
+  },
+  {
+   "title": "Shin Godzilla",
+   "wikiquote": "Shin Godzilla",
+   "kind": "film",
+   "description": "2016 film by Hideaki Anno and Shinji Higuchi",
+   "views": 58388,
+   "rank": 28
+  },
+  {
+   "title": "Rocky",
+   "wikiquote": "Rocky (film)",
+   "kind": "film",
+   "description": "1976 film by John G. Avildsen",
+   "views": 56107,
+   "rank": 29
+  },
+  {
+   "title": "Ghosts (American TV series)",
+   "wikiquote": "Ghosts (American TV series)",
+   "kind": "tv",
+   "description": "2021 American television sitcom)",
+   "views": 54729,
+   "rank": 30
+  },
+  {
+   "title": "Project Hail Mary (film)",
+   "wikiquote": "Project Hail Mary",
+   "kind": "film",
+   "description": "2026 film by Phil Lord and Christopher Miller",
+   "views": 51141,
+   "rank": 31
+  },
+  {
+   "title": "Forgetting Sarah Marshall",
+   "wikiquote": "Forgetting Sarah Marshall",
+   "kind": "film",
+   "description": "2008 film by Nicholas Stoller",
+   "views": 47792,
+   "rank": 32
+  },
+  {
+   "title": "Weapons (2025 film)",
+   "wikiquote": "Weapons (2025 film)",
+   "kind": "film",
+   "description": "2025 American film by Zach Cregger",
+   "views": 46784,
+   "rank": 33
+  },
+  {
+   "title": "The Graduate",
+   "wikiquote": "The Graduate",
+   "kind": "film",
+   "description": "1967 film by Mike Nichols",
+   "views": 41713,
+   "rank": 34
+  },
+  {
+   "title": "Dirty Sanchez (TV series)",
+   "wikiquote": "Dirty Sanchez",
+   "kind": "tv",
+   "description": "British stunt and prank television series",
+   "views": 41159,
+   "rank": 35
+  },
+  {
+   "title": "Will Trent",
+   "wikiquote": "Will Trent",
+   "kind": "tv",
+   "description": "2023 American police procedural crime drama television series",
+   "views": 38446,
+   "rank": 36
+  },
+  {
+   "title": "Forgotten Island",
+   "wikiquote": "Forgotten Island",
+   "kind": "film",
+   "description": "2026 DreamWorks Animation film",
+   "views": 36738,
+   "rank": 37
+  },
+  {
+   "title": "Superman (2025 film)",
+   "wikiquote": "Superman (2025 film)",
+   "kind": "film",
+   "description": "DC Studios film by James Gunn",
+   "views": 32240,
+   "rank": 38
+  },
+  {
+   "title": "Dune (2021 film)",
+   "wikiquote": "Dune (2021 film)",
+   "kind": "film",
+   "description": "Film by Denis Villeneuve",
+   "views": 31263,
+   "rank": 39
+  },
+  {
+   "title": "Eyes Wide Shut",
+   "wikiquote": "Eyes Wide Shut",
+   "kind": "film",
+   "description": "1999 film by Stanley Kubrick",
+   "views": 28696,
+   "rank": 40
+  }
+ ]
 }

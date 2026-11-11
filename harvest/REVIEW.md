@@ -5,12 +5,12 @@ uncommon English word, it isn't rude, a name or a fragment, and the two dictiona
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 2775 words (2160 confirmed by both dictionaries)
-- **Settled by a tie-break:** 61 (listed below if you want to spot-check them)
+- **Approved:** 2792 words (2171 confirmed by both dictionaries)
+- **Settled by a tie-break:** 62 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 8740
-- **Already in the game, or only in books:** 2302 (these still get cross-references)
-- **Words used in more than one show:** 912
+- **Rejected:** 8838
+- **Already in the game, or only in books:** 2297 (these still get cross-references)
+- **Words used in more than one show:** 922
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -24,6 +24,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **nibble**: A Bit of Fry and Laurie, A Doll's House, Blackadder, Cheers, Futurama, The Great Gatsby, The Vicar of Dibley
 - **retort**: Buffy the Vampire Slayer, Firefly, Parks and Recreation, The Great Gatsby, The Importance of Being Earnest, The Simpsons, The Thick of It
 - **gibberish**: Futurama, Gilmore Girls, QI, Seinfeld, Sports Night, The Great Gatsby, The Thick of It
+- **scoff**: Frasier, Gilmore Girls, QI, Spaced, Star Trek: The Next Generation, The Thick of It, VisionQuest
 - **euphemism**: Frasier, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Great Gatsby, Wings
 - **snicker**: Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Simpsons, The West Wing, Wings
 - **loathsome**: A Doll's House, Monty Python's Flying Circus, Poems of Gerard Manley Hopkins, Seinfeld, The Simpsons, The Thick of It
@@ -37,7 +38,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **nourish**: Cheers, Gilmore Girls, Red Dwarf, The Great Gatsby, The West Wing, Veep
 - **murmur**: Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Simpsons
 - **girth**: 30 Rock, Gilmore Girls, Poems of Gerard Manley Hopkins, QI, Studio 60 on the Sunset Strip, The Simpsons
-- **scoff**: Frasier, Gilmore Girls, QI, Spaced, Star Trek: The Next Generation, The Thick of It
 - **chafe**: Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest
 - **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Peep Show, The Big Bang Theory
 - **urinate**: 30 Rock, Blackadder, Buffy the Vampire Slayer, Sherlock, The Simpsons, The Thick of It
@@ -54,8 +54,8 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **girlie**: Buffy the Vampire Slayer, Monty Python's Flying Circus, Red Dwarf, The Young Ones, Veep
 - **scuse**: Dad's Army, Red Dwarf, The Simpsons, The Thick of It, The Young Ones
 - **sordid**: Blackadder, Hot Fuzz, Inspector Morse, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins
+- **squander**: Community, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, VisionQuest
 - **wriggle**: Futurama, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Thick of It
-- **sneer**: Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Thick of It
 
 ## Settled by a tie-break
 
@@ -66,6 +66,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | angelus | The sound of a bell rung in Roman Catholic churches to announce the time when the Angelus should be  | only WordNet has it, so it uses WordNet's meaning |
 | brolly | Colloquial terms for an umbrella. | only WordNet has it, so it uses WordNet's meaning |
 | burbling | Uttered with unrestrained enthusiasm. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| canner | Someone or something which cans. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | carny | A person who works in a carnival (often one who uses exaggerated showmanship or fraud). | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | centimetre | A metric unit of length equal to one hundredth of a meter. | only WordNet has it, so it uses WordNet's meaning |
 | certifiably | With the potential for certification. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -129,21 +130,21 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 2754 |
-| everyday word | 1593 |
-| not in either dictionary (made up, a name or a typo) | 1467 |
-| fragment of a longer word or a contraction | 1340 |
-| an everyday object, animal or food | 346 |
-| not an English word (foreign or a name) | 263 |
+| an everyday word with a prefix or suffix | 2770 |
+| everyday word | 1602 |
+| not in either dictionary (made up, a name or a typo) | 1502 |
+| fragment of a longer word or a contraction | 1357 |
+| an everyday object, animal or food | 347 |
+| not an English word (foreign or a name) | 276 |
 | rude or upsetting meaning | 246 |
-| only heard in lines with swearing | 242 |
+| only heard in lines with swearing | 245 |
 | rude or upsetting | 146 |
-| not a whole word in the quote | 128 |
-| a name, not a word | 58 |
+| not a whole word in the quote | 129 |
+| a name, not a word | 60 |
 | a misspelling, abbreviation or contraction | 52 |
 | marked vulgar or offensive in Wiktionary | 42 |
 | body part | 33 |
-| a name (only capitalised in the dictionary) | 14 |
+| a name (only capitalised in the dictionary) | 15 |
 | too obscure to check in either dictionary | 11 |
 | only a spelling variant or form of another word | 3 |
 | everyday word with many meanings | 1 |
@@ -153,6 +154,23 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| uplink | A transmission from Earth to a spacecraft or the path of such a transmission. | I, Robot |
+| spankable | Suitable for spanking. | I, Robot |
+| spoonie | A northern shoveler (Spatula clypeata, formerly Anas clypeata). | I, Robot |
+| canner | Someone or something which cans. | I, Robot |
+| camaraderie | The quality of affording easy familiarity and sociability. | Obsession |
+| engender | Make children. | I, Robot |
+| nanite | A nanoscale robot. | I, Robot |
+| quandary | A situation from which extrication is difficult especially an unpleasant or trying one. | XXX |
+| pillory | A wooden instrument of punishment on a post with holes for the wrists and neck; offenders were locked in and s | Primetime |
+| luminosity | The quality of being luminous; emitting or reflecting light. | The Great Gatsby, VisionQuest |
+| perceptual | Of or relating to the act of perceiving. | I, Robot |
+| wallow | Devote oneself entirely to something; indulge in to an immoderate degree, usually with pleasure. | Peep Show, Poems of Gerard Manley Hopkins, VisionQuest |
+| toxify | To make or render toxic. | I, Robot |
+| quintillion | The number that is represented as a one followed by 18 zeros. | VisionQuest |
+| impassible | Unable to feel emotion; impassive. | Wildwood |
+| postulate | Take as a given; assume as a postulate or axiom. | I, Robot |
+| fillet | Decorate with a lace of geometric designs. | Absolutely Fabulous, Dad's Army, Kath & Kim, Obsession, Poems of Gerard Manley Hopkins |
 | culotte | A divided skirt. | The Simpsons |
 | touché | An acknowledgement of a hit. | The Simpsons |
 | voilà | Lo, there it is; ta-da; presto; behold! | Gilmore Girls |
@@ -286,20 +304,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | strident | Conspicuously and offensively loud; given to vehement outcry. | The Great Gatsby, The Simpsons |
 | piggyback | Ride on someone's shoulders or back. | The Simpsons |
 | pardner | An associate in an activity or endeavor or sphere of common interest. | The Simpsons |
-| jocularity | Fun characterized by humor. | Star Trek: The Next Generation |
-| dismemberment | The removal of limbs; being cut to pieces. | Buffy the Vampire Slayer |
-| glamp | A glamping site. | Parks and Recreation |
-| unwatchable | That cannot be watched; that does not bear watching. | The Simpsons |
-| alphanumeric | Of or pertaining to alphanumeric characters. | Star Trek: The Next Generation |
-| avocation | An auxiliary activity. | The Big Bang Theory |
-| stolid | Having or revealing little emotion or sensibility; not easily aroused or excited; - Nordhoff & Hall. | Poems by Emily Dickinson, Star Trek: The Next Generation |
-| origami | The Japanese art of folding paper into shapes representing objects (e.g., flowers or birds). | The Simpsons |
-| separatee | One who has been separated. | Seinfeld |
-| upthrust | (geology) a rise of land to a higher elevation (as in the process of mountain building). | Futurama |
-| catacomb | An underground tunnel with recesses where bodies were buried (as in ancient Rome). | Buffy the Vampire Slayer, Poems by Emily Dickinson |
-| invertebrate | Lacking a backbone or spinal column. | Futurama |
-| endangerment | A source of danger; a possibility of incurring loss or misfortune. | Futurama |
-| schlubby | Clumsy, oafish, or socially awkward; unattractive or unkempt. | Futurama, Parks and Recreation |
-| aficionado | A fan of bull fighting. | The Simpsons |
-| sayonara | A farewell remark. | The Simpsons |
-| sammie | A sandwich. | Parks and Recreation |
