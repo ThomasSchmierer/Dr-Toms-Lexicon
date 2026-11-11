@@ -159,7 +159,11 @@ def wikt_batch(titles):
 
 def fetch(words, limit=None):
     cache = load_json(CACHE, {})
-    todo = [w for w in dict.fromkeys(list(words) + [k for k, v in cache.items() if v.get("s") and v.get("v", 1) < PARSER_VERSION])
+    # also: main forms of spelling variants looked up on earlier nights (voila -> voilà), and dictionary forms the reviewer asked for
+    gaps = [s[4] for v in cache.values() for s in v.get("s", []) if s[3] and s[4] and s[4] not in cache and s[4] == s[4].lower()
+            and re.fullmatch(r"[^\W\d_]+(?:[ '-][^\W\d_]+)*", s[4])]
+    gaps += load_json(os.path.join(HARVEST, "wiktionary-todo.json"), [])
+    todo = [w for w in dict.fromkeys(list(words) + gaps + [k for k, v in cache.items() if v.get("s") and v.get("v", 1) < PARSER_VERSION])
             if w not in cache or (cache[w].get("s") and cache[w].get("v", 1) < PARSER_VERSION)]
     if limit: todo = todo[:limit]
     print(f"Wiktionary: {len(cache)} words cached, {len(todo)} to look up")
@@ -614,7 +618,7 @@ def approve(today_only=False):
     def wn_name_only(w):          # WordNet only has it with a capital letter: Brahms, Cajun, Stilton
         names = [l.name() for x in wn.synsets(w) for l in x.lemmas() if l.name().lower() == w]
         return bool(names) and all(n[:1].isupper() for n in names)
-    tiebreaks = []
+    tiebreaks, missing = [], set()
     def whole(tok, line):   # the word stands on its own in the quote (not "-ocres" from "mediocre")
         return re.search(r"(?i)(?<![A-Za-z])(?<!(?<!-)-)" + re.escape(tok) + r"(?![A-Za-z])(?!-[A-Za-z])", line or "") is not None
     def syn_for(w):         # WordNet senses for exactly this form (wn.synsets("vexed") would also return "vex")
@@ -650,6 +654,7 @@ def approve(today_only=False):
             wsrc = variant                                       # an alternative spelling: take the meaning from the main spelling
             if not syn_for(head): base = variant
         in_cache = head in cache or base in cache
+        if not in_cache: missing.update({head, base})
         wd = cache.get(head) or cache.get(base) or {}
         wsenses = [x for x in own_senses(head) if not x[3]] or [x for x in own_senses(wsrc or base) if not x[3]]
         all_senses = eng_senses(head) + ([] if base == head else eng_senses(base)) + (eng_senses(wsrc) if wsrc and wsrc != base else [])
@@ -922,6 +927,7 @@ def approve(today_only=False):
     save_json(os.path.join(ROOT, "counts.json"), {"all": len(order), "moira": sum("moira" in words[k]["editions"] for k in order),
               "kathkim": sum("kathkim" in words[k]["editions"] for k in order), "updated": today})
     save_json(DECISIONS, dict(sorted(decisions.items())), indent=0)
+    save_json(os.path.join(HARVEST, "wiktionary-todo.json"), sorted(w for w in missing if w and w not in cache))
     write_report(approved, review, rejected, exists, pre_rejects, words, order, fam_rows, cache, tiebreaks)
     print(f"Approved {len(order)} words ({sum(1 for k in order if words[k]['chk'] == 2)} confirmed by both dictionaries), "
           f"{len(tiebreaks)} settled by tie-break, {len(review)} waiting for a lookup, {len(rejected)} rejected, {len(exists)} already in the game or only in books; "
