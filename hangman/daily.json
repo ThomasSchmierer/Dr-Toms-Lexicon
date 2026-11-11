@@ -1,0 +1,30 @@
+{
+ "updated": "2026-11-11",
+ "measure": "English Wikipedia page views over the last 7 days",
+ "days": {
+  "2026-11-11": {
+   "w": "gargantuan",
+   "line": "All hail our <mark>gargantuan</mark>, cyborg president. May death come quickly to his enemies.",
+   "src": "Futurama",
+   "kind": "tv",
+   "rank": 0,
+   "views": 0
+  },
+  "2026-11-12": {
+   "w": "paediatrician",
+   "line": "…to put her down. He's a very good <mark>paediatrician</mark> but that is an unfortunate name.",
+   "src": "30 Rock",
+   "kind": "tv",
+   "rank": 0,
+   "views": 0
+  },
+  "2026-11-13": {
+   "w": "vindictive",
+   "line": "I thought it would look petty and <mark>vindictive</mark> not to, and as a petty and…",
+   "src": "Peep Show",
+   "kind": "tv",
+   "rank": 0,
+   "views": 0
+  }
+ }
+}
