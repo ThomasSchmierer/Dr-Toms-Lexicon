@@ -443,7 +443,8 @@ function homeView(){
 function trendLine(t){
   const D = DAILY[t.key]; if (!D || !D.src) return "";
   const what = D.kind === "film" ? "films" : "TV shows";
-  return D.rank ? `<p class="trend">Today's quote is from <b>${esc(D.src)}</b>, number ${D.rank} among the ${what} people looked up most on Wikipedia this week.</p>`
+  const title = `<b>${esc(D.src)}</b>${D.kind === "film" && D.year ? ` (${esc(D.year)} film)` : ""}`;
+  return D.rank ? `<p class="trend">Today's quote is from ${title}, number ${D.rank} among the ${what} people looked up most on Wikipedia this week.</p>`
     : `<p class="trend">Today's quote is from <b>${esc(D.src)}</b>.</p>`;
 }
 function gameView(){

@@ -79,7 +79,9 @@ def make_daily(out):
                 if occ: cands.append((fnv(key + "|" + w[0]), w, occ))
             if cands:
                 _, w, occ = min(cands, key=lambda c: c[0])
-                pick = {"w": w[0], "line": occ[1], "src": name, "kind": t["kind"], "rank": t["rank"], "views": t["views"]}
+                year = re.search(r"\((\d{4})\b", t["wikiquote"]) or re.search(r"\b(\d{4})\b", t.get("description", ""))
+                pick = {"w": w[0], "line": occ[1], "src": name, "kind": t["kind"], "rank": t["rank"], "views": t["views"],
+                        "year": year.group(1) if year else ""}
                 break
         if not pick:                                                         # nothing trending fits: any TV or film word
             cands = [(fnv(key + "|" + w[0]), w, o) for w in out["w"] if w[6] != 0 and w[0] not in used_words
@@ -103,6 +105,8 @@ def main():
     from wordfreq import zipf_frequency
     rarity = lambda w: max(1, min(10, round(10 - zipf_frequency(w, "en") * 2.6)))
 
+    for t in load(os.path.join("harvest", "trending.json"), {"titles": []}).get("titles", []):   # trending films are films
+        if t.get("kind") == "film": FILMS.add(show_name(t["wikiquote"]))
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     db = json.loads(re.search(r'<script id="db" type="application/json">(.*?)</script>', html, re.S).group(1))
     approved = load("approved-all.json", {"words": {}, "order": [], "shows": {}})

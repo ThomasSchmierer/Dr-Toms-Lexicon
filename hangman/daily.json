@@ -8,7 +8,8 @@
    "src": "VisionQuest",
    "kind": "tv",
    "rank": 2,
-   "views": 343413
+   "views": 343413,
+   "year": ""
   },
   "2026-11-12": {
    "w": "impassible",
@@ -16,7 +17,8 @@
    "src": "Wildwood",
    "kind": "film",
    "rank": 4,
-   "views": 288009
+   "views": 288009,
+   "year": "2026"
   },
   "2026-11-13": {
    "w": "endangerment",
@@ -24,7 +26,8 @@
    "src": "XXX",
    "kind": "film",
    "rank": 5,
-   "views": 283677
+   "views": 283677,
+   "year": "2002"
   }
  }
 }
