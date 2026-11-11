@@ -1,14 +1,16 @@
-# Word review (2026-11-10)
+# Word review (2026-11-11)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
-(or Wiktionary alone defines it, when WordNet doesn't have it).
+(or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
+decides, so nothing waits for a person.
 
-- **Approved:** 2705 words (2153 confirmed by both dictionaries)
-- **Need a human:** 102
-- **Rejected:** 8708
+- **Approved:** 2771 words (2153 confirmed by both dictionaries)
+- **Settled by a tie-break:** 66 (listed below if you want to spot-check them)
+- **Waiting for their dictionary lookup:** 3 (checked on the next run)
+- **Rejected:** 8741
 - **Already in the game, or only in books:** 2302 (these still get cross-references)
-- **Words used in more than one show:** 900
+- **Words used in more than one show:** 912
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -55,112 +57,78 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **wriggle**: Futurama, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Thick of It
 - **sneer**: Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Thick of It
 
-## Need a human
+## Settled by a tie-break
 
-| Word | Why | Sightings |
+Nothing needs you here. These were decided by rule; put **n** in the keep column to drop one.
+
+| Word | Meaning used | Why |
 |---|---|---|
-| whoopee | WordNet and Wiktionary don't agree on a meaning | 4 |
-| hippy | WordNet and Wiktionary don't agree on a meaning | 3 |
-| entree | only in WordNet (Wiktionary has no English meaning for it) | 3 |
-| malevolence | WordNet and Wiktionary don't agree on a meaning | 3 |
-| frisbee | only in WordNet (Wiktionary has no English meaning for it) | 2 |
-| certifiably | several meanings and the quote doesn't show which | 2 |
-| cul-de-sac | several meanings and the quote doesn't show which | 2 |
-| eclair | only in WordNet (Wiktionary has no English meaning for it) | 2 |
-| homburg | only in WordNet (Wiktionary has no English meaning for it) | 2 |
-| begorra | only in WordNet (Wiktionary has no English meaning for it) | 2 |
-| rarefy | WordNet and Wiktionary don't agree on a meaning | 2 |
-| disobedient | WordNet and Wiktionary don't agree on a meaning | 2 |
-| mump | several meanings and the quote doesn't show which | 2 |
-| eskimo | only in WordNet (Wiktionary has no English meaning for it) | 2 |
-| scrawny | WordNet and Wiktionary don't agree on a meaning | 2 |
-| unambiguously | WordNet and Wiktionary don't agree on a meaning | 2 |
-| kwanzaa | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| instigate | WordNet and Wiktionary don't agree on a meaning | 1 |
-| cajun | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| jangling | WordNet and Wiktionary don't agree on a meaning | 1 |
-| objectification | WordNet and Wiktionary don't agree on a meaning | 1 |
-| merlot | WordNet and Wiktionary don't agree on a meaning | 1 |
-| chilblains | WordNet and Wiktionary don't agree on a meaning | 1 |
-| angelus | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| wicca | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| smackeroonies | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| psst | several meanings and the quote doesn't show which | 1 |
-| hocus | several meanings and the quote doesn't show which | 1 |
-| nipping | WordNet and Wiktionary don't agree on a meaning | 1 |
-| unmarketable | WordNet and Wiktionary don't agree on a meaning | 1 |
-| getter | several meanings and the quote doesn't show which | 1 |
-| skelp | several meanings and the quote doesn't show which | 1 |
-| ween | several meanings and the quote doesn't show which | 1 |
-| brahms | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| hankie | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| jinks | WordNet and Wiktionary don't agree on a meaning | 1 |
-| microteslas | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| one-quintillionth | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| mafioso | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| delilah | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| negligee | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| unflagging | WordNet and Wiktionary don't agree on a meaning | 1 |
-| mountie | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| voila | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| spode | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| dippy | several meanings and the quote doesn't show which | 1 |
-| haitch | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| sheraton | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| perdu | several meanings and the quote doesn't show which | 1 |
-| recherche | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| caff | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| armagnac | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| munchkin | several meanings and the quote doesn't show which | 1 |
-| seance | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| astroturf | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| dudette | several meanings and the quote doesn't show which | 1 |
-| jettison | WordNet and Wiktionary don't agree on a meaning | 1 |
-| onesie | several meanings and the quote doesn't show which | 1 |
-| pawnee | WordNet and Wiktionary don't agree on a meaning | 1 |
-| whatshisname | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| dobby | several meanings and the quote doesn't show which | 1 |
-| centimetre | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| burbling | WordNet and Wiktionary don't agree on a meaning | 1 |
-| haggadah | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| grus | waiting for the Wiktionary lookup | 1 |
-| euclidean | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| raisinet | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| mee-maw | several meanings and the quote doesn't show which | 1 |
-| kraken | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| brolly | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| porcine | WordNet and Wiktionary don't agree on a meaning | 1 |
-| acadian | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| tippex | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| milligram | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| forrad | WordNet and Wiktionary don't agree on a meaning | 1 |
-| postum | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| octuplet | several meanings and the quote doesn't show which | 1 |
-| dutchie | several meanings and the quote doesn't show which | 1 |
-| carny | several meanings and the quote doesn't show which | 1 |
-| neddy | several meanings and the quote doesn't show which | 1 |
-| splay-legged | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| culotte | waiting for the Wiktionary lookup | 1 |
-| senora | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| liminal | several meanings and the quote doesn't show which | 1 |
-| nitroglycerin | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| jell-o | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| touche | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| golem | WordNet and Wiktionary don't agree on a meaning | 1 |
-| coptic | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| velcro | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| neanderthal | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| siamese | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| garotte | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| asbo | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| stilton | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| stetson | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| chevre | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| polygamous | WordNet and Wiktionary don't agree on a meaning | 1 |
-| haydn | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| kendal | only in WordNet (Wiktionary has no English meaning for it) | 1 |
-| qatari | waiting for the Wiktionary lookup | 1 |
-| hansard | only in WordNet (Wiktionary has no English meaning for it) | 1 |
+| angelus | The sound of a bell rung in Roman Catholic churches to announce the time when the Angelus should be  | only WordNet has it, so it uses WordNet's meaning |
+| brolly | Colloquial terms for an umbrella. | only WordNet has it, so it uses WordNet's meaning |
+| burbling | Uttered with unrestrained enthusiasm. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| caff | Informal British term for a cafe. | only WordNet has it, so it uses WordNet's meaning |
+| carny | A person who works in a carnival (often one who uses exaggerated showmanship or fraud). | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| centimetre | A metric unit of length equal to one hundredth of a meter. | only WordNet has it, so it uses WordNet's meaning |
+| certifiably | With the potential for certification. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| chevre | Made from goats' milk. | only WordNet has it, so it uses WordNet's meaning |
+| chilblains | Inflammation of the hands and feet caused by exposure to cold and moisture. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| cul-de-sac | A blind alley or dead end street. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| dippy | Lacking common sense. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| disobedient | Not obedient. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| dobby | A device in some looms that allows the weaving of small geometric patterns. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| dudette | A girl or woman, especially a masculine one. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| dutchie | A cannabis blunt rolled inside a Dutch Masters cigar. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| eclair | Oblong cream puff. | only WordNet has it, so it uses WordNet's meaning |
+| eskimo | A member of a people inhabiting the Arctic (northern Canada or Greenland or Alaska or eastern Siberi | only WordNet has it, so it uses WordNet's meaning |
+| euclidean | Relating to geometry as developed by Euclid. | only WordNet has it, so it uses WordNet's meaning |
+| forrad | Forehead. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| garotte | An instrument of execution for execution by strangulation. | only WordNet has it, so it uses WordNet's meaning |
+| getter | One who, or that which, gets. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| golem | A humanoid creature made from clay, animated by magic. The most famous was made by Rabbi Loew in the | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| haggadah | Talmudic literature that does not deal with law but is still part of Jewish tradition. | only WordNet has it, so it uses WordNet's meaning |
+| hankie | A square piece of cloth used for wiping the eyes or nose or as a costume accessory. | only WordNet has it, so it uses WordNet's meaning |
+| hippy | Having large or prominent hips. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| hocus | A magician, illusionist, one who practises sleight of hand. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| homburg | A hat made of felt with a creased crown. | only WordNet has it, so it uses WordNet's meaning |
+| instigate | To bring about by urging or encouraging. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| jangling | Like the discordant ringing of nonmusical metallic objects striking together. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| jettison | To eject from a boat, submarine, aircraft, spaceship or hot-air balloon, so as to lighten the load. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| jinks | Noisy and mischievous merrymaking. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| liminal | Of or pertaining to an entrance or threshold. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| mafioso | A member of the Sicilian Mafia. | only WordNet has it, so it uses WordNet's meaning |
+| malevolence | Hostile attitude or feeling. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| mee-maw | An exaggerated mouthing of a word. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| merlot | . | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| milligram | One thousandth (1/1,000) gram. | only WordNet has it, so it uses WordNet's meaning |
+| mountie | Colloquial term for a member of the Royal Canadian Mounted Police. | only WordNet has it, so it uses WordNet's meaning |
+| mump | To mumble, speak unclearly. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| munchkin | A child. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| neddy | A donkey or ass. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| negligee | A loose dressing gown for women. | only WordNet has it, so it uses WordNet's meaning |
+| nipping | The act or sensation of giving a nip. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| nitroglycerin | A heavy yellow poisonous oily explosive liquid obtained by nitrating glycerol; used in making explos | only WordNet has it, so it uses WordNet's meaning |
+| objectification | The act or process of objectifying something intangible. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| octuplet | A group of eight things, particularly. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| onesie | Any of various one-piece attires. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| perdu | Stationed in an exposed or hazardous position; hidden in ambush. Originally as sentinel perdu. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| polygamous | Having more than one mate at a time; used of relationships and individuals. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| porcine | Of, pertaining to, or being a pig. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| postum | Trade mark for a coffee substitute invented by C. W. Post and made with chicory and roasted grains. | only WordNet has it, so it uses WordNet's meaning |
+| psst | Used to call animals. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| rarefy | Lessen the density or solidity of. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| recherche | Lavishly elegant and refined. | only WordNet has it, so it uses WordNet's meaning |
+| scrawny | Malnourished and weak. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| seance | A meeting of spiritualists. | only WordNet has it, so it uses WordNet's meaning |
+| siamese | Of or relating to or characteristic of Thailand or its people. | only WordNet has it, so it uses WordNet's meaning |
+| skelp | A blow; a smart stroke, especially with the hand; a smack. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| stilton | English blue cheese. | only WordNet has it, so it uses WordNet's meaning |
+| unambiguously | In a manner that is not ambiguous; leaving no doubt; clearly. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| unflagging | Never tiring or lacking energy; without rest; without slowing. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| unmarketable | Not marketable. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| velcro | Fasten with Velcro. | only WordNet has it, so it uses WordNet's meaning |
+| ween | To suppose, imagine; to think, believe. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| whoopee | A spontaneous expression of delight or joy. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| wicca | A community of followers of the Wicca religion. | only WordNet has it, so it uses WordNet's meaning |
 
 ## Why words were rejected
 
@@ -170,7 +138,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | everyday word | 1592 |
 | not in either dictionary (made up, a name or a typo) | 1467 |
 | fragment of a longer word or a contraction | 1340 |
-| an everyday object, animal or food | 341 |
+| an everyday object, animal or food | 346 |
 | not an English word (foreign or a name) | 263 |
 | rude or upsetting meaning | 245 |
 | only heard in lines with swearing | 242 |
@@ -180,6 +148,8 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | a misspelling, abbreviation or contraction | 52 |
 | marked vulgar or offensive in Wiktionary | 42 |
 | body part | 33 |
+| a name (only capitalised in the dictionary) | 14 |
+| too obscure to check in either dictionary | 14 |
 | only a spelling variant or form of another word | 3 |
 | everyday word with many meanings | 1 |
 | a contraction | 1 |
@@ -188,6 +158,72 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| ween | To suppose, imagine; to think, believe. | Downton Abbey |
+| chevre | Made from goats' milk. | The West Wing |
+| jinks | Noisy and mischievous merrymaking. | Firefly |
+| recherche | Lavishly elegant and refined. | Monty Python's Flying Circus |
+| nipping | The act or sensation of giving a nip. | Cheers |
+| dobby | A device in some looms that allows the weaving of small geometric patterns. | Peep Show |
+| wicca | A community of followers of the Wicca religion. | Buffy the Vampire Slayer |
+| munchkin | A child. | Only Fools and Horses |
+| mountie | Colloquial term for a member of the Royal Canadian Mounted Police. | Gilmore Girls |
+| angelus | The sound of a bell rung in Roman Catholic churches to announce the time when the Angelus should be recited. | Buffy the Vampire Slayer |
+| carny | A person who works in a carnival (often one who uses exaggerated showmanship or fraud). | The Simpsons |
+| onesie | Any of various one-piece attires. | Parks and Recreation |
+| mee-maw | An exaggerated mouthing of a word. | The Big Bang Theory |
+| stilton | English blue cheese. | The Thick of It |
+| hocus | A magician, illusionist, one who practises sleight of hand. | Cheers |
+| cul-de-sac | A blind alley or dead end street. | Black Books, The West Wing |
+| mafioso | A member of the Sicilian Mafia. | Futurama |
+| negligee | A loose dressing gown for women. | Gilmore Girls |
+| objectification | The act or process of objectifying something intangible. | Arrested Development |
+| nitroglycerin | A heavy yellow poisonous oily explosive liquid obtained by nitrating glycerol; used in making explosives and m | The Simpsons |
+| eskimo | A member of a people inhabiting the Arctic (northern Canada or Greenland or Alaska or eastern Siberia); the Al | Red Dwarf |
+| neddy | A donkey or ass. | The Simpsons |
+| chilblains | Inflammation of the hands and feet caused by exposure to cold and moisture. | Black Books |
+| dippy | Lacking common sense. | Jeeves and Wooster |
+| garotte | An instrument of execution for execution by strangulation. | The Thick of It |
+| centimetre | A metric unit of length equal to one hundredth of a meter. | QI |
+| velcro | Fasten with Velcro. | The Simpsons |
+| unambiguously | In a manner that is not ambiguous; leaving no doubt; clearly. | The Big Bang Theory, The Newsroom |
+| hippy | Having large or prominent hips. | Black Books, Father Ted, Red Dwarf |
+| hankie | A square piece of cloth used for wiping the eyes or nose or as a costume accessory. | Firefly |
+| caff | Informal British term for a cafe. | Only Fools and Horses |
+| scrawny | Malnourished and weak. | Star Trek: The Next Generation, The Great Gatsby |
+| dudette | A girl or woman, especially a masculine one. | Parks and Recreation |
+| psst | Used to call animals. | Cheers |
+| merlot | . | Best in Show |
+| instigate | To bring about by urging or encouraging. | 30 Rock |
+| getter | One who, or that which, gets. | Community |
+| perdu | Stationed in an exposed or hazardous position; hidden in ambush. Originally as sentinel perdu. | Monty Python's Flying Circus |
+| brolly | Colloquial terms for an umbrella. | The Day Today |
+| jettison | To eject from a boat, submarine, aircraft, spaceship or hot-air balloon, so as to lighten the load. | Parks and Recreation |
+| golem | A humanoid creature made from clay, animated by magic. The most famous was made by Rabbi Loew in the 16th cent | The Simpsons |
+| postum | Trade mark for a coffee substitute invented by C. W. Post and made with chicory and roasted grains. | The Simpsons |
+| seance | A meeting of spiritualists. | Only Fools and Horses |
+| burbling | Uttered with unrestrained enthusiasm. | Red Dwarf |
+| mump | To mumble, speak unclearly. | Parks and Recreation, The Simpsons |
+| haggadah | Talmudic literature that does not deal with law but is still part of Jewish tradition. | Sports Night |
+| octuplet | A group of eight things, particularly. | The Simpsons |
+| forrad | Forehead. | The Simpsons |
+| rarefy | Lessen the density or solidity of. | Gilmore Girls, Star Trek: The Next Generation |
+| jangling | Like the discordant ringing of nonmusical metallic objects striking together. | A Bit of Fry and Laurie |
+| unmarketable | Not marketable. | Community |
+| malevolence | Hostile attitude or feeling. | Poems by Emily Dickinson, The Great Gatsby, The Simpsons |
+| whoopee | A spontaneous expression of delight or joy. | Cheers, Gilmore Girls, The Simpsons, The Thick of It |
+| liminal | Of or pertaining to an entrance or threshold. | The Simpsons |
+| skelp | A blow; a smart stroke, especially with the hand; a smack. | Dad's Army |
+| milligram | One thousandth (1/1,000) gram. | The Office |
+| eclair | Oblong cream puff. | Blackadder, Fawlty Towers |
+| homburg | A hat made of felt with a creased crown. | Frasier, The Thick of It |
+| unflagging | Never tiring or lacking energy; without rest; without slowing. | Gilmore Girls |
+| porcine | Of, pertaining to, or being a pig. | The League of Gentlemen |
+| euclidean | Relating to geometry as developed by Euclid. | Star Trek: The Next Generation |
+| polygamous | Having more than one mate at a time; used of relationships and individuals. | The West Wing |
+| dutchie | A cannabis blunt rolled inside a Dutch Masters cigar. | The Simpsons |
+| certifiably | With the potential for certification. | A Few Good Men, Seinfeld |
+| siamese | Of or relating to or characteristic of Thailand or its people. | The Simpsons |
+| disobedient | Not obedient. | Monty Python's Flying Circus, The Simpsons |
 | orbitofrontal | Located in the frontal lobes above the orbits of the eyes. | The Big Bang Theory |
 | thuggery | Violent or brutal acts as of thugs. | Futurama |
 | oceanographic | Relating to oceanography, the science of oceans. | The Simpsons |
@@ -272,69 +308,3 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 | mosey | Walk leisurely. | The Big Bang Theory |
 | sambuca | An Italian liqueur made with elderberries and flavored with licorice. | Parks and Recreation |
 | caesium | A soft silver-white ductile metallic element (liquid at normal temperatures); the most electropositive and alk | Futurama |
-| croon | Sing softly. | Buffy the Vampire Slayer, The Great Gatsby |
-| lustrous | Made smooth and bright by or as if by rubbing; reflecting a sheen or glow. | Poems by Emily Dickinson, Seinfeld |
-| smite | Inflict a heavy blow on, with the hand, a tool, or a weapon. | Buffy the Vampire Slayer, Star Trek: The Next Generation, The Simpsons |
-| curio | Something unusual -- perhaps worthy of collecting. | The Simpsons |
-| misapprehension | An understanding of something that is not correct. | The Big Bang Theory |
-| sculpt | Create by shaping stone or wood or any other hard material. | Community |
-| satiate | Fill to satisfaction. | Star Trek: The Next Generation |
-| quoth | Said. | The Simpsons |
-| fatso | A rotund individual. | Blackadder, The Simpsons |
-| ruffian | A cruel and brutal fellow. | Futurama |
-| spheroid | A shape that is generated by rotating an ellipse around one of its axes. | Star Trek: The Next Generation |
-| punctuate | Insert punctuation marks into. | Poems by Emily Dickinson, The Simpsons |
-| antecedent | Someone from whom you are descended (but usually more remote than a grandparent). | Buffy the Vampire Slayer, The Great Gatsby |
-| bubbe | A grandmother. | Community |
-| callus | An area of skin that is thick or hard from continual pressure or friction (as the sole of the foot). | Star Trek: The Next Generation |
-| coolio | Cool; awesome; all right. | Futurama |
-| quasar | A starlike object that may send out radio waves and other forms of energy; many have large red shifts. | Futurama |
-| constrictor | Any of various large nonvenomous snakes that kill their prey by crushing it in its coils. | The Big Bang Theory |
-| bibbidi-bobbidi-boo | A light-hearted magical incantation. | The Big Bang Theory |
-| biracial | Consisting of or combining two races. | Community |
-| incorrigible | Impervious to correction by punishment. | Star Trek: The Next Generation, The Simpsons |
-| stalwart | Used especially of persons. | Buffy the Vampire Slayer, Futurama, Poems of Gerard Manley Hopkins |
-| bewitch | Attract; cause to be enamored. | The Great Gatsby, The Simpsons |
-| umlaut | A diacritical mark (two dots) placed over a vowel in German to indicate a change in sound. | The Simpsons |
-| obit | A notice of someone's death; usually includes a short biography. | 30 Rock |
-| precession | The motion of a spinning body (as a top) in which it wobbles so that the axis of rotation sweeps out a cone. | Star Trek: The Next Generation |
-| fascinate | Cause to be interested or curious. | Star Trek: The Next Generation |
-| endearment | The act of showing affection. | Parks and Recreation |
-| maunder | Wander aimlessly. | Firefly |
-| maniacal | Wildly disordered. | Buffy the Vampire Slayer |
-| mutate | Undergo mutation. | Buffy the Vampire Slayer, Futurama |
-| gremlin | (folklore) fairies that are somewhat mischievous. | Futurama |
-| taunt | Aggravation by deriding or mocking or criticizing. | Buffy the Vampire Slayer, Poems by Emily Dickinson |
-| squawk | The noise of squawking. | The Great Gatsby, The Simpsons |
-| exterminate | Kill en masse; kill on a large scale; kill many. | Buffy the Vampire Slayer |
-| startle | To stimulate to action. | Firefly, Poems by Emily Dickinson |
-| punnery | The act or art of creating puns. | Community |
-| domineer | Rule or exercise power over (somebody) in a cruel and autocratic manner. | Parks and Recreation |
-| eggnog | A punch made of sweetened milk or cream mixed with eggs and usually alcoholic liquor. | Futurama |
-| genuflect | Bend the knees and bow in church or before a religious superior or image. | Star Trek: The Next Generation |
-| snook | Large tropical American food and game fishes of coastal and brackish waters; resemble pike. | Parks and Recreation |
-| serf | (Middle Ages) a person who is bound to the land and owned by the feudal lord. | The Great Gatsby, The Simpsons |
-| automaton | Someone who acts or responds in a mechanical or apathetic way. | Futurama |
-| borax | An ore of boron consisting of hydrated sodium borate; used as a flux or cleansing agent. | The Simpsons |
-| kryptonite | The one weakness of something or someone that is otherwise invulnerable. | Buffy the Vampire Slayer, The Big Bang Theory |
-| caramba | Exclamation of surprise or dismay.; gosh!, darn! | The Simpsons |
-| nitwit | A stupid incompetent person. | Seinfeld, The Simpsons |
-| crass | (of persons) so unrefined as to be lacking in discrimination and sensibility. | Parks and Recreation |
-| yerba | Ilex paraguariensis, a species of holly native to southern South America; or the dried leaves and twigs of thi | Parks and Recreation |
-| homogenize | Cause to become equal or homogeneous as by mixing. | The Simpsons |
-| gratuitous | Unnecessary and unwarranted. | The Simpsons |
-| singlehandedly | . | The Simpsons |
-| beleaguer | Annoy persistently. | Community, The Simpsons |
-| ginormous | Very large. | The Simpsons |
-| linchpin | A central cohesive source of support and stability. | The Simpsons |
-| disingenuous | Not straightforward or candid; giving a false appearance of frankness. | The Simpsons |
-| smoochie | A smooch; a kiss. | Buffy the Vampire Slayer |
-| phylum | (linguistics) a large group of languages that are historically related. | Community |
-| cruciate | Shaped like a cross. | The Simpsons |
-| moccasin | Soft leather shoe; originally worn by Native Americans. | The Simpsons |
-| misfit | Someone unable to adapt to their circumstances. | Community |
-| libidinous | Driven by lust; preoccupied with or exhibiting lustful desires. | Buffy the Vampire Slayer |
-| uncountably | Too many to be counted (either by reason of being infinite or for practical constraints). | Futurama |
-| requisition | The act of requiring; an authoritative request or demand, especially by a military or public authority that ta | Futurama |
-| astrophysicist | An astronomer who studies the physical properties of celestial bodies. | The Big Bang Theory |
-| umami | One of the five basic tastes, the savory taste of foods such as seaweed, cured fish, aged cheeses and meats. | Parks and Recreation |

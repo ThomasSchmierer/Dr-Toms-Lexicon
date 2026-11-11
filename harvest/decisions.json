@@ -529,9 +529,9 @@
 "n":1
 },
 "acadian":{
-"d":"review",
+"d":"rejected",
 "w":"acadian",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "acalculia":{
@@ -2060,9 +2060,12 @@
 "r":"only in books (used for cross-references)"
 },
 "angelus":{
-"d":"review",
+"d":"approved",
 "w":"angelus",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3133,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "anger":{
@@ -2993,9 +2996,9 @@
 "n":2
 },
 "armagnac":{
-"d":"review",
+"d":"rejected",
 "w":"armagnac",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "armament":{
@@ -3187,9 +3190,9 @@
 "seq":792,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"asbo",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "ascendancy":{
@@ -3540,9 +3543,9 @@
 "seq":66,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"astroturf",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "asunder":{
@@ -5490,9 +5493,9 @@
 "seq":482,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"begorra",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":2
 },
 "begrudge":{
@@ -8064,9 +8067,9 @@
 "r":"only in books (used for cross-references)"
 },
 "brahms":{
-"d":"review",
+"d":"rejected",
 "w":"brahms",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "brahzing":{
@@ -8532,9 +8535,12 @@
 "n":2
 },
 "brolly":{
-"d":"review",
+"d":"approved",
 "w":"brolly",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3104,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "bromance":{
@@ -9017,12 +9023,12 @@
 "n":1
 },
 "burble":{
-"seq":576,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"burbling",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3099,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "bureaucrat":{
@@ -9465,9 +9471,12 @@
 "r":"only in books (used for cross-references)"
 },
 "caff":{
-"d":"review",
+"d":"approved",
 "w":"caff",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3112,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "caffeinate":{
@@ -9506,9 +9515,9 @@
 "r":"only in books (used for cross-references)"
 },
 "cajun":{
-"d":"review",
+"d":"rejected",
 "w":"cajun",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "cake":{
@@ -10170,9 +10179,12 @@
 "n":1
 },
 "carny":{
-"d":"review",
+"d":"approved",
 "w":"carny",
-"r":"several meanings and the quote doesn't show which",
+"seq":3132,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "carol":{
@@ -10656,9 +10668,12 @@
 "n":3
 },
 "centimetre":{
-"d":"review",
+"d":"approved",
 "w":"centimetre",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3117,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "centipede":{
@@ -10720,13 +10735,13 @@
 "n":1
 },
 "certifiably":{
-"seq":37,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"certifiably",
-"r":"several meanings and the quote doesn't show which",
-"n":2
+"seq":3079,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":1
 },
 "certify":{
 "d":"rejected",
@@ -11267,9 +11282,12 @@
 "r":"only in books (used for cross-references)"
 },
 "chevre":{
-"d":"review",
+"d":"approved",
 "w":"chevre",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3141,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "chew":{
@@ -11346,9 +11364,12 @@
 "n":1
 },
 "chilblain":{
-"d":"review",
+"d":"approved",
 "w":"chilblains",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3120,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "childe":{
@@ -14154,9 +14175,9 @@
 "n":1
 },
 "coptic":{
-"d":"review",
+"d":"rejected",
 "w":"coptic",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "copy-and-pasteable":{
@@ -15767,12 +15788,12 @@
 "n":1
 },
 "cul-de-sac":{
-"seq":1412,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"cul-de-sac",
-"r":"several meanings and the quote doesn't show which",
+"seq":3127,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "cull":{
@@ -15794,7 +15815,7 @@
 "n":1
 },
 "culotte":{
-"d":"review",
+"d":"waiting",
 "w":"culotte",
 "r":"waiting for the Wiktionary lookup",
 "n":1
@@ -17243,9 +17264,9 @@
 "n":4
 },
 "delilah":{
-"d":"review",
+"d":"rejected",
 "w":"delilah",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "delineate":{
@@ -18366,12 +18387,12 @@
 "n":1
 },
 "dippy":{
-"seq":1161,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"dippy",
-"r":"several meanings and the quote doesn't show which",
+"seq":3119,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "dipsomaniac":{
@@ -18743,9 +18764,12 @@
 "n":3
 },
 "disobedient":{
-"d":"review",
+"d":"approved",
 "w":"disobedient",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3077,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "disobey":{
@@ -19167,12 +19191,12 @@
 "n":1
 },
 "dobby":{
-"seq":1658,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"dobby",
-"r":"several meanings and the quote doesn't show which",
+"seq":3137,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "docile":{
@@ -20351,9 +20375,12 @@
 "n":1
 },
 "dudette":{
-"d":"review",
+"d":"approved",
 "w":"dudette",
-"r":"several meanings and the quote doesn't show which",
+"seq":3110,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "duel":{
@@ -20562,9 +20589,12 @@
 "n":1
 },
 "dutchie":{
-"d":"review",
+"d":"approved",
 "w":"dutchie",
-"r":"several meanings and the quote doesn't show which",
+"seq":3080,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "dutiful":{
@@ -20914,9 +20944,12 @@
 "r":"only in books (used for cross-references)"
 },
 "eclair":{
-"d":"review",
+"d":"approved",
 "w":"eclair",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3086,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "eclampsia":{
@@ -22218,9 +22251,9 @@
 "r":"only in books (used for cross-references)"
 },
 "entree":{
-"d":"review",
+"d":"rejected",
 "w":"entree",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"an everyday object, animal or food",
 "n":3
 },
 "enumerate":{
@@ -22573,9 +22606,12 @@
 "r":"only in books (used for cross-references)"
 },
 "eskimo":{
-"d":"review",
+"d":"approved",
 "w":"eskimo",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3122,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "esophagus":{
@@ -22648,9 +22684,12 @@
 "n":1
 },
 "euclidean":{
-"d":"review",
+"d":"approved",
 "w":"euclidean",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3082,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "euell":{
@@ -26053,9 +26092,12 @@
 "n":1
 },
 "forrad":{
-"d":"review",
+"d":"approved",
 "w":"forrad",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3095,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "forsake":{
@@ -26627,9 +26669,9 @@
 "n":1
 },
 "frisbee":{
-"d":"review",
+"d":"rejected",
 "w":"frisbee",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"an everyday object, animal or food",
 "n":2
 },
 "frisk":{
@@ -27475,9 +27517,12 @@
 "n":2
 },
 "garotte":{
-"d":"review",
+"d":"approved",
 "w":"garotte",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3118,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "garret":{
@@ -28039,9 +28084,12 @@
 "n":1
 },
 "getter":{
-"d":"review",
+"d":"approved",
 "w":"getter",
-"r":"several meanings and the quote doesn't show which",
+"seq":3106,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "gettles":{
@@ -28918,9 +28966,12 @@
 "r":"only in books (used for cross-references)"
 },
 "golem":{
-"d":"review",
+"d":"approved",
 "w":"golem",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3102,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "golly":{
@@ -30032,7 +30083,7 @@
 "n":1
 },
 "grus":{
-"d":"review",
+"d":"waiting",
 "w":"grus",
 "r":"waiting for the Wiktionary lookup",
 "n":1
@@ -30566,9 +30617,12 @@
 "n":1
 },
 "haggadah":{
-"d":"review",
+"d":"approved",
 "w":"haggadah",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3097,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "haggard":{
@@ -30687,9 +30741,9 @@
 "seq":467,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"haitch",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "halcyon":{
@@ -31019,9 +31073,12 @@
 "n":1
 },
 "hankie":{
-"d":"review",
+"d":"approved",
 "w":"hankie",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3113,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "hanky":{
@@ -31037,9 +31094,9 @@
 "n":1
 },
 "hansard":{
-"d":"review",
+"d":"rejected",
 "w":"hansard",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "hapablap":{
@@ -31342,9 +31399,9 @@
 "n":1
 },
 "haydn":{
-"d":"review",
+"d":"rejected",
 "w":"haydn",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "haystack":{
@@ -32342,9 +32399,12 @@
 "n":2
 },
 "hippy":{
-"d":"review",
+"d":"approved",
 "w":"hippy",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3114,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":3
 },
 "hippy-dippy":{
@@ -32497,12 +32557,12 @@
 "n":2
 },
 "hocus":{
-"seq":1442,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"hocus",
-"r":"several meanings and the quote doesn't show which",
+"seq":3128,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "hocus-pocus":{
@@ -32681,9 +32741,12 @@
 "n":3
 },
 "homburg":{
-"d":"review",
+"d":"approved",
 "w":"homburg",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3085,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "home":{
@@ -36032,9 +36095,12 @@
 "n":1
 },
 "instigate":{
-"d":"review",
+"d":"approved",
 "w":"instigate",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3107,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "instill":{
@@ -37035,12 +37101,12 @@
 "n":1
 },
 "jangle":{
-"seq":455,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"jangling",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3093,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "janitor":{
@@ -37188,9 +37254,9 @@
 "n":1
 },
 "jell-o":{
-"d":"review",
+"d":"rejected",
 "w":"jell-o",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"an everyday object, animal or food",
 "n":1
 },
 "jellybean":{
@@ -37341,9 +37407,12 @@
 "n":1
 },
 "jettison":{
-"d":"review",
+"d":"approved",
 "w":"jettison",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3103,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "jevon":{
@@ -37447,9 +37516,12 @@
 "n":1
 },
 "jink":{
-"d":"review",
+"d":"approved",
 "w":"jinks",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3140,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "jinkies":{
@@ -38133,9 +38205,9 @@
 "n":1
 },
 "kendal":{
-"d":"review",
+"d":"rejected",
 "w":"kendal",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "kenyon":{
@@ -38900,9 +38972,9 @@
 "n":1
 },
 "kraken":{
-"d":"review",
+"d":"rejected",
 "w":"kraken",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "kreplach":{
@@ -39043,9 +39115,9 @@
 "n":1
 },
 "kwanzaa":{
-"d":"review",
+"d":"rejected",
 "w":"kwanzaa",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "kwanzaa-bot":{
@@ -40556,9 +40628,12 @@
 "n":1
 },
 "liminal":{
-"d":"review",
+"d":"approved",
 "w":"liminal",
-"r":"several meanings and the quote doesn't show which",
+"seq":3089,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "limp":{
@@ -42009,9 +42084,12 @@
 "n":1
 },
 "mafioso":{
-"d":"review",
+"d":"approved",
 "w":"mafioso",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3126,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "magellan":{
@@ -42289,10 +42367,13 @@
 "n":1
 },
 "malevolence":{
-"d":"review",
+"d":"approved",
 "w":"malevolence",
-"r":"WordNet and Wiktionary don't agree on a meaning",
-"n":3
+"seq":3091,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":1
 },
 "malfeasance":{
 "d":"approved",
@@ -43493,9 +43574,12 @@
 "r":"only in books (used for cross-references)"
 },
 "mee-maw":{
-"d":"review",
+"d":"approved",
 "w":"mee-maw",
-"r":"several meanings and the quote doesn't show which",
+"seq":3130,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "meeeeeee":{
@@ -43779,9 +43863,12 @@
 "n":2
 },
 "merlot":{
-"d":"review",
+"d":"approved",
 "w":"merlot",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3108,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "mermaid":{
@@ -44031,9 +44118,9 @@
 "n":1
 },
 "microteslas":{
-"d":"review",
+"d":"rejected",
 "w":"microteslas",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "microwave":{
@@ -44198,9 +44285,12 @@
 "n":1
 },
 "milligram":{
-"d":"review",
+"d":"approved",
 "w":"milligram",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3087,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "millimetre":{
@@ -45766,9 +45856,12 @@
 "n":1
 },
 "mountie":{
-"d":"review",
+"d":"approved",
 "w":"mountie",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3134,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "mourn":{
@@ -46063,9 +46156,12 @@
 "n":1
 },
 "mump":{
-"d":"review",
+"d":"approved",
 "w":"mump",
-"r":"several meanings and the quote doesn't show which",
+"seq":3098,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "munch":{
@@ -46084,12 +46180,12 @@
 "n":1
 },
 "munchkin":{
-"seq":1572,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"munchkin",
-"r":"several meanings and the quote doesn't show which",
+"seq":3135,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "munchy":{
@@ -46731,9 +46827,9 @@
 "n":1
 },
 "neanderthal":{
-"d":"review",
+"d":"rejected",
 "w":"neanderthal",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"an everyday object, animal or food",
 "n":1
 },
 "near":{
@@ -46808,9 +46904,12 @@
 "r":"only in books (used for cross-references)"
 },
 "neddy":{
-"d":"review",
+"d":"approved",
 "w":"neddy",
-"r":"several meanings and the quote doesn't show which",
+"seq":3121,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "nedra":{
@@ -46894,9 +46993,12 @@
 "n":1
 },
 "negligee":{
-"d":"review",
+"d":"approved",
 "w":"negligee",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3125,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "nehmah":{
@@ -47369,12 +47471,12 @@
 "n":1
 },
 "nip":{
-"seq":1669,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"nipping",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3138,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "nipper":{
@@ -47417,9 +47519,12 @@
 "n":1
 },
 "nitroglycerin":{
-"d":"review",
+"d":"approved",
 "w":"nitroglycerin",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3123,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "nitto":{
@@ -48399,9 +48504,12 @@
 "n":1
 },
 "objectification":{
-"d":"review",
+"d":"approved",
 "w":"objectification",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3124,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "oblige":{
@@ -48613,9 +48721,12 @@
 "n":1
 },
 "octuplet":{
-"d":"review",
+"d":"approved",
 "w":"octuplet",
-"r":"several meanings and the quote doesn't show which",
+"seq":3096,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "oculist":{
@@ -49006,9 +49117,9 @@
 "n":1
 },
 "one-quintillionth":{
-"d":"review",
+"d":"rejected",
 "w":"one-quintillionth",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "one-upmanship":{
@@ -49030,9 +49141,12 @@
 "n":1
 },
 "onesie":{
-"d":"review",
+"d":"approved",
 "w":"onesie",
-"r":"several meanings and the quote doesn't show which",
+"seq":3131,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "onewhere":{
@@ -50492,9 +50606,9 @@
 "n":1
 },
 "pampers":{
-"d":"review",
+"d":"retired",
 "w":"pampers",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"no longer in any spreadsheet",
 "n":1
 },
 "panatela":{
@@ -51241,9 +51355,9 @@
 "n":1
 },
 "pawnee":{
-"d":"review",
+"d":"rejected",
 "w":"pawnee",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "pawneeans":{
@@ -51701,12 +51815,12 @@
 "n":1
 },
 "perdu":{
-"seq":739,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"perdu",
-"r":"several meanings and the quote doesn't show which",
+"seq":3105,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "peremptorily":{
@@ -53476,9 +53590,12 @@
 "n":1
 },
 "polygamous":{
-"d":"review",
+"d":"approved",
 "w":"polygamous",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3081,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "polygraphic":{
@@ -53758,9 +53875,12 @@
 "n":2
 },
 "porcine":{
-"d":"review",
+"d":"approved",
 "w":"porcine",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3083,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "porcini":{
@@ -54002,9 +54122,12 @@
 "n":1
 },
 "postum":{
-"d":"review",
+"d":"approved",
 "w":"postum",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3101,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "postural":{
@@ -55315,12 +55438,12 @@
 "n":1
 },
 "psst":{
-"seq":833,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"psst",
-"r":"several meanings and the quote doesn't show which",
+"seq":3109,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "psych":{
@@ -55832,7 +55955,7 @@
 "r":"only in books (used for cross-references)"
 },
 "qatari":{
-"d":"review",
+"d":"waiting",
 "w":"qatari",
 "r":"waiting for the Wiktionary lookup",
 "n":1
@@ -56495,9 +56618,9 @@
 "n":1
 },
 "raisinet":{
-"d":"review",
+"d":"rejected",
 "w":"raisinet",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "raison":{
@@ -56684,12 +56807,12 @@
 "n":1
 },
 "rarefy":{
-"seq":498,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"rarefy",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3094,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "rarest-vein":{
@@ -57200,9 +57323,12 @@
 "n":1
 },
 "recherche":{
-"d":"review",
+"d":"approved",
 "w":"recherche",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3139,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "recirculate":{
@@ -61239,10 +61365,13 @@
 "r":"only in books (used for cross-references)"
 },
 "scrawny":{
-"d":"review",
+"d":"approved",
 "w":"scrawny",
-"r":"WordNet and Wiktionary don't agree on a meaning",
-"n":2
+"seq":3111,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":1
 },
 "screamin":{
 "d":"rejected",
@@ -61569,9 +61698,12 @@
 "r":"only in books (used for cross-references)"
 },
 "seance":{
-"d":"review",
+"d":"approved",
 "w":"seance",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3100,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "sear":{
@@ -61982,9 +62114,9 @@
 "n":6
 },
 "senora":{
-"d":"review",
+"d":"rejected",
 "w":"senora",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "senselessness":{
@@ -62643,9 +62775,9 @@
 "n":1
 },
 "sheraton":{
-"d":"review",
+"d":"rejected",
 "w":"sheraton",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "sherbert":{
@@ -63259,9 +63391,12 @@
 "n":1
 },
 "siamese":{
-"d":"review",
+"d":"approved",
 "w":"siamese",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3078,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "sick":{
@@ -63782,12 +63917,12 @@
 "n":1
 },
 "skelp":{
-"seq":281,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"skelp",
-"r":"several meanings and the quote doesn't show which",
+"seq":3088,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "sketch":{
@@ -64481,9 +64616,9 @@
 "seq":362,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"smackeroonies",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "smackin":{
@@ -66210,9 +66345,9 @@
 "n":1
 },
 "splay-legged":{
-"d":"review",
+"d":"rejected",
 "w":"splay-legged",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "spleen":{
@@ -66303,9 +66438,9 @@
 "n":2
 },
 "spode":{
-"d":"review",
+"d":"rejected",
 "w":"spode",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "spoilsport":{
@@ -67354,9 +67489,9 @@
 "n":4
 },
 "stetson":{
-"d":"review",
+"d":"rejected",
 "w":"stetson",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"an everyday object, animal or food",
 "n":1
 },
 "stevedore":{
@@ -67514,9 +67649,12 @@
 "n":3
 },
 "stilton":{
-"d":"review",
+"d":"approved",
 "w":"stilton",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3129,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "stimularities":{
@@ -71686,9 +71824,9 @@
 "seq":154,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"tippex",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "tipple":{
@@ -72316,9 +72454,9 @@
 "n":1
 },
 "touche":{
-"d":"review",
+"d":"rejected",
 "w":"touche",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "touchin":{
@@ -73995,9 +74133,12 @@
 "r":"only in books (used for cross-references)"
 },
 "unambiguously":{
-"d":"review",
+"d":"approved",
 "w":"unambiguously",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3115,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":2
 },
 "unambitious":{
@@ -74941,9 +75082,12 @@
 "n":1
 },
 "unflagging":{
-"d":"review",
+"d":"approved",
 "w":"unflagging",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3084,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "unflatter":{
@@ -75349,9 +75493,12 @@
 "r":"only in books (used for cross-references)"
 },
 "unmarketable":{
-"d":"review",
+"d":"approved",
 "w":"unmarketable",
-"r":"WordNet and Wiktionary don't agree on a meaning",
+"seq":3092,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "unmaterialistic":{
@@ -76779,9 +76926,12 @@
 "n":1
 },
 "velcro":{
-"d":"review",
+"d":"approved",
 "w":"velcro",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3116,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "velimirovic":{
@@ -77441,9 +77591,9 @@
 "seq":1133,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"voila",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "voiture":{
@@ -78362,12 +78512,12 @@
 "r":"only in books (used for cross-references)"
 },
 "ween":{
-"seq":1730,
-"day":"2026-11-10",
-"first":"2026-11-09",
-"d":"review",
+"d":"approved",
 "w":"ween",
-"r":"several meanings and the quote doesn't show which",
+"seq":3142,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "weenie":{
@@ -78662,9 +78812,9 @@
 "seq":903,
 "day":"2026-11-10",
 "first":"2026-11-09",
-"d":"review",
+"d":"rejected",
 "w":"whatshisname",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"r":"too obscure to check in either dictionary",
 "n":1
 },
 "wheedle":{
@@ -79039,10 +79189,13 @@
 "n":1
 },
 "whoopee":{
-"d":"review",
+"d":"approved",
 "w":"whoopee",
-"r":"WordNet and Wiktionary don't agree on a meaning",
-"n":4
+"seq":3090,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":3
 },
 "whoopsy":{
 "d":"rejected",
@@ -79091,9 +79244,12 @@
 "n":1
 },
 "wicca":{
-"d":"review",
+"d":"approved",
 "w":"wicca",
-"r":"only in WordNet (Wiktionary has no English meaning for it)",
+"seq":3136,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
 "n":1
 },
 "wicker":{
