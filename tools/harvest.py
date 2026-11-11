@@ -184,10 +184,16 @@ def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir):
     def due(kind, name):
         last = state[kind].get(name)
         return not last or (today - date.fromisoformat(last[:10])).days >= refresh_days
-    shows = [t for t in read_list(os.path.join(HERE, "shows.txt")) + read_list(os.path.join(HERE, "queue.txt")) if due("shows", t)]
-    shows = list(dict.fromkeys(shows))[:shows_n]
+    trending_path = os.path.join(outdir, "trending.json")
+    trending = [t["wikiquote"] for t in (json.load(open(trending_path, encoding="utf-8")).get("titles", []) if os.path.exists(trending_path) else [])][:12]
+    def due_trending(t):
+        last = state["shows"].get(t)
+        return not last or (today - date.fromisoformat(last[:10])).days >= 7
+    hot = [t for t in trending if due_trending(t)]
+    shows = [t for t in read_list(os.path.join(HERE, "shows.txt")) + read_list(os.path.join(HERE, "queue.txt")) if due("shows", t) and t not in hot]
+    shows = hot + list(dict.fromkeys(shows))[:shows_n]
     books = [b for b in read_list(os.path.join(HERE, "books.txt")) if due("books", b.split("|")[0].strip())][:books_n]
-    print(f"Tonight: {len(shows)} show(s), {len(books)} book(s)")
+    print(f"Tonight: {len(hot)} trending title(s), {len(shows) - len(hot)} queued show(s), {len(books)} book(s)")
     done = []
     for t, res in harvest_wikiquote(shows, max_zipf, min_len, outdir):
         if res is not False: state["shows"][t] = today.isoformat()   # network errors are retried next night

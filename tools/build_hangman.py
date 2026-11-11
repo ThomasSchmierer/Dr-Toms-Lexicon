@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from review import PROFANE, BLOCK, SHOW_YEARS     # same filters as the reviewer
+from review import PROFANE, BLOCK, SHOW_YEARS, show_name     # same filters as the reviewer
 
 FILMS = {"A Few Good Men", "A Mighty Wind", "Best in Show", "Four Weddings and a Funeral", "Gosford Park", "Hot Fuzz", "Love Actually",
          "Shaun of the Dead", "The Death of Stalin", "The Social Network", "This Is Spinal Tap", "Waiting for Guffman", "In the Loop",
@@ -37,6 +37,67 @@ def slug(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 def episode(to, who):
     m = re.search(r"“([^”]+)”", to or "")
     return m.group(1) if m else ""
+
+def answer_ok(line):
+    """The quote's word fits the game: 4+ letters, at most 18 characters, plain letters."""
+    m = MARK.search(line or "")
+    if not m: return False
+    w = re.sub(r"^[\W_]+|[\W_]+$", "", plain(m.group(1)))
+    import unicodedata
+    key = unicodedata.normalize("NFD", w).encode("ascii", "ignore").decode().upper()
+    return 4 <= len(re.sub(r"[^A-Z]", "", key)) and len(w) <= 18 and not re.search(r"[^A-Z '’-]", key)
+
+def make_daily(out):
+    """Word of the day schedule: each day's word comes from a TV show or film that's popular this week.
+    Days already scheduled never change, so everyone gets the same word all day."""
+    from datetime import date, timedelta
+    trend = load(os.path.join("harvest", "trending.json"), {"titles": []})
+    path = os.path.join(ROOT, "hangman", "daily.json")
+    sched = load(os.path.join("hangman", "daily.json"), {"days": {}})
+    days = sched.get("days", {})
+    src = out["src"]
+    by_name = {}
+    for i, sr in enumerate(src): by_name.setdefault(sr[1].lower(), i)
+    first = datetime.now(timezone(timedelta(hours=14))).date()          # "today" in the earliest time zone
+    keep_from = (first - timedelta(days=120)).isoformat()
+    days = {k: v for k, v in days.items() if k >= keep_from}
+    for off in range(3):
+        key = (first + timedelta(days=off)).isoformat()
+        if key in days: continue
+        before = sorted(k for k in days if k < key)
+        used_words = {days[k]["w"] for k in before[-90:]}
+        recent_src = {days[k].get("src") for k in before[-4:]}
+        pick = None
+        for t in trend.get("titles", []):
+            name = show_name(t["wikiquote"])
+            si = by_name.get(name.lower())
+            if si is None or name in recent_src: continue
+            cands = []
+            for w in out["w"]:
+                if w[6] == 0 or w[0] in used_words: continue                # rare or long words only, nothing used lately
+                occ = next((o for o in w[7] if o[0] == si and answer_ok(o[1])), None)
+                if occ: cands.append((fnv(key + "|" + w[0]), w, occ))
+            if cands:
+                _, w, occ = min(cands, key=lambda c: c[0])
+                pick = {"w": w[0], "line": occ[1], "src": name, "kind": t["kind"], "rank": t["rank"], "views": t["views"]}
+                break
+        if not pick:                                                         # nothing trending fits: any TV or film word
+            cands = [(fnv(key + "|" + w[0]), w, o) for w in out["w"] if w[6] != 0 and w[0] not in used_words
+                     for o in w[7][:1] if src[o[0]][2] in ("tv", "film") and answer_ok(o[1])]
+            if cands:
+                _, w, occ = min(cands, key=lambda c: c[0])
+                pick = {"w": w[0], "line": occ[1], "src": src[occ[0]][1], "kind": src[occ[0]][2], "rank": 0, "views": 0}
+        if pick: days[key] = pick
+    sched = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "measure": trend.get("measure", ""), "days": dict(sorted(days.items()))}
+    with open(path, "w", encoding="utf-8") as f: json.dump(sched, f, ensure_ascii=False, indent=1)
+    for k in sorted(days)[-3:]:
+        d = days[k]
+        print(f"  {k}: {d['w']} from {d['src']}" + (f" (#{d['rank']} this week)" if d.get("rank") else " (fallback: nothing trending fitted)"))
+
+def fnv(s):
+    h = 2166136261
+    for ch in s: h = ((h ^ ord(ch)) * 16777619) & 0xFFFFFFFF
+    return h
 
 def main():
     from wordfreq import zipf_frequency
@@ -157,6 +218,7 @@ def main():
     with open(path, "w", encoding="utf-8") as f: json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
     by_cat = {}
     for s in out["src"]: by_cat[s[2]] = by_cat.get(s[2], 0) + 1
+    make_daily(out)
     print(f"Hangman: {len(out_words)} words from {len(out['src'])} sources {by_cat}, "
           f"{sum(1 for w in out_words if w[6] != 0)} can be a word of the day; {os.path.getsize(path) // 1024} KB")
 

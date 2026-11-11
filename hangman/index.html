@@ -69,6 +69,7 @@ p{margin:0}
 .teaser span{flex:1 1 0;max-width:30px;height:4px;border-radius:2px;background:var(--ink);opacity:.85}
 .teaser span.gap{background:transparent}
 .status{font-weight:500}
+.trend{font-size:.95rem;padding:8px 12px;border-left:3px solid var(--biro);background:var(--card);border-radius:0 8px 8px 0}
 .status.won{color:var(--good)} .status.lost{color:var(--margin)}
 .sel-sum{font-weight:600}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -181,7 +182,7 @@ details p{margin-top:6px}
 (() => {
 "use strict";
 /* ---------- settings ---------- */
-const DATA_URL = "words.json";
+const DATA_URL = "words.json", DAILY_URL = "daily.json";
 const SITE = "https://thomasschmierer.github.io/Moira-Lexicon/hangman/";
 const MAIN = "https://thomasschmierer.github.io/Moira-Lexicon/";
 const ISSUES = "https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new";
@@ -213,7 +214,7 @@ function toast(msg){ let t = $(".toast"); if (!t){ t = document.createElement("d
   t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => t.hidden = true, 2200); }
 
 /* ---------- data ---------- */
-let SRC = [], WORDS = [], BYW = new Map();
+let SRC = [], WORDS = [], BYW = new Map(), DAILY = {};
 function answerOf(line){
   const m = /<mark>([\s\S]*?)<\/mark>/i.exec(line || ""); if (!m) return null;
   const shown = plain(m[1]).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
@@ -257,6 +258,8 @@ function runStats(){ return store.get("run", {cur: 0, best: 0, played: 0, won: 0
 
 /* ---------- picking words ---------- */
 function dailyPick(t){
+  const D = DAILY[t.key];
+  if (D && BYW.has(D.w) && BYW.get(D.w).occ.some(o => o.line === D.line)) return {w: D.w, line: D.line};
   const cats = [["tv", "film"], ["shakes"], ["tv", "film"], ["books"]][((t.no - 1) % 4 + 4) % 4];
   const pick = ok => {
     let best = null, bh = Infinity;
@@ -416,6 +419,7 @@ function homeView(){
   <section class="hero">
     <div class="eyebrow">Word of the day · No. ${t.no} · ${esc(dateLabel)}</div>
     <h1>One rare word. <em>Eight</em> wrong guesses and you hang.</h1>
+    ${trendLine(t)}
     <div class="teaser" aria-hidden="true">${[...R.ans.key].map(c => `<span class="${/[A-Z]/.test(c) ? "" : "gap"}"></span>`).join("")}</div>
     ${status}
     <div class="row"><a class="btn primary" href="#today">${g.done ? "See today's word" : g.guessed.length ? "Carry on" : "Play today's word"}</a></div>
@@ -435,6 +439,12 @@ function homeView(){
     <p class="muted" style="font-size:.85rem">Your streaks are saved in this browser only.</p>
   </section>
   <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Quotes are short extracts for commentary; many come via Wikiquote (CC BY-SA). Definitions from WordNet and Wiktionary. Part of <a href="${MAIN}" target="_blank" rel="noopener">Moira's Lexicon</a>.</footer>`;
+}
+function trendLine(t){
+  const D = DAILY[t.key]; if (!D || !D.src) return "";
+  const what = D.kind === "film" ? "films" : "TV shows";
+  return D.rank ? `<p class="trend">Today's quote is from <b>${esc(D.src)}</b>, number ${D.rank} among the ${what} people looked up most on Wikipedia this week.</p>`
+    : `<p class="trend">Today's quote is from <b>${esc(D.src)}</b>.</p>`;
 }
 function gameView(){
   if (!game) return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">No words match what you've chosen. <a href="#sources">Choose something else</a>.</p>`;
@@ -588,8 +598,9 @@ document.addEventListener("keydown", ev => {
 addEventListener("hashchange", route);
 document.addEventListener("visibilitychange", () => { if (!document.hidden && view === "home") render(); });
 
+const daily = fetch(DAILY_URL).then(r => r.ok ? r.json() : null).then(d => { DAILY = (d && d.days) || {}; }).catch(() => {});
 fetch(DATA_URL).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => { init(d); route(); })
+  .then(d => daily.then(() => { init(d); route(); }))
   .catch(() => { $("#app").innerHTML = `<p class="loading">The word list didn't load. Check your connection and reload the page.</p>`; });
 })();
 </script>
