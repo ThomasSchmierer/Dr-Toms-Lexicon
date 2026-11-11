@@ -313,7 +313,7 @@ function alsoBlock(e, compact){
   return `<div class="also-wrap"><h3>Also heard in</h3><ul class="also">${picks.slice(0, compact ? 1 : 2).map(item).join("")}</ul>
     ${others > 0 ? `<p class="muted also-n">…and in ${others} other ${others === 1 ? "place" : "places"}.</p>` : ""}</div>`;
 }
-const checkedNote = e => e.chk ? `<p class="checked">✓ Checked against ${e.chk === 2 ? "two dictionaries (WordNet and Wiktionary)" : "Wiktionary"}</p>` : "";
+const checkedNote = e => e.chk ? `<p class="checked">✓ Checked against ${e.chk === 2 ? "two dictionaries (WordNet and Wiktionary)" : e.chk === 3 ? "WordNet" : "Wiktionary"}</p>` : "";
 function loadEdition(k){
   const E = DB.editions[k];
   if (!E.src || E.order.length) return Promise.resolve();

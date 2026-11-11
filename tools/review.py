@@ -180,7 +180,7 @@ def fetch(words, limit=None):
                 if t in got:
                     cache[w] = got[t]
                     for s in cache[w].get("s", []):              # also look up the word it's a form of
-                        if s[3] and s[4] and re.fullmatch(r"[a-z][a-z -]*", s[4]) and (s[4] not in cache or cache[s[4]].get("v", 1) < PARSER_VERSION):
+                        if s[3] and s[4] and re.fullmatch(r"[^\W\d_]+(?:[ '-][^\W\d_]+)*", s[4]) and s[4] == s[4].lower() and (s[4] not in cache or cache[s[4]].get("v", 1) < PARSER_VERSION):
                             follow.append(s[4])
             time.sleep(1.0)                                       # one request a second
             if (i // 50) % 20 == 19:
@@ -611,6 +611,10 @@ def approve(today_only=False):
     approved, review, rejected, exists = {}, {}, {}, {}
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    def wn_name_only(w):          # WordNet only has it with a capital letter: Brahms, Cajun, Stilton
+        names = [l.name() for x in wn.synsets(w) for l in x.lemmas() if l.name().lower() == w]
+        return bool(names) and all(n[:1].isupper() for n in names)
+    tiebreaks = []
     def whole(tok, line):   # the word stands on its own in the quote (not "-ocres" from "mediocre")
         return re.search(r"(?i)(?<![A-Za-z])(?<!(?<!-)-)" + re.escape(tok) + r"(?![A-Za-z])(?!-[A-Za-z])", line or "") is not None
     def syn_for(w):         # WordNet senses for exactly this form (wn.synsets("vexed") would also return "vex")
@@ -681,7 +685,8 @@ def approve(today_only=False):
             score = 0.8 / (1 + rank) + 0.35 * lesk + (0.6 if ag >= 1.5 else 0.2 if ag >= 1 else 0)
             if score > best_score: best, best_score, best_ws, best_agree = s, score, ws, ag
         own_def = ov[1] if ov else ""
-        conf = 0
+        conf, tb = 0, ""
+        lower_used = any(re.search(r"(?<![A-Za-z-])" + re.escape(r["word"]) + r"(?![A-Za-z])", r["line"]) for r in frs)
         if best is not None and best_agree >= 1.5: conf = 2
         elif best is not None and wsenses:
             # WordNet's best guess doesn't match Wiktionary: try the senses that do agree
@@ -706,12 +711,27 @@ def approve(today_only=False):
                 ranked = sorted(cw, key=lambda x: -(len(ctx & bag(x[2], skip={head})) * 0.5 - cw.index(x) * 0.15))
                 ws_only = ranked[0]
                 if len(cw) >= 4 and not (ctx & bag(ws_only[2], skip={head})) and not forced:
-                    review[fam] = {"w": head, "r": "several meanings and the quote doesn't show which", "n": len(all_frs)}; continue
+                    tb = "several meanings and the quote doesn't show which, so it uses Wiktionary's main one"
                 conf = 1
         if not forced and conf == 0:
-            review[fam] = {"w": head, "r": "WordNet and Wiktionary don't agree on a meaning" if wsenses else
-                            "only in WordNet (Wiktionary has no English meaning for it)", "n": len(frs)}
-            continue
+            # tie-break: settle it here rather than waiting for a human
+            if wn_name_only(head) and not lower_used: reject("a name (only capitalised in the dictionary)"); continue
+            pool = [x for x in wsenses if not x[3] and x[2] and x[0] in ("n", "v", "a", "r", "i")]
+            if pool:
+                wn_pos = {("a" if x.pos() == "s" else x.pos()) for x in ss}
+                shared = [x for x in pool if x[0] in wn_pos] or pool          # a part of speech both dictionaries know
+                match = [x for x in shared if tagp and x[0] == tagp] or shared
+                circular = lambda x: bool(re.search(r"\b" + re.escape(head[:max(4, len(head) - 3)]), x[2].lower()))
+                ranked = sorted(match, key=lambda x: -(len(ctx & bag(x[2], skip={head})) * 0.5 - match.index(x) * 0.15 - (1 if circular(x) else 0)))
+                if circular(ranked[0]) and best is not None:
+                    conf, tb = 3, "Wiktionary's wording only repeats the word, so it uses WordNet's meaning"
+                else:
+                    ws_only, best, best_ws, conf = ranked[0], None, None, 1
+                    tb = "the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote"
+            elif best is not None and Z(head) >= 1.0:
+                conf, tb = 3, "only WordNet has it, so it uses WordNet's meaning"
+            else:
+                reject("too obscure to check in either dictionary"); continue
         if head in head_owner:                                   # another form of a word we already have: merge the sightings
             owner = head_owner[head]
             if owner in approved: approved[owner][1].extend(clean_rows); approved[owner][3].extend(all_frs)
@@ -726,7 +746,7 @@ def approve(today_only=False):
         ws = best_ws or ws_only
         if e is None:
             text = own_def or (ws[2] if ws else "")
-            if not text or ws is None and not own_def: review[fam] = {"w": head, "r": "no usable definition", "n": len(frs)}; continue
+            if not text or ws is None and not own_def: reject("no usable definition"); continue
             kws = lexgen.kw_list(text)[:3] or [head]
             weights = [.5, .3, .2][:len(kws)] if len(kws) > 1 else [1]
             others = [s[2] for s in wsenses if s is not ws and s[2] and not s[3]][:1]
@@ -781,6 +801,7 @@ def approve(today_only=False):
         e["rarity"] = max(1, min(10, round(10 - Z(head) * 2.6)))     # shown on the card; rarer words join the word of the day
         e["chk"] = conf
         approved[fam] = (e, list(clean_rows or show_rows or frs), forms, list(all_frs))
+        if tb: tiebreaks.append((head, tb, e["def"]))
         head_owner[head] = fam
 
     # ---- sightings for cross-references
@@ -852,9 +873,11 @@ def approve(today_only=False):
         old = decisions.get(base, {})
         if old.get("d") == "approved" and base not in approved: old["d"] = "withdrawn"
         decisions[base] = {**{k: v for k, v in old.items() if k in ("seq", "day", "first")},
-                           "d": "rejected" if base in rejected else "review", "w": info["w"], "r": info["r"], "n": info.get("n", 0)}
+                           "d": "rejected" if base in rejected else "waiting", "w": info["w"], "r": info["r"], "n": info.get("n", 0)}
     for base, info in exists.items():
         decisions[base] = {"d": "exists", "w": info["w"], "r": info["r"]}
+    for base, d in decisions.items():
+        if d.get("d") == "review": d["d"] = "retired"; d["r"] = "no longer in any spreadsheet"
     order = [decisions[b]["w"] for b in sorted(approved, key=lambda b: decisions[b]["seq"])]
 
     # ---- cross-references: every sighting of every word family
@@ -899,9 +922,9 @@ def approve(today_only=False):
     save_json(os.path.join(ROOT, "counts.json"), {"all": len(order), "moira": sum("moira" in words[k]["editions"] for k in order),
               "kathkim": sum("kathkim" in words[k]["editions"] for k in order), "updated": today})
     save_json(DECISIONS, dict(sorted(decisions.items())), indent=0)
-    write_report(approved, review, rejected, exists, pre_rejects, words, order, fam_rows, cache)
+    write_report(approved, review, rejected, exists, pre_rejects, words, order, fam_rows, cache, tiebreaks)
     print(f"Approved {len(order)} words ({sum(1 for k in order if words[k]['chk'] == 2)} confirmed by both dictionaries), "
-          f"{len(review)} need a human, {len(rejected)} rejected, {len(exists)} already in the game or only in books; "
+          f"{len(tiebreaks)} settled by tie-break, {len(review)} waiting for a lookup, {len(rejected)} rejected, {len(exists)} already in the game or only in books; "
           f"{sum(1 for v in xfam.values() if len(v) > 1)} words have sightings in more than one place.")
 
 def lexgen_transparent(w, Z, wn):
@@ -950,16 +973,18 @@ def set_origin(e, ol, head, lexgen):
     e["etyLex"] = {"concepts": [{"label": "the language", "w": .75, "s": ", ".join(strong) or "english", "p": ", ".join(p for p in partial if p)},
                                 {"label": "the root word", "w": .25, "s": ", ".join(dict.fromkeys(roots)) or "-", "p": ""}], "cap": .75}
 
-def write_report(approved, review, rejected, exists, pre_rejects, words, order, fam_rows, cache):
+def write_report(approved, review, rejected, exists, pre_rejects, words, order, fam_rows, cache, tiebreaks=()):
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     multi = sorted((k for k in order if len({r["show"] for r in fam_rows_for(words[k]["w"], approved, fam_rows)}) > 1),
                    key=lambda k: -len({r["show"] for r in fam_rows_for(words[k]["w"], approved, fam_rows)}))
     L = [f"# Word review ({today})", "",
          "Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,",
          "uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote",
-         "(or Wiktionary alone defines it, when WordNet doesn't have it).", "",
+         "(or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule",
+         "decides, so nothing waits for a person.", "",
          f"- **Approved:** {len(order)} words ({sum(1 for k in order if words[k]['chk'] == 2)} confirmed by both dictionaries)",
-         f"- **Need a human:** {len(review)}",
+         f"- **Settled by a tie-break:** {len(tiebreaks)} (listed below if you want to spot-check them)",
+         f"- **Waiting for their dictionary lookup:** {len(review)} (checked on the next run)",
          f"- **Rejected:** {len(rejected) + sum(pre_rejects.values())}",
          f"- **Already in the game, or only in books:** {len(exists)} (these still get cross-references)",
          f"- **Words used in more than one show:** {len(multi)}", "",
@@ -968,9 +993,10 @@ def write_report(approved, review, rejected, exists, pre_rejects, words, order, 
     for k in multi[:40]:
         frs = fam_rows_for(words[k]["w"], approved, fam_rows)
         L.append(f"- **{k}**: {', '.join(sorted({show_name(r['show']) for r in frs}))}")
-    L += ["", "## Need a human", "", "| Word | Why | Sightings |", "|---|---|---|"]
-    for b, v in sorted(review.items(), key=lambda x: -x[1].get("n", 0))[:300]:
-        L.append(f"| {v['w']} | {v['r']} | {v.get('n', '')} |")
+    L += ["", "## Settled by a tie-break", "", "Nothing needs you here. These were decided by rule; put **n** in the keep column to drop one.", "",
+          "| Word | Meaning used | Why |", "|---|---|---|"]
+    for w, why, d in sorted(tiebreaks):
+        L.append(f"| {w} | {re.sub(r'<[^>]+>', '', d)[:100]} | {why} |")
     reasons = Counter(v["r"] for v in rejected.values()) + pre_rejects
     L += ["", "## Why words were rejected", "", "| Reason | Words |", "|---|---|"] + [f"| {r} | {n} |" for r, n in reasons.most_common()]
     L += ["", "## Newest approvals", "", "| Word | Meaning | Heard in |", "|---|---|---|"]
