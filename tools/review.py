@@ -25,7 +25,7 @@ ROOT = os.path.dirname(HERE)
 HARVEST = os.path.join(ROOT, "harvest")
 CACHE = os.path.join(HARVEST, "wiktionary.json")
 DECISIONS = os.path.join(HARVEST, "decisions.json")
-UA = "DrTomsLexiconReviewer/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
+UA = "DrTomsLexiconReviewer/1.0 (+https://github.com/ThomasSchmierer/Dr-Toms-Lexicon)"
 WIKT = "https://en.wiktionary.org/w/api.php"
 
 FRAGMENT = re.compile(r"^(wouldn|couldn|shouldn|didn|doesn|isn|wasn|weren|hasn|haven|hadn|aren|mustn|needn|mightn|oughtn|shan|ain|innit|gonna|wanna|gotta|dunno|lemme|gimme|kinda|sorta|outta|y'all)$")

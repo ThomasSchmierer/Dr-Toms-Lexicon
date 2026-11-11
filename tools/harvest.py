@@ -18,7 +18,7 @@ import argparse, csv, html, json, os, re, sys, time, urllib.parse, urllib.reques
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-UA = "DrTomsLexiconHarvester/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
+UA = "DrTomsLexiconHarvester/1.0 (+https://github.com/ThomasSchmierer/Dr-Toms-Lexicon)"
 API = "https://en.wikiquote.org/w/api.php"
 BLOCK = re.compile(r"(rape|whore|bawd|cuckold|strumpet|harlot|slut|cunt|fuck|shit|piss|nigg|negro|fag|dyke|retard|tranny|spic|kike|wog|"
                    r"penis|vagin|genital|semen|sperm|nipple|orgas|masturb|erotic|sexual|porn|incest|suicide|bitch|bastard|wank|bollock|arse|twat)")

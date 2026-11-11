@@ -12,7 +12,7 @@ If you reuse it, credit "Dr Tom's Lexicon", the sources below, and share your ve
 
 Every quotation from a TV show or film remains the copyright of its owner. The project quotes short lines (15 words at most) only, to study and comment on the words in them, and names the show or film each comes from. Many lines were found through [Wikiquote](https://en.wikiquote.org/). The CC BY-SA licence above does not cover the quotations themselves.
 
-**Removal requests:** if you hold the rights in a quotation and would like it removed, [open an issue](https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new) or use "Report a problem" on the word in the game. It will be taken down.
+**Removal requests:** if you hold the rights in a quotation and would like it removed, [open an issue](https://github.com/ThomasSchmierer/Dr-Toms-Lexicon/issues/new) or use "Report a problem" on the word in the game. It will be taken down.
 
 ## Sources
 
