@@ -9476,7 +9476,7 @@
 "seq":3112,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "caffeinate":{
@@ -11287,7 +11287,7 @@
 "seq":3141,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "chew":{
@@ -20949,7 +20949,7 @@
 "seq":3086,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":2
 },
 "eclampsia":{
@@ -46998,7 +46998,7 @@
 "seq":3125,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "nehmah":{
@@ -57328,7 +57328,7 @@
 "seq":3139,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "recirculate":{
@@ -61703,7 +61703,7 @@
 "seq":3100,
 "day":"2026-11-12",
 "first":"2026-11-11",
-"r":"Wiktionary only",
+"r":"two dictionaries agree",
 "n":1
 },
 "sear":{
@@ -62114,9 +62114,12 @@
 "n":6
 },
 "senora":{
-"d":"rejected",
+"d":"approved",
 "w":"senora",
-"r":"a name (only capitalised in the dictionary)",
+"seq":3143,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"two dictionaries agree",
 "n":1
 },
 "senselessness":{
@@ -72477,6 +72480,15 @@
 "r":"an everyday word with a prefix or suffix",
 "n":2
 },
+"touché":{
+"d":"approved",
+"w":"touché",
+"seq":3145,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":1
+},
 "toughen":{
 "d":"approved",
 "w":"toughen",
@@ -77596,6 +77608,15 @@
 "r":"too obscure to check in either dictionary",
 "n":1
 },
+"voilà":{
+"d":"approved",
+"w":"voilà",
+"seq":3144,
+"day":"2026-11-12",
+"first":"2026-11-11",
+"r":"Wiktionary only",
+"n":1
+},
 "voiture":{
 "d":"approved",
 "w":"voiture",
@@ -78770,6 +78791,12 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
+"n":1
+},
+"what's-his-name":{
+"d":"rejected",
+"w":"what's-his-name",
+"r":"everyday word",
 "n":1
 },
 "whatbadgerseat":{

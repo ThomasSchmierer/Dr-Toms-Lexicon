@@ -5,10 +5,10 @@ uncommon English word, it isn't rude, a name or a fragment, and the two dictiona
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 2771 words (2153 confirmed by both dictionaries)
-- **Settled by a tie-break:** 66 (listed below if you want to spot-check them)
+- **Approved:** 2774 words (2160 confirmed by both dictionaries)
+- **Settled by a tie-break:** 60 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 3 (checked on the next run)
-- **Rejected:** 8741
+- **Rejected:** 8738
 - **Already in the game, or only in books:** 2302 (these still get cross-references)
 - **Words used in more than one show:** 912
 
@@ -66,11 +66,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | angelus | The sound of a bell rung in Roman Catholic churches to announce the time when the Angelus should be  | only WordNet has it, so it uses WordNet's meaning |
 | brolly | Colloquial terms for an umbrella. | only WordNet has it, so it uses WordNet's meaning |
 | burbling | Uttered with unrestrained enthusiasm. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
-| caff | Informal British term for a cafe. | only WordNet has it, so it uses WordNet's meaning |
 | carny | A person who works in a carnival (often one who uses exaggerated showmanship or fraud). | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | centimetre | A metric unit of length equal to one hundredth of a meter. | only WordNet has it, so it uses WordNet's meaning |
 | certifiably | With the potential for certification. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
-| chevre | Made from goats' milk. | only WordNet has it, so it uses WordNet's meaning |
 | chilblains | Inflammation of the hands and feet caused by exposure to cold and moisture. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | cul-de-sac | A blind alley or dead end street. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | dippy | Lacking common sense. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -78,7 +76,6 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | dobby | A device in some looms that allows the weaving of small geometric patterns. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | dudette | A girl or woman, especially a masculine one. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | dutchie | A cannabis blunt rolled inside a Dutch Masters cigar. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
-| eclair | Oblong cream puff. | only WordNet has it, so it uses WordNet's meaning |
 | eskimo | A member of a people inhabiting the Arctic (northern Canada or Greenland or Alaska or eastern Siberi | only WordNet has it, so it uses WordNet's meaning |
 | euclidean | Relating to geometry as developed by Euclid. | only WordNet has it, so it uses WordNet's meaning |
 | forrad | Forehead. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
@@ -104,7 +101,6 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | mump | To mumble, speak unclearly. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | munchkin | A child. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | neddy | A donkey or ass. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
-| negligee | A loose dressing gown for women. | only WordNet has it, so it uses WordNet's meaning |
 | nipping | The act or sensation of giving a nip. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | nitroglycerin | A heavy yellow poisonous oily explosive liquid obtained by nitrating glycerol; used in making explos | only WordNet has it, so it uses WordNet's meaning |
 | objectification | The act or process of objectifying something intangible. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
@@ -116,9 +112,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | postum | Trade mark for a coffee substitute invented by C. W. Post and made with chicory and roasted grains. | only WordNet has it, so it uses WordNet's meaning |
 | psst | Used to call animals. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | rarefy | Lessen the density or solidity of. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
-| recherche | Lavishly elegant and refined. | only WordNet has it, so it uses WordNet's meaning |
 | scrawny | Malnourished and weak. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
-| seance | A meeting of spiritualists. | only WordNet has it, so it uses WordNet's meaning |
 | siamese | Of or relating to or characteristic of Thailand or its people. | only WordNet has it, so it uses WordNet's meaning |
 | skelp | A blow; a smart stroke, especially with the hand; a smack. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | stilton | English blue cheese. | only WordNet has it, so it uses WordNet's meaning |
@@ -135,7 +129,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | Reason | Words |
 |---|---|
 | an everyday word with a prefix or suffix | 2754 |
-| everyday word | 1592 |
+| everyday word | 1593 |
 | not in either dictionary (made up, a name or a typo) | 1467 |
 | fragment of a longer word or a contraction | 1340 |
 | an everyday object, animal or food | 346 |
@@ -148,8 +142,8 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | a misspelling, abbreviation or contraction | 52 |
 | marked vulgar or offensive in Wiktionary | 42 |
 | body part | 33 |
-| a name (only capitalised in the dictionary) | 14 |
-| too obscure to check in either dictionary | 14 |
+| a name (only capitalised in the dictionary) | 13 |
+| too obscure to check in either dictionary | 11 |
 | only a spelling variant or form of another word | 3 |
 | everyday word with many meanings | 1 |
 | a contraction | 1 |
@@ -158,6 +152,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| touché | An acknowledgement of a hit. | The Simpsons |
+| voilà | Lo, there it is; ta-da; presto; behold! | Gilmore Girls |
+| senora | A Spanish title or form of address for a married woman; similar to the English `Mrs' or `madam'. | The Simpsons |
 | ween | To suppose, imagine; to think, believe. | Downton Abbey |
 | chevre | Made from goats' milk. | The West Wing |
 | jinks | Noisy and mischievous merrymaking. | Firefly |
@@ -305,6 +302,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | sayonara | A farewell remark. | The Simpsons |
 | sammie | A sandwich. | Parks and Recreation |
 | cryptex | A puzzle box solved with a passcode. | Parks and Recreation |
-| mosey | Walk leisurely. | The Big Bang Theory |
-| sambuca | An Italian liqueur made with elderberries and flavored with licorice. | Parks and Recreation |
-| caesium | A soft silver-white ductile metallic element (liquid at normal temperatures); the most electropositive and alk | Futurama |
