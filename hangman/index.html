@@ -104,6 +104,7 @@ p{margin:0}
 .quote figcaption b{color:var(--ink);font-weight:600}
 .misses{font:600 .8rem/1 var(--ui);color:var(--soft);display:flex;justify-content:space-between;gap:8px;padding-block:6px 0}
 .misses b{font-family:var(--mono);color:var(--ink)}
+.misses .clock{font:600 .85rem/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums;margin-left:auto}
 .misses .wrong{font-family:var(--mono);letter-spacing:.12em;color:var(--margin);text-decoration:line-through}
 
 /* the word: always one line, tiles shrink to fit */
@@ -132,6 +133,16 @@ p{margin:0}
 
 .result{display:flex;flex-direction:column;gap:14px;padding-block:8px 6px}
 .verdict{font-weight:600}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:14px 16px;background:var(--card);border:1px solid var(--rule);border-radius:12px}
+.score .pts{display:flex;align-items:baseline;gap:6px}
+.score .pts b{font:600 2.4rem/1 var(--mono);font-variant-numeric:tabular-nums}
+.score.won .pts b{color:var(--good)} .score.lost .pts b{color:var(--margin)}
+.score .pts span{font-size:.85rem;color:var(--soft)}
+.score .parts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;flex:1 1 180px;min-width:0;font-size:.88rem}
+.score .parts li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--rule);padding-block:2px}
+.score .parts b{font:600 .88rem var(--mono);color:var(--margin);font-variant-numeric:tabular-nums}
+.how summary{font-size:.88rem}
+.how p{font-size:.9rem;color:var(--soft)}
 .quip{margin:0;display:flex;flex-direction:column;gap:4px}
 .quip blockquote{margin:0;font:italic 400 1.7rem/1.15 var(--display);text-wrap:balance}
 .quip.won blockquote{color:var(--good)} .quip.lost blockquote{color:var(--margin)}
@@ -268,9 +279,24 @@ function bestDaily(){
   return best;
 }
 function runStats(){
-  const r = store.get("run", {cur: 0, best: 0, played: 0, won: 0, day: ""});
-  if (r.day !== today().key) r.cur = 0;                      // the run is a daily score
+  const r = store.get("run", {cur: 0, best: 0, played: 0, won: 0, day: "", pts: 0, bestPts: 0});
+  if (r.day !== today().key){ r.cur = 0; r.pts = 0; }        // the run and its points start again each day
   return r;
+}
+function bestScore(){ return Object.values(days()).reduce((a, r) => Math.max(a, r.score || 0), 0); }
+
+/* ---------- scoring: start on 1,000; lose points for wrong letters, hints and time ---------- */
+const SCORE = {start: 1000, wrong: 75, hints: [100, 150], free: 20, perSec: 2, timeCap: 300, floor: 100};
+const clockText = secs => `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+function elapsed(g){ return (g.ms || 0) + (g.t0 ? Date.now() - g.t0 : 0); }
+function startClock(g){ if (g && !g.done && !g.t0){ g.t0 = Date.now(); saveGame(g); } }
+function pauseClock(g){ if (g && g.t0){ g.ms = elapsed(g); g.t0 = null; saveGame(g); } }
+function scoreOf(g, wrong){
+  const secs = Math.round(elapsed(g) / 1000);
+  const w = wrong * SCORE.wrong, h = SCORE.hints.slice(0, g.hints).reduce((a, b) => a + b, 0);
+  const t = Math.min(SCORE.timeCap, Math.max(0, secs - SCORE.free) * SCORE.perSec);
+  const total = g.won ? Math.max(SCORE.floor, SCORE.start - w - h - t) : 0;
+  return {total, secs, parts: [[`${wrong} wrong letter${wrong === 1 ? "" : "s"}`, w], [`${g.hints} hint${g.hints === 1 ? "" : "s"}`, h], [`Time ${clockText(secs)}`, t]]};
 }
 
 /* ---------- picking words ---------- */
@@ -323,16 +349,20 @@ function loadDaily(){
   const H = days()[t.key];
   const p = H && H.w && BYW.has(H.w) ? {w: H.w, line: H.line} : dailyPick(t);
   const g = newGame("daily", p, {day: t.key, no: t.no});
-  if (H && H.done){ Object.assign(g, {done: true, won: H.won, guessed: H.guessed || [], hints: H.h || 0}); }
+  if (H && H.done){ Object.assign(g, {done: true, won: H.won, guessed: H.guessed || [], hints: H.h || 0, score: H.score, secs: H.secs}); }
   return g;
 }
 function finish(g, R){
+  pauseClock(g);
   g.done = true;
-  const wrong = wrongOf(g, R.ans).length;
+  const wrong = wrongOf(g, R.ans).length, sc = scoreOf(g, wrong);
+  g.score = sc.total; g.secs = sc.secs;
   if (g.mode === "daily"){
-    const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed}; store.set("days", H);
+    const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed, score: g.score, secs: g.secs}; store.set("days", H);
   } else {
-    const s = runStats(); s.day = today().key; s.played++; if (g.won){ s.won++; s.cur++; s.best = Math.max(s.best, s.cur); } else s.cur = 0; store.set("run", s);
+    const s = runStats(); s.day = today().key; s.played++; s.pts = (s.pts || 0) + g.score; s.bestPts = Math.max(s.bestPts || 0, s.pts);
+    if (g.won){ s.won++; s.cur++; s.best = Math.max(s.best, s.cur); } else s.cur = 0;
+    store.set("run", s);
   }
 }
 
@@ -399,6 +429,7 @@ function defFor(e, o){ return SRC[o.s].cat === "shakes" && e.sdef ? e.sdef : e.d
 /* ---------- views ---------- */
 let view = "", game = null, fresh = {}, picker = {tab: "all", q: "", genre: ""};
 function route(){
+  if (game && !game.done) pauseClock(game);                  // leaving a round stops its clock
   const h = location.hash.replace("#", "");
   view = ["today", "play", "sources"].includes(h) ? h : "home";
   if (view === "today") game = loadDaily();
@@ -426,7 +457,7 @@ function homeView(){
   const t = today(), g = loadDaily(), R = resolve(g), H = days(), streak = dailyStreak(), best = bestDaily(), run = runStats();
   const sel = selection(), pool = poolFor(sel).length;
   const wrong = R ? wrongOf(g, R.ans).length : 0;
-  const status = g.done ? (g.won ? `<p class="status won">Solved today. See you tomorrow.</p>` : `<p class="status lost">Hanged today. Back tomorrow for revenge.</p>`)
+  const status = g.done ? (g.won ? `<p class="status won">Solved today${g.score != null ? ` for <b>${g.score.toLocaleString()}</b> points` : ""}. See you tomorrow.</p>` : `<p class="status lost">Hanged today. Back tomorrow for revenge.</p>`)
     : g.guessed.length ? `<p class="status">You're partway through. The rope is waiting.</p>` : "";
   const week = [...Array(7)].map((_, i) => { const k = shiftDay(t.key, i - 6), r = H[k], dn = new Date(k + "T12:00").toLocaleDateString(undefined, {weekday: "narrow"});
     return `<i class="${r && r.done ? (r.won ? "won" : "lost") : ""}" title="${k}${r && r.done ? (r.won ? ": solved" : ": hanged") : ": not played"}">${dn}</i>`; }).join("");
@@ -448,9 +479,9 @@ function homeView(){
   <section class="section">
     <h2>Your record</h2>
     <div class="stats">
-      <div class="stat"><div class="eyebrow">Daily streak</div><div class="big">${streak}<small>best ${best}</small></div><div class="week" aria-label="The last seven days">${week}</div></div>
+      <div class="stat"><div class="eyebrow">Daily streak</div><div class="big">${streak}<small>best ${best}</small></div><div class="week" aria-label="The last seven days">${week}</div>${bestScore() ? `<p class="muted">Best score ${bestScore().toLocaleString()}</p>` : ""}</div>
       <div class="stat"><div class="eyebrow">Daily run</div><div class="big">${run.cur}<small>best ${run.best}</small></div>
-        <p class="muted">Words in a row today from your own picks</p></div>
+        <p class="muted">${(run.pts || 0).toLocaleString()} points today from your own picks</p></div>
     </div>
     <p class="muted" style="font-size:.85rem">Your streaks are saved in this browser only.</p>
   </section>
@@ -474,9 +505,10 @@ function gameView(){
   const head = `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">${label}</span>${game.mode === "daily" ? `<span class="pill">Streak <b>${dailyStreak()}</b></span>` : `<span class="pill">Run <b>${runStats().cur}</b></span>`}</header>`;
   const board = `<div class="board">${gallows(wrong.length, fresh.part, game.done && !game.won)}
     <figure class="quote"><blockquote>“${blankLine(o.line)}”</blockquote><figcaption>${credit(o, src)}</figcaption></figure></div>
-    <div class="misses"><span><b>${left}</b> of ${MAX_MISS} misses left</span>${wrong.length ? `<span class="wrong" aria-label="Wrong letters">${wrong.join("")}</span>` : ""}</div>
+    <div class="misses"><span><b>${left}</b> of ${MAX_MISS} misses left</span>${wrong.length ? `<span class="wrong" aria-label="Wrong letters">${wrong.join("")}</span>` : ""}${game.done ? "" : `<span class="clock" id="clock" aria-label="Time">${clockText(Math.floor(elapsed(game) / 1000))}</span>`}</div>
     <div class="word" aria-label="The word, ${ans.key.replace(/[^A-Z]/g, "").length} letters">${wordRow(game, ans, fresh.letter)}</div>`;
   if (game.done) return head + board + resultView(R);
+  startClock(game);
   const hints = `<div class="hints">
     ${game.hints >= 1 ? `<div class="hint"><div class="eyebrow">Hint · type of word and origin</div><p>${kindHint(e)}</p></div>` : ""}
     ${game.hints >= 2 ? `<div class="hint"><div class="eyebrow">Hint · what it means</div><p>${esc(maskText(defFor(e, o), e, ans))}</p></div>` : ""}
@@ -512,6 +544,13 @@ function lineFor(g, wrong){
   const pool = g.won ? (wrong === 0 ? FLAWLESS : wrong >= MAX_MISS - 1 ? CLOSE_CALL : WIN_LINES) : (g.mode === "daily" ? DAILY_LOSS.concat(LOSE_LINES) : LOSE_LINES);
   return pool[fnv((g.day || "") + g.w + g.line) % pool.length];
 }
+function scoreBlock(g){
+  if (g.score == null) return "";
+  const R = resolve(g), sc = scoreOf(g, wrongOf(g, R.ans).length);
+  return `<div class="score ${g.won ? "won" : "lost"}"><div class="pts"><b>${g.score.toLocaleString()}</b><span>points</span></div>
+    ${g.won ? `<ul class="parts">${sc.parts.map(([l, v]) => `<li><span>${esc(l)}</span><b>${v ? "−" + v : "0"}</b></li>`).join("")}</ul>` : `<p class="muted">A hanging scores nothing.</p>`}</div>
+    <details class="how"><summary>How the score works</summary><p>Every word starts on 1,000 points. You lose 75 for each wrong letter, 100 for the first hint and 150 for the second. The first 20 seconds are free, then each second costs 2 points (300 at most). A solved word always scores at least 100; a hanging scores 0. The clock only runs while the word is on screen.</p></details>`;
+}
 function resultView(R){
   const {e, o, ans, src} = R, g = game, wrong = wrongOf(g, ans).length;
   const differs = fold(ans.shown).toLowerCase() !== fold(e.w).toLowerCase();
@@ -523,10 +562,11 @@ function resultView(R){
   const moreSrc = new Set(e.occ.map(x => x.s)).size - 1 - others.length;
   const shakesSense = src.cat === "shakes" && e.sdef;
   const streakLine = g.mode === "daily" ? `Daily streak: <b>${dailyStreak()}</b> day${dailyStreak() === 1 ? "" : "s"}. Come back tomorrow for No. ${g.no + 1}.`
-    : (() => { const r = runStats(); return `Daily run: <b>${r.cur}</b> in a row today (best ${r.best}).`; })();
+    : (() => { const r = runStats(); return `Daily run: <b>${r.cur}</b> in a row today and <b>${(r.pts || 0).toLocaleString()}</b> points (best day ${(r.bestPts || 0).toLocaleString()}).`; })();
   const issue = `${ISSUES}?title=${encodeURIComponent(`Hangman: problem with "${e.w}"`)}&body=${encodeURIComponent(`Word: ${e.w}\nQuote: ${plain(o.line)}\nSource: ${src.name}\n\nWhat's wrong:\n`)}`;
   return `<section class="result" aria-live="polite">
     ${verdict}
+    ${scoreBlock(g)}
     <div class="answer">${esc(ans.shown)}${differs ? `<small>from ${esc(e.w)}</small>` : ""}${e.pos ? `<small>${esc(e.pos)}</small>` : ""}</div>
     <p class="defn">${shakesSense ? `<span class="tag">In Shakespeare's sense</span>` : ""}${esc(plain(defFor(e, o)))}</p>
     ${shakesSense && e.def && e.def !== e.sdef ? `<p class="muted">Today it usually means: ${esc(plain(e.def))}</p>` : ""}
@@ -629,7 +669,8 @@ function wirePicker(){
 }
 function shareResult(){
   const R = resolve(game), wrong = wrongOf(game, R.ans).length;
-  const text = `Dr Tom's Lexicon · Hangman No. ${game.no}\n${game.won ? `Solved with ${wrong} of ${MAX_MISS} misses${game.hints ? `, ${game.hints} hint${game.hints > 1 ? "s" : ""}` : ""}` : "Hanged"}\n${"■".repeat(wrong)}${"□".repeat(MAX_MISS - wrong)}\nStreak: ${dailyStreak()}\n${SITE}`;
+  const pts = game.score != null ? `${game.score.toLocaleString()} points` : "";
+  const text = `Dr Tom's Lexicon · Hangman No. ${game.no}\n${game.won ? `Solved: ${[pts, `${wrong} wrong`, game.hints ? `${game.hints} hint${game.hints > 1 ? "s" : ""}` : "", game.secs != null ? clockText(game.secs) : ""].filter(Boolean).join(", ")}` : "Hanged"}\n${"■".repeat(wrong)}${"□".repeat(MAX_MISS - wrong)}\nStreak: ${dailyStreak()}\n${SITE}`;
   const copy = () => navigator.clipboard ? navigator.clipboard.writeText(text).then(() => toast("Result copied"), () => toast("Couldn't copy here")) : toast("Couldn't copy here");
   if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) navigator.share({text}).catch(copy); else copy();
 }
@@ -641,7 +682,13 @@ document.addEventListener("keydown", ev => {
   }
 });
 addEventListener("hashchange", route);
-document.addEventListener("visibilitychange", () => { if (!document.hidden && view === "home") render(); });
+document.addEventListener("visibilitychange", () => {
+  const playing = (view === "today" || view === "play") && game && !game.done;
+  if (document.hidden){ if (playing) pauseClock(game); return; }
+  if (playing) startClock(game);
+  if (view === "home") render();
+});
+setInterval(() => { const c = $("#clock"); if (c && game && !game.done) c.textContent = clockText(Math.floor(elapsed(game) / 1000)); }, 1000);
 
 const daily = fetch(DAILY_URL).then(r => r.ok ? r.json() : null).then(d => { DAILY = (d && d.days) || {}; }).catch(() => {});
 fetch(DATA_URL).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
