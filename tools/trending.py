@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "harvest", "trending.json")
-UA = "DrTomsLexiconTrending/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
+UA = "DrTomsLexiconTrending/1.0 (+https://github.com/ThomasSchmierer/Dr-Toms-Lexicon)"
 TOP = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{:%Y/%m/%d}"
 TOP_MONTH = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{:%Y/%m}/all-days"
 WP = "https://en.wikipedia.org/w/api.php"
