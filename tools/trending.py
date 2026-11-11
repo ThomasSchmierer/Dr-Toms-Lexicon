@@ -28,14 +28,17 @@ NOT = re.compile(r"\b(actor|actress|director|producer|writer|screenwriter|filmma
                  r"television personality|youtuber|streamer|journalist|critic|wrestler|athlete|player|cinematographer|composer)\b", re.I)
 
 def get(url, params=None, tries=5):
-    if params: url += "?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": "2", "maxlag": "5"})
+    if params: url += "?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": "2"})
     for attempt in range(tries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=60) as r: return json.loads(r.read())
+            with urllib.request.urlopen(req, timeout=60) as r: data = json.loads(r.read())
+            if isinstance(data, dict) and data.get("error"):          # busy or refused: wait and try again
+                raise RuntimeError(data["error"].get("info") or data["error"].get("code"))
+            return data
         except Exception as e:
             if attempt == tries - 1: raise
-            time.sleep(3 * (attempt + 1))
+            print(f"  retrying ({e})"); time.sleep(4 * (attempt + 1))
 
 def top_articles(days=7):
     """Total English Wikipedia views over the last few days, for the top 1,000 articles of each day."""
@@ -88,6 +91,7 @@ def main():
         desc, qid, canon = info.get(t, ("", "", t))
         if qid and SCREEN.search(desc) and not NOT.search(desc): screen.append((t, desc, qid, canon))
     wq = quote_pages([q for _, _, q, _ in screen])
+    if screen and not wq: raise SystemExit("Found TV shows and films but no quote pages: the Wikidata lookup must have failed.")
     seen, titles = set(), []
     for t, desc, qid, canon in screen:
         if qid not in wq or qid in seen: continue

@@ -63,7 +63,7 @@ def make_daily(out):
     days = {k: v for k, v in days.items() if k >= keep_from}
     for off in range(3):
         key = (first + timedelta(days=off)).isoformat()
-        if key in days: continue
+        if key in days and days[key].get("rank"): continue             # trending picks are fixed; fallbacks get another chance
         before = sorted(k for k in days if k < key)
         used_words = {days[k]["w"] for k in before[-90:]}
         recent_src = {days[k].get("src") for k in before[-4:]}
