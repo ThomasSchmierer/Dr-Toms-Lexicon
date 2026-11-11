@@ -205,7 +205,7 @@ def nightly(shows_n, books_n, refresh_days, max_zipf, min_len, outdir):
              "| Source | Pages | Candidate words | Spreadsheet |", "|---|---|---|---|"]
     for name, r in done:
         lines.append(f"| {name} | {r['pages']} | {r['words']} | [{os.path.basename(r['file'])}]({os.path.basename(r['file'])}) |" if r else f"| {name} | – | {'connection problem, retrying tomorrow' if r is False else 'not found'} | – |")
-    lines += ["", f"Still queued: {left} show(s). Put **y** in the keep column of any spreadsheet, then run **2. Add kept words to the game**."]
+    lines += ["", f"Still queued: {left} show(s). New words are checked and added to the game automatically after each harvest; see [REVIEW.md](REVIEW.md)."]
     open(os.path.join(outdir, "LATEST.md"), "w").write("\n".join(lines) + "\n")
 
 # ---------- drafting game entries ----------
