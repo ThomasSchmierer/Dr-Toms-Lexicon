@@ -1,6 +1,6 @@
 # Word harvester
 
-Finds rare words in TV quotes and public-domain books, checks them in two dictionaries, and adds the good ones to Moira's Lexicon automatically.
+Finds rare words in TV quotes and public-domain books, checks them in two dictionaries, and adds the good ones to Dr Tom's Lexicon automatically.
 
 ## The easy way: buttons on GitHub
 

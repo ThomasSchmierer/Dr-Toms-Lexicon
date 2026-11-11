@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Moira's Lexicon reviewer: approves harvested words automatically.
+Dr Tom's Lexicon reviewer: approves harvested words automatically.
 
 For every word in the harvest spreadsheets it
   1. looks the word up in two dictionaries, WordNet and Wiktionary,
@@ -25,7 +25,7 @@ ROOT = os.path.dirname(HERE)
 HARVEST = os.path.join(ROOT, "harvest")
 CACHE = os.path.join(HARVEST, "wiktionary.json")
 DECISIONS = os.path.join(HARVEST, "decisions.json")
-UA = "MoiraLexiconReviewer/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
+UA = "DrTomsLexiconReviewer/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
 WIKT = "https://en.wiktionary.org/w/api.php"
 
 FRAGMENT = re.compile(r"^(wouldn|couldn|shouldn|didn|doesn|isn|wasn|weren|hasn|haven|hadn|aren|mustn|needn|mightn|oughtn|shan|ain|innit|gonna|wanna|gotta|dunno|lemme|gimme|kinda|sorta|outta|y'all)$")
@@ -1018,7 +1018,7 @@ def fam_rows_for(w, approved, fam_rows):
     return []
 
 def main():
-    ap = argparse.ArgumentParser(description="Approve harvested words for Moira's Lexicon automatically.")
+    ap = argparse.ArgumentParser(description="Approve harvested words for Dr Tom's Lexicon automatically.")
     ap.add_argument("step", choices=["fetch", "approve", "all", "raw"])
     ap.add_argument("words", nargs="*", help="raw: print the English Wiktionary text of these words (for checking the parser)")
     ap.add_argument("--limit", type=int, default=None, help="look up at most this many new words (for testing)")

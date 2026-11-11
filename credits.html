@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Credits and Licences · Dr Tom's Lexicon</title>
+<meta name="description" content="Where the words, definitions and quotations in Dr Tom's Lexicon come from, their licences, and how to ask for a quotation to be removed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+/* Layout: one readable column of plain sections; a table for the sources. Same palette as the game, dark-first. */
+:root{
+  --bg:#1a1218; --card:#241821; --ink:#f3e9ee; --muted:#b8a2ae; --rule:#43303c; --gilt:#d9b46a; --rouge:#e0607e;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#f7eef1; --card:#fffafb; --ink:#2a1622; --muted:#7a5d6c; --rule:#e6d3db; --gilt:#9a6f1f; --rouge:#b8335a; color-scheme:light } }
+:root[data-theme="light"]{ --bg:#f7eef1; --card:#fffafb; --ink:#2a1622; --muted:#7a5d6c; --rule:#e6d3db; --gilt:#9a6f1f; --rouge:#b8335a; color-scheme:light }
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body)}
+main{max-width:720px;margin:0 auto;padding-block:32px 56px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:28px}
+a{color:var(--gilt)}
+a:focus-visible{outline:2px solid var(--gilt);outline-offset:2px}
+.back{font-weight:600;text-decoration:none}
+header{display:flex;flex-direction:column;gap:12px}
+h1{font:600 clamp(2rem, 6vw, 2.8rem)/1.05 var(--display);margin:0;text-wrap:balance}
+h1 b{color:var(--gilt);font-weight:600}
+h2{font:600 1.35rem/1.2 var(--display);margin:0 0 8px;text-wrap:balance}
+p{margin:0 0 10px;max-width:65ch}
+.lead{font-size:1.08rem;color:var(--muted)}
+section{border-top:1px solid var(--rule);padding-top:22px}
+.note{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--rouge);border-radius:8px;padding:14px 16px}
+.note p:last-child{margin:0}
+.table{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+details summary{cursor:pointer;font-weight:600;color:var(--gilt)}
+pre{white-space:pre-wrap;font:400 .82rem/1.5 ui-monospace, Menlo, monospace;color:var(--muted);background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px;margin:10px 0 0}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="./">‹ Back to the game</a>
+  <header>
+    <h1>Credits and <b>licences</b></h1>
+    <p class="lead">Dr Tom's Lexicon is a free, non-commercial word game made by a fan. There are no ads and nothing to buy. It is not affiliated with, or endorsed by, any show, film, studio, network or author it quotes.</p>
+  </header>
+
+  <section>
+    <h2>Quotations from TV and film</h2>
+    <p>Each word comes with one short line (15 words at most) from the show or film where it was heard. The lines are quoted to study and comment on the words in them, and each one names its show or film and links to where it was found. Copyright in every quotation stays with its owner.</p>
+    <p>Many lines were found through <a href="https://en.wikiquote.org/">Wikiquote</a>. Wikiquote's own text is shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; that licence doesn't cover the quotations themselves.</p>
+    <div class="note">
+      <p><b>Want a quotation removed?</b> If you hold the rights in a line and would like it taken down, <a href="https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new?title=Removal%20request">open a removal request</a>, or tap "Report a problem" on the word in the game. It will be removed.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where everything comes from</h2>
+    <div class="table">
+      <table>
+        <thead><tr><th>Source</th><th>Used for</th><th>Licence</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://en.wiktionary.org/">Wiktionary</a> contributors</td><td>Definitions and word histories, shortened and tidied</td><td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td></tr>
+          <tr><td><a href="https://en.wikiquote.org/">Wikiquote</a> contributors</td><td>Finding quotations, with their show, episode and speaker</td><td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (quotations stay with their owners)</td></tr>
+          <tr><td><a href="https://wordnet.princeton.edu/">WordNet 3.0</a>, Princeton University</td><td>Definitions, synonyms and word senses</td><td>WordNet licence (notice below)</td></tr>
+          <tr><td><a href="http://www1.icsi.berkeley.edu/~demelo/etymwn/">Etymological Wordnet</a>, Gerard de Melo</td><td>Some word histories</td><td><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></td></tr>
+          <tr><td><a href="https://github.com/rspeer/wordfreq">wordfreq</a>, Robyn Speer</td><td>How rare each word is</td><td>Data <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td></tr>
+          <tr><td><a href="https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews">Wikipedia page views</a> and <a href="https://www.wikidata.org/">Wikidata</a></td><td>Which shows and films are popular for the word of the day</td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></td></tr>
+          <tr><td><a href="http://shakespeare.mit.edu/">The Complete Works of William Shakespeare</a>, MIT</td><td>Shakespeare's plays</td><td>Public domain</td></tr>
+          <tr><td><a href="https://www.gutenberg.org/">Project Gutenberg</a></td><td>Classic novels, plays and poems</td><td>Public domain texts</td></tr>
+          <tr><td><a href="https://fonts.google.com/">Google Fonts</a></td><td>Typefaces</td><td><a href="https://openfontlicense.org/">SIL Open Font Licence</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reusing this project</h2>
+    <p>The code is under the <a href="https://github.com/ThomasSchmierer/Moira-Lexicon/blob/main/LICENSE">MIT licence</a>. Because the word data builds on share-alike sources, the word lists, definitions and cross-references are under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>: credit "Dr Tom's Lexicon" and the sources above, and share your version the same way. <a href="https://github.com/ThomasSchmierer/Moira-Lexicon/blob/main/DATA-LICENSE.md">Full details</a>.</p>
+    <details>
+      <summary>WordNet notice</summary>
+<pre>WordNet Release 3.0
+
+This software and database is being provided to you, the LICENSEE, by Princeton University under the following license. By obtaining, using and/or copying this software and database, you agree that you have read, understood, and will comply with these terms and conditions.:
+
+Permission to use, copy, modify and distribute this software and database and its documentation for any purpose and without fee or royalty is hereby granted, provided that you agree to comply with the following copyright notice and statements, including the disclaimer, and that the same appear on ALL copies of the software, database and documentation, including modifications that you make for internal use or for distribution.
+
+WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
+
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT- ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+The name of Princeton University or Princeton may not be used in advertising or publicity pertaining to distribution of the software and/or database. Title to copyright in this software, database and any associated documentation shall at all times remain with Princeton University and LICENSEE agrees to preserve same.</pre>
+    </details>
+  </section>
+</main>
+</body>
+</html>

@@ -120,16 +120,24 @@ def main():
     show_names.update({k: v["name"] for k, v in approved.get("shows", {}).items()})
 
     sources, src_index = [], {}
-    def source(name, cat, sub="", by=""):
+    import urllib.parse
+    def source(name, cat, sub="", by="", url=""):
         sid = slug(name)
         if sid not in src_index:
             src_index[sid] = len(sources)
-            sources.append([sid, name, cat, sub, by, 0])
-        return src_index[sid]
-    def show_source(name):
-        return source(name, "film" if name in FILMS else "tv", SHOW_YEARS.get(name, ""))
-    for k, (name, group) in shakes.get("plays", {}).items(): source(name, "shakes", group, "William Shakespeare")
-    for k, (name, author, kind) in study.get("texts", {}).items(): source(name, "books", kind, author)
+            sources.append([sid, name, cat, sub, by, 0, ""])
+        i = src_index[sid]
+        if url and not sources[i][6]: sources[i][6] = url          # where the quotes were found
+        return i
+    def wq_url(u):                                                 # the show's main Wikiquote page, not a season subpage
+        m = re.match(r"(https://en\.wikiquote\.org/wiki/[^/#?]+)", u or "")
+        return m.group(1) if m else (u if (u or "").startswith("https://") else "")
+    def show_source(name, url=""):
+        url = wq_url(url) or "https://en.wikiquote.org/w/index.php?search=" + urllib.parse.quote_plus(re.sub(r"\s+(the Third|II|Goes Forth)$", "", name))
+        return source(name, "film" if name in FILMS else "tv", SHOW_YEARS.get(name, ""), "", url)
+    for k, (name, group) in shakes.get("plays", {}).items(): source(name, "shakes", group, "William Shakespeare", f"http://shakespeare.mit.edu/{k}/full.html")
+    for k, (name, author, kind) in study.get("texts", {}).items():
+        source(name, "books", kind, author, "https://www.gutenberg.org/ebooks/search/?query=" + urllib.parse.quote_plus(name))
 
     words = {}      # lowercase headword -> entry
     def entry(w, e, prio):
@@ -166,7 +174,7 @@ def main():
             e = {**e, "def": m.group(1).strip() + "."}
         cur = entry(e["w"], e, 1)
         if cur["dd"] != "" and ((e.get("rarity") or 0) >= 4 or len(e["w"]) >= 9): cur["dd"] = e.get("day", "") or ""
-        add(cur, show_source(show_names.get(e["show"], e["show"])), e["line"], e.get("who", ""), episode(e.get("to"), e.get("who")))
+        add(cur, show_source(show_names.get(e["show"], e["show"]), e.get("source", "")), e["line"], e.get("who", ""), episode(e.get("to"), e.get("who")))
     # 3. Shakespeare: curated senses are kept for Shakespeare quotes
     plays = shakes.get("plays", {})
     for k, e in shakes.get("words", {}).items():
@@ -202,8 +210,8 @@ def main():
             if kind == 2: continue                                   # Shakespeare and set texts are already in
             if kind == 1:
                 by, sub = BOOKS_BY.get(src, ("", "book"))
-                si = source(src, "books", sub, by)
-            else: si = show_source(src)
+                si = source(src, "books", sub, by, url if (url or "").startswith("https://") else "")
+            else: si = show_source(src, url)
             add(cur, si, line, who, where)
 
     out_words = []

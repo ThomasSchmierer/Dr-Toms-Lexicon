@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Moira's Lexicon harvester: finds rare words in quotes and public-domain books
+Dr Tom's Lexicon harvester: finds rare words in quotes and public-domain books
 and turns the ones you approve into game entries.
 
   1. harvest   python tools/harvest.py wikiquote "Frasier" "Yes Minister"
@@ -18,7 +18,7 @@ import argparse, csv, html, json, os, re, sys, time, urllib.parse, urllib.reques
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-UA = "MoiraLexiconHarvester/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
+UA = "DrTomsLexiconHarvester/1.0 (+https://github.com/ThomasSchmierer/Moira-Lexicon)"
 API = "https://en.wikiquote.org/w/api.php"
 BLOCK = re.compile(r"(rape|whore|bawd|cuckold|strumpet|harlot|slut|cunt|fuck|shit|piss|nigg|negro|fag|dyke|retard|tranny|spic|kike|wog|"
                    r"penis|vagin|genital|semen|sperm|nipple|orgas|masturb|erotic|sexual|porn|incest|suicide|bitch|bastard|wank|bollock|arse|twat)")
@@ -269,7 +269,7 @@ def write_csv(rows, path):
         w.writeheader(); w.writerows(rows)
 
 def main():
-    ap = argparse.ArgumentParser(description="Harvest rare words for Moira's Lexicon.")
+    ap = argparse.ArgumentParser(description="Harvest rare words for Dr Tom's Lexicon.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("wikiquote", help="harvest quote pages (and their season pages) from Wikiquote")
     a.add_argument("titles", nargs="*", help="Wikiquote page titles, e.g. \"Frasier\" \"Yes Minister\"")

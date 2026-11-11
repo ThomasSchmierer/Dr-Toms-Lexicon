@@ -186,6 +186,7 @@ const DATA_URL = "words.json", DAILY_URL = "daily.json";
 const SITE = "https://thomasschmierer.github.io/Moira-Lexicon/hangman/";
 const MAIN = "https://thomasschmierer.github.io/Moira-Lexicon/";
 const ISSUES = "https://github.com/ThomasSchmierer/Moira-Lexicon/issues/new";
+const CREDITS = "https://thomasschmierer.github.io/Moira-Lexicon/credits.html";
 const MAX_MISS = 8, MAX_LEN = 18, MIN_LETTERS = 4;
 const EPOCH = Date.UTC(2026, 10, 11);            // No. 1 is 11 November 2026
 const CAT = {tv:"TV", film:"Film", shakes:"Shakespeare", books:"Books"};
@@ -224,7 +225,7 @@ function answerOf(line){
   return {shown, key};
 }
 function init(d){
-  SRC = d.src.map(([id, name, cat, sub, by], i) => ({i, id, name, cat, sub, by, words: 0, sort: fold(name).toLowerCase().replace(/^(the|a|an) /, "")}));
+  SRC = d.src.map(([id, name, cat, sub, by, n, url], i) => ({i, id, name, cat, sub, by, url: /^https?:\/\//.test(url || "") ? url : "", words: 0, sort: fold(name).toLowerCase().replace(/^(the|a|an) /, "")}));
   WORDS = [];
   for (const [w, pos, def, sdef, ety, origin, dd, occ] of d.w){
     const os = occ.map(([s, line, who, where]) => ({s, line, who, where, ans: answerOf(line)})).filter(o => o.ans && SRC[o.s]);
@@ -438,7 +439,7 @@ function homeView(){
     </div>
     <p class="muted" style="font-size:.85rem">Your streaks are saved in this browser only.</p>
   </section>
-  <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Quotes are short extracts for commentary; many come via Wikiquote (CC BY-SA). Definitions from WordNet and Wiktionary. Part of <a href="${MAIN}" target="_blank" rel="noopener">Moira's Lexicon</a>.</footer>`;
+  <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Free, non-commercial and fan-made; not affiliated with any show, film or studio. Quotes are short lines for studying the words, and stay the property of their owners; many were found via Wikiquote. Definitions from WordNet and Wiktionary (CC BY-SA 4.0). Part of <a href="${MAIN}" target="_blank" rel="noopener">Dr Tom's Lexicon</a> · <a href="${CREDITS}" target="_blank" rel="noopener">Credits, licences and removal requests</a>.</footer>`;
 }
 function trendLine(t){
   const D = DAILY[t.key]; if (!D || !D.src) return "";
@@ -487,7 +488,7 @@ function resultView(R){
     <div class="answer">${esc(ans.shown)}${differs ? `<small>from ${esc(e.w)}</small>` : ""}${e.pos ? `<small>${esc(e.pos)}</small>` : ""}</div>
     <p class="defn">${shakesSense ? `<span class="tag">In Shakespeare's sense</span>` : ""}${esc(plain(defFor(e, o)))}</p>
     ${shakesSense && e.def && e.def !== e.sdef ? `<p class="muted">Today it usually means: ${esc(plain(e.def))}</p>` : ""}
-    <blockquote class="full">“${safe(o.line)}”</blockquote><p class="cite">${credit(o, src)}</p>
+    <blockquote class="full">“${safe(o.line)}”</blockquote><p class="cite">${credit(o, src)}${src.url ? ` · <a href="${esc(src.url)}" target="_blank" rel="noopener">source ↗</a>` : ""}</p>
     ${e.ety ? `<details><summary>Where the word comes from</summary><p>${safe(e.ety)}</p></details>` : ""}
     ${others.length ? `<div class="also"><div class="eyebrow">Also turns up in</div><ul>${others.map(x => `<li><span class="q">“${safe(x.line)}”</span><br><span class="muted">${credit(x, SRC[x.s])}</span></li>`).join("")}</ul>
       ${moreSrc > 0 ? `<p class="muted">…and ${moreSrc} other place${moreSrc === 1 ? "" : "s"}.</p>` : ""}</div>` : ""}
@@ -495,7 +496,7 @@ function resultView(R){
     <div class="row">${g.mode === "daily" ? `<button class="btn primary" id="share">Share result</button><a class="btn" href="#play">Keep playing</a>`
       : `<button class="btn primary" id="next">Next word</button><a class="btn" href="#sources">Choose what to play</a>`}</div>
     <div class="links"><a href="https://www.google.com/search?q=${encodeURIComponent("how to pronounce " + e.w)}" target="_blank" rel="noopener">Hear it said ↗</a>
-      <a href="${issue}" target="_blank" rel="noopener">Report a problem with this word ↗</a></div>
+      <a href="${issue}" target="_blank" rel="noopener">Report a problem or ask for this quote to be removed ↗</a></div>
   </section>`;
 }
 
