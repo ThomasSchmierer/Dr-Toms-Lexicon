@@ -137,7 +137,7 @@ p{margin:0}
 
 .kbd{display:flex;flex-direction:column;gap:7px;padding-block:6px 4px}
 .kbd .krow{display:flex;justify-content:center;gap:5px}
-.key{flex:1 1 0;max-width:46px;min-width:0;height:50px;border-radius:8px;border:1px solid var(--rule);background:var(--card);font:700 1.05rem/1 var(--ui);cursor:pointer;touch-action:manipulation}
+.key{flex:0 0 calc((100% - 45px) / 10);max-width:46px;min-width:0;height:50px;border-radius:8px;border:1px solid var(--rule);background:var(--card);font:700 1.05rem/1 var(--ui);cursor:pointer;touch-action:manipulation}
 .key:active{transform:translateY(1px)}
 .key.hit{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .key.no{background:transparent;color:var(--margin);border-color:transparent;text-decoration:line-through;opacity:.7}
