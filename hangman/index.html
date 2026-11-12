@@ -297,11 +297,28 @@ const b64e = s => btoa(String.fromCharCode(...new TextEncoder().encode(s))).repl
 const b64d = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0)));
 const myName = () => String(store.get("name", "") || "").trim().slice(0, 24);
 const pl = (n, word) => `${n.toLocaleString()} ${word}${n === 1 ? "" : "s"}`;
-function dareLink(words, board){ return SITE + "#vs=" + b64e(JSON.stringify({v: 1, r: words, b: board.slice(0, 1).concat(board.slice(1).slice(-9))})); }
+function dareLink(words, board, chain){ return SITE + "#vs=" + b64e(JSON.stringify({v: 2, c: chain, r: words, b: board.slice(0, 1).concat(board.slice(1).slice(-9))})); }
+/* Each challenge chain remembers, in this browser, the points you got on each of its words.
+   When it comes back with new words added, those points carry over and you only play the new ones. */
+const rid = () => Math.random().toString(36).slice(2, 10);
+function meId(){ let m = store.get("me", ""); if (!m){ m = rid(); store.set("me", m); } return m; }
+function chainLog(c){ return (store.get("chains", {}) || {})[c] || {}; }
+function logChain(c, entries){                                    // entries: [word, line id, points]
+  if (!c) return;
+  const all = store.get("chains", {}) || {}, m = all[c] || {};
+  for (const [w, l, p] of entries) m[w + "|" + l] = p;
+  delete all[c]; all[c] = m;                                      // most recent last
+  const keys = Object.keys(all); while (keys.length > 40) delete all[keys.shift()];
+  store.set("chains", all);
+}
+const mine = b => b[3] && b[3] === meId();
+const boardRow = b => [mine(b) ? `${b[0]} (you)` : b[0], b[1], b[2], mine(b)];
 function vsState(){ return store.get("vs", null); }
 const vsPts = V => V.results.reduce((a, r) => a + (r[1] || 0), 0);
 const vsSolved = V => V.results.filter(r => r[1] > 0).length;
-const vsTarget = V => V.board.reduce((a, b) => b[1] > a[1] ? b : a, V.board[0]);
+const vsOthers = V => { const o = V.board.filter(b => !mine(b)); return o.length ? o : V.board; };
+const vsTarget = V => vsOthers(V).reduce((a, b) => b[1] > a[1] ? b : a, vsOthers(V)[0]);   // the best score that isn't yours
+const vsCarried = V => V.results.slice(0, V.carried || 0).reduce((a, r) => a + (r[1] || 0), 0);
 const vsBase = V => V.base || V.words.length;                       // how many words the challenge came with
 const vsBonus = V => Math.max(0, V.results.length - vsBase(V));      // new words played after getting through them all
 const MAX_VS = 60;                                                  // the most words one link carries
@@ -315,11 +332,15 @@ function openDare(code){
     const o = e.occ.find(y => lineId(y.line) === x[1]) || e.occ[0];
     words.push({w: e.w, line: o.line, l: lineId(o.line)});
   }
-  const board = d.b.slice(0, 10).map(b => [String((b && b[0]) || "A friend").trim().slice(0, 24) || "A friend", Math.max(0, Math.round(+(b && b[1]) || 0)), Math.max(0, Math.round(+(b && b[2]) || 0))]);
+  const board = d.b.slice(0, 10).map(b => [String((b && b[0]) || "A friend").trim().slice(0, 24) || "A friend", Math.max(0, Math.round(+(b && b[1]) || 0)), Math.max(0, Math.round(+(b && b[2]) || 0)),
+    typeof (b && b[3]) === "string" ? b[3].slice(0, 12) : ""]);
   if (!words.length){ toast("Those words have been retired. Sorry!"); return null; }
   const id = fnv(code).toString(36), V = vsState();
   if (V && V.id === id) return V;                                // the same link again: carry on where you were
-  const nv = {id, words, base: words.length, board, results: [], game: null, started: false, done: false};
+  const chain = typeof d.c === "string" && d.c ? d.c.slice(0, 16) : "w" + fnv(d.r.map(x => Array.isArray(x) ? x[0] : "").join("|")).toString(36);
+  const log = chainLog(chain), results = [];
+  for (const x of words){ const p = log[x.w + "|" + x.l]; if (p == null) break; results.push([x.w, p]); }   // words you've already played
+  const nv = {id, chain, words, base: words.length, board, results, carried: results.length, game: null, started: false, done: false};
   store.set("vs", nv);
   return nv;
 }
@@ -352,18 +373,20 @@ function sendDare(text, url){
   if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) navigator.share({title: "Dr Tom's Lexicon Hangman", text, url}).catch(err => { if (!err || err.name !== "AbortError") copy(); });
   else copy();
 }
-function dareRun(last){                                           // the challenger: send the run that just ended
+function dareRun(){                                               // the challenger: send the run that just ended
+  const r = runStats(), last = r.last; if (!last) return;
+  if (!last.chain){ last.chain = rid(); store.set("run", r); logChain(last.chain, last.set); }
   const name = myName() || "A friend", solved = last.set.filter(x => x[2] > 0).length;
-  const url = dareLink(last.set.map(x => [x[0], x[1]]), [[name, last.pts, solved]]);
+  const url = dareLink(last.set.map(x => [x[0], x[1]]), [[name, last.pts, solved, meId()]], last.chain);
   sendDare(`I solved ${pl(solved, "word")} in a row for ${last.pts.toLocaleString()} points on Dr Tom's Lexicon Hangman. Same words, same order: can you beat me?`, url);
 }
 function dareBack(V){                                             // whoever took the challenge: send it on with their score added
-  const name = myName() || "A friend", mine = vsPts(V), t = vsTarget(V);
+  const name = myName() || "A friend", pts = vsPts(V), t = vsTarget(V);
   const words = V.words.slice(0, Math.max(vsBase(V), V.results.length)), extra = vsBonus(V);
-  const url = dareLink(words.map(x => [x.w, x.l]), V.board.concat([[name, mine, vsSolved(V)]]));
+  const url = dareLink(words.map(x => [x.w, x.l]), V.board.filter(b => !mine(b)).concat([[name, pts, vsSolved(V), meId()]]), V.chain);
   const added = extra ? ` and added ${pl(extra, "new word")}` : "";
-  sendDare(mine > t[1] ? `I beat ${t[0]}'s ${t[1].toLocaleString()} with ${mine.toLocaleString()} points on Dr Tom's Lexicon Hangman${added}. Your move: ${pl(words.length, "word")}, same order.`
-    : `I scored ${mine.toLocaleString()} on this Dr Tom's Lexicon Hangman challenge${added}. Think you can do better? ${pl(words.length, "word")}, same order.`, url);
+  sendDare(pts > t[1] ? `I beat ${t[0]}'s ${t[1].toLocaleString()} with ${pts.toLocaleString()} points on Dr Tom's Lexicon Hangman${added}. Your move: ${pl(words.length, "word")}, same order.`
+    : `I scored ${pts.toLocaleString()} on this Dr Tom's Lexicon Hangman challenge${added}. Think you can do better? ${pl(words.length, "word")}, same order.`, url);
 }
 function nameField(){ return `<label class="dare-name"><span>Sign it</span><input id="dare-name" maxlength="24" autocomplete="nickname" placeholder="Your name" value="${esc(myName())}"></label>`; }
 function ranks(rows){
@@ -475,7 +498,7 @@ function finish(g, R){
     const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed, score: g.score, secs: g.secs}; store.set("days", H);
   } else if (g.mode === "vs"){
     const V = vsState();
-    if (V){ V.results.push([g.w, g.score]); if (!g.won || V.results.length >= MAX_VS) V.done = true; V.game = g; store.set("vs", V); }   // a hanging ends it
+    if (V){ V.results.push([g.w, g.score]); logChain(V.chain, [[g.w, lineId(g.line), g.score]]); if (!g.won || V.results.length >= MAX_VS) V.done = true; V.game = g; store.set("vs", V); }   // a hanging ends it
   } else {
     const s = runStats(); s.day = today().key; s.played++; s.pts = (s.pts || 0) + g.score; s.bestPts = Math.max(s.bestPts || 0, s.pts);
     s.set.push([g.w, lineId(g.line), g.score]); if (s.set.length > 60) s.set = s.set.slice(-60);
@@ -688,35 +711,37 @@ function homeView(){
   <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Free, non-commercial and fan-made; not affiliated with any show, film or studio. Quotes are short lines for studying the words, and stay the property of their owners; many were found via Wikiquote. Definitions from WordNet and Wiktionary (CC BY-SA 4.0). <a href="${MAIN}" target="_blank" rel="noopener">Play the main Dr Tom's Lexicon game</a> · <a href="${CREDITS}" target="_blank" rel="noopener">Credits, licences and removal requests</a>.</footer>`;
 }
 function vsIntro(V){
-  const t = vsTarget(V), first = V.board[0], n = vsBase(V);
+  const t = vsTarget(V), first = V.board[0], n = vsBase(V), done = V.carried || 0, fresh = n - done;
   const hanged = first[2] < n;
-  const story = V.board.length > 1 ? `${ranks(V.board.slice().sort((a, b) => b[1] - a[1]))}`
+  const story = V.board.length > 1 ? `${ranks(V.board.map(boardRow).sort((a, b) => b[1] - a[1]))}`
     : `<p class="src-rank">${esc(first[0])} solved ${pl(first[2], "word")}${hanged ? ` and was hanged on word ${first[2] + 1}` : ""}.</p>`;
   return `<header class="top"><a class="brand" href="#" aria-label="Dr Tom's Lexicon Hangman, home"><span>Dr Tom's Lexicon</span><small>Hangman</small></a></header>
   <section class="hero">
     <div class="eyebrow">You've been challenged</div>
     <h1>${esc(t[0])} scored ${t[1].toLocaleString()}. <em>Can you beat it?</em></h1>
-    <div class="from dare"><div class="eyebrow">The same ${pl(n, "word")}, in the same order</div>${story}
-      <p class="src-rank">Get through them all and you keep going with new words, which go into the challenge when you send it back. One hanging ends your run. Wrong letters, hints and time cost points, as always.</p></div>
+    <div class="from dare"><div class="eyebrow">${done ? (fresh ? `${pl(fresh, "new word")} for you` : "No new words yet") : `The same ${pl(n, "word")}, in the same order`}</div>${story}
+      ${done ? `<p class="src-rank">You've already played ${fresh ? `the first ${done}` : `all ${done}`}, so your <b style="margin-right:0">${vsCarried(V).toLocaleString()} points</b> from ${done === 1 ? "it" : "them"} carry over. ${fresh ? `You only play the ${fresh === 1 ? "new one" : `${fresh} new ones`}, then keep going with more.` : "Keep going with new words to add to it."}</p>`
+        : `<p class="src-rank">Get through them all and you keep going with new words, which go into the challenge when you send it back.</p>`}
+      <p class="src-rank">One hanging ends your run. Wrong letters, hints and time cost points, as always.</p></div>
     <div class="row"><button class="btn primary" id="vs-go">Accept the challenge</button><a class="btn" href="#">Not now</a></div>
     <p class="muted" style="font-size:.85rem">Challenges don't touch your streak or your daily run.</p>
   </section>`;
 }
 function vsSummary(V){
-  const mine = vsPts(V), t = vsTarget(V), me = myName() || "You";
-  const head = mine > t[1] ? `You beat ${esc(t[0])} by ${(mine - t[1]).toLocaleString()}!` : mine === t[1] ? `A dead heat with ${esc(t[0])}.` : `${esc(t[0])} wins by ${(t[1] - mine).toLocaleString()}.`;
-  const rows = V.board.map(b => [...b, false]).concat([[me, mine, vsSolved(V), true]]).sort((a, b) => b[1] - a[1] || (b[3] ? 1 : 0) - (a[3] ? 1 : 0));
+  const pts = vsPts(V), t = vsTarget(V), me = myName() || "You";
+  const head = pts > t[1] ? `You beat ${esc(t[0])} by ${(pts - t[1]).toLocaleString()}!` : pts === t[1] ? `A dead heat with ${esc(t[0])}.` : `${esc(t[0])} wins by ${(t[1] - pts).toLocaleString()}.`;
+  const rows = V.board.filter(b => !mine(b)).map(boardRow).concat([[me, pts, vsSolved(V), true]]).sort((a, b) => b[1] - a[1] || (b[3] ? 1 : 0) - (a[3] ? 1 : 0));
   return `<div class="from dare"><div class="eyebrow">Challenge over</div><div class="src-name">${head}</div>${ranks(rows)}
     <p class="src-rank">${vsBonus(V) ? `Your ${pl(vsBonus(V), "new word")} go${vsBonus(V) === 1 ? "es" : ""} in too, so whoever gets it has ${pl(Math.max(vsBase(V), V.results.length), "word")} to get through. ` : ""}Send it back with your score on it, or pass it on to someone new.</p>
     ${nameField()}<button class="btn primary" id="dare">Send it back</button><input class="dare-link" id="dare-link" readonly hidden aria-label="Challenge link"></div>`;
 }
 function bonusCard(V){
-  const mine = vsPts(V), t = vsTarget(V), extra = vsBonus(V), gap = mine - t[1];
+  const pts = vsPts(V), t = vsTarget(V), extra = vsBonus(V), gap = pts - t[1];
   const where = gap > 0 ? `${(gap).toLocaleString()} ahead of ${esc(t[0])}` : gap === 0 ? `level with ${esc(t[0])}` : `${(-gap).toLocaleString()} behind ${esc(t[0])}`;
   const first = extra === 0;
   return `<div class="from dare"><div class="eyebrow">${first ? `All ${pl(vsBase(V), "word")} done` : "Still going"}</div>
-    <div class="src-name">${first ? (gap > 0 ? `You've beaten ${esc(t[0])}!` : gap === 0 ? `Level with ${esc(t[0])}.` : `Through them all.`) : `Bonus word ${extra} done`}</div>
-    <p class="src-rank"><b style="margin-right:0">${mine.toLocaleString()} points</b>, ${where}.</p>
+    <div class="src-name">${first ? (gap > 0 ? `You've beaten ${esc(t[0])}!` : `Through them all.`) : `Bonus word ${extra} done`}</div>
+    <p class="src-rank"><b style="margin-right:0">${pts.toLocaleString()} points</b>, ${where}.</p>
     <p class="src-rank">${first ? "Keep going with new words. Each one you solve adds points and goes into the challenge you send back. One hanging ends it." : "Every word you add is one more they have to get through."}</p>
     <div class="row"><button class="btn primary" id="next">Keep going</button><button class="btn" id="vs-stop">Stop and send it back</button></div></div>`;
 }
@@ -906,9 +931,9 @@ function wire(){
   const dare = $("#dare"); if (dare) dare.onclick = () => {
     if (nm) store.set("name", nm.value.trim().slice(0, 24));
     if (game && game.mode === "vs"){ const V = vsState(); if (V) dareBack(V); }
-    else { const r = runStats(); if (r.last) dareRun(r.last); }
+    else dareRun();
   };
-  const dh = $("#dare-home"); if (dh) dh.onclick = () => { const r = runStats(); if (r.last) dareRun(r.last); };
+  const dh = $("#dare-home"); if (dh) dh.onclick = () => dareRun();
   const stop = $("#vs-stop"); if (stop) stop.onclick = () => { const V = vsState(); if (!V) return; V.done = true; store.set("vs", V); render(); const d = $(".dare"); if (d) d.scrollIntoView({block: "center"}); };
   const vsGo = $("#vs-go"); if (vsGo) vsGo.onclick = () => { const V = vsState(); if (!V) return; V.started = true; store.set("vs", V); game = vsNextGame(V); render(); scrollTo(0, 0); };
   if ($("#pk")) wirePicker();
