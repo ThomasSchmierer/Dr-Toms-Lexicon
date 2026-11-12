@@ -417,8 +417,76 @@ function fitWord(){
 }
 addEventListener("resize", fitWord);
 const sizeWatch = typeof ResizeObserver === "function" ? new ResizeObserver(() => fitWord()) : null;
-function filledLine(line){ return safe(line).replace(/<\/?(?:i|b|em)>/g, ""); }
-function blankLine(line){ return safe(line).replace(/<mark>[\s\S]*?<\/mark>/i, '<span class="blank" aria-label="missing word"></span>').replace(/<\/?(?:i|b|em|mark)>/g, ""); }
+/* Word-family masking: hide every appearance of the answer and its variations */
+const MASK_SUFFIXES = ["ically","ations","ation","ities","ously","nesses","ments","ment","ness","ings","ists","ical","ally","able","ible","ized","ised","izes","ises","ing","ers","est","ies","ied","ism","ist","ity","ize","ise","ous","ful","ion","ed","es","er","ly","al","ic","s","y","e","d"];
+const foldAccents = s => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function wordForms(...words){
+  const base = new Set();
+  for (const w0 of words){
+    const w = foldAccents(w0).toLowerCase().replace(/\s*\(.*?\)\s*/g, " ").trim();
+    if (!w) continue;
+    base.add(w);
+    const first = w.split(/[\s-]+/)[0];          // "bran flake" -> "bran", but not "under" from "under-resourced"
+    if (first !== w && first.length >= 4 && !/^(under|over|multi|super|inter|counter|ultra|hyper|pseudo|micro|macro|extra|never|after|cross|self|well|half|anti|post|semi|mega|non|out)$/.test(first)) base.add(first);
+  }
+  const stems = new Set(base);
+  for (const w of base){
+    for (const suf of MASK_SUFFIXES){
+      if (!w.endsWith(suf)) continue;
+      const st = w.slice(0, -suf.length);
+      if (st.length < 5 && st !== w) continue;                 // short stems would catch unrelated words
+      stems.add(st);
+      if (st.endsWith("i")) stems.add(st.slice(0, -1) + "y");
+      if (/([b-df-hj-np-tv-z])\1$/.test(st)) stems.add(st.slice(0, -1));   // "pettifogg" -> "pettifog"
+    }
+    if (/[^aeiou]er$/.test(w)) stems.add(w.slice(0, -2) + "re"); else if (/[^aeiou]re$/.test(w)) stems.add(w.slice(0, -2) + "er");   // sceptre / scepter
+    if (w.endsWith("y")) for (const end of ["ies", "ied", "ier", "iest", "ily", "iness"]) stems.add(w.slice(0, -1) + end);   // carny -> carnies
+    if (w.endsWith("y") && w.length >= 6) stems.add(w.slice(0, -1) + "i");  // "dowdy" -> "dowdi(ness)"
+  }
+  return [...stems].filter(s => s.length >= 3).sort((a, b) => b.length - a.length);
+}
+function maskRe(forms, loose){
+  // Long stems (6+ letters) match anything built on them. Shorter ones only take real endings,
+  // so "cant" never hides "canteen". Definitions are masked loosely (5 letters counts as long),
+  // because a clipped word ("manip") is often defined by its full form ("manipulation").
+  const q = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const ENDS = "s|es|d|ed|ing|ings|er|ers|est|ly|ness|ish|ishly|ery|eries|y|ies|ier|iest|ily|iness|ous|ously|ity|ities|ism|ist|ists|ize|ized|ise|ised|al|ally|ic|ical|ful|ment|ments|ion|ions";
+  const LATIN = "a|ae|as|um|ums|us|is|ia|ial|ian|ians|ance|ence|ant|ants|ent|ive|ives|ative|ation|ations|ious|iously|ar|ary|aries|ure|ures|ory|ty|ties";
+  const long = [], mid = [], short = [];
+  for (const f of forms){
+    if (f.length >= (loose ? 5 : 6)) long.push(q(f));
+    else if (f.length === 5) mid.push(q(f));
+    else { short.push(q(f)); if (f.endsWith("e") && f.length >= 4) short.push(q(f.slice(0, -1)) + "(?=ing|ed|er|est|ish|y)"); }  // mope -> moping
+  }
+  const alts = [];
+  if (long.length) alts.push(`(?:${long.join("|")})[\\p{L}'’-]*`);
+  if (mid.length) alts.push(`(?:${mid.join("|")})(?:[ei]?(?:${ENDS}|${LATIN})|e|\\p{L}(?:ed|ing|er|ers|y))?(?![\\p{L}])`);
+  if (short.length) alts.push(`(?:${short.join("|")})(?:${ENDS}|\\p{L}(?:ed|ing|er|ers|ish|ery|y|ies))?(?![\\p{L}])`);
+  return new RegExp(`(^|[^\\p{L}])(?:${alts.join("|")})`, "giu");
+}
+const foldSame = t => [...t].map(c => { const f = foldAccents(c); return f.length === c.length ? f : c; }).join("");
+function maskForms(text, re, rep){   // accent-blind: "touche" also finds "Touché"
+  text = String(text ?? ""); const f = foldSame(text); let out = "", last = 0;
+  for (const m of f.matchAll(re)){
+    const a = m.index + m[1].length, b = m.index + m[0].length;
+    out += text.slice(last, a) + rep(text.slice(a, b)); last = b;
+  }
+  return out + text.slice(last);
+}
+function maskHtml(html, re, rep){   // only inside text, never inside tags
+  return html.replace(/(<[^>]+>)|([^<]+)/g, (m, tag, txt) => tag || maskForms(txt, re, rep));
+}
+const answerRe = (e, ans) => maskRe(wordForms(e.w, ans.shown));
+const BLANK = '<span class="blank" aria-label="missing word"></span>';
+function filledLine(line, e, ans){   // after the game: every form of the word is highlighted
+  const re = answerRe(e, ans);
+  return safe(line).replace(/<\/?(?:i|b|em)>/g, "").split(/(<mark>[\s\S]*?<\/mark>)/i)
+    .map(p => /^<mark>/i.test(p) ? p : maskHtml(p, re, w => `<mark>${w}</mark>`)).join("");
+}
+function blankLine(line, e, ans){    // during the game: the word and any other form of it are blanked
+  const h = safe(line).replace(/<mark>[\s\S]*?<\/mark>/i, "\u0000").replace(/<\/?(?:i|b|em|mark)>/g, "");
+  return maskHtml(h, answerRe(e, ans), () => BLANK).replace("\u0000", BLANK);
+}
 function credit(o, src){
   const bits = [];
   if (o.who && o.who !== src.name) bits.push(`<b>${esc(o.who)}</b>`);
@@ -426,16 +494,7 @@ function credit(o, src){
   if (o.where && o.where !== src.name) bits.push(src.cat === "tv" ? `“${esc(o.where)}”` : esc(o.where));
   return bits.join(" · ");
 }
-function maskText(text, e, ans){
-  let t = plain(text);
-  const forms = new Set([e.w, ans.shown, fold(ans.shown)]);
-  for (const f of [...forms]){ const b = f.replace(/(?:ing|ed|es|s|ly|er|d)$/i, ""); if (b.length >= 4) forms.add(b); }
-  for (const f of [...forms].sort((a, b) => b.length - a.length)){
-    if (f.length < 3) continue;
-    t = t.replace(new RegExp("\\b" + f.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "[\\w'-]*", "gi"), "_____");
-  }
-  return t;
-}
+function maskText(text, e, ans){ return maskForms(plain(text), maskRe(wordForms(e.w, ans.shown), true), () => "_____"); }
 function origins(e){
   const chain = e.origin.filter(k => k !== "english");
   if (!chain.length) return "It was made in English.";
@@ -526,7 +585,7 @@ function gameView(){
   const label = game.mode === "daily" ? `Today · No. ${game.no}` : selection().size ? `Your pick · ${esc(selSummary(selection()))}` : "Surprise round";
   const head = `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">${label}</span>${game.mode === "daily" ? `<span class="pill">Streak <b>${dailyStreak()}</b></span>` : `<span class="pill">Run <b>${runStats().cur}</b></span>`}</header>`;
   const board = `<div class="board">${gallows(wrong.length, fresh.part, game.done && !game.won)}
-    <figure class="quote${game.done ? (game.won ? " won" : " lost") : ""}"><blockquote>“${game.done ? filledLine(o.line) : blankLine(o.line)}”</blockquote>
+    <figure class="quote${game.done ? (game.won ? " won" : " lost") : ""}"><blockquote>“${game.done ? filledLine(o.line, e, ans) : blankLine(o.line, e, ans)}”</blockquote>
       <figcaption>${credit(o, src)}${game.done && src.url ? ` · <a href="${esc(src.url)}" target="_blank" rel="noopener">source ↗</a>` : ""}</figcaption></figure></div>
     <div class="misses"><span><b>${left}</b> of ${MAX_MISS} misses left</span>${wrong.length ? `<span class="wrong" aria-label="Wrong letters">${wrong.join("")}</span>` : ""}${game.done ? "" : `<span class="clock" id="clock" aria-label="Time">${clockText(Math.floor(elapsed(game) / 1000))}</span>`}</div>
     <div class="word" aria-label="The word, ${ans.key.replace(/[^A-Z]/g, "").length} letters">${wordRow(game, ans, fresh.letter)}</div>`;
