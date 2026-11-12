@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -28,6 +28,26 @@
    "rank": 5,
    "views": 283677,
    "year": "2002"
+  },
+  "2026-11-14": {
+   "w": "theatrics",
+   "line": "I will. I’m sorry for the <mark>theatrics</mark>. I don’t know why I do that.",
+   "src": "Obsession",
+   "kind": "film",
+   "rank": 12,
+   "scope": "week",
+   "views": 178131,
+   "year": "2025"
+  },
+  "2026-11-15": {
+   "w": "microorganism",
+   "line": "Imagine, for a second, that you're an interstellar <mark>microorganism</mark>.",
+   "src": "Project Hail Mary",
+   "kind": "film",
+   "rank": 3,
+   "scope": "year",
+   "views": 12465433,
+   "year": "2026"
   }
  }
 }
