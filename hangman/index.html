@@ -302,6 +302,9 @@ function vsState(){ return store.get("vs", null); }
 const vsPts = V => V.results.reduce((a, r) => a + (r[1] || 0), 0);
 const vsSolved = V => V.results.filter(r => r[1] > 0).length;
 const vsTarget = V => V.board.reduce((a, b) => b[1] > a[1] ? b : a, V.board[0]);
+const vsBase = V => V.base || V.words.length;                       // how many words the challenge came with
+const vsBonus = V => Math.max(0, V.results.length - vsBase(V));      // new words played after getting through them all
+const MAX_VS = 60;                                                  // the most words one link carries
 function openDare(code){
   let d = null;
   try { d = JSON.parse(b64d(code)); } catch(e){}
@@ -316,14 +319,31 @@ function openDare(code){
   if (!words.length){ toast("Those words have been retired. Sorry!"); return null; }
   const id = fnv(code).toString(36), V = vsState();
   if (V && V.id === id) return V;                                // the same link again: carry on where you were
-  const nv = {id, words, board, results: [], game: null, started: false, done: false};
+  const nv = {id, words, base: words.length, board, results: [], game: null, started: false, done: false};
   store.set("vs", nv);
   return nv;
 }
 function vsNextGame(V){
-  const i = V.results.length; if (i >= V.words.length) return V.game;
+  const i = V.results.length;
+  if (i >= V.words.length){                                       // through them all: carry on with a new word
+    const p = bonusPick(V); if (!p){ V.done = true; store.set("vs", V); return V.game; }
+    V.words.push(p);
+  }
   V.game = newGame("vs", V.words[i], {no: i + 1}); store.set("vs", V);
   return V.game;
+}
+function bonusPick(V){
+  // new words from the same shows, films, plays and books as the challenge; wider if those run dry
+  const used = new Set(V.words.map(x => x.w)), srcs = new Set(), cats = new Set();
+  for (const x of V.words){ const e = BYW.get(x.w), o = e && e.occ.find(y => y.line === x.line); if (o){ srcs.add(o.s); cats.add(SRC[o.s].cat); } }
+  const tiers = [o => srcs.has(o.s), o => cats.has(SRC[o.s].cat), () => true];
+  for (let k = 0; k < tiers.length; k++){
+    const ok = tiers[k], pool = WORDS.filter(e => !used.has(e.w) && e.occ.some(ok));
+    if (!pool.length || (pool.length < 10 && k < tiers.length - 1)) continue;
+    const e = pool[Math.floor(Math.random() * pool.length)], os = e.occ.filter(ok), o = os[Math.floor(Math.random() * os.length)];
+    return {w: e.w, line: o.line, l: lineId(o.line), bonus: true};
+  }
+  return null;
 }
 function sendDare(text, url){
   const out = $("#dare-link");
@@ -339,9 +359,11 @@ function dareRun(last){                                           // the challen
 }
 function dareBack(V){                                             // whoever took the challenge: send it on with their score added
   const name = myName() || "A friend", mine = vsPts(V), t = vsTarget(V);
-  const url = dareLink(V.words.map(x => [x.w, x.l]), V.board.concat([[name, mine, vsSolved(V)]]));
-  sendDare(mine > t[1] ? `I beat ${t[0]}'s ${t[1].toLocaleString()} with ${mine.toLocaleString()} points on Dr Tom's Lexicon Hangman. Your move.`
-    : `I scored ${mine.toLocaleString()} on this Dr Tom's Lexicon Hangman challenge. Think you can do better?`, url);
+  const words = V.words.slice(0, Math.max(vsBase(V), V.results.length)), extra = vsBonus(V);
+  const url = dareLink(words.map(x => [x.w, x.l]), V.board.concat([[name, mine, vsSolved(V)]]));
+  const added = extra ? ` and added ${pl(extra, "new word")}` : "";
+  sendDare(mine > t[1] ? `I beat ${t[0]}'s ${t[1].toLocaleString()} with ${mine.toLocaleString()} points on Dr Tom's Lexicon Hangman${added}. Your move: ${pl(words.length, "word")}, same order.`
+    : `I scored ${mine.toLocaleString()} on this Dr Tom's Lexicon Hangman challenge${added}. Think you can do better? ${pl(words.length, "word")}, same order.`, url);
 }
 function nameField(){ return `<label class="dare-name"><span>Sign it</span><input id="dare-name" maxlength="24" autocomplete="nickname" placeholder="Your name" value="${esc(myName())}"></label>`; }
 function ranks(rows){
@@ -453,7 +475,7 @@ function finish(g, R){
     const H = days(); H[g.day] = {w: g.w, line: g.line, done: true, won: g.won, m: wrong, h: g.hints, guessed: g.guessed, score: g.score, secs: g.secs}; store.set("days", H);
   } else if (g.mode === "vs"){
     const V = vsState();
-    if (V){ V.results.push([g.w, g.score]); if (!g.won || V.results.length >= V.words.length) V.done = true; V.game = g; store.set("vs", V); }
+    if (V){ V.results.push([g.w, g.score]); if (!g.won || V.results.length >= MAX_VS) V.done = true; V.game = g; store.set("vs", V); }   // a hanging ends it
   } else {
     const s = runStats(); s.day = today().key; s.played++; s.pts = (s.pts || 0) + g.score; s.bestPts = Math.max(s.bestPts || 0, s.pts);
     s.set.push([g.w, lineId(g.line), g.score]); if (s.set.length > 60) s.set = s.set.slice(-60);
@@ -630,7 +652,7 @@ function homeView(){
   const sel = selection(), pool = poolFor(sel).length;
   const wrong = R ? wrongOf(g, R.ans).length : 0;
   const V = vsState(), vt = V && !V.done ? vsTarget(V) : null;
-  const waiting = vt ? `<section class="pick"><p><b>${esc(vt[0])}'s challenge</b>${V.started ? `Word ${Math.min(V.words.length, V.results.length + 1)} of ${V.words.length}, with ${vsPts(V).toLocaleString()} points so far.` : `${pl(V.words.length, "word")}.`} Score to beat: ${vt[1].toLocaleString()}.</p>
+  const waiting = vt ? `<section class="pick"><p><b>${esc(vt[0])}'s challenge</b>${V.started ? `${V.results.length < vsBase(V) ? `Word ${V.results.length + 1} of ${vsBase(V)}` : "Into the bonus words"}, with ${vsPts(V).toLocaleString()} points so far.` : `${pl(vsBase(V), "word")}.`} Score to beat: ${vt[1].toLocaleString()}.</p>
     <div class="btns"><a class="btn primary" href="#vs">${V.started ? "Carry on" : "See the challenge"}</a></div></section>` : "";
   const last = run.last && run.last.day === t.key && run.last.set.some(x => x[2] > 0) ? run.last : null;
   const status = g.done ? (g.won ? `<p class="status won">Solved today${g.score != null ? ` for <b>${g.score.toLocaleString()}</b> points` : ""}. See you tomorrow.</p>` : `<p class="status lost">Hanged today. Back tomorrow for revenge.</p>`)
@@ -666,7 +688,7 @@ function homeView(){
   <footer class="foot">${total} words from ${SRC.filter(s => s.on).length} shows, films, plays and books, with new ones checked every night. Free, non-commercial and fan-made; not affiliated with any show, film or studio. Quotes are short lines for studying the words, and stay the property of their owners; many were found via Wikiquote. Definitions from WordNet and Wiktionary (CC BY-SA 4.0). <a href="${MAIN}" target="_blank" rel="noopener">Play the main Dr Tom's Lexicon game</a> · <a href="${CREDITS}" target="_blank" rel="noopener">Credits, licences and removal requests</a>.</footer>`;
 }
 function vsIntro(V){
-  const t = vsTarget(V), first = V.board[0], n = V.words.length;
+  const t = vsTarget(V), first = V.board[0], n = vsBase(V);
   const hanged = first[2] < n;
   const story = V.board.length > 1 ? `${ranks(V.board.slice().sort((a, b) => b[1] - a[1]))}`
     : `<p class="src-rank">${esc(first[0])} solved ${pl(first[2], "word")}${hanged ? ` and was hanged on word ${first[2] + 1}` : ""}.</p>`;
@@ -675,7 +697,7 @@ function vsIntro(V){
     <div class="eyebrow">You've been challenged</div>
     <h1>${esc(t[0])} scored ${t[1].toLocaleString()}. <em>Can you beat it?</em></h1>
     <div class="from dare"><div class="eyebrow">The same ${pl(n, "word")}, in the same order</div>${story}
-      <p class="src-rank">One hanging ends your run. Wrong letters, hints and time cost points, as always.</p></div>
+      <p class="src-rank">Get through them all and you keep going with new words, which go into the challenge when you send it back. One hanging ends your run. Wrong letters, hints and time cost points, as always.</p></div>
     <div class="row"><button class="btn primary" id="vs-go">Accept the challenge</button><a class="btn" href="#">Not now</a></div>
     <p class="muted" style="font-size:.85rem">Challenges don't touch your streak or your daily run.</p>
   </section>`;
@@ -685,8 +707,18 @@ function vsSummary(V){
   const head = mine > t[1] ? `You beat ${esc(t[0])} by ${(mine - t[1]).toLocaleString()}!` : mine === t[1] ? `A dead heat with ${esc(t[0])}.` : `${esc(t[0])} wins by ${(t[1] - mine).toLocaleString()}.`;
   const rows = V.board.map(b => [...b, false]).concat([[me, mine, vsSolved(V), true]]).sort((a, b) => b[1] - a[1] || (b[3] ? 1 : 0) - (a[3] ? 1 : 0));
   return `<div class="from dare"><div class="eyebrow">Challenge over</div><div class="src-name">${head}</div>${ranks(rows)}
-    <p class="src-rank">Send it back with your score on it, or pass it on to someone new.</p>
-    ${nameField()}<button class="btn primary" id="dare">Send the challenge on</button><input class="dare-link" id="dare-link" readonly hidden aria-label="Challenge link"></div>`;
+    <p class="src-rank">${vsBonus(V) ? `Your ${pl(vsBonus(V), "new word")} go${vsBonus(V) === 1 ? "es" : ""} in too, so whoever gets it has ${pl(Math.max(vsBase(V), V.results.length), "word")} to get through. ` : ""}Send it back with your score on it, or pass it on to someone new.</p>
+    ${nameField()}<button class="btn primary" id="dare">Send it back</button><input class="dare-link" id="dare-link" readonly hidden aria-label="Challenge link"></div>`;
+}
+function bonusCard(V){
+  const mine = vsPts(V), t = vsTarget(V), extra = vsBonus(V), gap = mine - t[1];
+  const where = gap > 0 ? `${(gap).toLocaleString()} ahead of ${esc(t[0])}` : gap === 0 ? `level with ${esc(t[0])}` : `${(-gap).toLocaleString()} behind ${esc(t[0])}`;
+  const first = extra === 0;
+  return `<div class="from dare"><div class="eyebrow">${first ? `All ${pl(vsBase(V), "word")} done` : "Still going"}</div>
+    <div class="src-name">${first ? (gap > 0 ? `You've beaten ${esc(t[0])}!` : gap === 0 ? `Level with ${esc(t[0])}.` : `Through them all.`) : `Bonus word ${extra} done`}</div>
+    <p class="src-rank"><b style="margin-right:0">${mine.toLocaleString()} points</b>, ${where}.</p>
+    <p class="src-rank">${first ? "Keep going with new words. Each one you solve adds points and goes into the challenge you send back. One hanging ends it." : "Every word you add is one more they have to get through."}</p>
+    <div class="row"><button class="btn primary" id="next">Keep going</button><button class="btn" id="vs-stop">Stop and send it back</button></div></div>`;
 }
 function dareCard(last){
   const solved = last.set.filter(x => x[2] > 0).length;
@@ -711,7 +743,7 @@ function gameView(){
   if (!R){ store.set(game.mode === "daily" ? "today" : "more", null); return `<header class="top"><a class="back" href="#">‹ Home</a></header><p class="empty">That word has been retired. <a href="#${game.mode === "daily" ? "today" : "play"}">Play another</a>.</p>`; }
   const {e, o, ans, src} = R, wrong = wrongOf(game, ans), left = MAX_MISS - wrong.length;
   const V = game.mode === "vs" ? vsState() : null;
-  const label = V ? `Word ${game.no}/${V.words.length}` : game.mode === "daily" ? `Today · No. ${game.no}` : selection().size ? `Your pick · ${esc(selSummary(selection()))}` : "Surprise round";
+  const label = V ? (game.no > vsBase(V) ? `Bonus word ${game.no - vsBase(V)}` : `Word ${game.no}/${vsBase(V)}`) : game.mode === "daily" ? `Today · No. ${game.no}` : selection().size ? `Your pick · ${esc(selSummary(selection()))}` : "Surprise round";
   const head = `<header class="top"><a class="back" href="#">‹ Home</a><span class="grow title">${label}</span>${V ? `<span class="pill" title="Your points, and the score to beat"><b>${vsPts(V).toLocaleString()}</b>/ ${vsTarget(V)[1].toLocaleString()}</span>` : game.mode === "daily" ? `<span class="pill">Streak <b>${dailyStreak()}</b></span>` : `<span class="pill">Run <b>${runStats().cur}</b></span>`}</header>`;
   const board = `<div class="board">${gallows(wrong.length, fresh.part, game.done && !game.won)}
     <figure class="quote${game.done ? (game.won ? " won" : " lost") : ""}"><blockquote>“${game.done ? filledLine(o.line, e, ans) : blankLine(o.line, e, ans)}”</blockquote>
@@ -773,9 +805,10 @@ function resultView(R){
   const moreSrc = new Set(e.occ.map(x => x.s)).size - 1 - others.length;
   const shakesSense = src.cat === "shakes" && e.sdef;
   const V = g.mode === "vs" ? vsState() : null, run = g.mode === "more" ? runStats() : null;
-  const dare = V && V.done ? vsSummary(V)
+  const inBonus = V && !V.done && V.results.length >= vsBase(V);
+  const dare = V && V.done ? vsSummary(V) : inBonus ? bonusCard(V)
     : run && !g.won && run.last && run.last.set.length && run.last.set[run.last.set.length - 1][0] === g.w && run.last.set.some(x => x[2] > 0) ? dareCard(run.last) : "";
-  const streakLine = V ? (V.done ? "" : `Challenge so far: <b>${vsPts(V).toLocaleString()}</b> points from ${vsSolved(V)} of ${V.words.length} words. ${esc(vsTarget(V)[0])}'s score to beat: <b>${vsTarget(V)[1].toLocaleString()}</b>.`)
+  const streakLine = V ? (V.done || inBonus ? "" : `Challenge so far: <b>${vsPts(V).toLocaleString()}</b> points from ${vsSolved(V)} of ${vsBase(V)} words. ${vsPts(V) > vsTarget(V)[1] ? `You're ahead of ${esc(vsTarget(V)[0])}'s ${vsTarget(V)[1].toLocaleString()}.` : `${esc(vsTarget(V)[0])}'s score to beat: <b>${vsTarget(V)[1].toLocaleString()}</b>.`}`)
     : g.mode === "daily" ? `Daily streak: <b>${dailyStreak()}</b> day${dailyStreak() === 1 ? "" : "s"}. Come back tomorrow for No. ${g.no + 1}.`
     : (() => { const r = runStats(); return `Daily run: <b>${r.cur}</b> in a row today and <b>${(r.pts || 0).toLocaleString()}</b> points (best day ${(r.bestPts || 0).toLocaleString()}).`; })();
   const issue = `${ISSUES}?title=${encodeURIComponent(`Hangman: problem with "${e.w}"`)}&body=${encodeURIComponent(`Word: ${e.w}\nQuote: ${plain(o.line)}\nSource: ${src.name}\n\nWhat's wrong:\n`)}`;
@@ -790,7 +823,7 @@ function resultView(R){
     ${others.length ? `<div class="also"><div class="eyebrow">Also turns up in</div><ul>${others.map(x => `<li><span class="q">“${safe(x.line)}”</span><br><span class="muted">${credit(x, SRC[x.s])}</span></li>`).join("")}</ul>
       ${moreSrc > 0 ? `<p class="muted">…and ${moreSrc} other place${moreSrc === 1 ? "" : "s"}.</p>` : ""}</div>` : ""}
     ${streakLine ? `<p>${streakLine}</p>` : ""}
-    <div class="row">${V ? (V.done ? `<a class="btn primary" href="#play">Play your own</a><a class="btn" href="#">Home</a>` : `<button class="btn primary" id="next">Next word · ${V.results.length + 1} of ${V.words.length}</button><a class="btn" href="#">Home</a>`)
+    <div class="row">${V ? (V.done ? `<a class="btn primary" href="#play">Play your own</a><a class="btn" href="#">Home</a>` : inBonus ? `<a class="btn" href="#">Home</a>` : `<button class="btn primary" id="next">Next word · ${V.results.length + 1} of ${vsBase(V)}</button><a class="btn" href="#">Home</a>`)
       : g.mode === "daily" ? `<button class="btn primary" id="share">Share result</button><a class="btn" href="#sources">Pick your own</a>`
       : `<button class="btn primary" id="next">Next word</button><a class="btn" href="#sources">Change pick</a>`}</div>
     <div class="links"><a href="https://www.google.com/search?q=${encodeURIComponent("how to pronounce " + e.w)}" target="_blank" rel="noopener">Hear it said ↗</a>
@@ -876,6 +909,7 @@ function wire(){
     else { const r = runStats(); if (r.last) dareRun(r.last); }
   };
   const dh = $("#dare-home"); if (dh) dh.onclick = () => { const r = runStats(); if (r.last) dareRun(r.last); };
+  const stop = $("#vs-stop"); if (stop) stop.onclick = () => { const V = vsState(); if (!V) return; V.done = true; store.set("vs", V); render(); const d = $(".dare"); if (d) d.scrollIntoView({block: "center"}); };
   const vsGo = $("#vs-go"); if (vsGo) vsGo.onclick = () => { const V = vsState(); if (!V) return; V.started = true; store.set("vs", V); game = vsNextGame(V); render(); scrollTo(0, 0); };
   if ($("#pk")) wirePicker();
 }
