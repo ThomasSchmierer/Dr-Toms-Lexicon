@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Punter's Primer · Dr Tom's Lexicon</title>
+<meta name="description" content="Learn how horse racing odds and payouts are calculated, with calculators you can play with and a quiz for every chapter.">
+<meta name="theme-color" content="#14382b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* A race book: cream programme paper, racing-green rails, jockey-silk accents. */
+:root{
+  --paper:#f5f0e3; --card:#fffdf7; --ink:#1d2420; --soft:#5d665f; --rule:#ddd4bf;
+  --green:#14382b; --green-2:#1f5a43; --turf:#2f7d58; --silk:#c4302b; --gold:#b98a2e; --gold-soft:#f3e6c4;
+  --good:#23784a; --bad:#b33a2e; --chip:#ece4cf;
+  --display:"Fraunces", Georgia, serif; --body:"Libre Franklin", "Helvetica Neue", Arial, sans-serif; --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root{
+  --paper:#101713; --card:#18221c; --ink:#ecebe2; --soft:#a6b0a8; --rule:#2c3a32;
+  --green:#0b2219; --green-2:#1d4a37; --turf:#5bc08f; --silk:#ff7469; --gold:#e3b75a; --gold-soft:#3a3220;
+  --good:#7fd6a2; --bad:#ff8a7c; --chip:#22302a; color-scheme:dark } }
+
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-text-size-adjust:100%}
+a{color:var(--turf)}
+.top{position:sticky;top:0;z-index:10;background:var(--green);color:#f5f0e3;display:flex;align-items:center;gap:12px;
+  padding:10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+  border-bottom:4px solid var(--gold)}
+.brand{color:inherit;text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand span{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.brand b{font:800 20px/1.15 var(--display)}
+.grow{flex:1}
+.prog{display:flex;align-items:center;gap:8px;font:600 13px var(--mono)}
+.prog .bar{width:70px;height:8px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.prog .fill{height:100%;background:var(--gold);transition:width .4s}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 80px}
+
+/* home */
+.hero{padding:26px 0 8px}
+.hero h1{font:800 clamp(34px,7vw,52px)/1.02 var(--display);margin:0 0 12px;color:var(--green-2)}
+@media (prefers-color-scheme: dark){.hero h1{color:var(--turf)}}
+.hero p{font-size:18px;color:var(--soft);margin:0 0 6px;max-width:58ch}
+.big-idea{margin:20px 0;padding:18px 20px;border-radius:14px;background:var(--green);color:#f5f0e3;font:600 19px/1.4 var(--display)}
+.big-idea small{display:block;font:500 13px var(--body);opacity:.8;margin-top:6px;letter-spacing:.02em}
+.chapters{list-style:none;padding:0;margin:18px 0;display:grid;gap:12px}
+.chapters a{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;
+  background:var(--card);border:1px solid var(--rule);color:inherit;text-decoration:none;transition:transform .15s, border-color .15s}
+.chapters a:hover{transform:translateY(-2px);border-color:var(--turf)}
+.saddle{width:52px;height:52px;border-radius:10px;display:grid;place-items:center;font:800 24px var(--display);color:#fff}
+.chapters h3{margin:0;font:700 18px/1.25 var(--display)}
+.chapters p{margin:2px 0 0;font-size:14px;color:var(--soft);line-height:1.4}
+.tick{font:600 12px var(--mono);padding:4px 8px;border-radius:20px;background:var(--chip);color:var(--soft);white-space:nowrap}
+.tick.done{background:var(--good);color:#fff}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 24px}
+.extras a{padding:14px;border-radius:12px;background:var(--gold-soft);color:var(--ink);text-decoration:none;font-weight:600;border:1px solid var(--rule)}
+.extras a small{display:block;font-weight:400;color:var(--soft);font-size:13px}
+.fineprint{font-size:13px;color:var(--soft);border-top:1px solid var(--rule);padding-top:14px;margin-top:28px}
+
+/* chapter */
+.ch-head{padding:18px 0 4px;display:flex;gap:16px;align-items:center}
+.ch-head .saddle{width:62px;height:62px;font-size:30px;flex:none}
+.ch-head small{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.ch-head h1{margin:2px 0 0;font:800 clamp(26px,5.5vw,36px)/1.08 var(--display)}
+.lead{font:600 19px/1.45 var(--display);margin:14px 0 22px;padding-left:14px;border-left:4px solid var(--gold)}
+h2{font:800 23px/1.2 var(--display);margin:34px 0 8px;color:var(--green-2)}
+@media (prefers-color-scheme: dark){h2{color:var(--turf)}}
+h3{font:700 18px/1.3 var(--display);margin:22px 0 6px}
+p{margin:0 0 12px}
+ul,ol{padding-left:22px;margin:0 0 14px} li{margin:3px 0}
+.key{margin:16px 0;padding:14px 16px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--rule)}
+.key b:first-child{display:block;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.formula{font:600 16px/1.5 var(--mono);background:var(--card);border:1px dashed var(--rule);border-radius:10px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:nowrap}
+.ex{margin:14px 0;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--turf)}
+.ex b.t{display:block;font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--turf);margin-bottom:4px}
+.tbl{overflow-x:auto;margin:12px 0 18px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--green);color:#f5f0e3;font-weight:600;font-size:13px;letter-spacing:.02em}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:700;background:var(--chip)}
+
+/* widgets */
+.w{margin:20px 0;border-radius:16px;border:2px solid var(--green-2);background:var(--card);overflow:hidden}
+.w-h{background:var(--green-2);color:#f5f0e3;padding:9px 14px;font:600 14px var(--body);display:flex;gap:8px;align-items:center}
+.w-h::before{content:"Try it";font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#1d2420;padding:2px 7px;border-radius:5px}
+.w-b{padding:14px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:12px}
+label.f{display:flex;flex-direction:column;font-size:13px;font-weight:600;color:var(--soft);gap:4px}
+input,select{font:500 17px var(--mono);padding:9px 10px;border-radius:9px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--turf);outline-offset:1px;border-color:var(--turf)}
+input[type=range]{padding:0;accent-color:var(--turf)}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{padding:10px 12px;border-radius:10px;background:var(--chip)}
+.stat span{display:block;font-size:12px;color:var(--soft);font-weight:600}
+.stat b{font:600 21px var(--mono)}
+.stat.hi{background:var(--green);color:#f5f0e3}.stat.hi span{color:#cfe0d6}
+.stat.good b{color:var(--good)}.stat.bad b{color:var(--bad)}
+.stat.hi.good b,.stat.hi.bad b{color:#fff}
+.note{font-size:14px;color:var(--soft);margin:10px 0 0}
+.btn{font:600 15px var(--body);padding:10px 16px;border-radius:10px;border:0;background:var(--turf);color:#fff;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--turf);border:1.5px solid var(--turf)}
+.btn:disabled{opacity:.5;cursor:default}
+.mkt input{font-size:15px;padding:6px 8px;width:84px}
+.mkt td,.mkt th{vertical-align:middle;padding:6px 7px}
+@media (max-width:560px){ .mkt td:last-child:has(.probbar), .mkt th:last-child:empty{display:none} .mkt table{font-size:14px} .stat b{font-size:18px} }
+.probbar{height:8px;border-radius:4px;background:var(--turf);min-width:2px}
+.chart svg{width:100%;height:auto;display:block}
+
+/* quiz */
+.quiz{margin:34px 0 10px;border-radius:16px;background:var(--green);color:#f5f0e3;padding:18px}
+.quiz h2{color:#f5f0e3;margin:0 0 4px}
+.quiz .qn{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-top:16px}
+.quiz .q{font:600 18px/1.4 var(--display);margin:4px 0 10px}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;font:500 16px var(--body);padding:11px 14px;border-radius:10px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#f5f0e3;cursor:pointer}
+.opt:hover:not(:disabled){background:rgba(255,255,255,.14)}
+.opt.right{background:#2f8a5c;border-color:#7fd6a2}
+.opt.wrong{background:#8f2f28;border-color:#ff8a7c}
+.opt:disabled{cursor:default}
+.why{margin:10px 0 0;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.1);font-size:15px}
+.score{margin-top:16px;font:700 20px var(--display)}
+.quiz .btn{background:var(--gold);color:#1d2420}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.pager a{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--rule);background:var(--card);text-decoration:none;color:inherit}
+.pager a small{display:block;color:var(--soft);font-size:12px}
+.pager a.next{text-align:right}
+.search{margin:8px 0 14px}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+.toc a{font-size:13px;padding:5px 10px;border-radius:20px;background:var(--chip);text-decoration:none;color:var(--ink)}
+.back{font-size:14px;text-decoration:none;display:inline-block;margin-top:6px}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#" aria-label="The Punter's Primer, home"><span>Dr Tom's Lexicon</span><b>The Punter's Primer</b></a>
+  <span class="grow"></span>
+  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/6</span></div>
+</header>
+<main class="wrap" id="app" tabindex="-1"></main>
+
+<script>
+"use strict";
+/* ---------- tiny helpers ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const money = n => (n < 0 ? "−$" : "$") + Math.abs(n).toLocaleString("en-AU", {minimumFractionDigits:2, maximumFractionDigits:2});
+const pct = (n, d = 1) => (n * 100).toFixed(d) + "%";
+const num = v => { const n = parseFloat(String(v).replace(/[$,%\s]/g, "")); return isFinite(n) ? n : NaN; };
+const floor10c = x => Math.floor(x * 10 + 1e-9) / 10;
+const MAIN = "https://thomasschmierer.github.io/Dr-Toms-Lexicon/";
+const STORE = "punters-primer-v1";
+let state = {done:{}};
+try { state = Object.assign(state, JSON.parse(localStorage.getItem(STORE) || "{}")); } catch (e) {}
+function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} }
+
+/* jockey-silk colours for chapter saddle cloths */
+const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b"];
+
+/* ---------- content ---------- */
+const CH = [
+{
+ id:"meeting", title:"How a race meeting works", blurb:"Classes, weights, barriers, track ratings and reading a form guide.",
+ lead:"A horse's chance depends on its ability and the conditions it races under. The form guide records both, and the odds are the market's guess at combining them.",
+ body:`
+<h2>The three codes</h2>
+<p>Australian racing has three codes: <b>thoroughbreds</b> (the gallops), <b>harness</b> (trotters and pacers pulling a sulky) and <b>greyhounds</b>. Racing Queensland governs all three here. This primer uses thoroughbreds, but the betting maths is identical for every code.</p>
+
+<h2>Meetings and races</h2>
+<ul>
+<li><b>Meeting:</b> one venue on one day, such as Eagle Farm on a Saturday. Usually 7 to 10 races.</li>
+<li><b>Metro, provincial, country:</b> metro meetings (Eagle Farm, Doomben) have the most prize money and the best horses; provincial (Toowoomba, Gold Coast, Sunshine Coast) and country meetings follow.</li>
+<li><b>Field:</b> the horses running in a race. Field size decides which bets are offered (Chapter 4).</li>
+</ul>
+
+<h2>Race class: the ladder</h2>
+<p>Races are graded so horses meet rivals of similar ability. From the bottom up:</p>
+<ol>
+<li><b>Maiden</b>: horses that have never won.</li>
+<li><b>Class 1–6 and Benchmark races</b>: a horse's benchmark rating rises when it wins and falls when it runs poorly. A BM64 race is for horses rated about 64 or below.</li>
+<li><b>Listed</b> races.</li>
+<li><b>Group 3, Group 2, Group 1</b>: the top level, like the Stradbroke Handicap.</li>
+</ol>
+<div class="key"><b>Key idea</b>A horse <i>rising</i> in class faces tougher rivals. A horse <i>dropping</i> in class is often a better chance than its recent form looks.</div>
+
+<h2>Weight</h2>
+<ul>
+<li><b>Handicap:</b> better horses carry more weight, so in theory everyone has an equal chance.</li>
+<li><b>Set weights (and penalties):</b> weights fixed by age and sex, with extra for recent wins.</li>
+<li><b>Weight-for-age:</b> weight varies only with age, sex and time of year. The best horse usually wins.</li>
+<li><b>Apprentice claim:</b> an apprentice jockey takes 1 to 3 kg off the horse's weight, to make up for inexperience.</li>
+</ul>
+<p>A rough rule of thumb: 1.5 kg is worth about one length over 1,600 m. It's a starting point, not a law.</p>
+
+<h2>Barrier</h2>
+<p>The <b>barrier</b> is the starting stall. Inside barriers (1–4) usually mean a shorter trip around the turns; wide barriers can force a horse to race wide or drop back. The effect is biggest in short races on tight tracks.</p>
+
+<h2>Track condition</h2>
+<div class="tbl"><table><tr><th>Rating</th><th>Name</th><th>What it means</th></tr>
+<tr><td>1–2</td><td>Firm</td><td>Hard and fast</td></tr>
+<tr><td>3–4</td><td>Good</td><td>The standard surface</td></tr>
+<tr><td>5–7</td><td>Soft</td><td>Some give; suits horses that like a bit of cut</td></tr>
+<tr><td>8–10</td><td>Heavy</td><td>Very wet; dry-track form often counts for little</td></tr></table></div>
+
+<h2>Reading a form line</h2>
+<p>A form string lists recent finishing positions, oldest on the left and newest on the right. <b>x</b> marks a spell (a break of three months or more) and <b>0</b> means 10th or worse. Type one in below to decode it.</p>
+<div data-w="form"></div>
+<p>Alongside the form line, a guide shows the horse's record at the track, at the distance and on each track condition, days since its last run, trainer and jockey, its last start (margin, weight, barrier, class) and a <b>speed map</b> predicting where it will settle in the run.</p>
+<div class="key"><b>For your model</b>Every one of these is a feature. Chapter 6 comes back to them.</div>`,
+ quiz:[
+  {q:"In the form line x2316, what does the x mean?", o:["The horse fell","A spell of three months or more","It was scratched","It ran 10th or worse"], a:1, why:"x marks a spell. A 0 is what marks 10th or worse."},
+  {q:"Which race is the highest class?", o:["BM78","Listed","Group 1","Maiden"], a:2, why:"Group 1 is the top of the ladder, above Group 2, Group 3 and Listed."},
+  {q:"A track is rated 9. What is it?", o:["Good","Soft","Firm","Heavy"], a:3, why:"8 to 10 is Heavy."},
+  {q:"In a handicap, the best horses carry…", o:["less weight","more weight","the same weight","no weight"], a:1, why:"Handicaps give better horses more weight to even up their chances."}
+ ]
+},
+{
+ id:"odds", title:"Odds are probabilities", blurb:"Turning any price into a chance of winning, and back again.",
+ lead:"A price of $4.00 means the market rates the horse about a 25% chance. Everything else in this primer builds on that one conversion.",
+ body:`
+<h2>Decimal odds</h2>
+<p>Australian prices are <b>decimal odds</b>: the total you get back for each $1, <b>including your stake</b>. A $10 bet at $4.00 returns $40, which is your $10 back plus $30 profit.</p>
+<div class="formula">Return = Stake × Odds<br>Profit = Stake × (Odds − 1)</div>
+
+<h2>Implied probability</h2>
+<p>The <b>implied probability</b> is the chance at which a bet breaks even. It's 1 divided by the odds. Flip it around and you get the <b>fair price</b> for any probability.</p>
+<div class="formula">Implied probability = 1 ÷ Odds<br>Fair odds = 1 ÷ Probability</div>
+<div class="ex"><b class="t">Why it works</b>If a horse truly wins 25% of the time and you bet $1 at $4.00 a hundred times, you stake $100. You win 25 times and collect 25 × $4 = $100. You break even, so $4.00 is the fair price of a 25% chance.</div>
+<div data-w="odds"></div>
+
+<h2>Other formats you'll meet</h2>
+<ul>
+<li><b>Fractional (UK):</b> 5/1 means $5 profit per $1. Decimal = fraction + 1, so 5/1 = $6.00.</li>
+<li><b>American:</b> +500 means $500 profit on $100 ($6.00); −200 means stake $200 to win $100 ($1.50).</li>
+<li><b>Odds-on / odds-against:</b> under $2.00 is odds-on (more likely to win than lose); over $2.00 is odds-against.</li>
+<li><b>Short / long:</b> a short price is a low number (strong chance); a long price is an outsider, or "roughie".</li>
+</ul>
+
+<div class="key"><b>Key idea</b>Probability isn't certainty. A $1.50 favourite still loses about one race in three; a $21 outsider still wins about one in twenty. Odds describe what happens over many races, never the next one.</div>`,
+ quiz:[
+  {q:"What is the implied probability of a $5.00 price?", o:["5%","20%","25%","50%"], a:1, why:"1 ÷ 5 = 0.20, so 20%."},
+  {q:"You bet $20 at $3.50. If it wins, what do you get back in total?", o:["$50","$70","$73.50","$90"], a:1, why:"Return = 20 × 3.50 = $70, which includes your $20 stake."},
+  {q:"What is the fair price for a horse with a 40% chance?", o:["$1.40","$2.00","$2.50","$4.00"], a:2, why:"1 ÷ 0.40 = 2.50."},
+  {q:"UK odds of 4/1 are what in decimal?", o:["$4.00","$5.00","$1.25","$0.25"], a:1, why:"Fraction + 1: 4 + 1 = $5.00."}
+ ]
+},
+{
+ id:"setting", title:"How odds are set", blurb:"Tote pools, bookmakers, the overround and why prices move.",
+ lead:"In a tote the bettors set the price and the operator takes a cut. With fixed odds a bookmaker sets the price with a margin built in. Either way, the probabilities add up to more than 100%.",
+ body:`
+<h2>System 1: the tote (a pool)</h2>
+<p>Every win bet on a race goes into one pot. The operator (in Queensland, the TAB) takes its commission, called the <b>takeout</b>, and the rest is shared among the winning tickets. Nobody knows the final dividend until betting closes.</p>
+<ol><li>Add up all win bets: the <b>gross pool</b>.</li><li>Take out the commission: the <b>net pool</b>.</li><li>Divide by the total bet on the winner.</li><li>Round down (usually to 10 cents). That rounding is called <b>breakage</b>.</li></ol>
+<div class="formula">Win dividend = Gross pool × (1 − takeout) ÷ Total bet on the winner</div>
+<div class="ex"><b class="t">Worked example</b>A $100,000 win pool at 14.5% takeout leaves $85,500. Bettors put $25,000 on horse A. If A wins, each $1 is worth $85,500 ÷ $25,000 = $3.42, paid as <b>$3.40</b>. The crowd rated A 25% (a fair $4.00); the gap is the commission.</div>
+<div data-w="tote"></div>
+<p><b>Takeout rates.</b> Queensland last set tote commission in regulation in 2012: about 14.5% win, 14.25% place, 14.75% quinella, 21% trifecta, 22.5% First Four and 20% quadrella. The operator has set its own rates since 2013, so check the TAB's current figures. The pattern holds: <b>exotics carry a bigger cut than win and place.</b></p>
+
+<h2>System 2: fixed odds (bookmakers)</h2>
+<p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 4). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
+
+<h2>The overround</h2>
+<p>Add up the implied probabilities of every runner. The amount over 100% is the <b>overround</b>, the bookmaker's built-in margin. Edit the prices below and watch it change.</p>
+<div data-w="market"></div>
+<div class="formula">Overround = Σ (1 ÷ odds) − 1</div>
+<ul>
+<li>Big-race win markets: often around 105–115%.</li>
+<li>Small country races and thin markets: often 115–130% or more.</li>
+<li>Place and exotic markets: bigger again.</li>
+<li>A tote win pool at 14.5% takeout: 1 ÷ 0.855 ≈ <b>117%</b>.</li>
+</ul>
+
+<h2>Why prices move</h2>
+<ul>
+<li><b>Firming:</b> the price shortens ($6.00 → $4.00). Money or information is coming for the horse.</li>
+<li><b>Drifting:</b> the price lengthens. Money is going elsewhere, or there's a negative sign.</li>
+<li><b>Flucs:</b> the record of these moves, from opening price to starting price.</li>
+</ul>
+<div class="key"><b>Key idea</b>Late prices are usually more accurate than early ones, because information keeps arriving until the jump. Beating the final price consistently is hard.</div>
+
+<h2>Betting exchanges</h2>
+<p>On an exchange such as Betfair, punters bet against each other. You can <b>back</b> a horse to win or <b>lay</b> it (bet that it loses, acting as the bookie). The exchange charges commission on net winnings instead of building a margin into the price, so exchange prices near the jump are the closest thing to a margin-free market.</p>`,
+ quiz:[
+  {q:"A $50,000 win pool has 15% takeout and $17,000 bet on the winner. What's the dividend (before breakage)?", o:["$2.50","$2.94","$3.40","$2.13"], a:0, why:"50,000 × 0.85 = 42,500. 42,500 ÷ 17,000 = $2.50."},
+  {q:"A market's implied probabilities add up to 112%. What's the overround?", o:["112%","88%","12%","1.12%"], a:2, why:"The excess over 100% is the overround: 12%."},
+  {q:"On the tote, who sets the price?", o:["The TAB's traders","The stewards","The bettors, through how much they put on each horse","The trainer"], a:2, why:"The dividend is the net pool shared out by how the money was bet."},
+  {q:"Why are prices at the jump usually more accurate than opening prices?", o:["Bookmakers are tired","More information and money have come in","The takeout drops","They aren't"], a:1, why:"Markets absorb news and informed money right up to the start."}
+ ]
+},
+{
+ id:"payouts", title:"How payouts are calculated", blurb:"Win, place, each way, exotics, flexi, multis, dead heats and deductions.",
+ lead:"Every payout is either stake × price (fixed odds) or a share of a pool (tote). Bet types differ only in which finishing orders count and how many combinations you buy.",
+ body:`
+<div class="toc"><a href="#payouts/win">Win &amp; place</a><a href="#payouts/ew">Each way</a><a href="#payouts/exotic">Exotics &amp; flexi</a><a href="#payouts/harville">Harville</a><a href="#payouts/multi">Multis</a><a href="#payouts/dh">Dead heats</a><a href="#payouts/ded">Deductions</a></div>
+<p>Bets are paid once stewards declare <b>correct weight</b>, after any protest is settled.</p>
+
+<h2 id="s-win">Win</h2>
+<p>Pick the winner. Fixed odds: $10 at $5.00 returns $50. Tote: dividends are quoted per $1, so $10 on a $4.80 dividend returns $48.</p>
+
+<h2>Place</h2>
+<p>Pick a horse to finish in the places. Field size sets how many places the TAB pays:</p>
+<div class="tbl"><table><tr><th>Starters</th><th>Places paid</th></tr><tr><td>8 or more</td><td>1st, 2nd, 3rd</td></tr><tr><td>5 to 7</td><td>1st, 2nd</td></tr><tr><td>4 or fewer</td><td>Usually no place betting</td></tr></table></div>
+<p><b>How a tote place dividend works:</b> take out the commission, hand every winning ticket its stake back, split the rest into equal shares (one per placegetter), then divide each share by the money on that horse.</p>
+<div data-w="place"></div>
+<div class="key"><b>Key idea</b>A place dividend depends on which <i>other</i> horses fill the places. A favourite placing with two outsiders pays more than a favourite placing with two other favourites.</div>
+
+<h2 id="s-ew">Each way</h2>
+<p>Two equal bets: one to win, one to place. "$10 each way" costs <b>$20</b>. If the horse wins you collect both; if it places you collect only the place part.</p>
+<div data-w="ew"></div>
+
+<h2 id="s-exotic">Exotics and flexi</h2>
+<div class="tbl"><table><tr><th>Bet</th><th>Pick</th><th>Combinations to box k horses</th></tr>
+<tr><td>Quinella</td><td>1st &amp; 2nd, any order</td><td>k(k−1)/2</td></tr>
+<tr><td>Exacta</td><td>1st &amp; 2nd, exact order</td><td>k(k−1)</td></tr>
+<tr><td>Trifecta</td><td>1st, 2nd, 3rd in order</td><td>k(k−1)(k−2)</td></tr>
+<tr><td>First Four</td><td>1st to 4th in order</td><td>k(k−1)(k−2)(k−3)</td></tr>
+<tr><td>Duet</td><td>Any two of the three placegetters</td><td>k(k−1)/2</td></tr></table></div>
+<p><b>Boxing</b> covers every order of your horses. A <b>standout</b> fixes one horse in a position and boxes the rest. With <b>flexi</b> betting you choose your total outlay and get that percentage of the $1 dividend.</p>
+<div class="formula">Flexi % = Outlay ÷ Combinations</div>
+<div data-w="exotic"></div>
+
+<h2 id="s-harville">How likely is an exotic? The Harville formula</h2>
+<p>Once one horse has won, assume the rest share second place in proportion to their win chances. That gives the chance of any finishing order.</p>
+<div class="formula">P(i then j) = pᵢ × pⱼ ÷ (1 − pᵢ)<br>P(i, j, k) = pᵢ × pⱼ ÷ (1 − pᵢ) × pₖ ÷ (1 − pᵢ − pⱼ)</div>
+<div data-w="harville"></div>
+<p class="note">Harville tends to rate favourites too highly for the minor placings. Better models adjust it, but it's the standard starting point.</p>
+
+<h2 id="s-multi">Multis, doubles and quaddies</h2>
+<p>In a <b>multi</b> (all-up) every leg must win, and the prices multiply. A <b>quaddie</b> needs the winners of four nominated races; combinations = the product of the horses in each leg (2 × 3 × 2 × 4 = 48). The bookmaker's margin multiplies too.</p>
+<div data-w="multi"></div>
+
+<h2 id="s-dh">Dead heats</h2>
+<p>When horses tie for a paying place they share it. With fixed odds your stake is divided by the number of horses in the dead heat: $10 at $5.00 in a two-way dead heat counts as $5 at $5.00, returning <b>$25</b>. On the tote, the net pool is split between them.</p>
+
+<h2 id="s-ded">Scratchings and deductions</h2>
+<ul><li><b>Tote:</b> a bet on a scratched horse is refunded.</li>
+<li><b>Fixed odds, on the scratched horse:</b> refunded.</li>
+<li><b>Fixed odds, on another horse:</b> your winnings may be cut by a <b>deduction</b>.</li></ul>
+<p>The field just lost a runner with a real chance, so every other horse is now more likely to win and the price you took is too generous. The shorter the scratched horse's price, the bigger the deduction. It comes off your <b>winnings only</b>, never your stake, and each operator publishes its own table.</p>
+<div class="formula">Return = Stake + Winnings × (1 − deduction per $1)</div>
+<div data-w="deduct"></div>`,
+ quiz:[
+  {q:"$10 each way at $8.00 win and $2.50 place. The horse runs 3rd. What's your profit?", o:["−$20","+$5","+$15","+$25"], a:1, why:"Only the place half pays: $10 × 2.50 = $25 back on a $20 outlay, so +$5."},
+  {q:"How many combinations is a 4-horse exacta box?", o:["4","6","12","24"], a:2, why:"k(k−1) = 4 × 3 = 12."},
+  {q:"A 6-combination trifecta for $3 total pays a $90 dividend. What do you collect?", o:["$90","$45","$15","$270"], a:1, why:"Flexi = $3 ÷ 6 = 50%. 50% of $90 = $45."},
+  {q:"$20 at $6.00 ends in a two-way dead heat for first. What's your return?", o:["$120","$60","$40","$20"], a:1, why:"Stake halves to $10 at $6.00 = $60."},
+  {q:"$10 at $5.00 wins after a 25c deduction. What's your return?", o:["$50","$37.50","$40","$30"], a:2, why:"Winnings $40 × 0.75 = $30, plus the $10 stake = $40."}
+ ]
+},
+{
+ id:"value", title:"Thinking about betting situations", blurb:"Value, expected value, the longshot bias, Kelly staking and variance.",
+ lead:"A bet is worth making only when your probability beats the price's implied probability by more than the margin. The goal isn't picking winners; it's finding prices that are too long.",
+ body:`
+<h2>Value and expected value</h2>
+<p>A bet has <b>value</b> when the true chance of winning is higher than the price's implied probability. <b>Expected value (EV)</b> is what the bet wins or loses on average per $1.</p>
+<div class="formula">EV per $1 = p × Odds − 1 &nbsp;&nbsp;(p = your probability)</div>
+<div data-w="ev"></div>
+<div class="tbl"><table><tr><th class="n">Your p</th><th class="n">Price</th><th class="n">Implied</th><th class="n">EV per $1</th><th>Verdict</th></tr>
+<tr><td class="n">30%</td><td class="n">$4.00</td><td class="n">25.0%</td><td class="n">+$0.20</td><td>Value</td></tr>
+<tr><td class="n">25%</td><td class="n">$4.00</td><td class="n">25.0%</td><td class="n">$0.00</td><td>Break-even</td></tr>
+<tr><td class="n">60%</td><td class="n">$1.50</td><td class="n">66.7%</td><td class="n">−$0.10</td><td>Likely winner, bad bet</td></tr>
+<tr><td class="n">8%</td><td class="n">$15.00</td><td class="n">6.7%</td><td class="n">+$0.20</td><td>Unlikely winner, good bet</td></tr></table></div>
+<div class="key"><b>Key idea</b>The most likely winner can be a bad bet, and an outsider can be a good one. Value is about the price, not the horse.</div>
+
+<h2>Removing the margin</h2>
+<p>To compare your view with the market's, strip out the overround first. The simplest way divides each implied probability by the market total (the market calculator in Chapter 3 does this in its last column). In a 109.9% market, a $2.80 horse goes from 35.7% implied to 35.7 ÷ 1.099 = <b>32.5%</b>.</p>
+<p>This <b>proportional method</b> spreads the margin evenly. Bookmakers actually load more of it onto outsiders, so other methods (power, Shin, odds-ratio) often fit real results better. Which brings us to…</p>
+
+<h2>The favourite–longshot bias</h2>
+<p>Across racing markets worldwide, <b>outsiders win less often than their prices imply, and favourites slightly more often</b>. Punters overpay for long shots, so the loss per dollar is usually much worse at $30 than at $3.</p>
+<ul><li>The market's probabilities are biased, not just noisy. Correct for it before calling a long shot an overlay.</li>
+<li>A model that only "wins" on long shots is probably just finding this bias.</li></ul>
+
+<h2>Break-even strike rate</h2>
+<p>Your <b>strike rate</b> is the share of bets that win. To break even it must at least equal 1 ÷ your average price: 25% at $4.00, 10% at $10.00. A 30% strike rate at an average of $3.00 still loses 10%.</p>
+<p><b>ROI</b> (or POT, profit on turnover) = profit ÷ total staked. +5% over 2,000 bets is strong; +40% over 30 bets tells you almost nothing.</p>
+
+<h2>How much to bet: Kelly</h2>
+<p>The <b>Kelly criterion</b> gives the share of your bankroll that grows it fastest, for a given edge. The EV calculator above shows it. Full Kelly assumes your probabilities are exactly right; they never are, so most serious bettors use a quarter or half of it.</p>
+<div class="formula">Kelly fraction = (p × Odds − 1) ÷ (Odds − 1)</div>
+
+<h2>Variance: why short runs mislead</h2>
+<p>Even a real edge brings long losing runs. Simulate a season below: each line is one bettor making the same bets with the same edge.</p>
+<div data-w="sim"></div>
+<div class="tbl"><table><tr><th class="n">Win chance</th><th class="n">Lose 5 in a row</th><th class="n">Lose 10 in a row</th></tr>
+<tr><td class="n">50%</td><td class="n">3.1%</td><td class="n">0.1%</td></tr><tr><td class="n">25%</td><td class="n">23.7%</td><td class="n">5.6%</td></tr><tr><td class="n">10%</td><td class="n">59.0%</td><td class="n">34.9%</td></tr></table></div>
+
+<h2>Common situations</h2>
+<div class="tbl"><table><tr><th>Situation</th><th>How to think about it</th></tr>
+<tr><td>Tote or fixed odds?</td><td>Fixed locks your price. The tote can pay more on horses the crowd ignores, but you don't know the dividend until the jump.</td></tr>
+<tr><td>Each way or win only?</td><td>Only if the place part is value too. Work out the EV of each half separately.</td></tr>
+<tr><td>A horse firms $6.00 → $4.00</td><td>The market now rates it more likely. Unless you know something it doesn't, your edge has shrunk.</td></tr>
+<tr><td>Late scratching after your bet</td><td>Expect a deduction if the scratched horse was short in the market.</td></tr>
+<tr><td>A big multi</td><td>Margins compound (133% over three 110% legs). Usually worse value than singles.</td></tr>
+<tr><td>Trifecta or First Four</td><td>Bigger takeout (20%+) and many combinations. Only worth it if your view of the minor places is much sharper than the market's.</td></tr></table></div>`,
+ quiz:[
+  {q:"You rate a $6.00 horse at 20%. What's the EV per $1?", o:["−$0.20","$0.00","+$0.20","+$1.20"], a:2, why:"0.20 × 6 − 1 = +0.20."},
+  {q:"Which is the value bet?", o:["A 60% chance at $1.50","A 10% chance at $12.00","A 25% chance at $3.50","A 50% chance at $1.90"], a:1, why:"Only 0.10 × 12 = 1.20 is above 1. The others are below break-even."},
+  {q:"Your bets average $5.00. What strike rate do you need to break even?", o:["5%","15%","20%","50%"], a:2, why:"1 ÷ 5 = 20%."},
+  {q:"You rate a $2.50 horse at 50%. What does full Kelly say to bet?", o:["50% of bankroll","25%","16.7%","Nothing"], a:2, why:"(0.5 × 2.5 − 1) ÷ 1.5 = 0.25 ÷ 1.5 = 16.7%."},
+  {q:"The favourite–longshot bias means…", o:["Favourites never win","Outsiders win less often than their prices imply","Bookmakers favour long shots","Long shots are always value"], a:1, why:"Punters overpay for long shots, so they win less often than their odds suggest."}
+ ]
+},
+{
+ id:"model", title:"Connecting it to your model", blurb:"Race probabilities, blending with the market, measuring an edge, traps to avoid.",
+ lead:"To find mispriced horses, your model needs probabilities that add to 100% in each race, judged against the margin-free market. A ranking alone can't tell you whether a price is too long.",
+ body:`
+<h2>From scores to race probabilities</h2>
+<p>Most models give each horse a score. The standard way to turn scores into win probabilities within a race is the <b>softmax</b> (in racing, the conditional logit, made famous by Bill Benter's Hong Kong model). It guarantees each race's probabilities sum to 100%, and Harville (Chapter 4) then gives every finishing order.</p>
+<div class="formula">pᵢ = e^(sᵢ) ÷ Σ e^(sⱼ) &nbsp;&nbsp;(over the horses in the race)</div>
+<div data-w="softmax"></div>
+
+<h2>Blend with the market, then measure against it</h2>
+<p>A key finding in racing research: the <b>best models combine their own view with the market's</b>. Fit a fundamental model on form, class, weight, barrier and track; then blend its probabilities with the margin-free market in a second model. The blend usually beats both.</p>
+<p>So "can the model predict discrepancies in the odds?" becomes: <b>does the blend beat the market's probabilities on races it hasn't seen?</b></p>
+
+<h2>How to measure it</h2>
+<div class="tbl"><table><tr><th>Measure</th><th>Tells you</th><th>Good result</th></tr>
+<tr><td>Log loss on the winner</td><td>How much probability you gave the actual winner</td><td>Lower than the market's</td></tr>
+<tr><td>Brier score</td><td>Average squared error of your probabilities</td><td>Lower than the market's</td></tr>
+<tr><td>Calibration plot</td><td>Do your 20% horses win about 20% of the time?</td><td>Close to the diagonal</td></tr>
+<tr><td>Spearman rank correlation</td><td>Predicted order vs finishing order</td><td>Higher than the market's ranking</td></tr>
+<tr><td>Simulated ROI at final price</td><td>Profit betting whenever EV &gt; 0</td><td>Positive over thousands of bets</td></tr>
+<tr><td>ROI by price band</td><td>Whether profit comes only from long shots</td><td>Positive across bands</td></tr></table></div>
+<div class="key"><b>Key idea</b>The market is your baseline for every measure. Beating a random guess is easy; beating the final market is the real test.</div>
+
+<h2>Traps to avoid</h2>
+<ul>
+<li><b>Look-ahead leakage:</b> never use anything not known before the race (like the final price) as a pre-race feature. Store prices with timestamps.</li>
+<li><b>Wrong test price:</b> backtest at prices you could really have taken. "Best price of the day" flatters the model.</li>
+<li><b>Ignoring the margin:</b> a 5% edge on the margin-free market vanishes in a 10% overround.</li>
+<li><b>Small samples:</b> a few hundred races can't separate a 2% edge from luck. Hold out later seasons and test on them once.</li>
+<li><b>Scratchings:</b> recalculate for the final field, not the acceptors.</li>
+<li><b>Dead heats and abandonments:</b> decide up front how your data records them.</li>
+</ul>
+
+<h2>Data to collect for each runner</h2>
+<div class="tbl"><table><tr><th>Group</th><th>Fields</th></tr>
+<tr><td>Race</td><td>Date, venue, distance, class, prize money, track condition, rail, field size</td></tr>
+<tr><td>Runner</td><td>Barrier, weight, apprentice claim, jockey, trainer, age, sex, days since last run</td></tr>
+<tr><td>Form</td><td>Recent finishes, margins, classes, track conditions</td></tr>
+<tr><td>Market</td><td>Opening price, prices at set times before the jump, final fixed price, tote win and place dividends</td></tr>
+<tr><td>Result</td><td>Finishing position, margin, dead heat or scratching flags</td></tr></table></div>`,
+ quiz:[
+  {q:"Why use softmax to turn model scores into probabilities?", o:["It's faster","It makes each race's probabilities add to 100%","It removes the bias","It predicts dividends"], a:1, why:"Softmax normalises within a race, so the probabilities sum to 1."},
+  {q:"Which of these is look-ahead leakage?", o:["Using the barrier","Using last start's margin","Using the final starting price as a pre-race feature","Using track condition"], a:2, why:"The final price isn't known when you'd place an early bet."},
+  {q:"What is the right baseline to beat?", o:["Random guessing","Always backing barrier 1","The margin-free market probabilities","Last year's winner"], a:2, why:"The market already uses most public information. Beating it is the real test."}
+ ]
+}
+];
+
+const GLOSSARY = [
+ ["Acceptors","Horses entered for a race before scratchings."],["Approximate dividend","The tote dividend if betting closed now; changes until the jump."],
+ ["Back","Bet that a horse will win (exchange term)."],["Barrier","The starting stall."],["Benchmark (BM)","A rating that sets which races a horse can enter."],
+ ["Box","Covering every order of a set of horses in an exotic."],["Breakage","Rounding tote dividends down, usually to 10 cents."],
+ ["Correct weight","Official confirmation of the result. Bets are paid after it."],["Dead heat","Two or more horses tying for a place; they share it."],
+ ["Deduction","A cut to fixed-odds winnings after a late scratching."],["Drift","A price lengthening."],["Each way","Equal win and place bets on one horse."],
+ ["Exacta","First and second in exact order."],["EV","Expected value: average profit or loss per $1 bet."],["Firm","A price shortening."],
+ ["First Four","First to fourth in exact order."],["Flexi","Betting a percentage of a full unit on each combination."],["Flucs","The record of a horse's price changes."],
+ ["Group 1","The highest class of race."],["Handicap","A race where better horses carry more weight."],["Implied probability","1 ÷ odds."],
+ ["Kelly","A staking formula sized to your edge."],["Lay","Bet that a horse will lose, acting as the bookmaker."],["Maiden","A race for horses that haven't won."],
+ ["Multi","Several selections, all must win; prices multiply."],["Overlay","A price longer than the true chance: value."],
+ ["Overround","How far a market's implied probabilities exceed 100%."],["Quaddie","Quadrella: the winners of four nominated races."],
+ ["Quinella","First and second in either order."],["Roughie","An outsider at long odds."],["Scratching","A horse withdrawn before the race."],
+ ["Speed map","A prediction of where each horse settles in the run."],["Spell","A break of three months or more."],["Standout","One horse fixed in a position of an exotic."],
+ ["Strike rate","Share of bets that win."],["Takeout","The tote operator's commission."],["Trifecta","First, second and third in exact order."],
+ ["Underlay","A price shorter than the true chance."],["Weight-for-age","Weights set only by age, sex and time of year."]
+];
+
+const FORMULAS = [
+ ["Return (fixed odds)","Stake × odds","$10 × $4.00 = $40"],["Profit","Stake × (odds − 1)","$10 × 3 = $30"],
+ ["Implied probability","1 ÷ odds","1 ÷ 4 = 25%"],["Fair odds","1 ÷ probability","1 ÷ 0.25 = $4.00"],
+ ["Overround","Σ(1 ÷ odds) − 1","109.9% − 100% = 9.9%"],["Margin-free probability","(1 ÷ odds) ÷ market total","35.7% ÷ 1.099 = 32.5%"],
+ ["Tote win dividend","Pool × (1 − takeout) ÷ bet on winner","$85,500 ÷ $25,000 = $3.42"],
+ ["Expected value per $1","p × odds − 1","0.30 × 4 − 1 = +0.20"],["Kelly fraction","(p × odds − 1) ÷ (odds − 1)","0.20 ÷ 3 = 6.7%"],
+ ["Break-even strike rate","1 ÷ average odds","1 ÷ 4 = 25%"],["Flexi %","Outlay ÷ combinations","$30 ÷ 60 = 50%"],
+ ["Exacta probability","pᵢ × pⱼ ÷ (1 − pᵢ)","0.325 × 0.26 ÷ 0.675 = 12.5%"],["Multi price","Product of leg prices","2.80 × 3.50 × 2.00 = $19.60"],
+ ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"]
+];
+
+/* ---------- widgets ---------- */
+const W = {};
+function box(el, title, inner){ el.className = "w"; el.innerHTML = `<div class="w-h">${title}</div><div class="w-b">${inner}</div>`; return $(".w-b", el); }
+function wire(b, fn){ $$("input,select", b).forEach(i => i.addEventListener("input", fn)); fn(); }
+const stat = (label, val, cls = "") => `<div class="stat ${cls}"><span>${label}</span><b>${val}</b></div>`;
+const field = (id, label, val, extra = "") => `<label class="f">${label}<input id="${id}" inputmode="decimal" value="${val}" ${extra}></label>`;
+
+W.form = el => {
+  const b = box(el, "Decode a form line", `<div class="fields">${field("fl","Form line","x2316")}</div><div id="flo"></div>`);
+  wire(b, () => {
+    const s = $("#fl", b).value.trim().toLowerCase().replace(/[^0-9x]/g, "");
+    if (!s){ $("#flo", b).innerHTML = `<p class="note">Type digits and x, e.g. 31x452.</p>`; return; }
+    const ord = n => n + (["th","st","nd","rd"][(n % 100 - 20) % 10] || ["th","st","nd","rd"][n % 100] || "th");
+    const rows = [...s].map((c, i) => {
+      const when = i === s.length - 1 ? "Most recent" : (s.length - 1 - i) + " back";
+      const what = c === "x" ? "Spell (3+ months off)" : c === "0" ? "10th or worse" : c === "1" ? "<b>Won</b>" : ord(+c);
+      return `<tr><td>${when}</td><td class="n">${c}</td><td>${what}</td></tr>`;
+    });
+    const runs = [...s].filter(c => c !== "x"), wins = runs.filter(c => c === "1").length, places = runs.filter(c => "123".includes(c)).length;
+    $("#flo", b).innerHTML = `<div class="tbl"><table><tr><th>Run</th><th class="n">Char</th><th>Meaning</th></tr>${rows.reverse().join("")}</table></div>
+      <div class="out">${stat("Runs", runs.length)}${stat("Wins", wins)}${stat("Top-3 finishes", places)}${stat("Place strike rate", runs.length ? pct(places / runs.length, 0) : "–")}</div>`;
+  });
+};
+
+W.odds = el => {
+  const b = box(el, "Odds converter", `<div class="fields">${field("od","Decimal odds ($)","4.00")}${field("st","Stake ($)","10")}</div>
+    <input type="range" id="odr" min="1.05" max="51" step="0.05" value="4" aria-label="Odds slider"><div class="out" id="oo" style="margin-top:10px"></div>`);
+  const od = $("#od", b), r = $("#odr", b);
+  r.addEventListener("input", () => { od.value = (+r.value).toFixed(2); od.dispatchEvent(new Event("input")); });
+  wire(b, () => {
+    const o = num(od.value), s = num($("#st", b).value);
+    if (!(o > 1)){ $("#oo", b).innerHTML = `<p class="note">Odds must be above $1.00.</p>`; return; }
+    if (document.activeElement !== r) r.value = Math.min(51, o);
+    const fr = toFrac(o - 1), am = o >= 2 ? "+" + Math.round((o - 1) * 100) : "−" + Math.round(100 / (o - 1));
+    $("#oo", b).innerHTML = stat("Implied probability", pct(1 / o), "hi") + stat("Return on stake", isFinite(s) ? money(s * o) : "–") +
+      stat("Profit if it wins", isFinite(s) ? money(s * (o - 1)) : "–") + stat("Fractional (UK)", fr) + stat("American", am) +
+      stat("Wins about…", "1 in " + (o < 10 ? (o).toFixed(1) : Math.round(o)));
+  });
+};
+function toFrac(x){
+  if (Math.abs(x - 1) < 1e-9) return "evens";
+  let best = [Math.round(x), 1], err = 1e9;
+  for (let d = 1; d <= 20; d++){ const n = Math.round(x * d), e = Math.abs(n / d - x); if (n > 0 && e < err - 1e-9){ err = e; best = [n, d]; } if (e < 1e-6) break; }
+  const g = (a, c) => c ? g(c, a % c) : a, k = g(best[0], best[1]);
+  return (best[0] / k) + "/" + (best[1] / k);
+}
+
+const DEFAULT_MKT = [["A",2.80],["B",3.50],["C",5.00],["D",8.00],["E",12.00],["F",21.00]];
+W.market = el => {
+  const rows = DEFAULT_MKT.map(([h, o], i) => `<tr><td><b>${h}</b></td><td><input class="mo" data-i="${i}" inputmode="decimal" value="${o.toFixed(2)}" aria-label="Price of ${h}"></td><td class="n ip"></td><td class="n mf"></td><td class="n fo"></td><td style="width:22%"><div class="probbar"></div></td></tr>`).join("");
+  const b = box(el, "Market builder: find the overround", `<div class="tbl mkt"><table><tr><th>Horse</th><th>Price ($)</th><th class="n">Implied</th><th class="n">Margin-free</th><th class="n">Fair price</th><th></th></tr>${rows}
+    <tr class="total"><td>Total</td><td></td><td class="n" id="mt"></td><td class="n">100.0%</td><td></td><td></td></tr></table></div><div class="out" id="mo"></div>
+    <p class="note">Try shortening the favourite to $2.20 without changing anything else: the overround jumps. That's how a bookmaker builds margin.</p>`);
+  wire(b, () => {
+    const ins = $$(".mo", b), odds = ins.map(i => num(i.value)), ok = odds.every(o => o > 1);
+    if (!ok){ $("#mo", b).innerHTML = `<p class="note">Every price must be above $1.00.</p>`; return; }
+    const imp = odds.map(o => 1 / o), tot = imp.reduce((a, c) => a + c, 0), mx = Math.max(...imp) / tot;
+    $$("tr", b).forEach((tr, j) => { if (j === 0 || j > odds.length) return; const i = j - 1;
+      $(".ip", tr).textContent = pct(imp[i]); $(".mf", tr).textContent = pct(imp[i] / tot); $(".fo", tr).textContent = money(tot / imp[i]);
+      $(".probbar", tr).style.width = (imp[i] / tot / mx * 100) + "%"; });
+    $("#mt", b).textContent = pct(tot);
+    const or = tot - 1;
+    $("#mo", b).innerHTML = stat("Market total", pct(tot), "hi") + stat("Overround (margin)", pct(or), or > 0 ? "bad" : "good") +
+      stat("Cost to win $100 on any horse", money(tot * 100)) + stat("Bookie's expected take", or > 0 ? pct(1 - 1 / tot) + " of turnover" : "none");
+  });
+};
+
+W.tote = el => {
+  const b = box(el, "Tote win pool simulator", `<div class="fields">${field("tk","Takeout (%)","14.5")}</div>
+    <div class="tbl mkt"><table><tr><th>Horse</th><th>Bet on it ($)</th><th class="n">Crowd's chance</th><th class="n">Dividend</th></tr>
+    ${[["A",25000],["B",20000],["C",15000],["D",12000],["E",10000],["F",8000],["G",6000],["H",4000]].map(([h, v]) => `<tr><td><b>${h}</b></td><td><input class="tb" inputmode="decimal" value="${v}" aria-label="Money on ${h}"></td><td class="n cc"></td><td class="n dv"></td></tr>`).join("")}</table></div>
+    <div class="out" id="to"></div><p class="note">Pile money onto one horse and watch every other dividend lengthen. That's the crowd setting the price.</p>`);
+  wire(b, () => {
+    const t = num($("#tk", b).value) / 100, bets = $$(".tb", b).map(i => Math.max(0, num(i.value) || 0)), pool = bets.reduce((a, c) => a + c, 0);
+    const net = pool * (1 - (isFinite(t) ? t : 0));
+    $$(".tb", b).forEach((i, k) => { const tr = i.closest("tr");
+      $(".cc", tr).textContent = pool ? pct(bets[k] / pool) : "–";
+      $(".dv", tr).textContent = bets[k] > 0 ? money(Math.max(1, floor10c(net / bets[k]))) : "–"; });
+    $("#to", b).innerHTML = stat("Gross pool", money(pool)) + stat("Commission", money(pool - net)) + stat("Net pool to winners", money(net), "hi") +
+      stat("Pool's overround", isFinite(t) && t < 1 ? pct(1 / (1 - t) - 1) : "–");
+  });
+};
+
+W.place = el => {
+  const b = box(el, "Tote place dividend calculator", `<div class="fields">${field("pp","Place pool ($)","40000")}${field("pt","Takeout (%)","14.25")}
+    ${field("p1","Bet on 1st ($)","10000")}${field("p2","Bet on 2nd ($)","6000")}${field("p3","Bet on 3rd ($)","2000")}</div><div class="out" id="po"></div>`);
+  wire(b, () => {
+    const pool = num($("#pp", b).value), t = num($("#pt", b).value) / 100, a = ["#p1","#p2","#p3"].map(s => num($(s, b).value));
+    if (![pool, t, ...a].every(isFinite) || a.some(x => x <= 0)){ $("#po", b).innerHTML = `<p class="note">Fill every box with a number above 0.</p>`; return; }
+    const net = pool * (1 - t), stakes = a.reduce((x, y) => x + y, 0), profit = net - stakes, share = profit / 3;
+    if (profit <= 0){ $("#po", b).innerHTML = stat("Net pool", money(net)) + `<p class="note">The placegetters' stakes exceed the net pool, so the TAB would pay its minimum dividend (often $1.04) to everyone.</p>`; return; }
+    $("#po", b).innerHTML = stat("Net pool", money(net)) + stat("Stakes refunded", money(stakes)) + stat("Each third of the profit", money(share)) +
+      a.map((x, i) => stat(["1st","2nd","3rd"][i] + " place dividend", money(floor10c(1 + share / x)), "hi")).join("");
+  });
+};
+
+W.ew = el => {
+  const b = box(el, "Each-way calculator", `<div class="fields">${field("es","Stake each way ($)","10")}${field("ewo","Win price ($)","6.00")}${field("epo","Place price ($)","2.00")}</div><div id="eo"></div>`);
+  wire(b, () => {
+    const s = num($("#es", b).value), w = num($("#ewo", b).value), p = num($("#epo", b).value);
+    if (![s, w, p].every(x => x > 0)){ $("#eo", b).innerHTML = ""; return; }
+    const cost = 2 * s, row = (r, wp, pp) => { const ret = wp + pp, pr = ret - cost; return `<tr><td>${r}</td><td class="n">${money(wp)}</td><td class="n">${money(pp)}</td><td class="n">${money(ret)}</td><td class="n" style="color:var(--${pr >= 0 ? "good" : "bad"})">${pr >= 0 ? "+" : ""}${money(pr)}</td></tr>`; };
+    $("#eo", b).innerHTML = `<p class="note" style="margin:0 0 8px">Total outlay: <b>${money(cost)}</b></p><div class="tbl"><table><tr><th>Result</th><th class="n">Win part</th><th class="n">Place part</th><th class="n">Return</th><th class="n">Profit</th></tr>
+      ${row("Wins", s * w, s * p)}${row("Runs 2nd or 3rd", 0, s * p)}${row("Unplaced", 0, 0)}</table></div>
+      ${p < 2 ? `<p class="note">With a place price under $2.00, a placing alone loses money: the place half doesn't cover the losing win half.</p>` : ""}`;
+  });
+};
+
+W.exotic = el => {
+  const b = box(el, "Exotic combinations and flexi", `<div class="fields"><label class="f">Bet type<select id="xt"><option value="q">Quinella</option><option value="e">Exacta</option><option value="t" selected>Trifecta</option><option value="f">First Four</option><option value="d">Duet</option></select></label>
+    <label class="f">Style<select id="xs"><option value="box">Box</option><option value="so">Standout (1 horse first)</option></select></label>
+    ${field("xk","Horses in the box","5")}${field("xo","Total outlay ($)","30")}${field("xd","$1 dividend if it wins ($)","480.20")}</div><div class="out" id="xo2"></div>`);
+  wire(b, () => {
+    const t = $("#xt", b).value, so = $("#xs", b).value === "so", k = Math.floor(num($("#xk", b).value)), out = num($("#xo", b).value), d = num($("#xd", b).value);
+    const need = {q:2, e:2, t:3, f:4, d:2}[t];
+    if (!(k >= need)){ $("#xo2", b).innerHTML = `<p class="note">You need at least ${need} horses for this bet.</p>`; return; }
+    const P = (n, r) => { let x = 1; for (let i = 0; i < r; i++) x *= (n - i); return x; };
+    let c;
+    if (so){ c = (t === "q" || t === "d") ? k - 1 : P(k - 1, need - 1); }
+    else c = (t === "q" || t === "d") ? k * (k - 1) / 2 : P(k, need);
+    const fx = out / c;
+    $("#xo2", b).innerHTML = stat("Combinations", c, "hi") + stat("Flexi %", isFinite(fx) ? pct(fx, 1) : "–") +
+      stat("Cost for 100% (a full $1 unit)", money(c)) + stat("You'd collect", isFinite(fx * d) ? money(fx * d) : "–", "good");
+  });
+};
+
+W.harville = el => {
+  const opts = DEFAULT_MKT.map(([h]) => `<option>${h}</option>`).join("");
+  const b = box(el, "Harville: price an exacta or trifecta", `<p class="note" style="margin-top:0">Uses the margin-free chances from the Chapter 3 market (A 32.5%, B 26.0%, C 18.2%, D 11.4%, E 7.6%, F 4.3%).</p>
+    <div class="fields"><label class="f">1st<select id="h1">${opts}</select></label><label class="f">2nd<select id="h2">${opts}</select></label><label class="f">3rd<select id="h3"><option value="">(exacta only)</option>${opts}</select></label></div><div class="out" id="ho"></div>`);
+  $("#h2", b).value = "B"; $("#h3", b).value = "C";
+  const imp = DEFAULT_MKT.map(([, o]) => 1 / o), tot = imp.reduce((a, c) => a + c, 0), p = {};
+  DEFAULT_MKT.forEach(([h], i) => p[h] = imp[i] / tot);
+  wire(b, () => {
+    const a = $("#h1", b).value, c2 = $("#h2", b).value, c3 = $("#h3", b).value;
+    if (a === c2 || (c3 && (c3 === a || c3 === c2))){ $("#ho", b).innerHTML = `<p class="note">Pick different horses for each place.</p>`; return; }
+    const ex = p[a] * p[c2] / (1 - p[a]);
+    let html = stat(`Exacta ${a}–${c2}`, pct(ex), c3 ? "" : "hi") + stat("Fair exacta price", money(1 / ex));
+    if (c3){ const tr = ex * p[c3] / (1 - p[a] - p[c2]); html += stat(`Trifecta ${a}–${c2}–${c3}`, pct(tr, 2), "hi") + stat("Fair trifecta price", money(1 / tr)); }
+    $("#ho", b).innerHTML = html + `<p class="note" style="grid-column:1/-1">Compare the fair price with the approximate dividend. A tote trifecta also loses about 21% to takeout, so it needs to pay well above the fair price to be value.</p>`;
+  });
+};
+
+W.multi = el => {
+  const b = box(el, "Multi calculator", `<div class="fields">${field("ms","Stake ($)","10")}${field("ml","Leg prices, comma-separated","2.80, 3.50, 2.00")}${field("mm","Each leg's market total (%)","110")}</div><div class="out" id="mo2"></div>`);
+  wire(b, () => {
+    const s = num($("#ms", b).value), legs = $("#ml", b).value.split(/[,\s]+/).map(num).filter(x => x > 1), m = num($("#mm", b).value) / 100;
+    if (!legs.length){ $("#mo2", b).innerHTML = `<p class="note">Enter at least one price above $1.00.</p>`; return; }
+    const price = legs.reduce((a, c) => a * c, 1), mt = Math.pow(m, legs.length);
+    $("#mo2", b).innerHTML = stat("Combined price", money(price), "hi") + stat("Return if all win", money(s * price), "good") +
+      stat("Chance all win (implied)", pct(1 / price, 2)) + stat(`Compounded market (${legs.length} legs)`, isFinite(mt) ? pct(mt, 0) : "–", "bad");
+  });
+};
+
+W.deduct = el => {
+  const b = box(el, "Deduction calculator", `<div class="fields">${field("ds","Stake ($)","40")}${field("do","Your price ($)","2.00")}${field("dd","Deduction (cents per $1)","20")}</div><div class="out" id="dout"></div>`);
+  wire(b, () => {
+    const s = num($("#ds", b).value), o = num($("#do", b).value), d = num($("#dd", b).value) / 100;
+    if (![s, o, d].every(isFinite) || o <= 1){ $("#dout", b).innerHTML = ""; return; }
+    const win = s * (o - 1), cut = win * d, ret = s + win - cut;
+    $("#dout", b).innerHTML = stat("Return without deduction", money(s * o)) + stat("Winnings cut", money(cut), "bad") + stat("Actual return", money(ret), "hi") +
+      stat("Effective price", money(ret / s));
+  });
+};
+
+W.ev = el => {
+  const b = box(el, "Expected value and Kelly", `<div class="fields">${field("ep","Your probability (%)","30")}${field("eo2","Price ($)","4.00")}${field("eb","Bankroll ($)","1000")}</div><div class="out" id="evo"></div>`);
+  wire(b, () => {
+    const p = num($("#ep", b).value) / 100, o = num($("#eo2", b).value), bank = num($("#eb", b).value);
+    if (!(p > 0 && p < 1 && o > 1)){ $("#evo", b).innerHTML = `<p class="note">Probability must be between 0 and 100%, price above $1.00.</p>`; return; }
+    const ev = p * o - 1, k = ev / (o - 1), edge = p - 1 / o;
+    $("#evo", b).innerHTML = stat("EV per $1", (ev >= 0 ? "+" : "") + money(ev), "hi " + (ev >= 0 ? "good" : "bad")) +
+      stat("Implied by price", pct(1 / o)) + stat("Your edge (probability points)", (edge >= 0 ? "+" : "") + (edge * 100).toFixed(1)) +
+      stat("Your fair price", money(1 / p)) +
+      stat("Full Kelly", k > 0 ? pct(k) + (isFinite(bank) ? " · " + money(k * bank) : "") : "Don't bet") +
+      stat("Quarter Kelly", k > 0 ? pct(k / 4) + (isFinite(bank) ? " · " + money(k * bank / 4) : "") : "–");
+  });
+};
+
+W.sim = el => {
+  const b = box(el, "Variance simulator: a season of bets", `<div class="fields">${field("sp","True win chance (%)","12")}${field("so","Price ($)","9.00")}${field("sn","Bets in a season","300")}</div>
+    <button class="btn" id="sgo">Run 6 seasons</button><div class="chart" id="sch" style="margin-top:12px"></div><div class="out" id="sout"></div>`);
+  const run = () => {
+    const p = num($("#sp", b).value) / 100, o = num($("#so", b).value), n = Math.min(5000, Math.max(10, Math.floor(num($("#sn", b).value) || 0)));
+    if (!(p > 0 && p < 1 && o > 1)){ $("#sout", b).innerHTML = `<p class="note">Check the inputs.</p>`; return; }
+    const paths = [], streaks = [];
+    for (let r = 0; r < 6; r++){ let bal = 0, cur = 0, worst = 0; const path = [0];
+      for (let i = 0; i < n; i++){ if (Math.random() < p){ bal += o - 1; cur = 0; } else { bal -= 1; cur++; worst = Math.max(worst, cur); } path.push(bal); }
+      paths.push(path); streaks.push(worst); }
+    const all = paths.flat(), lo = Math.min(...all, 0), hi = Math.max(...all, 0), Wd = 600, H = 240, pad = 34;
+    const X = i => pad + i / n * (Wd - pad - 8), Y = v => 10 + (hi - v) / ((hi - lo) || 1) * (H - 30);
+    const cols = ["#2f7d58","#c4302b","#2456a6","#b98a2e","#6b3fa0","#d0611b"];
+    const step = Math.max(1, Math.floor(n / 300));
+    const lines = paths.map((pth, r) => `<polyline fill="none" stroke="${cols[r]}" stroke-width="2" points="${pth.filter((_, i) => i % step === 0 || i === n).map((v, j, arr) => X(j === arr.length - 1 ? n : j * step).toFixed(1) + "," + Y(v).toFixed(1)).join(" ")}"/>`).join("");
+    const ev = n * (p * o - 1);
+    $("#sch", b).innerHTML = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Profit paths for six simulated seasons">
+      <line x1="${pad}" x2="${Wd - 8}" y1="${Y(0)}" y2="${Y(0)}" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
+      <line x1="${X(0)}" x2="${X(n)}" y1="${Y(0)}" y2="${Y(ev)}" stroke="currentColor" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="8 5"/>
+      ${lines}
+      <text x="4" y="${Y(hi) + 4}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">${hi >= 0 ? "+" : ""}${Math.round(hi)}</text>
+      <text x="4" y="${Y(lo)}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">${Math.round(lo)}</text>
+      <text x="4" y="${Y(0) + 4}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">0</text>
+      <text x="${Wd - 10}" y="${H - 4}" font-size="12" fill="currentColor" text-anchor="end" font-family="IBM Plex Mono">bet ${n}</text></svg>
+      <p class="note" style="margin-top:4px">Profit in $1 units. The dashed diagonal is the expected result; each coloured line is one season.</p>`;
+    const finals = paths.map(x => x[n]);
+    $("#sout", b).innerHTML = stat("Expected profit", (ev >= 0 ? "+" : "") + ev.toFixed(1) + " units", "hi") + stat("Best season", "+" + Math.max(...finals).toFixed(1).replace("+-", "-")) +
+      stat("Worst season", Math.min(...finals).toFixed(1)) + stat("Longest losing run", Math.max(...streaks) + " bets") + stat("Seasons in profit", finals.filter(x => x > 0).length + " of 6");
+  };
+  $("#sgo", b).addEventListener("click", run); run();
+};
+
+W.softmax = el => {
+  const b = box(el, "Softmax: scores to probabilities", `<div class="fields">${field("sx","Model scores, comma-separated","1.2, 0.8, 0.3, -0.2, -0.6, -1.1")}${field("sm","Market prices (optional)","2.80, 3.50, 5.00, 8.00, 12.00, 21.00")}</div><div id="sxo"></div>`);
+  wire(b, () => {
+    const s = $("#sx", b).value.split(/[,\s]+/).map(num).filter(isFinite), m = $("#sm", b).value.split(/[,\s]+/).map(num);
+    if (s.length < 2){ $("#sxo", b).innerHTML = `<p class="note">Enter two or more scores.</p>`; return; }
+    const mx = Math.max(...s), e = s.map(x => Math.exp(x - mx)), z = e.reduce((a, c) => a + c, 0), p = e.map(x => x / z);
+    const mi = s.map((_, i) => m[i] > 1 ? 1 / m[i] : NaN), mt = mi.every(isFinite) ? mi.reduce((a, c) => a + c, 0) : NaN;
+    const rows = p.map((pi, i) => { const mp = mi[i] / mt, ev = m[i] > 1 ? pi * m[i] - 1 : NaN;
+      return `<tr><td><b>${String.fromCharCode(65 + i)}</b></td><td class="n">${s[i]}</td><td class="n">${pct(pi)}</td><td class="n">${isFinite(mp) ? pct(mp) : "–"}</td><td class="n" style="color:var(--${ev > 0 ? "good" : "soft"})">${isFinite(ev) ? (ev >= 0 ? "+" : "") + ev.toFixed(2) : "–"}</td></tr>`; }).join("");
+    $("#sxo", b).innerHTML = `<div class="tbl"><table><tr><th>Horse</th><th class="n">Score</th><th class="n">Model p</th><th class="n">Market p</th><th class="n">EV per $1</th></tr>${rows}</table></div>
+      <p class="note">Model probabilities add to 100%. A positive EV means the model thinks the price is too long; whether it's right is what your testing has to show.</p>`;
+  });
+};
+
+/* ---------- views ---------- */
+function progress(){
+  const n = CH.filter(c => state.done[c.id]).length;
+  $("#pfill").style.width = (n / CH.length * 100) + "%"; $("#ptext").textContent = n + "/" + CH.length;
+}
+function home(){
+  return `<section class="hero"><h1>The Punter's Primer</h1>
+    <p>How horse racing odds and payouts really work, one chapter at a time. Each chapter has calculators to play with and a short quiz at the end.</p></section>
+    <div class="big-idea">Odds are probabilities with a price tag attached.<small>Every price is a chance of winning, every payout is stake × price or a share of a pool, and every bet type is a way of slicing finishing orders.</small></div>
+    <ol class="chapters">${CH.map((c, i) => `<li><a href="#${c.id}"><span class="saddle" style="background:${SILKS[i]}">${i + 1}</span>
+      <span><h3>${c.title}</h3><p>${c.blurb}</p></span><span class="tick ${state.done[c.id] ? "done" : ""}">${state.done[c.id] ? "✓ Passed" : (c.quiz.length + " Qs")}</span></a></li>`).join("")}</ol>
+    <div class="extras"><a href="#tools">All calculators<small>Every tool on one page</small></a><a href="#formulas">Formula sheet<small>All the maths at a glance</small></a><a href="#glossary">Glossary<small>Racing words, explained</small></a></div>
+    <p class="fineprint">For learning only. These are maths examples, not tips. Commission and margins mean the average bettor loses over time. If gambling stops being fun, call Gambling Help on 1800 858 858. Tote commission rates are Queensland's last legislated rates (2012); check the TAB's current figures. Part of <a href="${MAIN}">Dr Tom's Lexicon</a>.</p>`;
+}
+function chapter(i){
+  const c = CH[i], prev = CH[i - 1], next = CH[i + 1];
+  return `<a class="back" href="#">← All chapters</a>
+    <div class="ch-head"><span class="saddle" style="background:${SILKS[i]}">${i + 1}</span><div><small>Chapter ${i + 1} of ${CH.length}</small><h1>${c.title}</h1></div></div>
+    <p class="lead">${c.lead}</p>${c.body}
+    <section class="quiz" id="quiz"><h2>Check yourself</h2><p style="margin:0;opacity:.85">Get ${Math.ceil(c.quiz.length * .75)} of ${c.quiz.length} right to tick off this chapter.</p><div id="qz"></div></section>
+    <nav class="pager">${prev ? `<a href="#${prev.id}"><small>← Previous</small>${prev.title}</a>` : `<span></span>`}${next ? `<a class="next" href="#${next.id}"><small>Next →</small>${next.title}</a>` : `<a class="next" href="#tools"><small>Next →</small>All calculators</a>`}</nav>`;
+}
+function quiz(i){
+  const c = CH[i], host = $("#qz"); let right = 0, answered = 0;
+  host.innerHTML = c.quiz.map((q, k) => `<div class="qn">Question ${k + 1}</div><div class="q">${q.q}</div><div class="opts" data-k="${k}">${q.o.map((o, j) => `<button class="opt" data-j="${j}">${o}</button>`).join("")}</div><div class="why" hidden></div>`).join("") + `<div class="score" id="qs"></div>`;
+  $$(".opts", host).forEach(g => g.addEventListener("click", e => {
+    const btn = e.target.closest(".opt"); if (!btn) return;
+    const q = c.quiz[+g.dataset.k], j = +btn.dataset.j;
+    $$(".opt", g).forEach(x => { x.disabled = true; if (+x.dataset.j === q.a) x.classList.add("right"); });
+    if (j === q.a) right++; else btn.classList.add("wrong");
+    const why = g.nextElementSibling; why.hidden = false; why.innerHTML = (j === q.a ? "<b>Right.</b> " : "<b>Not quite.</b> ") + q.why;
+    if (++answered === c.quiz.length){
+      const pass = right >= Math.ceil(c.quiz.length * .75);
+      if (pass){ state.done[c.id] = true; save(); progress(); }
+      $("#qs").innerHTML = `${right} / ${c.quiz.length}. ${pass ? "Chapter ticked off ✓" : "Have another look and try again."} <button class="btn" id="qr" style="margin-left:8px">Retry</button>`;
+      $("#qr").onclick = () => quiz(i);
+    }
+  }));
+}
+function tools(){
+  const list = [["odds","Odds converter",1],["market","Market builder",2],["tote","Tote win pool",2],["place","Tote place dividend",3],["ew","Each way",3],["exotic","Exotics and flexi",3],["harville","Harville exotic pricing",3],["multi","Multis",3],["deduct","Deductions",3],["ev","Expected value and Kelly",4],["sim","Variance simulator",4],["softmax","Softmax",5],["form","Form line decoder",0]];
+  return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Toolbox</small><h1>All calculators</h1></div></div>
+    <div class="toc">${list.map(([w, t]) => `<a href="#tools/${w}">${t}</a>`).join("")}</div>
+    ${list.map(([w, t, ci]) => `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${CH[ci].id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`).join("")}`;
+}
+function formulas(){
+  return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Quick reference</small><h1>Formula sheet</h1></div></div>
+    <div class="tbl"><table><tr><th>What</th><th>Formula</th><th>Example</th></tr>${FORMULAS.map(r => `<tr><td><b>${r[0]}</b></td><td style="font-family:var(--mono);font-size:14px">${r[1]}</td><td style="font-family:var(--mono);font-size:14px">${r[2]}</td></tr>`).join("")}</table></div>`;
+}
+function glossary(){
+  return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Quick reference</small><h1>Glossary</h1></div></div>
+    <div class="search"><input id="gs" placeholder="Search terms…" aria-label="Search the glossary" style="font-family:var(--body)"></div><div class="tbl"><table id="gt"></table></div>`;
+}
+function fillGlossary(){
+  const draw = () => { const q = $("#gs").value.trim().toLowerCase();
+    const rows = GLOSSARY.filter(([t, d]) => !q || t.toLowerCase().includes(q) || d.toLowerCase().includes(q));
+    $("#gt").innerHTML = `<tr><th>Term</th><th>Meaning</th></tr>` + (rows.length ? rows.map(([t, d]) => `<tr><td><b>${t}</b></td><td>${d}</td></tr>`).join("") : `<tr><td colspan="2">No matches.</td></tr>`); };
+  $("#gs").addEventListener("input", draw); draw();
+}
+
+function route(){
+  const [view, sub] = location.hash.replace(/^#/, "").split("/"), app = $("#app");
+  const i = CH.findIndex(c => c.id === view);
+  if (i >= 0){ app.innerHTML = chapter(i); quiz(i); }
+  else if (view === "tools") app.innerHTML = tools();
+  else if (view === "formulas") app.innerHTML = formulas();
+  else if (view === "glossary"){ app.innerHTML = glossary(); fillGlossary(); }
+  else app.innerHTML = home();
+  $$("[data-w]", app).forEach(el => { try { W[el.dataset.w](el); } catch (e) { el.textContent = "This calculator couldn't load."; console.error(e); } });
+  document.title = (i >= 0 ? CH[i].title + " · " : "") + "The Punter's Primer";
+  const target = sub && (document.getElementById("s-" + sub) || document.getElementById("t-" + sub));
+  if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+  progress();
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
