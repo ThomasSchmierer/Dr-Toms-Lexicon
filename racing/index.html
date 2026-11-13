@@ -25,7 +25,7 @@
 
 *{box-sizing:border-box}
 html{scroll-padding-top:70px}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-text-size-adjust:100%;font-feature-settings:"calt" 0}
 a{color:var(--turf)}
 .top{position:sticky;top:0;z-index:10;background:var(--green);color:#f5f0e3;display:flex;align-items:center;gap:12px;
   padding:10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
@@ -153,13 +153,23 @@ td.ly{background:#fbe1e6;color:#111} td.ly.best{background:#f9c0cc}
 td.bkh{background:#a6d8ff;color:#111;font-weight:700} td.lyh{background:#f9c0cc;color:#111;font-weight:700}
 td.pcth{font-family:var(--mono);font-size:13px}
 tr.nr td{color:var(--soft);font-size:13px;text-align:left!important}
-table.tabc td{vertical-align:middle;padding:6px 6px} table.tabc .who{min-width:170px}
+table.tabc td{vertical-align:middle;padding:6px 6px} table.tabc .who{min-width:190px;display:flex;gap:6px;align-items:center}
+table.tabc th{background:var(--card);color:var(--soft);font-weight:500;border-bottom:1px solid var(--rule)} table.tabc th.grp{font-size:11px;letter-spacing:.06em;text-align:center}
+table.tabc td.no{background:#2b2f33;color:#fff;text-align:center;font-weight:700;width:34px} table.tabc td.no small{color:#ccc}
+table.tabc td.c,table.tabc th.c{text-align:center} table.tabc td.pr{text-align:center;color:#23784a;font-weight:500;font-size:15px}
+table.tabc td.pr.favp{color:#2573b8} table.tabc td.pr small{display:block;font-size:10px}
+.tabtabs{display:flex;overflow-x:auto;border-bottom:1px solid var(--rule);margin-bottom:8px}
+.tabtabs span{padding:8px 10px;white-space:nowrap;font-size:14px;color:var(--soft);text-align:center;line-height:1.1}
+.tabtabs span small{display:block;font-size:10px}.tabtabs .on{color:#23784a;font-weight:700;border-bottom:3px solid #23784a}
+.tabtools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px;font-size:12px}
+.tbtn{border:1px solid var(--rule);border-radius:4px;padding:4px 8px;background:var(--card);font-weight:600;white-space:nowrap} .tbtn.on{background:#23784a;color:#fff}
+.mobonly{display:none}
 td.fx{background:#e3f1e8;color:#111;text-align:center;font-family:var(--mono)} td.tt{background:#eef0f2;color:#111;text-align:center;font-family:var(--mono)}
 th.fxh{background:#1f5a43;text-align:center} th.tth{background:#4a5560;text-align:center}
 td.fx .up,td.fx .down{display:block;font-size:11px} .up{color:#23784a}.down{color:#b33a2e}
 .favtag,.scrtag{font:700 10px var(--mono);padding:1px 5px;border-radius:4px;background:var(--gold);color:#1d2420}
 .scrtag{background:var(--bad);color:#fff} tr.scr-row td{color:var(--soft)}
-@media (max-width:560px){ table.bf .lad-outer{display:none} table.bf td.rn{min-width:120px} table.tabc{font-size:13px} table.tabc .who{min-width:112px} table.tabc td,table.tabc th{padding:5px 3px} td.fx b{font-size:13px} }
+@media (max-width:560px){ table.bf .lad-outer{display:none} table.bf td.rn{min-width:120px} table.tabc{font-size:12px} table.tabc .who{min-width:0} table.tabc .who b{font-size:12px} table.tabc .who svg.silk{display:none} table.tabc td,table.tabc th{padding:5px 2px} .desk{display:none} .mobonly{display:inline} table.tabc td.pr{font-size:12.5px} table.tabc td.no{width:24px} }
 .back{font-size:14px;text-decoration:none;display:inline-block;margin-top:6px}
 </style>
 </head>
@@ -821,46 +831,78 @@ const CH = [
  ]
 },
 {
- id:"tabcard", part:3, title:"Reading a TAB race page", blurb:"Fixed and tote columns, approximate dividends, flucs, the form line and One Pool.",
- lead:"A TAB race page packs a form guide and two different betting systems into one table. The trick is knowing which numbers are locked-in fixed prices and which are tote estimates that will change.",
+ id:"tabcard", part:3, title:"Reading a TAB race page", blurb:"Fixed Odds and Pool columns, bet-type tabs, flucs, Sky Rating and the form line.",
+ lead:"A TAB race page packs a form guide and two different betting systems into one table. The trick is knowing which numbers are locked-in fixed prices and which are pool estimates that will still change.",
  body:`
-<h2>A practice race card</h2>
-<p>This is a made-up race laid out like a TAB race page. <b>Tap any part</b> of a row to see what it is.</p>
+<h2>A practice race page</h2>
+<p>This is a made-up race laid out like the TAB's Win/Place page. <b>Tap any part</b> of it, including the tabs, buttons and headings, to see what it is. Try the Fixed Odds Flucs and Pool Flucs buttons too.</p>
 <div data-w="tabscreen"></div>
+<p class="note">On a phone, the practice card tucks Form and Weight under the jockey line, as the TAB app does, and hides the Sky Rating column.</p>
 
-<h2>Fixed or tote: the two halves of the screen</h2>
-<div class="tbl"><table><tr><th></th><th>Fixed (Win / Place)</th><th>Tote (Win / Place)</th></tr>
+<h2>Reading a row, left to right</h2>
+<div class="tbl"><table><tr><th>Column</th><th>What it shows</th></tr>
+<tr><td><b>No</b></td><td>Saddlecloth number, in the dark box. The arrow under it opens that runner's full form.</td></tr>
+<tr><td><b>Runner (Barrier)</b></td><td>Silks, name in capitals, barrier in brackets; underneath, <b>J</b> for jockey and <b>T</b> for trainer. "(a2)" after a jockey is an apprentice claiming 2 kg.</td></tr>
+<tr><td><b>Form*</b></td><td>Recent finishing positions, newest on the right (Chapter 1). The * links to the TAB's key for any letters, such as the "f" that starts every line in some overseas races.</td></tr>
+<tr><td><b>Weight</b></td><td>Kilograms allotted, before any apprentice claim.</td></tr>
+<tr><td><b>Sky Rating</b></td><td>Sky Racing's rating of each runner. The top-rated runner shows 100 and the rest are scaled below it. It's one expert view, not the market.</td></tr>
+<tr><td><b>FIXED ODDS Win / Place</b></td><td>The TAB bookmakers' prices. Locked in when your bet is accepted.</td></tr>
+<tr><td><b>POOL Win / Place</b></td><td>The tote: approximate dividends if betting closed now. Final only after the race.</td></tr></table></div>
+<p>The favourite's prices are shown in <b>blue</b>; everyone else's are green.</p>
+
+<h2>Fixed Odds or Pool?</h2>
+<div class="tbl"><table><tr><th></th><th>Fixed Odds</th><th>Pool (the tote)</th></tr>
 <tr><td>Who sets it</td><td>The TAB's bookmakers</td><td>The money in the pool</td></tr>
 <tr><td>When it's final</td><td>When you bet</td><td>After the race</td></tr>
 <tr><td>What the number is</td><td>The price you'll get</td><td>An <b>approximate</b> dividend if betting closed now</td></tr>
 <tr><td>Margin</td><td>Built into the prices (Chapter 7)</td><td>Takeout from the pool</td></tr>
-<tr><td>Scratchings</td><td>Deductions may apply</td><td>Pool recalculated, refund on the scratched horse</td></tr></table></div>
-<p>Since 3 October 2026, the TAB's tote has been <b>One Pool</b>: the old NSW TAB, SuperTAB and UniTAB pools merged into one national pool, so there's now a single tote dividend instead of three. Its win takeout is 14.5%.</p>
-<div class="key"><b>Key idea</b>Add up 1 ÷ price down the Fixed Win column and you get the fixed market's total (often 110–120%). Do the same down the Tote Win column and you get about 1 ÷ (1 − 0.145) ≈ 117%. The practice card shows both under the table.</div>
+<tr><td>Scratchings</td><td>Deductions may apply</td><td>Pool recalculated; bets on the scratched horse refunded</td></tr></table></div>
+<p>Since 3 October 2026 the TAB's pool has been <b>One Pool</b>: the old NSW TAB, SuperTAB and UniTAB pools merged into one national pool, so there's a single dividend instead of three. Its win takeout is 14.5%.</p>
+<div class="key"><b>Key idea</b>Add up 1 ÷ price down the Fixed Win column and you get the fixed market's total. Do the same down the Pool Win column and, once the pool has built up, you'd expect about 1 ÷ (1 − 0.145) ≈ 117%. Small overseas races often show bigger totals, and early pools jump around.</div>
 
-<h2>Opening price and flucs</h2>
-<p>The TAB shows each runner's <b>opening fixed price</b> and how it has moved since (the flucs), usually with an arrow or colour for firming or drifting. That's the market life cycle from Chapter 8 in miniature. Remember to compare moves in probability terms, not raw dollars: $3.00 → $2.50 is a much bigger shift than $21 → $18.</p>
+<h2>Odd-looking pool numbers</h2>
+<ul>
+<li><b>A huge Pool Win (like 99.60):</b> almost nothing has been bet on that runner yet. One bet can halve it.</li>
+<li><b>Pool Place 0.00:</b> no approximate dividend yet, usually because there's little or no place money on that runner. It isn't a price.</li>
+<li><b>Pool Place 1.04:</b> the minimum dividend. So much is bet on that runner to place that the pool can barely pay a profit.</li>
+<li><b>Pool Place bigger than Fixed Place:</b> common early on. The pool figure assumes the current money and will change, and the final place dividend also depends on which other horses fill the places.</li>
+</ul>
+
+<h2>The tabs across the top</h2>
+<ul>
+<li><b>Win/Place:</b> the main view, shown above.</li>
+<li><b>Quinella, Trifecta, First 4, Exacta:</b> exotic pools on this race (Chapter 9).</li>
+<li><b>Parlay:</b> a multi across several races; winnings from each leg roll into the next.</li>
+<li><b>D Double (10,12):</b> a daily double. Pick the winners of the two races in brackets.</li>
+<li><b>Quaddie (9,10,11,12):</b> pick the winners of the four races in brackets.</li>
+</ul>
+
+<h2>The buttons above the table</h2>
+<ul>
+<li><b>Show All Form:</b> opens the full form guide under every runner.</li>
+<li><b>Compare:</b> chooses the extra column, such as Sky Rating.</li>
+<li><b>Fixed Odds Flucs:</b> how each fixed price has moved since it opened. That's the market life cycle from Chapter 8; compare moves in probability terms, not raw dollars.</li>
+<li><b>Pool Flucs:</b> how the approximate pool dividends have moved as money came in.</li>
+</ul>
 
 <h2>Which price is better?</h2>
-<p>The same horse can show three different prices: a TAB fixed price, an approximate tote dividend, and an exchange price that loses commission. This calculator lines them up on the same footing.</p>
+<p>The same horse can show three different prices: a TAB fixed price, an approximate pool dividend, and an exchange price that loses commission. This calculator lines them up on the same footing.</p>
 <div data-w="fixtote"></div>
 <ul>
 <li><b>Fixed</b> is certain. Take it when you think the price will shorten.</li>
-<li><b>Tote</b> can beat fixed on horses the crowd ignores, but the approximate dividend often shrinks in the final minutes as late money arrives.</li>
+<li><b>Pool</b> can beat fixed on horses the crowd ignores, but the approximate dividend often shrinks in the final minutes as late money arrives.</li>
 <li><b>Exchange</b> prices look the biggest but lose commission on winnings.</li>
 </ul>
 
 <h2>Other labels you'll see</h2>
 <ul>
-<li><b>Fav / 2nd fav:</b> the shortest and second-shortest in the market.</li>
 <li><b>SCR / scratched:</b> withdrawn. Fixed bets on other runners may get a deduction (Chapter 9); the TAB Betting Rules give the formula.</li>
 <li><b>Final Field vs Futures:</b> Final Field fixed odds open once the field is set, and a bet on a horse that's scratched is refunded. Futures prices are offered earlier (often weeks before a big race), and if your horse doesn't run you usually lose your stake.</li>
-<li><b>Barrier in brackets</b> after the name, and <b>a2 / a3</b> after a jockey's name for an apprentice claim of 2 or 3 kg.</li>
-<li><b>Exotics and quaddie tabs:</b> tote pools for quinellas, trifectas, First Four and multi-race bets, each with its own takeout (Chapter 9).</li>
 </ul>`,
  quiz:[
-  {q:"On a TAB race page, which number is guaranteed if you bet now?", o:["The tote win dividend","The fixed win price","The approximate place dividend","None of them"], a:1, why:"Fixed prices lock in when your bet is accepted. Tote numbers are estimates until the race is run."},
-  {q:"The Tote Win column adds up to about 117%. Why?", o:["Bookmakers are greedy","The 14.5% win takeout: 1 ÷ 0.855 ≈ 117%","Scratchings","It's a display error"], a:1, why:"The pool pays back 85.5% of what goes in, so the dividends imply about 117% in total."},
+  {q:"On a TAB race page, which number is guaranteed if you bet now?", o:["The Pool Win dividend","The Fixed Odds Win price","The Pool Place dividend","None of them"], a:1, why:"Fixed prices lock in when your bet is accepted. Pool numbers are estimates until the race is run."},
+  {q:"A runner shows Pool Place 1.04. What does that mean?", o:["It's a $1.04 fixed price","It's the minimum dividend: heavily backed to place","No money has been bet","It's been scratched"], a:1, why:"$1.04 is the minimum dividend, paid when so much is bet on a runner to place that the pool can barely pay a profit."},
+  {q:"Once the pool has built, the Pool Win column adds up to about 117%. Why?", o:["Bookmakers are greedy","The 14.5% win takeout: 1 ÷ 0.855 ≈ 117%","Scratchings","It's a display error"], a:1, why:"The pool pays back 85.5% of what goes in, so the dividends imply about 117% in total."},
   {q:"A TAB fixed price is $4.80 and the exchange's best back is $5.00 at 8% commission. Which pays more if it wins?", o:["The exchange","TAB fixed","They're equal","Can't tell"], a:1, why:"The exchange's effective price is 1 + 4 × 0.92 = $4.68, below $4.80."},
   {q:"What changed when TAB launched One Pool?", o:["Fixed odds stopped","Three state tote pools merged into one national pool","Commission was added","Place betting ended"], a:1, why:"One Pool combined NSW TAB, SuperTAB and UniTAB into one national tote pool and a single dividend."}
  ]
@@ -1324,53 +1366,75 @@ W.bflay = el => {
 };
 
 const TAB = [
-  {n:1, h:"Paddock Poet",  bar:3, j:"K. Ashdown",   t:"M. Fenwick", wt:59,   form:"x2316", fw:2.80, fp:1.40, tw:2.50, tp:1.40, open:3.00},
-  {n:2, h:"Silver Rail",   bar:7, j:"L. Brennan a2",t:"D. Coyle",   wt:57.5, form:"14x21", fw:3.40, fp:1.60, tw:3.50, tp:1.60, open:3.20},
-  {n:3, h:"Morning Track", bar:1, j:"P. Ormond",    t:"S. Lytton",  wt:57,   form:"3x452", fw:5.00, fp:2.00, tw:5.00, tp:2.00, open:5.50},
-  {n:4, h:"Wet Weather",   bar:9, j:"R. Tamsin",    t:"M. Fenwick", wt:56,   form:"07x83", fw:8.00, fp:2.70, tw:7.10, tp:2.80, open:7.50},
-  {n:5, h:"Long Shadow",   bar:5, j:"A. Keel a3",   t:"J. Varga",   wt:55,   form:"6x900", fw:11.0, fp:3.40, tw:10.6, tp:3.60, open:11.0},
-  {n:6, h:"Back Straight", bar:2, j:"C. Hollis",    t:"S. Lytton",  wt:54,   form:"x0765", fw:18.0, fp:4.80, tw:17.0, tp:5.20, open:21.0},
-  {n:7, h:"Late Mail",     bar:6, j:"T. Quinlan",   t:"D. Coyle",   wt:54,   form:"–",     fw:0, scr:true}
+  {n:1,  h:"PADDOCK POET",  bar:1,  j:"K Ashdown",    t:"M Fenwick", form:"x2316", wt:59,   sr:88,  fw:3.2, fp:1.45, pw:3.2, pp:1.5, open:3.6, popen:3.1},
+  {n:2,  h:"SILVER RAIL",   bar:7,  j:"L Brennan (a2)",t:"D Coyle",  form:"14x21", wt:57.5, sr:100, fw:2.55, fp:1.3, pw:2.2, pp:1.04, open:3.0, popen:2.4},
+  {n:3,  h:"MORNING TRACK", bar:3,  j:"P Ormond",     t:"S Lytton",  form:"3x452", wt:57,   sr:74,  fw:6.0, fp:2.0, pw:5.7, pp:2.4, open:5.5, popen:6.4},
+  {n:4,  h:"WET WEATHER",   bar:9,  j:"R Tamsin",     t:"M Fenwick", form:"07x83", wt:56,   sr:61,  fw:9.5, fp:2.8, pw:10.6, pp:3.2, open:9.0, popen:11.0},
+  {n:5,  h:"LONG SHADOW",   bar:5,  j:"A Keel (a3)",  t:"J Varga",   form:"6x900", wt:55,   sr:42,  fw:17.0, fp:4.4, pw:22.0, pp:6.1, open:21.0, popen:20.0},
+  {n:6,  h:"BACK STRAIGHT", bar:2,  j:"C Hollis",     t:"S Lytton",  form:"x0765", wt:54,   sr:55,  fw:12.0, fp:3.4, pw:14.2, pp:3.6, open:13.0, popen:16.0},
+  {n:7,  h:"QUIET ACHIEVER",bar:8,  j:"N Pell",       t:"R Amble",   form:"x0",    wt:54,   sr:30,  fw:21.0, fp:5.5, pw:99.6, pp:0.0, open:26.0, popen:120},
+  {n:8,  h:"LATE MAIL",     bar:6,  j:"T Quinlan",    t:"D Coyle",   form:"5x34",  wt:54,   scr:true}
 ];
 W.tabscreen = el => {
-  const live = TAB.filter(r => !r.scr), fixB = live.reduce((a, r) => a + 1 / r.fw, 0), toteB = live.reduce((a, r) => a + 1 / r.tw, 0);
+  const live = TAB.filter(r => !r.scr), fixB = live.reduce((a, r) => a + 1 / r.fw, 0), poolB = live.reduce((a, r) => a + 1 / r.pw, 0);
   const fav = live.reduce((a, r) => r.fw < a.fw ? r : a);
-  const arrow = r => r.fw < r.open ? `<span class="up" data-k="fluc" data-i="${TAB.indexOf(r)}">▼ ${money(r.open)}</span>` : r.fw > r.open ? `<span class="down" data-k="fluc" data-i="${TAB.indexOf(r)}">▲ ${money(r.open)}</span>` : "";
+  let showFix = false, showPool = false;
+  const d = n => n.toFixed(2);
+  const price = (r, i, k, v, sub) => `<td class="pr ${r === fav ? "favp" : ""}" data-k="${k}" data-i="${i}" tabindex="0">${d(v)}${sub || ""}</td>`;
+  const fixSub = r => showFix ? `<small class="${r.fw < r.open ? "up" : r.fw > r.open ? "down" : ""}">${d(r.open)}→${d(r.fw)}</small>` : "";
+  const poolSub = r => showPool ? `<small class="${r.pw < r.popen ? "up" : r.pw > r.popen ? "down" : ""}">${d(r.popen)}→${d(r.pw)}</small>` : "";
   const row = (r, i) => r.scr
-    ? `<tr class="scr-row"><td data-k="num" data-i="${i}">${r.n}</td><td colspan="5" data-k="scr" data-i="${i}" tabindex="0"><s>${r.h} (${r.bar})</s> <b class="scrtag">SCR</b></td></tr>`
-    : `<tr><td data-k="num" data-i="${i}" tabindex="0"><b>${r.n}</b></td>
-      <td class="who"><span data-k="name" data-i="${i}" tabindex="0"><b>${r.h}</b></span> <span data-k="bar" data-i="${i}" tabindex="0">(${r.bar})</span>${r === fav ? ` <span class="favtag" data-k="fav" data-i="${i}" tabindex="0">FAV</span>` : ""}<br>
-      <small><span data-k="jockey" data-i="${i}" tabindex="0">J: ${r.j}</span> · <span data-k="trainer" data-i="${i}" tabindex="0">T: ${r.t}</span> · <span data-k="wt" data-i="${i}" tabindex="0">${r.wt}kg</span> · <span data-k="form" data-i="${i}" tabindex="0">${r.form}</span></small></td>
-      <td class="fx" data-k="fw" data-i="${i}" tabindex="0"><b>${money(r.fw)}</b>${arrow(r)}</td><td class="fx" data-k="fp" data-i="${i}" tabindex="0">${money(r.fp)}</td>
-      <td class="tt" data-k="tw" data-i="${i}" tabindex="0">${money(r.tw)}</td><td class="tt" data-k="tp" data-i="${i}" tabindex="0">${money(r.tp)}</td></tr>`;
-  const b = box(el, "Practice TAB-style race card: tap anything", `
-    <div class="mkthead"><span data-k="race" tabindex="0">R5 · 1200 m · BM72 · Good 4</span><span data-k="pools" tabindex="0">One Pool</span></div>
-    <div class="tbl"><table class="tabc"><tr><th>#</th><th>Runner</th><th class="fxh" data-k="fixedhdr" tabindex="0">Fixed<br>Win</th><th class="fxh" data-k="fixedhdr" tabindex="0">Fixed<br>Plc</th><th class="tth" data-k="totehdr" tabindex="0">Tote<br>Win</th><th class="tth" data-k="totehdr" tabindex="0">Tote<br>Plc</th></tr>
-    ${TAB.map(row).join("")}</table></div>
+    ? `<tr class="scr-row"><td class="no">${r.n}</td><td colspan="8" data-k="scr" data-i="${i}" tabindex="0">${silkSvg(["#9aa","#ccc"])} <s>${r.h} (${r.bar})</s> <b class="scrtag">SCR</b></td></tr>`
+    : `<tr><td class="no" data-k="num" data-i="${i}" tabindex="0">${r.n}<br><small>⌄</small></td>
+      <td class="who">${silkSvg(BF[i % BF.length].silk)}<span><span data-k="name" data-i="${i}" tabindex="0"><b>${r.h}</b></span> <span data-k="bar" data-i="${i}" tabindex="0">(${r.bar})</span><br>
+      <small><span data-k="jockey" data-i="${i}" tabindex="0">J ${r.j}</span> &nbsp;<span data-k="trainer" data-i="${i}" tabindex="0">T ${r.t}</span><span class="mobonly"> · ${r.form} · ${r.wt}kg</span></small></span></td>
+      <td class="c desk" data-k="form" data-i="${i}" tabindex="0">${r.form}</td><td class="c desk" data-k="wt" data-i="${i}" tabindex="0">${r.wt}</td><td class="c desk" data-k="sr" data-i="${i}" tabindex="0">${r.sr}</td>
+      ${price(r, i, "fw", r.fw, fixSub(r))}${price(r, i, "fp", r.fp)}${price(r, i, "pw", r.pw, poolSub(r))}${price(r, i, "pp", r.pp)}</tr>`;
+  const b = box(el, "Practice TAB race page: tap anything", `
+    <div class="tabtabs">${[["Win/Place","wp"],["Quinella","quin"],["Trifecta","tri"],["First 4","f4"],["Exacta","exa"],["Parlay","parlay"],["D Double<small>(6,8)</small>","dd"],["Quaddie<small>(5,6,7,8)</small>","quad"]].map(([t, k], j) => `<span class="${j === 0 ? "on" : ""}" data-k="${k}" tabindex="0">${t}</span>`).join("")}</div>
+    <div class="tabtools"><span class="tbtn" data-k="allform" tabindex="0">Show All Form</span><span data-k="compare" tabindex="0">Compare <span class="tbtn">Sky Rating ▾</span></span><span class="tbtn" data-k="fixflucs" tabindex="0">Fixed Odds Flucs</span><span class="tbtn" data-k="poolflucs" tabindex="0">Pool Flucs</span></div>
+    <div class="tbl"><table class="tabc"><thead><tr><th colspan="2"></th><th colspan="3" class="desk"></th><th colspan="2" class="grp" data-k="fixedhdr" tabindex="0">FIXED ODDS</th><th colspan="2" class="grp" data-k="poolhdr" tabindex="0">POOL</th></tr>
+    <tr><th>No</th><th>Runner (Barrier)</th><th class="c desk" data-k="form" tabindex="0">Form*</th><th class="c desk" data-k="wt" tabindex="0">Weight</th><th class="c desk" data-k="sr" tabindex="0">Sky Rating</th><th class="c" data-k="fixedhdr" tabindex="0">Win</th><th class="c" data-k="fixedhdr" tabindex="0">Place</th><th class="c" data-k="poolhdr" tabindex="0">Win</th><th class="c" data-k="poolhdr" tabindex="0">Place</th></tr></thead>
+    <tbody></tbody></table></div>
     <div class="explain" hidden></div>
-    <div class="out" style="margin-top:10px">${stat("Fixed Win column total", pct(fixB))}${stat("Tote Win column total", pct(toteB))}${stat("Tote takeout implied", pct(1 - 1 / toteB), "hi")}</div>`);
+    <div class="out" style="margin-top:10px">${stat("Fixed Win column total", pct(fixB))}${stat("Pool Win column total", pct(poolB))}${stat("Pool takeout implied", pct(1 - 1 / poolB), "hi")}</div>`);
+  const draw = () => { $("tbody", b).innerHTML = TAB.map(row).join(""); $("[data-k=fixflucs]", b).classList.toggle("on", showFix); $("[data-k=poolflucs]", b).classList.toggle("on", showPool); };
+  draw();
   b.addEventListener("click", e => {
     const t = e.target.closest("[data-k]"); if (!t) return;
     const k = t.dataset.k, r = TAB[+t.dataset.i];
+    if (k === "fixflucs"){ showFix = !showFix; draw(); }
+    if (k === "poolflucs"){ showPool = !showPool; draw(); }
     const say = {
-      race: `<b>Race details.</b> Race 5, 1200 m, a Benchmark 72 race (Chapter 1), on a track rated Good 4.`,
-      pools: `<b>One Pool.</b> Since 3 October 2026 the TAB's tote dividends come from one national pool (the old NSW TAB, SuperTAB and UniTAB pools merged), with a 14.5% win takeout. Older screens and Sky Racing graphics used to show three tote prices side by side.`,
-      fixedhdr: `<b>Fixed columns.</b> The TAB's own bookmaker prices. The number you see when your bet is accepted is the number you get. Add up 1 ÷ price down the Fixed Win column: ${pct(fixB)}, so the margin here is ${pct(fixB - 1)}.`,
-      totehdr: `<b>Tote columns.</b> <b>Approximate</b> dividends: what each $1 would pay if betting closed now. They'll keep moving until the jump and are final only after the race. Adding up 1 ÷ dividend gives ${pct(toteB)}, close to 1 ÷ (1 − 0.145) ≈ 117%: the takeout.`,
-      num: r && `<b>Saddlecloth number ${r.n}.</b> The number on the horse's saddlecloth, and the number you use for exotics and quaddies. It isn't the barrier.`,
-      name: r && `<b>${r.h}.</b> Tap through to its form guide for its full record, trials and gear changes (Chapters 2–3).`,
-      bar: r && `<b>Barrier ${r.bar}</b>, shown in brackets. Inside barriers (1–4) usually mean a shorter trip, especially at 1200 m (Chapter 1).`,
-      fav: r && `<b>Favourite.</b> The shortest-priced runner in the fixed market (${money(r.fw)}, about ${pct(1 / r.fw)} implied). The tote favourite can be a different horse.`,
-      jockey: r && `<b>Jockey: ${r.j}.</b> ${/ a\d/.test(r.j) ? `The <b>a${r.j.slice(-1)}</b> means an apprentice claiming ${r.j.slice(-1)} kg, so the horse carries ${r.wt - +r.j.slice(-1)} kg instead of ${r.wt} kg.` : "A senior jockey, so no weight claim."}`,
-      trainer: r && `<b>Trainer: ${r.t}.</b> Note when one stable has several runners in a race; trainer strike rates are a common model feature (Chapter 3).`,
-      wt: r && `<b>${r.wt} kg</b>: the weight allotted, before any apprentice claim. In a handicap like this, better horses carry more.`,
-      form: r && `<b>Form ${r.form}.</b> Last five runs, newest on the right; x is a spell, 0 is 10th or worse. Try it in the form decoder (Chapter 1).`,
-      fw: r && `<b>Fixed Win ${money(r.fw)}.</b> Locked in when you bet. $10 returns ${money(10 * r.fw)} if it wins. Implied chance ${pct(1 / r.fw)}, or ${pct(1 / r.fw / fixB)} once the ${pct(fixB - 1)} margin is removed. ${r.fw !== r.open ? `It opened at ${money(r.open)} and has ${r.fw < r.open ? "firmed" : "drifted"}.` : ""}`,
-      fp: r && `<b>Fixed Place ${money(r.fp)}.</b> Paid if it finishes in the places (1st–3rd with 8 or more starters). $10 returns ${money(10 * r.fp)}. With a late scratching, place terms and deductions follow the TAB Betting Rules.`,
-      tw: r && `<b>Tote Win, approx. ${money(r.tw)}.</b> If betting closed now, each $1 would pay ${money(r.tw)}. ${r.tw === r.fw ? `It's the same as the fixed ${money(r.fw)} right now, but only the fixed price is locked in.` : r.tw > r.fw ? `It's above the fixed ${money(r.fw)}, but late money often shortens tote dividends, so it may not stay there.` : `It's below the fixed ${money(r.fw)}: the crowd likes this horse more than the bookmakers do, so fixed pays more right now.`}`,
-      tp: r && `<b>Tote Place, approx. ${money(r.tp)}.</b> The place pool shared three ways (Chapter 9). The final figure also depends on which other horses fill the places.`,
-      fluc: r && `<b>Flucs.</b> Opened at ${money(r.open)}, now ${money(r.fw)}: ${r.fw < r.open ? "▼ firmed" : "▲ drifted"}. In probability terms that's ${pct(1 / r.open)} → ${pct(1 / r.fw)}. Chapter 8 explains how to tell a real move from a margin change.`,
-      scr: r && `<b>Scratched.</b> ${r.h} has been withdrawn. Bets on it are refunded. Fixed-odds winners on other runners may be paid with a deduction, and tote pools are simply recalculated without it.`
+      wp: `<b>Win/Place.</b> The main view: win and place prices for every runner, both fixed and pool. The other tabs are separate bet types on this race or this meeting.`,
+      quin: `<b>Quinella.</b> Pick the first two, in either order. A pool bet with its own dividend (Chapter 9).`,
+      tri: `<b>Trifecta.</b> Pick the first three in exact order. Boxing and flexi are set up on this tab (Chapter 9).`,
+      f4: `<b>First 4.</b> Pick the first four in exact order. The highest takeout of the common bets.`,
+      exa: `<b>Exacta.</b> Pick the first two in exact order.`,
+      parlay: `<b>Parlay.</b> A multi across several races: what you win on one leg rolls on to the next (Chapter 9, multis).`,
+      dd: `<b>D Double (6,8).</b> A daily double: pick the winners of the two races in brackets, here races 6 and 8.`,
+      quad: `<b>Quaddie (5,6,7,8).</b> Pick the winners of the four races in brackets. Your number of combinations is the product of the horses you pick in each leg (Chapter 9).`,
+      allform: `<b>Show All Form.</b> Expands the full form guide under every runner: past runs, margins, track and distance records.`,
+      compare: `<b>Compare: Sky Rating.</b> Chooses which extra column to show. Sky Rating is the default; the menu offers other comparisons.`,
+      sr: `<b>Sky Rating.</b> A rating of each runner from Sky Racing's form service. On real TAB pages the top-rated runner shows 100 and the others are scaled below it. Treat it as one expert's opinion, and a possible feature or benchmark for your model.`,
+      fixflucs: `<b>Fixed Odds Flucs</b> (now ${showFix ? "on" : "off"}). Shows how each fixed win price has moved from its opening price: green for firming, red for drifting. Chapter 8 covers reading these moves.`,
+      poolflucs: `<b>Pool Flucs</b> (now ${showPool ? "on" : "off"}). Shows how the approximate pool dividends have moved as money came in.`,
+      fixedhdr: `<b>FIXED ODDS.</b> The TAB bookmakers' prices, locked in when your bet is accepted. Add 1 ÷ price down the Win column: ${pct(fixB)}, so the margin in this practice market is ${pct(fixB - 1)}. Small or overseas races often carry more.`,
+      poolhdr: `<b>POOL.</b> The TAB's name for the tote. These are <b>approximate dividends</b>: what $1 would pay if betting closed now. They're final only after the race. Since October 2026 this is One Pool, a single national pool with a 14.5% win takeout. Adding 1 ÷ dividend down the Win column gives ${pct(poolB)}.`,
+      num: r && `<b>Number ${r.n}.</b> The saddlecloth number (the dark box), used for exotics and quaddies. Tap the arrow under it on the real page to open that runner's full form.`,
+      name: r && `<b>${r.h}.</b> Runner names are shown in capitals, with the barrier in brackets.`,
+      bar: r && `<b>Barrier ${r.bar}.</b> The starting stall, in brackets after the name (Chapter 1).`,
+      jockey: r && `<b>J ${r.j}.</b> The jockey. ${/\(a(\d)\)/.test(r.j) ? `(a${r.j.match(/\(a(\d)\)/)[1]}) is an apprentice claiming ${r.j.match(/\(a(\d)\)/)[1]} kg, so the horse carries ${r.wt - r.j.match(/\(a(\d)\)/)[1]} kg instead of ${r.wt} kg.` : "No apprentice claim."}`,
+      trainer: r && `<b>T ${r.t}.</b> The trainer. When one stable has more than one runner, compare how the market rates each.`,
+      form: r ? `<b>Form ${r.form}.</b> Recent finishes, oldest left, newest right; x is a spell, 0 is 10th or worse (Chapter 1). Letters such as the "f" that starts each line in some overseas races are explained in the TAB's footnote, linked from the * on the Form* heading.` : `<b>Form*.</b> Recent finishing positions, newest on the right. The * links to the TAB's key for any letters in the form line.`,
+      wt: r ? `<b>${r.wt} kg.</b> The weight allotted, before any apprentice claim.` : `<b>Weight.</b> The weight each horse carries, in kg.`,
+      fw: r && `<b>Fixed Win ${money(r.fw)}.</b> Locked in when you bet; $10 returns ${money(10 * r.fw)}. Implied ${pct(1 / r.fw)}, or ${pct(1 / r.fw / fixB)} with the ${pct(fixB - 1)} margin removed.${r === fav ? " Shown in blue because it's the favourite." : ""} It opened at ${money(r.open)}${r.fw < r.open ? " and has firmed" : r.fw > r.open ? " and has drifted" : ""}.`,
+      fp: r && `<b>Fixed Place ${money(r.fp)}.</b> Paid if it finishes in the places (top three with 8 or more starters). $10 returns ${money(10 * r.fp)}.`,
+      pw: r && `<b>Pool Win ${money(r.pw)} (approx.).</b> ${r.pw > 50 ? `A very long dividend like this usually means almost no money has been bet on it yet; a single bet can move it a lot.` : r.pw > r.fw ? `Above the fixed ${money(r.fw)} right now, but late money often shrinks pool dividends.` : `Below the fixed ${money(r.fw)}: the pool punters like this horse more than the TAB's bookmakers do, so fixed pays more right now.`}`,
+      pp: r && (r.pp === 0 ? `<b>Pool Place 0.00.</b> No approximate dividend yet, usually because little or no money is in the place pool on this runner. It isn't a real price: wait for the pool to build.`
+        : r.pp <= 1.04 ? `<b>Pool Place ${d(r.pp)}.</b> The minimum dividend. So much is bet on this horse to place that the pool can barely pay a profit, so the TAB pays its minimum. A place bet here would return only $${(10 * r.pp).toFixed(2)} for $10.`
+        : `<b>Pool Place ${money(r.pp)} (approx.).</b> The place pool shared three ways (Chapter 9). The final figure depends on which other horses fill the places, so it can differ a lot from the fixed place price (${money(r.fp)}).`),
+      scr: r && `<b>Scratched.</b> ${r.h} has been withdrawn. Bets on it are refunded; fixed-odds winners on other runners may be paid with a deduction (TAB Betting Rules); pools are recalculated without it.`
     }[k];
     if (say) explainer(b, say);
   });
