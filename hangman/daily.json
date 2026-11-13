@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -47,6 +47,16 @@
    "rank": 3,
    "scope": "year",
    "views": 12465433,
+   "year": "2026"
+  },
+  "2026-11-16": {
+   "w": "galavant",
+   "line": "…Who even pays for everything while you're <mark>gallivanting</mark> around campus like a 30-year-old freshman? I'll…",
+   "src": "Backrooms",
+   "kind": "film",
+   "rank": 16,
+   "scope": "week",
+   "views": 103310,
    "year": "2026"
   }
  }

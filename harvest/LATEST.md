@@ -1,37 +1,37 @@
-# Last night's harvest (2026-11-12)
+# Last night's harvest (2026-11-13)
 
 | Source | Pages | Candidate words | Spreadsheet |
 |---|---|---|---|
-| Whalefall (film) | 1 | 1 | [whalefall-film.csv](whalefall-film.csv) |
-| Hope (2026 film) | 1 | 3 | [hope-2026-film.csv](hope-2026-film.csv) |
-| Breaking Bad | 6 | 423 | [breaking-bad.csv](breaking-bad.csv) |
-| The Cat in the Hat (2026 film) | 1 | 8 | [the-cat-in-the-hat-2026-film.csv](the-cat-in-the-hat-2026-film.csv) |
-| Georgie & Mandy's First Marriage | 1 | 18 | [georgie-mandy-s-first-marriage.csv](georgie-mandy-s-first-marriage.csv) |
-| Once Upon a Time in Hollywood | 1 | 26 | [once-upon-a-time-in-hollywood.csv](once-upon-a-time-in-hollywood.csv) |
-| The Dropout | 1 | 3 | [the-dropout.csv](the-dropout.csv) |
-| Carrie (1976 film) | 1 | 17 | [carrie-1976-film.csv](carrie-1976-film.csv) |
-| The Prestige (film) | 1 | 7 | [the-prestige-film.csv](the-prestige-film.csv) |
-| Cape Fear (1991 film) | 1 | 43 | [cape-fear-1991-film.csv](cape-fear-1991-film.csv) |
-| Interview with the Vampire (TV series) | 4 | 322 | [interview-with-the-vampire-tv-series.csv](interview-with-the-vampire-tv-series.csv) |
-| Malcolm in the Middle | 1 | 206 | [malcolm-in-the-middle.csv](malcolm-in-the-middle.csv) |
-| 9 to 5 (film) | 1 | 27 | [9-to-5-film.csv](9-to-5-film.csv) |
-| Inception (film) | 1 | 13 | [inception-film.csv](inception-film.csv) |
-| The Running Man (2025 film) | 1 | 75 | [the-running-man-2025-film.csv](the-running-man-2025-film.csv) |
-| The Man in the High Castle (TV series) | 1 | 169 | [the-man-in-the-high-castle-tv-series.csv](the-man-in-the-high-castle-tv-series.csv) |
-| Song Sung Blue | 1 | 2 | [song-sung-blue.csv](song-sung-blue.csv) |
-| Pillion (film) | 1 | 5 | [pillion-film.csv](pillion-film.csv) |
-| The Dark Knight (film) | 1 | 56 | [the-dark-knight-film.csv](the-dark-knight-film.csv) |
-| It – Welcome to Derry | 1 | 24 | [it-welcome-to-derry.csv](it-welcome-to-derry.csv) |
-| House (TV series) | 14 | 511 | [house-tv-series.csv](house-tv-series.csv) |
-| Boston Legal | 1 | 205 | [boston-legal.csv](boston-legal.csv) |
-| The Good Place | 1 | 270 | [the-good-place.csv](the-good-place.csv) |
-| Succession (TV series) | 1 | 143 | [succession-tv-series.csv](succession-tv-series.csv) |
-| The Crown (TV series) | 7 | 293 | [the-crown-tv-series.csv](the-crown-tv-series.csv) |
-| Mad Men | 8 | 87 | [mad-men.csv](mad-men.csv) |
-| Columbo | 2 | 109 | [columbo.csv](columbo.csv) |
-| Pushing Daisies | 1 | 36 | [pushing-daisies.csv](pushing-daisies.csv) |
-| Northern Exposure | 1 | 105 | [northern-exposure.csv](northern-exposure.csv) |
-| Twin Peaks | 1 | 167 | [twin-peaks.csv](twin-peaks.csv) |
-| Poems | 1 | 8475 | [poems.csv](poems.csv) |
+| Jurassic World Rebirth | 1 | 47 | [jurassic-world-rebirth.csv](jurassic-world-rebirth.csv) |
+| Evil Dead Rise | 1 | 32 | [evil-dead-rise.csv](evil-dead-rise.csv) |
+| Mayday (2026 film) | 1 | 6 | [mayday-2026-film.csv](mayday-2026-film.csv) |
+| Scary Movie | 1 | 16 | [scary-movie.csv](scary-movie.csv) |
+| The Dark Knight Rises | 1 | 47 | [the-dark-knight-rises.csv](the-dark-knight-rises.csv) |
+| America's Next Top Model | 20 | 422 | [america-s-next-top-model.csv](america-s-next-top-model.csv) |
+| The Sopranos | 7 | 530 | [the-sopranos.csv](the-sopranos.csv) |
+| 11.22.63 | 1 | 18 | [11-22-63.csv](11-22-63.csv) |
+| Mortal Kombat (2021 film) | 1 | 18 | [mortal-kombat-2021-film.csv](mortal-kombat-2021-film.csv) |
+| The Batman (film) | 1 | 11 | [the-batman-film.csv](the-batman-film.csv) |
+| South Park | 29 | 1111 | [south-park.csv](south-park.csv) |
+| The Mentalist | 7 | 343 | [the-mentalist.csv](the-mentalist.csv) |
+| Office Romance (2026 film) | 1 | 1 | [office-romance-2026-film.csv](office-romance-2026-film.csv) |
+| Thunderbolts* | 1 | 24 | [thunderbolts.csv](thunderbolts.csv) |
+| Toy Story 4 | 1 | 18 | [toy-story-4.csv](toy-story-4.csv) |
+| Steel Magnolias | 1 | 71 | [steel-magnolias.csv](steel-magnolias.csv) |
+| 28 Days Later | 1 | 27 | [28-days-later.csv](28-days-later.csv) |
+| Dune (2021 film) | 1 | 45 | [dune-2021-film.csv](dune-2021-film.csv) |
+| Ghosts (American TV series) | 6 | 76 | [ghosts-american-tv-series.csv](ghosts-american-tv-series.csv) |
+| Dawson's Creek | 7 | 406 | [dawson-s-creek.csv](dawson-s-creek.csv) |
+| Wednesday (TV series) | 1 | 44 | [wednesday-tv-series.csv](wednesday-tv-series.csv) |
+| M*A*S*H (TV series) | 12 | 506 | [m-a-s-h-tv-series.csv](m-a-s-h-tv-series.csv) |
+| The Golden Girls | 8 | 545 | [the-golden-girls.csv](the-golden-girls.csv) |
+| Will & Grace | 12 | 237 | [will-grace.csv](will-grace.csv) |
+| Bunheads | 1 | 73 | [bunheads.csv](bunheads.csv) |
+| Utopia (Australian TV series) | – | not found | – |
+| Frontline (Australian TV series) | 1 | 13 | [frontline-australian-tv-series.csv](frontline-australian-tv-series.csv) |
+| The Games (Australian TV series) | 1 | 82 | [the-games-australian-tv-series.csv](the-games-australian-tv-series.csv) |
+| Rake (Australian TV series) | – | not found | – |
+| Summer Heights High | 1 | 22 | [summer-heights-high.csv](summer-heights-high.csv) |
+| The Lady with the Dog and Other Stories | 1 | 1257 | [the-lady-with-the-dog-and-other-stories.csv](the-lady-with-the-dog-and-other-stories.csv) |
 
-Still queued: 30 show(s). New words are checked and added to the game automatically after each harvest; see [REVIEW.md](REVIEW.md).
+Still queued: 20 show(s). New words are checked and added to the game automatically after each harvest; see [REVIEW.md](REVIEW.md).

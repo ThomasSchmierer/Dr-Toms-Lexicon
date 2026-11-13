@@ -1,61 +1,61 @@
-# Word review (2026-11-12)
+# Word review (2026-11-13)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 3774 words (2902 confirmed by both dictionaries)
-- **Settled by a tie-break:** 83 (listed below if you want to spot-check them)
-- **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 14244
-- **Already in the game, or only in books:** 8845 (these still get cross-references)
-- **Words used in more than one show:** 1447
+- **Approved:** 4184 words (3181 confirmed by both dictionaries)
+- **Settled by a tie-break:** 88 (listed below if you want to spot-check them)
+- **Waiting for their dictionary lookup:** 1 (checked on the next run)
+- **Rejected:** 16380
+- **Already in the game, or only in books:** 9197 (these still get cross-references)
+- **Words used in more than one show:** 1706
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
 ## Heard in the most places
 
-- **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The West Wing
-- **euphemism**: Breaking Bad, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
-- **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Grey's Anatomy, Mad Men, Sherlock, The Simpsons, The Thick of It, Twin Peaks
+- **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing
+- **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
+- **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
+- **euphemism**: Breaking Bad, Bunheads, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
+- **dangle**: Buffy the Vampire Slayer, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
+- **smother**: Community, Heroes, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, Twin Peaks, Wednesday
+- **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
+- **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
+- **vindictive**: America's Next Top Model, Boston Legal, Dawson's Creek, Oppenheimer, Peep Show, Red Dwarf, The Crown, The Golden Girls, The West Wing, Veep
+- **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, The Day Today, The Great Gatsby, Will & Grace
+- **flunk**: Breaking Bad, Buffy the Vampire Slayer, Community, Dawson's Creek, Frasier, Grey's Anatomy, M*A*S*H, Malcolm in the Middle, The Golden Girls, The Simpsons
+- **untie**: Backrooms, Frasier, Malcolm in the Middle, Poems by Emily Dickinson, The Gentlemen, The Simpsons, The West Wing, The Young Ones, Toy Story 5, Wednesday
+- **flinch**: Dawson's Creek, Grey's Anatomy, House, Malcolm in the Middle, Obsession, Poems of Gerard Manley Hopkins, The Crown, The Day Today, The Great Gatsby, The Handmaid's Tale
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
-- **dangle**: Buffy the Vampire Slayer, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, Spaced, The Good Place, The Great Gatsby
-- **smother**: Community, Heroes, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Simpsons, The West Wing, Twin Peaks
+- **snicker**: Game of Thrones, M*A*S*H, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Golden Girls, The Simpsons, The West Wing, Wings
+- **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons
+- **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Twin Peaks
+- **sneer**: Game of Thrones, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Wednesday
 - **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
+- **cower**: American Horror Story, Dawson's Creek, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
 - **scoff**: Frankenstein, Frasier, Gilmore Girls, Invincible, QI, Spaced, Star Trek: The Next Generation, The Thick of It, VisionQuest
-- **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, The Day Today, The Great Gatsby
-- **untie**: Backrooms, Frasier, Malcolm in the Middle, Poems by Emily Dickinson, The Gentlemen, The Simpsons, The West Wing, The Young Ones, Toy Story 5
-- **flinch**: Grey's Anatomy, House, Malcolm in the Middle, Obsession, Poems of Gerard Manley Hopkins, The Crown, The Day Today, The Great Gatsby, The Handmaid's Tale
+- **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist
+- **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Lady with the Dog and Other Stories, The Rookie
+- **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
+- **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
+- **electrocute**: 30 Rock, Community, Ghosts, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
+- **blurt**: Community, Futurama, Grey's Anatomy, Parks and Recreation, Pushing Daisies, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Simpsons
+- **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, VisionQuest
+- **obsess**: Frasier, Gilmore Girls, Grey's Anatomy, Heroes, Peep Show, The Amazing Digital Circus, The Mentalist, The White Lotus
 - **babble**: Cheers, Gilmore Girls, Malcolm in the Middle, Poems of Gerard Manley Hopkins, Red Dwarf, Star Trek: The Next Generation, The Big Bang Theory, The Great Gatsby
 - **nibble**: A Bit of Fry and Laurie, A Doll's House, Blackadder, Cheers, Futurama, The Great Gatsby, The Vicar of Dibley, Zootopia 2
-- **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Succession, The Gentlemen, The Good Place
+- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Simpsons, The Sopranos, The Thick of It, The Young Ones
+- **squeal**: Cheers, M*A*S*H, South Park, Succession, The Dark Knight, The Dark Knight Rises, The Golden Girls, The Simpsons
 - **squander**: American Horror Story, Breaking Bad, Community, Interview with the Vampire, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, VisionQuest
-- **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Thick of It, Twin Peaks
-- **twirl**: Gilmore Girls, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Simpsons, The West Wing
+- **scold**: Buffy the Vampire Slayer, Futurama, Game of Thrones, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, The West Wing
+- **nourish**: Cheers, Gilmore Girls, M*A*S*H, People We Meet on Vacation, Red Dwarf, The Great Gatsby, The West Wing, Veep
+- **magnify**: 28 Days Later, Dawson's Creek, House, Poems of Gerard Manley Hopkins, QI, Red Dwarf, The Thick of It, The West Wing
+- **murmur**: M*A*S*H, Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons
 - **retort**: Buffy the Vampire Slayer, Firefly, House, Parks and Recreation, The Great Gatsby, The Importance of Being Earnest, The Simpsons, The Thick of It
-- **cower**: American Horror Story, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
-- **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
-- **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest
-- **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Rookie
-- **maim**: Blackadder, Buffy the Vampire Slayer, Futurama, Game of Thrones, Grey's Anatomy, Poems by Emily Dickinson, Red Dwarf, The Thick of It
-- **electrocute**: 30 Rock, Community, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
-- **blurt**: Community, Futurama, Grey's Anatomy, Parks and Recreation, Pushing Daisies, The Great Gatsby, The Importance of Being Earnest, The Simpsons
-- **snicker**: Game of Thrones, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Simpsons, The West Wing, Wings
-- **obsess**: Frasier, Gilmore Girls, Grey's Anatomy, Heroes, Peep Show, The Amazing Digital Circus, The White Lotus
-- **quibble**: Buffy the Vampire Slayer, House, Monty Python's Flying Circus, Peep Show, Poems by Emily Dickinson, The Big Bang Theory, Yes, Minister
-- **affront**: Buffy the Vampire Slayer, Grey's Anatomy, Poems by Emily Dickinson, The Gentlemen, The Great Gatsby, The Simpsons, The West Wing
-- **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, The Crown, The Simpsons
-- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Simpsons, The Thick of It, The Young Ones
-- **scold**: Buffy the Vampire Slayer, Futurama, Game of Thrones, Sherlock, The Great Gatsby, The Thick of It, The West Wing
-- **sneer**: Game of Thrones, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Thick of It
-- **flaunt**: Euphoria, Peep Show, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, The Big Bang Theory, The Thick of It
-- **nourish**: Cheers, Gilmore Girls, People We Meet on Vacation, Red Dwarf, The Great Gatsby, The West Wing, Veep
-- **charade**: American Horror Story, Community, Dad's Army, Eyes Wide Shut, Frasier, The Big Bang Theory, The Death of Stalin
-- **imbecile**: Blackadder, Boston Legal, Buffy the Vampire Slayer, Game of Thrones, QI, Red Dwarf, The Newsroom
-- **gibberish**: Futurama, Gilmore Girls, QI, Seinfeld, Sports Night, The Great Gatsby, The Thick of It
-- **bonjour**: Blackadder, Futurama, Gilmore Girls, Interview with the Vampire, Mr. Bean, Only Fools and Horses, Succession
-- **bereave**: Monty Python's Flying Circus, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Star Trek: The Next Generation, The Day Today, The Man in the High Castle, Veep
+- **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist
 
 ## Settled by a tie-break
 
@@ -86,16 +86,19 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | euclidean | Relating to geometry as developed by Euclid. | only WordNet has it, so it uses WordNet's meaning |
 | filicide | The killing of one's own child. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | forrad | Forehead. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| francophile | An admirer of France and everything French. | only WordNet has it, so it uses WordNet's meaning |
 | garotte | An instrument of execution for execution by strangulation. | only WordNet has it, so it uses WordNet's meaning |
 | getter | One who, or that which, gets. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | golem | A humanoid creature made from clay, animated by magic. The most famous was made by Rabbi Loew in the | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | grandsire | Grandfather. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | haggadah | Talmudic literature that does not deal with law but is still part of Jewish tradition. | only WordNet has it, so it uses WordNet's meaning |
 | hankie | A square piece of cloth used for wiping the eyes or nose or as a costume accessory. | only WordNet has it, so it uses WordNet's meaning |
+| hasidic | Of or relating to the Jewish Hasidim or its members or their beliefs and practices. | only WordNet has it, so it uses WordNet's meaning |
 | headbanger | One who dances by violently shaking the head in time to the music. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | hippy | Having large or prominent hips. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | histrionics | Overemotional behaviour, especially when calculated to elicit a response; melodramatics. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | hocus | A magician, illusionist, one who practises sleight of hand. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| holla | To shout out or greet casually. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | homburg | A hat made of felt with a creased crown. | only WordNet has it, so it uses WordNet's meaning |
 | impersonation | A representation of a person that is exaggerated for comic effect. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | instigate | To bring about by urging or encouraging. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
@@ -103,7 +106,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | jangling | Like the discordant ringing of nonmusical metallic objects striking together. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | jettison | To eject from a boat, submarine, aircraft, spaceship or hot-air balloon, so as to lighten the load. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | jinks | Noisy and mischievous merrymaking. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| kabbalah | An esoteric or occult matter resembling the Kabbalah that is traditionally secret. | only WordNet has it, so it uses WordNet's meaning |
 | liminal | Of or pertaining to an entrance or threshold. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| m'kay | —an expression of acknowledgment or affirmation, now sometimes used in an ironic or condescending se | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | mafioso | A member of the Sicilian Mafia. | only WordNet has it, so it uses WordNet's meaning |
 | malevolence | Hostile attitude or feeling. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | mee-maw | An exaggerated mouthing of a word. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -112,24 +117,24 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | millisecond | One thousandth (10^-3) of a second. | only WordNet has it, so it uses WordNet's meaning |
 | mountie | Colloquial term for a member of the Royal Canadian Mounted Police. | only WordNet has it, so it uses WordNet's meaning |
 | muggle | Marijuana. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
-| mump | To mumble, speak unclearly. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | munchkin | A child. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | neddy | A donkey or ass. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
-| nipping | The act or sensation of giving a nip. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | nitroglycerin | A heavy yellow poisonous oily explosive liquid obtained by nitrating glycerol; used in making explos | only WordNet has it, so it uses WordNet's meaning |
 | nutso | Crazy, insane. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | objectification | The act or process of objectifying something intangible. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | octuplet | A group of eight things, particularly. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | onesie | Any of various one-piece attires. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| paleolithic | Of or relating to the second period of the Stone Age (following the eolithic). | only WordNet has it, so it uses WordNet's meaning |
 | perdu | Stationed in an exposed or hazardous position; hidden in ambush. Originally as sentinel perdu. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | polygamous | Having more than one mate at a time; used of relationships and individuals. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | porcine | Of, pertaining to, or being a pig. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | postum | Trade mark for a coffee substitute invented by C. W. Post and made with chicory and roasted grains. | only WordNet has it, so it uses WordNet's meaning |
+| poulet | The flesh of a chicken used for food. | only WordNet has it, so it uses WordNet's meaning |
 | psst | Used to call animals. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | rarefy | Lessen the density or solidity of. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
-| sapiens | A member of this species; a human being. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| rejuvenation | The process of rendering young again. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | scrawny | Malnourished and weak. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
-| shrivel | To collapse inward; to crumble. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| shrivel | To become wrinkled. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | siamese | Of or relating to or characteristic of Thailand or its people. | only WordNet has it, so it uses WordNet's meaning |
 | skelp | A blow; a smart stroke, especially with the hand; a smack. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | snark | An attitude or expression of mocking irreverence and sarcasm. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -151,177 +156,177 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 3802 |
-| not in either dictionary (made up, a name or a typo) | 2270 |
-| everyday word | 2228 |
-| fragment of a longer word or a contraction | 2053 |
-| not a whole word in the quote | 1828 |
-| not an English word (foreign or a name) | 483 |
-| an everyday object, animal or food | 435 |
-| only heard in lines with swearing | 344 |
-| rude or upsetting meaning | 303 |
-| rude or upsetting | 190 |
-| a name, not a word | 99 |
-| a misspelling, abbreviation or contraction | 62 |
-| marked vulgar or offensive in Wiktionary | 61 |
-| body part | 44 |
-| a name (only capitalised in the dictionary) | 21 |
-| too obscure to check in either dictionary | 15 |
-| only a spelling variant or form of another word | 4 |
+| an everyday word with a prefix or suffix | 4300 |
+| not in either dictionary (made up, a name or a typo) | 2822 |
+| fragment of a longer word or a contraction | 2519 |
+| everyday word | 2456 |
+| not a whole word in the quote | 1880 |
+| not an English word (foreign or a name) | 578 |
+| an everyday object, animal or food | 475 |
+| only heard in lines with swearing | 413 |
+| rude or upsetting meaning | 342 |
+| rude or upsetting | 231 |
+| a name, not a word | 116 |
+| a misspelling, abbreviation or contraction | 79 |
+| marked vulgar or offensive in Wiktionary | 75 |
+| body part | 46 |
+| a name (only capitalised in the dictionary) | 24 |
+| too obscure to check in either dictionary | 16 |
+| only a spelling variant or form of another word | 5 |
+| a contraction | 2 |
 | everyday word with many meanings | 1 |
-| a contraction | 1 |
 
 ## Newest approvals
 
 | Word | Meaning | Heard in |
 |---|---|---|
-| licensure | The act of conferring a license for an activity. | Breaking Bad |
-| contravention | Coming into conflict with. | The Crown |
-| untangle | To remove tangles or knots from. | Succession, The Crown |
-| quaver | Give off unsteady sounds, alternating in amplitude or frequency. | The Crown, The Great Gatsby |
-| jaunty | Marked by up-to-dateness in dress and manners. | Boston Legal, The Great Gatsby |
-| circ | An amphitheatrical circle for sports; a circus. | The Crown |
-| opossum | Small furry Australian arboreal marsupials having long usually prehensile tails. | House |
-| paleolibertarian | A supporter of paleolibertarianism. | Succession |
-| chemiluminescent | Relating to the phenomenon of chemiluminescence. | The Dropout |
-| snell | A short line of horsehair, gut, monofilament, etc., by which a fishhook or lure is attached to a longer (and u | Carrie, The Great Gatsby |
-| overcomplicate | To make something excessively complicated. | The Crown |
-| mimicry | The act of mimicking; imitative behavior. | Interview with the Vampire |
-| commie | A socialist who advocates communism. | Boston Legal, Stranger Things, The Running Man, The Simpsons |
-| perusal | Reading carefully with intent to remember. | House, Poems of Gerard Manley Hopkins |
-| venality | Prostitution of talents or offices or services for reward. | Twin Peaks |
-| stipulation | (law) an agreement or concession made by parties in a judicial proceeding (or by their attorneys) relating to  | Mad Men |
-| choom | An Englishman. | Once Upon a Time in Hollywood |
-| regnal | Of or pertaining to the reign of a monarch (or pope). | The Crown |
-| incorruptible | Incapable of being morally corrupted. | The Dark Knight, The Great Gatsby |
-| credulity | Tendency to believe readily. | Succession, The Great Gatsby, The Importance of Being Earnest |
-| halon | A compound in which the hydrogen atoms of a hydrocarbon have been replaced by bromine and other halogen atoms; | Breaking Bad |
-| comprendo | Do you understand? | The Running Man |
-| dispensation | An exemption from some rule or obligation. | Interview with the Vampire |
-| dyslexic | Of or relating to or symptomatic of dyslexia. | Malcolm in the Middle |
-| tween | An action of tweening (inserting frames for continuity); a sequence of frames generated by tweening. | Cape Fear |
-| cliffhanger | A contest whose outcome is uncertain up to the very end. | Twin Peaks |
-| thicket | A dense growth of bushes. | Northern Exposure, Poems of Gerard Manley Hopkins |
-| impel | Urge or force (a person) to an action; constrain or motivate. | The Crown |
-| dunce | A stupid person; these words are used to express a low opinion of someone's intelligence. | Twin Peaks |
-| nicety | A subtle difference in meaning or opinion or attitude. | House |
-| fantasist | A creator of fantasies. | The Crown |
-| ophthalmologist | A medical doctor specializing in the diagnosis and treatment of diseases of the eye. | House |
-| sacrosanct | Must be kept sacred. | The Crown |
-| curtsey | Bending the knees; a gesture of respect made by women. | A Doll's House, The Crown |
-| billionth | Position 1,000,000,000 in a countable series of things. | Malcolm in the Middle |
-| toile | Plain or simple twilled fabric. | Interview with the Vampire |
-| chateaubriand | A very thick center cut of beef tenderloin. | The Crown |
-| capo | The head of a branch of an organized crime syndicate. | Breaking Bad |
-| plunk | Make or move along with a sound as of a horse's hooves striking the ground. | Boston Legal |
-| lengthen | Make longer. | Northern Exposure |
-| jimsonweed | Intensely poisonous tall coarse annual tropical weed having rank-smelling foliage, large white or violet trump | House |
-| anticholinergic | A substance that opposes or blocks the action of acetylcholine. | House |
-| conjugal | Of or relating to marriage or to the relationship between a wife and husband. | Boston Legal |
-| redemptive | Of or relating to or resulting in redemption. | Interview with the Vampire |
-| convalescence | Gradual healing (through rest) after sickness or injury. | The Crown |
-| aery | Characterized by lightness and insubstantiality; as impalpable or intangible as air. | Game of Thrones |
-| kaddish | A Jewish prayer of praise to God recited during services, and specifically when mourning the death of a close  | Northern Exposure |
-| unprejudiced | Free from undue bias or preconceived opinions. | Poems by Emily Dickinson, The Dark Knight |
-| liegeman | A person holding a fief; a person who owes allegiance and service to a feudal lord. | The Crown |
-| lurid | Horrible in fierceness or savagery. | Interview with the Vampire |
-| wifebeater | Stella Artois, a brand of lager beer. | Boston Legal |
-| bordel | A brothel. | Interview with the Vampire |
-| pancreatitis | Inflammation of the pancreas; usually marked by abdominal pain. | Boston Legal |
-| unenviable | Hard to deal with; especially causing pain or embarrassment. | The Crown |
-| invocation | A prayer asking God's help as part of a religious service. | Twin Peaks |
-| unquestioningly | In an unquestioning manner. | The Crown, The Man in the High Castle |
-| copter | A helicopter. | House |
-| beaucoup | An abundance. | Succession |
-| pterodactyl | Extinct flying reptile. | Succession |
-| stooge | A person of unquestioning obedience. | Malcolm in the Middle |
-| incalculable | Not capable of being computed or enumerated. | Breaking Bad, Interview with the Vampire, The Crown, The Great Gatsby |
-| hundo | A hundred. | The Running Man |
-| bellyache | Complain. | Boston Legal |
-| chromatography | A process used for separating mixtures by virtue of differences in absorbency. | House |
-| columbo | Any of various tall perennial herbs constituting the genus Frasera; widely distributed in warm dry upland area | Columbo |
-| tulpa | A magical creature that attains corporeal reality, having been originally merely imaginary. | Twin Peaks |
-| malle | A heavy hammer or beetle, often made of wood or lead. | Interview with the Vampire |
-| inscrutability | The quality of being impossible to investigate. | The Good Place |
-| communicable | (of disease) capable of being transmitted by infection. | House |
-| bequeath | Leave or give by will after one's death. | The Crown |
-| banzai | A Japanese cheer of enthusiasm or triumph. | The Man in the High Castle |
-| polyangiitis | Inflammation of multiple blood vessels or lymph vessels. | House |
-| oncologist | A specialist in oncology. | Breaking Bad, House |
-| backsie | The back. | House |
-| cozie | A thermal insulation sleeve for cans or bottles. | Pushing Daisies |
-| transcendent | Exceeding or surpassing usual limits especially in excellence. | Interview with the Vampire, The Great Gatsby |
-| narcotic | Of or relating to or designating narcotics. | Breaking Bad |
-| federale | A federal law enforcement officer, usually belonging to the United States government. | Breaking Bad |
-| xeroxable | Photocopiable. | Boston Legal |
-| premeditated | Characterized by deliberate purpose and some degree of planning. | Columbo, Interview with the Vampire |
-| addendum | Textual matter that is added onto a publication; usually at the end. | Firefly, Succession, The Great Gatsby |
-| succinct | Briefly giving the gist of something. | Interview with the Vampire |
-| amuse-bouche | A bite-sized hors d'oeuvre or appetizer that is served before a meal. | The Gentlemen, The Running Man |
-| ostentatious | Intended to attract notice and impress others. | The Crown |
-| largess | A gift or money given (as for service or out of benevolence); usually given ostentatiously. | Mad Men |
-| deputize | Act as a substitute. | Twin Peaks |
-| grump | A bad-tempered person. | The Good Place |
-| anthropomorphize | Ascribe human features to something. | The Good Place |
-| unfetter | To release from fetters; to unchain; to let loose; to free. | Northern Exposure |
-| hombre | An informal term for a youth or man. | Breaking Bad |
-| pigsty | A pen for swine. | Northern Exposure, The Great Gatsby |
-| quisling | Someone who collaborates with an enemy occupying force. | The Crown |
-| deontology | The normative ethical theory that the morality of an action is based on whether the action follows certain obl | The Good Place |
-| absentmindedness | Preoccupation so great that the ordinary demands on attention are ignored. | Columbo |
-| widdle | Little. | The Good Place |
-| extraordinaire | Extraordinary in a particular capacity. | Breaking Bad |
-| irrevocable | Incapable of being retracted or revoked. | Breaking Bad, The Importance of Being Earnest |
-| allegorical | Used in or characteristic of or containing allegory. | Northern Exposure |
-| supplication | A prayer asking God's help as part of a religious service. | The Crown |
-| menstruate | Undergo menstruation. | Boston Legal |
-| reprehend | Express strong disapproval of. | The Crown |
-| immovable | Not able or intended to be moved. | The Dark Knight |
-| ejector | A mechanism in a firearm that ejects the empty shell case after firing. | Breaking Bad |
-| embolus | An abnormal particle (e.g. an air bubble or part of a clot) circulating in the blood. | House |
-| voicelessness | A disorder of the vocal organs that results in the loss of voice. | Northern Exposure |
-| angio | An X-ray image of the blood vessels gained after the injection of a radiopaque contrast medium. | House |
-| panache | Distinctive and stylish elegance. | Breaking Bad |
-| strychnine | An alkaloid plant toxin extracted chiefly from nux vomica; formerly used as a stimulant. | Cape Fear |
-| preternaturally | In a supernatural manner. | Interview with the Vampire |
-| disulfide | A functional group with two sulfur atoms bonded to one another, described by the following formula: R–S–S–R'. | It – Welcome to Derry |
-| delectable | Extremely pleasing to the sense of taste. | Boston Legal |
-| atherosclerosis | A stage of arteriosclerosis involving fatty deposits (atheromas) inside the arterial walls, thus narrowing the | House |
-| lation | Motion of a celestial object from one place to another; local motion. | House |
-| phenyl | A univalent hydrocarbon radical, CH (benzene minus one hydrogen atom), and the basis of an immense number of a | Breaking Bad |
-| hexagram | A regular polygon formed by extending each of the sides of a regular hexagon to form two equilateral triangles | The Man in the High Castle |
-| phenylacetic | Of or pertaining to phenylacetic acid or its derivatives. | Breaking Bad |
-| entrapment | A defense that claims the defendant would not have broken the law if not tricked into doing it by law enforcem | Malcolm in the Middle |
-| unvarnished | Not having a coating of stain or varnish. | The Crown |
-| censorious | Harshly critical or expressing censure. | The Crown |
-| squib | Firework consisting of a tube filled with powder (as a broken firecracker) that burns with a fizzing noise. | Columbo |
-| indisputably | In a manner that is incapable of being disputed or argued against. | The Crown |
-| technicolor | A trademarked method of making color motion pictures. | Interview with the Vampire |
-| adulterant | Any substance that lessens the purity or effectiveness of a substance. | Breaking Bad |
-| cirrhosis | A chronic disease interfering with the normal functioning of the liver; the major cause is chronic alcoholism. | Boston Legal |
-| philander | Have amorous affairs; of men. | House |
-| zealotry | Excessive intolerance of opposing views. | Boston Legal |
-| meadowlark | North American songbirds having a yellow breast. | Twin Peaks |
-| yonder | Distant but within sight (`yon' is dialectal). | Interview with the Vampire, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins |
-| thrombotic | Of, pertaining to, or caused by thrombosis. | House |
-| natter | Talk socially without exchanging too much information. | Malcolm in the Middle |
-| saute | Fry briefly over high heat. | Twin Peaks |
-| glamorize | Interpret romantically. | Breaking Bad |
-| matador | The principal bullfighter who is appointed to make the final passes and kill the bull. | Columbo |
-| inadmissible | Not deserving to be admitted. | The Good Place |
-| voluminous | Large in volume or bulk. | Interview with the Vampire, Poems of Gerard Manley Hopkins |
-| undaunted | Unshaken in purpose. | The Crown |
-| parvenu | A person who has suddenly risen to a higher economic status but has not gained social acceptance of others in  | The Crown |
-| hypoglycemic | Of or relating to hypoglycemia. | Pushing Daisies |
-| bonobo | Small chimpanzee of swamp forests in Zaire; a threatened species. | Pushing Daisies |
-| embolic | Of or relating to an embolism or embolus. | House |
-| adroitly | With adroitness; in an adroit manner. | The Crown |
-| investiture | The ceremony of installing a new monarch. | The Crown |
-| bertram | A flowering plant of species Anacyclus pyrethrum. | Mad Men |
-| throe | Severe spasm of pain. | Interview with the Vampire, Poems by Emily Dickinson |
-| dilapidate | Bring into a condition of decay or partial ruin by neglect or misuse. | Interview with the Vampire |
-| supple | Moving and bending with ease. | Boston Legal, Poems by Emily Dickinson |
-| physostigmine | Used in treatment of Alzheimer's disease and glaucoma. | House |
-| croc | A type of EVA foam slip-on clog-style shoe with an open heel, thick sole, rounded toe, retractable heel strap, | The Good Place |
-| astonishment | The feeling that accompanies something extremely surprising. | Interview with the Vampire, The Great Gatsby, The Importance of Being Earnest |
-| paraglide | To take part in paragliding. | The Good Place |
+| hermaphroditic | Of animal or plant; having both male female reproductive organs. | M*A*S*H |
+| facetious | Cleverly amusing in tone. | M*A*S*H |
+| afflict | Cause great unhappiness for; distress. | M*A*S*H |
+| boor | A crude uncouth ill-bred person lacking culture or refinement. | M*A*S*H |
+| gawky | Lacking grace in movement or posture. | Dawson's Creek |
+| penmanship | Beautiful handwriting. | The Mentalist |
+| kente | A type of fabric made of interwoven cloth strips, native to Ghana. | America's Next Top Model |
+| neolithic | Of or relating to the most recent period of the Stone Age (following the mesolithic). | M*A*S*H |
+| houlihan | A kind of lasso throw. | M*A*S*H |
+| coscreenwriter | Someone who cooperates with one or more other people in screenwriting. | The Dark Knight Rises |
+| overexaggerate | To exaggerate, to overstate excessively. | America's Next Top Model |
+| bumptious | Offensively self-assertive. | The Mentalist |
+| nihilistic | Of or relating to nihilism. | South Park |
+| insensate | Devoid of feeling and consciousness and animation. | M*A*S*H |
+| wunderkind | A child prodigy; a wonderchild. | Dawson's Creek |
+| holla | To shout out or greet casually. | America's Next Top Model |
+| snuggie | A wedgie. | South Park |
+| predicate | (logic) what is predicated of the subject of a proposition; the second term in a proposition is predicated of  | The Sopranos |
+| bookwormy | Like a bookworm; studious. | Dawson's Creek |
+| symbiosis | The relation between two different species of organisms that are interdependent; each gains benefits from the  | Jurassic World Rebirth |
+| grizzle | Complain whiningly. | Poems of Gerard Manley Hopkins, The Dark Knight Rises |
+| scuttlebutt | A report (often malicious) about the behavior of other people. | M*A*S*H |
+| ditzy | Or scatterbrained, usually of a young woman. | America's Next Top Model |
+| postmenopausal | Subsequent to menopause. | Will & Grace |
+| affluence | Abundant wealth. | M*A*S*H |
+| screensaver | A computer program that displays aesthetic patterns or images when the computer is not being used, originally  | South Park |
+| chrissakes | Used to express annoyance or frustration. | The Sopranos |
+| tighty whities | Men's or boys' traditionally white briefs. | Dawson's Creek |
+| gelatinous | Thick like gelatin. | South Park |
+| holier-than-thou | Excessively or hypocritically pious. | Buffy the Vampire Slayer, Dawson's Creek |
+| celeb | A celebrity; a famous person or one who is celebrated by others. | South Park |
+| mummify | Preserve while making lifeless. | South Park |
+| dreckitude | The quality of being dreck (junk, garbage). | America's Next Top Model |
+| triplicate | One of three copies; any of three things that correspond to one another exactly. | M*A*S*H |
+| woozy | Having or causing a whirling sensation; liable to falling. | Will & Grace |
+| perishingly | Extremely. | The Games |
+| noodlehead | Fool, imbecile. | The Golden Girls |
+| dewy-eyed | Exhibiting childlike simplicity and credulity. | The Games |
+| souffle | Light fluffy dish of egg yolks and stiffly beaten egg whites mixed with e.g. cheese or fish or fruit. | The Golden Girls |
+| m'kay | —an expression of acknowledgment or affirmation, now sometimes used in an ironic or condescending sense. | South Park |
+| pilfer | Make off with belongings of others. | M*A*S*H |
+| menopausal | Of or relating to the menopause. | The Sopranos |
+| tinkle | Make or emit a high sound. | South Park, The Lady with the Dog and Other Stories |
+| pwn | To own, to defeat or dominate (someone or something, especially a game or someone playing a game). | South Park |
+| roomba | A robotic vacuum cleaner. | Bunheads |
+| regress | Go back to a previous state. | South Park |
+| gaffer | An elderly man. | America's Next Top Model |
+| impermeable | Preventing especially liquids to pass or diffuse through. | The Sopranos |
+| interjection | An abrupt emphatic exclamation expressing emotion. | M*A*S*H |
+| thermonuclear | Using nuclear weapons based on fusion as distinguished from fission. | The Games |
+| glibness | A kind of fluent easy superficiality. | The Mentalist |
+| pushmi-pullyu | Conflicting or contradictory. | The Games |
+| donner | One who dons (something). | South Park |
+| nonchalantness | Nonchalance. | M*A*S*H |
+| wistful | Showing pensive sadness. | The Mentalist |
+| vilify | Spread negative information about. | South Park |
+| sheeple | People who are perceived as conforming unquestioningly to authority or mainstream beliefs. | South Park |
+| indoctrinate | Teach doctrines to; teach uncritically. | Evil Dead Rise |
+| moistener | A device that dampens or moistens something. | The Golden Girls |
+| stickup | Robbery at gunpoint. | Ghosts |
+| mouthwatering | Causing one to salivate. | M*A*S*H |
+| urchin | Poor and often mischievous city child. | Ghosts |
+| corollary | A practical consequence that follows naturally. | The Sopranos |
+| apologetic | Offering or expressing apology. | Dawson's Creek |
+| cohabitate | To cohabit. | Ghosts |
+| venial | Warranting only temporal punishment. | The Sopranos |
+| pugnacious | Ready and able to resort to force or violence. | M*A*S*H |
+| exhilaration | The feeling of lively and cheerful joy. | The Golden Girls |
+| sauropod | Very large herbivorous dinosaur of the Jurassic and Cretaceous having a small head a long neck and tail and fi | Jurassic World Rebirth |
+| ranchero | A ranch or rancho worker. | The Golden Girls |
+| renege | Fail to fulfill a promise or obligation. | The Games |
+| timpani | A large hemispherical brass or copper percussion instrument with a drumhead that can be tuned by adjusting the | The Mentalist |
+| deflowerment | The loss of a girl or woman's virginity. | Dawson's Creek |
+| pejorative | Expressing disapproval. | South Park |
+| baptize | Administer baptism to. | M*A*S*H |
+| gaggle | A flock of geese. | Will & Grace |
+| proviso | A stipulated condition. | M*A*S*H |
+| whirlybird | An aircraft without wings that obtains its lift from the rotation of overhead blades. | The Golden Girls |
+| henhouse | A farm building for housing poultry. | The Golden Girls |
+| allot | To assign or designate as a task or for a purpose. | America's Next Top Model |
+| devan | To unload (goods) from a container. | Ghosts |
+| corsage | An arrangement of flowers that is usually given as a present. | Dawson's Creek |
+| demonstrator | A teacher or teacher's assistant who demonstrates the principles that are being taught. | M*A*S*H |
+| envelop | Enclose or enfold completely with or as if with a covering. | South Park |
+| loofah | The dried fibrous part of the fruit of a plant of the genus Luffa; used as a washing sponge or strainer. | The Golden Girls |
+| queefy | Of, or relating to, queefs. | South Park |
+| ragdoll | A modern American breed of domestic cat with a longhair colourpoint coat that relaxes completely when picked u | South Park |
+| brachiosaur | Any of several massive, herbivorous sauropod dinosaurs, of the genus Brachiosaurus, from the Jurassic and Cret | Jurassic World Rebirth |
+| biggify | To enlarge or make bigger. | The Mentalist |
+| vagitarian | A lesbian. | Will & Grace |
+| indelible | Cannot be removed or erased. | Wednesday |
+| kumquat | Any of several trees or shrubs of the genus Fortunella bearing small orange-colored edible fruits with thick s | The Golden Girls |
+| wucking | . | The Games |
+| senorita | A Spanish title or form of address used to or of an unmarried girl or woman; similar to the English `Miss'. | Bunheads |
+| gleam | An appearance of reflected light. | Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Mentalist |
+| squinty | Characterized by squinting. | The Mentalist |
+| nitpicker | Someone who makes small and unjustified criticisms. | Will & Grace |
+| microbiome | The genetic information (genomes) of a microbiota. | South Park |
+| unenthused | Not enthused. | South Park |
+| dystrophy | Any of several hereditary diseases of the muscular system characterized by weakness and wasting of skeletal mu | The Sopranos |
+| hunky-dory | Being satisfactory or in satisfactory condition. | 11.22.63 |
+| refurbish | Make brighter and prettier. | Dawson's Creek |
+| floop | To flop and droop, as a sign of aging or poor physical condition. | South Park |
+| furtive | Marked by quiet and caution and secrecy; taking pains to avoid being observed. | Poems by Emily Dickinson, The Mentalist |
+| unquenchable | Impossible to quench. | Dune |
+| cripes | A mild curse or expression of surprise. | Will & Grace |
+| corroborate | Establish or strengthen as with new evidence or facts. | The Great Gatsby, The Sopranos |
+| fibber | Someone who tells lies. | South Park |
+| ragweed | Any of numerous chiefly North American weedy plants constituting the genus Ambrosia that produce highly allerg | American Horror Story, The Sopranos |
+| osteopathy | Therapy based on the assumption that restoring health is best accomplished by manipulating the skeleton and mu | The Sopranos |
+| pip-squeak | Someone who is small and insignificant. | M*A*S*H |
+| sarubobo | A Japanese amulet in the form of a red doll without a face, traditionally made for grandchildren or as a charm | South Park |
+| rejuvenation | The process of rendering young again. | South Park |
+| oom-pah-pah | A variant of oom-pah played in triple time. | The Golden Girls |
+| jilt | Cast aside capriciously or unfeelingly. | A Doll's House, South Park |
+| stalagmite | A cylinder of calcium carbonate projecting upward from the floor of a limestone cave. | South Park |
+| suffocation | Killing by depriving of oxygen. | Interview with the Vampire, The Golden Girls |
+| beautify | Make more beautiful. | America's Next Top Model |
+| digestif | An alcoholic beverage consumed after eating, so called because it is presumed to aid digestion. | The Sopranos |
+| arthritic | Of or pertaining to arthritis. | The Mentalist |
+| catty | Any of various units of weight used in southeastern Asia (especially a Chinese measure equal to 500 grams). | America's Next Top Model, Will & Grace |
+| manicotti | Large pasta tubes stuffed with chopped meat or mild cheese and baked in tomato sauce. | The Golden Girls |
+| gaudy | (Britain) a celebratory reunion feast or entertainment held a college. | Dawson's Creek, The Great Gatsby |
+| smize | To smile with one's eyes. | America's Next Top Model |
+| scribble | Write down quickly without much attention to detail. | Bridgerton, M*A*S*H |
+| briquette | A block made from charcoal or coal dust and burned as fuel. | The Sopranos |
+| flubdubbery | Trivial matters; nonsense. | M*A*S*H |
+| sociable | Inclined to or conducive to companionship with others. | Steel Magnolias |
+| bicep | A biceps. | Dawson's Creek |
+| didgeridoo | A musical instrument, endemic to the Top End of Australia, consisting of a long hollowed-out log which, when b | The Games |
+| highhandedly | In a high-handed manner. | South Park |
+| anesthesiologist | A specialist who administers an anesthetic to a patient before he is treated. | America's Next Top Model |
+| libre | A free (not enslaved) black person in a French- or Spanish-colonized area, especially New Orleans. | The Mentalist |
+| provocateur | A secret agent who incites suspected persons to commit illegal acts. | Dawson's Creek |
+| opulence | Wealth as evidenced by sumptuous living. | Ghosts, Poems by Emily Dickinson |
+| shazam | Used to indicate that a magic trick or other illusion has been performed. | Will & Grace |
+| impervious | Not admitting of passage or capable of being affected. | South Park |
+| perforate | Having a hole cut through. | M*A*S*H |
+| bagful | The quantity that a bag will hold. | M*A*S*H |
+| trainel | A dragnet. | America's Next Top Model |
+| phonics | Teaching reading by training beginners to associate letters with their sound values. | The Games |
+| downtread | To oppress, persecute or subjugate. | M*A*S*H |
+| telekinetic | Of or pertaining to telekinesis. | Dawson's Creek |
+| tostada | A flat tortilla with various fillings piled on it. | South Park |
+| titillate | Touch (a body part) lightly so as to excite the surface nerves and cause uneasiness, laughter, or spasmodic mo | The Golden Girls |
+| nostrum | Hypothetical remedy for all ills or diseases; once sought by the alchemists. | The Sopranos |
+| hydrangea | Any of various deciduous or evergreen shrubs of the genus Hydrangea. | The Mentalist |
+| hitchhiker | A person who travels by getting free rides from passing vehicles. | Dawson's Creek |
+| larcenist | A person who commits larceny. | M*A*S*H |
+| talkie | A movie with synchronized speech and singing. | M*A*S*H, South Park |
