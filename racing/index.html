@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Punter's Primer · Dr Tom's Lexicon</title>
-<meta name="description" content="Learn how horse racing odds and payouts are calculated, with calculators you can play with and a quiz for every chapter.">
+<meta name="description" content="Learn how racehorses, training and race days work, and how racing odds and payouts are calculated, with calculators you can play with and a quiz for every chapter.">
 <meta name="theme-color" content="#14382b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,7 @@ tr.total td{font-weight:700;background:var(--chip)}
 /* widgets */
 .w{margin:20px 0;border-radius:16px;border:2px solid var(--green-2);background:var(--card);overflow:hidden}
 .w-h{background:var(--green-2);color:#f5f0e3;padding:9px 14px;font:600 14px var(--body);display:flex;gap:8px;align-items:center}
-.w-h::before{content:"Try it";font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#1d2420;padding:2px 7px;border-radius:5px}
+.w-h::before{content:"Try it";white-space:nowrap;flex:none;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#1d2420;padding:2px 7px;border-radius:5px}
 .w-b{padding:14px}
 .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:12px}
 label.f{display:flex;flex-direction:column;font-size:13px;font-weight:600;color:var(--soft);gap:4px}
@@ -138,7 +138,7 @@ input[type=range]{padding:0;accent-color:var(--turf)}
 <header class="top">
   <a class="brand" href="#" aria-label="The Punter's Primer, home"><span>Dr Tom's Lexicon</span><b>The Punter's Primer</b></a>
   <span class="grow"></span>
-  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/6</span></div>
+  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/10</span></div>
 </header>
 <main class="wrap" id="app" tabindex="-1"></main>
 
@@ -158,12 +158,12 @@ try { state = Object.assign(state, JSON.parse(localStorage.getItem(STORE) || "{}
 function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} }
 
 /* jockey-silk colours for chapter saddle cloths */
-const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b"];
+const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b","#0e7c86","#8a2c55","#4a5a1e","#3b3f8f"];
 
 /* ---------- content ---------- */
 const CH = [
 {
- id:"meeting", title:"How a race meeting works", blurb:"Classes, weights, barriers, track ratings and reading a form guide.",
+ id:"meeting", part:1, title:"How a race meeting works", blurb:"Classes, weights, barriers, track ratings and reading a form guide.",
  lead:"A horse's chance depends on its ability and the conditions it races under. The form guide records both, and the odds are the market's guess at combining them.",
  body:`
 <h2>The three codes</h2>
@@ -173,7 +173,7 @@ const CH = [
 <ul>
 <li><b>Meeting:</b> one venue on one day, such as Eagle Farm on a Saturday. Usually 7 to 10 races.</li>
 <li><b>Metro, provincial, country:</b> metro meetings (Eagle Farm, Doomben) have the most prize money and the best horses; provincial (Toowoomba, Gold Coast, Sunshine Coast) and country meetings follow.</li>
-<li><b>Field:</b> the horses running in a race. Field size decides which bets are offered (Chapter 4).</li>
+<li><b>Field:</b> the horses running in a race. Field size decides which bets are offered (Chapter 8).</li>
 </ul>
 
 <h2>Race class: the ladder</h2>
@@ -208,8 +208,8 @@ const CH = [
 <h2>Reading a form line</h2>
 <p>A form string lists recent finishing positions, oldest on the left and newest on the right. <b>x</b> marks a spell (a break of three months or more) and <b>0</b> means 10th or worse. Type one in below to decode it.</p>
 <div data-w="form"></div>
-<p>Alongside the form line, a guide shows the horse's record at the track, at the distance and on each track condition, days since its last run, trainer and jockey, its last start (margin, weight, barrier, class) and a <b>speed map</b> predicting where it will settle in the run.</p>
-<div class="key"><b>For your model</b>Every one of these is a feature. Chapter 6 comes back to them.</div>`,
+<p>Alongside the form line, a guide shows the horse's record at the track, at the distance and on each track condition, days since its last run, trainer and jockey, its last start (margin, weight, barrier, class) and a <b>speed map</b> predicting where it will settle in the run. Chapters 2 to 5 unpack all of these.</p>
+<div class="key"><b>For your model</b>Every one of these is a feature. Chapter 10 comes back to them.</div>`,
  quiz:[
   {q:"In the form line x2316, what does the x mean?", o:["The horse fell","A spell of three months or more","It was scratched","It ran 10th or worse"], a:1, why:"x marks a spell. A 0 is what marks 10th or worse."},
   {q:"Which race is the highest class?", o:["BM78","Listed","Group 1","Maiden"], a:2, why:"Group 1 is the top of the ladder, above Group 2, Group 3 and Listed."},
@@ -218,7 +218,190 @@ const CH = [
  ]
 },
 {
- id:"odds", title:"Odds are probabilities", blurb:"Turning any price into a chance of winning, and back again.",
+ id:"horse", part:1, title:"The racehorse", blurb:"Breeding, age, sex, sprinters versus stayers, and what a horse's name tells you.",
+ lead:"Every thoroughbred's ability starts with its breeding and is shaped by its age, sex and build. Those decide which races it can run in, how much weight it carries, and how far it wants to go.",
+ body:`
+<h2>Breeding: sire, dam and damsire</h2>
+<ul>
+<li><b>Sire:</b> the father. Stallions stand at stud and can have hundreds of foals a year, so a sire's record is a big, useful sample: the share of his runners that win, and at what distances and on what tracks.</li>
+<li><b>Dam:</b> the mother. A mare has one foal a year at most, so her record is a small sample.</li>
+<li><b>Damsire:</b> the mother's father. Form guides often show "by <i>Sire</i> out of <i>Dam</i> (<i>Damsire</i>)".</li>
+</ul>
+<p>Breeding matters most when a horse has little form of its own: a first-starter, a horse trying a new distance, or one meeting a wet track for the first time. Once a horse has a real race record, its own form usually tells you more.</p>
+<div class="key"><b>Key idea</b>Breeding is a prior; form is the evidence. The less a horse has raced, the more weight its pedigree deserves.</div>
+
+<h2>Every horse has the same birthday</h2>
+<p>In Australia every thoroughbred turns a year older on <b>1 August</b>, whatever its real foaling date. Breeders time matings so foals arrive soon after that date, because a foal born in December races against horses up to four months older but carries the same age.</p>
+<div data-w="age"></div>
+<ul>
+<li><b>Two-year-olds:</b> the youngest racers, still growing. Big early-maturing types often do best.</li>
+<li><b>Three-year-olds:</b> the year of the classic races (Derbies, Guineas, Oaks), often restricted to their own age.</li>
+<li><b>Four to six:</b> usually the peak years for most horses.</li>
+<li><b>Seven and older:</b> many decline, though geldings can race on for years.</li>
+</ul>
+
+<h2>Sex</h2>
+<div class="tbl"><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Colt</td><td>Entire (not castrated) male aged 4 or under</td></tr>
+<tr><td>Horse</td><td>Entire male aged 5 or over</td></tr>
+<tr><td>Gelding</td><td>Castrated male</td></tr>
+<tr><td>Rig</td><td>A male with a retained testicle</td></tr>
+<tr><td>Filly</td><td>Female aged 4 or under</td></tr>
+<tr><td>Mare</td><td>Female aged 5 or over</td></tr></table></div>
+<p>Fillies and mares usually get a weight allowance when they race against males, so they carry less. Watch for "gelded" in the gear changes: a colt that was hard to handle sometimes improves once it's gelded.</p>
+
+<h2>Sprinters, milers and stayers</h2>
+<div class="tbl"><table><tr><th>Type</th><th>Typical distances</th><th>Build and style</th></tr>
+<tr><td>Sprinter</td><td>1000–1400 m</td><td>Heavily muscled, quick to reach top speed</td></tr>
+<tr><td>Miler</td><td>1500–1700 m</td><td>Speed that lasts a little longer</td></tr>
+<tr><td>Middle distance</td><td>1800–2200 m</td><td>Balance of speed and stamina</td></tr>
+<tr><td>Stayer</td><td>2400 m and up</td><td>Leaner, more economical, sustains a long run</td></tr></table></div>
+<p>Most horses have a best distance range. A sprinter stretched to 2000 m usually fades late; a stayer dropped to 1000 m usually can't keep up early. Horses often step up in distance as they mature through a preparation (Chapter 3).</p>
+
+<h2>What's in a name</h2>
+<ul>
+<li><b>(NZ), (GB), (IRE), (USA), (JPN)</b> after a name: bred overseas. No suffix means bred in Australia.</li>
+<li>Names are registered and unique in Australia, which makes the name plus foaling year a good key for your database.</li>
+</ul>`,
+ quiz:[
+  {q:"A horse was foaled on 20 September 2023. What is its official racing age on 1 September 2026?", o:["2","3","4","It depends on the race"], a:1, why:"It turns 1 on 1 August 2024, 2 on 1 August 2025 and 3 on 1 August 2026."},
+  {q:"What is a gelding?", o:["A young female","A castrated male","A male with a retained testicle","A horse bred in New Zealand"], a:1, why:"A gelding is a castrated male. A rig has a retained testicle."},
+  {q:"What does (NZ) after a horse's name mean?", o:["It races in New Zealand","It was bred in New Zealand","Its jockey is from New Zealand","It's a novice"], a:1, why:"The suffix shows the country where the horse was bred."},
+  {q:"When does pedigree matter most?", o:["For a horse with 30 starts","For a first-starter or a horse trying something new","Never","Only in Group 1 races"], a:1, why:"With little form to go on, breeding is the best evidence available."}
+ ]
+},
+{
+ id:"training", part:1, title:"Training and the preparation", blurb:"Spells, trials, first-up and second-up form, trainer patterns and gear changes.",
+ lead:"A racehorse runs in cycles called preparations: a spell, a build-up, a run of races, then another spell. Where a horse sits in that cycle is one of the strongest clues to how it will run.",
+ body:`
+<h2>The trainer's job</h2>
+<p>The trainer decides when a horse races, how far, in what class, and in what gear. Their stable staff, strappers and trackwork riders handle the daily work. Big stables have hundreds of horses across several locations; small country trainers may have a handful. Trainers develop patterns you can measure, such as how well their horses run first-up or how often their well-backed runners win.</p>
+
+<h2>The preparation cycle</h2>
+<ol>
+<li><b>Spell:</b> weeks or months in the paddock, resting. Shown as <b>x</b> in a form line.</li>
+<li><b>Pre-training:</b> slow work to rebuild fitness, often at a separate property.</li>
+<li><b>Trackwork:</b> regular gallops at the track, building speed and stamina.</li>
+<li><b>Jump-outs and barrier trials:</b> practice races from the barriers. Trials are official and timed; jump-outs are less formal.</li>
+<li><b>First-up:</b> the first race back from a spell. Then <b>second-up</b>, <b>third-up</b> and so on.</li>
+<li><b>Back to the spell</b> when the horse is tired, sore or has done its job.</li>
+</ol>
+<div class="key"><b>Key idea</b>Many horses need a run or two to reach peak fitness, so they improve second- and third-up. Others race best fresh. Late in a long preparation, many horses go flat. A horse's own first-up and second-up record tells you which type it is.</div>
+
+<h2>Reading a record: 8:3-2-1</h2>
+<p>Australian form guides write records as <b>starts:wins-seconds-thirds</b>. "First-up 8:3-2-1" means 8 first-up runs for 3 wins, 2 seconds and 1 third. The same notation is used for the horse's record at the track, at the distance and on each track condition.</p>
+<div data-w="record"></div>
+<div class="key"><b>Small samples</b>A 2:2-0-0 record looks perfect but tells you very little. The range shown above (a 95% Wilson interval, the same idea as a confidence interval for a proportion) shows how wide the uncertainty really is.</div>
+
+<h2>Trials and the rules</h2>
+<ul>
+<li>In Queensland, since 1 August 2025, an unraced horse must complete an official trial to the stewards' satisfaction before it can start at any TAB meeting (<a href="https://www.racingqueensland.com.au/news/2025/06-june/local-rule-amendment-barrier-certificates-and-post-meeting-trials" target="_blank" rel="noopener">Racing Queensland</a>).</li>
+<li>Nationally, a horse that hasn't raced for 12 months or more needs a satisfactory veterinary clearance and must trial satisfactorily before it can be nominated for a race (<a href="https://t.racingaustralia.horse/uploadimg/Australian_rules_of_Racing/Calendar-Notices/2026/Calendar-Notice-AR-88B-and-Codes-of-Practice.pdf" target="_blank" rel="noopener">Racing Australia</a>).</li>
+</ul>
+<p>Trial results are public. A horse that trialled well, or finished fast without being pushed, is often better than its first-up price suggests.</p>
+
+<h2>Gear changes</h2>
+<p>Trainers fit gear to fix a problem, and every change must be declared. Form guides list them as <b>first time</b>, <b>again</b> (refitted after a break) or <b>off</b>.</p>
+<div class="tbl"><table><tr><th>Gear</th><th>What it's for</th></tr>
+<tr><td>Blinkers</td><td>Cups that block side and rear vision, to help a horse concentrate</td></tr>
+<tr><td>Winkers</td><td>Sheepskin strips on the cheeks; a milder version of blinkers</td></tr>
+<tr><td>Visors</td><td>Blinkers with a slit, so the horse can see a little to the side</td></tr>
+<tr><td>Tongue tie</td><td>Stops the tongue sliding back and affecting breathing</td></tr>
+<tr><td>Lugging bit</td><td>Helps the jockey stop a horse that pulls (lugs) in or out</td></tr>
+<tr><td>Ear muffs</td><td>Muffle crowd noise for a nervous horse</td></tr>
+<tr><td>Nose roll / cross-over noseband</td><td>Help keep the head down and the mouth closed</td></tr></table></div>
+<p>"Blinkers first time" is the change punters watch most. It can sharpen a horse that has been racing lazily, but it doesn't always work, so treat it as a question to test in your data, not a rule.</p>
+
+<h2>Days between runs</h2>
+<p>Most horses in a preparation race every two to four weeks. A quick back-up (under 10 days) or a long gap mid-preparation can be a sign the trainer is placing the horse cleverly, or that something went wrong. Days since last run is one of the easiest features to compute and one of the most used.</p>`,
+ quiz:[
+  {q:"What does \"first-up\" mean?", o:["The horse's first ever race","The first race back after a spell","Leading in the first 200 m","Barrier 1"], a:1, why:"First-up is the first run of a new preparation, after a spell."},
+  {q:"A horse's record is 10:2-3-1. What is its top-three (place) strike rate?", o:["20%","30%","60%","10%"], a:2, why:"2 + 3 + 1 = 6 top-three finishes from 10 starts, so 60%."},
+  {q:"What are blinkers meant to do?", o:["Protect the eyes from sand","Narrow the horse's vision so it concentrates","Help breathing","Stop it pulling"], a:1, why:"Blinkers block side and rear vision to help a horse focus."},
+  {q:"In Queensland, what must an unraced horse do before starting at a TAB meeting?", o:["Nothing","Win a jump-out","Complete an official trial to the stewards' satisfaction","Race at a country meeting first"], a:2, why:"Since 1 August 2025, Queensland requires an official trial first."}
+ ]
+},
+{
+ id:"pace", part:1, title:"Jockeys, pace and the track", blurb:"Jockey claims, speed maps, race shape, sectional times and track bias.",
+ lead:"A race isn't just a test of ability. Where a horse settles, how fast the early pace is, and which part of the track is fastest can swing the result by lengths.",
+ body:`
+<h2>Jockeys</h2>
+<ul>
+<li><b>Riding weight:</b> jockeys must make the horse's allotted weight, including the saddle, so the lightest jockeys get the most rides in handicaps.</li>
+<li><b>Apprentice claims:</b> apprentices take 1 to 3 kg off, depending on how many winners they've ridden. A good apprentice on a top-weight can be a real advantage.</li>
+<li><b>Jockey changes:</b> a leading jockey picking up a ride (a "jockey upgrade") is often a sign the stable expects it to run well, and the market usually reacts.</li>
+</ul>
+
+<h2>Race shape and the speed map</h2>
+<p>A <b>speed map</b> predicts where each horse will settle: <b>leader</b>, <b>on-pace</b> (just behind the leader), <b>midfield</b> or <b>backmarker</b>. That matters because the pace of a race affects runners differently.</p>
+<div class="tbl"><table><tr><th>Pace</th><th>What happens</th><th>Who it suits</th></tr>
+<tr><td>Slow early</td><td>Leaders save energy and still sprint home</td><td>Leaders and on-pace runners</td></tr>
+<tr><td>Genuine</td><td>A fair test</td><td>The best horse, wherever it settles</td></tr>
+<tr><td>Fast early</td><td>Leaders tire late</td><td>Backmarkers with a strong finish</td></tr></table></div>
+<p>A race with several natural leaders often turns into a fast early battle that sets it up for the closers. A race with one leader often lets that horse dictate a soft pace. Reading the speed map is reading likely race shape.</p>
+<div class="key"><b>Key idea</b>A horse that ran on strongly from the back in a slowly run race may have been better than its finishing position. A horse that led in a slowly run race may have been flattered.</div>
+
+<h2>Times, sectionals and margins</h2>
+<p>Race times are measured to hundredths of a second. <b>Sectional times</b> split the race into parts, most often the last 600 m and the last 200 m. Margins are in <b>lengths</b> (a horse's length, roughly 2.4 m), and shorter margins have names: a nose, a short head, a head, a neck.</p>
+<div data-w="speed"></div>
+<p class="note">Raw times aren't comparable across tracks or days: a heavy track can be several seconds slower than a good one. Time-based ratings adjust for track and conditions before comparing.</p>
+
+<h2>Track direction and bias</h2>
+<ul>
+<li><b>Direction:</b> Brisbane and Melbourne race anticlockwise; Sydney races clockwise. Some horses clearly prefer one way.</li>
+<li><b>Rail position:</b> the running rail is moved out to protect worn turf. Reports say "rail out 3 m" or "rail true".</li>
+<li><b>Track bias:</b> on some days the inside lanes are fastest; on others, after rain, horses wide out on the fresher ground do better. Watching the early races for a pattern is a long-standing punting habit.</li>
+<li><b>Track shape:</b> tight, turning tracks favour on-pace horses and inside barriers. Big tracks with long straights give backmarkers more time to catch up.</li>
+</ul>`,
+ quiz:[
+  {q:"A horse runs 1200 m in 70.00 seconds. Roughly what was its average speed?", o:["17 km/h","43 km/h","62 km/h","85 km/h"], a:2, why:"1200 ÷ 70 = 17.1 m/s, and × 3.6 ≈ 61.7 km/h."},
+  {q:"A backmarker with a strong finish is best suited by…", o:["A slow early pace","A fast early pace","A wet track only","Barrier 1"], a:1, why:"A fast early pace tires the leaders, which sets the race up for closers."},
+  {q:"About how far is a two-length margin?", o:["0.5 m","2 m","5 m","20 m"], a:2, why:"A length is about 2.4 m, so two lengths is close to 5 m."},
+  {q:"Which way do Brisbane tracks race?", o:["Clockwise","Anticlockwise","Straight only","It changes each meeting"], a:1, why:"Brisbane (like Melbourne) races anticlockwise; Sydney races clockwise."}
+ ]
+},
+{
+ id:"raceday", part:1, title:"Race day, stewards and welfare", blurb:"Acceptances, scratchings, stewards' reports, vet checks and the bleeding rules.",
+ lead:"The form guide is written days before a race. Race day adds new information: scratchings, track changes, behaviour in the parade, and afterwards the stewards' report on what actually happened in the run.",
+ body:`
+<h2>From nomination to the jump</h2>
+<ol>
+<li><b>Nominations:</b> trainers enter horses for races, often several days ahead.</li>
+<li><b>Weights and acceptances:</b> handicaps are set and trainers confirm their runners. The field and barriers are drawn.</li>
+<li><b>Scratchings:</b> horses withdrawn after acceptances. A <b>late scratching</b> on race day can trigger fixed-odds deductions (Chapter 8).</li>
+<li><b>Mounting yard and parade:</b> horses are walked before the race. Experienced watchers look for condition and calm behaviour, and notice excessive sweating or agitation.</li>
+<li><b>The race</b>, then <b>correct weight</b> once jockeys weigh in and any protest is settled. Bets are paid after that.</li>
+</ol>
+
+<h2>Stewards' reports: hidden form</h2>
+<p>Stewards are the racing officials who police each meeting. After every meeting they publish a report noting anything that affected a runner. These notes are some of the most valuable free data in racing, because they explain results that the finishing position hides.</p>
+<div class="tbl"><table><tr><th>Typical note</th><th>What it suggests</th></tr>
+<tr><td>Slow to begin / missed the start</td><td>Lost ground at the start; may be better than its finish</td></tr>
+<tr><td>Held up / checked / no clear run in the straight</td><td>Couldn't show its full ability</td></tr>
+<tr><td>Raced wide without cover</td><td>Covered extra ground and used more energy</td></tr>
+<tr><td>Over-raced / pulled hard</td><td>Wasted energy fighting the jockey; gear may change next time</td></tr>
+<tr><td>Lame / bled / irregular heart rhythm</td><td>A genuine excuse, and often a forced break</td></tr>
+<tr><td>Jockey questioned about the ride</td><td>The stewards weren't satisfied with the tactics</td></tr></table></div>
+<div class="key"><b>For your model</b>Turning these notes into flags (such as "checked in run" or "raced wide") gives your model information the finishing positions don't contain, and that the market may underweight.</div>
+
+<h2>Vet checks and bleeding</h2>
+<p>Horses can be examined by a vet before and after a race. One common finding is <b>bleeding</b>: blood from the nostrils caused by bleeding in the lungs during hard exercise. Australian rules are strict:</p>
+<ul>
+<li>After a first bleeding attack, a horse can't be ridden in any exercise for two months (<a href="https://tasracingcorporate.com.au/wp-content/uploads/2023/12/Calendar-Notice-AR-79-1.2.24.pdf" target="_blank" rel="noopener">AR 79</a>). It must also serve a three-month ban from racing and pass the stewards' conditions before it returns.</li>
+<li>A second bleeding attack generally means a lifetime ban from racing in Australia.</li>
+</ul>
+<p>A horse returning from a bleeding ban, a long injury or a "not fully tested" run carries more uncertainty than its form suggests.</p>
+
+<h2>Welfare and integrity</h2>
+<p>Australian racing has rules on drug testing, whip use, retirement reporting and fitness to race. Horses can be swabbed before or after racing, and trainers are responsible for anything found. For a model, integrity rules mostly show up as data quirks: horses scratched by stewards, runs voided, or long, unexplained breaks.</p>`,
+ quiz:[
+  {q:"A stewards' report says a horse was \"held up for a run in the straight\". What does that suggest?", o:["It's injured","It may be better than its finishing position","It should be banned","It won easily"], a:1, why:"It couldn't use its finish, so its result probably understates its ability."},
+  {q:"What happens after a horse's first bleeding attack in Australia?", o:["Nothing","A lifetime ban","No riding for two months and a three-month ban from racing","A fine for the trainer"], a:2, why:"The first attack brings an exercise ban and a racing ban; a second usually means a lifetime ban."},
+  {q:"When are bets paid?", o:["When the horses cross the line","After correct weight is declared","The next day","After the stewards' report is published"], a:1, why:"Correct weight confirms the result, after jockeys weigh in and any protest is settled."}
+ ]
+},
+{
+ id:"odds", part:2, title:"Odds are probabilities", blurb:"Turning any price into a chance of winning, and back again.",
  lead:"A price of $4.00 means the market rates the horse about a 25% chance. Everything else in this primer builds on that one conversion.",
  body:`
 <h2>Decimal odds</h2>
@@ -248,7 +431,7 @@ const CH = [
  ]
 },
 {
- id:"setting", title:"How odds are set", blurb:"Tote pools, bookmakers, the overround and why prices move.",
+ id:"setting", part:2, title:"How odds are set", blurb:"Tote pools, bookmakers, the overround and why prices move.",
  lead:"In a tote the bettors set the price and the operator takes a cut. With fixed odds a bookmaker sets the price with a margin built in. Either way, the probabilities add up to more than 100%.",
  body:`
 <h2>System 1: the tote (a pool)</h2>
@@ -260,7 +443,7 @@ const CH = [
 <p><b>Takeout rates.</b> Queensland last set tote commission in regulation in 2012: about 14.5% win, 14.25% place, 14.75% quinella, 21% trifecta, 22.5% First Four and 20% quadrella. The operator has set its own rates since 2013, so check the TAB's current figures. The pattern holds: <b>exotics carry a bigger cut than win and place.</b></p>
 
 <h2>System 2: fixed odds (bookmakers)</h2>
-<p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 4). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
+<p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 8). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
 
 <h2>The overround</h2>
 <p>Add up the implied probabilities of every runner. The amount over 100% is the <b>overround</b>, the bookmaker's built-in margin. Edit the prices below and watch it change.</p>
@@ -291,7 +474,7 @@ const CH = [
  ]
 },
 {
- id:"payouts", title:"How payouts are calculated", blurb:"Win, place, each way, exotics, flexi, multis, dead heats and deductions.",
+ id:"payouts", part:2, title:"How payouts are calculated", blurb:"Win, place, each way, exotics, flexi, multis, dead heats and deductions.",
  lead:"Every payout is either stake × price (fixed odds) or a share of a pool (tote). Bet types differ only in which finishing orders count and how many combinations you buy.",
  body:`
 <div class="toc"><a href="#payouts/win">Win &amp; place</a><a href="#payouts/ew">Each way</a><a href="#payouts/exotic">Exotics &amp; flexi</a><a href="#payouts/harville">Harville</a><a href="#payouts/multi">Multis</a><a href="#payouts/dh">Dead heats</a><a href="#payouts/ded">Deductions</a></div>
@@ -351,7 +534,7 @@ const CH = [
  ]
 },
 {
- id:"value", title:"Thinking about betting situations", blurb:"Value, expected value, the longshot bias, Kelly staking and variance.",
+ id:"value", part:2, title:"Thinking about betting situations", blurb:"Value, expected value, the longshot bias, Kelly staking and variance.",
  lead:"A bet is worth making only when your probability beats the price's implied probability by more than the margin. The goal isn't picking winners; it's finding prices that are too long.",
  body:`
 <h2>Value and expected value</h2>
@@ -366,7 +549,7 @@ const CH = [
 <div class="key"><b>Key idea</b>The most likely winner can be a bad bet, and an outsider can be a good one. Value is about the price, not the horse.</div>
 
 <h2>Removing the margin</h2>
-<p>To compare your view with the market's, strip out the overround first. The simplest way divides each implied probability by the market total (the market calculator in Chapter 3 does this in its last column). In a 109.9% market, a $2.80 horse goes from 35.7% implied to 35.7 ÷ 1.099 = <b>32.5%</b>.</p>
+<p>To compare your view with the market's, strip out the overround first. The simplest way divides each implied probability by the market total (the market calculator in Chapter 7 does this in its last column). In a 109.9% market, a $2.80 horse goes from 35.7% implied to 35.7 ÷ 1.099 = <b>32.5%</b>.</p>
 <p>This <b>proportional method</b> spreads the margin evenly. Bookmakers actually load more of it onto outsiders, so other methods (power, Shin, odds-ratio) often fit real results better. Which brings us to…</p>
 
 <h2>The favourite–longshot bias</h2>
@@ -405,11 +588,11 @@ const CH = [
  ]
 },
 {
- id:"model", title:"Connecting it to your model", blurb:"Race probabilities, blending with the market, measuring an edge, traps to avoid.",
+ id:"model", part:2, title:"Connecting it to your model", blurb:"Race probabilities, blending with the market, measuring an edge, traps to avoid.",
  lead:"To find mispriced horses, your model needs probabilities that add to 100% in each race, judged against the margin-free market. A ranking alone can't tell you whether a price is too long.",
  body:`
 <h2>From scores to race probabilities</h2>
-<p>Most models give each horse a score. The standard way to turn scores into win probabilities within a race is the <b>softmax</b> (in racing, the conditional logit, made famous by Bill Benter's Hong Kong model). It guarantees each race's probabilities sum to 100%, and Harville (Chapter 4) then gives every finishing order.</p>
+<p>Most models give each horse a score. The standard way to turn scores into win probabilities within a race is the <b>softmax</b> (in racing, the conditional logit, made famous by Bill Benter's Hong Kong model). It guarantees each race's probabilities sum to 100%, and Harville (Chapter 8) then gives every finishing order.</p>
 <div class="formula">pᵢ = e^(sᵢ) ÷ Σ e^(sⱼ) &nbsp;&nbsp;(over the horses in the race)</div>
 <div data-w="softmax"></div>
 
@@ -467,7 +650,16 @@ const GLOSSARY = [
  ["Quinella","First and second in either order."],["Roughie","An outsider at long odds."],["Scratching","A horse withdrawn before the race."],
  ["Speed map","A prediction of where each horse settles in the run."],["Spell","A break of three months or more."],["Standout","One horse fixed in a position of an exotic."],
  ["Strike rate","Share of bets that win."],["Takeout","The tote operator's commission."],["Trifecta","First, second and third in exact order."],
- ["Underlay","A price shorter than the true chance."],["Weight-for-age","Weights set only by age, sex and time of year."]
+ ["Underlay","A price shorter than the true chance."],["Weight-for-age","Weights set only by age, sex and time of year."],
+ ["Sire","A horse's father."],["Dam","A horse's mother."],["Damsire","The mother's father."],["Colt","An entire male aged 4 or under."],["Filly","A female aged 4 or under."],
+ ["Gelding","A castrated male."],["Mare","A female aged 5 or over."],["Rig","A male with a retained testicle."],["First-up","The first run back from a spell; then second-up, third-up."],
+ ["Preparation","A horse's cycle of races between spells."],["Barrier trial","An official practice race from the barriers."],["Jump-out","An informal practice start."],
+ ["Trackwork","Training gallops at the track."],["Blinkers","Cups that narrow a horse's vision to help it concentrate."],["Winkers","Sheepskin cheek strips; milder than blinkers."],
+ ["Tongue tie","Gear that stops the tongue affecting breathing."],["Gear change","Declared change to a horse's equipment: first time, again or off."],
+ ["Leader","The horse that sets the pace."],["On-pace","Settling just behind the leader."],["Backmarker","A horse that settles near the back."],
+ ["Sectionals","Times for parts of a race, such as the last 600 m."],["Length","A margin of about 2.4 m."],["Rail position","How far the running rail is moved out from its innermost spot."],
+ ["Track bias","When one part of the track is faster on a given day."],["Stewards","Officials who police racing and report on each race."],
+ ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."]
 ];
 
 const FORMULAS = [
@@ -478,7 +670,7 @@ const FORMULAS = [
  ["Expected value per $1","p × odds − 1","0.30 × 4 − 1 = +0.20"],["Kelly fraction","(p × odds − 1) ÷ (odds − 1)","0.20 ÷ 3 = 6.7%"],
  ["Break-even strike rate","1 ÷ average odds","1 ÷ 4 = 25%"],["Flexi %","Outlay ÷ combinations","$30 ÷ 60 = 50%"],
  ["Exacta probability","pᵢ × pⱼ ÷ (1 − pᵢ)","0.325 × 0.26 ÷ 0.675 = 12.5%"],["Multi price","Product of leg prices","2.80 × 3.50 × 2.00 = $19.60"],
- ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"]
+ ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"],["Average speed","Distance ÷ time (× 3.6 for km/h)","1200 ÷ 70 × 3.6 = 61.7 km/h"],["Time per 200 m","200 ÷ speed in m/s","200 ÷ 17.14 = 11.67 s"],["Lengths to metres","Lengths × 2.4","2 × 2.4 = 4.8 m"],["Strike rate","Wins ÷ starts","3 ÷ 8 = 37.5%"]
 ];
 
 /* ---------- widgets ---------- */
@@ -609,7 +801,7 @@ W.exotic = el => {
 
 W.harville = el => {
   const opts = DEFAULT_MKT.map(([h]) => `<option>${h}</option>`).join("");
-  const b = box(el, "Harville: price an exacta or trifecta", `<p class="note" style="margin-top:0">Uses the margin-free chances from the Chapter 3 market (A 32.5%, B 26.0%, C 18.2%, D 11.4%, E 7.6%, F 4.3%).</p>
+  const b = box(el, "Harville: price an exacta or trifecta", `<p class="note" style="margin-top:0">Uses the margin-free chances from the Chapter 7 market (A 32.5%, B 26.0%, C 18.2%, D 11.4%, E 7.6%, F 4.3%).</p>
     <div class="fields"><label class="f">1st<select id="h1">${opts}</select></label><label class="f">2nd<select id="h2">${opts}</select></label><label class="f">3rd<select id="h3"><option value="">(exacta only)</option>${opts}</select></label></div><div class="out" id="ho"></div>`);
   $("#h2", b).value = "B"; $("#h3", b).value = "C";
   const imp = DEFAULT_MKT.map(([, o]) => 1 / o), tot = imp.reduce((a, c) => a + c, 0), p = {};
@@ -706,6 +898,55 @@ W.softmax = el => {
   });
 };
 
+
+W.age = el => {
+  const today = new Date().toISOString().slice(0, 10);
+  const b = box(el, "Racing age calculator", `<div class="fields"><label class="f">Foaling date<input id="af" type="date" value="2023-09-20"></label><label class="f">Race date<input id="ar" type="date" value="${today}"></label></div><div class="out" id="ao"></div>`);
+  const season = d => (d.getUTCMonth() >= 7 ? d.getUTCFullYear() : d.getUTCFullYear() - 1); // season starts 1 August
+  wire(b, () => {
+    const f = new Date($("#af", b).value + "T00:00:00Z"), r = new Date($("#ar", b).value + "T00:00:00Z");
+    if (isNaN(f) || isNaN(r) || r < f){ $("#ao", b).innerHTML = `<p class="note">Pick a foaling date before the race date.</p>`; return; }
+    const age = season(r) - season(f), real = (r - f) / (365.25 * 864e5), s = season(r);
+    const gap = age - real;
+    $("#ao", b).innerHTML = stat("Official racing age", age + (age === 1 ? " year" : " years"), "hi") + stat("Actual age", real.toFixed(1) + " years") +
+      stat("Racing season", s + "–" + String(s + 1).slice(2)) +
+      `<p class="note" style="grid-column:1/-1">${gap > 0.5 ? `This horse is about ${(gap * 12).toFixed(0)} months younger than its official age, so it may be giving away maturity to rivals born early in the season.` : `Foaled soon after 1 August, so its official age is close to its real age. That's what breeders aim for.`}</p>`;
+  });
+};
+
+W.record = el => {
+  const b = box(el, "Record reader: starts:wins-seconds-thirds", `<div class="fields">${field("rr","Record","8:3-2-1")}${field("rp","Today's win price ($, optional)","3.50")}</div><div class="out" id="ro"></div>`);
+  const wilson = (k, n, z = 1.96) => { const p = k / n, d = 1 + z * z / n, c = (p + z * z / (2 * n)) / d, h = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d; return [Math.max(0, c - h), Math.min(1, c + h)]; };
+  wire(b, () => {
+    const m = $("#rr", b).value.replace(/\s/g, "").match(/^(\d+):(\d+)-(\d+)-(\d+)$/), price = num($("#rp", b).value);
+    if (!m){ $("#ro", b).innerHTML = `<p class="note">Use the form starts:wins-seconds-thirds, e.g. 8:3-2-1.</p>`; return; }
+    const [n, w, s2, t] = m.slice(1).map(Number), pl = w + s2 + t;
+    if (n === 0 || pl > n){ $("#ro", b).innerHTML = `<p class="note">Wins, seconds and thirds can't add up to more than the starts.</p>`; return; }
+    const [lo, hi] = wilson(w, n);
+    let html = stat("Win strike rate", pct(w / n, 0), "hi") + stat("Top-three rate", pct(pl / n, 0)) + stat("Unplaced", (n - pl) + " of " + n) +
+      stat("Plausible true win rate (95%)", pct(lo, 0) + " – " + pct(hi, 0));
+    if (price > 1) html += stat("Price implies", pct(1 / price)) +
+      `<p class="note" style="grid-column:1/-1">${1 / price < lo ? "The price implies less than even the low end of the range: on this record alone the horse looks underrated, but check its other form." : 1 / price > hi ? "The price implies more than the top of the range: the market rates it higher than this record alone suggests." : "The price sits inside the plausible range, so this record alone can't tell you the price is wrong."}</p>`;
+    $("#ro", b).innerHTML = html;
+  });
+};
+
+W.speed = el => {
+  const b = box(el, "Speed, sectionals and margins", `<div class="fields">${field("sd","Distance (m)","1200")}${field("st2","Race time (m:ss.hh or seconds)","1:10.00")}${field("s6","Last 600 m time (s, optional)","34.50")}${field("sl","Beaten margin (lengths)","2")}</div><div class="out" id="spo"></div>`);
+  const secs = v => { v = String(v).trim(); const m = v.match(/^(\d+):(\d+(?:\.\d+)?)$/); return m ? +m[1] * 60 + +m[2] : num(v); };
+  wire(b, () => {
+    const d = num($("#sd", b).value), t = secs($("#st2", b).value), l6 = num($("#s6", b).value), len = num($("#sl", b).value);
+    if (!(d > 0 && t > 0)){ $("#spo", b).innerHTML = `<p class="note">Enter a distance and a time.</p>`; return; }
+    const v = d / t;
+    let html = stat("Average speed", (v * 3.6).toFixed(1) + " km/h", "hi") + stat("Metres per second", v.toFixed(2)) + stat("Average per 200 m", (200 / v).toFixed(2) + " s");
+    if (l6 > 0 && d > 600){ const early = (t - l6) / ((d - 600) / 200), late = l6 / 3;
+      html += stat("Early part, per 200 m", early.toFixed(2) + " s") + stat("Last 600 m, per 200 m", late.toFixed(2) + " s", late < early ? "good" : "bad") +
+        `<p class="note" style="grid-column:1/-1">${late < early ? "The last 600 m was faster than the early part: a slow-early, sprint-home race that tends to suit on-pace horses." : "The last 600 m was slower than the early part: a fast-early race where the leaders tired, which tends to suit closers."}</p>`; }
+    if (len >= 0 && isFinite(len)) html += stat(`${len} lengths ≈`, (len * 2.4).toFixed(1) + " m") + stat("…which at this speed is", (len * 2.4 / v).toFixed(2) + " s");
+    $("#spo", b).innerHTML = html;
+  });
+};
+
 /* ---------- views ---------- */
 function progress(){
   const n = CH.filter(c => state.done[c.id]).length;
@@ -713,10 +954,11 @@ function progress(){
 }
 function home(){
   return `<section class="hero"><h1>The Punter's Primer</h1>
-    <p>How horse racing odds and payouts really work, one chapter at a time. Each chapter has calculators to play with and a short quiz at the end.</p></section>
+    <p>How racehorses, training and race days work, and how odds and payouts are calculated, one chapter at a time. Each chapter has calculators to play with and a short quiz at the end.</p></section>
     <div class="big-idea">Odds are probabilities with a price tag attached.<small>Every price is a chance of winning, every payout is stake × price or a share of a pool, and every bet type is a way of slicing finishing orders.</small></div>
-    <ol class="chapters">${CH.map((c, i) => `<li><a href="#${c.id}"><span class="saddle" style="background:${SILKS[i]}">${i + 1}</span>
-      <span><h3>${c.title}</h3><p>${c.blurb}</p></span><span class="tick ${state.done[c.id] ? "done" : ""}">${state.done[c.id] ? "✓ Passed" : (c.quiz.length + " Qs")}</span></a></li>`).join("")}</ol>
+    ${[[1,"Part 1 · The horse and the race","What decides how a horse runs."],[2,"Part 2 · Odds and money","How prices and payouts are worked out, and how to judge a bet."]].map(([pt, h, sub]) => `<h2 style="margin-top:28px">${h}</h2><p class="note" style="margin:0">${sub}</p>
+    <ol class="chapters">${CH.map((c, i) => c.part !== pt ? "" : `<li><a href="#${c.id}"><span class="saddle" style="background:${SILKS[i]}">${i + 1}</span>
+      <span><h3>${c.title}</h3><p>${c.blurb}</p></span><span class="tick ${state.done[c.id] ? "done" : ""}">${state.done[c.id] ? "✓ Passed" : (c.quiz.length + " Qs")}</span></a></li>`).join("")}</ol>`).join("")}
     <div class="extras"><a href="#tools">All calculators<small>Every tool on one page</small></a><a href="#formulas">Formula sheet<small>All the maths at a glance</small></a><a href="#glossary">Glossary<small>Racing words, explained</small></a></div>
     <p class="fineprint">For learning only. These are maths examples, not tips. Commission and margins mean the average bettor loses over time. If gambling stops being fun, call Gambling Help on 1800 858 858. Tote commission rates are Queensland's last legislated rates (2012); check the TAB's current figures. Part of <a href="${MAIN}">Dr Tom's Lexicon</a>.</p>`;
 }
@@ -746,10 +988,10 @@ function quiz(i){
   }));
 }
 function tools(){
-  const list = [["odds","Odds converter",1],["market","Market builder",2],["tote","Tote win pool",2],["place","Tote place dividend",3],["ew","Each way",3],["exotic","Exotics and flexi",3],["harville","Harville exotic pricing",3],["multi","Multis",3],["deduct","Deductions",3],["ev","Expected value and Kelly",4],["sim","Variance simulator",4],["softmax","Softmax",5],["form","Form line decoder",0]];
+  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"]];
   return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Toolbox</small><h1>All calculators</h1></div></div>
     <div class="toc">${list.map(([w, t]) => `<a href="#tools/${w}">${t}</a>`).join("")}</div>
-    ${list.map(([w, t, ci]) => `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${CH[ci].id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`).join("")}`;
+    ${list.map(([w, t, id]) => { const ci = CH.findIndex(c => c.id === id); return `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`; }).join("")}`;
 }
 function formulas(){
   return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Quick reference</small><h1>Formula sheet</h1></div></div>
