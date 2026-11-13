@@ -741,6 +741,21 @@ const CH = [
 <tr><td>Busy (Saturday metro race, near the jump)</td><td class="n">$1m+</td><td class="n">~100–101%</td><td class="n">~99–100%</td><td>One-tick spreads; prices are a sharp estimate</td></tr></table></div>
 <div class="key"><b>For your model</b>Only use exchange prices as a "true probability" benchmark when the market is busy and the two book percentages are close to 100%. Record the matched amount with every price you scrape, so you can filter out thin markets later.</div>
 
+<h2>The form panel under the market</h2>
+<p>Exchange race pages include a short form summary for each runner. For overseas races it's written in US racing shorthand. Here's one real line, from a two-year-old fillies' race over a mile at Horseshoe Indianapolis:</p>
+<div class="ex"><b class="t">Example</b><i>Prayer For Music. 2y filly: 2 wins/3 runs, $86k 2026: 1/1, 2.75 lengths 1st of 9 from Q's Disco Dancer in $102k stks (6f dirt) at Horseshoe Indianapolis, 20 days ago: best effort at 6f: raced only on dirt: tracks pace: plenty to spare.</i></div>
+<div class="tbl"><table><tr><th>Shorthand</th><th>Meaning</th></tr>
+<tr><td>2y filly</td><td>Two-year-old female (Chapter 2)</td></tr>
+<tr><td>2 wins/3 runs, $86k</td><td>Career record (3:2 in Australian notation) and prize money won</td></tr>
+<tr><td>2026: 1/1</td><td>Its starting odds last run, US style: 1/1 is evens, a decimal $2.00. "1.3/1" would be $2.30</td></tr>
+<tr><td>2.75 lengths 1st of 9 from X</td><td>Won by 2¾ lengths from X in a field of 9. "4th of 9 <b>to</b> X" means X won and this horse was beaten</td></tr>
+<tr><td>$102k stks</td><td>A stakes race with a $102,000 purse: the US equivalent of a Listed or Group race</td></tr>
+<tr><td>mdn / clm / alw</td><td>Maiden / claiming (horses can be bought out of the race) / allowance races</td></tr>
+<tr><td>6f dirt</td><td>6 furlongs (about 1207 m) on a dirt track. 8f is a mile (about 1609 m)</td></tr>
+<tr><td>front-runner, tracks pace, mid-field, races behind</td><td>Run style: leader, on-pace, midfield, backmarker (Chapter 4)</td></tr></table></div>
+<div data-w="usform"></div>
+<div class="key"><b>Reading a race through its form</b>Lines that share a race let you compare horses directly. In that example, four runners met in the same $102k stakes 44 days earlier, and Prayer For Music then beat the winner of that race. That's collateral form, and it helps explain why the exchange made her a strong favourite. Today's race is a mile, though, and her best form is at 6f, while several rivals have already won over 8f. That distance question is exactly what the market is weighing.</div>
+
 <h2>Commission: the hidden cost</h2>
 <p>The exchange charges <b>commission on your net winnings in each market</b>, not on losing bets. The rate is the <b>Market Base Rate</b>, shown in the market's Rules. For Australian racing it ranges from about 7% to 10% depending on the state and code. Commission makes a price worth less than it looks:</p>
 <div class="formula">Effective price = 1 + (Price − 1) × (1 − commission)</div>
@@ -849,7 +864,7 @@ const GLOSSARY = [
  ["Leader","The horse that sets the pace."],["On-pace","Settling just behind the leader."],["Backmarker","A horse that settles near the back."],
  ["Sectionals","Times for parts of a race, such as the last 600 m."],["Length","A margin of about 2.4 m."],["Rail position","How far the running rail is moved out from its innermost spot."],
  ["Track bias","When one part of the track is faster on a given day."],["Stewards","Officials who police racing and report on each race."],
- ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."],["Closing line value (CLV)","How the price you took compares with the final price."],["Opening price","The first price a bookmaker offers."],["Plunge","A big, fast firm in a horse's price on heavy betting."],["Starting price (SP)","The final price at the jump."],["Back book %","Sum of 1 ÷ best back price on an exchange; just over 100% in a busy market."],["Lay book %","Sum of 1 ÷ best lay price; just under 100% in a busy market."],["Liability","What a layer pays if the horse wins: backer's stake × (price − 1)."],["Market Base Rate","An exchange's commission rate on net winnings in a market."],["Reduction factor","An exchange's cut to matched prices when a runner is scratched."],["BSP","Betfair Starting Price, calculated at the jump."],["Matched","Money already traded in an exchange market."],["Spread","The gap between the best back and best lay prices."],["One Pool","TAB's national tote pool, launched October 2026."],["Saddlecloth number","The number a horse carries; not its barrier."],["Final Field","Fixed odds offered once the field is set; scratched runners refunded."],["Futures","Early fixed odds; usually no refund if your horse doesn't run."]
+ ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."],["Closing line value (CLV)","How the price you took compares with the final price."],["Opening price","The first price a bookmaker offers."],["Plunge","A big, fast firm in a horse's price on heavy betting."],["Starting price (SP)","The final price at the jump."],["Back book %","Sum of 1 ÷ best back price on an exchange; just over 100% in a busy market."],["Lay book %","Sum of 1 ÷ best lay price; just under 100% in a busy market."],["Liability","What a layer pays if the horse wins: backer's stake × (price − 1)."],["Market Base Rate","An exchange's commission rate on net winnings in a market."],["Reduction factor","An exchange's cut to matched prices when a runner is scratched."],["BSP","Betfair Starting Price, calculated at the jump."],["Matched","Money already traded in an exchange market."],["Spread","The gap between the best back and best lay prices."],["One Pool","TAB's national tote pool, launched October 2026."],["Saddlecloth number","The number a horse carries; not its barrier."],["Final Field","Fixed odds offered once the field is set; scratched runners refunded."],["Futures","Early fixed odds; usually no refund if your horse doesn't run."],["Furlong","A US/UK distance unit, about 201 m; 8 furlongs is a mile."],["Stakes (stks)","A high-class US race, like a Listed or Group race."],["Claiming race","A US race where any runner can be bought for a set price."],["Collateral form","Comparing horses through rivals they've both raced against."]
 ];
 
 const FORMULAS = [
@@ -866,7 +881,7 @@ const FORMULAS = [
 /* ---------- widgets ---------- */
 const W = {};
 function box(el, title, inner){ el.className = "w"; el.innerHTML = `<div class="w-h">${title}</div><div class="w-b">${inner}</div>`; return $(".w-b", el); }
-function wire(b, fn){ $$("input,select", b).forEach(i => i.addEventListener("input", fn)); fn(); }
+function wire(b, fn){ $$("input,select,textarea", b).forEach(i => i.addEventListener("input", fn)); fn(); }
 const stat = (label, val, cls = "") => `<div class="stat ${cls}"><span>${label}</span><b>${val}</b></div>`;
 const field = (id, label, val, extra = "") => `<label class="f">${label}<input id="${id}" inputmode="decimal" value="${val}" ${extra}></label>`;
 
@@ -1347,6 +1362,35 @@ W.fixtote = el => {
   });
 };
 
+
+W.usform = el => {
+  const b = box(el, "US form line decoder", `<label class="f">Paste a form line<textarea id="usf" rows="4" style="font:500 14px var(--body);padding:9px 10px;border-radius:9px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);width:100%">2y filly: 1 win/2 runs, $27k 2026: 1.3/1, 5.5 lengths 4th of 9 to Q's Disco Dancer in $102k stks (6f dirt) at Horseshoe Indianapolis, 44 days ago: front-runner.</textarea></label><div id="usfo" style="margin-top:10px"></div>`);
+  const RT = {stks:"Stakes race (high class)", mdn:"Maiden (non-winners)", clm:"Claiming race (lower class)", alw:"Allowance race (middle class)", msw:"Maiden special weight", hcp:"Handicap"};
+  const STYLE = [["front-runner","Leader"],["races close to pace","On-pace"],["tracks pace","On-pace (sits just behind the leaders)"],["mid to rear","Midfield to back"],["mid-field","Midfield"],["races behind","Backmarker"]];
+  wire(b, () => {
+    const t = $("#usf", b).value, rows = [], m = (re) => t.match(re);
+    let x;
+    if (x = m(/(\d+)y\s+(filly|colt|gelding|mare|horse|mare)/i)) rows.push(["Age and sex", `${x[1]}-year-old ${x[2].toLowerCase()}`]);
+    if (x = m(/(\d+)\s+wins?\/(\d+)\s+runs?/i)) rows.push(["Career record", `${x[2]}:${x[1]} (Australian notation), a ${pct(+x[1] / +x[2], 0)} win strike rate`]);
+    if (x = m(/\$(\d+(?:\.\d+)?)k\s+\d{4}:/i)) rows.push(["Prize money", `$${(+x[1]).toLocaleString()},000 (US dollars)`]);
+    if (x = m(/\d{4}:\s*([\d.]+)\/([\d.]+)/)) { const d = 1 + (+x[1]) / (+x[2]); rows.push(["Starting odds last run", `${x[1]}/${x[2]} = decimal ${money(d)}, about ${pct(1 / d, 0)} implied`]); }
+    if (x = m(/([\d.]+)\s+lengths?\s+(\d+)(?:st|nd|rd|th)\s+of\s+(\d+)\s+(to|from)\s+(.+?)\s+in\b/i)) {
+      const won = x[4].toLowerCase() === "from";
+      rows.push(["Result", won ? `<b>Won</b> by ${x[1]} lengths (about ${(x[1] * 2.4).toFixed(1)} m) from ${x[5]}, in a field of ${x[3]}` : `Finished ${x[2]}${["th","st","nd","rd"][(x[2] % 100 - 20) % 10] || ["th","st","nd","rd"][x[2]] || "th"} of ${x[3]}, beaten ${x[1]} lengths (about ${(x[1] * 2.4).toFixed(1)} m) by the winner, ${x[5]}`]);
+    }
+    if (x = m(/\$(\d+)k\s+(stks|mdn|clm|alw|msw|hcp)/i)) rows.push(["Race type", `${RT[x[2].toLowerCase()]}, $${x[1]},000 purse`]);
+    if (x = m(/\(([\d.]+)f\s+(dirt|turf|synthetic|tapeta)\)/i)) rows.push(["Distance and surface", `${x[1]} furlongs ≈ ${Math.round(x[1] * 201.17)} m, on ${x[2].toLowerCase()}`]);
+    if (x = m(/(\d+)\s+days ago/i)) rows.push(["Days since that run", x[1]]);
+    const st = STYLE.find(([k]) => t.toLowerCase().includes(k)); if (st) rows.push(["Run style", st[1]]);
+    if (x = m(/best (?:effort|form) at ([\d.]+)f/i)) rows.push(["Best distance", `${x[1]}f ≈ ${Math.round(x[1] * 201.17)} m`]);
+    if (x = m(/effective from ([\d.]+)f to ([\d.]+)f/i)) rows.push(["Distance range", `${Math.round(x[1] * 201.17)}–${Math.round(x[2] * 201.17)} m`]);
+    if (/plenty to spare/i.test(t)) rows.push(["Comment", "Won easily, with more to give"]);
+    if (/inconsistent/i.test(t)) rows.push(["Comment", "Form goes up and down"]); else if (/consistent/i.test(t)) rows.push(["Comment", "Runs to a similar level each time"]);
+    if (x = m(/([A-Z][\w']+)\s+-\s+([A-Z][\w' ]+?):/)) rows.push(["Breeding", `By ${x[1]} (sire) out of ${x[2]} (dam)`]);
+    $("#usfo", b).innerHTML = rows.length ? `<div class="tbl"><table><tr><th>Item</th><th>In plain terms</th></tr>${rows.map(r => `<tr><td><b>${r[0]}</b></td><td>${r[1]}</td></tr>`).join("")}</table></div>` : `<p class="note">Paste a line like the example to decode it.</p>`;
+  });
+};
+
 /* ---------- views ---------- */
 function progress(){
   const n = CH.filter(c => state.done[c.id]).length;
@@ -1388,7 +1432,7 @@ function quiz(i){
   }));
 }
 function tools(){
-  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["path","Price path","market"],["clv","Closing line value","market"],["clvlog","Bet log CLV summary","market"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"],["bfscreen","Practice exchange screen","exchange"],["bfback","Exchange price after commission","exchange"],["bflay","Lay calculator","exchange"],["tabscreen","Practice TAB race card","tabcard"],["fixtote","Fixed vs tote vs exchange","tabcard"]];
+  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["path","Price path","market"],["clv","Closing line value","market"],["clvlog","Bet log CLV summary","market"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"],["bfscreen","Practice exchange screen","exchange"],["bfback","Exchange price after commission","exchange"],["bflay","Lay calculator","exchange"],["usform","US form line decoder","exchange"],["tabscreen","Practice TAB race card","tabcard"],["fixtote","Fixed vs tote vs exchange","tabcard"]];
   return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Toolbox</small><h1>All calculators</h1></div></div>
     <div class="toc">${list.map(([w, t]) => `<a href="#tools/${w}">${t}</a>`).join("")}</div>
     ${list.map(([w, t, id]) => { const ci = CH.findIndex(c => c.id === id); return `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`; }).join("")}`;
