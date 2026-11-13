@@ -131,6 +131,11 @@ input[type=range]{padding:0;accent-color:var(--turf)}
 .search{margin:8px 0 14px}
 .toc{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
 .toc a{font-size:13px;padding:5px 10px;border-radius:20px;background:var(--chip);text-decoration:none;color:var(--ink)}
+.term{text-decoration:underline dotted;text-decoration-color:var(--turf);text-underline-offset:3px;text-decoration-thickness:2px;cursor:help}
+.term:focus{outline:2px solid var(--turf);outline-offset:1px;border-radius:2px}
+.term-demo{text-decoration:underline dotted;text-decoration-color:var(--turf);text-underline-offset:3px;text-decoration-thickness:2px}
+.termtip{position:fixed;z-index:50;background:var(--ink);color:var(--paper);padding:10px 12px;border-radius:10px;font:400 14px/1.45 var(--body);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.termtip b{display:block;font:700 13px var(--body);color:var(--gold);margin-bottom:2px}
 .explain{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--rule);font-size:15px}
 .mkthead{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-bottom:8px;font-size:14px}
 .mkthead.small{font-size:13px;color:var(--soft)}
@@ -190,6 +195,28 @@ const CH = [
  id:"meeting", part:1, title:"How a race meeting works", blurb:"Classes, weights, barriers, track ratings and reading a form guide.",
  lead:"A horse's chance depends on its ability and the conditions it races under. The form guide records both, and the odds are the market's guess at combining them.",
  body:`
+<h2>Betting words to know first</h2>
+<p>Racing has its own vocabulary. These words come up from the start. Anywhere in the course, <span class="term-demo">dotted-underlined</span> words show a definition when you hover over them or tap them.</p>
+<div class="tbl"><table><tr><th>Word</th><th>Meaning</th></tr>
+<tr><td><b>Punter</b></td><td>Anyone who bets.</td></tr>
+<tr><td><b>Bookmaker</b> (bookie)</td><td>A business that sets prices and takes bets, such as the TAB's fixed-odds side or Sportsbet.</td></tr>
+<tr><td><b>Price</b> / <b>odds</b></td><td>What a winning bet pays per $1. $4.00 means $1 returns $4.</td></tr>
+<tr><td><b>Stake</b></td><td>The amount you bet.</td></tr>
+<tr><td><b>Return</b></td><td>What you get back from a winning bet, including your stake.</td></tr>
+<tr><td><b>Favourite</b> / <b>outsider</b></td><td>The horse with the shortest price / a horse with a long price.</td></tr>
+<tr><td><b>Fixed odds</b></td><td>A price locked in when you bet.</td></tr>
+<tr><td><b>Tote</b></td><td>A pool: all bets go in, the operator takes a cut, and winners share the rest. The dividend isn't known until the race is run.</td></tr>
+<tr><td><b>Dividend</b></td><td>What a tote bet pays per $1.</td></tr>
+<tr><td><b>Back</b></td><td>To bet on a horse to win (or place). Every normal bet is a back bet.</td></tr>
+<tr><td><b>Lay</b></td><td>To bet that a horse will <i>not</i> win. You act as the bookmaker. Only possible on a betting exchange such as Betfair.</td></tr>
+<tr><td><b>Best back</b> / <b>best lay</b></td><td>On an exchange, the best price currently on offer to back (the highest) and to lay (the lowest).</td></tr>
+<tr><td><b>Betting exchange</b></td><td>A site where punters bet against each other instead of against a bookmaker.</td></tr>
+<tr><td><b>Market</b></td><td>All the prices offered on one race, or one bet type in that race.</td></tr>
+<tr><td><b>Field</b></td><td>The horses running in a race.</td></tr>
+<tr><td><b>Scratching</b></td><td>A horse withdrawn before the race.</td></tr>
+<tr><td><b>The jump</b></td><td>The start of the race. "Near the jump" means just before it starts.</td></tr></table></div>
+<p>The full list is in the <a href="#glossary">Glossary</a>.</p>
+
 <h2>The three codes</h2>
 <p>Australian racing has three codes: <b>thoroughbreds</b> (the gallops), <b>harness</b> (trotters and pacers pulling a sulky) and <b>greyhounds</b>. Racing Queensland governs all three here. This primer uses thoroughbreds, but the betting maths is identical for every code.</p>
 
@@ -842,14 +869,14 @@ const CH = [
 
 const GLOSSARY = [
  ["Acceptors","Horses entered for a race before scratchings."],["Approximate dividend","The tote dividend if betting closed now; changes until the jump."],
- ["Back","Bet that a horse will win (exchange term)."],["Barrier","The starting stall."],["Benchmark (BM)","A rating that sets which races a horse can enter."],
+ ["Back","Bet that a horse will win (or place). Every normal bet is a back bet."],["Best back","On an exchange, the highest price currently offered to back a horse."],["Best lay","On an exchange, the lowest price currently offered to lay a horse."],["Betting exchange","A site where punters bet against each other, not a bookmaker."],["Bookmaker","A business that sets prices and takes bets. Also \"bookie\"."],["Punter","Anyone who bets."],["Stake","The amount you bet."],["Return","What a winning bet pays back, including the stake."],["Price","What a winning bet pays per $1; the same as odds."],["Favourite","The horse with the shortest price."],["Outsider","A horse with a long price."],["Fixed odds","A price locked in when you bet."],["Tote","A betting pool shared among winners after a cut."],["Dividend","What a tote bet pays per $1."],["Market","All the prices offered on one race or bet type."],["Field","The horses running in a race."],["The jump","The start of the race."],["Pool","All the money bet on one tote bet type in a race."],["Exotics","Bets on more than one horse in a race, such as quinellas and trifectas."],["Odds-on","A price under $2.00: more likely to win than lose."],["Tick","One step on an exchange price ladder."],["In-play","Betting that continues while the race is running."],["Liquidity","How much money is available to bet at current prices."],["Barrier","The starting stall."],["Benchmark (BM)","A rating that sets which races a horse can enter."],
  ["Box","Covering every order of a set of horses in an exotic."],["Breakage","Rounding tote dividends down, usually to 10 cents."],
  ["Correct weight","Official confirmation of the result. Bets are paid after it."],["Dead heat","Two or more horses tying for a place; they share it."],
  ["Deduction","A cut to fixed-odds winnings after a late scratching."],["Drift","A price lengthening."],["Each way","Equal win and place bets on one horse."],
  ["Exacta","First and second in exact order."],["EV","Expected value: average profit or loss per $1 bet."],["Firm","A price shortening."],
  ["First Four","First to fourth in exact order."],["Flexi","Betting a percentage of a full unit on each combination."],["Flucs","The record of a horse's price changes."],
  ["Group 1","The highest class of race."],["Handicap","A race where better horses carry more weight."],["Implied probability","1 ÷ odds."],
- ["Kelly","A staking formula sized to your edge."],["Lay","Bet that a horse will lose, acting as the bookmaker."],["Maiden","A race for horses that haven't won."],
+ ["Kelly","A staking formula sized to your edge."],["Lay","Bet that a horse will not win, acting as the bookmaker. Only on an exchange."],["Maiden","A race for horses that haven't won."],
  ["Multi","Several selections, all must win; prices multiply."],["Overlay","A price longer than the true chance: value."],
  ["Overround","How far a market's implied probabilities exceed 100%."],["Quaddie","Quadrella: the winners of four nominated races."],
  ["Quinella","First and second in either order."],["Roughie","An outsider at long odds."],["Scratching","A horse withdrawn before the race."],
@@ -1452,6 +1479,68 @@ function fillGlossary(){
   $("#gs").addEventListener("input", draw); draw();
 }
 
+
+/* ---------- hover / tap definitions ---------- */
+const AMBIG = new Set(["back","lay","box","firm","drift","length","dam","matched","spread","leader","stakes (stks)","price","return","stake","market","field","pool","tick","favourite","outsider","spell","rig","plunge","stewards","punter","tote","dividend","lay book %","back book %","handicap","futures","the jump","in-play","maiden","place"]);
+const TERMS = (() => {
+  const list = [];
+  GLOSSARY.forEach(([t, d]) => {
+    const base = t.replace(/\s*\(.*?\)\s*/g, " ").replace(/\s*%$/, "").trim(), paren = (t.match(/\(([^)]+)\)/) || [])[1];
+    const vars = new Set([base]); if (paren && !/^\d|^stks$/i.test(paren)) vars.add(paren);
+    const amb = AMBIG.has(t.toLowerCase()) || AMBIG.has(base.toLowerCase());
+    vars.forEach(v => list.push({v, d, t, amb}));
+  });
+  list.sort((a, b) => b.v.length - a.v.length);
+  return list;
+})();
+const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const TERM_RE = new RegExp("\\b(" + TERMS.filter(x => !x.amb).map(x => esc(x.v) + "(?:e?s)?").join("|") + ")\\b", "i");
+const findTerm = txt => { const l = txt.toLowerCase(); return TERMS.find(x => l === x.v.toLowerCase() || l === x.v.toLowerCase() + "s" || l === x.v.toLowerCase() + "es"); };
+function addTerms(root){
+  const SKIP = "a,h1,h2,h3,button,.quiz,.formula,[data-w],.w,.term,.extras,.chapters,.toc,.pager,.back,label,th,script,style,svg,.ch-head";
+  const used = new Set();
+  // bold words that are exactly a glossary term (covers the ambiguous everyday words)
+  $$("b", root).forEach(b => {
+    if (b.closest(SKIP) || b.children.length) return;
+    const m = findTerm(b.textContent.trim()); if (!m || used.has(m.t)) return;
+    used.add(m.t); b.classList.add("term"); b.tabIndex = 0; b.dataset.def = m.d; b.dataset.name = m.t;
+  });
+  // first plain-text mention of each unambiguous term
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n => n.parentElement.closest(SKIP) || !n.nodeValue.trim() ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+  const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    let n = node, guard = 0;
+    while (n && guard++ < 20){
+      const re = new RegExp(TERM_RE.source, "ig"); let m, hit = null;
+      while ((m = re.exec(n.nodeValue))){ const t = findTerm(m[1]); if (t && !used.has(t.t)){ hit = {m, t}; break; } }
+      if (!hit) break;
+      used.add(hit.t.t);
+      const after = n.splitText(hit.m.index); const rest = after.splitText(hit.m[1].length);
+      const el = document.createElement("span"); el.className = "term"; el.tabIndex = 0; el.dataset.def = hit.t.d; el.dataset.name = hit.t.t; el.textContent = after.nodeValue;
+      after.replaceWith(el); n = rest;
+    }
+  });
+}
+const bubble = document.createElement("div"); bubble.className = "termtip"; bubble.hidden = true; bubble.setAttribute("role", "tooltip"); document.body.appendChild(bubble);
+let tipFor = null, hoverAt = 0;
+function showTip(el){
+  if (el !== tipFor || bubble.hidden) hoverAt = Date.now();
+  tipFor = el; bubble.innerHTML = `<b>${el.dataset.name.replace(/\s*\(.*\)/, "")}</b> ${el.dataset.def}`; bubble.hidden = false;
+  const r = el.getBoundingClientRect(), w = Math.min(300, window.innerWidth - 20);
+  bubble.style.width = w + "px";
+  let left = Math.max(10, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 10));
+  bubble.style.left = left + "px";
+  const h = bubble.offsetHeight, top = r.top - h - 8 > 64 ? r.top - h - 8 : r.bottom + 8;
+  bubble.style.top = top + "px";
+}
+function hideTip(){ bubble.hidden = true; tipFor = null; }
+document.addEventListener("mouseover", e => { const t = e.target.closest(".term"); if (t && t !== tipFor && matchMedia("(hover:hover)").matches) showTip(t); });
+document.addEventListener("mouseout", e => { const t = e.target.closest(".term"); if (t && matchMedia("(hover:hover)").matches && !t.contains(e.relatedTarget)) hideTip(); });
+document.addEventListener("click", e => { const t = e.target.closest(".term"); if (t){ e.preventDefault(); (t === tipFor && !bubble.hidden && Date.now() - hoverAt > 600) ? hideTip() : showTip(t); } else if (!e.target.closest(".termtip")) hideTip(); });
+document.addEventListener("focusin", e => { const t = e.target.closest(".term"); if (t) showTip(t); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
+window.addEventListener("scroll", () => { if (!bubble.hidden && tipFor) showTip(tipFor); }, {passive:true});
+
 function route(){
   const [view, sub] = location.hash.replace(/^#/, "").split("/"), app = $("#app");
   const i = CH.findIndex(c => c.id === view);
@@ -1460,6 +1549,7 @@ function route(){
   else if (view === "formulas") app.innerHTML = formulas();
   else if (view === "glossary"){ app.innerHTML = glossary(); fillGlossary(); }
   else app.innerHTML = home();
+  hideTip(); if (i >= 0) addTerms(app);
   $$("[data-w]", app).forEach(el => { try { W[el.dataset.w](el); } catch (e) { el.textContent = "This calculator couldn't load."; console.error(e); } });
   document.title = (i >= 0 ? CH[i].title + " · " : "") + "The Punter's Primer";
   const target = sub && (document.getElementById("s-" + sub) || document.getElementById("t-" + sub));
