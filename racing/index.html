@@ -131,6 +131,30 @@ input[type=range]{padding:0;accent-color:var(--turf)}
 .search{margin:8px 0 14px}
 .toc{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
 .toc a{font-size:13px;padding:5px 10px;border-radius:20px;background:var(--chip);text-decoration:none;color:var(--ink)}
+.explain{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--gold-soft);border:1px solid var(--rule);font-size:15px}
+.mkthead{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-bottom:8px;font-size:14px}
+.mkthead.small{font-size:13px;color:var(--soft)}
+.bftabs{display:flex;gap:2px;margin-bottom:8px;border-bottom:2px solid var(--rule)}
+.bftabs span{padding:6px 12px;font-size:14px;cursor:pointer}.bftabs .on{font-weight:700;border-bottom:3px solid var(--gold);margin-bottom:-2px}
+[data-k]{cursor:pointer}
+table.bf{font-size:14px;background:var(--card)} table.bf td{padding:4px 3px;text-align:center;border-bottom:1px solid var(--rule)}
+table.bf td.rn{text-align:left;display:flex;align-items:center;gap:6px;min-width:150px}
+.nb{display:flex;flex-direction:column;align-items:center;font-size:12px;line-height:1.1;min-width:22px}
+svg.silk{width:22px;height:22px;flex:none}
+table.bf td.bk,table.bf td.ly{min-width:46px;line-height:1.15}
+table.bf td small{display:block;font-size:11px;color:#333}
+td.bk{background:#d7ecfb;color:#111} td.bk.best{background:#a6d8ff}
+td.ly{background:#fbe1e6;color:#111} td.ly.best{background:#f9c0cc}
+td.bkh{background:#a6d8ff;color:#111;font-weight:700} td.lyh{background:#f9c0cc;color:#111;font-weight:700}
+td.pcth{font-family:var(--mono);font-size:13px}
+tr.nr td{color:var(--soft);font-size:13px;text-align:left!important}
+table.tabc td{vertical-align:middle;padding:6px 6px} table.tabc .who{min-width:170px}
+td.fx{background:#e3f1e8;color:#111;text-align:center;font-family:var(--mono)} td.tt{background:#eef0f2;color:#111;text-align:center;font-family:var(--mono)}
+th.fxh{background:#1f5a43;text-align:center} th.tth{background:#4a5560;text-align:center}
+td.fx .up,td.fx .down{display:block;font-size:11px} .up{color:#23784a}.down{color:#b33a2e}
+.favtag,.scrtag{font:700 10px var(--mono);padding:1px 5px;border-radius:4px;background:var(--gold);color:#1d2420}
+.scrtag{background:var(--bad);color:#fff} tr.scr-row td{color:var(--soft)}
+@media (max-width:560px){ table.bf .lad-outer{display:none} table.bf td.rn{min-width:120px} table.tabc{font-size:13px} table.tabc .who{min-width:112px} table.tabc td,table.tabc th{padding:5px 3px} td.fx b{font-size:13px} }
 .back{font-size:14px;text-decoration:none;display:inline-block;margin-top:6px}
 </style>
 </head>
@@ -138,7 +162,7 @@ input[type=range]{padding:0;accent-color:var(--turf)}
 <header class="top">
   <a class="brand" href="#" aria-label="The Punter's Primer, home"><span>Dr Tom's Lexicon</span><b>The Punter's Primer</b></a>
   <span class="grow"></span>
-  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/11</span></div>
+  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/13</span></div>
 </header>
 <main class="wrap" id="app" tabindex="-1"></main>
 
@@ -158,7 +182,7 @@ try { state = Object.assign(state, JSON.parse(localStorage.getItem(STORE) || "{}
 function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} }
 
 /* jockey-silk colours for chapter saddle cloths */
-const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b","#0e7c86","#8a2c55","#4a5a1e","#3b3f8f","#a0522d"];
+const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b","#0e7c86","#8a2c55","#4a5a1e","#3b3f8f","#a0522d","#2456a6","#0f6b3c"];
 
 /* ---------- content ---------- */
 const CH = [
@@ -440,7 +464,7 @@ const CH = [
 <div class="formula">Win dividend = Gross pool × (1 − takeout) ÷ Total bet on the winner</div>
 <div class="ex"><b class="t">Worked example</b>A $100,000 win pool at 14.5% takeout leaves $85,500. Bettors put $25,000 on horse A. If A wins, each $1 is worth $85,500 ÷ $25,000 = $3.42, paid as <b>$3.40</b>. The crowd rated A 25% (a fair $4.00); the gap is the commission.</div>
 <div data-w="tote"></div>
-<p><b>Takeout rates.</b> Queensland last set tote commission in regulation in 2012: about 14.5% win, 14.25% place, 14.75% quinella, 21% trifecta, 22.5% First Four and 20% quadrella. The operator has set its own rates since 2013, so check the TAB's current figures. The pattern holds: <b>exotics carry a bigger cut than win and place.</b></p>
+<p><b>Takeout rates.</b> Queensland last set tote commission in regulation in 2012: about 14.5% win, 14.25% place, 14.75% quinella, 21% trifecta, 22.5% First Four and 20% quadrella. The operator has set its own rates since 2013, so check the TAB's current figures. Since 3 October 2026 the TAB's tote has been <b>One Pool</b>, a single national pool merging NSW TAB, SuperTAB and UniTAB, with a 14.5% win takeout (Chapter 13). The pattern holds: <b>exotics carry a bigger cut than win and place.</b></p>
 
 <h2>System 2: fixed odds (bookmakers)</h2>
 <p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 9). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
@@ -687,6 +711,117 @@ const CH = [
   {q:"Which of these is look-ahead leakage?", o:["Using the barrier","Using last start's margin","Using the final starting price as a pre-race feature","Using track condition"], a:2, why:"The final price isn't known when you'd place an early bet."},
   {q:"What is the right baseline to beat?", o:["Random guessing","Always backing barrier 1","The margin-free market probabilities","Last year's winner"], a:2, why:"The market already uses most public information. Beating it is the real test."}
  ]
+},
+{
+ id:"exchange", part:3, title:"Reading the Betfair exchange", blurb:"Back and lay columns, the money available, the two market percentages, commission and BSP.",
+ lead:"On an exchange you aren't betting against a bookmaker. Every price is an offer from another punter, and the screen is a live list of those offers. Once you know what each column is, it's the cleanest view of the market's opinion you can get.",
+ body:`
+<h2>A practice screen</h2>
+<p>This is a simplified, made-up market laid out the way an exchange win market is. <b>Tap any number</b> to see what it means and how it fits the maths from earlier chapters.</p>
+<div data-w="bfscreen"></div>
+<p class="note">On a phone, the exchange's app usually shows only the best back and best lay price for each runner: the darker pair in the middle. This practice screen hides the outer prices on narrow screens too.</p>
+
+<h2>Back and lay</h2>
+<ul>
+<li><b>Back (blue):</b> bet that the horse <b>wins</b>, just like a normal bet. The blue numbers are prices other punters are offering to lay to you.</li>
+<li><b>Lay (pink):</b> bet that the horse <b>loses</b>. You act as the bookmaker: you take someone else's stake if the horse loses and pay their winnings if it wins.</li>
+<li>The <b>best</b> back price is the highest blue one (the darker blue box), and the <b>best</b> lay price is the lowest pink one (the darker pink box). They sit next to each other in the middle, under the <b>Back all</b> and <b>Lay all</b> buttons. The gap between them is the <b>spread</b>.</li>
+<li>The <b>$ amount</b> under each price is how much money is waiting to be matched at that price. Bet more than that and the rest waits, unmatched, until someone takes it.</li>
+</ul>
+
+<h2>The two percentages at the top</h2>
+<p>Next to <b>Back all</b> is the <b>back book %</b>: add up 1 ÷ the best back price for every runner. Next to <b>Lay all</b> is the <b>lay book %</b>: the same with the best lay prices. On a busy market near the jump, the back book is often just over 100% and the lay book just under. Compare that with a bookmaker's 110% or the tote's 117% (Chapter 7): there's very little margin built into exchange prices.</p>
+<div class="formula">Back book % = Σ (1 ÷ best back price)<br>Lay book % = Σ (1 ÷ best lay price)</div>
+<div class="key"><b>Key idea</b>The exchange's opinion of a horse's chance sits between 1 ÷ best lay and 1 ÷ best back. The middle of that range is one of the best free estimates of "true" probability you'll find, and a natural benchmark for your model.</div>
+
+<h2>Busy markets and thin markets</h2>
+<p>How far apart the two percentages are tells you how much to trust the prices. A real example: a mile race at a small US track, with only <b>AUD 25,101 matched</b>, showed <b>104.8%</b> next to Back all and <b>94.6%</b> next to Lay all. One runner was 9.4 to back but 10.5 to lay, and another was 95 to back but 140 to lay. With so little money matched, the spread is wide and the true price could be anywhere in that gap.</p>
+<div class="tbl"><table><tr><th>Market</th><th class="n">Matched</th><th class="n">Back book</th><th class="n">Lay book</th><th>What it means</th></tr>
+<tr><td>Thin (small overseas race, hours out)</td><td class="n">~$25k</td><td class="n">104.8%</td><td class="n">94.6%</td><td>Wide spreads; prices are a rough guide only</td></tr>
+<tr><td>Busy (Saturday metro race, near the jump)</td><td class="n">$1m+</td><td class="n">~100–101%</td><td class="n">~99–100%</td><td>One-tick spreads; prices are a sharp estimate</td></tr></table></div>
+<div class="key"><b>For your model</b>Only use exchange prices as a "true probability" benchmark when the market is busy and the two book percentages are close to 100%. Record the matched amount with every price you scrape, so you can filter out thin markets later.</div>
+
+<h2>Commission: the hidden cost</h2>
+<p>The exchange charges <b>commission on your net winnings in each market</b>, not on losing bets. The rate is the <b>Market Base Rate</b>, shown in the market's Rules. For Australian racing it ranges from about 7% to 10% depending on the state and code. Commission makes a price worth less than it looks:</p>
+<div class="formula">Effective price = 1 + (Price − 1) × (1 − commission)</div>
+<div data-w="bfback"></div>
+<div class="key"><b>Compare properly</b>An exchange $5.00 at 8% commission is really $4.68. A TAB fixed price of $4.80 on the same horse would pay more, even though the exchange number looks bigger.</div>
+
+<h2>Laying a horse</h2>
+<p>When you lay, you choose the <b>backer's stake</b> you'll accept. If the horse loses, you win that stake (less commission). If it wins, you pay the backer's profit. That amount is your <b>liability</b>, and the exchange holds it from your balance until the race is settled.</p>
+<div class="formula">Liability = Backer's stake × (Lay price − 1)</div>
+<div data-w="bflay"></div>
+
+<h2>Other things on the screen</h2>
+<ul>
+<li><b>Matched:</b> the total money already traded in this market. Bigger means more reliable prices.</li>
+<li><b>Back all / Lay all:</b> buttons that put a bet on every runner at the best prices. The percentages beside them are the two books.</li>
+<li><b>Top 3 Finish:</b> the place market for the same race, on its own tab with its own back and lay prices.</li>
+<li><b>BSP (Betfair Starting Price):</b> a price calculated at the jump from the bets left over that asked for SP. It's the exchange's version of a starting price, and a good "closing price" for measuring CLV (Chapter 8).</li>
+<li><b>Going in-play:</b> the market stays open during the race. Prices then swing wildly; in-play betting is a different skill.</li>
+<li><b>Non Runner 0.5%, Sat 14 Nov 04:44:</b> a scratched horse, shown below the others. The percentage is its <b>reduction factor</b> (about its chance when it was withdrawn), and the time is when it was removed. Bets on other runners matched before then have their prices cut by that percentage, for backers and layers alike. It's the exchange version of a TAB deduction; at 0.5% almost nothing changes.</li>
+<li><b>Ratings and tips panels</b> (like a 1-2-3 star rating under the market): a form service's opinion, not part of the market. Treat it like any tipster.</li>
+</ul>
+
+<h2>The price ladder</h2>
+<p>Exchange prices move in fixed steps called <b>ticks</b>, and the step size grows as prices lengthen:</p>
+<div class="tbl"><table><tr><th>Price range</th><th class="n">Tick size</th></tr>
+<tr><td>1.01 – 2.00</td><td class="n">0.01</td></tr><tr><td>2.00 – 3.00</td><td class="n">0.02</td></tr><tr><td>3.00 – 4.00</td><td class="n">0.05</td></tr>
+<tr><td>4.00 – 6.00</td><td class="n">0.10</td></tr><tr><td>6.00 – 10.0</td><td class="n">0.20</td></tr><tr><td>10.0 – 20.0</td><td class="n">0.50</td></tr>
+<tr><td>20.0 – 30.0</td><td class="n">1</td></tr><tr><td>30.0 – 50.0</td><td class="n">2</td></tr><tr><td>50.0 – 100</td><td class="n">5</td></tr><tr><td>100 – 1000</td><td class="n">10</td></tr></table></div>
+<p>So "one tick" on a favourite is a tiny move, while one tick on a $40 shot is a big one. When you measure market moves, use probabilities rather than ticks.</p>`,
+ quiz:[
+  {q:"What does a lay bet win on?", o:["The horse winning","The horse losing","The horse placing","The race being abandoned"], a:1, why:"Laying is betting against the horse: you act as the bookmaker."},
+  {q:"The best back prices add up to 101.2% and the best lay prices to 98.7%. What does that tell you?", o:["The exchange takes a 12% margin","Prices carry very little margin; the true market sits in between","The race is rigged","Backers will profit"], a:1, why:"The two book percentages bracket 100%, so there's almost no margin in the prices themselves."},
+  {q:"You back at $6.00 on the exchange with 8% commission. What's the effective price?", o:["$6.00","$5.60","$5.52","$5.00"], a:1, why:"1 + (6 − 1) × 0.92 = 1 + 4.60 = $5.60."},
+  {q:"A horse is shown as \"Non Runner 4.2%\". You backed another horse earlier at $10.00. What happens?", o:["Your bet is void","Your price is cut to about $9.58","Your price rises","Nothing"], a:1, why:"The 4.2% reduction factor cuts earlier matched prices: 10 × (1 − 0.042) ≈ $9.58."},
+  {q:"You lay a horse at $5.00 for a backer's stake of $20. What's your liability?", o:["$20","$80","$100","$25"], a:1, why:"$20 × (5 − 1) = $80, which you pay if the horse wins."}
+ ]
+},
+{
+ id:"tabcard", part:3, title:"Reading a TAB race page", blurb:"Fixed and tote columns, approximate dividends, flucs, the form line and One Pool.",
+ lead:"A TAB race page packs a form guide and two different betting systems into one table. The trick is knowing which numbers are locked-in fixed prices and which are tote estimates that will change.",
+ body:`
+<h2>A practice race card</h2>
+<p>This is a made-up race laid out like a TAB race page. <b>Tap any part</b> of a row to see what it is.</p>
+<div data-w="tabscreen"></div>
+
+<h2>Fixed or tote: the two halves of the screen</h2>
+<div class="tbl"><table><tr><th></th><th>Fixed (Win / Place)</th><th>Tote (Win / Place)</th></tr>
+<tr><td>Who sets it</td><td>The TAB's bookmakers</td><td>The money in the pool</td></tr>
+<tr><td>When it's final</td><td>When you bet</td><td>After the race</td></tr>
+<tr><td>What the number is</td><td>The price you'll get</td><td>An <b>approximate</b> dividend if betting closed now</td></tr>
+<tr><td>Margin</td><td>Built into the prices (Chapter 7)</td><td>Takeout from the pool</td></tr>
+<tr><td>Scratchings</td><td>Deductions may apply</td><td>Pool recalculated, refund on the scratched horse</td></tr></table></div>
+<p>Since 3 October 2026, the TAB's tote has been <b>One Pool</b>: the old NSW TAB, SuperTAB and UniTAB pools merged into one national pool, so there's now a single tote dividend instead of three. Its win takeout is 14.5%.</p>
+<div class="key"><b>Key idea</b>Add up 1 ÷ price down the Fixed Win column and you get the fixed market's total (often 110–120%). Do the same down the Tote Win column and you get about 1 ÷ (1 − 0.145) ≈ 117%. The practice card shows both under the table.</div>
+
+<h2>Opening price and flucs</h2>
+<p>The TAB shows each runner's <b>opening fixed price</b> and how it has moved since (the flucs), usually with an arrow or colour for firming or drifting. That's the market life cycle from Chapter 8 in miniature. Remember to compare moves in probability terms, not raw dollars: $3.00 → $2.50 is a much bigger shift than $21 → $18.</p>
+
+<h2>Which price is better?</h2>
+<p>The same horse can show three different prices: a TAB fixed price, an approximate tote dividend, and an exchange price that loses commission. This calculator lines them up on the same footing.</p>
+<div data-w="fixtote"></div>
+<ul>
+<li><b>Fixed</b> is certain. Take it when you think the price will shorten.</li>
+<li><b>Tote</b> can beat fixed on horses the crowd ignores, but the approximate dividend often shrinks in the final minutes as late money arrives.</li>
+<li><b>Exchange</b> prices look the biggest but lose commission on winnings.</li>
+</ul>
+
+<h2>Other labels you'll see</h2>
+<ul>
+<li><b>Fav / 2nd fav:</b> the shortest and second-shortest in the market.</li>
+<li><b>SCR / scratched:</b> withdrawn. Fixed bets on other runners may get a deduction (Chapter 9); the TAB Betting Rules give the formula.</li>
+<li><b>Final Field vs Futures:</b> Final Field fixed odds open once the field is set, and a bet on a horse that's scratched is refunded. Futures prices are offered earlier (often weeks before a big race), and if your horse doesn't run you usually lose your stake.</li>
+<li><b>Barrier in brackets</b> after the name, and <b>a2 / a3</b> after a jockey's name for an apprentice claim of 2 or 3 kg.</li>
+<li><b>Exotics and quaddie tabs:</b> tote pools for quinellas, trifectas, First Four and multi-race bets, each with its own takeout (Chapter 9).</li>
+</ul>`,
+ quiz:[
+  {q:"On a TAB race page, which number is guaranteed if you bet now?", o:["The tote win dividend","The fixed win price","The approximate place dividend","None of them"], a:1, why:"Fixed prices lock in when your bet is accepted. Tote numbers are estimates until the race is run."},
+  {q:"The Tote Win column adds up to about 117%. Why?", o:["Bookmakers are greedy","The 14.5% win takeout: 1 ÷ 0.855 ≈ 117%","Scratchings","It's a display error"], a:1, why:"The pool pays back 85.5% of what goes in, so the dividends imply about 117% in total."},
+  {q:"A TAB fixed price is $4.80 and the exchange's best back is $5.00 at 8% commission. Which pays more if it wins?", o:["The exchange","TAB fixed","They're equal","Can't tell"], a:1, why:"The exchange's effective price is 1 + 4 × 0.92 = $4.68, below $4.80."},
+  {q:"What changed when TAB launched One Pool?", o:["Fixed odds stopped","Three state tote pools merged into one national pool","Commission was added","Place betting ended"], a:1, why:"One Pool combined NSW TAB, SuperTAB and UniTAB into one national tote pool and a single dividend."}
+ ]
 }
 ];
 
@@ -714,7 +849,7 @@ const GLOSSARY = [
  ["Leader","The horse that sets the pace."],["On-pace","Settling just behind the leader."],["Backmarker","A horse that settles near the back."],
  ["Sectionals","Times for parts of a race, such as the last 600 m."],["Length","A margin of about 2.4 m."],["Rail position","How far the running rail is moved out from its innermost spot."],
  ["Track bias","When one part of the track is faster on a given day."],["Stewards","Officials who police racing and report on each race."],
- ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."],["Closing line value (CLV)","How the price you took compares with the final price."],["Opening price","The first price a bookmaker offers."],["Plunge","A big, fast firm in a horse's price on heavy betting."],["Starting price (SP)","The final price at the jump."]
+ ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."],["Closing line value (CLV)","How the price you took compares with the final price."],["Opening price","The first price a bookmaker offers."],["Plunge","A big, fast firm in a horse's price on heavy betting."],["Starting price (SP)","The final price at the jump."],["Back book %","Sum of 1 ÷ best back price on an exchange; just over 100% in a busy market."],["Lay book %","Sum of 1 ÷ best lay price; just under 100% in a busy market."],["Liability","What a layer pays if the horse wins: backer's stake × (price − 1)."],["Market Base Rate","An exchange's commission rate on net winnings in a market."],["Reduction factor","An exchange's cut to matched prices when a runner is scratched."],["BSP","Betfair Starting Price, calculated at the jump."],["Matched","Money already traded in an exchange market."],["Spread","The gap between the best back and best lay prices."],["One Pool","TAB's national tote pool, launched October 2026."],["Saddlecloth number","The number a horse carries; not its barrier."],["Final Field","Fixed odds offered once the field is set; scratched runners refunded."],["Futures","Early fixed odds; usually no refund if your horse doesn't run."]
 ];
 
 const FORMULAS = [
@@ -725,7 +860,7 @@ const FORMULAS = [
  ["Expected value per $1","p × odds − 1","0.30 × 4 − 1 = +0.20"],["Kelly fraction","(p × odds − 1) ÷ (odds − 1)","0.20 ÷ 3 = 6.7%"],
  ["Break-even strike rate","1 ÷ average odds","1 ÷ 4 = 25%"],["Flexi %","Outlay ÷ combinations","$30 ÷ 60 = 50%"],
  ["Exacta probability","pᵢ × pⱼ ÷ (1 − pᵢ)","0.325 × 0.26 ÷ 0.675 = 12.5%"],["Multi price","Product of leg prices","2.80 × 3.50 × 2.00 = $19.60"],
- ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"],["Average speed","Distance ÷ time (× 3.6 for km/h)","1200 ÷ 70 × 3.6 = 61.7 km/h"],["Time per 200 m","200 ÷ speed in m/s","200 ÷ 17.14 = 11.67 s"],["Lengths to metres","Lengths × 2.4","2 × 2.4 = 4.8 m"],["Strike rate","Wins ÷ starts","3 ÷ 8 = 37.5%"],["Raw CLV","Price taken ÷ final price − 1","5.00 ÷ 4.00 − 1 = +25%"],["Edge vs close","p(close, margin-free) × price taken − 1","0.227 × 5.00 − 1 = +13.6%"]
+ ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"],["Average speed","Distance ÷ time (× 3.6 for km/h)","1200 ÷ 70 × 3.6 = 61.7 km/h"],["Time per 200 m","200 ÷ speed in m/s","200 ÷ 17.14 = 11.67 s"],["Lengths to metres","Lengths × 2.4","2 × 2.4 = 4.8 m"],["Strike rate","Wins ÷ starts","3 ÷ 8 = 37.5%"],["Exchange effective price","1 + (price − 1) × (1 − commission)","1 + 4 × 0.92 = $4.68"],["Lay liability","Backer's stake × (lay price − 1)","$20 × 4 = $80"],["Reduction factor","Price × (1 − RF)","$10 × 0.958 = $9.58"],["Raw CLV","Price taken ÷ final price − 1","5.00 ÷ 4.00 − 1 = +25%"],["Edge vs close","p(close, margin-free) × price taken − 1","0.227 × 5.00 − 1 = +13.6%"]
 ];
 
 /* ---------- widgets ---------- */
@@ -1065,6 +1200,153 @@ W.clvlog = el => {
   });
 };
 
+
+/* ---------- Part 3: practice screens ---------- */
+function explainer(b, html){ const x = $(".explain", b); x.innerHTML = html; x.hidden = false; x.scrollIntoView({block:"nearest", behavior:"smooth"}); }
+const BF = [
+  {n:2, bar:2, h:"Paddock Poet",  j:"K. Ashdown", silk:["#2f7d58","#f5d000"], back:[[2.96,412],[2.98,1260],[3.00,388]], lay:[[3.05,276],[3.10,940],[3.15,1530]]},
+  {n:3, bar:5, h:"Silver Rail",   j:"L. Brennan", silk:["#1d1d1d","#ffffff"], back:[[3.70,220],[3.75,610],[3.80,145]],  lay:[[3.85,312],[3.90,505],[3.95,880]]},
+  {n:4, bar:1, h:"Morning Track", j:"P. Ormond",  silk:["#c4302b","#c4302b"], back:[[5.2,190],[5.3,95],[5.4,64]],       lay:[[5.5,120],[5.6,240],[5.7,180]]},
+  {n:5, bar:8, h:"Wet Weather",   j:"R. Tamsin",  silk:["#f5d000","#2456a6"], back:[[8.2,80],[8.4,55],[8.6,41]],        lay:[[8.8,38],[9.0,92],[9.2,60]]},
+  {n:6, bar:4, h:"Long Shadow",   j:"A. Keel",    silk:["#c4302b","#ffffff"], back:[[12,44],[12.5,30],[13,22]],         lay:[[13.5,18],[14,35],[14.5,51]]},
+  {n:7, bar:3, h:"Back Straight", j:"C. Hollis",  silk:["#6b3fa0","#f5d000"], back:[[21,25],[22,14],[23,9]],            lay:[[24,12],[25,20],[26,16]]}
+];
+const BF_NR = {n:1, bar:6, h:"Late Mail", j:"T. Quinlan", silk:["#2f7d58","#ffffff"], rf:4.2, when:"Sat 08:12"};
+const silkSvg = c => `<svg class="silk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l5-4h6l5 4-2 4-2-1v11H8V10l-2 1z" fill="${c[0]}" stroke="#333" stroke-width=".8"/><path d="M9 3h6l-1 4h-4z" fill="${c[1]}"/></svg>`;
+W.bfscreen = el => {
+  const bestB = r => r.back[2][0], bestL = r => r.lay[0][0];
+  const bb = BF.reduce((a, r) => a + 1 / bestB(r), 0), lb = BF.reduce((a, r) => a + 1 / bestL(r), 0);
+  const fp = p => p >= 10 ? String(+p.toFixed(1)) : p.toFixed(2);
+  const cell = (side, i, j, [p, amt]) => `<td class="${side} ${(side === "bk" ? j === 2 : j === 0) ? "best" : "lad-outer"}" data-k="${side}" data-i="${i}" data-j="${j}" tabindex="0"><b>${fp(p)}</b><small>$${amt.toLocaleString()}</small></td>`;
+  const b = box(el, "Practice exchange screen: tap anything", `
+    <div class="mkthead"><span data-k="race" tabindex="0"><b>R4 · 1200 m · Practice Park</b></span></div>
+    <div class="bftabs"><span class="on" data-k="wintab" tabindex="0">Win</span><span data-k="top3" tabindex="0">Top 3 Finish</span></div>
+    <div class="mkthead small"><span data-k="inplay" tabindex="0">☑ Going In-Play</span><span data-k="rules" tabindex="0">ⓘ Rules</span><span data-k="bsp" tabindex="0">☐ BSP</span><span data-k="matched" tabindex="0">Matched: <b>AUD 184,512</b></span></div>
+    <div class="tbl"><table class="bf">
+    <tr><td data-k="runners" tabindex="0" class="rn"><small>${BF.length} selections</small></td><td class="pcth" data-k="backbook" tabindex="0">${pct(bb)}</td><td class="lad-outer"></td><td class="bkh" data-k="backall" tabindex="0">Back all</td><td class="lyh" data-k="layall" tabindex="0">Lay all</td><td class="lad-outer"></td><td class="pcth" data-k="laybook" tabindex="0">${pct(lb)}</td></tr>
+    ${BF.map((r, i) => `<tr><td class="rn" data-k="runner" data-i="${i}" tabindex="0"><span class="nb"><b>${r.n}</b><small>(${r.bar})</small></span>${silkSvg(r.silk)}<span><b>${r.h}</b><br><small>${r.j}</small></span></td>${r.back.map((c, j) => cell("bk", i, j, c)).join("")}${r.lay.map((c, j) => cell("ly", i, j, c)).join("")}</tr>`).join("")}
+    <tr class="nr"><td class="rn" data-k="nr" tabindex="0"><span class="nb"><b>${BF_NR.n}</b><small>(${BF_NR.bar})</small></span>${silkSvg(BF_NR.silk)}<span><b>${BF_NR.h}</b><br><small>${BF_NR.j}</small></span></td><td colspan="6" data-k="nr" tabindex="0"><b>Non Runner</b> &nbsp;${BF_NR.rf}%, ${BF_NR.when}</td></tr></table></div>
+    <div class="explain" hidden></div>
+    <div class="out" style="margin-top:10px">${stat("Back book", pct(bb))}${stat("Lay book", pct(lb))}${stat("Midpoint total", pct((bb + lb) / 2), "hi")}</div>`);
+  const fmt = p => money(p);
+  b.addEventListener("click", e => {
+    const t = e.target.closest("[data-k]"); if (!t) return;
+    const k = t.dataset.k, i = +t.dataset.i, j = +t.dataset.j, r = BF[i];
+    const say = {
+      race: `<b>Race heading.</b> Start time, track, race number, distance and race type. Overseas races (like a US meeting) are listed alongside Australian ones.`,
+      wintab: `<b>Win tab.</b> The market for which horse finishes first. This is the one shown.`,
+      top3: `<b>Top 3 Finish.</b> A separate <b>place market</b> on the same race: back or lay a horse to finish in the first three. It has its own prices and its own (usually thinner) money.`,
+      inplay: `<b>Going In-Play.</b> The market stays open while the race is running. Prices then swing wildly with every stride. Unmatched bets are normally cancelled at the jump unless you choose otherwise.`,
+      bsp: `<b>BSP (Betfair Starting Price).</b> Tick this to have your bet settled at the starting price calculated at the jump, instead of a price you take now. BSP is a good "closing price" for measuring CLV (Chapter 8).`,
+      rules: `<b>Rules.</b> Each market's rules show its <b>Market Base Rate</b>: the commission charged on your net winnings in that market. For Australian racing it's about 7–10% depending on the state and code.`,
+      matched: `<b>Matched.</b> The total that backers and layers have already traded in this market. More money matched means more information in the prices and tighter gaps between back and lay. A small overseas race might have only $25,000 matched; a Saturday metro race can have millions.`,
+      runners: `<b>Selections.</b> The runners still in the market. Each row shows the saddlecloth number with the barrier in brackets underneath, the silks, the horse and its jockey.`,
+      backbook: `<b>${pct(bb)} (next to Back all).</b> Add 1 ÷ the <b>best back</b> price for every runner: ${BF.map(r => "1÷" + fp(bestB(r))).join(" + ")} = ${pct(bb)}. Backing every horse at the best prices would cost ${money(bb * 100)} to collect $100 whatever wins: a margin of only ${pct(bb - 1)}.`,
+      laybook: `<b>${pct(lb)} (next to Lay all).</b> The same sum with the <b>best lay</b> prices. It's under 100% because lay prices sit a little above back prices. Back book above 100% and lay book below means the "true" market sits in between. The further apart the two numbers, the thinner the market.`,
+      backall: `<b>Back all.</b> A button that adds a back bet on every runner to your bet slip at the best prices. Mostly used by traders; the percentage beside it tells you what doing that would cost.`,
+      layall: `<b>Lay all.</b> Adds a lay bet on every runner to your bet slip. The percentage beside it is the lay book.`,
+      runner: r && `<b>${r.h}</b>, number ${r.n}, barrier ${r.bar}, ridden by ${r.j}. Best back ${fmt(bestB(r))}, best lay ${fmt(bestL(r))}, so the exchange rates its chance between <b>${pct(1 / bestL(r))}</b> (1 ÷ lay) and <b>${pct(1 / bestB(r))}</b> (1 ÷ back). The midpoint, about <b>${pct((1 / bestL(r) + 1 / bestB(r)) / 2)}</b>, is a good estimate of the market's view.`,
+      bk: r && j >= 0 && (j === 2
+        ? `<b>Best back price: ${fmt(r.back[2][0])}</b> (the darker blue box, next to the middle), with <b>$${r.back[2][1]}</b> available. Clicking it backs ${r.h} to win: $10 here returns ${money(10 * r.back[2][0])} before commission, or an effective ${fmt(1 + (r.back[2][0] - 1) * 0.92)} after 8% commission. Want more than $${r.back[2][1]}? The rest is matched at the next price out (${fmt(r.back[1][0])}) or waits unmatched.`
+        : `<b>Back at ${fmt(r.back[j][0])}</b>, $${r.back[j][1]} available. A worse price than the best back (${fmt(r.back[2][0])}): it's further back in the queue of layers' offers.`),
+      ly: r && j >= 0 && (j === 0
+        ? `<b>Best lay price: ${fmt(r.lay[0][0])}</b> (the darker pink box), with <b>$${r.lay[0][1]}</b> of backers' money waiting. Laying means betting ${r.h} <b>loses</b>. Accept a $10 backer's stake and your liability is $10 × (${fp(r.lay[0][0])} − 1) = <b>${money(10 * (r.lay[0][0] - 1))}</b> if it wins; you collect $10 (less commission) if it loses. The gap to the best back (${fmt(r.back[2][0])}) is the spread.`
+        : `<b>Lay at ${fmt(r.lay[j][0])}</b>, $${r.lay[j][1]} available. A worse price for a layer than the best lay (${fmt(r.lay[0][0])}), because the liability is bigger.`),
+      nr: `<b>Non Runner ${BF_NR.rf}%, ${BF_NR.when}.</b> ${BF_NR.h} was scratched at that time. ${BF_NR.rf}% is its <b>reduction factor</b>, roughly its chance of winning when it was withdrawn. Bets on other runners matched before then have their prices cut by ${BF_NR.rf}%: a back bet matched at $10.00 becomes ${money(10 * (1 - BF_NR.rf / 100))}. It's the exchange version of a TAB deduction. Tiny percentages (like 0.5%) mean a rank outsider was scratched and barely anything changes.`
+    }[k];
+    if (say) explainer(b, say);
+  });
+};
+
+W.bfback = el => {
+  const b = box(el, "Exchange price after commission", `<div class="fields">${field("xb","Exchange back price ($)","5.00")}${field("xc","Commission (%)","8")}${field("xs","Stake ($)","10")}</div><div class="out" id="xbo"></div>`);
+  wire(b, () => {
+    const p = num($("#xb", b).value), c = num($("#xc", b).value) / 100, s = num($("#xs", b).value);
+    if (!(p > 1 && c >= 0 && c < 1)){ $("#xbo", b).innerHTML = ""; return; }
+    const prof = s * (p - 1), com = prof * c, eff = 1 + (p - 1) * (1 - c);
+    $("#xbo", b).innerHTML = stat("Profit before commission", money(prof)) + stat("Commission", money(com), "bad") + stat("You collect", money(s + prof - com)) +
+      stat("Effective price", money(eff), "hi") + stat("Implied chance (effective)", pct(1 / eff));
+  });
+};
+
+W.bflay = el => {
+  const b = box(el, "Lay calculator", `<div class="fields">${field("ll","Lay price ($)","5.00")}${field("ls","Backer's stake you accept ($)","20")}${field("lc","Commission (%)","8")}</div><div class="out" id="llo"></div>`);
+  wire(b, () => {
+    const L = num($("#ll", b).value), s = num($("#ls", b).value), c = num($("#lc", b).value) / 100;
+    if (!(L > 1 && s > 0 && c >= 0 && c < 1)){ $("#llo", b).innerHTML = ""; return; }
+    const liab = s * (L - 1), win = s * (1 - c);
+    $("#llo", b).innerHTML = stat("Liability (if it wins)", "−" + money(liab), "bad") + stat("Profit if it loses", "+" + money(win), "good") +
+      stat("Break-even: horse must lose more than", pct(liab / (liab + win))) + stat("Same as backing \"loses\" at", money(1 + win / liab), "hi") +
+      `<p class="note" style="grid-column:1/-1">Laying at ${money(L)} is worth it only if you think the horse wins less than ${pct(win / (liab + win))} of the time.</p>`;
+  });
+};
+
+const TAB = [
+  {n:1, h:"Paddock Poet",  bar:3, j:"K. Ashdown",   t:"M. Fenwick", wt:59,   form:"x2316", fw:2.80, fp:1.40, tw:2.50, tp:1.40, open:3.00},
+  {n:2, h:"Silver Rail",   bar:7, j:"L. Brennan a2",t:"D. Coyle",   wt:57.5, form:"14x21", fw:3.40, fp:1.60, tw:3.50, tp:1.60, open:3.20},
+  {n:3, h:"Morning Track", bar:1, j:"P. Ormond",    t:"S. Lytton",  wt:57,   form:"3x452", fw:5.00, fp:2.00, tw:5.00, tp:2.00, open:5.50},
+  {n:4, h:"Wet Weather",   bar:9, j:"R. Tamsin",    t:"M. Fenwick", wt:56,   form:"07x83", fw:8.00, fp:2.70, tw:7.10, tp:2.80, open:7.50},
+  {n:5, h:"Long Shadow",   bar:5, j:"A. Keel a3",   t:"J. Varga",   wt:55,   form:"6x900", fw:11.0, fp:3.40, tw:10.6, tp:3.60, open:11.0},
+  {n:6, h:"Back Straight", bar:2, j:"C. Hollis",    t:"S. Lytton",  wt:54,   form:"x0765", fw:18.0, fp:4.80, tw:17.0, tp:5.20, open:21.0},
+  {n:7, h:"Late Mail",     bar:6, j:"T. Quinlan",   t:"D. Coyle",   wt:54,   form:"–",     fw:0, scr:true}
+];
+W.tabscreen = el => {
+  const live = TAB.filter(r => !r.scr), fixB = live.reduce((a, r) => a + 1 / r.fw, 0), toteB = live.reduce((a, r) => a + 1 / r.tw, 0);
+  const fav = live.reduce((a, r) => r.fw < a.fw ? r : a);
+  const arrow = r => r.fw < r.open ? `<span class="up" data-k="fluc" data-i="${TAB.indexOf(r)}">▼ ${money(r.open)}</span>` : r.fw > r.open ? `<span class="down" data-k="fluc" data-i="${TAB.indexOf(r)}">▲ ${money(r.open)}</span>` : "";
+  const row = (r, i) => r.scr
+    ? `<tr class="scr-row"><td data-k="num" data-i="${i}">${r.n}</td><td colspan="5" data-k="scr" data-i="${i}" tabindex="0"><s>${r.h} (${r.bar})</s> <b class="scrtag">SCR</b></td></tr>`
+    : `<tr><td data-k="num" data-i="${i}" tabindex="0"><b>${r.n}</b></td>
+      <td class="who"><span data-k="name" data-i="${i}" tabindex="0"><b>${r.h}</b></span> <span data-k="bar" data-i="${i}" tabindex="0">(${r.bar})</span>${r === fav ? ` <span class="favtag" data-k="fav" data-i="${i}" tabindex="0">FAV</span>` : ""}<br>
+      <small><span data-k="jockey" data-i="${i}" tabindex="0">J: ${r.j}</span> · <span data-k="trainer" data-i="${i}" tabindex="0">T: ${r.t}</span> · <span data-k="wt" data-i="${i}" tabindex="0">${r.wt}kg</span> · <span data-k="form" data-i="${i}" tabindex="0">${r.form}</span></small></td>
+      <td class="fx" data-k="fw" data-i="${i}" tabindex="0"><b>${money(r.fw)}</b>${arrow(r)}</td><td class="fx" data-k="fp" data-i="${i}" tabindex="0">${money(r.fp)}</td>
+      <td class="tt" data-k="tw" data-i="${i}" tabindex="0">${money(r.tw)}</td><td class="tt" data-k="tp" data-i="${i}" tabindex="0">${money(r.tp)}</td></tr>`;
+  const b = box(el, "Practice TAB-style race card: tap anything", `
+    <div class="mkthead"><span data-k="race" tabindex="0">R5 · 1200 m · BM72 · Good 4</span><span data-k="pools" tabindex="0">One Pool</span></div>
+    <div class="tbl"><table class="tabc"><tr><th>#</th><th>Runner</th><th class="fxh" data-k="fixedhdr" tabindex="0">Fixed<br>Win</th><th class="fxh" data-k="fixedhdr" tabindex="0">Fixed<br>Plc</th><th class="tth" data-k="totehdr" tabindex="0">Tote<br>Win</th><th class="tth" data-k="totehdr" tabindex="0">Tote<br>Plc</th></tr>
+    ${TAB.map(row).join("")}</table></div>
+    <div class="explain" hidden></div>
+    <div class="out" style="margin-top:10px">${stat("Fixed Win column total", pct(fixB))}${stat("Tote Win column total", pct(toteB))}${stat("Tote takeout implied", pct(1 - 1 / toteB), "hi")}</div>`);
+  b.addEventListener("click", e => {
+    const t = e.target.closest("[data-k]"); if (!t) return;
+    const k = t.dataset.k, r = TAB[+t.dataset.i];
+    const say = {
+      race: `<b>Race details.</b> Race 5, 1200 m, a Benchmark 72 race (Chapter 1), on a track rated Good 4.`,
+      pools: `<b>One Pool.</b> Since 3 October 2026 the TAB's tote dividends come from one national pool (the old NSW TAB, SuperTAB and UniTAB pools merged), with a 14.5% win takeout. Older screens and Sky Racing graphics used to show three tote prices side by side.`,
+      fixedhdr: `<b>Fixed columns.</b> The TAB's own bookmaker prices. The number you see when your bet is accepted is the number you get. Add up 1 ÷ price down the Fixed Win column: ${pct(fixB)}, so the margin here is ${pct(fixB - 1)}.`,
+      totehdr: `<b>Tote columns.</b> <b>Approximate</b> dividends: what each $1 would pay if betting closed now. They'll keep moving until the jump and are final only after the race. Adding up 1 ÷ dividend gives ${pct(toteB)}, close to 1 ÷ (1 − 0.145) ≈ 117%: the takeout.`,
+      num: r && `<b>Saddlecloth number ${r.n}.</b> The number on the horse's saddlecloth, and the number you use for exotics and quaddies. It isn't the barrier.`,
+      name: r && `<b>${r.h}.</b> Tap through to its form guide for its full record, trials and gear changes (Chapters 2–3).`,
+      bar: r && `<b>Barrier ${r.bar}</b>, shown in brackets. Inside barriers (1–4) usually mean a shorter trip, especially at 1200 m (Chapter 1).`,
+      fav: r && `<b>Favourite.</b> The shortest-priced runner in the fixed market (${money(r.fw)}, about ${pct(1 / r.fw)} implied). The tote favourite can be a different horse.`,
+      jockey: r && `<b>Jockey: ${r.j}.</b> ${/ a\d/.test(r.j) ? `The <b>a${r.j.slice(-1)}</b> means an apprentice claiming ${r.j.slice(-1)} kg, so the horse carries ${r.wt - +r.j.slice(-1)} kg instead of ${r.wt} kg.` : "A senior jockey, so no weight claim."}`,
+      trainer: r && `<b>Trainer: ${r.t}.</b> Note when one stable has several runners in a race; trainer strike rates are a common model feature (Chapter 3).`,
+      wt: r && `<b>${r.wt} kg</b>: the weight allotted, before any apprentice claim. In a handicap like this, better horses carry more.`,
+      form: r && `<b>Form ${r.form}.</b> Last five runs, newest on the right; x is a spell, 0 is 10th or worse. Try it in the form decoder (Chapter 1).`,
+      fw: r && `<b>Fixed Win ${money(r.fw)}.</b> Locked in when you bet. $10 returns ${money(10 * r.fw)} if it wins. Implied chance ${pct(1 / r.fw)}, or ${pct(1 / r.fw / fixB)} once the ${pct(fixB - 1)} margin is removed. ${r.fw !== r.open ? `It opened at ${money(r.open)} and has ${r.fw < r.open ? "firmed" : "drifted"}.` : ""}`,
+      fp: r && `<b>Fixed Place ${money(r.fp)}.</b> Paid if it finishes in the places (1st–3rd with 8 or more starters). $10 returns ${money(10 * r.fp)}. With a late scratching, place terms and deductions follow the TAB Betting Rules.`,
+      tw: r && `<b>Tote Win, approx. ${money(r.tw)}.</b> If betting closed now, each $1 would pay ${money(r.tw)}. ${r.tw === r.fw ? `It's the same as the fixed ${money(r.fw)} right now, but only the fixed price is locked in.` : r.tw > r.fw ? `It's above the fixed ${money(r.fw)}, but late money often shortens tote dividends, so it may not stay there.` : `It's below the fixed ${money(r.fw)}: the crowd likes this horse more than the bookmakers do, so fixed pays more right now.`}`,
+      tp: r && `<b>Tote Place, approx. ${money(r.tp)}.</b> The place pool shared three ways (Chapter 9). The final figure also depends on which other horses fill the places.`,
+      fluc: r && `<b>Flucs.</b> Opened at ${money(r.open)}, now ${money(r.fw)}: ${r.fw < r.open ? "▼ firmed" : "▲ drifted"}. In probability terms that's ${pct(1 / r.open)} → ${pct(1 / r.fw)}. Chapter 8 explains how to tell a real move from a margin change.`,
+      scr: r && `<b>Scratched.</b> ${r.h} has been withdrawn. Bets on it are refunded. Fixed-odds winners on other runners may be paid with a deduction, and tote pools are simply recalculated without it.`
+    }[k];
+    if (say) explainer(b, say);
+  });
+};
+
+W.fixtote = el => {
+  const b = box(el, "Fixed vs tote vs exchange", `<div class="fields">${field("ft1","TAB fixed win ($)","4.80")}${field("ft2","Tote approx. win ($)","5.20")}${field("ft3","Exchange best back ($)","5.00")}${field("ft4","Exchange commission (%)","8")}${field("ft5","Stake ($)","10")}</div><div class="out" id="fto"></div>`);
+  wire(b, () => {
+    const f = num($("#ft1", b).value), t = num($("#ft2", b).value), x = num($("#ft3", b).value), c = num($("#ft4", b).value) / 100, s = num($("#ft5", b).value);
+    const xe = x > 1 && c >= 0 ? 1 + (x - 1) * (1 - c) : NaN;
+    const opts = [["TAB fixed", f, "locked in"], ["Tote (approx.)", t, "may move"], ["Exchange after commission", xe, "locked in if matched"]].filter(o => o[1] > 1);
+    if (!opts.length){ $("#fto", b).innerHTML = ""; return; }
+    const best = opts.reduce((a, o) => o[1] > a[1] ? o : a);
+    $("#fto", b).innerHTML = opts.map(o => stat(o[0] + " · " + o[2], money(o[1]) + (isFinite(s) ? " → " + money(s * o[1]) : ""), o === best ? "hi good" : "")).join("") +
+      `<p class="note" style="grid-column:1/-1">Best right now: <b>${best[0]}</b>. ${best[0].startsWith("Tote") ? "But the tote figure is only an estimate: if late money comes for this horse it will shrink, so a fixed price close to it is often the safer choice." : ""}</p>`;
+  });
+};
+
 /* ---------- views ---------- */
 function progress(){
   const n = CH.filter(c => state.done[c.id]).length;
@@ -1074,11 +1356,11 @@ function home(){
   return `<section class="hero"><h1>The Punter's Primer</h1>
     <p>How racehorses, training and race days work, and how odds and payouts are calculated, one chapter at a time. Each chapter has calculators to play with and a short quiz at the end.</p></section>
     <div class="big-idea">Odds are probabilities with a price tag attached.<small>Every price is a chance of winning, every payout is stake × price or a share of a pool, and every bet type is a way of slicing finishing orders.</small></div>
-    ${[[1,"Part 1 · The horse and the race","What decides how a horse runs."],[2,"Part 2 · Odds and money","How prices and payouts are worked out, and how to judge a bet."]].map(([pt, h, sub]) => `<h2 style="margin-top:28px">${h}</h2><p class="note" style="margin:0">${sub}</p>
+    ${[[1,"Part 1 · The horse and the race","What decides how a horse runs."],[2,"Part 2 · Odds and money","How prices and payouts are worked out, and how to judge a bet."],[3,"Part 3 · Reading real betting screens","Tap-through guides to the Betfair exchange and TAB race pages."]].map(([pt, h, sub]) => `<h2 style="margin-top:28px">${h}</h2><p class="note" style="margin:0">${sub}</p>
     <ol class="chapters">${CH.map((c, i) => c.part !== pt ? "" : `<li><a href="#${c.id}"><span class="saddle" style="background:${SILKS[i]}">${i + 1}</span>
       <span><h3>${c.title}</h3><p>${c.blurb}</p></span><span class="tick ${state.done[c.id] ? "done" : ""}">${state.done[c.id] ? "✓ Passed" : (c.quiz.length + " Qs")}</span></a></li>`).join("")}</ol>`).join("")}
     <div class="extras"><a href="#tools">All calculators<small>Every tool on one page</small></a><a href="#formulas">Formula sheet<small>All the maths at a glance</small></a><a href="#glossary">Glossary<small>Racing words, explained</small></a></div>
-    <p class="fineprint">For learning only. These are maths examples, not tips. Commission and margins mean the average bettor loses over time. If gambling stops being fun, call Gambling Help on 1800 858 858. Tote commission rates are Queensland's last legislated rates (2012); check the TAB's current figures. Part of <a href="${MAIN}">Dr Tom's Lexicon</a>.</p>`;
+    <p class="fineprint">For learning only. These are maths examples, not tips. Commission and margins mean the average bettor loses over time. If gambling stops being fun, call Gambling Help on 1800 858 858. Tote examples use 14.5% win takeout (TAB One Pool's win rate); other pools differ. Part of <a href="${MAIN}">Dr Tom's Lexicon</a>.</p>`;
 }
 function chapter(i){
   const c = CH[i], prev = CH[i - 1], next = CH[i + 1];
@@ -1106,7 +1388,7 @@ function quiz(i){
   }));
 }
 function tools(){
-  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["path","Price path","market"],["clv","Closing line value","market"],["clvlog","Bet log CLV summary","market"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"]];
+  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["path","Price path","market"],["clv","Closing line value","market"],["clvlog","Bet log CLV summary","market"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"],["bfscreen","Practice exchange screen","exchange"],["bfback","Exchange price after commission","exchange"],["bflay","Lay calculator","exchange"],["tabscreen","Practice TAB race card","tabcard"],["fixtote","Fixed vs tote vs exchange","tabcard"]];
   return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Toolbox</small><h1>All calculators</h1></div></div>
     <div class="toc">${list.map(([w, t]) => `<a href="#tools/${w}">${t}</a>`).join("")}</div>
     ${list.map(([w, t, id]) => { const ci = CH.findIndex(c => c.id === id); return `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`; }).join("")}`;
