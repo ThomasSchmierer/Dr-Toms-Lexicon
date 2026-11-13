@@ -138,7 +138,7 @@ input[type=range]{padding:0;accent-color:var(--turf)}
 <header class="top">
   <a class="brand" href="#" aria-label="The Punter's Primer, home"><span>Dr Tom's Lexicon</span><b>The Punter's Primer</b></a>
   <span class="grow"></span>
-  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/10</span></div>
+  <div class="prog" title="Chapter quizzes passed"><div class="bar"><div class="fill" id="pfill"></div></div><span id="ptext">0/11</span></div>
 </header>
 <main class="wrap" id="app" tabindex="-1"></main>
 
@@ -158,7 +158,7 @@ try { state = Object.assign(state, JSON.parse(localStorage.getItem(STORE) || "{}
 function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} }
 
 /* jockey-silk colours for chapter saddle cloths */
-const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b","#0e7c86","#8a2c55","#4a5a1e","#3b3f8f"];
+const SILKS = ["#c4302b","#1f5a43","#2456a6","#b98a2e","#6b3fa0","#d0611b","#0e7c86","#8a2c55","#4a5a1e","#3b3f8f","#a0522d"];
 
 /* ---------- content ---------- */
 const CH = [
@@ -173,7 +173,7 @@ const CH = [
 <ul>
 <li><b>Meeting:</b> one venue on one day, such as Eagle Farm on a Saturday. Usually 7 to 10 races.</li>
 <li><b>Metro, provincial, country:</b> metro meetings (Eagle Farm, Doomben) have the most prize money and the best horses; provincial (Toowoomba, Gold Coast, Sunshine Coast) and country meetings follow.</li>
-<li><b>Field:</b> the horses running in a race. Field size decides which bets are offered (Chapter 8).</li>
+<li><b>Field:</b> the horses running in a race. Field size decides which bets are offered (Chapter 9).</li>
 </ul>
 
 <h2>Race class: the ladder</h2>
@@ -209,7 +209,7 @@ const CH = [
 <p>A form string lists recent finishing positions, oldest on the left and newest on the right. <b>x</b> marks a spell (a break of three months or more) and <b>0</b> means 10th or worse. Type one in below to decode it.</p>
 <div data-w="form"></div>
 <p>Alongside the form line, a guide shows the horse's record at the track, at the distance and on each track condition, days since its last run, trainer and jockey, its last start (margin, weight, barrier, class) and a <b>speed map</b> predicting where it will settle in the run. Chapters 2 to 5 unpack all of these.</p>
-<div class="key"><b>For your model</b>Every one of these is a feature. Chapter 10 comes back to them.</div>`,
+<div class="key"><b>For your model</b>Every one of these is a feature. Chapter 11 comes back to them.</div>`,
  quiz:[
   {q:"In the form line x2316, what does the x mean?", o:["The horse fell","A spell of three months or more","It was scratched","It ran 10th or worse"], a:1, why:"x marks a spell. A 0 is what marks 10th or worse."},
   {q:"Which race is the highest class?", o:["BM78","Listed","Group 1","Maiden"], a:2, why:"Group 1 is the top of the ladder, above Group 2, Group 3 and Listed."},
@@ -368,7 +368,7 @@ const CH = [
 <ol>
 <li><b>Nominations:</b> trainers enter horses for races, often several days ahead.</li>
 <li><b>Weights and acceptances:</b> handicaps are set and trainers confirm their runners. The field and barriers are drawn.</li>
-<li><b>Scratchings:</b> horses withdrawn after acceptances. A <b>late scratching</b> on race day can trigger fixed-odds deductions (Chapter 8).</li>
+<li><b>Scratchings:</b> horses withdrawn after acceptances. A <b>late scratching</b> on race day can trigger fixed-odds deductions (Chapter 9).</li>
 <li><b>Mounting yard and parade:</b> horses are walked before the race. Experienced watchers look for condition and calm behaviour, and notice excessive sweating or agitation.</li>
 <li><b>The race</b>, then <b>correct weight</b> once jockeys weigh in and any protest is settled. Bets are paid after that.</li>
 </ol>
@@ -443,7 +443,7 @@ const CH = [
 <p><b>Takeout rates.</b> Queensland last set tote commission in regulation in 2012: about 14.5% win, 14.25% place, 14.75% quinella, 21% trifecta, 22.5% First Four and 20% quadrella. The operator has set its own rates since 2013, so check the TAB's current figures. The pattern holds: <b>exotics carry a bigger cut than win and place.</b></p>
 
 <h2>System 2: fixed odds (bookmakers)</h2>
-<p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 8). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
+<p>A bookmaker quotes a price, and the price you take is locked in, whatever the market does afterwards (late scratchings aside; see Chapter 9). The bookmaker estimates each horse's chance, scales the chances up so they total more than 100%, then adjusts as money comes in.</p>
 
 <h2>The overround</h2>
 <p>Add up the implied probabilities of every runner. The amount over 100% is the <b>overround</b>, the bookmaker's built-in margin. Edit the prices below and watch it change.</p>
@@ -462,7 +462,7 @@ const CH = [
 <li><b>Drifting:</b> the price lengthens. Money is going elsewhere, or there's a negative sign.</li>
 <li><b>Flucs:</b> the record of these moves, from opening price to starting price.</li>
 </ul>
-<div class="key"><b>Key idea</b>Late prices are usually more accurate than early ones, because information keeps arriving until the jump. Beating the final price consistently is hard.</div>
+<div class="key"><b>Key idea</b>Late prices are usually more accurate than early ones, because information keeps arriving until the jump. Beating the final price consistently is hard. Chapter 8 follows a market from open to jump.</div>
 
 <h2>Betting exchanges</h2>
 <p>On an exchange such as Betfair, punters bet against each other. You can <b>back</b> a horse to win or <b>lay</b> it (bet that it loses, acting as the bookie). The exchange charges commission on net winnings instead of building a margin into the price, so exchange prices near the jump are the closest thing to a margin-free market.</p>`,
@@ -471,6 +471,61 @@ const CH = [
   {q:"A market's implied probabilities add up to 112%. What's the overround?", o:["112%","88%","12%","1.12%"], a:2, why:"The excess over 100% is the overround: 12%."},
   {q:"On the tote, who sets the price?", o:["The TAB's traders","The stewards","The bettors, through how much they put on each horse","The trainer"], a:2, why:"The dividend is the net pool shared out by how the money was bet."},
   {q:"Why are prices at the jump usually more accurate than opening prices?", o:["Bookmakers are tired","More information and money have come in","The takeout drops","They aren't"], a:1, why:"Markets absorb news and informed money right up to the start."}
+ ]
+},
+{
+ id:"market", part:2, title:"The market's life cycle", blurb:"How prices move from open to jump, closing line value, and testing whether early prices are wrong.",
+ lead:"A fixed-odds price is a forecast that gets updated until the race jumps. If you can predict which way it will be updated, you're finding prices the market itself later agrees were wrong.",
+ body:`
+<h2>The timeline of a market</h2>
+<div class="tbl"><table><tr><th>Stage</th><th>What's happening</th><th>What it means for prices</th></tr>
+<tr><td><b>Open</b> (often days before, once fields and barriers are known)</td><td>Bookmakers frame prices from ratings and form. Little money has been bet.</td><td>Least accurate. Margins are often wider and bet limits lower.</td></tr>
+<tr><td><b>Middle</b> (the days in between)</td><td>Jockey bookings, gear changes, trial results and early money arrive.</td><td>Prices start to absorb public information.</td></tr>
+<tr><td><b>Race morning</b></td><td>Scratchings, track rating, rail position, weather. Prices are recalculated for the final field.</td><td>Large moves are common; deductions apply to earlier bets.</td></tr>
+<tr><td><b>Last hour to the jump</b></td><td>Most money arrives, including from professional bettors. Tote pools build.</td><td>Most accurate. Margins narrow and bet limits rise.</td></tr></table></div>
+<p>So the market gets more accurate over time. That means the <b>final price is the best available estimate of a horse's chance</b>, and the gap between an early price and the final price is a measure of how wrong the early price was.</p>
+
+<h2>Firming, drifting and the market total</h2>
+<p>A horse's price can move for two different reasons:</p>
+<ol>
+<li><b>Its chance changed</b>, in the market's view: money or news for or against it.</li>
+<li><b>The whole market changed:</b> the bookmaker trimmed its margin as the jump approached, or a scratching removed a runner.</li>
+</ol>
+<p>Only the first is information. To separate them, compare the horse's <b>margin-free</b> probability at each time (Chapter 7), not the raw price. A horse that goes from $5.00 in a 120% market to $4.60 in a 108% market has firmed more than its price suggests. The raw price shortened only 40 cents, but its margin-free chance rose from 16.7% to 20.1%, because the bookmaker was cutting its margin at the same time. The reverse also happens: a horse whose price holds steady while the margin shrinks has actually firmed.</p>
+<div data-w="path"></div>
+<div class="key"><b>Key idea</b>A "plunge" (a big, fast firm) usually reflects money from people who know something, or think they do. Plunges often turn out to be right, but not always, and by the time you see one the value has usually gone.</div>
+
+<h2>Closing line value (CLV)</h2>
+<p><b>Closing line value</b> compares the price you took with the final price. If you take $5.00 and the horse starts at $4.00, you beat the close.</p>
+<div class="formula">Raw CLV = Price taken ÷ Final price − 1<br>Edge vs close = p<sub>close</sub> × Price taken − 1</div>
+<p>Here p<sub>close</sub> is the margin-free probability at the jump. The second line asks: if the closing market was right, what was your bet worth on average?</p>
+<div data-w="clv"></div>
+<div class="key"><b>Why CLV matters</b>Profit takes thousands of bets to separate skill from luck (Chapter 10). CLV settles much faster, because every bet gives you a measurement, win or lose. Bettors who consistently beat the closing price tend to be the ones who profit in the long run.</div>
+
+<h2>Testing your opportunity</h2>
+<p>Your idea is that opening prices contain discrepancies that the market later corrects. That's testable with your timestamped prices:</p>
+<ol>
+<li>For each runner, record its margin-free probability at the open and at the close.</li>
+<li>The <b>move</b> is the close minus the open. That's what you're trying to predict.</li>
+<li>Using only information available at the open, can your model predict the direction of the move better than chance?</li>
+<li>Simulate betting at the open whenever your model's probability is above the opening price's. Measure the average CLV of those bets, then the profit.</li>
+<li>Check it holds across tracks, classes and price bands, not just among long shots (the favourite–longshot bias again).</li>
+</ol>
+<div data-w="clvlog"></div>
+
+<h2>Practical catches</h2>
+<ul>
+<li><b>Limits.</b> Early markets usually accept smaller bets, so an edge at the open may only be usable in small amounts.</li>
+<li><b>Restrictions.</b> Bookmakers watch for accounts that keep beating the closing price and often cut their limits. A real edge here is hard to use at scale with fixed-odds bookmakers.</li>
+<li><b>Deductions.</b> An early fixed-odds bet can be cut by deductions if a well-fancied horse is scratched later (Chapter 9).</li>
+<li><b>Tote is different.</b> On the tote you can't lock in an early price; your dividend is set at the jump. Some bookmakers offer products that pay the better of the tote or the top fluctuation, which changes the timing maths again.</li>
+<li><b>Data timing.</b> If your "opening price" was actually scraped hours after the open, your test overstates the edge available. Record exactly when every price was captured.</li>
+</ul>`,
+ quiz:[
+  {q:"When is a fixed-odds market usually most accurate?", o:["At the open","The day before","Close to the jump","After the race"], a:2, why:"Most information and money arrives late, so prices near the jump are the best estimates."},
+  {q:"You took $6.00 and the horse started at $4.50. What's your raw CLV?", o:["+33%","−25%","+1.50","+25%"], a:0, why:"6.00 ÷ 4.50 − 1 = 0.333, so +33%."},
+  {q:"A horse stays at $5.00 while the market total falls from 120% to 110%. What happened to its margin-free chance?", o:["It fell","It stayed the same","It rose","You can't tell"], a:2, why:"20% ÷ 1.20 = 16.7% before; 20% ÷ 1.10 = 18.2% after. Holding its price while the margin shrinks means the market rates it more likely."},
+  {q:"Why is CLV useful for testing a strategy?", o:["It guarantees profit","It gives a measurement on every bet, so it settles much faster than profit","It removes the takeout","Bookmakers publish it"], a:1, why:"Profit needs thousands of bets to beat luck; CLV measures each bet against the market's best estimate."}
  ]
 },
 {
@@ -592,7 +647,7 @@ const CH = [
  lead:"To find mispriced horses, your model needs probabilities that add to 100% in each race, judged against the margin-free market. A ranking alone can't tell you whether a price is too long.",
  body:`
 <h2>From scores to race probabilities</h2>
-<p>Most models give each horse a score. The standard way to turn scores into win probabilities within a race is the <b>softmax</b> (in racing, the conditional logit, made famous by Bill Benter's Hong Kong model). It guarantees each race's probabilities sum to 100%, and Harville (Chapter 8) then gives every finishing order.</p>
+<p>Most models give each horse a score. The standard way to turn scores into win probabilities within a race is the <b>softmax</b> (in racing, the conditional logit, made famous by Bill Benter's Hong Kong model). It guarantees each race's probabilities sum to 100%, and Harville (Chapter 9) then gives every finishing order.</p>
 <div class="formula">pᵢ = e^(sᵢ) ÷ Σ e^(sⱼ) &nbsp;&nbsp;(over the horses in the race)</div>
 <div data-w="softmax"></div>
 
@@ -659,7 +714,7 @@ const GLOSSARY = [
  ["Leader","The horse that sets the pace."],["On-pace","Settling just behind the leader."],["Backmarker","A horse that settles near the back."],
  ["Sectionals","Times for parts of a race, such as the last 600 m."],["Length","A margin of about 2.4 m."],["Rail position","How far the running rail is moved out from its innermost spot."],
  ["Track bias","When one part of the track is faster on a given day."],["Stewards","Officials who police racing and report on each race."],
- ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."]
+ ["Bleeding","Blood from the nostrils after exercise; brings strict bans."],["Late scratching","A horse withdrawn on race day."],["Closing line value (CLV)","How the price you took compares with the final price."],["Opening price","The first price a bookmaker offers."],["Plunge","A big, fast firm in a horse's price on heavy betting."],["Starting price (SP)","The final price at the jump."]
 ];
 
 const FORMULAS = [
@@ -670,7 +725,7 @@ const FORMULAS = [
  ["Expected value per $1","p × odds − 1","0.30 × 4 − 1 = +0.20"],["Kelly fraction","(p × odds − 1) ÷ (odds − 1)","0.20 ÷ 3 = 6.7%"],
  ["Break-even strike rate","1 ÷ average odds","1 ÷ 4 = 25%"],["Flexi %","Outlay ÷ combinations","$30 ÷ 60 = 50%"],
  ["Exacta probability","pᵢ × pⱼ ÷ (1 − pᵢ)","0.325 × 0.26 ÷ 0.675 = 12.5%"],["Multi price","Product of leg prices","2.80 × 3.50 × 2.00 = $19.60"],
- ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"],["Average speed","Distance ÷ time (× 3.6 for km/h)","1200 ÷ 70 × 3.6 = 61.7 km/h"],["Time per 200 m","200 ÷ speed in m/s","200 ÷ 17.14 = 11.67 s"],["Lengths to metres","Lengths × 2.4","2 × 2.4 = 4.8 m"],["Strike rate","Wins ÷ starts","3 ÷ 8 = 37.5%"]
+ ["Return after deduction","Stake + winnings × (1 − deduction)","$40 + $40 × 0.8 = $72"],["Average speed","Distance ÷ time (× 3.6 for km/h)","1200 ÷ 70 × 3.6 = 61.7 km/h"],["Time per 200 m","200 ÷ speed in m/s","200 ÷ 17.14 = 11.67 s"],["Lengths to metres","Lengths × 2.4","2 × 2.4 = 4.8 m"],["Strike rate","Wins ÷ starts","3 ÷ 8 = 37.5%"],["Raw CLV","Price taken ÷ final price − 1","5.00 ÷ 4.00 − 1 = +25%"],["Edge vs close","p(close, margin-free) × price taken − 1","0.227 × 5.00 − 1 = +13.6%"]
 ];
 
 /* ---------- widgets ---------- */
@@ -872,10 +927,10 @@ W.sim = el => {
       <line x1="${pad}" x2="${Wd - 8}" y1="${Y(0)}" y2="${Y(0)}" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
       <line x1="${X(0)}" x2="${X(n)}" y1="${Y(0)}" y2="${Y(ev)}" stroke="currentColor" stroke-opacity=".7" stroke-width="2.5" stroke-dasharray="8 5"/>
       ${lines}
-      <text x="4" y="${Y(hi) + 4}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">${hi >= 0 ? "+" : ""}${Math.round(hi)}</text>
-      <text x="4" y="${Y(lo)}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">${Math.round(lo)}</text>
-      <text x="4" y="${Y(0) + 4}" font-size="12" fill="currentColor" font-family="IBM Plex Mono">0</text>
-      <text x="${Wd - 10}" y="${H - 4}" font-size="12" fill="currentColor" text-anchor="end" font-family="IBM Plex Mono">bet ${n}</text></svg>
+      <text x="4" y="${Y(hi) + 4}" font-size="19" fill="currentColor" font-family="IBM Plex Mono">${hi >= 0 ? "+" : ""}${Math.round(hi)}</text>
+      <text x="4" y="${Y(lo)}" font-size="19" fill="currentColor" font-family="IBM Plex Mono">${Math.round(lo)}</text>
+      <text x="4" y="${Y(0) + 4}" font-size="19" fill="currentColor" font-family="IBM Plex Mono">0</text>
+      <text x="${Wd - 10}" y="${H - 4}" font-size="19" fill="currentColor" text-anchor="end" font-family="IBM Plex Mono">bet ${n}</text></svg>
       <p class="note" style="margin-top:4px">Profit in $1 units. The dashed diagonal is the expected result; each coloured line is one season.</p>`;
     const finals = paths.map(x => x[n]);
     $("#sout", b).innerHTML = stat("Expected profit", (ev >= 0 ? "+" : "") + ev.toFixed(1) + " units", "hi") + stat("Best season", "+" + Math.max(...finals).toFixed(1).replace("+-", "-")) +
@@ -947,6 +1002,69 @@ W.speed = el => {
   });
 };
 
+
+W.path = el => {
+  const b = box(el, "Price path: raw price vs margin-free chance", `<p class="note" style="margin-top:0">One line per time point: <b>label, price, market total %</b>.</p>
+    <label class="f">Price history<textarea id="pth" rows="5" style="font:500 15px var(--mono);padding:9px 10px;border-radius:9px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);width:100%">Open, 5.00, 120
+Wed, 5.00, 116
+Race morning, 4.80, 112
+1 hour, 4.60, 110
+Jump, 4.60, 108</textarea></label><div class="chart" id="pch" style="margin-top:12px"></div><div class="out" id="pto"></div>`);
+  $("#pth", b).addEventListener("input", draw); draw();
+  function draw(){
+    const pts = $("#pth", b).value.split("\n").map(l => l.split(",").map(x => x.trim())).filter(r => r.length >= 2 && num(r[1]) > 1)
+      .map(([lab, pr, mt]) => { const o = num(pr), t = num(mt) / 100; return {lab, o, raw: 1 / o, mf: t > 0 ? (1 / o) / t : 1 / o}; });
+    if (pts.length < 2){ $("#pch", b).innerHTML = ""; $("#pto", b).innerHTML = `<p class="note">Enter at least two lines.</p>`; return; }
+    const Wd = 600, H = 240, padL = 52, padR = 12, all = pts.flatMap(p => [p.raw, p.mf]), lo = Math.min(...all) * 0.9, hi = Math.max(...all) * 1.08;
+    const X = i => padL + i / (pts.length - 1) * (Wd - padL - padR), Y = v => 12 + (hi - v) / (hi - lo) * (H - 44);
+    const line = (k, col, dash) => `<polyline fill="none" stroke="${col}" stroke-width="3" ${dash ? 'stroke-dasharray="7 5"' : ""} points="${pts.map((p, i) => X(i) + "," + Y(p[k])).join(" ")}"/>` +
+      pts.map((p, i) => `<circle cx="${X(i)}" cy="${Y(p[k])}" r="4" fill="${col}"/>`).join("");
+    const ticks = [lo, (lo + hi) / 2, hi].map(v => `<text x="4" y="${Y(v) + 4}" font-size="19" fill="currentColor" font-family="IBM Plex Mono">${(v * 100).toFixed(0)}%</text>`).join("");
+    const labs = pts.map((p, i) => `<text x="${X(i)}" y="${H - 8}" font-size="19" fill="currentColor" text-anchor="${i === 0 ? "start" : i === pts.length - 1 ? "end" : "middle"}">${p.lab.replace(/</g, "")}</text>`).join("");
+    $("#pch", b).innerHTML = `<svg viewBox="0 0 ${Wd} ${H}" role="img" aria-label="Implied and margin-free probability over time">${ticks}${line("raw", "#b98a2e", true)}${line("mf", "#2f7d58", false)}${labs}</svg>
+      <p class="note" style="margin-top:4px"><span style="color:#b98a2e">- - Raw implied (1 ÷ price)</span> &nbsp; <span style="color:#2f7d58">— Margin-free chance</span></p>`;
+    const a = pts[0], z = pts[pts.length - 1], rawMove = z.raw - a.raw, mfMove = z.mf - a.mf;
+    $("#pto", b).innerHTML = stat("Price", money(a.o) + " → " + money(z.o)) + stat("Raw implied move", (rawMove >= 0 ? "+" : "") + (rawMove * 100).toFixed(1) + " pts") +
+      stat("Margin-free move", (mfMove >= 0 ? "+" : "") + (mfMove * 100).toFixed(1) + " pts", "hi " + (mfMove >= 0 ? "good" : "bad")) +
+      stat("Verdict", Math.abs(mfMove) < 0.01 ? "Steady" : mfMove > 0 ? "Firmed" : "Drifted");
+  }
+};
+
+W.clv = el => {
+  const b = box(el, "Closing line value calculator", `<div class="fields">${field("ct","Price you took ($)","5.00")}${field("cf","Final price ($)","4.00")}${field("cm","Final market total (%)","110")}${field("cs","Stake ($)","10")}</div><div class="out" id="co"></div>`);
+  wire(b, () => {
+    const t = num($("#ct", b).value), f = num($("#cf", b).value), m = num($("#cm", b).value) / 100, s = num($("#cs", b).value);
+    if (!(t > 1 && f > 1 && m > 0)){ $("#co", b).innerHTML = `<p class="note">Prices must be above $1.00.</p>`; return; }
+    const raw = t / f - 1, pc = (1 / f) / m, edge = pc * t - 1;
+    $("#co", b).innerHTML = stat("Raw CLV", (raw >= 0 ? "+" : "") + pct(raw), raw >= 0 ? "good" : "bad") + stat("Margin-free chance at close", pct(pc)) +
+      stat("Fair closing price", money(1 / pc)) + stat("Edge vs close", (edge >= 0 ? "+" : "") + pct(edge), "hi " + (edge >= 0 ? "good" : "bad")) +
+      stat("Expected profit on stake", isFinite(s) ? (edge >= 0 ? "+" : "") + money(s * edge) : "–") +
+      `<p class="note" style="grid-column:1/-1">${edge > 0 ? "If the closing market was right, this bet was worth more than it cost." : raw > 0 ? "You beat the raw closing price, but not by enough to cover the margin: against the fair closing price this bet was still negative." : "The market moved against you: the closing market rated this horse less likely than your price implied."}</p>`;
+  });
+};
+
+W.clvlog = el => {
+  const b = box(el, "Bet log: are you beating the close?", `<p class="note" style="margin-top:0">One bet per line: <b>price taken, final price, won (1 or 0)</b>. Paste your simulated bets to summarise them.</p>
+    <label class="f">Bets<textarea id="cl" rows="7" style="font:500 15px var(--mono);padding:9px 10px;border-radius:9px;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);width:100%">5.00, 4.20, 0
+3.50, 3.10, 1
+8.00, 9.00, 0
+2.80, 2.50, 0
+12.00, 9.50, 0
+4.40, 4.00, 1
+6.50, 7.00, 0</textarea></label>${field("cmt","Typical closing market total (%)","110")}<div class="out" id="clo" style="margin-top:12px"></div>`);
+  wire(b, () => {
+    const m = num($("#cmt", b).value) / 100, rows = $("#cl", b).value.split("\n").map(l => l.split(",").map(num)).filter(r => r[0] > 1 && r[1] > 1);
+    if (!rows.length || !(m > 0)){ $("#clo", b).innerHTML = `<p class="note">Add at least one line like 5.00, 4.20, 0.</p>`; return; }
+    const n = rows.length, beat = rows.filter(r => r[0] > r[1]).length, avgRaw = rows.reduce((a, r) => a + r[0] / r[1] - 1, 0) / n,
+      avgEdge = rows.reduce((a, r) => a + ((1 / r[1]) / m) * r[0] - 1, 0) / n, settled = rows.filter(r => r[2] === 0 || r[2] === 1),
+      profit = settled.reduce((a, r) => a + (r[2] === 1 ? r[0] - 1 : -1), 0);
+    $("#clo", b).innerHTML = stat("Bets", n) + stat("Beat the close", beat + " of " + n + " (" + pct(beat / n, 0) + ")") +
+      stat("Average raw CLV", (avgRaw >= 0 ? "+" : "") + pct(avgRaw)) + stat("Average edge vs fair close", (avgEdge >= 0 ? "+" : "") + pct(avgEdge), "hi " + (avgEdge >= 0 ? "good" : "bad")) +
+      stat("Actual profit (units)", (profit >= 0 ? "+" : "") + profit.toFixed(2)) + stat("Actual ROI", settled.length ? (profit >= 0 ? "+" : "") + pct(profit / settled.length) : "–") +
+      `<p class="note" style="grid-column:1/-1">With only ${n} bets, actual profit is mostly luck. The average edge against the fair closing price is the more reliable signal; watch whether it stays positive as the log grows into the hundreds.</p>`;
+  });
+};
+
 /* ---------- views ---------- */
 function progress(){
   const n = CH.filter(c => state.done[c.id]).length;
@@ -988,7 +1106,7 @@ function quiz(i){
   }));
 }
 function tools(){
-  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"]];
+  const list = [["form","Form line decoder","meeting"],["age","Racing age","horse"],["record","Record reader","training"],["speed","Speed and sectionals","pace"],["odds","Odds converter","odds"],["market","Market builder","setting"],["tote","Tote win pool","setting"],["path","Price path","market"],["clv","Closing line value","market"],["clvlog","Bet log CLV summary","market"],["place","Tote place dividend","payouts"],["ew","Each way","payouts"],["exotic","Exotics and flexi","payouts"],["harville","Harville exotic pricing","payouts"],["multi","Multis","payouts"],["deduct","Deductions","payouts"],["ev","Expected value and Kelly","value"],["sim","Variance simulator","value"],["softmax","Softmax","model"]];
   return `<a class="back" href="#">← All chapters</a><div class="ch-head"><div><small>Toolbox</small><h1>All calculators</h1></div></div>
     <div class="toc">${list.map(([w, t]) => `<a href="#tools/${w}">${t}</a>`).join("")}</div>
     ${list.map(([w, t, id]) => { const ci = CH.findIndex(c => c.id === id); return `<div id="t-${w}"><div data-w="${w}"></div><p class="note" style="margin-top:-12px">Explained in <a href="#${id}">Chapter ${ci + 1}: ${CH[ci].title}</a>.</p></div>`; }).join("")}`;
