@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -68,6 +68,16 @@
    "scope": "year",
    "views": 7411173,
    "year": ""
+  },
+  "2026-11-18": {
+   "w": "vagrancy",
+   "line": "…up the delta, we got busted for <mark>vagrancy</mark>. Them white sheriffs take us down to…",
+   "src": "Sinners",
+   "kind": "film",
+   "rank": 11,
+   "scope": "year",
+   "views": 7260545,
+   "year": "2025"
   }
  }
 }

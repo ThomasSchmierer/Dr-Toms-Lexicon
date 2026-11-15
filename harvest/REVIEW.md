@@ -1,16 +1,16 @@
-# Word review (2026-11-14)
+# Word review (2026-11-15)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4266 words (3239 confirmed by both dictionaries)
-- **Settled by a tie-break:** 92 (listed below if you want to spot-check them)
+- **Approved:** 4298 words (3261 confirmed by both dictionaries)
+- **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 16882
-- **Already in the game, or only in books:** 10336 (these still get cross-references)
-- **Words used in more than one show:** 1871
+- **Rejected:** 17075
+- **Already in the game, or only in books:** 10322 (these still get cross-references)
+- **Words used in more than one show:** 1902
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -18,16 +18,19 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 
 - **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing, The Works of Edgar Allan Poe
 - **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
+- **trifle**: A Doll's House, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
 - **smother**: Community, Heroes, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
 - **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Deadpool & Wolverine, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
 - **euphemism**: Breaking Bad, Bunheads, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
 - **untie**: Backrooms, Dark, Frasier, Malcolm in the Middle, Poems by Emily Dickinson, Spider-Man, The Gentlemen, The Simpsons, The West Wing, The Young Ones, Toy Story 5, Wednesday
 - **dangle**: Buffy the Vampire Slayer, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
+- **sneer**: Game of Thrones, Hereditary, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, The Works of Edgar Allan Poe, Wednesday
 - **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, The Day Today, The Great Gatsby, The Works of Edgar Allan Poe, Will & Grace
 - **flunk**: Breaking Bad, Buffy the Vampire Slayer, Community, Dawson's Creek, Frasier, Grey's Anatomy, M*A*S*H, Malcolm in the Middle, Spider-Man, The Golden Girls, The Simpsons
 - **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
-- **sneer**: Game of Thrones, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, The Works of Edgar Allan Poe, Wednesday
+- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Godfather, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Withnail and I
+- **gibberish**: Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It
 - **scoff**: Frankenstein, Frasier, Gilmore Girls, Invincible, QI, Spaced, Star Trek: The Next Generation, The Thick of It, The Works of Edgar Allan Poe, VisionQuest
 - **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist, The Works of Edgar Allan Poe
 - **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Lady with the Dog and Other Stories, The Rookie, The Works of Edgar Allan Poe
@@ -37,9 +40,9 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
 - **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, VisionQuest
 - **snicker**: Game of Thrones, M*A*S*H, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Golden Girls, The Simpsons, The West Wing, Wings
+- **clench**: America's Next Top Model, Get Him to the Greek, House, QI, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe
 - **nibble**: A Bit of Fry and Laurie, A Doll's House, Blackadder, Cheers, Futurama, The Great Gatsby, The Vicar of Dibley, The Works of Edgar Allan Poe, Zootopia 2
 - **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons
-- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Withnail and I
 - **squander**: American Horror Story, Breaking Bad, Community, Interview with the Vampire, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, The Works of Edgar Allan Poe, VisionQuest
 - **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Twin Peaks
 - **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
@@ -47,15 +50,12 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **murmur**: M*A*S*H, Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The Works of Edgar Allan Poe
 - **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist, The Works of Edgar Allan Poe
 - **cower**: American Horror Story, Dawson's Creek, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
+- **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, Spider-Man 3, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
 - **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
 - **distasteful**: Boston Legal, Game of Thrones, Poems of Gerard Manley Hopkins, Rumpole of the Bailey, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, To Catch a Predator
 - **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
 - **electrocute**: 30 Rock, Community, Ghosts, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
 - **blurt**: Community, Futurama, Grey's Anatomy, Parks and Recreation, Pushing Daisies, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Simpsons
-- **stifle**: A Doll's House, American Horror Story, Futurama, Gilmore Girls, South Park, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The Works of Edgar Allan Poe
-- **unfathomable**: 28 Years Later, A Doll's House, Doctor Strange in the Multiverse of Madness, Poems of Gerard Manley Hopkins, South Park, The Crown, The Great Gatsby, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe
-- **cobweb**: A Bit of Fry and Laurie, Black Books, Grey's Anatomy, Poems by Emily Dickinson, Spider-Man, The Day Today, The Lady with the Dog and Other Stories, The Sopranos
-- **obsess**: Frasier, Gilmore Girls, Grey's Anatomy, Heroes, Peep Show, The Amazing Digital Circus, The Mentalist, The White Lotus
 
 ## Settled by a tie-break
 
@@ -86,6 +86,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | eskimo | A member of a people inhabiting the Arctic (northern Canada or Greenland or Alaska or eastern Siberi | only WordNet has it, so it uses WordNet's meaning |
 | euclidean | Relating to geometry as developed by Euclid. | only WordNet has it, so it uses WordNet's meaning |
 | filicide | The killing of one's own child. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| flack | A publicist, a publicity agent. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | forrad | Forehead. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | francophile | An admirer of France and everything French. | only WordNet has it, so it uses WordNet's meaning |
 | garotte | An instrument of execution for execution by strangulation. | only WordNet has it, so it uses WordNet's meaning |
@@ -143,6 +144,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | snark | An attitude or expression of mocking irreverence and sarcasm. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | speedster | One who is noted for being very fast. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | stilton | English blue cheese. | only WordNet has it, so it uses WordNet's meaning |
+| twink | One or more very small, short bursts of light. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | unambiguously | In a manner that is not ambiguous; leaving no doubt; clearly. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | unflagging | Never tiring or lacking energy; without rest; without slowing. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | unmarketable | Not marketable. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
@@ -160,21 +162,21 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4411 |
-| not in either dictionary (made up, a name or a typo) | 2950 |
-| fragment of a longer word or a contraction | 2625 |
-| everyday word | 2515 |
+| an everyday word with a prefix or suffix | 4451 |
+| not in either dictionary (made up, a name or a typo) | 3011 |
+| fragment of a longer word or a contraction | 2685 |
+| everyday word | 2528 |
 | not a whole word in the quote | 1905 |
-| not an English word (foreign or a name) | 616 |
+| not an English word (foreign or a name) | 621 |
 | an everyday object, animal or food | 484 |
-| only heard in lines with swearing | 424 |
-| rude or upsetting meaning | 345 |
-| rude or upsetting | 237 |
-| a name, not a word | 117 |
-| a misspelling, abbreviation or contraction | 81 |
+| only heard in lines with swearing | 426 |
+| rude or upsetting meaning | 347 |
+| rude or upsetting | 240 |
+| a name, not a word | 121 |
+| a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
 | body part | 46 |
-| a name (only capitalised in the dictionary) | 27 |
+| a name (only capitalised in the dictionary) | 28 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
 | a contraction | 2 |
@@ -184,6 +186,38 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| krantz | An encircling or overhanging wall of rock. | The Life of Chuck |
+| varicose | Abnormally swollen or knotty. | Get Him to the Greek, Veep |
+| dishrag | A cloth for washing dishes. | The Shining |
+| pandemonium | A state of extreme confusion and disorder. | Get Him to the Greek |
+| blaspheme | Utter obscenities or profanities. | The Passion of the Christ |
+| huggable | Capable of, or suitable for, being hugged. | Toy Story 3 |
+| unequivocal | Admitting of no doubt or misunderstanding; having only one meaning or interpretation and leading to only one c | Clueless, The Works of Edgar Allan Poe |
+| unsee | To undo the act of seeing something; to erase the memory or otherwise reverse the effect of having seen someth | The Gentlemen |
+| procurator | A person authorized to act for another. | The Passion of the Christ |
+| ticklish | Difficult to handle; requiring great tact. | Get Him to the Greek |
+| caporegime | A high-ranking member of a crime family in the Mafia who heads a "crew" of soldiers and has significant social | The Godfather |
+| trifle | Consider not very seriously. | A Doll's House, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
+| cinematographer | A photographer who operates a movie camera. | Spider-Man 3 |
+| razzmatazz | Any exciting and complex play intended to confuse (dazzle) the opponent. | Get Him to the Greek |
+| seclusion | The quality of being secluded from the presence or view of others. | Poems by Emily Dickinson, The Shining, The Works of Edgar Allan Poe |
+| simulcast | A broadcast that is carried simultaneously by radio and television (or by FM and AM radio). | Get Him to the Greek |
+| tromp | To tread heavily, especially to crush underfoot. | The Nightmare Before Christmas |
+| malapropism | The unintentional misuse of a word by confusion with one that sounds similar. | Glass Onion: A Knives Out Mystery |
+| aerobically | In an aerobic manner. | Clueless |
+| scrumptious | Extremely pleasing to the sense of taste. | The Nightmare Before Christmas |
+| selah | A pause or rest of a contemplative nature. | East of Eden |
+| twink | One or more very small, short bursts of light. | Clueless, Veep |
+| aberration | A state or condition markedly different from the norm. | Poems of Gerard Manley Hopkins, The Amazing Spider-Man |
+| affable | Diffusing warmth and friendliness. | Get Him to the Greek |
+| debonair | Having a sophisticated charm. | Poems by Emily Dickinson, The Gentlemen |
+| taut | Pulled or drawn tight. | Get Him to the Greek |
+| slushie | A flavored frozen drink made with ice crystals. | Heathers |
+| savant | Someone who has been admitted to membership in a scholarly field. | Get Him to the Greek, The Lady with the Dog and Other Stories |
+| dramatize | Put into dramatic form. | Spider-Man 3 |
+| freethinker | A person who believes that God created the universe and then abandoned it. | Dead Poets Society |
+| finocchio | Aromatic bulbous stem base eaten cooked or raw in salads. | The Godfather |
+| flack | A publicist, a publicity agent. | Spider-Man 3 |
 | anabolic | Of or related to the synthetic phase of metabolism. | Withnail and I |
 | levitate | Cause to rise in the air and float, as if in defiance of gravity. | Doctor Strange in the Multiverse of Madness |
 | dictation | An authoritative direction or instruction to do something. | Amadeus, The Importance of Being Earnest, The Works of Edgar Allan Poe |
@@ -211,7 +245,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | epistle | A specially long, formal letter. | Withnail and I |
 | unreachable | Inaccessibly located or situated. | Spider-Man |
 | self-abnegation | Renunciation of your own interests in favor of the interests of others. | Homeland |
-| docile | Willing to be taught or led or supervised or directed. | Poems by Emily Dickinson, The Mandalorian |
+| docile | Willing to be taught or led or supervised or directed. | Poems by Emily Dickinson, Spider-Man 3, The Mandalorian |
 | multiversal | Of or pertaining to the multiverse. | Doctor Strange in the Multiverse of Madness |
 | kaboom | The sound of an explosion, typically seen in comic strips or heard in a light-hearted conversation. | Spider-Man |
 | reenergize | To energize again or anew. | Toy Story |
@@ -243,7 +277,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | mauve | A moderate purple. | Withnail and I |
 | ail | Be ill or unwell. | Homeland, Poems by Emily Dickinson |
 | caftan | A woman's dress style that imitates the caftan cloaks worn by men in the Near East. | Withnail and I |
-| symbiote | An organism that lives in a symbiotic relationship. | Spider-Man |
+| symbiote | An organism that lives in a symbiotic relationship. | Spider-Man, Spider-Man 3 |
 | egoism | (ethics) the theory that the pursuit of your own welfare in the basis of morality. | Spider-Man, The Lady with the Dog and Other Stories |
 | chartreuse | Aromatic green or yellow liqueur flavored with orange peel and hyssop and peppermint oils; made at monastery n | Coraline |
 | recombinator | Anything that serves to recombine a set of elements. | Spider-Man |
@@ -296,41 +330,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | chrissakes | Used to express annoyance or frustration. | The Sopranos |
 | tighty whities | Men's or boys' traditionally white briefs. | Dawson's Creek |
 | gelatinous | Thick like gelatin. | South Park, The Works of Edgar Allan Poe |
-| holier-than-thou | Excessively or hypocritically pious. | Buffy the Vampire Slayer, Dawson's Creek |
+| holier-than-thou | Excessively or hypocritically pious. | Buffy the Vampire Slayer, Dawson's Creek, Get Him to the Greek |
 | celeb | A celebrity; a famous person or one who is celebrated by others. | South Park |
 | mummify | Preserve while making lifeless. | South Park |
 | dreckitude | The quality of being dreck (junk, garbage). | America's Next Top Model |
 | triplicate | One of three copies; any of three things that correspond to one another exactly. | M*A*S*H |
 | woozy | Having or causing a whirling sensation; liable to falling. | Will & Grace |
-| perishingly | Extremely. | The Games |
-| noodlehead | Fool, imbecile. | The Golden Girls |
-| dewy-eyed | Exhibiting childlike simplicity and credulity. | The Games |
-| souffle | Light fluffy dish of egg yolks and stiffly beaten egg whites mixed with e.g. cheese or fish or fruit. | The Golden Girls |
-| m'kay | —an expression of acknowledgment or affirmation, now sometimes used in an ironic or condescending sense. | South Park |
-| pilfer | Make off with belongings of others. | M*A*S*H |
-| menopausal | Of or relating to the menopause. | The Sopranos |
-| tinkle | Make or emit a high sound. | South Park, The Lady with the Dog and Other Stories |
-| pwn | To own, to defeat or dominate (someone or something, especially a game or someone playing a game). | South Park |
-| roomba | A robotic vacuum cleaner. | Bunheads |
-| regress | Go back to a previous state. | South Park |
-| gaffer | An elderly man. | America's Next Top Model |
-| impermeable | Preventing especially liquids to pass or diffuse through. | The Sopranos |
-| interjection | An abrupt emphatic exclamation expressing emotion. | M*A*S*H |
-| thermonuclear | Using nuclear weapons based on fusion as distinguished from fission. | The Games |
-| glibness | A kind of fluent easy superficiality. | The Mentalist |
-| pushmi-pullyu | Conflicting or contradictory. | The Games |
-| donner | One who dons (something). | South Park |
-| nonchalantness | Nonchalance. | M*A*S*H |
-| wistful | Showing pensive sadness. | The Mentalist |
-| vilify | Spread negative information about. | South Park |
-| sheeple | People who are perceived as conforming unquestioningly to authority or mainstream beliefs. | South Park |
-| indoctrinate | Teach doctrines to; teach uncritically. | Evil Dead Rise |
-| moistener | A device that dampens or moistens something. | The Golden Girls |
-| stickup | Robbery at gunpoint. | Ghosts |
-| mouthwatering | Causing one to salivate. | M*A*S*H |
-| urchin | Poor and often mischievous city child. | Ghosts |
-| corollary | A practical consequence that follows naturally. | The Sopranos |
-| apologetic | Offering or expressing apology. | Dawson's Creek |
-| cohabitate | To cohabit. | Ghosts |
-| venial | Warranting only temporal punishment. | The Sopranos |
-| pugnacious | Ready and able to resort to force or violence. | M*A*S*H |
