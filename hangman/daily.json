@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -78,6 +78,16 @@
    "scope": "year",
    "views": 7260545,
    "year": "2025"
+  },
+  "2026-11-19": {
+   "w": "unwitting",
+   "line": "Elizabeth Holmes as the <mark>unwitting</mark> main subject of herself",
+   "src": "You Can See Everything",
+   "kind": "film",
+   "rank": 3,
+   "scope": "week",
+   "views": 376858,
+   "year": "2026"
   }
  }
 }

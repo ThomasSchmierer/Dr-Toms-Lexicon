@@ -843,7 +843,7 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"two dictionaries agree",
-"n":5
+"n":6
 },
 "absolutism":{
 "d":"rejected",
@@ -1462,6 +1462,12 @@
 "d":"exists",
 "w":"adduce",
 "r":"only in books (used for cross-references)"
+},
+"adeel":{
+"d":"rejected",
+"w":"adeel",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "adelia":{
 "d":"rejected",
@@ -3960,7 +3966,7 @@
 "d":"rejected",
 "w":"amandla",
 "r":"not an English word (foreign or a name)",
-"n":1
+"n":2
 },
 "amania":{
 "d":"rejected",
@@ -4187,6 +4193,15 @@
 "w":"amorous",
 "r":"rude or upsetting meaning",
 "n":3
+},
+"amorously":{
+"d":"approved",
+"w":"amorously",
+"seq":4678,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "amorphous":{
 "d":"exists",
@@ -6094,6 +6109,12 @@
 "d":"exists",
 "w":"aratni",
 "r":"only in books (used for cross-references)"
+},
+"arbeitslager":{
+"d":"rejected",
+"w":"arbeitslager",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "arbitrage":{
 "seq":1701,
@@ -8926,6 +8947,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"bahnstation":{
+"d":"rejected",
+"w":"bahnstation",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "baikkal":{
 "d":"rejected",
 "w":"baikkal",
@@ -9969,6 +9996,15 @@
 "w":"barmouth",
 "r":"only in books (used for cross-references)"
 },
+"barmpot":{
+"d":"approved",
+"w":"barmpot",
+"seq":4681,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"Wiktionary only",
+"n":1
+},
 "barna":{
 "d":"exists",
 "w":"barna",
@@ -10347,6 +10383,12 @@
 "r":"everyday word",
 "n":1
 },
+"batty":{
+"d":"rejected",
+"w":"batty",
+"r":"rude or upsetting meaning",
+"n":1
+},
 "batyut":{
 "d":"exists",
 "w":"batyut",
@@ -10356,6 +10398,12 @@
 "d":"exists",
 "w":"bauble",
 "r":"only in books (used for cross-references)"
+},
+"bauern":{
+"d":"rejected",
+"w":"bauern",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "baumannii":{
 "d":"rejected",
@@ -10564,6 +10612,12 @@
 "w":"beam",
 "r":"everyday word",
 "n":5
+},
+"beamter":{
+"d":"rejected",
+"w":"beamter",
+"r":"not an English word (foreign or a name)",
+"n":1
 },
 "bean":{
 "d":"rejected",
@@ -12868,6 +12922,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"birdwatch":{
+"d":"rejected",
+"w":"birdwatching",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "birdwatchin":{
 "d":"rejected",
 "w":"birdwatchin",
@@ -13111,7 +13171,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"Wiktionary only",
-"n":2
+"n":3
 },
 "bitter":{
 "d":"exists",
@@ -13572,6 +13632,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":3
 },
+"blamire":{
+"d":"rejected",
+"w":"blamire",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "blancmange":{
 "d":"approved",
 "w":"blancmange",
@@ -13800,7 +13866,7 @@
 "d":"rejected",
 "w":"bleedin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":4
+"n":5
 },
 "bleery":{
 "d":"rejected",
@@ -14263,6 +14329,12 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
+"n":1
+},
+"blouse":{
+"d":"rejected",
+"w":"blouse",
+"r":"everyday word",
 "n":1
 },
 "blow":{
@@ -14853,7 +14925,7 @@
 "d":"rejected",
 "w":"bold",
 "r":"everyday word",
-"n":15
+"n":16
 },
 "boldboys":{
 "d":"exists",
@@ -15132,6 +15204,12 @@
 "bonesaw":{
 "d":"rejected",
 "w":"bonesaw",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"bonesthe":{
+"d":"rejected",
+"w":"bonesthe",
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
@@ -16183,6 +16261,12 @@
 "r":"two dictionaries agree",
 "n":2
 },
+"braddock":{
+"d":"rejected",
+"w":"braddock",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "bradycardia":{
 "d":"approved",
 "w":"bradycardia",
@@ -17108,9 +17192,10 @@
 "n":1
 },
 "broom":{
-"d":"exists",
+"d":"rejected",
 "w":"broom",
-"r":"only in books (used for cross-references)"
+"r":"everyday word",
+"n":2
 },
 "broomstick":{
 "d":"approved",
@@ -17195,6 +17280,12 @@
 "d":"exists",
 "w":"bruit",
 "r":"only in books (used for cross-references)"
+},
+"brulov":{
+"d":"rejected",
+"w":"brulov",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "brum-town":{
 "d":"rejected",
@@ -18791,6 +18882,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"caledon":{
+"d":"rejected",
+"w":"caledon",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "calendar":{
 "d":"rejected",
 "w":"calendar",
@@ -19218,6 +19315,12 @@
 "d":"rejected",
 "w":"candyland",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"canine":{
+"d":"rejected",
+"w":"canine",
+"r":"everyday word",
 "n":1
 },
 "canis":{
@@ -20112,6 +20215,12 @@
 "r":"a name, not a word",
 "n":1
 },
+"caruthers":{
+"d":"rejected",
+"w":"caruthers",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "carvery":{
 "d":"rejected",
 "w":"carvery",
@@ -20123,6 +20232,12 @@
 "w":"carving",
 "r":"everyday word",
 "n":2
+},
+"carwood":{
+"d":"rejected",
+"w":"carwood",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "cary-hiroyuki":{
 "d":"rejected",
@@ -20853,7 +20968,7 @@
 "d":"rejected",
 "w":"centipede",
 "r":"an everyday object, animal or food",
-"n":3
+"n":5
 },
 "centlivre":{
 "d":"rejected",
@@ -20886,6 +21001,12 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"two dictionaries agree",
+"n":1
+},
+"centurion":{
+"d":"rejected",
+"w":"centurion",
+"r":"everyday word",
 "n":1
 },
 "ceremonial":{
@@ -21550,7 +21671,7 @@
 "d":"rejected",
 "w":"chatty",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "chauffeur":{
 "d":"rejected",
@@ -22127,7 +22248,7 @@
 "d":"rejected",
 "w":"chin",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "chin-chin":{
 "d":"rejected",
@@ -22579,6 +22700,12 @@
 "w":"christening",
 "r":"only in books (used for cross-references)"
 },
+"christenson":{
+"d":"rejected",
+"w":"christenson",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "christiaan":{
 "d":"rejected",
 "w":"christiaan",
@@ -22859,6 +22986,12 @@
 "day":"2026-11-17",
 "first":"2026-11-15",
 "r":"two dictionaries agree",
+"n":1
+},
+"cinna":{
+"d":"rejected",
+"w":"cinna",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "cinnabun":{
@@ -23317,6 +23450,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"claudius":{
+"d":"rejected",
+"w":"claudius",
+"r":"a name, not a word",
+"n":1
+},
 "claustrophobia":{
 "d":"approved",
 "w":"claustrophobia",
@@ -23432,7 +23571,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":5
+"n":6
 },
 "clegane":{
 "d":"rejected",
@@ -23942,7 +24081,7 @@
 "d":"rejected",
 "w":"clutter",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "co-brokering":{
 "d":"rejected",
@@ -27081,7 +27220,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "cotta":{
 "d":"rejected",
@@ -27118,6 +27257,15 @@
 "w":"coulda",
 "r":"a misspelling, abbreviation or contraction",
 "n":6
+},
+"coulee":{
+"d":"approved",
+"w":"coulee",
+"seq":4694,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"Wiktionary only",
+"n":1
 },
 "coulibiac":{
 "d":"approved",
@@ -27328,6 +27476,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"courtroom":{
+"d":"rejected",
+"w":"courtroom",
+"r":"everyday word",
+"n":1
+},
 "courtship":{
 "d":"rejected",
 "w":"courtship",
@@ -27351,7 +27505,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":4
+"n":5
 },
 "covergirl":{
 "d":"rejected",
@@ -27803,9 +27957,10 @@
 "n":1
 },
 "crease":{
-"d":"exists",
+"d":"rejected",
 "w":"crease",
-"r":"only in books (used for cross-references)"
+"r":"everyday word",
+"n":3
 },
 "creasingly":{
 "d":"rejected",
@@ -28231,7 +28386,7 @@
 "d":"rejected",
 "w":"crispin",
 "r":"a name, not a word",
-"n":1
+"n":2
 },
 "cristin":{
 "d":"rejected",
@@ -28325,7 +28480,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":3
+"n":4
 },
 "cronkite":{
 "d":"rejected",
@@ -30010,6 +30165,15 @@
 "r":"not an English word (foreign or a name)",
 "n":1
 },
+"cutaneous":{
+"d":"approved",
+"w":"cutaneous",
+"seq":4682,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
+},
 "cute":{
 "d":"rejected",
 "w":"cute",
@@ -30859,7 +31023,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":11
+"n":12
 },
 "dangly":{
 "d":"rejected",
@@ -31147,6 +31311,12 @@
 "d":"rejected",
 "w":"daveed",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"davit":{
+"d":"rejected",
+"w":"davit",
+"r":"rude or upsetting meaning",
 "n":1
 },
 "davitzishtov":{
@@ -31652,7 +31822,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":2
+"n":3
 },
 "deceiver":{
 "d":"rejected",
@@ -31714,6 +31884,12 @@
 "w":"decipher",
 "r":"everyday word",
 "n":2
+},
+"decipherer":{
+"d":"rejected",
+"w":"decipherer",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "decisiveness":{
 "d":"rejected",
@@ -31946,6 +32122,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"deet-deet-deet":{
+"d":"rejected",
+"w":"deet-deet-deet",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "deface":{
 "d":"rejected",
 "w":"deface",
@@ -32173,7 +32355,7 @@
 "d":"rejected",
 "w":"defuse",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "deg":{
 "d":"exists",
@@ -33333,13 +33515,13 @@
 "d":"rejected",
 "w":"destabilize",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "destiny":{
 "d":"rejected",
 "w":"destiny",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "destruct":{
 "d":"approved",
@@ -33362,9 +33544,13 @@
 "r":"only in books (used for cross-references)"
 },
 "detach":{
-"d":"exists",
+"d":"approved",
 "w":"detach",
-"r":"only in books (used for cross-references)"
+"seq":4691,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "detachable":{
 "d":"approved",
@@ -33529,7 +33715,7 @@
 "d":"rejected",
 "w":"devalue",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "devan":{
 "d":"approved",
@@ -33755,6 +33941,15 @@
 "d":"exists",
 "w":"dhivatalban",
 "r":"only in books (used for cross-references)"
+},
+"dhoti":{
+"d":"approved",
+"w":"dhoti",
+"seq":4692,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "dhrama":{
 "d":"rejected",
@@ -34338,7 +34533,7 @@
 "d":"rejected",
 "w":"ding",
 "r":"everyday word",
-"n":3
+"n":4
 },
 "ding-a-ling":{
 "d":"rejected",
@@ -35079,7 +35274,7 @@
 "d":"rejected",
 "w":"disintegrate",
 "r":"an everyday word with a prefix or suffix",
-"n":9
+"n":11
 },
 "disinter":{
 "d":"exists",
@@ -35180,7 +35375,7 @@
 "d":"rejected",
 "w":"disobey",
 "r":"an everyday word with a prefix or suffix",
-"n":16
+"n":18
 },
 "disorder":{
 "d":"exists",
@@ -36453,7 +36648,13 @@
 "d":"rejected",
 "w":"domesticity",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
+},
+"domesuspension":{
+"d":"rejected",
+"w":"domesuspension",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "domicile":{
 "d":"rejected",
@@ -37138,6 +37339,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"downrange":{
+"d":"rejected",
+"w":"downrange",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "downsize":{
 "d":"rejected",
 "w":"downsize",
@@ -37225,7 +37432,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":2
+"n":3
 },
 "drafty":{
 "d":"rejected",
@@ -37313,6 +37520,15 @@
 "w":"dramatis",
 "r":"only in books (used for cross-references)"
 },
+"dramatise":{
+"d":"approved",
+"w":"dramatise",
+"seq":4688,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
+},
 "dramatist":{
 "d":"exists",
 "w":"dramatist",
@@ -37334,7 +37550,7 @@
 "day":"2026-11-17",
 "first":"2026-11-15",
 "r":"two dictionaries agree",
-"n":1
+"n":3
 },
 "drat":{
 "d":"approved",
@@ -39081,6 +39297,12 @@
 "w":"eddigi",
 "r":"only in books (used for cross-references)"
 },
+"eddra":{
+"d":"rejected",
+"w":"eddra",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "eddy":{
 "d":"exists",
 "w":"eddy",
@@ -39143,6 +39365,12 @@
 "d":"rejected",
 "w":"edvin",
 "r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"edwardes":{
+"d":"rejected",
+"w":"edwardes",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "edwina":{
@@ -39289,6 +39517,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"effie":{
+"d":"rejected",
+"w":"effie",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "effigy":{
 "seq":377,
 "day":"2026-11-10",
@@ -39422,7 +39656,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "egoism":{
 "d":"approved",
@@ -42424,7 +42658,7 @@
 "d":"rejected",
 "w":"enjoyin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "enkidu":{
 "d":"rejected",
@@ -42507,6 +42741,12 @@
 "d":"exists",
 "w":"ennyit",
 "r":"only in books (used for cross-references)"
+},
+"enola":{
+"d":"rejected",
+"w":"enola",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "enormity":{
 "d":"exists",
@@ -43687,6 +43927,12 @@
 "r":"Wiktionary only",
 "n":1
 },
+"eudoria":{
+"d":"rejected",
+"w":"eudoria",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "eudorus":{
 "d":"rejected",
 "w":"eudorus",
@@ -43873,6 +44119,12 @@
 "d":"exists",
 "w":"ever-blossoming",
 "r":"only in books (used for cross-references)"
+},
+"everdeen":{
+"d":"rejected",
+"w":"everdeen",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "everglade":{
 "d":"approved",
@@ -44190,7 +44442,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "excitingly":{
 "d":"exists",
@@ -44252,7 +44504,7 @@
 "d":"rejected",
 "w":"excretion",
 "r":"rude or upsetting meaning",
-"n":1
+"n":2
 },
 "excruciatingly":{
 "d":"rejected",
@@ -45171,7 +45423,7 @@
 "d":"rejected",
 "w":"fabrizio",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "fabulously":{
 "d":"rejected",
@@ -45447,6 +45699,15 @@
 "w":"faker",
 "r":"an everyday word with a prefix or suffix",
 "n":2
+},
+"fakery":{
+"d":"approved",
+"w":"fakery",
+"seq":4679,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "fakku":{
 "d":"rejected",
@@ -46476,9 +46737,10 @@
 "r":"only in books (used for cross-references)"
 },
 "feebly":{
-"d":"exists",
+"d":"rejected",
 "w":"feebly",
-"r":"only in books (used for cross-references)"
+"r":"an everyday word with a prefix or suffix",
+"n":4
 },
 "feedin":{
 "d":"rejected",
@@ -46913,7 +47175,7 @@
 "d":"rejected",
 "w":"fell",
 "r":"everyday word",
-"n":8
+"n":9
 },
 "fellah":{
 "d":"approved",
@@ -47162,7 +47424,7 @@
 "d":"rejected",
 "w":"ferret",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "ferret-faced":{
 "d":"rejected",
@@ -47425,7 +47687,7 @@
 "d":"rejected",
 "w":"fianc",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":12
+"n":13
 },
 "fianlist":{
 "d":"rejected",
@@ -47575,7 +47837,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "fiendishly":{
 "d":"approved",
@@ -47622,7 +47884,7 @@
 "d":"rejected",
 "w":"fightin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":5
+"n":6
 },
 "fighto":{
 "d":"rejected",
@@ -48198,7 +48460,7 @@
 "d":"rejected",
 "w":"first",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "firstborn":{
 "d":"rejected",
@@ -48282,7 +48544,7 @@
 "d":"rejected",
 "w":"fistfight",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "fistful":{
 "d":"rejected",
@@ -49024,6 +49286,12 @@
 "r":"Wiktionary only",
 "n":1
 },
+"fleurot":{
+"d":"rejected",
+"w":"fleurot",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "flex":{
 "d":"rejected",
 "w":"flex",
@@ -49115,7 +49383,7 @@
 "d":"rejected",
 "w":"fling",
 "r":"everyday word",
-"n":10
+"n":11
 },
 "flink":{
 "d":"exists",
@@ -49579,7 +49847,7 @@
 "d":"rejected",
 "w":"flyin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":4
+"n":5
 },
 "flyleaf":{
 "d":"exists",
@@ -51291,11 +51559,17 @@
 "r":"not a whole word in the quote",
 "n":1
 },
+"foxface":{
+"d":"rejected",
+"w":"foxface",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "foxhole":{
 "d":"rejected",
 "w":"foxhole",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":6
 },
 "foxhunt":{
 "d":"rejected",
@@ -52564,6 +52838,15 @@
 "r":"an everyday word with a prefix or suffix",
 "n":2
 },
+"furlough":{
+"d":"approved",
+"w":"furlough",
+"seq":4686,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
+},
 "furonda":{
 "d":"rejected",
 "w":"furonda",
@@ -53388,6 +53671,12 @@
 "w":"garland",
 "r":"everyday word",
 "n":3
+},
+"garmes":{
+"d":"rejected",
+"w":"garmes",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "garnish":{
 "d":"rejected",
@@ -55214,6 +55503,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"glaub":{
+"d":"rejected",
+"w":"glaub",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "glaucus":{
 "d":"approved",
 "w":"glaucus",
@@ -55674,7 +55969,7 @@
 "d":"rejected",
 "w":"gnome",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "gnyomoz":{
 "d":"exists",
@@ -55799,11 +56094,17 @@
 "w":"godchild",
 "r":"only in books (used for cross-references)"
 },
+"goddam":{
+"d":"rejected",
+"w":"goddam",
+"r":"only heard in lines with swearing",
+"n":1
+},
 "goddammit":{
 "d":"rejected",
 "w":"goddammit",
 "r":"an everyday word with a prefix or suffix",
-"n":13
+"n":14
 },
 "goddamned":{
 "d":"rejected",
@@ -55864,7 +56165,7 @@
 "d":"rejected",
 "w":"godsend",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "godson":{
 "d":"rejected",
@@ -56554,7 +56855,7 @@
 "d":"rejected",
 "w":"good-bye",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "good-byeeeeeeeee":{
 "d":"rejected",
@@ -56808,6 +57109,12 @@
 "d":"rejected",
 "w":"gore",
 "r":"everyday word",
+"n":1
+},
+"gorehe":{
+"d":"rejected",
+"w":"gorehe",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "gorge":{
@@ -57095,7 +57402,7 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "graffiti":{
 "d":"rejected",
@@ -57107,7 +57414,7 @@
 "d":"rejected",
 "w":"graft",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "grainy":{
 "d":"rejected",
@@ -57157,7 +57464,7 @@
 "d":"rejected",
 "w":"grand",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "grandad":{
 "d":"approved",
@@ -58098,6 +58405,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"groundand":{
+"d":"rejected",
+"w":"groundand",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "grounding":{
 "d":"rejected",
 "w":"grounding",
@@ -58479,6 +58792,12 @@
 "d":"rejected",
 "w":"guardsman",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"guarnere":{
+"d":"rejected",
+"w":"guarnere",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "guava":{
@@ -60024,7 +60343,7 @@
 "d":"rejected",
 "w":"hadda",
 "r":"a contraction",
-"n":1
+"n":2
 },
 "haddal":{
 "d":"exists",
@@ -61371,7 +61690,7 @@
 "d":"rejected",
 "w":"handpick",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "handprint":{
 "d":"rejected",
@@ -61404,7 +61723,7 @@
 "d":"rejected",
 "w":"handsomely",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "handstand":{
 "d":"rejected",
@@ -61422,7 +61741,7 @@
 "d":"rejected",
 "w":"handyman",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "hanem":{
 "d":"exists",
@@ -61603,6 +61922,12 @@
 "d":"exists",
 "w":"hangzott",
 "r":"only in books (used for cross-references)"
+},
+"hanish":{
+"d":"rejected",
+"w":"hanish",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "hankey":{
 "d":"rejected",
@@ -62338,7 +62663,7 @@
 "d":"rejected",
 "w":"hattie",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "hattyuban":{
 "d":"exists",
@@ -62479,6 +62804,12 @@
 "d":"rejected",
 "w":"haydn",
 "r":"a name (only capitalised in the dictionary)",
+"n":1
+},
+"haymitch":{
+"d":"rejected",
+"w":"haymitch",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "hayride":{
@@ -64098,6 +64429,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"heyliger":{
+"d":"rejected",
+"w":"heyliger",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "hezik":{
 "d":"exists",
 "w":"hezik",
@@ -64380,6 +64717,12 @@
 "day":"2026-11-15",
 "first":"2026-11-13",
 "r":"Wiktionary only",
+"n":1
+},
+"highhis":{
+"d":"rejected",
+"w":"highhis",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "highlighter":{
@@ -65200,6 +65543,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"hockley":{
+"d":"rejected",
+"w":"hockley",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "hocus":{
 "d":"approved",
 "w":"hocus",
@@ -66016,7 +66365,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":3
+"n":4
 },
 "hooey-free":{
 "d":"rejected",
@@ -66306,7 +66655,7 @@
 "d":"rejected",
 "w":"horrifically",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "horrify":{
 "d":"approved",
@@ -66598,7 +66947,7 @@
 "d":"rejected",
 "w":"hottie",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "hotwire":{
 "d":"rejected",
@@ -67427,7 +67776,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":5
+"n":6
 },
 "hurtth":{
 "d":"rejected",
@@ -67984,6 +68333,12 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
+"n":1
+},
+"iantha":{
+"d":"rejected",
+"w":"iantha",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "ibuprofen":{
@@ -69443,7 +69798,7 @@
 "d":"rejected",
 "w":"impotence",
 "r":"rude or upsetting meaning",
-"n":3
+"n":4
 },
 "impound":{
 "d":"rejected",
@@ -69509,7 +69864,7 @@
 "d":"rejected",
 "w":"impressively",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "imprint":{
 "d":"rejected",
@@ -69978,12 +70333,18 @@
 "d":"rejected",
 "w":"incision",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "incisive":{
 "d":"exists",
 "w":"incisive",
 "r":"only in books (used for cross-references)"
+},
+"incisor":{
+"d":"rejected",
+"w":"incisor",
+"r":"body part",
+"n":1
 },
 "incitamentum":{
 "d":"exists",
@@ -71007,6 +71368,15 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"infatuate":{
+"d":"approved",
+"w":"infatuate",
+"seq":4683,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
+},
 "infatuation":{
 "d":"rejected",
 "w":"infatuation",
@@ -71198,6 +71568,12 @@
 "r":"two dictionaries agree",
 "n":2
 },
+"inflict":{
+"d":"rejected",
+"w":"inflict",
+"r":"everyday word",
+"n":1
+},
 "inflicter":{
 "d":"rejected",
 "w":"inflicter",
@@ -71261,7 +71637,7 @@
 "d":"rejected",
 "w":"infraction",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "infrequent":{
 "d":"rejected",
@@ -71366,7 +71742,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "inglorious":{
 "d":"exists",
@@ -72111,6 +72487,12 @@
 "d":"rejected",
 "w":"intellectualize",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"intellektuelle":{
+"d":"rejected",
+"w":"intellektuelle",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "intelligible":{
@@ -73438,6 +73820,12 @@
 "d":"exists",
 "w":"islet",
 "r":"only in books (used for cross-references)"
+},
+"ismay":{
+"d":"rejected",
+"w":"ismay",
+"r":"not an English word (foreign or a name)",
+"n":1
 },
 "ismer":{
 "d":"exists",
@@ -75505,7 +75893,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":3
+"n":4
 },
 "joggyakorl":{
 "d":"exists",
@@ -75880,6 +76268,12 @@
 "d":"rejected",
 "w":"judea",
 "r":"a name, not a word",
+"n":1
+},
+"juden":{
+"d":"rejected",
+"w":"juden",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "judeo-christianity":{
@@ -77275,6 +77669,15 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"katniss":{
+"d":"approved",
+"w":"katniss",
+"seq":4693,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"Wiktionary only",
+"n":1
+},
 "katon":{
 "d":"exists",
 "w":"katon",
@@ -77526,6 +77929,12 @@
 "d":"exists",
 "w":"kedvvel",
 "r":"only in books (used for cross-references)"
+},
+"keefe":{
+"d":"rejected",
+"w":"keefe",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "keefer":{
 "d":"rejected",
@@ -80063,7 +80472,7 @@
 "d":"rejected",
 "w":"kneecap",
 "r":"an everyday word with a prefix or suffix",
-"n":8
+"n":9
 },
 "kneel":{
 "d":"rejected",
@@ -81736,7 +82145,7 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "lacessit":{
 "d":"exists",
@@ -82953,9 +83362,13 @@
 "n":1
 },
 "laudable":{
-"d":"exists",
+"d":"approved",
 "w":"laudable",
-"r":"only in books (used for cross-references)"
+"seq":4685,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "laudably":{
 "d":"approved",
@@ -82976,6 +83389,12 @@
 "d":"exists",
 "w":"laughably",
 "r":"only in books (used for cross-references)"
+},
+"laughin":{
+"d":"rejected",
+"w":"laughin",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "laughingly":{
 "d":"rejected",
@@ -83046,7 +83465,7 @@
 "d":"rejected",
 "w":"lavatory",
 "r":"an everyday word with a prefix or suffix",
-"n":10
+"n":11
 },
 "lave":{
 "d":"exists",
@@ -85058,7 +85477,7 @@
 "d":"rejected",
 "w":"lestrade",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "lesz-e":{
 "d":"exists",
@@ -85439,6 +85858,12 @@
 "d":"rejected",
 "w":"levett",
 "r":"not a whole word in the quote",
+"n":1
+},
+"levin":{
+"d":"rejected",
+"w":"levin",
+"r":"everyday word",
 "n":1
 },
 "levitate":{
@@ -86157,6 +86582,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"liebgott":{
+"d":"rejected",
+"w":"liebgott",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "lieden":{
 "d":"exists",
 "w":"lieden",
@@ -86211,7 +86642,7 @@
 "d":"rejected",
 "w":"lifeboat",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "lifeform":{
 "d":"rejected",
@@ -86277,6 +86708,12 @@
 "d":"rejected",
 "w":"lig-meddig",
 "r":"not a whole word in the quote",
+"n":1
+},
+"ligamentum":{
+"d":"rejected",
+"w":"ligamentum",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "liget":{
@@ -86448,6 +86885,15 @@
 "first":"2026-11-09",
 "r":"two dictionaries agree",
 "n":2
+},
+"lilium":{
+"d":"approved",
+"w":"lilium",
+"seq":4689,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "lilli":{
 "d":"rejected",
@@ -86697,6 +87143,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"linthorn":{
+"d":"rejected",
+"w":"linthorn",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "lintot":{
 "d":"exists",
 "w":"lintot",
@@ -86748,6 +87200,12 @@
 "d":"rejected",
 "w":"lipstick",
 "r":"everyday word",
+"n":1
+},
+"lipton":{
+"d":"rejected",
+"w":"lipton",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "liquefy":{
@@ -87912,7 +88370,7 @@
 "d":"rejected",
 "w":"loins",
 "r":"rude or upsetting meaning",
-"n":8
+"n":9
 },
 "loin-fruit":{
 "d":"rejected",
@@ -88265,7 +88723,7 @@
 "d":"rejected",
 "w":"lop",
 "r":"marked vulgar or offensive in Wiktionary",
-"n":2
+"n":3
 },
 "lop-shouldered":{
 "d":"rejected",
@@ -88743,6 +89201,12 @@
 "d":"rejected",
 "w":"loverboy",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"lovett":{
+"d":"rejected",
+"w":"lovett",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "lovey":{
@@ -91166,7 +91630,7 @@
 "d":"rejected",
 "w":"mailman",
 "r":"an everyday word with a prefix or suffix",
-"n":9
+"n":10
 },
 "mailroom":{
 "d":"rejected",
@@ -91413,7 +91877,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":2
+"n":3
 },
 "malcontent":{
 "d":"approved",
@@ -91721,6 +92185,12 @@
 "r":"not an English word (foreign or a name)",
 "n":1
 },
+"mancunion":{
+"d":"rejected",
+"w":"mancunion",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "mandalore":{
 "d":"rejected",
 "w":"mandalore",
@@ -91901,6 +92371,12 @@
 "r":"everyday word",
 "n":1
 },
+"manik":{
+"d":"rejected",
+"w":"manik",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "manip":{
 "d":"approved",
 "w":"manip",
@@ -91979,6 +92455,12 @@
 "w":"mannequin",
 "r":"everyday word",
 "n":2
+},
+"mannerism":{
+"d":"rejected",
+"w":"mannerism",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "mannerly-hearted":{
 "d":"exists",
@@ -92655,6 +93137,12 @@
 "w":"mashenka",
 "r":"only in books (used for cross-references)"
 },
+"masher":{
+"d":"rejected",
+"w":"masher",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "mashup":{
 "d":"approved",
 "w":"mashup",
@@ -93204,6 +93692,12 @@
 "r":"only heard in lines with swearing",
 "n":1
 },
+"mccleery":{
+"d":"rejected",
+"w":"mccleery",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "mcclure":{
 "d":"rejected",
 "w":"mcclure",
@@ -93388,7 +93882,7 @@
 "d":"rejected",
 "w":"mean",
 "r":"everyday word",
-"n":11
+"n":12
 },
 "meand":{
 "d":"rejected",
@@ -93795,7 +94289,7 @@
 "d":"rejected",
 "w":"megaphone",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "megbar":{
 "d":"rejected",
@@ -96587,6 +97081,12 @@
 "w":"miben",
 "r":"only in books (used for cross-references)"
 },
+"micha":{
+"d":"rejected",
+"w":"micha",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "michaelangelo":{
 "d":"rejected",
 "w":"michaelangelo",
@@ -98078,7 +98578,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "misdate":{
 "d":"exists",
@@ -99794,6 +100294,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"morality":{
+"d":"rejected",
+"w":"morality",
+"r":"everyday word",
+"n":1
+},
 "moralize":{
 "d":"rejected",
 "w":"moralizing",
@@ -100301,7 +100807,7 @@
 "d":"rejected",
 "w":"motherless",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "motherliness":{
 "d":"approved",
@@ -100773,6 +101279,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"mucosa":{
+"d":"rejected",
+"w":"mucosa",
+"r":"rude or upsetting meaning",
+"n":1
+},
 "mud-slinging":{
 "d":"rejected",
 "w":"mud-slinging",
@@ -100837,7 +101349,7 @@
 "d":"rejected",
 "w":"mug",
 "r":"everyday word",
-"n":12
+"n":13
 },
 "mugger":{
 "d":"approved",
@@ -101329,6 +101841,12 @@
 "r":"not an English word (foreign or a name)",
 "n":1
 },
+"murchison":{
+"d":"rejected",
+"w":"murchison",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "murderin":{
 "d":"rejected",
 "w":"murderin",
@@ -101445,6 +101963,12 @@
 "d":"exists",
 "w":"music",
 "r":"only in books (used for cross-references)"
+},
+"musiker":{
+"d":"rejected",
+"w":"musiker",
+"r":"not an English word (foreign or a name)",
+"n":1
 },
 "musing":{
 "d":"rejected",
@@ -101747,7 +102271,7 @@
 "d":"rejected",
 "w":"mycroft",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "myduce":{
 "d":"rejected",
@@ -104355,6 +104879,12 @@
 "r":"everyday word",
 "n":1
 },
+"nexte":{
+"d":"rejected",
+"w":"nexte",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "neytiri":{
 "d":"rejected",
 "w":"neytiri",
@@ -104541,7 +105071,7 @@
 "d":"rejected",
 "w":"nicht",
 "r":"not an English word (foreign or a name)",
-"n":1
+"n":2
 },
 "nichten":{
 "d":"rejected",
@@ -104725,7 +105255,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":2
+"n":3
 },
 "nincs":{
 "d":"exists",
@@ -106708,7 +107238,7 @@
 "d":"rejected",
 "w":"nutcase",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "nutcracker":{
 "d":"rejected",
@@ -108428,7 +108958,7 @@
 "d":"rejected",
 "w":"obscenity",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "obscurantist":{
 "d":"approved",
@@ -109652,7 +110182,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "omnipresence":{
 "d":"approved",
@@ -109684,7 +110214,7 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "omnishambles":{
 "seq":1381,
@@ -110182,9 +110712,10 @@
 "n":4
 },
 "oppressively":{
-"d":"exists",
+"d":"rejected",
 "w":"oppressively",
-"r":"only in books (used for cross-references)"
+"r":"an everyday word with a prefix or suffix",
+"n":2
 },
 "oppressiveness":{
 "d":"exists",
@@ -110485,7 +111016,7 @@
 "d":"rejected",
 "w":"orpheus",
 "r":"a name, not a word",
-"n":1
+"n":2
 },
 "orrait":{
 "d":"exists",
@@ -110889,7 +111420,7 @@
 "d":"rejected",
 "w":"oughta",
 "r":"a misspelling, abbreviation or contraction",
-"n":10
+"n":11
 },
 "ouiser":{
 "d":"rejected",
@@ -111361,6 +111892,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":5
 },
+"overcome":{
+"d":"rejected",
+"w":"overcome",
+"r":"everyday word",
+"n":1
+},
 "overcompensate":{
 "d":"rejected",
 "w":"overcompensate",
@@ -111538,7 +112075,7 @@
 "d":"rejected",
 "w":"overkill",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "overlap":{
 "d":"rejected",
@@ -112762,7 +113299,7 @@
 "d":"rejected",
 "w":"panzer",
 "r":"an everyday object, animal or food",
-"n":1
+"n":2
 },
 "papaya":{
 "d":"rejected",
@@ -113171,7 +113708,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":3
+"n":5
 },
 "parcel":{
 "d":"exists",
@@ -113655,6 +114192,12 @@
 "w":"patch",
 "r":"everyday word",
 "n":4
+},
+"patella":{
+"d":"rejected",
+"w":"patella",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "patently":{
 "d":"rejected",
@@ -114211,6 +114754,12 @@
 "r":"everyday word",
 "n":1
 },
+"pedicelated":{
+"d":"rejected",
+"w":"pedicelated",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "pedicure":{
 "d":"approved",
 "w":"pedicure",
@@ -114325,6 +114874,12 @@
 "d":"rejected",
 "w":"peerless",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"peeta":{
+"d":"rejected",
+"w":"peeta",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "peeve":{
@@ -114536,6 +115091,12 @@
 "w":"penitent",
 "r":"only in books (used for cross-references)"
 },
+"penkala":{
+"d":"rejected",
+"w":"penkala",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "penknife":{
 "d":"rejected",
 "w":"penknife",
@@ -114686,7 +115247,7 @@
 "d":"rejected",
 "w":"pepper",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "pepperspray":{
 "d":"rejected",
@@ -115798,6 +116359,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"phallic":{
+"d":"rejected",
+"w":"phallic",
+"r":"rude or upsetting meaning",
+"n":1
+},
 "phallocentric":{
 "d":"approved",
 "w":"phallocentric",
@@ -116364,7 +116931,7 @@
 "d":"rejected",
 "w":"picture",
 "r":"everyday word",
-"n":3
+"n":4
 },
 "picturesqueness":{
 "d":"exists",
@@ -116593,6 +117160,12 @@
 "first":"2026-11-09",
 "r":"two dictionaries agree",
 "n":2
+},
+"piletti":{
+"d":"rejected",
+"w":"piletti",
+"r":"not an English word (foreign or a name)",
+"n":1
 },
 "pilfer":{
 "d":"approved",
@@ -116859,7 +117432,7 @@
 "d":"rejected",
 "w":"ping",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "pingas":{
 "d":"rejected",
@@ -118212,6 +118785,12 @@
 "d":"rejected",
 "w":"polecat",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"polen":{
+"d":"rejected",
+"w":"polen",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "polenta":{
@@ -119839,7 +120418,7 @@
 "d":"rejected",
 "w":"precipice",
 "r":"an everyday object, animal or food",
-"n":2
+"n":3
 },
 "precipitancy":{
 "d":"exists",
@@ -120079,9 +120658,10 @@
 "n":1
 },
 "preoccupation":{
-"d":"exists",
+"d":"rejected",
 "w":"preoccupation",
-"r":"only in books (used for cross-references)"
+"r":"an everyday word with a prefix or suffix",
+"n":2
 },
 "preordain":{
 "d":"approved",
@@ -120447,9 +121027,10 @@
 "n":2
 },
 "primrose":{
-"d":"exists",
+"d":"rejected",
 "w":"primrose",
-"r":"only in books (used for cross-references)"
+"r":"an everyday object, animal or food",
+"n":2
 },
 "primum":{
 "d":"exists",
@@ -121836,15 +122417,19 @@
 "n":3
 },
 "pulsation":{
-"d":"exists",
+"d":"approved",
 "w":"pulsation",
-"r":"only in books (used for cross-references)"
+"seq":4690,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "pulse":{
 "d":"rejected",
 "w":"pulse",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "pulseless":{
 "d":"rejected",
@@ -123111,7 +123696,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":12
+"n":13
 },
 "quiz":{
 "d":"rejected",
@@ -123375,6 +123960,12 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
+"n":1
+},
+"radioman":{
+"d":"rejected",
+"w":"radioman",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "radish":{
@@ -124035,6 +124626,12 @@
 "d":"exists",
 "w":"rancour",
 "r":"only in books (used for cross-references)"
+},
+"randleman":{
+"d":"rejected",
+"w":"randleman",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "rando":{
 "d":"approved",
@@ -125181,7 +125778,7 @@
 "d":"rejected",
 "w":"rebel",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "rebeldes":{
 "d":"rejected",
@@ -125653,6 +126250,15 @@
 "w":"recuse",
 "r":"an everyday word with a prefix or suffix",
 "n":3
+},
+"recut":{
+"d":"approved",
+"w":"recut",
+"seq":4695,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"Wiktionary only",
+"n":1
 },
 "recyc":{
 "d":"rejected",
@@ -127405,7 +128011,7 @@
 "d":"rejected",
 "w":"repress",
 "r":"an everyday word with a prefix or suffix",
-"n":8
+"n":9
 },
 "reprice":{
 "d":"rejected",
@@ -127429,7 +128035,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":8
+"n":9
 },
 "reprisal":{
 "d":"approved",
@@ -127438,6 +128044,12 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
+"n":1
+},
+"reprise":{
+"d":"rejected",
+"w":"reprise",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "reproach":{
@@ -127956,6 +128568,12 @@
 "d":"exists",
 "w":"rete",
 "r":"only in books (used for cross-references)"
+},
+"retell":{
+"d":"rejected",
+"w":"retell",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "retentionist":{
 "d":"rejected",
@@ -128748,6 +129366,12 @@
 "w":"rhododendron",
 "r":"already in the game (built-in)"
 },
+"rhonda":{
+"d":"rejected",
+"w":"rhonda",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "rhoztasson":{
 "d":"exists",
 "w":"rhoztasson",
@@ -129075,6 +129699,12 @@
 "w":"rifle",
 "r":"everyday word",
 "n":2
+},
+"rifleman":{
+"d":"rejected",
+"w":"rifleman",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "rigatoni":{
 "d":"rejected",
@@ -129406,7 +130036,7 @@
 "d":"rejected",
 "w":"riser",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "rising":{
 "d":"rejected",
@@ -131104,9 +131734,13 @@
 "r":"only in books (used for cross-references)"
 },
 "roughen":{
-"d":"exists",
+"d":"approved",
 "w":"roughen",
-"r":"only in books (used for cross-references)"
+"seq":4680,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "roughneck":{
 "d":"exists",
@@ -132718,6 +133352,12 @@
 "w":"sagely",
 "r":"only in books (used for cross-references)"
 },
+"sagen":{
+"d":"rejected",
+"w":"sagen",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "saget":{
 "d":"rejected",
 "w":"saget",
@@ -132737,6 +133377,12 @@
 "d":"rejected",
 "w":"saginata",
 "r":"only heard in lines with swearing",
+"n":1
+},
+"sagst":{
+"d":"rejected",
+"w":"sagst",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "saikat":{
@@ -132856,7 +133502,7 @@
 "d":"rejected",
 "w":"sake",
 "r":"everyday word",
-"n":15
+"n":17
 },
 "saker":{
 "d":"rejected",
@@ -133460,7 +134106,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "sarin":{
 "seq":1629,
@@ -134059,7 +134705,7 @@
 "d":"rejected",
 "w":"scam",
 "r":"everyday word",
-"n":3
+"n":4
 },
 "scamp":{
 "d":"approved",
@@ -134171,6 +134817,12 @@
 "d":"rejected",
 "w":"scarface",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"scarin":{
+"d":"rejected",
+"w":"scarin",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "scarless":{
@@ -134289,6 +134941,12 @@
 "day":"2026-11-15",
 "first":"2026-11-13",
 "r":"two dictionaries agree",
+"n":1
+},
+"schlimm":{
+"d":"rejected",
+"w":"schlimm",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "schlock":{
@@ -134525,6 +135183,12 @@
 "d":"exists",
 "w":"schraeders",
 "r":"only in books (used for cross-references)"
+},
+"schreiber":{
+"d":"rejected",
+"w":"schreiber",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "schtick":{
 "d":"approved",
@@ -134831,7 +135495,7 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "scrawny-ass":{
 "d":"rejected",
@@ -135042,7 +135706,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":6
+"n":7
 },
 "scrumdiddlyumptious":{
 "d":"approved",
@@ -136187,6 +136851,12 @@
 "w":"semi-delirium",
 "r":"only in books (used for cross-references)"
 },
+"semi-dramatized":{
+"d":"rejected",
+"w":"semi-dramatized",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "semi-osseous":{
 "d":"exists",
 "w":"semi-osseous",
@@ -136317,6 +136987,15 @@
 "w":"senile",
 "r":"marked vulgar or offensive in Wiktionary",
 "n":9
+},
+"senility":{
+"d":"approved",
+"w":"senility",
+"seq":4677,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "senki":{
 "d":"exists",
@@ -137303,7 +137982,7 @@
 "d":"rejected",
 "w":"shawl",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "shawna":{
 "d":"rejected",
@@ -138477,7 +139156,7 @@
 "d":"rejected",
 "w":"sick",
 "r":"everyday word",
-"n":10
+"n":11
 },
 "sickantired":{
 "d":"exists",
@@ -138511,7 +139190,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"Wiktionary only",
-"n":8
+"n":9
 },
 "sidal":{
 "d":"rejected",
@@ -138534,6 +139213,12 @@
 "d":"exists",
 "w":"side-whiskers",
 "r":"only in books (used for cross-references)"
+},
+"sidearm":{
+"d":"rejected",
+"w":"sidearm",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "sideboard":{
 "d":"rejected",
@@ -139171,6 +139856,12 @@
 "r":"Wiktionary only",
 "n":2
 },
+"singleman":{
+"d":"rejected",
+"w":"singleman",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "singly":{
 "d":"exists",
 "w":"singly",
@@ -139186,7 +139877,7 @@
 "d":"rejected",
 "w":"singularly",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "singularly-marked":{
 "d":"exists",
@@ -139461,7 +140152,7 @@
 "d":"rejected",
 "w":"sittin",
 "r":"an everyday word with a prefix or suffix",
-"n":8
+"n":9
 },
 "sitting":{
 "d":"exists",
@@ -139908,7 +140599,7 @@
 "d":"rejected",
 "w":"slacks",
 "r":"everyday word",
-"n":9
+"n":10
 },
 "slack-jawed":{
 "d":"rejected",
@@ -140260,7 +140951,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "sleuthin":{
 "d":"rejected",
@@ -142232,6 +142923,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"sonja":{
+"d":"rejected",
+"w":"sonja",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "sonnet":{
 "d":"rejected",
 "w":"sonnet",
@@ -142572,15 +143269,16 @@
 "n":1
 },
 "soundless":{
-"d":"exists",
+"d":"rejected",
 "w":"soundless",
-"r":"only in books (used for cross-references)"
+"r":"an everyday word with a prefix or suffix",
+"n":3
 },
 "soundly":{
 "d":"rejected",
 "w":"soundly",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "soundproof":{
 "d":"rejected",
@@ -142696,7 +143394,7 @@
 "d":"rejected",
 "w":"spacetime",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "spaciously":{
 "d":"exists",
@@ -142874,7 +143572,7 @@
 "d":"rejected",
 "w":"spatter",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "spatula":{
 "d":"rejected",
@@ -143058,6 +143756,12 @@
 "speeka":{
 "d":"rejected",
 "w":"speeka",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"speirs":{
+"d":"rejected",
+"w":"speirs",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
@@ -143894,7 +144598,7 @@
 "d":"rejected",
 "w":"spurt",
 "r":"rude or upsetting meaning",
-"n":4
+"n":5
 },
 "spyin":{
 "d":"rejected",
@@ -144566,7 +145270,7 @@
 "d":"rejected",
 "w":"stairwell",
 "r":"an everyday object, animal or food",
-"n":4
+"n":5
 },
 "stake":{
 "d":"rejected",
@@ -145097,7 +145801,7 @@
 "d":"rejected",
 "w":"steerage",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "steffon":{
 "d":"rejected",
@@ -145132,7 +145836,7 @@
 "d":"rejected",
 "w":"stellan",
 "r":"not an English word (foreign or a name)",
-"n":2
+"n":3
 },
 "stelli":{
 "d":"rejected",
@@ -146105,7 +146809,7 @@
 "d":"rejected",
 "w":"stray",
 "r":"everyday word",
-"n":9
+"n":10
 },
 "streamer":{
 "d":"rejected",
@@ -148466,6 +149170,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"sweepin":{
+"d":"rejected",
+"w":"sweepin",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "sweeping":{
 "d":"exists",
 "w":"sweeping",
@@ -148522,7 +149232,7 @@
 "d":"rejected",
 "w":"sweetie",
 "r":"everyday word",
-"n":3
+"n":4
 },
 "sweetmeat":{
 "d":"rejected",
@@ -151121,6 +151831,12 @@
 "w":"taglal",
 "r":"only in books (used for cross-references)"
 },
+"tagline":{
+"d":"rejected",
+"w":"tagline",
+"r":"everyday word",
+"n":1
+},
 "tagok":{
 "d":"exists",
 "w":"tagok",
@@ -151178,6 +151894,12 @@
 "d":"rejected",
 "w":"taillight",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"tailor":{
+"d":"rejected",
+"w":"tailor",
+"r":"everyday word",
 "n":1
 },
 "tailpiece":{
@@ -151288,6 +152010,12 @@
 "d":"exists",
 "w":"talan",
 "r":"only in books (used for cross-references)"
+},
+"talbert":{
+"d":"rejected",
+"w":"talbert",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "talcum":{
 "d":"approved",
@@ -151953,7 +152681,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":5
+"n":6
 },
 "targaryen":{
 "d":"rejected",
@@ -152643,7 +153371,7 @@
 "d":"rejected",
 "w":"teapot",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "tear-aways":{
 "d":"rejected",
@@ -153239,7 +153967,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "teleport":{
 "d":"approved",
@@ -154551,7 +155279,7 @@
 "d":"rejected",
 "w":"tewkesbury",
 "r":"a name, not a word",
-"n":1
+"n":2
 },
 "tewksbury":{
 "d":"rejected",
@@ -155374,6 +156102,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":1
 },
+"thosewahlbergmen":{
+"d":"rejected",
+"w":"thosewahlbergmen",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "thoughtfully":{
 "d":"rejected",
 "w":"thoughtfully",
@@ -155483,9 +156217,12 @@
 "n":2
 },
 "thresh":{
-"d":"rejected",
-"w":"threshing",
-"r":"only heard in lines with swearing",
+"d":"approved",
+"w":"thresh",
+"seq":4684,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
 "n":1
 },
 "thresher":{
@@ -155803,6 +156540,12 @@
 "tickels":{
 "d":"rejected",
 "w":"tickels",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"tickin":{
+"d":"rejected",
+"w":"tickin",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
@@ -156523,7 +157266,7 @@
 "day":"2026-11-15",
 "first":"2026-11-13",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "titka":{
 "d":"exists",
@@ -157014,6 +157757,12 @@
 "w":"toenail",
 "r":"an everyday word with a prefix or suffix",
 "n":8
+},
+"toeten":{
+"d":"rejected",
+"w":"toeten",
+"r":"an everyday word with a prefix or suffix",
+"n":1
 },
 "toff":{
 "d":"approved",
@@ -157788,7 +158537,7 @@
 "d":"rejected",
 "w":"torment",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "tormentor":{
 "d":"approved",
@@ -158839,6 +159588,12 @@
 "r":"two dictionaries agree",
 "n":3
 },
+"traynor":{
+"d":"rejected",
+"w":"traynor",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "treacher":{
 "d":"approved",
 "w":"treacher",
@@ -158937,6 +159692,12 @@
 "d":"rejected",
 "w":"treeless",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"treena":{
+"d":"rejected",
+"w":"treena",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "treetop":{
@@ -159265,6 +160026,12 @@
 "w":"triple-hummocked",
 "r":"only in books (used for cross-references)"
 },
+"triplet":{
+"d":"rejected",
+"w":"triplet",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "triplicate":{
 "d":"approved",
 "w":"triplicate",
@@ -159553,7 +160320,7 @@
 "d":"rejected",
 "w":"trouser",
 "r":"an everyday object, animal or food",
-"n":3
+"n":4
 },
 "trouser-leg":{
 "d":"rejected",
@@ -159794,6 +160561,12 @@
 "tsk-tsk-tsk":{
 "d":"rejected",
 "w":"tsk-tsk-tsk",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"tsk-tsk-tsk-tsk-tsk":{
+"d":"rejected",
+"w":"tsk-tsk-tsk-tsk-tsk",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
@@ -161829,7 +162602,7 @@
 "d":"rejected",
 "w":"unbind",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "unblemished":{
 "d":"approved",
@@ -162280,7 +163053,7 @@
 "d":"rejected",
 "w":"uncredited",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "uncritical":{
 "d":"exists",
@@ -162970,6 +163743,12 @@
 "r":"two dictionaries agree",
 "n":1
 },
+"unerwunschte":{
+"d":"rejected",
+"w":"unerwunschte",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "unescorted":{
 "d":"rejected",
 "w":"unescorted",
@@ -163450,6 +164229,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":9
 },
+"unhookedand":{
+"d":"rejected",
+"w":"unhookedand",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "unhouse":{
 "d":"exists",
 "w":"unhouse",
@@ -163624,7 +164409,7 @@
 "d":"rejected",
 "w":"uninteresting",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "uninterruptedly":{
 "d":"exists",
@@ -164670,7 +165455,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "unslakeable":{
 "d":"approved",
@@ -164768,9 +165553,10 @@
 "n":1
 },
 "unsuited":{
-"d":"exists",
+"d":"rejected",
 "w":"unsuited",
-"r":"only in books (used for cross-references)"
+"r":"an everyday word with a prefix or suffix",
+"n":2
 },
 "unsullied":{
 "d":"approved",
@@ -164779,6 +165565,12 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"Wiktionary only",
+"n":1
+},
+"unsung":{
+"d":"rejected",
+"w":"unsung",
+"r":"an everyday word with a prefix or suffix",
 "n":1
 },
 "unsuperviseable":{
@@ -165157,7 +165949,7 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"two dictionaries agree",
-"n":1
+"n":2
 },
 "unwomanly":{
 "d":"exists",
@@ -165259,6 +166051,12 @@
 "d":"rejected",
 "w":"upons",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"upour":{
+"d":"rejected",
+"w":"upour",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "upper":{
@@ -167232,6 +168030,12 @@
 "r":"two dictionaries agree",
 "n":2
 },
+"verbrecher":{
+"d":"rejected",
+"w":"verbrecher",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "verbuv":{
 "d":"exists",
 "w":"verbuv",
@@ -167424,6 +168228,12 @@
 "d":"rejected",
 "w":"versity",
 "r":"not a whole word in the quote",
+"n":1
+},
+"verstehe":{
+"d":"rejected",
+"w":"verstehe",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "verte":{
@@ -170412,7 +171222,7 @@
 "d":"rejected",
 "w":"watertight",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "waterwork":{
 "d":"rejected",
@@ -170871,7 +171681,7 @@
 "d":"rejected",
 "w":"weintraub",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":2
+"n":3
 },
 "weird":{
 "d":"rejected",
@@ -170907,6 +171717,12 @@
 "d":"rejected",
 "w":"welfs",
 "r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"welin":{
+"d":"rejected",
+"w":"welin",
+"r":"not an English word (foreign or a name)",
 "n":1
 },
 "welkin":{
@@ -171020,9 +171836,13 @@
 "n":1
 },
 "welter":{
-"d":"exists",
+"d":"approved",
 "w":"welter",
-"r":"only in books (used for cross-references)"
+"seq":4687,
+"day":"2026-11-18",
+"first":"2026-11-17",
+"r":"two dictionaries agree",
+"n":1
 },
 "welterweight":{
 "d":"approved",
@@ -171218,7 +172038,7 @@
 "d":"rejected",
 "w":"whaddaya",
 "r":"a misspelling, abbreviation or contraction",
-"n":3
+"n":4
 },
 "whaddya":{
 "d":"rejected",
@@ -172027,7 +172847,7 @@
 "d":"rejected",
 "w":"whore",
 "r":"rude or upsetting",
-"n":4
+"n":5
 },
 "whorin":{
 "d":"rejected",
@@ -172334,7 +173154,7 @@
 "d":"rejected",
 "w":"willem",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":6
+"n":7
 },
 "willin":{
 "d":"rejected",
@@ -172688,6 +173508,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"wirklich":{
+"d":"rejected",
+"w":"wirklich",
+"r":"not an English word (foreign or a name)",
+"n":1
+},
 "wise":{
 "d":"rejected",
 "w":"wise",
@@ -172698,7 +173524,7 @@
 "d":"rejected",
 "w":"wise guy",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "wisecrack":{
 "d":"rejected",
@@ -172710,7 +173536,7 @@
 "d":"rejected",
 "w":"wish-fulfilment",
 "r":"an everyday word with a prefix or suffix",
-"n":1
+"n":2
 },
 "wishfulness":{
 "d":"exists",
@@ -173977,7 +174803,7 @@
 "d":"rejected",
 "w":"yakkin",
 "r":"not a whole word in the quote",
-"n":1
+"n":2
 },
 "yalta":{
 "d":"exists",
