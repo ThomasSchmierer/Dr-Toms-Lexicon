@@ -5,22 +5,22 @@ uncommon English word, it isn't rude, a name or a fragment, and the two dictiona
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4317 words (3276 confirmed by both dictionaries)
+- **Approved:** 4327 words (3284 confirmed by both dictionaries)
 - **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17218
-- **Already in the game, or only in books:** 10309 (these still get cross-references)
-- **Words used in more than one show:** 1922
+- **Rejected:** 17257
+- **Already in the game, or only in books:** 10306 (these still get cross-references)
+- **Words used in more than one show:** 1932
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
 ## Heard in the most places
 
 - **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Last of the Summer Wine, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing, The Works of Edgar Allan Poe
+- **smother**: Community, Heroes, Mickey 17, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
 - **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
 - **trifle**: A Doll's House, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
 - **dangle**: Buffy the Vampire Slayer, Enola Holmes, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
-- **smother**: Community, Heroes, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
 - **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Deadpool & Wolverine, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
 - **euphemism**: Breaking Bad, Bunheads, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
@@ -162,20 +162,20 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4484 |
-| not in either dictionary (made up, a name or a typo) | 3060 |
-| fragment of a longer word or a contraction | 2702 |
-| everyday word | 2540 |
+| an everyday word with a prefix or suffix | 4494 |
+| not in either dictionary (made up, a name or a typo) | 3064 |
+| fragment of a longer word or a contraction | 2714 |
+| everyday word | 2543 |
 | not a whole word in the quote | 1905 |
-| not an English word (foreign or a name) | 640 |
-| an everyday object, animal or food | 485 |
+| not an English word (foreign or a name) | 643 |
+| an everyday object, animal or food | 488 |
 | only heard in lines with swearing | 426 |
 | rude or upsetting meaning | 351 |
-| rude or upsetting | 246 |
+| rude or upsetting | 249 |
 | a name, not a word | 122 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
-| body part | 47 |
+| body part | 48 |
 | a name (only capitalised in the dictionary) | 28 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
@@ -186,6 +186,16 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| hydrocortisone | An adrenal-cortex hormone (trade names Hydrocortone or Cortef) that is active in carbohydrate and protein meta | Casino Royale |
+| fusiform | Tapering at each end. | Spectre |
+| maladjusted | Poorly adjusted to demands and stresses of daily living. | Casino Royale |
+| digitalis | A powerful cardiac stimulant obtained from foxglove. | Casino Royale |
+| antihistamine | A medicine used to treat allergies and hypersensitive reactions and colds; works by counteracting the effects  | Casino Royale |
+| thallium | A soft grey malleable metallic element that resembles tin but discolors on exposure to air; it is highly toxic | Spectre |
+| vesper | A planet (usually Venus) seen at sunset in the western sky. | Casino Royale, Spectre |
+| provocatrix | A female provocator. | Skyfall |
+| fugit | The optimal date to exercise an American option (or a Bermudan option). | Spectre |
+| ignominiously | In a dishonorable manner or to a dishonorable degree. | Skyfall |
 | recut | To cut again. | Titanic |
 | coulee | A stream, especially one in the western US or Canada, generally smaller than a bayou; it may (or may not) run  | Spellbound |
 | katniss | Sagittaria spp., herbaceous perennial flowering plants that grow in water. | The Hunger Games |
@@ -326,13 +336,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | boor | A crude uncouth ill-bred person lacking culture or refinement. | M*A*S*H |
 | gawky | Lacking grace in movement or posture. | Dawson's Creek |
 | penmanship | Beautiful handwriting. | The Mentalist |
-| kente | A type of fabric made of interwoven cloth strips, native to Ghana. | America's Next Top Model |
-| neolithic | Of or relating to the most recent period of the Stone Age (following the mesolithic). | M*A*S*H |
-| houlihan | A kind of lasso throw. | M*A*S*H |
-| coscreenwriter | Someone who cooperates with one or more other people in screenwriting. | The Dark Knight Rises |
-| overexaggerate | To exaggerate, to overstate excessively. | America's Next Top Model |
-| bumptious | Offensively self-assertive. | The Mentalist |
-| nihilistic | Of or relating to nihilism. | South Park |
-| insensate | Devoid of feeling and consciousness and animation. | M*A*S*H |
-| wunderkind | A child prodigy; a wonderchild. | Dawson's Creek |
-| holla | To shout out or greet casually. | America's Next Top Model |
