@@ -1,16 +1,16 @@
-# Word review (2026-11-17)
+# Word review (2026-11-18)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4327 words (3284 confirmed by both dictionaries)
+- **Approved:** 4344 words (3296 confirmed by both dictionaries)
 - **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17257
-- **Already in the game, or only in books:** 10306 (these still get cross-references)
-- **Words used in more than one show:** 1932
+- **Rejected:** 17286
+- **Already in the game, or only in books:** 10301 (these still get cross-references)
+- **Words used in more than one show:** 1948
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -35,6 +35,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist, The Works of Edgar Allan Poe
 - **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Lady with the Dog and Other Stories, The Rookie, The Works of Edgar Allan Poe
 - **vindictive**: America's Next Top Model, Boston Legal, Dawson's Creek, Oppenheimer, Peep Show, Red Dwarf, The Crown, The Golden Girls, The West Wing, Veep
+- **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Primetime, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
 - **flinch**: Dawson's Creek, Grey's Anatomy, House, Malcolm in the Middle, Obsession, Poems of Gerard Manley Hopkins, The Crown, The Day Today, The Great Gatsby, The Handmaid's Tale
 - **annihilate**: Buffy the Vampire Slayer, Doctor Strange in the Multiverse of Madness, Jurassic World Rebirth, Masters of the Universe, Superman, The Amazing Digital Circus, The Mandalorian, The Super Mario Bros. Movie, The Works of Edgar Allan Poe, Toy Story
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
@@ -51,7 +52,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist, The Works of Edgar Allan Poe
 - **cower**: American Horror Story, Dawson's Creek, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
 - **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, Spider-Man 3, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
-- **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
 - **distasteful**: Boston Legal, Game of Thrones, Poems of Gerard Manley Hopkins, Rumpole of the Bailey, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, To Catch a Predator
 - **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
 - **electrocute**: 30 Rock, Community, Ghosts, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
@@ -162,21 +162,21 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4494 |
-| not in either dictionary (made up, a name or a typo) | 3064 |
-| fragment of a longer word or a contraction | 2714 |
-| everyday word | 2543 |
+| an everyday word with a prefix or suffix | 4498 |
+| not in either dictionary (made up, a name or a typo) | 3075 |
+| fragment of a longer word or a contraction | 2717 |
+| everyday word | 2548 |
 | not a whole word in the quote | 1905 |
-| not an English word (foreign or a name) | 643 |
+| not an English word (foreign or a name) | 645 |
 | an everyday object, animal or food | 488 |
 | only heard in lines with swearing | 426 |
-| rude or upsetting meaning | 351 |
+| rude or upsetting meaning | 354 |
 | rude or upsetting | 249 |
 | a name, not a word | 122 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
 | body part | 48 |
-| a name (only capitalised in the dictionary) | 28 |
+| a name (only capitalised in the dictionary) | 29 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
 | a contraction | 2 |
@@ -186,6 +186,23 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| ornithologist | A zoologist who studies birds. | Die Another Day |
+| falconry | The art of training falcons to hunt and return. | Remember Me |
+| introvert | (psychology) a person who tends to shrink from social contacts and to become preoccupied with their own though | Breaking Bad, Remember Me |
+| toiletry | Artifacts used in making your toilet (washing and taking care of your body). | Remember Me |
+| acquaint | Cause to come to know personally. | Die Another Day, The Works of Edgar Allan Poe |
+| corinne | Cocaine. | Quantum of Solace |
+| tankbuster | A military aircraft suited to the destruction of tanks. | Die Another Day |
+| inconsolable | Sad beyond comforting; incapable of being consoled. | Quantum of Solace |
+| oculist | A person skilled in testing for defects of vision in order to prescribe corrective glasses. | On Her Majesty's Secret Service, The Great Gatsby |
+| astroid | A hypocycloid with four cusps. | Remember Me |
+| restaurateur | The proprietor of a restaurant. | GoldenEye |
+| baronet | A member of the British order of honor; ranks below a baron but above a knight. | On Her Majesty's Secret Service |
+| compunction | A feeling of deep regret (usually for some misdeed). | GoldenEye |
+| verity | Conformity to reality or actuality. | Verity |
+| shrubland | Land that is covered mostly with shrubs. | Never Say Never Again |
+| xenium | A gift or offering. | GoldenEye |
+| embolism | An insertion into a calendar. | Remember Me |
 | hydrocortisone | An adrenal-cortex hormone (trade names Hydrocortone or Cortef) that is active in carbohydrate and protein meta | Casino Royale |
 | fusiform | Tapering at each end. | Spectre |
 | maladjusted | Poorly adjusted to demands and stresses of daily living. | Casino Royale |
@@ -319,20 +336,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | regurgitative | Of or pertaining to the act of regurgitating. | Knives Out |
 | beldam | An ugly evil-looking old woman. | Coraline |
 | bugaboo | An imaginary monster used to frighten children. | Spider-Man, The Works of Edgar Allan Poe |
-| pauldron | A component of plate armor that protects the shoulder, generally covering more than a spaulder, also protectin | The Mandalorian |
-| cesium | A soft silver-white ductile metallic element (liquid at normal temperatures); the most electropositive and alk | Dark |
-| webslinger | One who throws out webs; applied to the comic-book superhero Spider-Man, who traverses buildings by shooting s | Spider-Man |
-| dowse | Wet thoroughly. | Coraline |
-| aneurin | A B vitamin that prevents beriberi; maintains appetite and growth. | Dunkirk |
-| marauding | Characterized by plundering or pillaging or marauding. | Poems by Emily Dickinson, The Princess Bride |
-| modulate | Change the key of, in music. | Spider-Man, The Works of Edgar Allan Poe |
-| embossed | Embellished with a raised pattern created by pressure or embroidery. | Toy Story |
-| mele | A chant in Polynesia, especially Hawaii, typically in praise of a leader or to commemorate some significant ev | Fantastic Mr. Fox |
-| proscribed | Excluded from use or mention. | Withnail and I |
-| quintessence | The fifth and highest element after air and earth and fire and water; was believed to be the substance composi | The Works of Edgar Allan Poe, Withnail and I |
-| hermaphroditic | Of animal or plant; having both male female reproductive organs. | M*A*S*H |
-| facetious | Cleverly amusing in tone. | M*A*S*H |
-| afflict | Cause great unhappiness for; distress. | M*A*S*H, The Works of Edgar Allan Poe |
-| boor | A crude uncouth ill-bred person lacking culture or refinement. | M*A*S*H |
-| gawky | Lacking grace in movement or posture. | Dawson's Creek |
-| penmanship | Beautiful handwriting. | The Mentalist |

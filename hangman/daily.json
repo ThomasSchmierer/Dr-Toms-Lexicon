@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -98,6 +98,16 @@
    "scope": "year",
    "views": 6604954,
    "year": "2019"
+  },
+  "2026-11-21": {
+   "w": "mhm",
+   "line": "Really? That’s really interesting. <mark>Mmhmm</mark>.",
+   "src": "Marty Supreme",
+   "kind": "film",
+   "rank": 13,
+   "scope": "year",
+   "views": 6279916,
+   "year": "2025"
   }
  }
 }
