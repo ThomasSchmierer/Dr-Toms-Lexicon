@@ -1,25 +1,25 @@
-# Word review (2026-11-18)
+# Word review (2026-11-19)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4344 words (3296 confirmed by both dictionaries)
+- **Approved:** 4373 words (3312 confirmed by both dictionaries)
 - **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
-- **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17286
-- **Already in the game, or only in books:** 10301 (these still get cross-references)
-- **Words used in more than one show:** 1948
+- **Waiting for their dictionary lookup:** 1 (checked on the next run)
+- **Rejected:** 17409
+- **Already in the game, or only in books:** 10292 (these still get cross-references)
+- **Words used in more than one show:** 1960
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
 ## Heard in the most places
 
 - **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Last of the Summer Wine, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing, The Works of Edgar Allan Poe
+- **trifle**: A Doll's House, Casino Royale, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
 - **smother**: Community, Heroes, Mickey 17, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
 - **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
-- **trifle**: A Doll's House, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
 - **dangle**: Buffy the Vampire Slayer, Enola Holmes, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
 - **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Deadpool & Wolverine, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
@@ -30,6 +30,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **flunk**: Breaking Bad, Buffy the Vampire Slayer, Community, Dawson's Creek, Frasier, Grey's Anatomy, M*A*S*H, Malcolm in the Middle, Spider-Man, The Golden Girls, The Simpsons
 - **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
 - **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Godfather, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Withnail and I
+- **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Harry Potter and the Goblet of Fire, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
 - **gibberish**: Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It
 - **scoff**: Frankenstein, Frasier, Gilmore Girls, Invincible, QI, Spaced, Star Trek: The Next Generation, The Thick of It, The Works of Edgar Allan Poe, VisionQuest
 - **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist, The Works of Edgar Allan Poe
@@ -41,12 +42,12 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
 - **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, VisionQuest
 - **snicker**: Game of Thrones, M*A*S*H, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Golden Girls, The Simpsons, The West Wing, Wings
+- **babble**: Cheers, Gilmore Girls, Harry Potter and the Goblet of Fire, Malcolm in the Middle, Poems of Gerard Manley Hopkins, Red Dwarf, Star Trek: The Next Generation, The Big Bang Theory, The Great Gatsby
 - **clench**: America's Next Top Model, Get Him to the Greek, House, QI, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe
 - **nibble**: A Bit of Fry and Laurie, A Doll's House, Blackadder, Cheers, Futurama, The Great Gatsby, The Vicar of Dibley, The Works of Edgar Allan Poe, Zootopia 2
 - **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons
 - **squander**: American Horror Story, Breaking Bad, Community, Interview with the Vampire, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, The Works of Edgar Allan Poe, VisionQuest
 - **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Twin Peaks
-- **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
 - **imbecile**: Blackadder, Boston Legal, Buffy the Vampire Slayer, Game of Thrones, QI, Red Dwarf, Spider-Man, The Newsroom, The Works of Edgar Allan Poe
 - **murmur**: M*A*S*H, Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The Works of Edgar Allan Poe
 - **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist, The Works of Edgar Allan Poe
@@ -55,7 +56,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **distasteful**: Boston Legal, Game of Thrones, Poems of Gerard Manley Hopkins, Rumpole of the Bailey, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, To Catch a Predator
 - **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
 - **electrocute**: 30 Rock, Community, Ghosts, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
-- **blurt**: Community, Futurama, Grey's Anatomy, Parks and Recreation, Pushing Daisies, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Simpsons
 
 ## Settled by a tie-break
 
@@ -162,20 +162,20 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4498 |
-| not in either dictionary (made up, a name or a typo) | 3075 |
-| fragment of a longer word or a contraction | 2717 |
-| everyday word | 2548 |
-| not a whole word in the quote | 1905 |
-| not an English word (foreign or a name) | 645 |
-| an everyday object, animal or food | 488 |
-| only heard in lines with swearing | 426 |
-| rude or upsetting meaning | 354 |
+| an everyday word with a prefix or suffix | 4531 |
+| not in either dictionary (made up, a name or a typo) | 3106 |
+| fragment of a longer word or a contraction | 2743 |
+| everyday word | 2558 |
+| not a whole word in the quote | 1906 |
+| not an English word (foreign or a name) | 660 |
+| an everyday object, animal or food | 490 |
+| only heard in lines with swearing | 427 |
+| rude or upsetting meaning | 355 |
 | rude or upsetting | 249 |
-| a name, not a word | 122 |
+| a name, not a word | 124 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
-| body part | 48 |
+| body part | 49 |
 | a name (only capitalised in the dictionary) | 29 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
@@ -186,6 +186,35 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| manky | Inferior and worthless. | Harry Potter and the Goblet of Fire |
+| alastor | An avenging spirit or deity, variously associated with the Erinyes, Nemesis, and more. | Harry Potter and the Goblet of Fire |
+| hagride | To harass or torment with dread or nightmares. | Harry Potter and the Goblet of Fire |
+| hussar | A member of a European light cavalry unit; renowned for elegant dress. | Casino Royale |
+| heptapod | Something with seven legs. | Arrival |
+| likin | A Chinese provincial tax levied at many inland stations upon imports or articles in transit. | Twilight |
+| codger | Used affectionately to refer to an eccentric but amusing old man. | Harry Potter and the Goblet of Fire |
+| besmirch | Charge falsely or with malicious intent; attack the good name and reputation of someone. | Harry Potter and the Goblet of Fire |
+| bounteously | In a bountiful manner. | Casino Royale |
+| joshi | Japanese women's professional wrestling. | Blade Runner 2049 |
+| blaxploitation | The exploitation of black people (especially with regard to stereotyped roles in movies). | Gayniggers from Outer Space |
+| orbicularis | A muscle surrounding an opening. | Casino Royale |
+| synovial | Relating to or secreting synovia. | Casino Royale |
+| reupholster | To upholster again; to replace the attached fabric covering on furniture. | Casino Royale |
+| matriculate | Enroll as a student. | Twilight |
+| lysergic | Used in the designation of lysergic acid and lysergic acid diethylamide: produced by hydrolysis from ergot. | Casino Royale |
+| hatter | Someone who makes and sells hats. | Harry Potter and the Goblet of Fire |
+| bumble | Make a mess of, destroy or ruin. | Harry Potter and the Goblet of Fire, The Mentalist |
+| goyle | A ravine or other depression. | Harry Potter and the Goblet of Fire |
+| lassie | A girl or young woman who is unmarried. | Casino Royale |
+| linguist | A specialist in linguistics. | Arrival |
+| orthography | A method of representing the sounds of a language by written or printed symbols. | Arrival, Poems by Emily Dickinson |
+| wearisome | So lacking in interest as to cause mental weariness; - Edmund Burke. | Harry Potter and the Goblet of Fire, The Lady with the Dog and Other Stories |
+| inconquerable | That cannot be conquered; unconquerable. | Casino Royale |
+| fastidious | Giving careful attention to detail; hard to please; excessively concerned with cleanliness. | Harry Potter and the Goblet of Fire, Poems by Emily Dickinson, The Works of Edgar Allan Poe |
+| categorical | Relating to or included in a category or categories. | Gayniggers from Outer Space, Peaky Blinders |
+| articular | Relating to or affecting the joints of the body. | Casino Royale |
+| replicant | A robot or artificial being that is an exact copy of a genuine lifeform, especially a human. | Blade Runner 2049 |
+| boomslang | A highly venomous rear-fanged snake found in sub-Saharan Africa, Dispholidus typus. | Harry Potter and the Goblet of Fire |
 | ornithologist | A zoologist who studies birds. | Die Another Day |
 | falconry | The art of training falcons to hunt and return. | Remember Me |
 | introvert | (psychology) a person who tends to shrink from social contacts and to become preoccupied with their own though | Breaking Bad, Remember Me |
@@ -243,7 +272,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | procurator | A person authorized to act for another. | The Passion of the Christ |
 | ticklish | Difficult to handle; requiring great tact. | Get Him to the Greek |
 | caporegime | A high-ranking member of a crime family in the Mafia who heads a "crew" of soldiers and has significant social | The Godfather |
-| trifle | Consider not very seriously. | A Doll's House, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
+| trifle | Consider not very seriously. | A Doll's House, Casino Royale, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
 | cinematographer | A photographer who operates a movie camera. | Spider-Man 3 |
 | razzmatazz | Any exciting and complex play intended to confuse (dazzle) the opponent. | Get Him to the Greek |
 | seclusion | The quality of being secluded from the presence or view of others. | Poems by Emily Dickinson, The Shining, The Works of Edgar Allan Poe |
@@ -307,32 +336,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | supersede | Take the place or move into the position of. | The Mandalorian |
 | vulpes | Foxes. | Fantastic Mr. Fox |
 | vermillion | Of a vivid red to reddish-orange color. | Coraline |
-| adamantium | A fictional metal which is indestructible or nearly so. | Deadpool & Wolverine |
-| carjacker | One who engages in carjacking; one who steals an occupied automobile. | Spider-Man |
-| triquetra | A shape formed of three vesicae piscium, sometimes with an additional circle, a symbol of things and persons t | Dark |
-| whoosh | Move with a sibilant sound. | Toy Story |
-| sabertooth | Any of many extinct cats of the Old and New Worlds having long swordlike upper canine teeth; from the Oligocen | Deadpool & Wolverine |
-| nerve-wracking | Extremely irritating to the nerves. | Deadpool & Wolverine |
-| foundling | A child who has been abandoned and whose parents are unknown. | The Mandalorian |
-| dulcet | Pleasing to the ear. | The Princess Bride |
-| rale | A rapid series of short loud sounds (as might be heard with a stethoscope in some types of respiratory disorde | Fantastic Mr. Fox |
-| squab | Flesh of a pigeon suitable for roasting or braising; flesh of a dove (young squab) may be broiled. | Fantastic Mr. Fox |
-| arachnophobia | A morbid fear of spiders. | Spider-Man |
-| scuffer | A lightweight flexible sandal with a sturdy sole; worn as play shoes by children and as sportswear by adults. | The Mandalorian |
-| virility | The masculine property of being capable of copulation and procreation. | The Grand Budapest Hotel |
-| mauve | A moderate purple. | Withnail and I |
-| ail | Be ill or unwell. | Homeland, Poems by Emily Dickinson |
-| caftan | A woman's dress style that imitates the caftan cloaks worn by men in the Near East. | Withnail and I |
-| symbiote | An organism that lives in a symbiotic relationship. | Spider-Man, Spider-Man 3 |
-| egoism | (ethics) the theory that the pursuit of your own welfare in the basis of morality. | Spider-Man, The Lady with the Dog and Other Stories |
-| chartreuse | Aromatic green or yellow liqueur flavored with orange peel and hyssop and peppermint oils; made at monastery n | Coraline |
-| recombinator | Anything that serves to recombine a set of elements. | Spider-Man |
-| mustela | Type genus of the family Mustelidae: minks and weasels. | Fantastic Mr. Fox |
-| deleterious | Harmful to living things. | Homeland |
-| mete | A line that indicates a boundary. | Poems, Spider-Man |
-| unfulfillable | Not fulfillable. | Amadeus |
-| southpaw | A baseball pitcher who throws the ball with the left hand. | Rocky |
-| wolfie | A werewolf. | Amadeus |
-| regurgitative | Of or pertaining to the act of regurgitating. | Knives Out |
-| beldam | An ugly evil-looking old woman. | Coraline |
-| bugaboo | An imaginary monster used to frighten children. | Spider-Man, The Works of Edgar Allan Poe |

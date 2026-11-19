@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -108,6 +108,16 @@
    "scope": "year",
    "views": 6279916,
    "year": "2025"
+  },
+  "2026-11-22": {
+   "w": "yeehaw",
+   "line": "<mark>Yee-haw</mark>! Let's play!",
+   "src": "Toy Story 5",
+   "kind": "film",
+   "rank": 16,
+   "scope": "year",
+   "views": 5239909,
+   "year": "2026"
   }
  }
 }
