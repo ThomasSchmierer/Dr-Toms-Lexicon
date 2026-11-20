@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -117,6 +117,16 @@
    "rank": 16,
    "scope": "year",
    "views": 5239909,
+   "year": "2026"
+  },
+  "2026-11-23": {
+   "w": "ideate",
+   "line": "…please! I... I’d just like to take a moment to <mark>ideate</mark> on an escape strategy.",
+   "src": "Masters of the Universe",
+   "kind": "film",
+   "rank": 18,
+   "scope": "year",
+   "views": 5037569,
    "year": "2026"
   }
  }

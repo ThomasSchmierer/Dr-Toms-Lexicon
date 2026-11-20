@@ -27479,6 +27479,12 @@
 "r":"two dictionaries agree",
 "n":2
 },
+"cotrona":{
+"d":"rejected",
+"w":"cotrona",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "cotta":{
 "d":"rejected",
 "w":"cotta",
@@ -36428,7 +36434,7 @@
 "d":"rejected",
 "w":"djimon",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "dkedni":{
 "d":"exists",
@@ -46032,6 +46038,12 @@
 "w":"fairyland",
 "r":"only in books (used for cross-references)"
 },
+"faith":{
+"d":"rejected",
+"w":"faith",
+"r":"everyday word",
+"n":1
+},
 "faithfulness":{
 "d":"rejected",
 "w":"faithfulness",
@@ -50037,9 +50049,9 @@
 "n":2
 },
 "floridian":{
-"d":"waiting",
+"d":"rejected",
 "w":"floridian",
-"r":"waiting for the Wiktionary lookup",
+"r":"a name (only capitalised in the dictionary)",
 "n":1
 },
 "florin":{
@@ -73818,7 +73830,7 @@
 "d":"rejected",
 "w":"invisibility",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "invisibly":{
 "d":"rejected",
@@ -76790,7 +76802,7 @@
 "d":"rejected",
 "w":"jovan",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "jovial":{
 "d":"exists",
@@ -94688,6 +94700,12 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
+"n":1
+},
+"meagan":{
+"d":"rejected",
+"w":"meagan",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "meagerness":{
@@ -116993,7 +117011,7 @@
 "d":"rejected",
 "w":"pervy",
 "r":"rude or upsetting meaning",
-"n":1
+"n":2
 },
 "perzsel":{
 "d":"rejected",
@@ -134911,6 +134929,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":2
 },
+"sandberg":{
+"d":"rejected",
+"w":"sandberg",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "sandblast":{
 "d":"rejected",
 "w":"sandblast",
@@ -139104,7 +139128,7 @@
 "day":"2026-11-15",
 "first":"2026-11-13",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "sheaf":{
 "d":"exists",
@@ -141279,7 +141303,7 @@
 "d":"rejected",
 "w":"sivana",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "six-baby-vag":{
 "d":"rejected",
@@ -145929,6 +145953,12 @@
 "d":"rejected",
 "w":"squeezin",
 "r":"not a whole word in the quote",
+"n":1
+},
+"squez":{
+"d":"rejected",
+"w":"squez",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "squib":{
@@ -156567,8 +156597,8 @@
 "thaddeus":{
 "d":"rejected",
 "w":"thaddeus",
-"r":"only heard in lines with swearing",
-"n":1
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":2
 },
 "thaedus":{
 "d":"rejected",
@@ -170294,7 +170324,7 @@
 "d":"rejected",
 "w":"villian",
 "r":"a misspelling, abbreviation or contraction",
-"n":1
+"n":2
 },
 "villog":{
 "d":"exists",

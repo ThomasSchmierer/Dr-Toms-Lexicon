@@ -1,4 +1,4 @@
-# Word review (2026-11-19)
+# Word review (2026-11-20)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
@@ -7,10 +7,10 @@ decides, so nothing waits for a person.
 
 - **Approved:** 4373 words (3312 confirmed by both dictionaries)
 - **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
-- **Waiting for their dictionary lookup:** 1 (checked on the next run)
-- **Rejected:** 17409
+- **Waiting for their dictionary lookup:** 0 (checked on the next run)
+- **Rejected:** 17415
 - **Already in the game, or only in books:** 10292 (these still get cross-references)
-- **Words used in more than one show:** 1960
+- **Words used in more than one show:** 1961
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -163,20 +163,20 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | Reason | Words |
 |---|---|
 | an everyday word with a prefix or suffix | 4531 |
-| not in either dictionary (made up, a name or a typo) | 3106 |
+| not in either dictionary (made up, a name or a typo) | 3111 |
 | fragment of a longer word or a contraction | 2743 |
-| everyday word | 2558 |
+| everyday word | 2559 |
 | not a whole word in the quote | 1906 |
 | not an English word (foreign or a name) | 660 |
 | an everyday object, animal or food | 490 |
-| only heard in lines with swearing | 427 |
+| only heard in lines with swearing | 426 |
 | rude or upsetting meaning | 355 |
 | rude or upsetting | 249 |
 | a name, not a word | 124 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
 | body part | 49 |
-| a name (only capitalised in the dictionary) | 29 |
+| a name (only capitalised in the dictionary) | 30 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
 | a contraction | 2 |
