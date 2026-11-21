@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -127,6 +127,16 @@
    "rank": 18,
    "scope": "year",
    "views": 5037569,
+   "year": "2026"
+  },
+  "2026-11-24": {
+   "w": "evildoer",
+   "line": "…of justice, freedom and peace. To the <mark>evildoers</mark> who would view my absence as a…",
+   "src": "Lanterns",
+   "kind": "tv",
+   "rank": 19,
+   "scope": "year",
+   "views": 4861490,
    "year": "2026"
   }
  }

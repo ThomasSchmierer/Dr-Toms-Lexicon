@@ -1,4 +1,4 @@
-# Word review (2026-11-20)
+# Word review (2026-11-21)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
