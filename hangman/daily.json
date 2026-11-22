@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -138,6 +138,16 @@
    "scope": "year",
    "views": 4861490,
    "year": "2026"
+  },
+  "2026-11-25": {
+   "w": "dysplasia",
+   "line": "I told you a million times my teeth are coming in. It's called cleidocranial <mark>dysplasia</mark>.",
+   "src": "Stranger Things",
+   "kind": "tv",
+   "rank": 21,
+   "scope": "year",
+   "views": 4479455,
+   "year": "2016"
   }
  }
 }

@@ -2485,7 +2485,7 @@
 "d":"rejected",
 "w":"ahhhhhh",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":3
+"n":4
 },
 "ahhhhhhh":{
 "d":"rejected",
@@ -3323,6 +3323,12 @@
 "alduce":{
 "d":"rejected",
 "w":"alduce",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"aleck":{
+"d":"rejected",
+"w":"aleck",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
@@ -14549,8 +14555,8 @@
 "blowtorch":{
 "d":"rejected",
 "w":"blowtorch",
-"r":"only heard in lines with swearing",
-"n":1
+"r":"an everyday word with a prefix or suffix",
+"n":2
 },
 "blubber":{
 "d":"rejected",
@@ -21940,7 +21946,7 @@
 "d":"rejected",
 "w":"cheapskate",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "cheatham":{
 "d":"rejected",
@@ -24640,7 +24646,7 @@
 "d":"rejected",
 "w":"cojones",
 "r":"everyday word",
-"n":1
+"n":2
 },
 "coke":{
 "d":"rejected",
@@ -48951,6 +48957,12 @@
 "r":"only heard in lines with swearing",
 "n":1
 },
+"fishhook":{
+"d":"rejected",
+"w":"fishhook",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "fishin":{
 "d":"rejected",
 "w":"fishin",
@@ -56538,7 +56550,7 @@
 "d":"rejected",
 "w":"goatee",
 "r":"body part",
-"n":3
+"n":4
 },
 "goatee-bearded":{
 "d":"rejected",
@@ -65748,7 +65760,7 @@
 "day":"2026-11-14",
 "first":"2026-11-12",
 "r":"two dictionaries agree",
-"n":2
+"n":3
 },
 "hitchhiker":{
 "d":"approved",
@@ -71028,6 +71040,12 @@
 "d":"rejected",
 "w":"incompatibility",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"incompetent":{
+"d":"rejected",
+"w":"incompetent",
+"r":"everyday word",
 "n":1
 },
 "incompletion":{
@@ -78774,7 +78792,7 @@
 "d":"rejected",
 "w":"keister",
 "r":"rude or upsetting meaning",
-"n":2
+"n":3
 },
 "keken":{
 "d":"exists",
@@ -84716,7 +84734,7 @@
 "d":"rejected",
 "w":"leavin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":4
+"n":5
 },
 "lebegnek":{
 "d":"exists",
@@ -91562,6 +91580,12 @@
 "r":"only heard in lines with swearing",
 "n":1
 },
+"macaulay":{
+"d":"rejected",
+"w":"macaulay",
+"r":"a name, not a word",
+"n":1
+},
 "macchiato":{
 "d":"rejected",
 "w":"macchiato",
@@ -93786,6 +93810,12 @@
 "maroney":{
 "d":"rejected",
 "w":"maroney",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"maronna":{
+"d":"rejected",
+"w":"maronna",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
@@ -102623,7 +102653,7 @@
 "d":"rejected",
 "w":"mummy",
 "r":"everyday word",
-"n":2
+"n":3
 },
 "mump":{
 "d":"approved",
@@ -112649,7 +112679,7 @@
 "d":"rejected",
 "w":"outsmart",
 "r":"an everyday word with a prefix or suffix",
-"n":11
+"n":12
 },
 "outsource":{
 "d":"rejected",
@@ -117558,6 +117588,12 @@
 "first":"2026-11-09",
 "r":"two dictionaries agree",
 "n":3
+},
+"phlegm-wad":{
+"d":"rejected",
+"w":"phlegm-wad",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "phlegmy":{
 "d":"approved",
@@ -134724,6 +134760,12 @@
 "r":"not an English word (foreign or a name)",
 "n":1
 },
+"salt":{
+"d":"rejected",
+"w":"salt",
+"r":"everyday word",
+"n":1
+},
 "salty":{
 "d":"rejected",
 "w":"salty",
@@ -138199,6 +138241,12 @@
 "d":"exists",
 "w":"sensuously",
 "r":"only in books (used for cross-references)"
+},
+"senta":{
+"d":"rejected",
+"w":"senta",
+"r":"not an English word (foreign or a name)",
+"n":1
 },
 "sented":{
 "d":"exists",
@@ -153858,7 +153906,7 @@
 "d":"rejected",
 "w":"tarantula",
 "r":"an everyday object, animal or food",
-"n":3
+"n":4
 },
 "tarde":{
 "d":"rejected",
@@ -155455,7 +155503,7 @@
 "d":"rejected",
 "w":"temper",
 "r":"everyday word",
-"n":5
+"n":6
 },
 "temperamental":{
 "d":"rejected",
@@ -156035,6 +156083,12 @@
 "d":"exists",
 "w":"terrible",
 "r":"only in books (used for cross-references)"
+},
+"terrie":{
+"d":"rejected",
+"w":"terrie",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "terrier":{
 "d":"rejected",
@@ -160930,7 +160984,7 @@
 "d":"rejected",
 "w":"treehouse",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "treehouse--one":{
 "d":"rejected",
@@ -176153,6 +176207,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"yamahoozie":{
+"d":"rejected",
+"w":"yamahoozie",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "yammer":{
 "d":"approved",
 "w":"yammer",
@@ -177635,6 +177695,15 @@
 "d":"exists",
 "w":"zigazgat",
 "r":"only in books (used for cross-references)"
+},
+"ziggy":{
+"d":"approved",
+"w":"ziggy",
+"seq":4752,
+"day":"2026-11-24",
+"first":"2026-11-22",
+"r":"Wiktionary only",
+"n":1
 },
 "zigzag":{
 "d":"exists",
