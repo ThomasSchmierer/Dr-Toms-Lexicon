@@ -3152,7 +3152,7 @@
 "d":"rejected",
 "w":"alana",
 "r":"not an English word (foreign or a name)",
-"n":1
+"n":2
 },
 "alapelve":{
 "d":"exists",
@@ -14225,9 +14225,13 @@
 "n":6
 },
 "blithe":{
-"d":"exists",
+"d":"approved",
 "w":"blithe",
-"r":"only in books (used for cross-references)"
+"seq":4753,
+"day":"2026-11-25",
+"first":"2026-11-24",
+"r":"two dictionaries agree",
+"n":1
 },
 "blithely":{
 "d":"approved",
@@ -18751,6 +18755,12 @@
 "w":"byplay",
 "r":"only in books (used for cross-references)"
 },
+"byrnes":{
+"d":"rejected",
+"w":"byrnes",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "c-plasty":{
 "d":"rejected",
 "w":"c-plasty",
@@ -21300,6 +21310,12 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"two dictionaries agree",
+"n":1
+},
+"cesily":{
+"d":"rejected",
+"w":"cesily",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "cesium":{
@@ -25877,6 +25893,12 @@
 "d":"exists",
 "w":"congratulatory",
 "r":"only in books (used for cross-references)"
+},
+"congratulotions":{
+"d":"rejected",
+"w":"congratulotions",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "congrega":{
 "d":"rejected",
@@ -39315,7 +39337,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"Wiktionary only",
-"n":1
+"n":2
 },
 "earner":{
 "d":"rejected",
@@ -41489,6 +41511,18 @@
 "d":"exists",
 "w":"eloszlott",
 "r":"only in books (used for cross-references)"
+},
+"elphaba":{
+"d":"rejected",
+"w":"elphaba",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"elphie":{
+"d":"rejected",
+"w":"elphie",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "elpuszt":{
 "d":"exists",
@@ -48931,7 +48965,7 @@
 "d":"rejected",
 "w":"firstborn",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "fiscally":{
 "d":"rejected",
@@ -49139,6 +49173,12 @@
 "d":"rejected",
 "w":"fixman",
 "r":"an everyday word with a prefix or suffix",
+"n":1
+},
+"fiyero":{
+"d":"rejected",
+"w":"fiyero",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "fizessek":{
@@ -50380,6 +50420,12 @@
 "w":"fob",
 "r":"everyday word",
 "n":2
+},
+"focker":{
+"d":"rejected",
+"w":"focker",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "fog-shrouded":{
 "d":"rejected",
@@ -54546,6 +54592,12 @@
 "w":"gaylinks",
 "r":"only in books (used for cross-references)"
 },
+"gaylord":{
+"d":"rejected",
+"w":"gaylord",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "gayness":{
 "d":"rejected",
 "w":"gayness",
@@ -56151,6 +56203,12 @@
 "d":"rejected",
 "w":"glimpse",
 "r":"everyday word",
+"n":1
+},
+"glinda":{
+"d":"rejected",
+"w":"glinda",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "glint":{
@@ -59105,7 +59163,7 @@
 "d":"rejected",
 "w":"grubby",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "grudge":{
 "d":"rejected",
@@ -78177,6 +78235,12 @@
 "r":"not an English word (foreign or a name)",
 "n":1
 },
+"karis":{
+"d":"rejected",
+"w":"karis",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "karjai":{
 "d":"exists",
 "w":"karjai",
@@ -87851,6 +87915,12 @@
 "w":"lingeringly",
 "r":"only in books (used for cross-references)"
 },
+"linguification":{
+"d":"rejected",
+"w":"linguification",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "linguine":{
 "d":"approved",
 "w":"linguine",
@@ -92698,7 +92768,7 @@
 "day":"2026-11-12",
 "first":"2026-11-10",
 "r":"two dictionaries agree",
-"n":3
+"n":4
 },
 "malcontent":{
 "d":"approved",
@@ -93196,6 +93266,12 @@
 "d":"rejected",
 "w":"manifesto",
 "r":"everyday word",
+"n":1
+},
+"manifestorium":{
+"d":"rejected",
+"w":"manifestorium",
+"r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
 "manik":{
@@ -94245,6 +94321,12 @@
 "w":"matey",
 "r":"an everyday word with a prefix or suffix",
 "n":6
+},
+"mathilda":{
+"d":"rejected",
+"w":"mathilda",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "mathilde":{
 "d":"rejected",
@@ -105579,7 +105661,7 @@
 "d":"rejected",
 "w":"nevermore",
 "r":"an everyday word with a prefix or suffix",
-"n":2
+"n":3
 },
 "nevessen":{
 "d":"exists",
@@ -121014,7 +121096,7 @@
 "d":"rejected",
 "w":"pothead",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "pothole":{
 "d":"rejected",
@@ -129222,9 +129304,13 @@
 "n":4
 },
 "repulsion":{
-"d":"exists",
+"d":"approved",
 "w":"repulsion",
-"r":"only in books (used for cross-references)"
+"seq":4754,
+"day":"2026-11-25",
+"first":"2026-11-24",
+"r":"two dictionaries agree",
+"n":1
 },
 "reputational":{
 "d":"rejected",
@@ -137282,7 +137368,7 @@
 "d":"rejected",
 "w":"seasick",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "seasmoke":{
 "d":"rejected",
@@ -137851,7 +137937,7 @@
 "d":"rejected",
 "w":"selfishly",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "selflessly":{
 "d":"rejected",
@@ -147303,7 +147389,7 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":3
+"n":4
 },
 "stewardress":{
 "d":"rejected",
@@ -153605,6 +153691,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"tanny":{
+"d":"rejected",
+"w":"tanny",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "tanoda":{
 "d":"exists",
 "w":"tanoda",
@@ -157584,6 +157676,12 @@
 "d":"exists",
 "w":"throng",
 "r":"only in books (used for cross-references)"
+},
+"thropp":{
+"d":"rejected",
+"w":"thropp",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
 },
 "throttle":{
 "d":"exists",
@@ -174287,7 +174385,7 @@
 "d":"rejected",
 "w":"wickedness",
 "r":"an everyday word with a prefix or suffix",
-"n":3
+"n":4
 },
 "wicker":{
 "d":"rejected",

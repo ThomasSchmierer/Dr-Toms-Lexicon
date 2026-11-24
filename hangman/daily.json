@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-24",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -148,6 +148,16 @@
    "scope": "year",
    "views": 4479455,
    "year": "2016"
+  },
+  "2026-11-26": {
+   "w": "cithara",
+   "line": "…this exquisite voice. His playing of the <mark>kithara</mark>, which is a... is-is a harp-like lyre,…",
+   "src": "Hamnet",
+   "kind": "film",
+   "rank": 22,
+   "scope": "year",
+   "views": 4478823,
+   "year": "2025"
   }
  }
 }

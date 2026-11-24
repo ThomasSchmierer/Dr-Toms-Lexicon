@@ -1,16 +1,16 @@
-# Word review (2026-11-22)
+# Word review (2026-11-24)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4374 words (3312 confirmed by both dictionaries)
+- **Approved:** 4376 words (3314 confirmed by both dictionaries)
 - **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17427
-- **Already in the game, or only in books:** 10292 (these still get cross-references)
-- **Words used in more than one show:** 1961
+- **Rejected:** 17443
+- **Already in the game, or only in books:** 10290 (these still get cross-references)
+- **Words used in more than one show:** 1964
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -162,9 +162,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4533 |
-| not in either dictionary (made up, a name or a typo) | 3116 |
-| fragment of a longer word or a contraction | 2745 |
+| an everyday word with a prefix or suffix | 4536 |
+| not in either dictionary (made up, a name or a typo) | 3128 |
+| fragment of a longer word or a contraction | 2746 |
 | everyday word | 2561 |
 | not a whole word in the quote | 1906 |
 | not an English word (foreign or a name) | 661 |
@@ -186,6 +186,8 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| repulsion | The force by which bodies repel one another. | The Lady with the Dog and Other Stories, Wicked |
+| blithe | Lacking or showing a lack of due concern. | Meet the Parents, Poems by Emily Dickinson |
 | ziggy | Zigzaggy. | Home Alone |
 | manky | Inferior and worthless. | Harry Potter and the Goblet of Fire |
 | alastor | An avenging spirit or deity, variously associated with the Erinyes, Nemesis, and more. | Harry Potter and the Goblet of Fire |
@@ -334,5 +336,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | wherefore | The cause or intention underlying an action or situation, especially in the phrase `the whys and wherefores'. | Poems by Emily Dickinson, Withnail and I |
 | plagiarise | Take without referencing from someone else's writing or speech; of intellectual property. | Withnail and I |
 | sickie | A day, or time, off work due to (supposed) illness. | The Princess Bride |
-| supersede | Take the place or move into the position of. | The Mandalorian |
-| vulpes | Foxes. | Fantastic Mr. Fox |
