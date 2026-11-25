@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -158,6 +158,16 @@
    "scope": "year",
    "views": 4478823,
    "year": "2025"
+  },
+  "2026-11-27": {
+   "w": "shipwright",
+   "line": "Addam: My mother was a <mark>shipwright</mark>. My father is no one of consequence.",
+   "src": "House of the Dragon",
+   "kind": "tv",
+   "rank": 23,
+   "scope": "year",
+   "views": 4384293,
+   "year": ""
   }
  }
 }

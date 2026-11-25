@@ -1,24 +1,24 @@
-# Word review (2026-11-24)
+# Word review (2026-11-25)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4376 words (3314 confirmed by both dictionaries)
-- **Settled by a tie-break:** 94 (listed below if you want to spot-check them)
+- **Approved:** 4385 words (3319 confirmed by both dictionaries)
+- **Settled by a tie-break:** 95 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17443
-- **Already in the game, or only in books:** 10290 (these still get cross-references)
-- **Words used in more than one show:** 1964
+- **Rejected:** 17474
+- **Already in the game, or only in books:** 10287 (these still get cross-references)
+- **Words used in more than one show:** 1971
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
 ## Heard in the most places
 
 - **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Last of the Summer Wine, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing, The Works of Edgar Allan Poe
-- **trifle**: A Doll's House, Casino Royale, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
-- **smother**: Community, Heroes, Mickey 17, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
+- **trifle**: A Doll's House, Casino Royale, Easy Rider, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
+- **smother**: Community, Heroes, Little Fockers, Mickey 17, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
 - **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
 - **dangle**: Buffy the Vampire Slayer, Enola Holmes, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
@@ -97,6 +97,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | hankie | A square piece of cloth used for wiping the eyes or nose or as a costume accessory. | only WordNet has it, so it uses WordNet's meaning |
 | hasidic | Of or relating to the Jewish Hasidim or its members or their beliefs and practices. | only WordNet has it, so it uses WordNet's meaning |
 | headbanger | One who dances by violently shaking the head in time to the music. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
+| heliothis | A genus of Noctuidae. | only WordNet has it, so it uses WordNet's meaning |
 | hippy | Having large or prominent hips. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | histrionics | Overemotional behaviour, especially when calculated to elicit a response; melodramatics. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | hocus | A magician, illusionist, one who practises sleight of hand. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -162,16 +163,16 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4536 |
-| not in either dictionary (made up, a name or a typo) | 3128 |
-| fragment of a longer word or a contraction | 2746 |
+| an everyday word with a prefix or suffix | 4541 |
+| not in either dictionary (made up, a name or a typo) | 3139 |
+| fragment of a longer word or a contraction | 2752 |
 | everyday word | 2561 |
-| not a whole word in the quote | 1906 |
-| not an English word (foreign or a name) | 661 |
+| not a whole word in the quote | 1910 |
+| not an English word (foreign or a name) | 663 |
 | an everyday object, animal or food | 490 |
-| only heard in lines with swearing | 425 |
+| only heard in lines with swearing | 426 |
 | rude or upsetting meaning | 355 |
-| rude or upsetting | 249 |
+| rude or upsetting | 250 |
 | a name, not a word | 125 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
@@ -181,13 +182,23 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | only a spelling variant or form of another word | 5 |
 | a contraction | 2 |
 | everyday word with many meanings | 1 |
+| marked offensive in WordNet | 1 |
 
 ## Newest approvals
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| filbert | Small nut-bearing tree much grown in Europe. | The Happening |
+| submersion | Sinking until covered completely with water. | Meet the Fockers |
+| miniscule | Very small. | The Happening |
+| terem | Living quarters occupied by elite women of the of Moscow. | Meet the Fockers, Poems |
+| alanna | Child. | Meet the Fockers |
+| witticism | A message whose ingenuity or verbal skill or incongruity has the power to evoke laughter. | Easy Rider, The Lady with the Dog and Other Stories |
+| muskrat | Beaver-like aquatic rodent of North America with dark glossy brown fur. | Meet the Fockers |
+| gink | A guy, a fellow, especially a foolish, unworldly, or socially inept man; a goof. | Easy Rider |
+| heliothis | A genus of Noctuidae. | The Happening |
 | repulsion | The force by which bodies repel one another. | The Lady with the Dog and Other Stories, Wicked |
-| blithe | Lacking or showing a lack of due concern. | Meet the Parents, Poems by Emily Dickinson |
+| blithe | Lacking or showing a lack of due concern. | Meet the Fockers, Meet the Parents, Poems by Emily Dickinson |
 | ziggy | Zigzaggy. | Home Alone |
 | manky | Inferior and worthless. | Harry Potter and the Goblet of Fire |
 | alastor | An avenging spirit or deity, variously associated with the Erinyes, Nemesis, and more. | Harry Potter and the Goblet of Fire |
@@ -275,7 +286,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | procurator | A person authorized to act for another. | The Passion of the Christ |
 | ticklish | Difficult to handle; requiring great tact. | Get Him to the Greek |
 | caporegime | A high-ranking member of a crime family in the Mafia who heads a "crew" of soldiers and has significant social | The Godfather |
-| trifle | Consider not very seriously. | A Doll's House, Casino Royale, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
+| trifle | Consider not very seriously. | A Doll's House, Casino Royale, Easy Rider, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
 | cinematographer | A photographer who operates a movie camera. | Spider-Man 3 |
 | razzmatazz | Any exciting and complex play intended to confuse (dazzle) the opponent. | Get Him to the Greek |
 | seclusion | The quality of being secluded from the presence or view of others. | Poems by Emily Dickinson, The Shining, The Works of Edgar Allan Poe |
@@ -327,12 +338,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | multiversal | Of or pertaining to the multiverse. | Doctor Strange in the Multiverse of Madness |
 | kaboom | The sound of an explosion, typically seen in comic strips or heard in a light-hearted conversation. | Spider-Man |
 | reenergize | To energize again or anew. | Toy Story |
-| morena | Someone in authority, a master or leader, especially among Sotho-speakers. | Deadpool & Wolverine, Homeland |
-| pestilent | Exceedingly harmful. | The Works of Edgar Allan Poe, Withnail and I |
-| wrangle | To quarrel noisily, angrily or disruptively. | Toy Story |
-| thatch | Cover with thatch. | The Great Gatsby, Withnail and I |
-| balboa | The basic unit of money in Panama; equal to 100 centesimos. | Rocky |
-| behest | An authoritative command or request. | The Mandalorian |
-| wherefore | The cause or intention underlying an action or situation, especially in the phrase `the whys and wherefores'. | Poems by Emily Dickinson, Withnail and I |
-| plagiarise | Take without referencing from someone else's writing or speech; of intellectual property. | Withnail and I |
-| sickie | A day, or time, off work due to (supposed) illness. | The Princess Bride |
