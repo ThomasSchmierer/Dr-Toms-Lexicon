@@ -4900,6 +4900,12 @@
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },
+"annasophia":{
+"d":"rejected",
+"w":"annasophia",
+"r":"an everyday word with a prefix or suffix",
+"n":1
+},
 "annelle":{
 "d":"rejected",
 "w":"annelle",
@@ -8212,7 +8218,7 @@
 "d":"rejected",
 "w":"avildsen",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "avocado":{
 "d":"rejected",
@@ -39584,7 +39590,7 @@
 "d":"rejected",
 "w":"ebenezer",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "eberhardt":{
 "d":"exists",
@@ -51676,7 +51682,7 @@
 "d":"rejected",
 "w":"foretell",
 "r":"an everyday word with a prefix or suffix",
-"n":4
+"n":5
 },
 "forethink":{
 "d":"rejected",
@@ -56774,7 +56780,7 @@
 "d":"rejected",
 "w":"goddammit",
 "r":"an everyday word with a prefix or suffix",
-"n":14
+"n":15
 },
 "goddamned":{
 "d":"rejected",
@@ -61316,7 +61322,7 @@
 "d":"rejected",
 "w":"hailee",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":1
+"n":2
 },
 "hailer":{
 "d":"rejected",
@@ -65408,6 +65414,12 @@
 "r":"two dictionaries agree",
 "n":2
 },
+"hieronymous":{
+"d":"rejected",
+"w":"hieronymous",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "higginson":{
 "d":"exists",
 "w":"higginson",
@@ -68153,6 +68165,15 @@
 "d":"rejected",
 "w":"humanoid",
 "r":"everyday word",
+"n":1
+},
+"humbug":{
+"d":"approved",
+"w":"humbug",
+"seq":4764,
+"day":"2026-11-27",
+"first":"2026-11-26",
+"r":"two dictionaries agree",
 "n":1
 },
 "humdinger":{
@@ -74048,6 +74069,12 @@
 "r":"an everyday word with a prefix or suffix",
 "n":2
 },
+"inwitchification":{
+"d":"rejected",
+"w":"inwitchification",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "iocane":{
 "d":"rejected",
 "w":"iocane",
@@ -78854,7 +78881,7 @@
 "d":"rejected",
 "w":"keepin",
 "r":"not in either dictionary (made up, a name or a typo)",
-"n":5
+"n":6
 },
 "keepsake":{
 "d":"rejected",
@@ -123888,7 +123915,16 @@
 "day":"2026-11-10",
 "first":"2026-11-09",
 "r":"two dictionaries agree",
-"n":2
+"n":3
+},
+"puppetry":{
+"d":"approved",
+"w":"puppetry",
+"seq":4765,
+"day":"2026-11-27",
+"first":"2026-11-26",
+"r":"two dictionaries agree",
+"n":1
 },
 "puppps":{
 "d":"rejected",
@@ -143092,6 +143128,12 @@
 "r":"not an English word (foreign or a name)",
 "n":4
 },
+"smoly":{
+"d":"rejected",
+"w":"smoly",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "smooch":{
 "d":"approved",
 "w":"smooch",
@@ -153555,7 +153597,7 @@
 "d":"rejected",
 "w":"talia",
 "r":"not an English word (foreign or a name)",
-"n":4
+"n":5
 },
 "taliban":{
 "d":"rejected",
@@ -165469,7 +165511,7 @@
 "day":"2026-11-12",
 "first":"2026-11-11",
 "r":"two dictionaries agree",
-"n":4
+"n":5
 },
 "unfavored":{
 "d":"rejected",
@@ -169590,6 +169632,12 @@
 "r":"an everyday object, animal or food",
 "n":2
 },
+"ventress":{
+"d":"rejected",
+"w":"ventress",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
 "ventricle":{
 "d":"rejected",
 "w":"ventricle",
@@ -170537,6 +170585,12 @@
 "vigeous":{
 "d":"rejected",
 "w":"vigeous",
+"r":"not in either dictionary (made up, a name or a typo)",
+"n":1
+},
+"viggo":{
+"d":"rejected",
+"w":"viggo",
 "r":"not in either dictionary (made up, a name or a typo)",
 "n":1
 },

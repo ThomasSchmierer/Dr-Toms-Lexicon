@@ -1,14 +1,14 @@
-# Word review (2026-11-25)
+# Word review (2026-11-26)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4385 words (3319 confirmed by both dictionaries)
+- **Approved:** 4387 words (3321 confirmed by both dictionaries)
 - **Settled by a tie-break:** 95 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17474
+- **Rejected:** 17483
 - **Already in the game, or only in books:** 10287 (these still get cross-references)
 - **Words used in more than one show:** 1971
 
@@ -41,6 +41,7 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **annihilate**: Buffy the Vampire Slayer, Doctor Strange in the Multiverse of Madness, Jurassic World Rebirth, Masters of the Universe, Superman, The Amazing Digital Circus, The Mandalorian, The Super Mario Bros. Movie, The Works of Edgar Allan Poe, Toy Story
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
 - **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, VisionQuest
+- **unfathomable**: 28 Years Later, A Doll's House, Annihilation, Doctor Strange in the Multiverse of Madness, Poems of Gerard Manley Hopkins, South Park, The Crown, The Great Gatsby, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe
 - **snicker**: Game of Thrones, M*A*S*H, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Golden Girls, The Simpsons, The West Wing, Wings
 - **babble**: Cheers, Gilmore Girls, Harry Potter and the Goblet of Fire, Malcolm in the Middle, Poems of Gerard Manley Hopkins, Red Dwarf, Star Trek: The Next Generation, The Big Bang Theory, The Great Gatsby
 - **clench**: America's Next Top Model, Get Him to the Greek, House, QI, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe
@@ -55,7 +56,6 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, Spider-Man 3, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
 - **distasteful**: Boston Legal, Game of Thrones, Poems of Gerard Manley Hopkins, Rumpole of the Bailey, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, To Catch a Predator
 - **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
-- **electrocute**: 30 Rock, Community, Ghosts, House, Peep Show, QI, The Good Place, The Great Gatsby, Twin Peaks
 
 ## Settled by a tie-break
 
@@ -163,9 +163,9 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4541 |
-| not in either dictionary (made up, a name or a typo) | 3139 |
-| fragment of a longer word or a contraction | 2752 |
+| an everyday word with a prefix or suffix | 4542 |
+| not in either dictionary (made up, a name or a typo) | 3144 |
+| fragment of a longer word or a contraction | 2755 |
 | everyday word | 2561 |
 | not a whole word in the quote | 1910 |
 | not an English word (foreign or a name) | 663 |
@@ -188,6 +188,8 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| puppetry | The art of making puppets and presenting puppet shows. | Focker in-Law |
+| humbug | Pretentious or silly talk or writing. | Ebenezer |
 | filbert | Small nut-bearing tree much grown in Europe. | The Happening |
 | submersion | Sinking until covered completely with water. | Meet the Fockers |
 | miniscule | Very small. | The Happening |
@@ -336,5 +338,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | self-abnegation | Renunciation of your own interests in favor of the interests of others. | Homeland |
 | docile | Willing to be taught or led or supervised or directed. | Poems by Emily Dickinson, Spider-Man 3, The Mandalorian |
 | multiversal | Of or pertaining to the multiverse. | Doctor Strange in the Multiverse of Madness |
-| kaboom | The sound of an explosion, typically seen in comic strips or heard in a light-hearted conversation. | Spider-Man |
-| reenergize | To energize again or anew. | Toy Story |

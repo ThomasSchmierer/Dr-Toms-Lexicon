@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -168,6 +168,16 @@
    "scope": "year",
    "views": 4384293,
    "year": ""
+  },
+  "2026-11-28": {
+   "w": "inebriate",
+   "line": "I, Kara Zor-El, of <mark>inebriated</mark> mind, hereby declare that 23 will be the best year…",
+   "src": "Supergirl",
+   "kind": "film",
+   "rank": 25,
+   "scope": "year",
+   "views": 4271581,
+   "year": "2026"
   }
  }
 }
