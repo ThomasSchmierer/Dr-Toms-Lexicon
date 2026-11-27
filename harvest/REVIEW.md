@@ -1,16 +1,16 @@
-# Word review (2026-11-26)
+# Word review (2026-11-27)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4387 words (3321 confirmed by both dictionaries)
-- **Settled by a tie-break:** 95 (listed below if you want to spot-check them)
+- **Approved:** 4429 words (3351 confirmed by both dictionaries)
+- **Settled by a tie-break:** 96 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17483
-- **Already in the game, or only in books:** 10287 (these still get cross-references)
-- **Words used in more than one show:** 1971
+- **Rejected:** 17705
+- **Already in the game, or only in books:** 10266 (these still get cross-references)
+- **Words used in more than one show:** 1999
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -19,26 +19,27 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **quiver**: Breaking Bad, Buffy the Vampire Slayer, Community, Evil Dead Burn, Futurama, Game of Thrones, Interview with the Vampire, Jeeves and Wooster, Last of the Summer Wine, Mrs Dalloway, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, Sherlock, The Great Gatsby, The Lady with the Dog and Other Stories, The West Wing, The Works of Edgar Allan Poe
 - **trifle**: A Doll's House, Casino Royale, Easy Rider, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe
 - **smother**: Community, Heroes, Little Fockers, Mickey 17, Modern Family, Parks and Recreation, Poems of Gerard Manley Hopkins, The Gentlemen, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe, Twin Peaks, Wednesday
-- **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, The Golden Girls, The Simpsons, The West Wing, Will & Grace
+- **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, Steven Universe, The Golden Girls, The Simpsons, The West Wing, Will & Grace
 - **dangle**: Buffy the Vampire Slayer, Enola Holmes, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
 - **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Deadpool & Wolverine, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
 - **euphemism**: Breaking Bad, Bunheads, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
+- **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, Steven Universe, The Day Today, The Great Gatsby, The Works of Edgar Allan Poe, Will & Grace
 - **untie**: Backrooms, Dark, Frasier, Malcolm in the Middle, Poems by Emily Dickinson, Spider-Man, The Gentlemen, The Simpsons, The West Wing, The Young Ones, Toy Story 5, Wednesday
+- **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Steven Universe, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
 - **sneer**: Game of Thrones, Hereditary, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, The Works of Edgar Allan Poe, Wednesday
-- **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, The Day Today, The Great Gatsby, The Works of Edgar Allan Poe, Will & Grace
+- **gibberish**: Blade Runner, Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It
 - **flunk**: Breaking Bad, Buffy the Vampire Slayer, Community, Dawson's Creek, Frasier, Grey's Anatomy, M*A*S*H, Malcolm in the Middle, Spider-Man, The Golden Girls, The Simpsons
-- **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
+- **annihilate**: Buffy the Vampire Slayer, Doctor Strange in the Multiverse of Madness, Jurassic World Rebirth, Masters of the Universe, Steven Universe, Superman, The Amazing Digital Circus, The Mandalorian, The Super Mario Bros. Movie, The Works of Edgar Allan Poe, Toy Story
 - **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Godfather, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Withnail and I
 - **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Harry Potter and the Goblet of Fire, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
-- **gibberish**: Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It
 - **scoff**: Frankenstein, Frasier, Gilmore Girls, Invincible, QI, Spaced, Star Trek: The Next Generation, The Thick of It, The Works of Edgar Allan Poe, VisionQuest
 - **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist, The Works of Edgar Allan Poe
 - **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Lady with the Dog and Other Stories, The Rookie, The Works of Edgar Allan Poe
 - **vindictive**: America's Next Top Model, Boston Legal, Dawson's Creek, Oppenheimer, Peep Show, Red Dwarf, The Crown, The Golden Girls, The West Wing, Veep
 - **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Primetime, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
 - **flinch**: Dawson's Creek, Grey's Anatomy, House, Malcolm in the Middle, Obsession, Poems of Gerard Manley Hopkins, The Crown, The Day Today, The Great Gatsby, The Handmaid's Tale
-- **annihilate**: Buffy the Vampire Slayer, Doctor Strange in the Multiverse of Madness, Jurassic World Rebirth, Masters of the Universe, Superman, The Amazing Digital Circus, The Mandalorian, The Super Mario Bros. Movie, The Works of Edgar Allan Poe, Toy Story
+- **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, Steven Universe, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
 - **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, VisionQuest
 - **unfathomable**: 28 Years Later, A Doll's House, Annihilation, Doctor Strange in the Multiverse of Madness, Poems of Gerard Manley Hopkins, South Park, The Crown, The Great Gatsby, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe
@@ -49,13 +50,12 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons
 - **squander**: American Horror Story, Breaking Bad, Community, Interview with the Vampire, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, The Works of Edgar Allan Poe, VisionQuest
 - **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Twin Peaks
+- **flaunt**: Euphoria, Peep Show, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Steven Universe, The Big Bang Theory, The Thick of It, The Works of Edgar Allan Poe
 - **imbecile**: Blackadder, Boston Legal, Buffy the Vampire Slayer, Game of Thrones, QI, Red Dwarf, Spider-Man, The Newsroom, The Works of Edgar Allan Poe
 - **murmur**: M*A*S*H, Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The Works of Edgar Allan Poe
 - **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist, The Works of Edgar Allan Poe
 - **cower**: American Horror Story, Dawson's Creek, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
 - **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, Spider-Man 3, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
-- **distasteful**: Boston Legal, Game of Thrones, Poems of Gerard Manley Hopkins, Rumpole of the Bailey, The Great Gatsby, The Importance of Being Earnest, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, To Catch a Predator
-- **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
 
 ## Settled by a tie-break
 
@@ -104,6 +104,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | holla | To shout out or greet casually. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | homburg | A hat made of felt with a creased crown. | only WordNet has it, so it uses WordNet's meaning |
 | impersonation | A representation of a person that is exaggerated for comic effect. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
+| incept | To take in or ingest. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | instigate | To bring about by urging or encouraging. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | ionize | To dissociate atoms or molecules into electrically charged species; to be thus dissociated. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | jangling | Like the discordant ringing of nonmusical metallic objects striking together. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
@@ -163,17 +164,17 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4542 |
-| not in either dictionary (made up, a name or a typo) | 3144 |
-| fragment of a longer word or a contraction | 2755 |
-| everyday word | 2561 |
-| not a whole word in the quote | 1910 |
-| not an English word (foreign or a name) | 663 |
-| an everyday object, animal or food | 490 |
-| only heard in lines with swearing | 426 |
+| an everyday word with a prefix or suffix | 4607 |
+| not in either dictionary (made up, a name or a typo) | 3224 |
+| fragment of a longer word or a contraction | 2794 |
+| everyday word | 2588 |
+| not a whole word in the quote | 1911 |
+| not an English word (foreign or a name) | 669 |
+| an everyday object, animal or food | 494 |
+| only heard in lines with swearing | 425 |
 | rude or upsetting meaning | 355 |
 | rude or upsetting | 250 |
-| a name, not a word | 125 |
+| a name, not a word | 126 |
 | a misspelling, abbreviation or contraction | 83 |
 | marked vulgar or offensive in Wiktionary | 75 |
 | body part | 49 |
@@ -188,7 +189,49 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Word | Meaning | Heard in |
 |---|---|---|
-| puppetry | The art of making puppets and presenting puppet shows. | Focker in-Law |
+| kazoo | A toy wind instrument that has a membrane that makes a sound when you hum into the mouthpiece. | South Park, Steven Universe |
+| carabiner | An oblong metal ring with a spring clip; used in mountaineering to attach a rope to a piton or to connect two  | Steven Universe |
+| vestige | An indication that something has been present. | Steven Universe, The Great Gatsby, The Works of Edgar Allan Poe |
+| palanquin | A closed litter carried on the shoulders of four bearers. | Steven Universe |
+| progeny | The immediate descendants of a person. | Blade Runner, House of the Dragon |
+| diamagnetic | Relating to or exhibiting diamagnetism; slightly repelled by a magnet. | Steven Universe |
+| duper | A person who dupes another. | Steven Universe, Veep |
+| dirigible | A steerable self-propelled aircraft. | Blade Runner |
+| oomph | Attractiveness to the opposite sex. | Steven Universe |
+| loudmouthed | Tending to loud, indiscreet, especially bragging, speech. | Steven Universe |
+| dehumanize | Deprive of human qualities. | Blade Runner |
+| bazillion | An unspecified large number (of). | Steven Universe |
+| optometrist | A person skilled in testing for defects of vision in order to prescribe corrective glasses. | Steven Universe |
+| menagerie | A collection of live animals for study or display. | Poems by Emily Dickinson, Steven Universe, The Great Gatsby |
+| cloddy | Characterized by the presence of clods. | Steven Universe |
+| matriarch | A female head of a family or tribe. | Steven Universe |
+| dinky | Small and insignificant. | Airport |
+| malachite | A green or blue mineral used as an ore of copper and for making ornamental objects. | Steven Universe |
+| incept | To take in or ingest. | Blade Runner |
+| begrudgingly | In a begrudging manner; in a manner that is envious or reluctant. | Steven Universe |
+| geode | (mineralogy) a hollow rock or nodule with the cavity usually lined with crystals. | Steven Universe |
+| pufferfish | Delicacy that is highly dangerous because of a potent nerve poison in ovaries and liver. | Steven Universe |
+| criminy | Expressing surprise or impatience. | Steven Universe |
+| glibly | With superficial plausibility. | Blade Runner |
+| gunk | Any thick, viscous matter. | Steven Universe |
+| dirtwad | A term of abuse. | Steven Universe |
+| underwhelm | To fail to impress; to perform disappointingly. | Steven Universe |
+| sugilite | A mineral with hexagonal crystals, often pink or purple but can have different colors, KNa2(Fe2+,Mn2+,Al)2Li3S | Steven Universe |
+| overzealous | Marked by excessive enthusiasm for and intense devotion to a cause or idea. | Steven Universe |
+| decrepitude | A state of deterioration due to old age or long use. | Blade Runner |
+| opalescent | Having a play of lustrous rainbow colors. | Steven Universe |
+| sardonyx | An onyx characterized by parallel layers of sard and a different colored mineral. | Steven Universe |
+| semiotic | Of or relating to semiotics. | Blade Runner |
+| smarten | To make smarter in appearance; to refurbish or spruce up. | Steven Universe |
+| transcendental | Of or characteristic of a system of philosophy emphasizing the intuitive and spiritual above the empirical and | Blade Runner |
+| adverb | The word class that qualifies verbs or clauses. | Steven Universe |
+| blabbermouth | Someone who gossips indiscreetly. | Planes, Trains and Automobiles |
+| peridot | A pale green variety of chrysolite; used as a gemstone. | Steven Universe |
+| janked | Not in proper order; messed up, janky. | Steven Universe |
+| aloof | Remote in manner. | Monty Python's Flying Circus, Poems of Gerard Manley Hopkins, Steven Universe |
+| cityscape | A viewpoint toward a city or other heavily populated area. | Blade Runner |
+| mishap | An unpredictable outcome that is unfortunate. | Steven Universe |
+| puppetry | The art of making puppets and presenting puppet shows. | Focker-in-Law |
 | humbug | Pretentious or silly talk or writing. | Ebenezer |
 | filbert | Small nut-bearing tree much grown in Europe. | The Happening |
 | submersion | Sinking until covered completely with water. | Meet the Fockers |
@@ -229,7 +272,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | fastidious | Giving careful attention to detail; hard to please; excessively concerned with cleanliness. | Harry Potter and the Goblet of Fire, Poems by Emily Dickinson, The Works of Edgar Allan Poe |
 | categorical | Relating to or included in a category or categories. | Gayniggers from Outer Space, Peaky Blinders |
 | articular | Relating to or affecting the joints of the body. | Casino Royale |
-| replicant | A robot or artificial being that is an exact copy of a genuine lifeform, especially a human. | Blade Runner 2049 |
+| replicant | A robot or artificial being that is an exact copy of a genuine lifeform, especially a human. | Blade Runner, Blade Runner 2049 |
 | boomslang | A highly venomous rear-fanged snake found in sub-Saharan Africa, Dispholidus typus. | Harry Potter and the Goblet of Fire |
 | ornithologist | A zoologist who studies birds. | Die Another Day |
 | falconry | The art of training falcons to hunt and return. | Remember Me |
@@ -296,45 +339,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | tromp | To tread heavily, especially to crush underfoot. | The Nightmare Before Christmas |
 | malapropism | The unintentional misuse of a word by confusion with one that sounds similar. | Glass Onion: A Knives Out Mystery |
 | aerobically | In an aerobic manner. | Clueless |
-| scrumptious | Extremely pleasing to the sense of taste. | The Nightmare Before Christmas |
-| selah | A pause or rest of a contemplative nature. | East of Eden |
-| twink | One or more very small, short bursts of light. | Clueless, Veep |
-| aberration | A state or condition markedly different from the norm. | Poems of Gerard Manley Hopkins, The Amazing Spider-Man |
-| affable | Diffusing warmth and friendliness. | Get Him to the Greek |
-| debonair | Having a sophisticated charm. | Poems by Emily Dickinson, The Gentlemen |
-| taut | Pulled or drawn tight. | Get Him to the Greek |
-| slushie | A flavored frozen drink made with ice crystals. | Heathers |
-| savant | Someone who has been admitted to membership in a scholarly field. | Get Him to the Greek, The Lady with the Dog and Other Stories |
-| dramatize | Put into dramatic form. | Spider-Man 3, Titanic, You Can See Everything |
-| freethinker | A person who believes that God created the universe and then abandoned it. | Dead Poets Society |
-| finocchio | Aromatic bulbous stem base eaten cooked or raw in salads. | The Godfather |
-| flack | A publicist, a publicity agent. | Spider-Man 3 |
-| anabolic | Of or related to the synthetic phase of metabolism. | Withnail and I |
-| levitate | Cause to rise in the air and float, as if in defiance of gravity. | Doctor Strange in the Multiverse of Madness |
-| dictation | An authoritative direction or instruction to do something. | Amadeus, The Importance of Being Earnest, The Works of Edgar Allan Poe |
-| sable | Of a dark somewhat brownish black. | Spider-Man, The Works of Edgar Allan Poe |
-| lovat | A dusty blue-green colour. | Coraline, Poems |
-| dilly-dally | Postpone doing what one should be doing. | The Princess Bride |
-| talpa | An encysted tumour on the head; a wen. | Fantastic Mr. Fox |
-| ichor | (Greek mythology) the rarified fluid said to flow in the veins of the Gods. | The Mandalorian, The Works of Edgar Allan Poe |
-| lutra | In some classifications considered a genus of the subfamily Lutrinae. | Fantastic Mr. Fox |
-| appal | Strike with disgust or revulsion. | Amadeus, The Works of Edgar Allan Poe |
-| autocratically | In an overbearingly domineering manner; as a dictator. | Spider-Man |
-| tagger | Someone who assigns labels to the grammatical constituents of textual matter. | Fantastic Mr. Fox |
-| cuniculus | Pacas. | Fantastic Mr. Fox |
-| fennec | A small fox of the species Vulpes zerda, found in the Sahara (excluding the coast) and having distinctive over | The Mandalorian |
-| perfunctory | Hasty and without attention to detail; not thorough. | Spider-Man |
-| hippopotamic | Of or relating to a hippopotamus. | The Princess Bride |
-| mirth | Great merriment. | Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Withnail and I |
-| prophesy | Predict or reveal through, or as if through, divine inspiration. | Doctor Strange in the Multiverse of Madness |
-| unceremonious | Without ceremony or formality. | The Mandalorian |
-| farrier | A person who shoes horses. | Dunkirk, Poems of Gerard Manley Hopkins |
-| meddlesome | Intrusive in a meddling or offensive manner. | Spider-Man |
-| shawarma | A Middle Eastern sandwich-like wrap of shaved lamb, goat, chicken, turkey, beef, or a mixture of these. | Deadpool & Wolverine |
-| nosferatu | . | Spider-Man |
-| bitty | (used informally) very small. | The Grand Budapest Hotel |
-| epistle | A specially long, formal letter. | Withnail and I |
-| unreachable | Inaccessibly located or situated. | Spider-Man |
-| self-abnegation | Renunciation of your own interests in favor of the interests of others. | Homeland |
-| docile | Willing to be taught or led or supervised or directed. | Poems by Emily Dickinson, Spider-Man 3, The Mandalorian |
-| multiversal | Of or pertaining to the multiverse. | Doctor Strange in the Multiverse of Madness |

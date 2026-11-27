@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -178,6 +178,16 @@
    "scope": "year",
    "views": 4271581,
    "year": "2026"
+  },
+  "2026-11-29": {
+   "w": "pianoforte",
+   "line": "…in the right way, to play the <mark>pianoforte</mark> just so. Teaching her twice as much…",
+   "src": "Bridgerton",
+   "kind": "tv",
+   "rank": 28,
+   "scope": "year",
+   "views": 3898042,
+   "year": ""
   }
  }
 }
