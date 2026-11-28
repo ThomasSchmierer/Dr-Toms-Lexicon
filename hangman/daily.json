@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
  "days": {
   "2026-11-11": {
@@ -188,6 +188,16 @@
    "scope": "year",
    "views": 3898042,
    "year": ""
+  },
+  "2026-11-30": {
+   "w": "disavowal",
+   "line": "…human resistance. Despite our general suspicion and <mark>disavowal</mark> of all extant governing bodies, and despite…",
+   "src": "Bugonia",
+   "kind": "film",
+   "rank": 30,
+   "scope": "year",
+   "views": 3830375,
+   "year": "2025"
   }
  }
 }

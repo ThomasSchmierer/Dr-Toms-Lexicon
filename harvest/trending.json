@@ -1,67 +1,67 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "measure": "English Wikipedia page views this year, with this week's views counted four times",
- "screen_titles_found": 604,
+ "screen_titles_found": 600,
  "titles": [
   {
    "title": "The Odyssey (2026 film)",
    "wikiquote": "The Odyssey (2026 film)",
    "kind": "film",
    "description": "Film by Christopher Nolan",
-   "views_week": 334634,
-   "views_year": 28118928,
+   "views_week": 317526,
+   "views_year": 28181924,
    "week_rank": 3,
    "year_rank": 1,
    "rank": 1,
-   "views": 28118928
+   "views": 28181924
   },
   {
    "title": "Obsession (2025 film)",
    "wikiquote": "Obsession (2025 film)",
    "kind": "film",
    "description": "Film by Curry Barker",
-   "views_week": 170780,
-   "views_year": 18936993,
-   "week_rank": 10,
+   "views_week": 160848,
+   "views_year": 18982591,
+   "week_rank": 11,
    "year_rank": 2,
    "rank": 2,
-   "views": 18936993
+   "views": 18982591
   },
   {
    "title": "Project Hail Mary (film)",
    "wikiquote": "Project Hail Mary",
    "kind": "film",
    "description": "2026 film by Phil Lord and Christopher Miller",
-   "views_week": 61024,
-   "views_year": 12628013,
-   "week_rank": 30,
+   "views_week": 61753,
+   "views_year": 12647076,
+   "week_rank": 31,
    "year_rank": 3,
    "rank": 3,
-   "views": 12628013
+   "views": 12647076
   },
   {
    "title": "XXX (2002 film)",
    "wikiquote": "XXX (2002 film)",
    "kind": "film",
    "description": "American action film directed by Rob Cohen",
-   "views_week": 425633,
-   "views_year": 10014135,
+   "views_week": 437608,
+   "views_year": 10132341,
    "week_rank": 2,
    "year_rank": 6,
    "rank": 4,
-   "views": 10014135
+   "views": 10132341
   },
   {
    "title": "Backrooms (film)",
    "wikiquote": "Backrooms",
    "kind": "film",
    "description": "2026 film by Kane Parsons",
-   "views_week": 74005,
-   "views_year": 11099364,
+   "views_week": 74021,
+   "views_year": 11126966,
    "week_rank": 23,
    "year_rank": 4,
    "rank": 5,
-   "views": 11099364
+   "views": 11126966
   },
   {
    "title": "Michael (2026 film)",
@@ -86,16 +86,28 @@
    "views": 8443086
   },
   {
+   "title": "You Can See Everything",
+   "wikiquote": "You Can See Everything",
+   "kind": "film",
+   "description": "2026 documentary film",
+   "views_week": 497779,
+   "views_year": 5891052,
+   "week_rank": 1,
+   "year_rank": 14,
+   "rank": 8,
+   "views": 5891052
+  },
+  {
    "title": "The Housemaid (2025 film)",
    "wikiquote": "The Housemaid (2025 film)",
    "kind": "film",
    "description": "2025 film by Paul Feig",
    "views_week": 16820,
-   "views_year": 7585723,
-   "week_rank": 57,
+   "views_year": 7595566,
+   "week_rank": 59,
    "year_rank": 8,
-   "rank": 8,
-   "views": 7585723
+   "rank": 9,
+   "views": 7595566
   },
   {
    "title": "Disclosure Day",
@@ -103,23 +115,11 @@
    "kind": "film",
    "description": "2026 film by Steven Spielberg",
    "views_week": 42273,
-   "views_year": 7445651,
-   "week_rank": 42,
+   "views_year": 7455839,
+   "week_rank": 41,
    "year_rank": 10,
-   "rank": 9,
-   "views": 7445651
-  },
-  {
-   "title": "You Can See Everything",
-   "wikiquote": "You Can See Everything",
-   "kind": "film",
-   "description": "2026 documentary film",
-   "views_week": 461044,
-   "views_year": 5740293,
-   "week_rank": 1,
-   "year_rank": 14,
    "rank": 10,
-   "views": 5740293
+   "views": 7455839
   },
   {
    "title": "Sinners (2025 film)",
@@ -127,10 +127,10 @@
    "kind": "film",
    "description": "Horror film by Ryan Coogler",
    "views_week": 0,
-   "views_year": 7518859,
+   "views_year": 7527255,
    "year_rank": 9,
    "rank": 11,
-   "views": 7518859
+   "views": 7527255
   },
   {
    "title": "The Pitt",
@@ -170,12 +170,12 @@
    "wikiquote": "Resident Evil (2026 film)",
    "kind": "film",
    "description": "Film by Zach Cregger",
-   "views_week": 78854,
-   "views_year": 5352643,
-   "week_rank": 21,
+   "views_week": 75457,
+   "views_year": 5406088,
+   "week_rank": 22,
    "year_rank": 15,
    "rank": 15,
-   "views": 5352643
+   "views": 5406088
   },
   {
    "title": "Toy Story 5",
@@ -238,10 +238,10 @@
    "kind": "tv",
    "description": "American television series (2016–2025)",
    "views_week": 0,
-   "views_year": 4479455,
+   "views_year": 4494356,
    "year_rank": 21,
    "rank": 21,
-   "views": 4479455
+   "views": 4494356
   },
   {
    "title": "Hamnet (film)",
@@ -259,12 +259,12 @@
    "wikiquote": "Clayface (film)",
    "kind": "film",
    "description": "2026 DC Studios film",
-   "views_week": 81090,
-   "views_year": 4085687,
-   "week_rank": 20,
+   "views_week": 77874,
+   "views_year": 4139032,
+   "week_rank": 21,
    "year_rank": 27,
    "rank": 23,
-   "views": 4085687
+   "views": 4139032
   },
   {
    "title": "House of the Dragon",
@@ -282,12 +282,12 @@
    "wikiquote": "The End of Oak Street",
    "kind": "film",
    "description": "2026 film by David Robert Mitchell",
-   "views_week": 131823,
-   "views_year": 3848380,
+   "views_week": 126624,
+   "views_year": 3863260,
    "week_rank": 12,
    "year_rank": 29,
    "rank": 25,
-   "views": 3848380
+   "views": 3863260
   },
   {
    "title": "Digger (2026 film)",
@@ -295,10 +295,10 @@
    "kind": "film",
    "description": "Film by Alejandro G. Iñárritu",
    "views_week": 0,
-   "views_year": 4316173,
+   "views_year": 4326766,
    "year_rank": 24,
    "rank": 26,
-   "views": 4316173
+   "views": 4326766
   },
   {
    "title": "Supergirl (2026 film)",
@@ -317,10 +317,10 @@
    "kind": "film",
    "description": "2025 American film by Zach Cregger",
    "views_week": 0,
-   "views_year": 4242520,
+   "views_year": 4251692,
    "year_rank": 26,
    "rank": 28,
-   "views": 4242520
+   "views": 4251692
   },
   {
    "title": "Bridgerton",
@@ -340,7 +340,7 @@
    "description": "2025 film by Yorgos Lanthimos",
    "views_week": 7956,
    "views_year": 3830375,
-   "week_rank": 62,
+   "week_rank": 67,
    "year_rank": 30,
    "rank": 30,
    "views": 3830375
@@ -361,12 +361,12 @@
    "wikiquote": "VisionQuest",
    "kind": "tv",
    "description": "2026 Marvel Studios television miniseries",
-   "views_week": 118275,
-   "views_year": 3054624,
+   "views_week": 113890,
+   "views_year": 3124143,
    "week_rank": 14,
-   "year_rank": 38,
+   "year_rank": 35,
    "rank": 32,
-   "views": 3054624
+   "views": 3124143
   },
   {
    "title": "Mortal Kombat II (film)",
@@ -380,28 +380,28 @@
    "views": 3431113
   },
   {
-   "title": "MobLand",
-   "wikiquote": "MobLand",
-   "kind": "tv",
-   "description": "2025 British crime drama television series",
-   "views_week": 270205,
-   "views_year": 2338776,
-   "week_rank": 4,
-   "year_rank": 50,
-   "rank": 34,
-   "views": 2338776
-  },
-  {
    "title": "Interstellar (film)",
    "wikiquote": "Interstellar (film)",
    "kind": "film",
    "description": "2014 film by Christopher Nolan",
-   "views_week": 39430,
-   "views_year": 3233305,
-   "week_rank": 44,
+   "views_week": 30179,
+   "views_year": 3244341,
+   "week_rank": 49,
    "year_rank": 34,
+   "rank": 34,
+   "views": 3244341
+  },
+  {
+   "title": "MobLand",
+   "wikiquote": "MobLand",
+   "kind": "tv",
+   "description": "2025 British crime drama television series",
+   "views_week": 236896,
+   "views_year": 2413839,
+   "week_rank": 5,
+   "year_rank": 49,
    "rank": 35,
-   "views": 3233305
+   "views": 2413839
   },
   {
    "title": "The Sheep Detectives",
@@ -415,28 +415,28 @@
    "views": 3338076
   },
   {
-   "title": "Street Fighter (2026 film)",
-   "wikiquote": "Street Fighter (2026 film)",
-   "kind": "film",
-   "description": "2026 film by Kitao Sakurai",
-   "views_week": 58854,
-   "views_year": 3058718,
-   "week_rank": 32,
-   "year_rank": 37,
-   "rank": 37,
-   "views": 3058718
-  },
-  {
    "title": "Primetime (film)",
    "wikiquote": "Primetime (film)",
    "kind": "film",
    "description": "2026 film by Lance Oppenheim",
-   "views_week": 103353,
-   "views_year": 2879550,
+   "views_week": 96151,
+   "views_year": 2931371,
    "week_rank": 16,
-   "year_rank": 42,
+   "year_rank": 40,
+   "rank": 37,
+   "views": 2931371
+  },
+  {
+   "title": "Street Fighter (2026 film)",
+   "wikiquote": "Street Fighter (2026 film)",
+   "kind": "film",
+   "description": "2026 film by Kitao Sakurai",
+   "views_week": 57002,
+   "views_year": 3084593,
+   "week_rank": 33,
+   "year_rank": 37,
    "rank": 38,
-   "views": 2879550
+   "views": 3084593
   },
   {
    "title": "Coyote vs. Acme",
@@ -445,7 +445,7 @@
    "description": "2026 film by Dave Green",
    "views_week": 0,
    "views_year": 3118294,
-   "year_rank": 35,
+   "year_rank": 36,
    "rank": 39,
    "views": 3118294
   },
@@ -456,7 +456,7 @@
    "description": "2026 film by Daniel Chong",
    "views_week": 0,
    "views_year": 3073981,
-   "year_rank": 36,
+   "year_rank": 38,
    "rank": 40,
    "views": 3073981
   },
@@ -465,12 +465,12 @@
    "wikiquote": "Buddy (2026 film)",
    "kind": "film",
    "description": "2026 film by Casper Kelly",
-   "views_week": 49878,
-   "views_year": 2753816,
-   "week_rank": 37,
+   "views_week": 51644,
+   "views_year": 2773602,
+   "week_rank": 38,
    "year_rank": 44,
    "rank": 41,
-   "views": 2753816
+   "views": 2773602
   },
   {
    "title": "The Rookie",
@@ -490,7 +490,7 @@
    "description": "2025 animated film by Maggie Kang and Chris Appelhans",
    "views_week": 0,
    "views_year": 2922497,
-   "year_rank": 40,
+   "year_rank": 41,
    "rank": 43,
    "views": 2922497
   },
@@ -501,7 +501,7 @@
    "description": "American fantasy drama TV series (2011–2019)",
    "views_week": 0,
    "views_year": 2916645,
-   "year_rank": 41,
+   "year_rank": 42,
    "rank": 44,
    "views": 2916645
   },
@@ -510,12 +510,24 @@
    "wikiquote": "The Gentlemen",
    "kind": "tv",
    "description": "TV series created by Guy Ritchie",
-   "views_week": 49585,
-   "views_year": 2697974,
-   "week_rank": 38,
+   "views_week": 41752,
+   "views_year": 2707992,
+   "week_rank": 42,
    "year_rank": 46,
    "rank": 45,
-   "views": 2697974
+   "views": 2707992
+  },
+  {
+   "title": "Godzilla Minus Zero",
+   "wikiquote": "Godzilla Minus Zero",
+   "kind": "film",
+   "description": "2026 Japanese film by Takashi Yamazaki",
+   "views_week": 192175,
+   "views_year": 2093600,
+   "week_rank": 6,
+   "year_rank": 53,
+   "rank": 46,
+   "views": 2093600
   },
   {
    "title": "Lee Cronin's The Mummy",
@@ -525,20 +537,8 @@
    "views_week": 0,
    "views_year": 2818504,
    "year_rank": 43,
-   "rank": 46,
-   "views": 2818504
-  },
-  {
-   "title": "Godzilla Minus Zero",
-   "wikiquote": "Godzilla Minus Zero",
-   "kind": "film",
-   "description": "2026 Japanese film by Takashi Yamazaki",
-   "views_week": 203226,
-   "views_year": 1949509,
-   "week_rank": 6,
-   "year_rank": 56,
    "rank": 47,
-   "views": 1949509
+   "views": 2818504
   },
   {
    "title": "Scream 7",
@@ -567,24 +567,24 @@
    "wikiquote": "The Invite",
    "kind": "film",
    "description": "2026 film by Olivia Wilde",
-   "views_week": 55747,
-   "views_year": 2347948,
+   "views_week": 56185,
+   "views_year": 2366245,
    "week_rank": 34,
-   "year_rank": 49,
+   "year_rank": 50,
    "rank": 50,
-   "views": 2347948
+   "views": 2366245
   },
   {
    "title": "Wildwood (film)",
    "wikiquote": "Wildwood (film)",
    "kind": "film",
    "description": "2026 animated film by Travis Knight",
-   "views_week": 128033,
-   "views_year": 1989224,
+   "views_week": 123443,
+   "views_year": 2051340,
    "week_rank": 13,
-   "year_rank": 55,
+   "year_rank": 56,
    "rank": 51,
-   "views": 1989224
+   "views": 2051340
   },
   {
    "title": "Scary Movie (2026 film)",
@@ -609,6 +609,18 @@
    "views": 2204492
   },
   {
+   "title": "Ebenezer (2026 film)",
+   "wikiquote": "Ebenezer (2026 film)",
+   "kind": "film",
+   "description": "Film by Ti West",
+   "views_week": 178709,
+   "views_year": 1470151,
+   "week_rank": 9,
+   "year_rank": 70,
+   "rank": 54,
+   "views": 1470151
+  },
+  {
    "title": "Evil Dead Burn",
    "wikiquote": "Evil Dead Burn",
    "kind": "film",
@@ -616,20 +628,8 @@
    "views_week": 0,
    "views_year": 2175768,
    "year_rank": 52,
-   "rank": 54,
-   "views": 2175768
-  },
-  {
-   "title": "Ebenezer (2026 film)",
-   "wikiquote": "Ebenezer (2026 film)",
-   "kind": "film",
-   "description": "Film by Ti West",
-   "views_week": 181765,
-   "views_year": 1426307,
-   "week_rank": 9,
-   "year_rank": 70,
    "rank": 55,
-   "views": 1426307
+   "views": 2175768
   },
   {
    "title": "Peaky Blinders (TV series)",
@@ -638,7 +638,7 @@
    "description": "British period crime drama television series (2013–2022)",
    "views_week": 0,
    "views_year": 2088361,
-   "year_rank": 53,
+   "year_rank": 54,
    "rank": 56,
    "views": 2088361
   },
@@ -649,7 +649,7 @@
    "description": "2024 American television series",
    "views_week": 0,
    "views_year": 2051868,
-   "year_rank": 54,
+   "year_rank": 55,
    "rank": 57,
    "views": 2051868
   },
@@ -713,12 +713,12 @@
    "wikiquote": "I Play Rocky",
    "kind": "film",
    "description": "2026 film by Peter Farrelly",
-   "views_week": 183673,
-   "views_year": 890315,
-   "week_rank": 8,
-   "year_rank": 96,
+   "views_week": 172854,
+   "views_year": 938277,
+   "week_rank": 10,
+   "year_rank": 95,
    "rank": 63,
-   "views": 890315
+   "views": 938277
   },
   {
    "title": "Whalefall (film)",
@@ -765,6 +765,18 @@
    "views": 1542785
   },
   {
+   "title": "Focker In-Law",
+   "wikiquote": "Focker-in-Law",
+   "kind": "film",
+   "description": "2026 American comedy film",
+   "views_week": 247728,
+   "views_year": 525541,
+   "week_rank": 4,
+   "year_rank": 132,
+   "rank": 68,
+   "views": 525541
+  },
+  {
    "title": "Train Dreams (film)",
    "wikiquote": "Train Dreams (film)",
    "kind": "film",
@@ -772,7 +784,7 @@
    "views_week": 0,
    "views_year": 1509913,
    "year_rank": 66,
-   "rank": 68,
+   "rank": 69,
    "views": 1509913
   },
   {
@@ -783,7 +795,7 @@
    "views_week": 0,
    "views_year": 1501456,
    "year_rank": 67,
-   "rank": 69,
+   "rank": 70,
    "views": 1501456
   },
   {
@@ -794,7 +806,7 @@
    "views_week": 0,
    "views_year": 1495676,
    "year_rank": 68,
-   "rank": 70,
+   "rank": 71,
    "views": 1495676
   },
   {
@@ -805,7 +817,7 @@
    "views_week": 0,
    "views_year": 1491223,
    "year_rank": 69,
-   "rank": 71,
+   "rank": 72,
    "views": 1491223
   },
   {
@@ -813,12 +825,22 @@
    "wikiquote": "Grey's Anatomy",
    "kind": "tv",
    "description": "American television series (2005–present)",
-   "views_week": 7644,
-   "views_year": 1418420,
-   "week_rank": 63,
+   "views_week": 0,
+   "views_year": 1426865,
+   "year_rank": 71,
+   "rank": 73,
+   "views": 1426865
+  },
+  {
+   "title": "To Catch a Predator",
+   "wikiquote": "To Catch a Predator",
+   "kind": "tv",
+   "description": "American reality television series",
+   "views_week": 0,
+   "views_year": 1420678,
    "year_rank": 72,
-   "rank": 72,
-   "views": 1418420
+   "rank": 74,
+   "views": 1420678
   },
   {
    "title": "Moana (2026 film)",
@@ -827,8 +849,8 @@
    "description": "2026 film by Thomas Kail",
    "views_week": 0,
    "views_year": 1419087,
-   "year_rank": 71,
-   "rank": 73,
+   "year_rank": 73,
+   "rank": 75,
    "views": 1419087
   },
   {
@@ -838,20 +860,9 @@
    "description": "American television series (2022–present)",
    "views_week": 0,
    "views_year": 1414034,
-   "year_rank": 73,
-   "rank": 74,
-   "views": 1414034
-  },
-  {
-   "title": "To Catch a Predator",
-   "wikiquote": "To Catch a Predator",
-   "kind": "tv",
-   "description": "American reality television series",
-   "views_week": 0,
-   "views_year": 1405867,
    "year_rank": 74,
-   "rank": 75,
-   "views": 1405867
+   "rank": 76,
+   "views": 1414034
   },
   {
    "title": "The Amazing Digital Circus",
@@ -861,7 +872,7 @@
    "views_week": 0,
    "views_year": 1405137,
    "year_rank": 75,
-   "rank": 76,
+   "rank": 77,
    "views": 1405137
   },
   {
@@ -870,10 +881,10 @@
    "kind": "film",
    "description": "2026 DreamWorks Animation film",
    "views_week": 0,
-   "views_year": 1370144,
+   "views_year": 1378680,
    "year_rank": 76,
-   "rank": 77,
-   "views": 1370144
+   "rank": 78,
+   "views": 1378680
   },
   {
    "title": "The White Lotus",
@@ -883,7 +894,7 @@
    "views_week": 0,
    "views_year": 1369943,
    "year_rank": 77,
-   "rank": 78,
+   "rank": 79,
    "views": 1369943
   },
   {
@@ -894,7 +905,7 @@
    "views_week": 0,
    "views_year": 1350533,
    "year_rank": 78,
-   "rank": 79,
+   "rank": 80,
    "views": 1350533
   },
   {
@@ -905,7 +916,7 @@
    "views_week": 0,
    "views_year": 1325212,
    "year_rank": 79,
-   "rank": 80,
+   "rank": 81,
    "views": 1325212
   },
   {
@@ -916,7 +927,7 @@
    "views_week": 0,
    "views_year": 1320312,
    "year_rank": 80,
-   "rank": 81,
+   "rank": 82,
    "views": 1320312
   },
   {
@@ -927,7 +938,7 @@
    "views_week": 0,
    "views_year": 1319789,
    "year_rank": 81,
-   "rank": 82,
+   "rank": 83,
    "views": 1319789
   },
   {
@@ -938,32 +949,8 @@
    "views_week": 0,
    "views_year": 1298065,
    "year_rank": 82,
-   "rank": 83,
-   "views": 1298065
-  },
-  {
-   "title": "Focker-in-Law",
-   "wikiquote": "Focker-in-Law",
-   "kind": "film",
-   "description": "2026 American comedy film",
-   "views_week": 203750,
-   "views_year": 447828,
-   "week_rank": 5,
-   "year_rank": 138,
    "rank": 84,
-   "views": 447828
-  },
-  {
-   "title": "I, Robot (film)",
-   "wikiquote": "I, Robot (film)",
-   "kind": "film",
-   "description": "2004 film by Alex Proyas",
-   "views_week": 58332,
-   "views_year": 1014454,
-   "week_rank": 33,
-   "year_rank": 92,
-   "rank": 85,
-   "views": 1014454
+   "views": 1298065
   },
   {
    "title": "The Rocky Horror Picture Show",
@@ -973,20 +960,32 @@
    "views_week": 0,
    "views_year": 1240313,
    "year_rank": 83,
-   "rank": 86,
+   "rank": 85,
    "views": 1240313
   },
   {
-   "title": "Tenet",
-   "wikiquote": "Tenet",
+   "title": "I, Robot (film)",
+   "wikiquote": "I, Robot (film)",
    "kind": "film",
-   "description": "2020 film by Christopher Nolan",
-   "views_week": 29502,
-   "views_year": 1106362,
-   "week_rank": 46,
-   "year_rank": 89,
+   "description": "2004 film by Alex Proyas",
+   "views_week": 40377,
+   "views_year": 1059154,
+   "week_rank": 43,
+   "year_rank": 92,
+   "rank": 86,
+   "views": 1059154
+  },
+  {
+   "title": "Once Upon a Time in Hollywood",
+   "wikiquote": "Once Upon a Time in Hollywood",
+   "kind": "film",
+   "description": "2019 film by Quentin Tarantino",
+   "views_week": 67715,
+   "views_year": 949752,
+   "week_rank": 29,
+   "year_rank": 94,
    "rank": 87,
-   "views": 1106362
+   "views": 949752
   },
   {
    "title": "Superman (2025 film)",
@@ -1011,16 +1010,16 @@
    "views": 1213418
   },
   {
-   "title": "Once Upon a Time in Hollywood",
-   "wikiquote": "Once Upon a Time in Hollywood",
+   "title": "Tenet",
+   "wikiquote": "Tenet",
    "kind": "film",
-   "description": "2019 film by Quentin Tarantino",
-   "views_week": 63655,
-   "views_year": 935929,
-   "week_rank": 28,
-   "year_rank": 94,
+   "description": "2020 film by Christopher Nolan",
+   "views_week": 19436,
+   "views_year": 1106362,
+   "week_rank": 53,
+   "year_rank": 89,
    "rank": 90,
-   "views": 935929
+   "views": 1106362
   },
   {
    "title": "Hope (2026 film)",
@@ -1034,6 +1033,18 @@
    "views": 1161247
   },
   {
+   "title": "The Dropout",
+   "wikiquote": "The Dropout",
+   "kind": "tv",
+   "description": "2022 American drama television miniseries",
+   "views_week": 70484,
+   "views_year": 877043,
+   "week_rank": 26,
+   "year_rank": 97,
+   "rank": 92,
+   "views": 877043
+  },
+  {
    "title": "The Bear (TV series)",
    "wikiquote": "The Bear (TV series)",
    "kind": "tv",
@@ -1041,7 +1052,7 @@
    "views_week": 0,
    "views_year": 1153472,
    "year_rank": 87,
-   "rank": 92,
+   "rank": 93,
    "views": 1153472
   },
   {
@@ -1052,20 +1063,8 @@
    "views_week": 0,
    "views_year": 1145399,
    "year_rank": 88,
-   "rank": 93,
-   "views": 1145399
-  },
-  {
-   "title": "The Dropout",
-   "wikiquote": "The Dropout",
-   "kind": "tv",
-   "description": "2022 American drama television miniseries",
-   "views_week": 64114,
-   "views_year": 853772,
-   "week_rank": 27,
-   "year_rank": 98,
    "rank": 94,
-   "views": 853772
+   "views": 1145399
   },
   {
    "title": "F1 (film)",
@@ -1083,12 +1082,12 @@
    "wikiquote": "The Hunger Games (film)",
    "kind": "film",
    "description": "2012 film by Gary Ross",
-   "views_week": 195240,
-   "views_year": 297777,
+   "views_week": 191181,
+   "views_year": 322041,
    "week_rank": 7,
-   "year_rank": 171,
+   "year_rank": 161,
    "rank": 96,
-   "views": 297777
+   "views": 322041
   },
   {
    "title": "Avatar (2009 film)",
@@ -1102,16 +1101,40 @@
    "views": 1069434
   },
   {
+   "title": "Hexed (2026 film)",
+   "wikiquote": "Hexed (2026 film)",
+   "kind": "film",
+   "description": "2026 film by Fawn Veerasunthorn and Jason Hand",
+   "views_week": 190189,
+   "views_year": 307549,
+   "week_rank": 8,
+   "year_rank": 168,
+   "rank": 98,
+   "views": 307549
+  },
+  {
    "title": "Dune (2021 film)",
    "wikiquote": "Dune (2021 film)",
    "kind": "film",
    "description": "Film by Denis Villeneuve",
-   "views_week": 65814,
-   "views_year": 760731,
-   "week_rank": 26,
-   "year_rank": 106,
-   "rank": 98,
-   "views": 760731
+   "views_week": 68119,
+   "views_year": 772137,
+   "week_rank": 28,
+   "year_rank": 104,
+   "rank": 99,
+   "views": 772137
+  },
+  {
+   "title": "Thunderbolts*",
+   "wikiquote": "Thunderbolts*",
+   "kind": "film",
+   "description": "2025 Marvel Studios film",
+   "views_week": 46794,
+   "views_year": 826942,
+   "week_rank": 40,
+   "year_rank": 101,
+   "rank": 100,
+   "views": 826942
   },
   {
    "title": "The Handmaid's Tale (TV series)",
@@ -1121,32 +1144,32 @@
    "views_week": 0,
    "views_year": 1004435,
    "year_rank": 93,
-   "rank": 99,
+   "rank": 101,
    "views": 1004435
   },
   {
-   "title": "Thunderbolts*",
-   "wikiquote": "Thunderbolts*",
-   "kind": "film",
-   "description": "2025 Marvel Studios film",
-   "views_week": 35035,
-   "views_year": 815183,
-   "week_rank": 45,
-   "year_rank": 101,
-   "rank": 100,
-   "views": 815183
+   "title": "The Gilded Age (TV series)",
+   "wikiquote": "The Gilded Age (TV series)",
+   "kind": "tv",
+   "description": "American historical drama television series",
+   "views_week": 109236,
+   "views_year": 488757,
+   "week_rank": 15,
+   "year_rank": 136,
+   "rank": 102,
+   "views": 488757
   },
   {
    "title": "No Time to Die",
    "wikiquote": "No Time To Die",
    "kind": "film",
    "description": "2021 James Bond film by Cary Joji Fukunaga",
-   "views_week": 97165,
-   "views_year": 561828,
-   "week_rank": 17,
+   "views_week": 84941,
+   "views_year": 571515,
+   "week_rank": 18,
    "year_rank": 129,
-   "rank": 101,
-   "views": 561828
+   "rank": 103,
+   "views": 571515
   },
   {
    "title": "Wake Up Dead Man",
@@ -1155,33 +1178,9 @@
    "description": "2025 film by Rian Johnson",
    "views_week": 0,
    "views_year": 903996,
-   "year_rank": 95,
-   "rank": 102,
-   "views": 903996
-  },
-  {
-   "title": "The Gilded Age (TV series)",
-   "wikiquote": "The Gilded Age (TV series)",
-   "kind": "tv",
-   "description": "American historical drama television series",
-   "views_week": 110068,
-   "views_year": 459366,
-   "week_rank": 15,
-   "year_rank": 136,
-   "rank": 103,
-   "views": 459366
-  },
-  {
-   "title": "Hexed (2026 film)",
-   "wikiquote": "Hexed (2026 film)",
-   "kind": "film",
-   "description": "2026 film by Fawn Veerasunthorn and Jason Hand",
-   "views_week": 153550,
-   "views_year": 256600,
-   "week_rank": 11,
-   "year_rank": 176,
+   "year_rank": 96,
    "rank": 104,
-   "views": 256600
+   "views": 903996
   },
   {
    "title": "Georgie & Mandy's First Marriage",
@@ -1189,22 +1188,22 @@
    "kind": "tv",
    "description": "2024 television sitcom series",
    "views_week": 0,
-   "views_year": 860097,
-   "year_rank": 97,
+   "views_year": 868852,
+   "year_rank": 98,
    "rank": 105,
-   "views": 860097
+   "views": 868852
   },
   {
-   "title": "The Batman (film)",
-   "wikiquote": "The Batman (film)",
+   "title": "Godzilla Minus One",
+   "wikiquote": "Godzilla Minus One",
    "kind": "film",
-   "description": "2022 superhero film by Matt Reeves",
-   "views_week": 41464,
-   "views_year": 692656,
-   "week_rank": 43,
-   "year_rank": 111,
+   "description": "2023 film by Takashi Yamazaki",
+   "views_week": 71914,
+   "views_year": 580266,
+   "week_rank": 25,
+   "year_rank": 127,
    "rank": 106,
-   "views": 692656
+   "views": 580266
   },
   {
    "title": "Heroes (American TV series)",
@@ -1229,16 +1228,16 @@
    "views": 835786
   },
   {
-   "title": "Godzilla Minus One",
-   "wikiquote": "Godzilla Minus One",
+   "title": "The Batman (film)",
+   "wikiquote": "The Batman (film)",
    "kind": "film",
-   "description": "2023 film by Takashi Yamazaki",
-   "views_week": 76431,
-   "views_year": 528394,
-   "week_rank": 22,
-   "year_rank": 131,
+   "description": "2022 superhero film by Matt Reeves",
+   "views_week": 30393,
+   "views_year": 692656,
+   "week_rank": 48,
+   "year_rank": 111,
    "rank": 109,
-   "views": 528394
+   "views": 692656
   },
   {
    "title": "People We Meet on Vacation (film)",
@@ -1269,7 +1268,7 @@
    "description": "2006 film by Christopher Nolan",
    "views_week": 0,
    "views_year": 771755,
-   "year_rank": 104,
+   "year_rank": 105,
    "rank": 112,
    "views": 771755
   },
@@ -1280,7 +1279,7 @@
    "description": "1991 film directed by Martin Scorsese",
    "views_week": 0,
    "views_year": 760762,
-   "year_rank": 105,
+   "year_rank": 106,
    "rank": 113,
    "views": 760762
   },
@@ -1395,18 +1394,6 @@
    "views": 646670
   },
   {
-   "title": "The Sopranos",
-   "wikiquote": "The Sopranos",
-   "kind": "tv",
-   "description": "American crime drama television series by David Chase",
-   "views_week": 7487,
-   "views_year": 615221,
-   "week_rank": 64,
-   "year_rank": 119,
-   "rank": 124,
-   "views": 615221
-  },
-  {
    "title": "Jurassic World Rebirth",
    "wikiquote": "Jurassic World Rebirth",
    "kind": "film",
@@ -1414,8 +1401,43 @@
    "views_week": 0,
    "views_year": 644278,
    "year_rank": 118,
-   "rank": 125,
+   "rank": 124,
    "views": 644278
+  },
+  {
+   "title": "Rocky",
+   "wikiquote": "Rocky (film)",
+   "kind": "film",
+   "description": "1976 film by John G. Avildsen",
+   "views_week": 92204,
+   "views_year": 259083,
+   "week_rank": 17,
+   "year_rank": 176,
+   "rank": 125,
+   "views": 259083
+  },
+  {
+   "title": "South Park",
+   "wikiquote": "South Park",
+   "kind": "tv",
+   "description": "American animated sitcom",
+   "views_week": 10534,
+   "views_year": 585542,
+   "week_rank": 65,
+   "year_rank": 124,
+   "rank": 126,
+   "views": 585542
+  },
+  {
+   "title": "The Sopranos",
+   "wikiquote": "The Sopranos",
+   "kind": "tv",
+   "description": "American crime drama television series by David Chase",
+   "views_week": 0,
+   "views_year": 615221,
+   "year_rank": 119,
+   "rank": 127,
+   "views": 615221
   },
   {
    "title": "It – Welcome to Derry",
@@ -1425,7 +1447,7 @@
    "views_week": 0,
    "views_year": 613333,
    "year_rank": 120,
-   "rank": 126,
+   "rank": 128,
    "views": 613333
   },
   {
@@ -1436,20 +1458,8 @@
    "views_week": 0,
    "views_year": 612142,
    "year_rank": 121,
-   "rank": 127,
+   "rank": 129,
    "views": 612142
-  },
-  {
-   "title": "Rocky",
-   "wikiquote": "Rocky (film)",
-   "kind": "film",
-   "description": "1976 film by John G. Avildsen",
-   "views_week": 93255,
-   "views_year": 236546,
-   "week_rank": 18,
-   "year_rank": 177,
-   "rank": 128,
-   "views": 236546
   },
   {
    "title": "Steel Magnolias",
@@ -1459,7 +1469,7 @@
    "views_week": 0,
    "views_year": 601351,
    "year_rank": 122,
-   "rank": 129,
+   "rank": 130,
    "views": 601351
   },
   {
@@ -1470,7 +1480,7 @@
    "views_week": 0,
    "views_year": 593359,
    "year_rank": 123,
-   "rank": 130,
+   "rank": 131,
    "views": 593359
   },
   {
@@ -1480,9 +1490,21 @@
    "description": "American reality television series (2003–2018)",
    "views_week": 0,
    "views_year": 584786,
-   "year_rank": 124,
-   "rank": 131,
+   "year_rank": 125,
+   "rank": 132,
    "views": 584786
+  },
+  {
+   "title": "The Cat in the Hat (2026 film)",
+   "wikiquote": "The Cat in the Hat (2026 film)",
+   "kind": "film",
+   "description": "2026 animated film",
+   "views_week": 55321,
+   "views_year": 361771,
+   "week_rank": 35,
+   "year_rank": 154,
+   "rank": 133,
+   "views": 361771
   },
   {
    "title": "The Dark Knight Rises",
@@ -1491,20 +1513,9 @@
    "description": "2012 film by Christopher Nolan",
    "views_week": 0,
    "views_year": 581893,
-   "year_rank": 125,
-   "rank": 132,
-   "views": 581893
-  },
-  {
-   "title": "South Park",
-   "wikiquote": "South Park",
-   "kind": "tv",
-   "description": "American animated sitcom",
-   "views_week": 0,
-   "views_year": 575008,
    "year_rank": 126,
-   "rank": 133,
-   "views": 575008
+   "rank": 134,
+   "views": 581893
   },
   {
    "title": "11.22.63",
@@ -1513,8 +1524,8 @@
    "description": "2016 American thriller miniseries",
    "views_week": 0,
    "views_year": 574910,
-   "year_rank": 127,
-   "rank": 134,
+   "year_rank": 128,
+   "rank": 135,
    "views": 574910
   },
   {
@@ -1524,8 +1535,8 @@
    "description": "2021 film by Simon McQuoid",
    "views_week": 0,
    "views_year": 564450,
-   "year_rank": 128,
-   "rank": 135,
+   "year_rank": 130,
+   "rank": 136,
    "views": 564450
   },
   {
@@ -1535,8 +1546,8 @@
    "description": "American crime drama TV series (2008–2015)",
    "views_week": 0,
    "views_year": 559459,
-   "year_rank": 130,
-   "rank": 136,
+   "year_rank": 131,
+   "rank": 137,
    "views": 559459
   },
   {
@@ -1544,24 +1555,12 @@
    "wikiquote": "Casino Royale (2006 film)",
    "kind": "film",
    "description": "2006 James Bond film by Martin Campbell",
-   "views_week": 87498,
-   "views_year": 201322,
+   "views_week": 81034,
+   "views_year": 212640,
    "week_rank": 19,
-   "year_rank": 178,
-   "rank": 137,
-   "views": 201322
-  },
-  {
-   "title": "The Cat in the Hat (2026 film)",
-   "wikiquote": "The Cat in the Hat (2026 film)",
-   "kind": "film",
-   "description": "2026 animated film",
-   "views_week": 55204,
-   "views_year": 323232,
-   "week_rank": 35,
-   "year_rank": 160,
+   "year_rank": 177,
    "rank": 138,
-   "views": 323232
+   "views": 212640
   },
   {
    "title": "Office Romance (2026 film)",
@@ -1570,7 +1569,7 @@
    "description": "2026 film by Ol Parker",
    "views_week": 0,
    "views_year": 519705,
-   "year_rank": 132,
+   "year_rank": 133,
    "rank": 139,
    "views": 519705
   },
@@ -1581,7 +1580,7 @@
    "description": "2019 film by Josh Cooley",
    "views_week": 0,
    "views_year": 509434,
-   "year_rank": 133,
+   "year_rank": 134,
    "rank": 140,
    "views": 509434
   },
@@ -1592,7 +1591,7 @@
    "description": "2002 film by Danny Boyle",
    "views_week": 0,
    "views_year": 502020,
-   "year_rank": 134,
+   "year_rank": 135,
    "rank": 141,
    "views": 502020
   },
@@ -1603,7 +1602,7 @@
    "description": "1980 slasher film by Sean S. Cunningham",
    "views_week": 0,
    "views_year": 467167,
-   "year_rank": 135,
+   "year_rank": 137,
    "rank": 142,
    "views": 467167
   },
@@ -1614,7 +1613,7 @@
    "description": "American teen drama television series (1998–2003)",
    "views_week": 0,
    "views_year": 454313,
-   "year_rank": 137,
+   "year_rank": 138,
    "rank": 143,
    "views": 454313
   },
@@ -1630,16 +1629,16 @@
    "views": 439673
   },
   {
-   "title": "Skyfall",
-   "wikiquote": "Skyfall",
+   "title": "Deadpool & Wolverine",
+   "wikiquote": "Deadpool & Wolverine",
    "kind": "film",
-   "description": "2012 James Bond film by Sam Mendes",
-   "views_week": 66085,
-   "views_year": 153260,
-   "week_rank": 25,
-   "year_rank": 179,
+   "description": "2024 Marvel Studios film",
+   "views_week": 8337,
+   "views_year": 401392,
+   "week_rank": 66,
+   "year_rank": 145,
    "rank": 145,
-   "views": 153260
+   "views": 401392
   },
   {
    "title": "Memento (film)",
@@ -1686,6 +1685,18 @@
    "views": 405423
   },
   {
+   "title": "Meet the Parents",
+   "wikiquote": "Meet the Parents",
+   "kind": "film",
+   "description": "2000 film by Jay Roach",
+   "views_week": 79341,
+   "views_year": 87691,
+   "week_rank": 20,
+   "year_rank": 183,
+   "rank": 150,
+   "views": 87691
+  },
+  {
    "title": "Knives Out",
    "wikiquote": "Knives Out",
    "kind": "film",
@@ -1693,7 +1704,7 @@
    "views_week": 0,
    "views_year": 401781,
    "year_rank": 144,
-   "rank": 150,
+   "rank": 151,
    "views": 401781
   },
   {
@@ -1703,8 +1714,8 @@
    "description": "American television series",
    "views_week": 0,
    "views_year": 395887,
-   "year_rank": 145,
-   "rank": 151,
+   "year_rank": 146,
+   "rank": 152,
    "views": 395887
   },
   {
@@ -1714,20 +1725,9 @@
    "description": "2023 American animated film",
    "views_week": 0,
    "views_year": 395358,
-   "year_rank": 146,
-   "rank": 152,
-   "views": 395358
-  },
-  {
-   "title": "Deadpool & Wolverine",
-   "wikiquote": "Deadpool & Wolverine",
-   "kind": "film",
-   "description": "2024 Marvel Studios film",
-   "views_week": 0,
-   "views_year": 393055,
    "year_rank": 147,
    "rank": 153,
-   "views": 393055
+   "views": 395358
   },
   {
    "title": "Lost Highway (film)",
@@ -1763,6 +1763,30 @@
    "views": 376718
   },
   {
+   "title": "Gayniggers from Outer Space",
+   "wikiquote": "Gayniggers from Outer Space",
+   "kind": "film",
+   "description": "1992 English-language Danish short film",
+   "views_week": 69174,
+   "views_year": 98711,
+   "week_rank": 27,
+   "year_rank": 181,
+   "rank": 157,
+   "views": 98711
+  },
+  {
+   "title": "Home Alone",
+   "wikiquote": "Home Alone",
+   "kind": "film",
+   "description": "1990 film directed by Chris Columbus",
+   "views_week": 73233,
+   "views_year": 82003,
+   "week_rank": 24,
+   "year_rank": 184,
+   "rank": 158,
+   "views": 82003
+  },
+  {
    "title": "Homeland (TV series)",
    "wikiquote": "Homeland (TV series)",
    "kind": "tv",
@@ -1770,7 +1794,7 @@
    "views_week": 0,
    "views_year": 370095,
    "year_rank": 151,
-   "rank": 157,
+   "rank": 159,
    "views": 370095
   },
   {
@@ -1781,7 +1805,7 @@
    "views_week": 0,
    "views_year": 363380,
    "year_rank": 152,
-   "rank": 158,
+   "rank": 160,
    "views": 363380
   },
   {
@@ -1792,8 +1816,31 @@
    "views_week": 0,
    "views_year": 362455,
    "year_rank": 153,
-   "rank": 159,
+   "rank": 161,
    "views": 362455
+  },
+  {
+   "title": "Skyfall",
+   "wikiquote": "Skyfall",
+   "kind": "film",
+   "description": "2012 James Bond film by Sam Mendes",
+   "views_week": 52014,
+   "views_year": 153260,
+   "week_rank": 37,
+   "year_rank": 178,
+   "rank": 162,
+   "views": 153260
+  },
+  {
+   "title": "Ghosts (American TV series)",
+   "wikiquote": "Ghosts (American TV series)",
+   "kind": "tv",
+   "description": "2021 American television sitcom)",
+   "views_week": 0,
+   "views_year": 355265,
+   "year_rank": 155,
+   "rank": 163,
+   "views": 355265
   },
   {
    "title": "Saltburn (film)",
@@ -1802,32 +1849,9 @@
    "description": "2023 film by Emerald Fennell",
    "views_week": 0,
    "views_year": 354794,
-   "year_rank": 154,
-   "rank": 160,
+   "year_rank": 156,
+   "rank": 164,
    "views": 354794
-  },
-  {
-   "title": "Home Alone",
-   "wikiquote": "Home Alone",
-   "kind": "film",
-   "description": "1990 film directed by Chris Columbus",
-   "views_week": 69954,
-   "views_year": 69954,
-   "week_rank": 24,
-   "year_rank": 187,
-   "rank": 161,
-   "views": 69954
-  },
-  {
-   "title": "Ghosts (American TV series)",
-   "wikiquote": "Ghosts (American TV series)",
-   "kind": "tv",
-   "description": "2021 American television sitcom)",
-   "views_week": 0,
-   "views_year": 345419,
-   "year_rank": 155,
-   "rank": 162,
-   "views": 345419
   },
   {
    "title": "The Gentlemen (2019 film)",
@@ -1836,9 +1860,21 @@
    "description": "Crime comedy film by Guy Ritchie",
    "views_week": 0,
    "views_year": 338902,
-   "year_rank": 156,
-   "rank": 163,
+   "year_rank": 157,
+   "rank": 165,
    "views": 338902
+  },
+  {
+   "title": "Little Fockers",
+   "wikiquote": "Little Fockers",
+   "kind": "film",
+   "description": "2010 American film by Paul Weitz",
+   "views_week": 67650,
+   "views_year": 67650,
+   "week_rank": 30,
+   "year_rank": 187,
+   "rank": 166,
+   "views": 67650
   },
   {
    "title": "Hellraiser",
@@ -1847,21 +1883,9 @@
    "description": "1987 film by Clive Barker",
    "views_week": 0,
    "views_year": 336542,
-   "year_rank": 157,
-   "rank": 164,
+   "year_rank": 158,
+   "rank": 167,
    "views": 336542
-  },
-  {
-   "title": "Gayniggers from Outer Space",
-   "wikiquote": "Gayniggers from Outer Space",
-   "kind": "film",
-   "description": "1992 English-language Danish short film",
-   "views_week": 60649,
-   "views_year": 90186,
-   "week_rank": 31,
-   "year_rank": 183,
-   "rank": 165,
-   "views": 90186
   },
   {
    "title": "The Shining (film)",
@@ -1870,8 +1894,8 @@
    "description": "1980 film by Stanley Kubrick",
    "views_week": 0,
    "views_year": 331655,
-   "year_rank": 158,
-   "rank": 166,
+   "year_rank": 159,
+   "rank": 168,
    "views": 331655
   },
   {
@@ -1881,8 +1905,8 @@
    "description": "1955 film by Elia Kazan",
    "views_week": 0,
    "views_year": 325243,
-   "year_rank": 159,
-   "rank": 167,
+   "year_rank": 160,
+   "rank": 169,
    "views": 325243
   },
   {
@@ -1892,8 +1916,8 @@
    "description": "2024 film by Mike Flanagan",
    "views_week": 0,
    "views_year": 321878,
-   "year_rank": 161,
-   "rank": 168,
+   "year_rank": 162,
+   "rank": 170,
    "views": 321878
   },
   {
@@ -1903,8 +1927,8 @@
    "description": "2010 film by Lee Unkrich",
    "views_week": 0,
    "views_year": 321424,
-   "year_rank": 162,
-   "rank": 169,
+   "year_rank": 163,
+   "rank": 171,
    "views": 321424
   },
   {
@@ -1914,8 +1938,8 @@
    "description": "Film by John Carpenter",
    "views_week": 0,
    "views_year": 321162,
-   "year_rank": 163,
-   "rank": 170,
+   "year_rank": 164,
+   "rank": 172,
    "views": 321162
   },
   {
@@ -1925,8 +1949,8 @@
    "description": "2022 Marvel Studios film",
    "views_week": 0,
    "views_year": 319011,
-   "year_rank": 164,
-   "rank": 171,
+   "year_rank": 165,
+   "rank": 173,
    "views": 319011
   },
   {
@@ -1936,21 +1960,9 @@
    "description": "2018 film by Ari Aster",
    "views_week": 0,
    "views_year": 316796,
-   "year_rank": 165,
-   "rank": 172,
+   "year_rank": 166,
+   "rank": 174,
    "views": 316796
-  },
-  {
-   "title": "Meet the Parents",
-   "wikiquote": "Meet the Parents",
-   "kind": "film",
-   "description": "2000 film by Jay Roach",
-   "views_week": 61618,
-   "views_year": 69968,
-   "week_rank": 29,
-   "year_rank": 186,
-   "rank": 173,
-   "views": 69968
   },
   {
    "title": "The Nightmare Before Christmas",
@@ -1959,21 +1971,21 @@
    "description": "1993 film by Henry Selick",
    "views_week": 0,
    "views_year": 315015,
-   "year_rank": 166,
-   "rank": 174,
+   "year_rank": 167,
+   "rank": 175,
    "views": 315015
   },
   {
-   "title": "Spectre (2015 film)",
-   "wikiquote": "Spectre (2015 film)",
+   "title": "Meet the Fockers",
+   "wikiquote": "Meet the Fockers",
    "kind": "film",
-   "description": "James Bond film directed by Sam Mendes",
-   "views_week": 45912,
-   "views_year": 122299,
-   "week_rank": 40,
-   "year_rank": 180,
-   "rank": 175,
-   "views": 122299
+   "description": "2004 film by Jay Roach",
+   "views_week": 61068,
+   "views_year": 61068,
+   "week_rank": 32,
+   "year_rank": 189,
+   "rank": 176,
+   "views": 61068
   },
   {
    "title": "The Amazing Spider-Man (film)",
@@ -1982,8 +1994,8 @@
    "description": "2012 film by Marc Webb",
    "views_week": 0,
    "views_year": 303931,
-   "year_rank": 167,
-   "rank": 176,
+   "year_rank": 169,
+   "rank": 177,
    "views": 303931
   },
   {
@@ -1993,8 +2005,8 @@
    "description": "2007 film by Sam Raimi",
    "views_week": 0,
    "views_year": 300995,
-   "year_rank": 168,
-   "rank": 177,
+   "year_rank": 170,
+   "rank": 178,
    "views": 300995
   },
   {
@@ -2004,8 +2016,8 @@
    "description": "1972 film by Francis Ford Coppola",
    "views_week": 0,
    "views_year": 299511,
-   "year_rank": 169,
-   "rank": 178,
+   "year_rank": 171,
+   "rank": 179,
    "views": 299511
   },
   {
@@ -2015,8 +2027,8 @@
    "description": "Canadian television sitcom (2015–2020)",
    "views_week": 0,
    "views_year": 299147,
-   "year_rank": 170,
-   "rank": 179,
+   "year_rank": 172,
+   "rank": 180,
    "views": 299147
   },
   {
@@ -2026,8 +2038,8 @@
    "description": "2004 film by Mel Gibson",
    "views_week": 0,
    "views_year": 295164,
-   "year_rank": 172,
-   "rank": 180,
+   "year_rank": 173,
+   "rank": 181,
    "views": 295164
   },
   {
@@ -2037,8 +2049,8 @@
    "description": "2020 film by Harry Bradbeer",
    "views_week": 0,
    "views_year": 292897,
-   "year_rank": 173,
-   "rank": 181,
+   "year_rank": 174,
+   "rank": 182,
    "views": 292897
   },
   {
@@ -2048,67 +2060,104 @@
    "description": "2007 film by Juan Carlos Fresnadillo",
    "views_week": 0,
    "views_year": 291016,
-   "year_rank": 174,
-   "rank": 182,
+   "year_rank": 175,
+   "rank": 183,
    "views": 291016
   },
   {
-   "title": "The Good Doctor (American TV series)",
-   "wikiquote": "The Good Doctor (American TV series)",
-   "kind": "tv",
-   "description": "American medical drama television series (2017–2024)",
-   "views_week": 0,
-   "views_year": 290164,
-   "year_rank": 175,
-   "rank": 183,
-   "views": 290164
+   "title": "Planes, Trains and Automobiles",
+   "wikiquote": "Planes, Trains and Automobiles",
+   "kind": "film",
+   "description": "1987 film by John Hughes",
+   "views_week": 55088,
+   "views_year": 55088,
+   "week_rank": 36,
+   "year_rank": 190,
+   "rank": 184,
+   "views": 55088
+  },
+  {
+   "title": "Spectre (2015 film)",
+   "wikiquote": "Spectre (2015 film)",
+   "kind": "film",
+   "description": "James Bond film directed by Sam Mendes",
+   "views_week": 33473,
+   "views_year": 122299,
+   "week_rank": 45,
+   "year_rank": 179,
+   "rank": 185,
+   "views": 122299
+  },
+  {
+   "title": "Blade Runner",
+   "wikiquote": "Blade Runner",
+   "kind": "film",
+   "description": "1982 film by Ridley Scott",
+   "views_week": 46812,
+   "views_year": 46812,
+   "week_rank": 39,
+   "year_rank": 191,
+   "rank": 186,
+   "views": 46812
   },
   {
    "title": "Quantum of Solace",
    "wikiquote": "Quantum of Solace",
    "kind": "film",
    "description": "2008 James Bond film by Marc Forster",
-   "views_week": 42986,
+   "views_week": 32471,
    "views_year": 104076,
-   "week_rank": 41,
-   "year_rank": 181,
-   "rank": 184,
+   "week_rank": 47,
+   "year_rank": 180,
+   "rank": 187,
    "views": 104076
   },
   {
-   "title": "Little Fockers",
-   "wikiquote": "Little Fockers",
+   "title": "Blade Runner 2049",
+   "wikiquote": "Blade Runner 2049",
    "kind": "film",
-   "description": "2010 American film by Paul Weitz",
-   "views_week": 51092,
-   "views_year": 51092,
-   "week_rank": 36,
+   "description": "2017 film by Denis Villeneuve",
+   "views_week": 38708,
+   "views_year": 64958,
+   "week_rank": 44,
    "year_rank": 188,
-   "rank": 185,
-   "views": 51092
+   "rank": 188,
+   "views": 64958
   },
   {
-   "title": "Meet the Fockers",
-   "wikiquote": "Meet the Fockers",
+   "title": "Remember Me (2010 film)",
+   "wikiquote": "Remember Me (2010 film)",
    "kind": "film",
-   "description": "2004 film by Jay Roach",
-   "views_week": 46236,
-   "views_year": 46236,
-   "week_rank": 39,
-   "year_rank": 190,
-   "rank": 186,
-   "views": 46236
+   "description": "2010 American film by Alan Coulter",
+   "views_week": 19413,
+   "views_year": 98160,
+   "week_rank": 54,
+   "year_rank": 182,
+   "rank": 189,
+   "views": 98160
+  },
+  {
+   "title": "Steven Universe",
+   "wikiquote": "Steven Universe",
+   "kind": "tv",
+   "description": "American animated television series",
+   "views_week": 33222,
+   "views_year": 33222,
+   "week_rank": 46,
+   "year_rank": 192,
+   "rank": 190,
+   "views": 33222
   },
   {
    "title": "GoldenEye",
    "wikiquote": "GoldenEye",
    "kind": "film",
    "description": "1995 James Bond film by Martin Campbell",
-   "views_week": 29008,
+   "views_week": 19071,
    "views_year": 81204,
-   "week_rank": 47,
-   "year_rank": 184,
-   "rank": 187,
+   "week_rank": 55,
+   "year_rank": 185,
+   "rank": 191,
    "views": 81204
   },
   {
@@ -2116,48 +2165,12 @@
    "wikiquote": "Die Another Day",
    "kind": "film",
    "description": "2002 James Bond film by Lee Tamahori",
-   "views_week": 25904,
+   "views_week": 18194,
    "views_year": 74898,
-   "week_rank": 48,
-   "year_rank": 185,
-   "rank": 188,
+   "week_rank": 56,
+   "year_rank": 186,
+   "rank": 192,
    "views": 74898
-  },
-  {
-   "title": "Remember Me (2010 film)",
-   "wikiquote": "Remember Me (2010 film)",
-   "kind": "film",
-   "description": "2010 American film by Alan Coulter",
-   "views_week": 21091,
-   "views_year": 90574,
-   "week_rank": 53,
-   "year_rank": 182,
-   "rank": 189,
-   "views": 90574
-  },
-  {
-   "title": "Blade Runner 2049",
-   "wikiquote": "Blade Runner 2049",
-   "kind": "film",
-   "description": "2017 film by Denis Villeneuve",
-   "views_week": 22924,
-   "views_year": 49174,
-   "week_rank": 51,
-   "year_rank": 189,
-   "rank": 190,
-   "views": 49174
-  },
-  {
-   "title": "Blade Runner",
-   "wikiquote": "Blade Runner",
-   "kind": "film",
-   "description": "1982 film by Ridley Scott",
-   "views_week": 25775,
-   "views_year": 25775,
-   "week_rank": 49,
-   "year_rank": 191,
-   "rank": 191,
-   "views": 25775
   },
   {
    "title": "Wicked (2024 film)",
@@ -2167,8 +2180,8 @@
    "views_week": 23682,
    "views_year": 23682,
    "week_rank": 50,
-   "year_rank": 192,
-   "rank": 192,
+   "year_rank": 193,
+   "rank": 193,
    "views": 23682
   },
   {
@@ -2178,22 +2191,10 @@
    "description": "2018 science fiction cosmic horror film by Alex Garland",
    "views_week": 22605,
    "views_year": 22605,
-   "week_rank": 52,
-   "year_rank": 194,
-   "rank": 193,
-   "views": 22605
-  },
-  {
-   "title": "Planes, Trains and Automobiles",
-   "wikiquote": "Planes, Trains and Automobiles",
-   "kind": "film",
-   "description": "1987 film by John Hughes",
-   "views_week": 19934,
-   "views_year": 19934,
-   "week_rank": 54,
+   "week_rank": 51,
    "year_rank": 195,
    "rank": 194,
-   "views": 19934
+   "views": 22605
   },
   {
    "title": "Airport (1970 film)",
@@ -2202,10 +2203,22 @@
    "description": "1970 film by George Seaton",
    "views_week": 19592,
    "views_year": 19592,
-   "week_rank": 55,
+   "week_rank": 52,
    "year_rank": 196,
    "rank": 195,
    "views": 19592
+  },
+  {
+   "title": "The Outsiders (film)",
+   "wikiquote": "The Outsiders (film)",
+   "kind": "film",
+   "description": "1983 film by Francis Ford Coppola",
+   "views_week": 17500,
+   "views_year": 17500,
+   "week_rank": 57,
+   "year_rank": 197,
+   "rank": 196,
+   "views": 17500
   },
   {
    "title": "A History of Violence",
@@ -2214,9 +2227,9 @@
    "description": "2005 film directed by David Cronenberg",
    "views_week": 17372,
    "views_year": 17372,
-   "week_rank": 56,
-   "year_rank": 197,
-   "rank": 196,
+   "week_rank": 58,
+   "year_rank": 198,
+   "rank": 197,
    "views": 17372
   },
   {
@@ -2226,9 +2239,9 @@
    "description": "1994 film by Gillies MacKinnon",
    "views_week": 15092,
    "views_year": 23036,
-   "week_rank": 60,
-   "year_rank": 193,
-   "rank": 197,
+   "week_rank": 62,
+   "year_rank": 194,
+   "rank": 198,
    "views": 23036
   },
   {
@@ -2238,34 +2251,46 @@
    "description": "British science fiction TV series (1963–2025)",
    "views_week": 15416,
    "views_year": 15416,
-   "week_rank": 58,
-   "year_rank": 198,
-   "rank": 198,
+   "week_rank": 60,
+   "year_rank": 199,
+   "rank": 199,
    "views": 15416
   },
   {
-   "title": "Steven Universe",
-   "wikiquote": "Steven Universe",
+   "title": "Top Gear (2002 TV series)",
+   "wikiquote": "Top Gear",
    "kind": "tv",
-   "description": "American animated television series",
-   "views_week": 15346,
-   "views_year": 15346,
-   "week_rank": 59,
-   "year_rank": 199,
-   "rank": 199,
-   "views": 15346
-  },
-  {
-   "title": "The Happening (2008 film)",
-   "wikiquote": "The Happening (2008 film)",
-   "kind": "film",
-   "description": "2008 film by M. Night Shyamalan",
-   "views_week": 10837,
-   "views_year": 10837,
+   "description": "British motoring TV show (2002–present)",
+   "views_week": 15364,
+   "views_year": 15364,
    "week_rank": 61,
    "year_rank": 200,
    "rank": 200,
-   "views": 10837
+   "views": 15364
+  },
+  {
+   "title": "Sweetpea (TV series)",
+   "wikiquote": "Sweetpea",
+   "kind": "tv",
+   "description": "2024 British dark comedy-drama television series",
+   "views_week": 13154,
+   "views_year": 13154,
+   "week_rank": 63,
+   "year_rank": 201,
+   "rank": 201,
+   "views": 13154
+  },
+  {
+   "title": "The Last Waltz",
+   "wikiquote": "The Last Waltz",
+   "kind": "film",
+   "description": "1978 concert film directed by Martin Scorsese",
+   "views_week": 12303,
+   "views_year": 12303,
+   "week_rank": 64,
+   "year_rank": 202,
+   "rank": 202,
+   "views": 12303
   }
  ]
 }

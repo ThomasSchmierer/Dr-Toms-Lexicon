@@ -1,16 +1,16 @@
-# Word review (2026-11-27)
+# Word review (2026-11-28)
 
 Every harvested word is checked automatically against WordNet and Wiktionary. A word is **approved** when it is a real,
 uncommon English word, it isn't rude, a name or a fragment, and the two dictionaries agree on the meaning that fits the quote
 (or Wiktionary alone defines it, when WordNet doesn't have it). When the dictionaries can't settle it, a tie-break rule
 decides, so nothing waits for a person.
 
-- **Approved:** 4429 words (3351 confirmed by both dictionaries)
-- **Settled by a tie-break:** 96 (listed below if you want to spot-check them)
+- **Approved:** 4509 words (3397 confirmed by both dictionaries)
+- **Settled by a tie-break:** 100 (listed below if you want to spot-check them)
 - **Waiting for their dictionary lookup:** 0 (checked on the next run)
-- **Rejected:** 17705
-- **Already in the game, or only in books:** 10266 (these still get cross-references)
-- **Words used in more than one show:** 1999
+- **Rejected:** 18087
+- **Already in the game, or only in books:** 10247 (these still get cross-references)
+- **Words used in more than one show:** 2028
 
 To overrule any decision, put **y** or **n** in the *keep* column of that word's spreadsheet. The next run follows it.
 
@@ -22,17 +22,20 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **twirl**: America's Next Top Model, Ghosts, Gilmore Girls, Mortal Kombat, Mr. Bean, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Star Trek: The Next Generation, Steven Universe, The Golden Girls, The Simpsons, The West Wing, Will & Grace
 - **dangle**: Buffy the Vampire Slayer, Enola Holmes, House, Mad Men, Malcolm in the Middle, Poems by Emily Dickinson, Seinfeld, South Park, Spaced, The Golden Girls, The Good Place, The Great Gatsby
 - **charade**: American Horror Story, Community, Dad's Army, Dawson's Creek, Eyes Wide Shut, Frasier, M*A*S*H, South Park, The Big Bang Theory, The Death of Stalin, The Golden Girls, The Lady with the Dog and Other Stories
+- **gibberish**: Blade Runner, Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It, Top Gear
 - **urinate**: 30 Rock, American Horror Story, Blackadder, Buffy the Vampire Slayer, Deadpool & Wolverine, Grey's Anatomy, Mad Men, Sherlock, The Golden Girls, The Simpsons, The Thick of It, Twin Peaks
 - **euphemism**: Breaking Bad, Bunheads, Frasier, Heroes, House, Spaced, Star Trek: The Next Generation, The Big Bang Theory, The Day Today, The Gentlemen, The Great Gatsby, Wings
 - **elude**: Blackadder, House of the Dragon, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Red Dwarf, Seinfeld, Star Trek: The Next Generation, Steven Universe, The Day Today, The Great Gatsby, The Works of Edgar Allan Poe, Will & Grace
 - **untie**: Backrooms, Dark, Frasier, Malcolm in the Middle, Poems by Emily Dickinson, Spider-Man, The Gentlemen, The Simpsons, The West Wing, The Young Ones, Toy Story 5, Wednesday
 - **suffocate**: Gilmore Girls, Grey's Anatomy, Heroes, QI, Spaced, Steven Universe, Succession, The Gentlemen, The Good Place, The Lady with the Dog and Other Stories, The Sopranos
+- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Godfather, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Top Gear, Withnail and I
 - **sneer**: Game of Thrones, Hereditary, House of the Dragon, Inspector Morse, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, The Works of Edgar Allan Poe, Wednesday
-- **gibberish**: Blade Runner, Dead Poets Society, Futurama, Gilmore Girls, Halloween, QI, Seinfeld, Sports Night, The Great Gatsby, The Sopranos, The Thick of It
 - **flunk**: Breaking Bad, Buffy the Vampire Slayer, Community, Dawson's Creek, Frasier, Grey's Anatomy, M*A*S*H, Malcolm in the Middle, Spider-Man, The Golden Girls, The Simpsons
 - **annihilate**: Buffy the Vampire Slayer, Doctor Strange in the Multiverse of Madness, Jurassic World Rebirth, Masters of the Universe, Steven Universe, Superman, The Amazing Digital Circus, The Mandalorian, The Super Mario Bros. Movie, The Works of Edgar Allan Poe, Toy Story
-- **scuse**: Breaking Bad, Dad's Army, Lanterns, Red Dwarf, The Godfather, The Simpsons, The Sopranos, The Thick of It, The Young Ones, Withnail and I
+- **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, Top Gear, VisionQuest
+- **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons, Top Gear
 - **blimey**: Buffy the Vampire Slayer, Dad's Army, Downton Abbey, Harry Potter and the Goblet of Fire, Monty Python's Flying Circus, Only Fools and Horses, QI, The Simpsons, The Thick of It, The Young Ones
+- **imbecile**: Blackadder, Boston Legal, Buffy the Vampire Slayer, Game of Thrones, QI, Red Dwarf, Spider-Man, The Newsroom, The Works of Edgar Allan Poe, Top Gear
 - **scoff**: Frankenstein, Frasier, Gilmore Girls, Invincible, QI, Spaced, Star Trek: The Next Generation, The Thick of It, The Works of Edgar Allan Poe, VisionQuest
 - **chafe**: Heroes, House of the Dragon, Mrs Dalloway, Poems by Emily Dickinson, QI, The Death of Stalin, The Great Gatsby, The Importance of Being Earnest, The Mentalist, The Works of Edgar Allan Poe
 - **insufferable**: Arrested Development, Buffy the Vampire Slayer, Frasier, Gilmore Girls, Grey's Anatomy, Peep Show, The Big Bang Theory, The Lady with the Dog and Other Stories, The Rookie, The Works of Edgar Allan Poe
@@ -40,22 +43,19 @@ To overrule any decision, put **y** or **n** in the *keep* column of that word's
 - **leper**: Blackadder, Dawson's Creek, Poems of Gerard Manley Hopkins, Primetime, Seinfeld, The Crown, The Dark Knight, The Golden Girls, The Thick of It, Veep
 - **flinch**: Dawson's Creek, Grey's Anatomy, House, Malcolm in the Middle, Obsession, Poems of Gerard Manley Hopkins, The Crown, The Day Today, The Great Gatsby, The Handmaid's Tale
 - **squirm**: Dawson's Creek, Evil Dead Rise, Futurama, Interview with the Vampire, QI, Star Trek: The Next Generation, Steven Universe, The Lady with the Dog and Other Stories, The Simpsons, Twin Peaks
+- **whimper**: Blade Runner, Doctor Strange in the Multiverse of Madness, Futurama, Game of Thrones, Grey's Anatomy, The Golden Girls, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, Top Gear
 - **presumptuous**: Bridgerton, Cape Fear, Columbo, Game of Thrones, Poems by Emily Dickinson, Stranger Things, The Great Gatsby, The Importance of Being Earnest, The Rocky Horror Picture Show, The Simpsons
-- **wallow**: Ghosts, Heroes, Interview with the Vampire, Peep Show, Poems of Gerard Manley Hopkins, South Park, Steel Magnolias, The Golden Girls, The Princess Bride, VisionQuest
 - **unfathomable**: 28 Years Later, A Doll's House, Annihilation, Doctor Strange in the Multiverse of Madness, Poems of Gerard Manley Hopkins, South Park, The Crown, The Great Gatsby, The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe
 - **snicker**: Game of Thrones, M*A*S*H, Mr. Bean, Studio 60 on the Sunset Strip, The Big Bang Theory, The Golden Girls, The Simpsons, The West Wing, Wings
 - **babble**: Cheers, Gilmore Girls, Harry Potter and the Goblet of Fire, Malcolm in the Middle, Poems of Gerard Manley Hopkins, Red Dwarf, Star Trek: The Next Generation, The Big Bang Theory, The Great Gatsby
 - **clench**: America's Next Top Model, Get Him to the Greek, House, QI, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The West Wing, The Works of Edgar Allan Poe
 - **nibble**: A Bit of Fry and Laurie, A Doll's House, Blackadder, Cheers, Futurama, The Great Gatsby, The Vicar of Dibley, The Works of Edgar Allan Poe, Zootopia 2
-- **erupt**: Buffy the Vampire Slayer, Fawlty Towers, Frasier, Futurama, Seinfeld, South Park, The Crown, The Golden Girls, The Simpsons
 - **squander**: American Horror Story, Breaking Bad, Community, Interview with the Vampire, Only Fools and Horses, Poems of Gerard Manley Hopkins, The Simpsons, The Works of Edgar Allan Poe, VisionQuest
 - **wriggle**: Futurama, Interview with the Vampire, Lee Cronin's The Mummy, Monty Python's Flying Circus, Red Dwarf, The Great Gatsby, The Lady with the Dog and Other Stories, The Thick of It, Twin Peaks
 - **flaunt**: Euphoria, Peep Show, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, Seinfeld, Steven Universe, The Big Bang Theory, The Thick of It, The Works of Edgar Allan Poe
-- **imbecile**: Blackadder, Boston Legal, Buffy the Vampire Slayer, Game of Thrones, QI, Red Dwarf, Spider-Man, The Newsroom, The Works of Edgar Allan Poe
+- **naught**: Casino Royale, Glass Onion: A Knives Out Mystery, House of the Dragon, South Park, Star Trek: The Next Generation, The Simpsons, The Works of Edgar Allan Poe, Top Gear, Yes, Minister
 - **murmur**: M*A*S*H, Monty Python's Flying Circus, Mrs Dalloway, Peep Show, Poems by Emily Dickinson, The Great Gatsby, The Lady with the Dog and Other Stories, The Simpsons, The Works of Edgar Allan Poe
 - **whirl**: Downton Abbey, Gilmore Girls, Northern Exposure, Poems by Emily Dickinson, Poems of Gerard Manley Hopkins, The Good Place, The Lady with the Dog and Other Stories, The Mentalist, The Works of Edgar Allan Poe
-- **cower**: American Horror Story, Dawson's Creek, Game of Thrones, Malcolm in the Middle, Mrs Dalloway, The Great Gatsby, The Newsroom, The West Wing, Yes, Minister
-- **chump**: Blackadder, Breaking Bad, Futurama, Jeeves and Wooster, Spider-Man 3, The Big Bang Theory, The Man in the High Castle, The Running Man, The Simpsons
 
 ## Settled by a tie-break
 
@@ -76,6 +76,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | certifiably | With the potential for certification. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | chilblains | Inflammation of the hands and feet caused by exposure to cold and moisture. | Wiktionary's wording only repeats the word, so it uses WordNet's meaning |
 | compartmentalization | Division into compartments or parts. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| compo | Workers' compensation. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | cul-de-sac | A blind alley or dead end street. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | culotte | A divided skirt. | only WordNet has it, so it uses WordNet's meaning |
 | dippy | Lacking common sense. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -87,6 +88,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | euclidean | Relating to geometry as developed by Euclid. | only WordNet has it, so it uses WordNet's meaning |
 | filicide | The killing of one's own child. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | flack | A publicist, a publicity agent. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| flyby | A flight past a celestial object in order to make observations. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | forrad | Forehead. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | francophile | An admirer of France and everything French. | only WordNet has it, so it uses WordNet's meaning |
 | garotte | An instrument of execution for execution by strangulation. | only WordNet has it, so it uses WordNet's meaning |
@@ -150,8 +152,10 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | unambiguously | In a manner that is not ambiguous; leaving no doubt; clearly. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | unflagging | Never tiring or lacking energy; without rest; without slowing. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | unmarketable | Not marketable. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| unset | Not set; not fixed or appointed. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | unsullied | Not sullied. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
 | untangle | To remove tangles or knots from. | the dictionaries disagreed, so it uses Wiktionary's meaning for how the word is used in the quote |
+| uprate | To give a higher rating to. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
 | velcro | Fasten with Velcro. | only WordNet has it, so it uses WordNet's meaning |
 | vulpes | Foxes. | only WordNet has it, so it uses WordNet's meaning |
 | ween | To suppose, imagine; to think, believe. | several meanings and the quote doesn't show which, so it uses Wiktionary's main one |
@@ -164,31 +168,112 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 
 | Reason | Words |
 |---|---|
-| an everyday word with a prefix or suffix | 4607 |
-| not in either dictionary (made up, a name or a typo) | 3224 |
-| fragment of a longer word or a contraction | 2794 |
-| everyday word | 2588 |
-| not a whole word in the quote | 1911 |
-| not an English word (foreign or a name) | 669 |
-| an everyday object, animal or food | 494 |
-| only heard in lines with swearing | 425 |
-| rude or upsetting meaning | 355 |
-| rude or upsetting | 250 |
-| a name, not a word | 126 |
+| an everyday word with a prefix or suffix | 4752 |
+| not in either dictionary (made up, a name or a typo) | 3314 |
+| fragment of a longer word or a contraction | 2858 |
+| everyday word | 2633 |
+| not a whole word in the quote | 1912 |
+| not an English word (foreign or a name) | 686 |
+| an everyday object, animal or food | 500 |
+| only heard in lines with swearing | 420 |
+| rude or upsetting meaning | 359 |
+| rude or upsetting | 260 |
+| a name, not a word | 127 |
 | a misspelling, abbreviation or contraction | 83 |
-| marked vulgar or offensive in Wiktionary | 75 |
-| body part | 49 |
+| marked vulgar or offensive in Wiktionary | 76 |
+| body part | 51 |
 | a name (only capitalised in the dictionary) | 30 |
 | too obscure to check in either dictionary | 16 |
 | only a spelling variant or form of another word | 5 |
 | a contraction | 2 |
 | everyday word with many meanings | 1 |
 | marked offensive in WordNet | 1 |
+| no usable definition | 1 |
 
 ## Newest approvals
 
 | Word | Meaning | Heard in |
 |---|---|---|
+| slovenly | Negligent of neatness especially in dress and person; habitually dirty and unkempt. | Top Gear |
+| upholster | Provide furniture with padding, springs, webbing, and covers. | Top Gear |
+| pockmarked | Used of paved surfaces having holes or pits. | Top Gear |
+| uprate | To give a higher rating to. | Top Gear |
+| raucous | Unpleasantly loud and harsh. | Top Gear |
+| campervan | A vehicle that provides both transport and sleeping accommodation. | Top Gear |
+| wheelie | An action or stunt where a bicycle, motorcycle, or other vehicle is ridden for a short period while it is stan | Top Gear |
+| apportion | Distribute according to a plan or set apart for a special purpose. | Top Gear |
+| unset | Not set; not fixed or appointed. | Top Gear |
+| garlicky | Relating to or tasting or smelling of garlic. | Top Gear |
+| wilfully | In a willful manner. | Top Gear |
+| carburettor | Mixes air with gasoline vapor prior to explosion. | Top Gear |
+| manspreader | Someone who manspreads. | Sweetpea |
+| skive | Remove the surface of. | Top Gear |
+| catatonically | With, or as if with, catatonia; rigidly, mechanically. | Top Gear |
+| lairiness | The property of being lairy. | Top Gear |
+| hallucinogenically | In a hallucinogenic manner. | Top Gear |
+| wallowy | Resembling a muddy pool. | Top Gear |
+| blustery | Blowing in violent and abrupt bursts. | Top Gear |
+| spangly | Covered with beads or jewels or sequins. | Top Gear |
+| fizz | Become bubbly or frothy or foaming. | Red Dwarf, The Invite, Top Gear |
+| khazi | An outhouse or lavatory: a place used for urination and defecation. | Top Gear |
+| biggish | Somewhat large. | Top Gear |
+| compo | Workers' compensation. | Top Gear |
+| gingivitis | Inflammation of the gums. | Top Gear |
+| aqualung | A device (trade name Aqua-Lung) that lets divers breathe under water; scuba is an acronym for self-contained u | Top Gear |
+| bearbaiting | A blood sport in which dogs are set upon a chained bear. | Top Gear |
+| pootle | To wander or ramble in a leisurely, indirect, or aimless manner, such as by walking or driving. | Top Gear |
+| sonorous | Full and loud and deep. | Top Gear |
+| squeak | A short high-pitched noise. | The Great Gatsby, The Works of Edgar Allan Poe, Top Gear |
+| valance | A decorative framework to conceal curtain fixtures at the top of a window casing. | The Outsiders |
+| tumbledown | In disrepair; poorly maintained. | Top Gear |
+| milometer | A meter that shows mileage traversed. | Top Gear |
+| trickery | Verbal misrepresentation intended to take advantage of you in some way. | Top Gear |
+| centrale | The central, or one of the central, bones of the carpus or tarsus in most vertebrates. In the human tarsus it  | Top Gear |
+| cubbyhole | A small compartment. | Top Gear |
+| astride | With one leg on each side. | Top Gear |
+| saucerful | As much as a saucer will hold. | Top Gear |
+| tranquillity | An untroubled state; free from disturbances. | The Lady with the Dog and Other Stories, The Works of Edgar Allan Poe, Top Gear |
+| bandy-legged | Have legs that curve outward at the knees. | Top Gear |
+| thish | A self-reference to the current issue of a periodical. | Top Gear |
+| incongruously | In an incongruous manner. | The Lady with the Dog and Other Stories, Top Gear |
+| jiffy | A very short time (as the time it takes the eye to blink or the heart to beat). | The Lady with the Dog and Other Stories, Top Gear |
+| fatwa | A ruling on a point of Islamic law that is given by a recognized authority. | Top Gear |
+| misdemeanour | A crime less serious than a felony. | Top Gear |
+| ophthalmic | Of or relating to the eye. | Top Gear |
+| speedo | A speedometer, particularly one in a race car or other automobile. | Top Gear |
+| concours | A competitive examination, especially in medicine. | Top Gear |
+| enormity | Vastness of size or extent. | The Works of Edgar Allan Poe, Top Gear |
+| aspirate | Remove as if by suction. | Top Gear |
+| fascio | A bundle or sheaf. | Top Gear |
+| dihedral | Consisting of, relating to or contained between two plane surfaces. | Top Gear |
+| crim | A criminal. | Top Gear |
+| stairlift | A motorized platform installed in a stairway, which traverses the stairs when activated and can be ridden by t | The Thick of It, Top Gear |
+| utilise | Put into service; make work or employ for a particular purpose or for its inherent or natural purpose. | Top Gear |
+| condolence | An expression of sympathy with another's grief. | The Importance of Being Earnest, Top Gear |
+| harumph | An expression of disdain, disbelief, protest, or dismissal; a huff, grunt, or snort. | Top Gear |
+| bawl-baby | A crybaby. | The Outsiders |
+| pedantry | An ostentatious and inappropriate display of learning. | Top Gear |
+| afterburner | A device injects fuel into a hot exhaust for extra thrust. | Top Gear |
+| flyby | A flight past a celestial object in order to make observations. | Top Gear |
+| strafe | Attack with machine guns or cannon fire from a low-flying plane. | Top Gear |
+| conker | The inedible nutlike seed of the horse chestnut. | Top Gear |
+| actuation | The act of propelling. | Top Gear |
+| spiff | Attractiveness in appearance or dress or manner. | Top Gear |
+| semi-monocoque | A modification of the monocoque design to include reinforcing members such as stringers or frames to increase  | Top Gear |
+| prolapse | The slipping or falling out of place of an organ (as the uterus). | Top Gear |
+| turgidly | In a turgid manner. | Top Gear |
+| wahey | Expressing exhilaration or delight. | The Thick of It, Top Gear |
+| envisage | Form a mental image of something that is not present or that is not the case. | Top Gear |
+| caddish | Offensively discourteous. | Top Gear |
+| dodecahedral | Having twelve plane surfaces. | Top Gear |
+| gurn | To make a grotesque or funny face; to grimace. | Top Gear |
+| genny | A generator. | Top Gear |
+| nobble | Make off with belongings of others. | Top Gear |
+| ichthyomorphic | Shaped like a fish. | Top Gear |
+| monocoque | A structure design in which the frame and body are built as a single integrated structure. | Top Gear |
+| lubber | An awkward stupid person. | Top Gear |
+| tittle-tattle | Light informal conversation for social occasions. | The Lady with the Dog and Other Stories, Top Gear |
+| gigawatt | One thousand million (109) watts, an amount of power large enough to power such things as a midsize town or se | Top Gear |
 | kazoo | A toy wind instrument that has a membrane that makes a sound when you hum into the mouthpiece. | South Park, Steven Universe |
 | carabiner | An oblong metal ring with a spring clip; used in mountaineering to attach a rope to a piton or to connect two  | Steven Universe |
 | vestige | An indication that something has been present. | Steven Universe, The Great Gatsby, The Works of Edgar Allan Poe |
@@ -197,7 +282,7 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | diamagnetic | Relating to or exhibiting diamagnetism; slightly repelled by a magnet. | Steven Universe |
 | duper | A person who dupes another. | Steven Universe, Veep |
 | dirigible | A steerable self-propelled aircraft. | Blade Runner |
-| oomph | Attractiveness to the opposite sex. | Steven Universe |
+| oomph | Attractiveness to the opposite sex. | Steven Universe, Top Gear |
 | loudmouthed | Tending to loud, indiscreet, especially bragging, speech. | Steven Universe |
 | dehumanize | Deprive of human qualities. | Blade Runner |
 | bazillion | An unspecified large number (of). | Steven Universe |
@@ -259,83 +344,3 @@ Nothing needs you here. These were decided by rule; put **n** in the keep column
 | orbicularis | A muscle surrounding an opening. | Casino Royale |
 | synovial | Relating to or secreting synovia. | Casino Royale |
 | reupholster | To upholster again; to replace the attached fabric covering on furniture. | Casino Royale |
-| matriculate | Enroll as a student. | Twilight |
-| lysergic | Used in the designation of lysergic acid and lysergic acid diethylamide: produced by hydrolysis from ergot. | Casino Royale |
-| hatter | Someone who makes and sells hats. | Harry Potter and the Goblet of Fire |
-| bumble | Make a mess of, destroy or ruin. | Harry Potter and the Goblet of Fire, The Mentalist |
-| goyle | A ravine or other depression. | Harry Potter and the Goblet of Fire |
-| lassie | A girl or young woman who is unmarried. | Casino Royale |
-| linguist | A specialist in linguistics. | Arrival |
-| orthography | A method of representing the sounds of a language by written or printed symbols. | Arrival, Poems by Emily Dickinson |
-| wearisome | So lacking in interest as to cause mental weariness; - Edmund Burke. | Harry Potter and the Goblet of Fire, The Lady with the Dog and Other Stories |
-| inconquerable | That cannot be conquered; unconquerable. | Casino Royale |
-| fastidious | Giving careful attention to detail; hard to please; excessively concerned with cleanliness. | Harry Potter and the Goblet of Fire, Poems by Emily Dickinson, The Works of Edgar Allan Poe |
-| categorical | Relating to or included in a category or categories. | Gayniggers from Outer Space, Peaky Blinders |
-| articular | Relating to or affecting the joints of the body. | Casino Royale |
-| replicant | A robot or artificial being that is an exact copy of a genuine lifeform, especially a human. | Blade Runner, Blade Runner 2049 |
-| boomslang | A highly venomous rear-fanged snake found in sub-Saharan Africa, Dispholidus typus. | Harry Potter and the Goblet of Fire |
-| ornithologist | A zoologist who studies birds. | Die Another Day |
-| falconry | The art of training falcons to hunt and return. | Remember Me |
-| introvert | (psychology) a person who tends to shrink from social contacts and to become preoccupied with their own though | Breaking Bad, Remember Me |
-| toiletry | Artifacts used in making your toilet (washing and taking care of your body). | Remember Me |
-| acquaint | Cause to come to know personally. | Die Another Day, The Works of Edgar Allan Poe |
-| corinne | Cocaine. | Quantum of Solace |
-| tankbuster | A military aircraft suited to the destruction of tanks. | Die Another Day |
-| inconsolable | Sad beyond comforting; incapable of being consoled. | Quantum of Solace |
-| oculist | A person skilled in testing for defects of vision in order to prescribe corrective glasses. | On Her Majesty's Secret Service, The Great Gatsby |
-| astroid | A hypocycloid with four cusps. | Remember Me |
-| restaurateur | The proprietor of a restaurant. | GoldenEye |
-| baronet | A member of the British order of honor; ranks below a baron but above a knight. | On Her Majesty's Secret Service |
-| compunction | A feeling of deep regret (usually for some misdeed). | GoldenEye |
-| verity | Conformity to reality or actuality. | Verity |
-| shrubland | Land that is covered mostly with shrubs. | Never Say Never Again |
-| xenium | A gift or offering. | GoldenEye |
-| embolism | An insertion into a calendar. | Remember Me |
-| hydrocortisone | An adrenal-cortex hormone (trade names Hydrocortone or Cortef) that is active in carbohydrate and protein meta | Casino Royale |
-| fusiform | Tapering at each end. | Spectre |
-| maladjusted | Poorly adjusted to demands and stresses of daily living. | Casino Royale |
-| digitalis | A powerful cardiac stimulant obtained from foxglove. | Casino Royale |
-| antihistamine | A medicine used to treat allergies and hypersensitive reactions and colds; works by counteracting the effects  | Casino Royale |
-| thallium | A soft grey malleable metallic element that resembles tin but discolors on exposure to air; it is highly toxic | Spectre |
-| vesper | A planet (usually Venus) seen at sunset in the western sky. | Casino Royale, Spectre |
-| provocatrix | A female provocator. | Skyfall |
-| fugit | The optimal date to exercise an American option (or a Bermudan option). | Spectre |
-| ignominiously | In a dishonorable manner or to a dishonorable degree. | Skyfall |
-| recut | To cut again. | Titanic |
-| coulee | A stream, especially one in the western US or Canada, generally smaller than a bayou; it may (or may not) run  | Spellbound |
-| katniss | Sagittaria spp., herbaceous perennial flowering plants that grow in water. | The Hunger Games |
-| dhoti | A long loincloth worn by Hindu men. | Agatha All Along |
-| detach | Cause to become detached or separated; take off. | The Works of Edgar Allan Poe, Titanic |
-| pulsation | (electronics) a sharp transient wave in the normal electrical state (or a series of such transients). | Spellbound, The Works of Edgar Allan Poe |
-| lilium | Type genus of Liliaceae. | Agatha All Along |
-| dramatise | Put into dramatic form. | Back to the Future |
-| welter | A confused multitude of things. | Band of Brothers, The Works of Edgar Allan Poe |
-| furlough | A temporary leave of absence from military duty. | Band of Brothers |
-| laudable | Worthy of high praise. | Nymphomaniac, The Great Gatsby |
-| thresh | Move or stir about violently. | Peaky Blinders, The Hunger Games |
-| infatuate | Arouse unreasoning love or passion in and cause to behave in an irrational way. | Back to the Future |
-| cutaneous | Relating to or existing on or affecting the skin. | The Human Centipede |
-| barmpot | An idiot; an objectionable and foolish person. | Last of the Summer Wine |
-| roughen | Make rough or rougher. | The Works of Edgar Allan Poe, Titanic |
-| fakery | The act of faking (or the product of faking). | Back to the Future |
-| amorously | In an amorous manner. | Back to the Future |
-| senility | Mental infirmity as a consequence of old age; sometimes shown by foolish infatuations. | Spellbound |
-| krantz | An encircling or overhanging wall of rock. | The Life of Chuck |
-| varicose | Abnormally swollen or knotty. | Get Him to the Greek, Veep |
-| dishrag | A cloth for washing dishes. | The Shining |
-| pandemonium | A state of extreme confusion and disorder. | Get Him to the Greek |
-| blaspheme | Utter obscenities or profanities. | The Passion of the Christ |
-| huggable | Capable of, or suitable for, being hugged. | Toy Story 3 |
-| unequivocal | Admitting of no doubt or misunderstanding; having only one meaning or interpretation and leading to only one c | Clueless, The Works of Edgar Allan Poe |
-| unsee | To undo the act of seeing something; to erase the memory or otherwise reverse the effect of having seen someth | The Gentlemen |
-| procurator | A person authorized to act for another. | The Passion of the Christ |
-| ticklish | Difficult to handle; requiring great tact. | Get Him to the Greek |
-| caporegime | A high-ranking member of a crime family in the Mafia who heads a "crew" of soldiers and has significant social | The Godfather |
-| trifle | Consider not very seriously. | A Doll's House, Casino Royale, Easy Rider, Game of Thrones, Glass Onion: A Knives Out Mystery, Heroes, House of the Dragon, Keeping Up Appearances, Only Fools and Horses, Poems by Emily Dickinson, Red Dwarf, The Dark Knight Rises, The Lady with the Dog and Other Stories, The Princess Bride, The Works of Edgar Allan Poe |
-| cinematographer | A photographer who operates a movie camera. | Spider-Man 3 |
-| razzmatazz | Any exciting and complex play intended to confuse (dazzle) the opponent. | Get Him to the Greek |
-| seclusion | The quality of being secluded from the presence or view of others. | Poems by Emily Dickinson, The Shining, The Works of Edgar Allan Poe |
-| simulcast | A broadcast that is carried simultaneously by radio and television (or by FM and AM radio). | Get Him to the Greek |
-| tromp | To tread heavily, especially to crush underfoot. | The Nightmare Before Christmas |
-| malapropism | The unintentional misuse of a word by confusion with one that sounds similar. | Glass Onion: A Knives Out Mystery |
-| aerobically | In an aerobic manner. | Clueless |
